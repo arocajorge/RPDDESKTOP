@@ -1,5 +1,5 @@
 ﻿
-create view  vwROL_Rpt022 as 
+CREATE view  vwROL_Rpt022 as 
 SELECT        dbo.ro_empleado.IdEmpresa, dbo.ro_empleado_x_ro_tipoNomina.IdTipoNomina, dbo.ro_Departamento.IdDepartamento, dbo.ro_empleado.IdEmpleado, 
                          dbo.ro_prestamo_detalle.IdPrestamo, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, 
                          dbo.ro_prestamo_detalle.EstadoPago, dbo.ro_Nomina_Tipo.Descripcion, dbo.ro_Departamento.de_descripcion, 
@@ -14,7 +14,7 @@ FROM            dbo.ro_prestamo_detalle INNER JOIN
                          dbo.ro_empleado_x_ro_tipoNomina ON dbo.ro_empleado.IdEmpresa = dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa AND 
                          dbo.ro_empleado.IdEmpleado = dbo.ro_empleado_x_ro_tipoNomina.IdEmpleado INNER JOIN
                          dbo.ro_Nomina_Tipo ON dbo.ro_prestamo.IdEmpresa = dbo.ro_Nomina_Tipo.IdEmpresa AND 
-                         dbo.ro_prestamo.IdNomina_Tipo = dbo.ro_Nomina_Tipo.IdNomina_Tipo AND dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa = dbo.ro_Nomina_Tipo.IdEmpresa AND 
+                          dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa = dbo.ro_Nomina_Tipo.IdEmpresa AND 
                          dbo.ro_empleado_x_ro_tipoNomina.IdTipoNomina = dbo.ro_Nomina_Tipo.IdNomina_Tipo INNER JOIN
                          dbo.ro_Departamento ON dbo.ro_empleado.IdEmpresa = dbo.ro_Departamento.IdEmpresa AND 
                          dbo.ro_empleado.IdDepartamento = dbo.ro_Departamento.IdDepartamento INNER JOIN

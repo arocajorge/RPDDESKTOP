@@ -9,7 +9,8 @@
     [Total_Remuneracion] FLOAT (53)   NOT NULL,
     [Decimo]             FLOAT (53)   NOT NULL,
     [DiasTrabajados]     INT          NULL,
-    CONSTRAINT [PK_ro_Acta_Finiquito_Detalle_x_Decimos] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNominatipo] ASC, [IdLiquidacion] ASC, [IdEmpleado] ASC, [Sec] ASC),
-    CONSTRAINT [FK_ro_Acta_Finiquito_Detalle_x_Decimos_ro_Acta_Finiquito] FOREIGN KEY ([IdEmpresa], [IdLiquidacion], [IdEmpleado]) REFERENCES [dbo].[ro_Acta_Finiquito] ([IdEmpresa], [IdActaFiniquito], [IdEmpleado])
+    CONSTRAINT [PK_ro_Acta_Finiquito_Detalle_x_Decimos] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNominatipo] ASC, [IdLiquidacion] ASC, [IdEmpleado] ASC, [Sec] ASC)
 );
+
+
 

@@ -1,14 +1,15 @@
-﻿CREATE VIEW dbo.vwRo_Prestamo_Detalle
-AS
-SELECT        dbo.ro_prestamo.IdEmpresa, dbo.ro_prestamo.IdEmpleado, dbo.ro_prestamo.IdPrestamo, dbo.ro_prestamo.IdRubro, dbo.ro_rubro_tipo.ru_codRolGen, dbo.ro_rubro_tipo.ru_descripcion, 
-                         dbo.ro_prestamo.Estado AS EstadoPrestamo, dbo.ro_prestamo_detalle.Saldo, dbo.ro_prestamo_detalle.FechaPago, dbo.ro_prestamo_detalle.EstadoPago, dbo.ro_prestamo_detalle.Estado AS EstadoDetalle, 
-                         dbo.ro_prestamo_detalle.TotalCuota, dbo.ro_prestamo_detalle.NumCuota, dbo.ro_prestamo_detalle.SaldoInicial, dbo.ro_prestamo_detalle.Interes, dbo.ro_prestamo_detalle.AbonoCapital, 
-                         dbo.ro_prestamo_detalle.IdNominaTipoLiqui
-FROM            dbo.ro_prestamo INNER JOIN
-                         dbo.ro_prestamo_detalle ON dbo.ro_prestamo.IdEmpresa = dbo.ro_prestamo_detalle.IdEmpresa AND dbo.ro_prestamo.IdPrestamo = dbo.ro_prestamo_detalle.IdPrestamo INNER JOIN
-                         dbo.ro_rubro_tipo ON dbo.ro_prestamo.IdRubro = dbo.ro_rubro_tipo.IdRubro AND dbo.ro_prestamo.IdEmpresa = dbo.ro_rubro_tipo.IdEmpresa
+﻿CREATE view [dbo].[vwRo_Nomina_X_Horas_Extras_Totales] as
+
+select 1 as uno
+/*
+
+SELECT        IdEmpresa, IdEmpleado, IdNominaTipo, IdNominaTipoLiqui, IdPeriodo, SUM(hora_extra25) AS hora_extra25, SUM(hora_extra50) AS hora_extra50, 
+                         SUM(hora_extra100) AS hora_extra100
+FROM            dbo.ro_nomina_x_horas_extras
+WHERE        (es_HorasExtrasAutorizadas = 1)
+GROUP BY IdEmpresa, IdEmpleado, IdNominaTipo, IdNominaTipoLiqui, IdPeriodo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Prestamo_Detalle';
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Nomina_X_Horas_Extras_Totales';
 
 
 GO
@@ -17,7 +18,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[47] 4[5] 2[38] 3) )"
+         Configuration = "(H (1[25] 4[37] 2[15] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -83,32 +84,12 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
-         Begin Table = "ro_prestamo"
-            Begin Extent = 
-               Top = 26
-               Left = 557
-               Bottom = 250
-               Right = 766
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_prestamo_detalle"
+         Begin Table = "ro_nomina_x_horas_extras"
             Begin Extent = 
                Top = 6
-               Left = 285
-               Bottom = 163
-               Right = 494
-            End
-            DisplayFlags = 280
-            TopColumn = 6
-         End
-         Begin Table = "ro_rubro_tipo"
-            Begin Extent = 
-               Top = 40
-               Left = 905
-               Bottom = 327
-               Right = 1114
+               Left = 38
+               Bottom = 186
+               Right = 263
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -120,14 +101,8 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 15
+      Begin ColumnWidths = 9
          Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -139,9 +114,9 @@ Begin DesignProperties =
       End
    End
    Begin CriteriaPane = 
-      Begin ColumnWidths = 11
+      Begin ColumnWidths = 12
          Column = 1440
-         Alias = 900
+         Alias = 1905
          Table = 1170
          Output = 720
          Append = 1400
@@ -156,7 +131,6 @@ Begin DesignProperties =
       End
    End
 End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Prestamo_Detalle';
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Nomina_X_Horas_Extras_Totales';
 
-
-
+*/

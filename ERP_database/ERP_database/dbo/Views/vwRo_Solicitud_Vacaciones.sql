@@ -1,39 +1,22 @@
 ﻿CREATE VIEW dbo.vwRo_Solicitud_Vacaciones
 AS
-SELECT        dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa, dbo.ro_Solicitud_Vacaciones_x_empleado.IdNomina_Tipo, dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitudVaca, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado, dbo.ro_Solicitud_Vacaciones_x_empleado.AnioServicio, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_q_Corresponde, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_a_disfrutar, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_pendiente, dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Desde, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Hasta, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Desde, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Hasta, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Retorno, dbo.ro_Solicitud_Vacaciones_x_empleado.Observacion, dbo.ro_Solicitud_Vacaciones_x_empleado.IdUsuario, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdUsuario_Anu, dbo.ro_Solicitud_Vacaciones_x_empleado.FechaAnulacion, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Transac, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_UltMod, dbo.ro_Solicitud_Vacaciones_x_empleado.IdUsuarioUltMod, dbo.ro_Solicitud_Vacaciones_x_empleado.Estado, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.MotivoAnulacion, dbo.ro_Solicitud_Vacaciones_x_empleado.ip, dbo.ro_Solicitud_Vacaciones_x_empleado.nom_pc, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEstadoAprobacion, 
-                         dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.tb_persona.pe_nombreCompleto, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado_aprue, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado_remp, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Gozadas_Pgadas, dbo.ro_Historico_Liquidacion_Vacaciones.IdOrdenPago, dbo.ro_Solicitud_Vacaciones_x_empleado.Canceladas, 
-                         dbo.ro_Historico_Liquidacion_Vacaciones.IdSolicitud, dbo.ro_Historico_Liquidacion_Vacaciones.ValorCancelado, dbo.ro_Historico_Liquidacion_Vacaciones.FechaPago, dbo.ro_Historico_Liquidacion_Vacaciones.Iess
+SELECT        dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa, dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitud, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.AnioServicio, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_q_Corresponde, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_a_disfrutar, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_pendiente, dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Desde, dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Hasta, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Desde, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Hasta, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Retorno, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.Observacion, dbo.ro_Solicitud_Vacaciones_x_empleado.IdUsuario_Anu, dbo.ro_Solicitud_Vacaciones_x_empleado.Estado, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEstadoAprobacion, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado_aprue, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado_remp, dbo.ro_Solicitud_Vacaciones_x_empleado.Gozadas_Pgadas, dbo.ro_Solicitud_Vacaciones_x_empleado.Canceladas, 
+                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdVacacion, dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.em_codigo
 FROM            dbo.ro_Solicitud_Vacaciones_x_empleado INNER JOIN
                          dbo.ro_empleado ON dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa = dbo.ro_empleado.IdEmpresa AND dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado = dbo.ro_empleado.IdEmpleado INNER JOIN
-                         dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona LEFT OUTER JOIN
-                         dbo.ro_Historico_Liquidacion_Vacaciones ON dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa = dbo.ro_Historico_Liquidacion_Vacaciones.IdEmpresa AND 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdNomina_Tipo = dbo.ro_Historico_Liquidacion_Vacaciones.IdNomina_Tipo AND 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado = dbo.ro_Historico_Liquidacion_Vacaciones.IdEmpleado AND 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitudVaca = dbo.ro_Historico_Liquidacion_Vacaciones.IdLiquidacion
+                         dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Solicitud_Vacaciones';
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'0
          Width = 1500
          Width = 1500
       End
@@ -61,13 +44,15 @@ End
 
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[73] 4[5] 2[5] 3) )"
+         Configuration = "(H (1[65] 4[5] 2[5] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -133,45 +118,35 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
-         Begin Table = "ro_Solicitud_Vacaciones_x_empleado"
+         Begin Table = "tb_persona"
             Begin Extent = 
-               Top = 0
-               Left = 434
-               Bottom = 238
-               Right = 1003
+               Top = 5
+               Left = 1040
+               Bottom = 219
+               Right = 1257
             End
             DisplayFlags = 280
-            TopColumn = 19
+            TopColumn = 0
          End
          Begin Table = "ro_empleado"
             Begin Extent = 
-               Top = 67
-               Left = 709
-               Bottom = 197
-               Right = 998
+               Top = 50
+               Left = 703
+               Bottom = 252
+               Right = 992
+            End
+            DisplayFlags = 280
+            TopColumn = 13
+         End
+         Begin Table = "ro_Solicitud_Vacaciones_x_empleado"
+            Begin Extent = 
+               Top = 17
+               Left = 407
+               Bottom = 375
+               Right = 603
             End
             DisplayFlags = 280
             TopColumn = 0
-         End
-         Begin Table = "tb_persona"
-            Begin Extent = 
-               Top = 67
-               Left = 980
-               Bottom = 197
-               Right = 1212
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_Historico_Liquidacion_Vacaciones"
-            Begin Extent = 
-               Top = 4
-               Left = 0
-               Bottom = 369
-               Right = 253
-            End
-            DisplayFlags = 280
-            TopColumn = 5
          End
       End
    End
@@ -180,7 +155,7 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 36
+      Begin ColumnWidths = 38
          Width = 284
          Width = 1500
          Width = 1500
@@ -204,7 +179,21 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-         ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Solicitud_Vacaciones';
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 2730
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 150', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Solicitud_Vacaciones';
+
+
 
 
 

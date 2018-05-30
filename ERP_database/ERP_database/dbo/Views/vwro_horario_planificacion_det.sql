@@ -1,6 +1,5 @@
-﻿CREATE VIEW dbo.vwro_horario_planificacion_det
-AS
-SELECT        dbo.ro_empleado.IdEmpresa, dbo.ro_empleado.IdEmpleado, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.tb_persona.pe_nombreCompleto, dbo.ro_cargo.ca_descripcion, 
+﻿CREATE view vwro_horario_planificacion_det as
+SELECT        ROW_NUMBER() OVER (ORDER BY dbo.ro_empleado.idempresa) AS Secuencia, dbo.ro_empleado.IdEmpresa, dbo.ro_empleado.IdEmpleado, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.tb_persona.pe_nombreCompleto, dbo.ro_cargo.ca_descripcion, 
                          dbo.ro_area.Descripcion AS ar_descripcion, dbo.ro_Division.Descripcion AS di_descripcion, dbo.ro_Departamento.de_descripcion, dbo.tb_sucursal.Su_Descripcion, dbo.ro_contrato.IdNomina, dbo.tb_sucursal.IdSucursal, 
                          dbo.ro_Departamento.IdDepartamento, dbo.ro_area.IdArea, dbo.ro_Division.IdDivision, dbo.ro_cargo.IdCargo, dbo.ro_horario_planificacion_det.IdPlanificacion, dbo.ro_horario_planificacion_det.IdHorario, 
                          dbo.ro_horario_planificacion_det.fecha, dbo.ro_horario_planificacion_det.IdCalendario
@@ -23,7 +22,7 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @leve
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'  Right = 1211
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'   Right = 1211
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -111,13 +110,15 @@ End
 
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[64] 4[5] 2[1] 3) )"
+         Configuration = "(H (1[41] 4[5] 2[26] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -248,7 +249,9 @@ Begin DesignProperties =
                Top = 247
                Left = 1032
                Bottom = 377
-             ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_horario_planificacion_det';
+            ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_horario_planificacion_det';
+
+
 
 
 

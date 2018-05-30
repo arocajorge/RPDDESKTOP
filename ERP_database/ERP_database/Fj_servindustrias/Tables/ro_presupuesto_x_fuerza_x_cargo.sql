@@ -10,9 +10,10 @@
     [Observacion]        VARCHAR (100) NULL,
     [Dias_SyD_y_Feriado] INT           NOT NULL,
     [diasEfectivos]      INT           NOT NULL,
-    [BaseVariable] [float] NULL,
+    [BaseVariable]       FLOAT (53)    NULL,
     CONSTRAINT [PK_ro_presupuesto_x_fuerza_x_cargo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNomina] ASC, [IdFuerza] ASC, [Anio] ASC, [Mes] ASC, [IdCargo] ASC),
-    CONSTRAINT [FK_ro_presupuesto_x_fuerza_x_cargo_ro_fuerza] FOREIGN KEY ([IdEmpresa], [IdFuerza]) REFERENCES [Fj_servindustrias].[ro_fuerza] ([IdEmpresa], [IdFuerza]),
     CONSTRAINT [FK_ro_presupuesto_x_fuerza_x_cargo_ro_Nomina_Tipo] FOREIGN KEY ([IdEmpresa], [IdNomina]) REFERENCES [dbo].[ro_Nomina_Tipo] ([IdEmpresa], [IdNomina_Tipo])
 );
+
+
 

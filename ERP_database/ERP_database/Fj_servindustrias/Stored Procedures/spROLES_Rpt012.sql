@@ -39,11 +39,10 @@ SELECT        dbo.ro_rol_detalle.IdEmpresa, dbo.ro_rol_detalle.IdNominaTipo, dbo
                          ro_catalogo_1.ca_orden, ro_catalogo_1.ca_estado, ro_catalogo_1.ca_descripcion AS Catalogo, param_repo.Descripcion, dbo.ro_rol_detalle.Valor, param_repo.Orden,
 						 (select  sum(Dias_a_disfrutar) from vwRo_Solicitud_Vacaciones vac where 
 						 vac.IdEmpresa=@IdEmpresa
-						 and vac.IdNomina_Tipo=1
 						 and vac.IdEmpleado=emp.IdEmpleado
 						 and vac.Fecha_Desde between @FechaI and @FechaF
 						 and vac.Fecha_Hasta  between @FechaI and @FechaF
-						 and IdOrdenPago>0) Dias_vacaciones
+						 ) Dias_vacaciones
 FROM            dbo.ro_periodo AS perio INNER JOIN
                          Fj_servindustrias.ro_zona INNER JOIN
                          Fj_servindustrias.ro_planificacion_x_ruta_x_empleado_det ON Fj_servindustrias.ro_zona.IdEmpresa = Fj_servindustrias.ro_planificacion_x_ruta_x_empleado_det.IdEmpresa AND 
@@ -196,11 +195,10 @@ union
                          ro_catalogo_1.ca_orden, ro_catalogo_1.ca_estado, ro_catalogo_1.ca_descripcion AS Catalogo, param_repo.Descripcion, dbo.ro_rol_detalle.Valor, param_repo.Orden,
 						  (select Dias_a_disfrutar from vwRo_Solicitud_Vacaciones vac where 
 						 vac.IdEmpresa=@IdEmpresa
-						 and vac.IdNomina_Tipo=1
 						 and vac.IdEmpleado=emp.IdEmpleado
 						 and vac.Fecha_Desde between @FechaI and @FechaF
 						 and vac.Fecha_Hasta  between @FechaI and @FechaF
-						 and IdOrdenPago>0) Dias_vacaciones
+						 ) Dias_vacaciones
 
 FROM            dbo.ro_catalogo AS ro_catalogo_1 INNER JOIN
                          Fj_servindustrias.ro_parametros_reporte AS param_repo ON ro_catalogo_1.CodCatalogo = param_repo.Id_Catalogo INNER JOIN

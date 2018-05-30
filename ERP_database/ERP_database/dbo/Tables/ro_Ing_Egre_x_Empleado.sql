@@ -19,7 +19,8 @@
     [Unid_Medida]        VARCHAR (5)   NULL,
     CONSTRAINT [PK_ro_Ing_Egre_x_Empleado] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdEmpleado] ASC, [IdNomina_Tipo] ASC, [IdNomina_TipoLiqui] ASC, [IdPeriodo] ASC, [IdRubro] ASC, [IdNovedad] ASC, [SecuenciaNovedad] ASC, [IdPrestamo] ASC, [NunCouta] ASC),
     CONSTRAINT [FK_ro_Ing_Egre_x_Empleado_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado]),
-    CONSTRAINT [FK_ro_Ing_Egre_x_Empleado_ro_Nomina_Tipoliqui] FOREIGN KEY ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui]) REFERENCES [dbo].[ro_Nomina_Tipoliqui] ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui]),
-    CONSTRAINT [FK_ro_Ing_Egre_x_Empleado_ro_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ro_periodo] ([IdEmpresa], [IdPeriodo])
+    CONSTRAINT [FK_ro_Ing_Egre_x_Empleado_ro_Nomina_Tipoliqui] FOREIGN KEY ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui]) REFERENCES [dbo].[ro_Nomina_Tipoliqui] ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui])
 );
+
+
 

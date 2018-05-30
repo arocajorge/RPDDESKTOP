@@ -1,6 +1,6 @@
 ﻿
 
-create PROCEDURE [Fj_servindustrias].[spROLES_Rpt005]  
+CREATE PROCEDURE [Fj_servindustrias].[spROLES_Rpt005]  
 	@IdEmpresa int,
 	@IdNomina_tipo int,
 	@Fecha_Inicio date,
@@ -76,10 +76,9 @@ BEGIN
 
 						 (select sum(R.Dias_a_disfrutar) from vwRo_Solicitud_Vacaciones R 
 						 where R.IdEmpresa=Em.idempresa 
-						 and R.IdNomina_Tipo=@IdNomina_tipo
 						 and R.IdEmpleado=Em.IdEmpleado
 						 and cast(R.Fecha_Desde as date) between @Fecha_Inicio and @Fecha_Fin
-						 and R.IdOrdenPago>0
+						-- and R.IdOrdenPago>0
 						 )Vacaciones,
 						 
 						 (select valor from ro_rol_detalle R where R.IdEmpresa=Em.idempresa 

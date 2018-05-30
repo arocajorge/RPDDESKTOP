@@ -1,6 +1,6 @@
 ﻿
 CREATE VIEW [dbo].[vwROL_Rpt013] AS 
-SELECT        dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.IdEmpresa, dbo.ro_empleado.IdEmpleado, dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitudVaca, 
+SELECT        dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.IdEmpresa, dbo.ro_empleado.IdEmpleado, dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitud, 
                          tb_personaRemplaza.pe_apellido AS pe_apellido_remplazo, tb_personaRemplaza.pe_nombre AS pe_nombre_remplazo, dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Desde, 
                          dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Hasta, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_pendiente, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_a_disfrutar, 
                          dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_q_Corresponde, dbo.ro_Solicitud_Vacaciones_x_empleado.AnioServicio, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha, 

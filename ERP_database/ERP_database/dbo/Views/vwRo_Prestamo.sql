@@ -1,68 +1,22 @@
 ﻿CREATE VIEW dbo.vwRo_Prestamo
 AS
-SELECT        A.IdEmpresa, A.IdPrestamo, K.IdNomina_Tipo, K.Descripcion AS nomi_descripcion, A.IdEmpleado, D.pe_nombre, D.pe_apellido, A.IdRubro, F.ru_descripcion, A.IdEmpleado_Aprueba, H.pe_nombre AS pe_nombre_apru, 
-                         H.pe_apellido AS pe_apellido_apru, I.Codigo, I.ca_descripcion, A.Estado, A.Fecha, A.MontoSol, A.TasaInteres, A.NumCuotas, J.Codigo AS cod_pago, J.ca_descripcion AS peri_pago, A.Fecha_PriPago, A.Observacion, 
-                         SUM(E.TotalCuota) AS TotalPrestamo, ISNULL(AVG(C.TotalCobrado), 0) AS TotalCobrado, ISNULL(SUM(E.TotalCuota) - AVG(C.TotalCobrado), 0) AS SaldoPrestamo, A.Tipo_Calculo, A.MotiAnula, D.pe_cedulaRuc, 
-                         A.IdNominaTipoLiqui, 0 IdTipoPersona, D.IdPersona, A.IdTipoCbte, A.IdCbteCble, A.IdOrdenPago
-FROM            dbo.ro_prestamo AS A INNER JOIN
-                         dbo.ro_prestamo_detalle AS E ON A.IdEmpresa = E.IdEmpresa AND A.IdPrestamo = E.IdPrestamo INNER JOIN
-                         dbo.ro_empleado AS B ON A.IdEmpresa = B.IdEmpresa AND A.IdEmpleado = B.IdEmpleado INNER JOIN
-                         dbo.tb_persona AS D ON B.IdPersona = D.IdPersona INNER JOIN
-                         dbo.ro_rubro_tipo AS F ON A.IdRubro = F.IdRubro AND A.IdEmpresa = F.IdEmpresa INNER JOIN
-                         dbo.ro_empleado AS G ON A.IdEmpleado_Aprueba = G.IdEmpleado AND A.IdEmpresa = G.IdEmpresa INNER JOIN
-                         dbo.tb_persona AS H ON G.IdPersona = H.IdPersona INNER JOIN
-                         dbo.vwRo_MotivoPrestamo AS I ON A.IdMotivo_Prestamo = I.Codigo INNER JOIN
-                         dbo.vwRo_PeriocidadPago AS J ON A.IdTipo_Pago = J.Codigo INNER JOIN
-                         dbo.ro_Nomina_Tipo AS K ON A.IdNomina_Tipo = K.IdNomina_Tipo AND A.IdEmpresa = K.IdEmpresa LEFT OUTER JOIN
-                         dbo.vwRo_Prestamo_TotalCobrado AS C ON A.IdEmpresa = C.IdEmpresa AND A.IdPrestamo = C.IdPrestamo
-GROUP BY A.IdEmpresa, A.IdPrestamo, K.IdNomina_Tipo, K.Descripcion, A.IdEmpleado, D.pe_nombre, D.pe_apellido, A.IdRubro, F.ru_descripcion, A.IdEmpleado_Aprueba, H.pe_nombre, H.pe_apellido, I.Codigo, I.ca_descripcion, A.Estado, 
-                         A.Fecha, A.MontoSol, A.TasaInteres, A.NumCuotas, J.Codigo, J.ca_descripcion, A.Fecha_PriPago, A.Observacion, A.Tipo_Calculo, A.MotiAnula, D.pe_cedulaRuc, A.IdNominaTipoLiqui, D.IdPersona, A.IdTipoCbte, 
-                         A.IdCbteCble, A.IdOrdenPago
+SELECT        pres.IdEmpresa, pres.IdPrestamo, pres.IdEmpleado, per_emp.pe_nombre, per_emp.pe_apellido, pres.IdRubro, rub.ru_descripcion, pres.IdEmpleado_Aprueba, per_apru.pe_nombre AS pe_nombre_apru, 
+                         per_apru.pe_apellido AS pe_apellido_apru, pres.Estado, pres.Fecha, pres.MontoSol, ISNULL(estado_can.TotalCobrado, 0) AS TotalCobrado, ISNULL(pres.MontoSol - estado_can.TotalCobrado, 0) AS Valor_pendiente, 
+                         pres.TasaInteres, pres.NumCuotas, pres.Fecha_PriPago, pres.Observacion, pres.Tipo_Calculo, pres.MotiAnula, per_emp.pe_cedulaRuc, 0 AS IdTipoPersona, per_emp.IdPersona, pres.IdTipoCbte, pres.IdCbteCble, 
+                         pres.IdOrdenPago, pres.descuento_mensual, pres.descuento_quincena, pres.descuento_men_quin
+FROM            dbo.tb_persona AS per_apru INNER JOIN
+                         dbo.ro_empleado AS emp_apru ON per_apru.IdPersona = emp_apru.IdPersona RIGHT OUTER JOIN
+                         dbo.ro_prestamo AS pres INNER JOIN
+                         dbo.ro_empleado AS emp ON pres.IdEmpresa = emp.IdEmpresa AND pres.IdEmpleado = emp.IdEmpleado INNER JOIN
+                         dbo.tb_persona AS per_emp ON emp.IdPersona = per_emp.IdPersona INNER JOIN
+                         dbo.ro_rubro_tipo AS rub ON pres.IdRubro = rub.IdRubro AND pres.IdEmpresa = rub.IdEmpresa ON emp_apru.IdEmpleado = pres.IdEmpleado_Aprueba AND emp_apru.IdEmpresa = pres.IdEmpresa LEFT OUTER JOIN
+                         dbo.vwRo_Prestamo_TotalCobrado AS estado_can ON pres.IdEmpresa = estado_can.IdEmpresa AND pres.IdPrestamo = estado_can.IdPrestamo
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Prestamo';
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'd
-         Begin Table = "I"
-            Begin Extent = 
-               Top = 486
-               Left = 284
-               Bottom = 605
-               Right = 462
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "J"
-            Begin Extent = 
-               Top = 606
-               Left = 38
-               Bottom = 725
-               Right = 216
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "K"
-            Begin Extent = 
-               Top = 606
-               Left = 254
-               Bottom = 725
-               Right = 440
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "C"
-            Begin Extent = 
-               Top = 726
-               Left = 38
-               Bottom = 830
-               Right = 214
-            End
-            DisplayFlags = 280
-            TopColumn = 0
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'       TopColumn = 0
          End
       End
    End
@@ -71,8 +25,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'd
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 28
+      Begin ColumnWidths = 32
          Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -103,7 +61,7 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'd
       End
    End
    Begin CriteriaPane = 
-      Begin ColumnWidths = 12
+      Begin ColumnWidths = 11
          Column = 1440
          Alias = 900
          Table = 1170
@@ -127,13 +85,15 @@ End
 
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[65] 4[4] 2[12] 3) )"
+         Configuration = "(H (1[65] 4[5] 2[5] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -199,76 +159,77 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
-         Begin Table = "A"
+         Begin Table = "pres"
             Begin Extent = 
-               Top = 0
-               Left = 408
-               Bottom = 337
-               Right = 616
+               Top = 83
+               Left = 486
+               Bottom = 420
+               Right = 694
             End
             DisplayFlags = 280
-            TopColumn = 14
+            TopColumn = 0
          End
-         Begin Table = "E"
+         Begin Table = "emp"
             Begin Extent = 
-               Top = 0
-               Left = 687
-               Bottom = 119
-               Right = 874
-            End
-            DisplayFlags = 280
-            TopColumn = 15
-         End
-         Begin Table = "B"
-            Begin Extent = 
-               Top = 285
-               Left = 289
-               Bottom = 510
-               Right = 517
-            End
-            DisplayFlags = 280
-            TopColumn = 66
-         End
-         Begin Table = "D"
-            Begin Extent = 
-               Top = 266
-               Left = 667
-               Bottom = 549
-               Right = 875
+               Top = 44
+               Left = 948
+               Bottom = 269
+               Right = 1176
             End
             DisplayFlags = 280
             TopColumn = 1
          End
-         Begin Table = "F"
+         Begin Table = "per_emp"
             Begin Extent = 
-               Top = 58
-               Left = 528
-               Bottom = 177
-               Right = 715
+               Top = 20
+               Left = 1050
+               Bottom = 303
+               Right = 1258
             End
             DisplayFlags = 280
-            TopColumn = 40
+            TopColumn = 5
          End
-         Begin Table = "G"
+         Begin Table = "rub"
             Begin Extent = 
-               Top = 366
-               Left = 38
-               Bottom = 485
-               Right = 266
+               Top = 23
+               Left = 619
+               Bottom = 268
+               Right = 806
             End
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "H"
+         Begin Table = "emp_apru"
+            Begin Extent = 
+               Top = 27
+               Left = 45
+               Bottom = 220
+               Right = 273
+            End
+            DisplayFlags = 280
+            TopColumn = 2
+         End
+         Begin Table = "per_apru"
             Begin Extent = 
                Top = 486
                Left = 38
-               Bottom = 605
+               Bottom = 696
                Right = 246
             End
             DisplayFlags = 280
             TopColumn = 0
-         En', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Prestamo';
+         End
+         Begin Table = "estado_can"
+            Begin Extent = 
+               Top = 261
+               Left = 62
+               Bottom = 395
+               Right = 238
+            End
+            DisplayFlags = 280
+     ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Prestamo';
+
+
 
 
 
