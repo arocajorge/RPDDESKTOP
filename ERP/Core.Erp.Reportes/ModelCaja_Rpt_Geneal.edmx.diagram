@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51ac7450a1ff44e1b55fde42d6d7220d" Name="Diagrama1" ZoomLevel="35">
+        <EntityTypeShape EntityType="ModelCajaRptGen.vwCAJ_Rpt001" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelCajaRptGen.vwCAJ_Rpt003" Width="1.5" PointX="2.0773410322504775" PointY="24.481101479605353" />
+        <EntityTypeShape EntityType="ModelCajaRptGen.vwCAJ_Rpt002" Width="1.5" PointX="10.444464928677522" PointY="6.5629564852281268" />
+        <EntityTypeShape EntityType="ModelCajaRptGen.vwCAJ_Rpt006" Width="1.5" PointX="1.6227090459422717" PointY="28.900353191839695" />
+        <EntityTypeShape EntityType="ModelCajaRptGen.vwCAJ_Rpt004_ingresos" Width="1.5" PointX="11.130442756754553" PointY="4.0693153459901525" />
+        <EntityTypeShape EntityType="ModelCajaRptGen.vwCAJ_Rpt004" Width="1.5" PointX="11.550787282898458" PointY="27.40818393016615" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

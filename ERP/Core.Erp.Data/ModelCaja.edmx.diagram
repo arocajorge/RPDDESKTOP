@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c96ca3b3ea647cb93dd87709c743a1a" Name="Diagrama1" ZoomLevel="62">
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_MovCaja_x_Cobro_Anticipo" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_caj_Caja" Width="1.5" PointX="9.875" PointY="0.5" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_Caja_Movimiento_x_Conciliar" Width="1.5" PointX="2.375" PointY="3.375" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwCaj_Talonario_Recibo" Width="2.375" PointX="17.375" PointY="5.875" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_parametro" Width="1.5" PointX="3.5642643643376717" PointY="0.46616247318040693" />
+        <EntityTypeShape EntityType="DBERPModelCaja.Caj_Talonario_Recibo" Width="1.5" PointX="7.375" PointY="7.375" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_Caja_Movimiento_Tipo_grupo" Width="1.5" PointX="11.220684857676126" PointY="26.257544067808215" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_Caja" Width="1.5" PointX="6.5591390163447425" PointY="1.7118271299227268" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_Caja_Movimiento_Tipo" Width="1.5" PointX="5.09520381367542" PointY="18.932530754680062" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_Caja_Movimiento_Tipo_x_CtaCble" Width="1.5" PointX="0.18374350489291527" PointY="26.307272312374447" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_catalogo" Width="1.5" PointX="6.8073300750960266" PointY="4.46828137546232" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_catalogo_tipo" Width="1.5" PointX="5.4366079948081669" PointY="22.24372495256538" />
+        <AssociationConnector Association="DBERPModelCaja.FK_caj_Caja_Movimiento_Tipo_caj_Caja_Movimiento_Tipo_grupo" />
+        <AssociationConnector Association="DBERPModelCaja.FK_caj_Caja_Movimiento_Tipo_x_CtaCble_caj_Caja_Movimiento_Tipo" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_Caja_Movimiento_Tipo_conCta" Width="1.5" PointX="10.336948680848325" PointY="16.649846919183549" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_Caja_Movimiento" Width="1.5" PointX="9.7508831777381175" PointY="31.664890378557562" />
+        <EntityTypeShape EntityType="DBERPModelCaja.caj_Caja_Movimiento_det" Width="1.5" PointX="10.020245973961544" PointY="4.59791386341579" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_caj_Caja_Movimiento" Width="1.5" PointX="1.4030853292919161" PointY="30.574610351852424" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_Caja_Movimiento_det_cancelado" Width="1.5" PointX="11.036736739350825" PointY="29.561102538165219" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_Movi_x_Despositar" Width="1.5" PointX="10.11157360957543" PointY="7.30745630306539" />
+        <AssociationConnector Association="DBERPModelCaja.FK_caj_Caja_Movimiento_caj_Caja" />
+        <AssociationConnector Association="DBERPModelCaja.FK_caj_Caja_Movimiento_caj_Caja_Movimiento_Tipo" />
+        <AssociationConnector Association="DBERPModelCaja.FK_caj_Caja_Movimiento_det_caj_Caja_Movimiento" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_MovCaja_x_Cobro" Width="1.5" PointX="3.9713558945671448" PointY="17.217032351166491" />
+        <EntityTypeShape EntityType="DBERPModelCaja.vwcaj_Caja_Movimiento_Tipo" Width="1.5" PointX="11.961454929765992" PointY="10.945743729800798" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

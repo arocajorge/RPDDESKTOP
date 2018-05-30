@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be795d4343d942fc90027ec4a4c3cc80" Name="Diagrama1" ZoomLevel="49">
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt001" Width="1.5" PointX="1.4640474363528413" PointY="4.6614630244027184" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt002" Width="1.5" PointX="9.3371314598885977" PointY="9.6474628493410819" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt003" Width="1.5" PointX="8.64072143130038" PointY="25.463504788215971" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt005" Width="1.5" PointX="3.5938155686453985" PointY="31.380029394933967" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt006" Width="1.5" PointX="4.2198508308361529" PointY="28.407796664353366" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt007" Width="1.5" PointX="4.9698691987292225" PointY="2.8859557522861081" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt008" Width="1.5" PointX="2.8738925414503984" PointY="25.710189056447796" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt009" Width="1.5" PointX="6.1523088841476987" PointY="4.0000543314963828" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt010" Width="1.5" PointX="6.8175898151554115" PointY="6.7085141719824231" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt011" Width="1.5" PointX="0.90345232417036425" PointY="8.0099615193949827" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt013" Width="1.5" PointX="5.1744573177650839" PointY="2.6275086564139971" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt014" Width="1.5" PointX="11.449756091204359" PointY="11.251234447234886" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt015" Width="1.5" PointX="6.7528835678253714" PointY="20.612632999481928" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt017" Width="1.5" PointX="10.891001270567534" PointY="17.135618605248453" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt018" Width="1.5" PointX="7.1891451213458293" PointY="27.072701556176273" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt019" Width="1.5" PointX="0.25751441170345735" PointY="13.447715765539424" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt021" Width="1.5" PointX="2.700379540538592" PointY="16.073514513705632" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt022" Width="1.5" PointX="2.5727843207180427" PointY="1.5097927458164249" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt023" Width="1.5" PointX="6.195792683491387" PointY="13.37207174923833" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt024" Width="1.5" PointX="2.2415749143071357" PointY="2.2327784608270873" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt025" Width="1.5" PointX="1.4930282912650279" PointY="9.6042392447610574" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt026" Width="1.5" PointX="3.3538988900156221" PointY="31.658353417952711" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt028" Width="1.5" PointX="3.1729186862581029" PointY="4.6537832192395738" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt029" Width="1.5" PointX="6.346062622194208" PointY="11.999002149328124" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt030" Width="1.5" PointX="0.84541073480872941" PointY="10.414058615646352" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt031" Width="1.5" PointX="1.4786655648977802" PointY="21.761310364008558" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt032" Width="1.5" PointX="2.9710573791391481" PointY="27.894164977545927" />
+        <EntityTypeShape EntityType="DBERPModelRolesRptGeneral.vwROL_Rpt004" Width="1.5" PointX="9.1597416667080225" PointY="25.383142363924133" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

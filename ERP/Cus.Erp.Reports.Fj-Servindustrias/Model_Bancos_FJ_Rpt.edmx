@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model_Bancos_FJ_Rpt.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Model_Bancos_FJ_RptStoreContainer">
+          <EntitySet Name="vwBAN_FJ_Rpt001" EntityType="Model_Bancos_FJ_Rpt.Store.vwBAN_FJ_Rpt001" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwBAN_FJ_Rpt001">
+            <DefiningQuery>SELECT 
+      [vwBAN_FJ_Rpt001].[IdRow] AS [IdRow], 
+      [vwBAN_FJ_Rpt001].[IdEmpresa] AS [IdEmpresa], 
+      [vwBAN_FJ_Rpt001].[IdCbteCble] AS [IdCbteCble], 
+      [vwBAN_FJ_Rpt001].[IdTipocbte] AS [IdTipocbte], 
+      [vwBAN_FJ_Rpt001].[cb_FechaCheque] AS [cb_FechaCheque], 
+      [vwBAN_FJ_Rpt001].[cb_Cheque] AS [cb_Cheque], 
+      [vwBAN_FJ_Rpt001].[pe_nombreCompleto] AS [pe_nombreCompleto], 
+      [vwBAN_FJ_Rpt001].[cb_Valor] AS [cb_Valor], 
+      [vwBAN_FJ_Rpt001].[ca_descripcion] AS [ca_descripcion], 
+      [vwBAN_FJ_Rpt001].[cb_Fecha] AS [cb_Fecha], 
+      [vwBAN_FJ_Rpt001].[Nombre] AS [Nombre], 
+      [vwBAN_FJ_Rpt001].[cb_Observacion] AS [cb_Observacion], 
+      [vwBAN_FJ_Rpt001].[IdPersona_Girado_a] AS [IdPersona_Girado_a], 
+      [vwBAN_FJ_Rpt001].[IdBanco] AS [IdBanco], 
+      [vwBAN_FJ_Rpt001].[ba_descripcion] AS [ba_descripcion], 
+      [vwBAN_FJ_Rpt001].[Estado] AS [Estado], 
+      [vwBAN_FJ_Rpt001].[IdCatalogo] AS [IdCatalogo]
+      FROM [Fj_servindustrias].[vwBAN_FJ_Rpt001] AS [vwBAN_FJ_Rpt001]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwBAN_FJ_Rpt002" EntityType="Model_Bancos_FJ_Rpt.Store.vwBAN_FJ_Rpt002" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwBAN_FJ_Rpt002">
+            <DefiningQuery>SELECT 
+      [vwBAN_FJ_Rpt002].[IdConciliacion] AS [IdConciliacion], 
+      [vwBAN_FJ_Rpt002].[IdBanco] AS [IdBanco], 
+      [vwBAN_FJ_Rpt002].[IdPeriodo] AS [IdPeriodo], 
+      [vwBAN_FJ_Rpt002].[tc_TipoCbte] AS [tc_TipoCbte], 
+      [vwBAN_FJ_Rpt002].[cb_Valor] AS [cb_Valor], 
+      [vwBAN_FJ_Rpt002].[cb_Observacion] AS [cb_Observacion], 
+      [vwBAN_FJ_Rpt002].[tipo_IngEgr] AS [tipo_IngEgr], 
+      [vwBAN_FJ_Rpt002].[IdEmpresa] AS [IdEmpresa], 
+      [vwBAN_FJ_Rpt002].[ba_descripcion] AS [ba_descripcion], 
+      [vwBAN_FJ_Rpt002].[cb_Fecha] AS [cb_Fecha]
+      FROM [Fj_servindustrias].[vwBAN_FJ_Rpt002] AS [vwBAN_FJ_Rpt002]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_FJ_PRODUCCION.Fj_servindustrias.vwBAN_FJ_Rpt001' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwBAN_FJ_Rpt001">
+          <Key>
+            <PropertyRef Name="IdRow" />
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdCbteCble" />
+            <PropertyRef Name="IdTipocbte" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="cb_Valor" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="cb_Fecha" />
+            <PropertyRef Name="cb_Observacion" />
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="ba_descripcion" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="IdCatalogo" />
+          </Key>
+          <Property Name="IdRow" Type="bigint" Nullable="false" />
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdCbteCble" Type="numeric" Nullable="false" />
+          <Property Name="IdTipocbte" Type="int" Nullable="false" />
+          <Property Name="cb_FechaCheque" Type="date" />
+          <Property Name="cb_Cheque" Type="varchar" MaxLength="50" />
+          <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="cb_Valor" Type="float" Nullable="false" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="cb_Fecha" Type="date" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="cb_Observacion" Type="varchar(max)" Nullable="false" />
+          <Property Name="IdPersona_Girado_a" Type="numeric" />
+          <Property Name="IdBanco" Type="int" Nullable="false" />
+          <Property Name="ba_descripcion" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Estado" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="IdCatalogo" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_FJ_PRODUCCION.Fj_servindustrias.vwBAN_FJ_Rpt002' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwBAN_FJ_Rpt002">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="tc_TipoCbte" />
+            <PropertyRef Name="cb_Valor" />
+            <PropertyRef Name="cb_Observacion" />
+            <PropertyRef Name="tipo_IngEgr" />
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="ba_descripcion" />
+            <PropertyRef Name="cb_Fecha" />
+          </Key>
+          <Property Name="IdConciliacion" Type="numeric" Nullable="false" />
+          <Property Name="IdBanco" Type="int" Nullable="false" />
+          <Property Name="IdPeriodo" Type="int" Nullable="false" />
+          <Property Name="tc_TipoCbte" Type="char" Nullable="false" MaxLength="50" />
+          <Property Name="cb_Valor" Type="float" Nullable="false" />
+          <Property Name="cb_Observacion" Type="varchar(max)" Nullable="false" />
+          <Property Name="tipo_IngEgr" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="ba_descripcion" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="cb_Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Function Name="spBAN_FJ_Rpt004" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo_ini" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo_fin" Type="int" Mode="In" />
+          <Parameter Name="IdTipoFlujo_ini" Type="int" Mode="In" />
+          <Parameter Name="IdTipoFlujo_fin" Type="int" Mode="In" />
+          <Parameter Name="IdBanco_ini" Type="int" Mode="In" />
+          <Parameter Name="IdBanco_fin" Type="int" Mode="In" />
+          <Parameter Name="Mostrar_detallado" Type="bit" Mode="In" />
+          <Parameter Name="Mostrar_registros_en_conciliacion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spBAN_FJ_Rpt004_saldos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo_ini" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo_fin" Type="int" Mode="In" />
+          <Parameter Name="IdUsuario" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model_Bancos_FJ_Rpt" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities_banco_fj_rpt" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="vwBAN_FJ_Rpt002" EntityType="Model_Bancos_FJ_Rpt.vwBAN_FJ_Rpt002" />
+          <FunctionImport Name="spBAN_FJ_Rpt004" ReturnType="Collection(Model_Bancos_FJ_Rpt.spBAN_FJ_Rpt004_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo_ini" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo_fin" Mode="In" Type="Int32" />
+            <Parameter Name="IdTipoFlujo_ini" Mode="In" Type="Int32" />
+            <Parameter Name="IdTipoFlujo_fin" Mode="In" Type="Int32" />
+            <Parameter Name="IdBanco_ini" Mode="In" Type="Int32" />
+            <Parameter Name="IdBanco_fin" Mode="In" Type="Int32" />
+            <Parameter Name="Mostrar_detallado" Mode="In" Type="Boolean" />
+            <Parameter Name="Mostrar_registros_en_conciliacion" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spBAN_FJ_Rpt004_saldos" ReturnType="Collection(Model_Bancos_FJ_Rpt.spBAN_FJ_Rpt004_saldos_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo_ini" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo_fin" Mode="In" Type="Int32" />
+            <Parameter Name="IdUsuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="vwBAN_FJ_Rpt001" EntityType="Model_Bancos_FJ_Rpt.vwBAN_FJ_Rpt001" />
+        </EntityContainer>
+        <EntityType Name="vwBAN_FJ_Rpt002">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="tc_TipoCbte" />
+            <PropertyRef Name="cb_Valor" />
+            <PropertyRef Name="cb_Observacion" />
+            <PropertyRef Name="tipo_IngEgr" />
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="ba_descripcion" />
+            <PropertyRef Name="cb_Fecha" />
+          </Key>
+          <Property Name="IdConciliacion" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IdBanco" Type="Int32" Nullable="false" />
+          <Property Name="IdPeriodo" Type="Int32" Nullable="false" />
+          <Property Name="tc_TipoCbte" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="true" />
+          <Property Name="cb_Valor" Type="Double" Nullable="false" />
+          <Property Name="cb_Observacion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="tipo_IngEgr" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="ba_descripcion" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="cb_Fecha" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="spBAN_FJ_Rpt004_Result">
+          <Property Type="Int64" Name="IdRow" Nullable="false" />
+          <Property Type="Int32" Name="IdEmpresa_cxp" Nullable="true" />
+          <Property Type="Int32" Name="IdTipoCbte_cxp" Nullable="true" />
+          <Property Type="String" Name="Tipo_cbte_cxp" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="IdCbteCble_cxp" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdEmpresa_pago" Nullable="true" />
+          <Property Type="Int32" Name="IdTipoCbte_pago" Nullable="true" />
+          <Property Type="String" Name="Tipo_cbte_pago" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="IdCbteCble_pago" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="co_observacion" Nullable="true" />
+          <Property Type="DateTime" Name="cb_Fecha" Nullable="true" />
+          <Property Type="Decimal" Name="IdTipoFlujo" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="nom_tipo_flujo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="cod_flujo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Tipo" Nullable="true" MaxLength="3" />
+          <Property Type="Double" Name="dc_Valor" Nullable="true" />
+          <Property Type="Int32" Name="IdBanco" Nullable="false" />
+          <Property Type="String" Name="nom_banco" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Tipo_movi" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="orden" Nullable="false" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="spBAN_FJ_Rpt004_saldos_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdBanco" Nullable="false" />
+          <Property Type="String" Name="IdUsuario" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="nom_cuenta_banco" Nullable="false" MaxLength="200" />
+          <Property Type="Double" Name="Saldo_inicial" Nullable="false" />
+          <Property Type="Double" Name="Saldo_final" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="vwBAN_FJ_Rpt001">
+          <Key>
+            <PropertyRef Name="IdRow" />
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdCbteCble" />
+            <PropertyRef Name="IdTipocbte" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="cb_Valor" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="cb_Fecha" />
+            <PropertyRef Name="cb_Observacion" />
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="ba_descripcion" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="IdCatalogo" />
+          </Key>
+          <Property Type="Int64" Name="IdRow" Nullable="false" />
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdCbteCble" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdTipocbte" Nullable="false" />
+          <Property Type="DateTime" Name="cb_FechaCheque" Precision="0" />
+          <Property Type="String" Name="cb_Cheque" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="cb_Valor" Nullable="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="cb_Fecha" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cb_Observacion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="IdPersona_Girado_a" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdBanco" Nullable="false" />
+          <Property Type="String" Name="ba_descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IdCatalogo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model_Bancos_FJ_RptStoreContainer" CdmEntityContainer="Entities_banco_fj_rpt">
+          <EntitySetMapping Name="vwBAN_FJ_Rpt002">
+            <EntityTypeMapping TypeName="Model_Bancos_FJ_Rpt.vwBAN_FJ_Rpt002">
+              <MappingFragment StoreEntitySet="vwBAN_FJ_Rpt002">
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="tc_TipoCbte" ColumnName="tc_TipoCbte" />
+                <ScalarProperty Name="cb_Valor" ColumnName="cb_Valor" />
+                <ScalarProperty Name="cb_Observacion" ColumnName="cb_Observacion" />
+                <ScalarProperty Name="tipo_IngEgr" ColumnName="tipo_IngEgr" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="ba_descripcion" ColumnName="ba_descripcion" />
+                <ScalarProperty Name="cb_Fecha" ColumnName="cb_Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spBAN_FJ_Rpt004" FunctionName="Model_Bancos_FJ_Rpt.Store.spBAN_FJ_Rpt004">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model_Bancos_FJ_Rpt.spBAN_FJ_Rpt004_Result">
+                <ScalarProperty Name="IdRow" ColumnName="IdRow" />
+                <ScalarProperty Name="IdEmpresa_cxp" ColumnName="IdEmpresa_cxp" />
+                <ScalarProperty Name="IdTipoCbte_cxp" ColumnName="IdTipoCbte_cxp" />
+                <ScalarProperty Name="Tipo_cbte_cxp" ColumnName="Tipo_cbte_cxp" />
+                <ScalarProperty Name="IdCbteCble_cxp" ColumnName="IdCbteCble_cxp" />
+                <ScalarProperty Name="IdEmpresa_pago" ColumnName="IdEmpresa_pago" />
+                <ScalarProperty Name="IdTipoCbte_pago" ColumnName="IdTipoCbte_pago" />
+                <ScalarProperty Name="Tipo_cbte_pago" ColumnName="Tipo_cbte_pago" />
+                <ScalarProperty Name="IdCbteCble_pago" ColumnName="IdCbteCble_pago" />
+                <ScalarProperty Name="co_observacion" ColumnName="co_observacion" />
+                <ScalarProperty Name="cb_Fecha" ColumnName="cb_Fecha" />
+                <ScalarProperty Name="IdTipoFlujo" ColumnName="IdTipoFlujo" />
+                <ScalarProperty Name="nom_tipo_flujo" ColumnName="nom_tipo_flujo" />
+                <ScalarProperty Name="cod_flujo" ColumnName="cod_flujo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="dc_Valor" ColumnName="dc_Valor" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="nom_banco" ColumnName="nom_banco" />
+                <ScalarProperty Name="Tipo_movi" ColumnName="Tipo_movi" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spBAN_FJ_Rpt004_saldos" FunctionName="Model_Bancos_FJ_Rpt.Store.spBAN_FJ_Rpt004_saldos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model_Bancos_FJ_Rpt.spBAN_FJ_Rpt004_saldos_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="nom_cuenta_banco" ColumnName="nom_cuenta_banco" />
+                <ScalarProperty Name="Saldo_inicial" ColumnName="Saldo_inicial" />
+                <ScalarProperty Name="Saldo_final" ColumnName="Saldo_final" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="vwBAN_FJ_Rpt001">
+            <EntityTypeMapping TypeName="Model_Bancos_FJ_Rpt.vwBAN_FJ_Rpt001">
+              <MappingFragment StoreEntitySet="vwBAN_FJ_Rpt001">
+                <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="ba_descripcion" ColumnName="ba_descripcion" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdPersona_Girado_a" ColumnName="IdPersona_Girado_a" />
+                <ScalarProperty Name="cb_Observacion" ColumnName="cb_Observacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="cb_Fecha" ColumnName="cb_Fecha" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="cb_Valor" ColumnName="cb_Valor" />
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+                <ScalarProperty Name="cb_Cheque" ColumnName="cb_Cheque" />
+                <ScalarProperty Name="cb_FechaCheque" ColumnName="cb_FechaCheque" />
+                <ScalarProperty Name="IdTipocbte" ColumnName="IdTipocbte" />
+                <ScalarProperty Name="IdCbteCble" ColumnName="IdCbteCble" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdRow" ColumnName="IdRow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
