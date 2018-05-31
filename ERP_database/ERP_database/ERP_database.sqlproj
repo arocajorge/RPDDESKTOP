@@ -1789,4 +1789,7 @@
   <ItemGroup>
     <None Include="dbo\Views\vwin_Producto_x_man_tipo_horas_facturacion.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts iniciales\3.-Insert Data Reportes Web.sql" />
+  </ItemGroup>
 </Project>
