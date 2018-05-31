@@ -140,26 +140,7 @@ BEGIN
 						END
 			ELSE
 						BEGIN
-							SELECT * FROM in_Ing_Egr_Inven_det WHERE IdEmpresa = @IdEmpresa and  IdSucursal = @IdSucursal  AND IdMovi_inven_tipo = @IdMovi_inven_tipo AND IdNumMovi = @IdNumMovi
-							/*SELECT * FROM in_Ing_Egr_Inven WHERE IdEmpresa = @IdEmpresa and  IdSucursal = @IdSucursal  AND IdMovi_inven_tipo = @IdMovi_inven_tipo AND IdNumMovi = @IdNumMovi
-							SELECT * FROM in_movi_inve_detalle where
-							EXISTS(
-									SELECT REV.IdEmpresa_inv FROM in_spSys_inv_Reversar_aprobacion_in_movi_inven REV
-									WHERE REV.IdEmpresa_inv = in_movi_inve_detalle.IdEmpresa
-									AND REV.IdSucursal_inv = in_movi_inve_detalle.IdSucursal
-									AND REV.IdBodega_inv = in_movi_inve_detalle.IdBodega
-									AND REV.IdMovi_inven_tipo_inv = in_movi_inve_detalle.IdMovi_inven_tipo
-									AND REV.IdNumMovi_inv = in_movi_inve_detalle.IdNumMovi
-								)
-							SELECT * FROM in_movi_inve
-							WHERE EXISTS(
-								SELECT REV.IdEmpresa_inv FROM in_spSys_inv_Reversar_aprobacion_in_movi_inven REV
-								WHERE REV.IdEmpresa_inv = in_movi_inve.IdEmpresa
-								AND REV.IdSucursal_inv = in_movi_inve.IdSucursal
-								AND REV.IdBodega_inv = in_movi_inve.IdBodega
-								AND REV.IdMovi_inven_tipo_inv = in_movi_inve.IdMovi_inven_tipo
-								AND REV.IdNumMovi_inv = in_movi_inve.IdNumMovi
-							)*/
+							SELECT * FROM in_Ing_Egr_Inven_det WHERE IdEmpresa = @IdEmpresa and  IdSucursal = @IdSucursal  AND IdMovi_inven_tipo = @IdMovi_inven_tipo AND IdNumMovi = @IdNumMovi							
 				END
 END
 ELSE

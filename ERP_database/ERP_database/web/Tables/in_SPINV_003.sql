@@ -1,4 +1,4 @@
-﻿CREATE TABLE [web].[in_SPINV_001] (
+﻿CREATE TABLE [web].[in_SPINV_003] (
     [IdEmpresa]      INT          NOT NULL,
     [IdSucursal]     INT          NOT NULL,
     [IdBodega]       INT          NOT NULL,
