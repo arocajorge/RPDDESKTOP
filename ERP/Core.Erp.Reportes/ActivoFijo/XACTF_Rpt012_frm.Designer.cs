@@ -167,29 +167,33 @@
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 53);
-            this.barDockControlTop.Size = new System.Drawing.Size(1068, 0);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 62);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1424, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 377);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1068, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 468);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1424, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 324);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 62);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 406);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1068, 53);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 324);
+            this.barDockControlRight.Location = new System.Drawing.Point(1424, 62);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 406);
             // 
             // printBarManager1
             // 
@@ -208,29 +212,33 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 53);
-            this.barDockControl1.Size = new System.Drawing.Size(1068, 0);
+            this.barDockControl1.Location = new System.Drawing.Point(0, 62);
+            this.barDockControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl1.Size = new System.Drawing.Size(1424, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 377);
-            this.barDockControl2.Size = new System.Drawing.Size(1068, 0);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 468);
+            this.barDockControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl2.Size = new System.Drawing.Size(1424, 0);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 53);
-            this.barDockControl3.Size = new System.Drawing.Size(0, 324);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 62);
+            this.barDockControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 406);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1068, 53);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 324);
+            this.barDockControl4.Location = new System.Drawing.Point(1424, 62);
+            this.barDockControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 406);
             // 
             // printControl1
             // 
@@ -238,9 +246,10 @@
             this.printControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.printControl1.ForeColor = System.Drawing.Color.Empty;
             this.printControl1.IsMetric = true;
-            this.printControl1.Location = new System.Drawing.Point(0, 153);
+            this.printControl1.Location = new System.Drawing.Point(0, 185);
+            this.printControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.printControl1.Name = "printControl1";
-            this.printControl1.Size = new System.Drawing.Size(1068, 224);
+            this.printControl1.Size = new System.Drawing.Size(1424, 283);
             this.printControl1.TabIndex = 15;
             this.printControl1.TooltipFont = new System.Drawing.Font("Tahoma", 8.25F);
             // 
@@ -834,28 +843,32 @@
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl5.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl5.Size = new System.Drawing.Size(1068, 53);
+            this.barDockControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl5.Size = new System.Drawing.Size(1424, 62);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 377);
-            this.barDockControl6.Size = new System.Drawing.Size(1068, 28);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 468);
+            this.barDockControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl6.Size = new System.Drawing.Size(1424, 30);
             // 
             // barDockControl7
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl7.Location = new System.Drawing.Point(0, 53);
-            this.barDockControl7.Size = new System.Drawing.Size(0, 324);
+            this.barDockControl7.Location = new System.Drawing.Point(0, 62);
+            this.barDockControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 406);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(1068, 53);
-            this.barDockControl8.Size = new System.Drawing.Size(0, 324);
+            this.barDockControl8.Location = new System.Drawing.Point(1424, 62);
+            this.barDockControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 406);
             // 
             // printPreviewBarCheckItem1
             // 
@@ -1033,9 +1046,10 @@
             // 
             this.panel1.Controls.Add(this.ucactF_Menu_Reportes1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 53);
+            this.panel1.Location = new System.Drawing.Point(0, 62);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1068, 100);
+            this.panel1.Size = new System.Drawing.Size(1424, 123);
             this.panel1.TabIndex = 14;
             // 
             // ucactF_Menu_Reportes1
@@ -1045,12 +1059,14 @@
             this.ucactF_Menu_Reportes1.EnableBotonImprimir = true;
             this.ucactF_Menu_Reportes1.EnableBotonSalir = true;
             this.ucactF_Menu_Reportes1.Location = new System.Drawing.Point(0, 0);
+            this.ucactF_Menu_Reportes1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucactF_Menu_Reportes1.Name = "ucactF_Menu_Reportes1";
-            this.ucactF_Menu_Reportes1.Size = new System.Drawing.Size(1068, 100);
+            this.ucactF_Menu_Reportes1.Size = new System.Drawing.Size(1424, 123);
             this.ucactF_Menu_Reportes1.TabIndex = 0;
             this.ucactF_Menu_Reportes1.VisibleBtnGenerar = DevExpress.XtraBars.BarItemVisibility.Always;
             this.ucactF_Menu_Reportes1.VisibleBtnImprimir = DevExpress.XtraBars.BarItemVisibility.Never;
             this.ucactF_Menu_Reportes1.VisibleBtnSalir = DevExpress.XtraBars.BarItemVisibility.Always;
+            this.ucactF_Menu_Reportes1.VisibleCentroCosotoYSubcentro = false;
             this.ucactF_Menu_Reportes1.VisibleCmbActivoFijo = DevExpress.XtraBars.BarItemVisibility.Never;
             this.ucactF_Menu_Reportes1.VisibleCmbEstado = DevExpress.XtraBars.BarItemVisibility.Always;
             this.ucactF_Menu_Reportes1.VisibleCmbFechaFin = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -1077,9 +1093,9 @@
             // 
             // XACTF_Rpt012_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 405);
+            this.ClientSize = new System.Drawing.Size(1424, 498);
             this.Controls.Add(this.printControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.barDockControlLeft);
@@ -1094,6 +1110,7 @@
             this.Controls.Add(this.barDockControl8);
             this.Controls.Add(this.barDockControl6);
             this.Controls.Add(this.barDockControl5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "XACTF_Rpt012_frm";
             this.Text = "XACTF_Rpt012_frm";
             this.Load += new System.EventHandler(this.XACTF_Rpt012_frm_Load);
