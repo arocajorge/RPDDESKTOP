@@ -1711,7 +1711,6 @@
     <Build Include="dbo\Tables\tb_sis_alerta_x_usuario_x_empresa.sql" />
     <Build Include="dbo\Tables\tb_sis_alerta_auditoria.sql" />
     <Build Include="dbo\Tables\tb_sis_alerta.sql" />
-    <Build Include="dbo\Views\vwin_Producto_x_man_tipo_horas_facturacion_1.sql" />
     <Build Include="dbo\Views\vwtb_sis_alerta_x_usuario_x_empresa_x_eventos.sql" />
     <Build Include="dbo\Views\vwINV_Alerta_001.sql" />
     <Build Include="dbo\Tables\in_Producto_alerta_x_sucursal.sql" />
@@ -1772,15 +1771,15 @@
     <Build Include="web\Tables\tb_sis_reporte.sql" />
     <Build Include="web\Tables\Af_SPACTF_004_resumen.sql" />
     <Build Include="web\Tables\Af_SPACTF_004_detalle.sql" />
-    <Build Include="dbo\Tables\fa_cuotas_x_doc_1.sql" />
+    <Build Include="dbo\Tables\fa_cuotas_x_doc.sql" />
     <Build Include="web\Views\VWCONTA_001.sql" />
     <Build Include="web\Views\VWACTF_003.sql" />
     <Build Include="web\Views\VWACTF_002.sql" />
     <Build Include="web\Views\VWACTF_001.sql" />
-    <Build Include="dbo\Views\vwFAC_Rpt008_cuotas_1.sql" />
+    <Build Include="dbo\Views\vwFAC_Rpt008_cuotas.sql" />
     <Build Include="web\Stored Procedures\SPACTF_004_resumen.sql" />
     <Build Include="web\Stored Procedures\SPACTF_004_detalle.sql" />
-    <Build Include="dbo\Stored Procedures\spin_Producto_validar_anulacion_1.sql" />
+    <Build Include="dbo\Stored Procedures\spin_Producto_validar_anulacion.sql" />
     <Build Include="Scripts iniciales\3.-Insert Data Reportes Web.sql" />
     <Build Include="web\Views\VWCAJ_001.sql" />
     <Build Include="web\Views\vwcp_proveedor_consulta.sql" />
@@ -1789,8 +1788,6 @@
     <Build Include="web\Views\VWINV_004.sql" />
     <Build Include="web\Stored Procedures\SPINV_003.sql" />
     <Build Include="web\Tables\in_SPINV_003.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="dbo\Views\vwin_Producto_x_man_tipo_horas_facturacion.sql" />
+    <Build Include="dbo\Views\vwin_Producto_x_man_tipo_horas_facturacion.sql" />
   </ItemGroup>
 </Project>
