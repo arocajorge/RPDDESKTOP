@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model_contabilidad_FJ_Rpt.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Model_contabilidad_FJ_RptStoreContainer" />
+        <Function Name="spCONTA_FJ_Rpt001" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="Fecha_ini" Type="datetime" Mode="In" />
+          <Parameter Name="Fecha_fin" Type="datetime" Mode="In" />
+          <Parameter Name="IdPunto_cargo_ini" Type="int" Mode="In" />
+          <Parameter Name="IdPunto_cargo_fin" Type="int" Mode="In" />
+          <Parameter Name="Mostrar_saldo_0" Type="bit" Mode="In" />
+          <Parameter Name="IdNivel" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model_contabilidad_FJ_Rpt" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities_contabilidad_fj_rpt" p1:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spCONTA_FJ_Rpt001" ReturnType="Collection(Model_contabilidad_FJ_Rpt.spCONTA_FJ_Rpt001_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_ini" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_fin" Mode="In" Type="DateTime" />
+            <Parameter Name="IdPunto_cargo_ini" Mode="In" Type="Int32" />
+            <Parameter Name="IdPunto_cargo_fin" Mode="In" Type="Int32" />
+            <Parameter Name="Mostrar_saldo_0" Mode="In" Type="Boolean" />
+            <Parameter Name="IdNivel" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spCONTA_FJ_Rpt001_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdCtaCble" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdPunto_cargo" Nullable="false" />
+          <Property Type="String" Name="pc_Cuenta" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="nom_punto_cargo" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="IdNivelCta" Nullable="false" />
+          <Property Type="String" Name="IdGrupoCble" Nullable="false" MaxLength="5" />
+          <Property Type="Byte" Name="gc_Orden" Nullable="false" />
+          <Property Type="Decimal" Name="IdCtaCblePadre" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="gc_estado_financiero" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="pc_EsMovimiento" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="gc_GrupoCble" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="bg_saldo_inicial" Nullable="false" />
+          <Property Type="Double" Name="bg_debitos_mes" Nullable="false" />
+          <Property Type="Double" Name="bg_creditos_mes" Nullable="false" />
+          <Property Type="Double" Name="bg_saldo_mes" Nullable="false" />
+          <Property Type="Double" Name="bg_saldo_final" Nullable="false" />
+          <Property Type="String" Name="IdCtaCble_2" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="IdCtaCblePadre_2" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="bg_saldo_inicial_mov" Nullable="false" />
+          <Property Type="Double" Name="bg_debitos_mes_mov" Nullable="false" />
+          <Property Type="Double" Name="bg_creditos_mes_mov" Nullable="false" />
+          <Property Type="Double" Name="bg_saldo_mes_mov" Nullable="false" />
+          <Property Type="Double" Name="bg_saldo_final_mov" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model_contabilidad_FJ_RptStoreContainer" CdmEntityContainer="Entities_contabilidad_fj_rpt" >
+          <FunctionImportMapping FunctionImportName="spCONTA_FJ_Rpt001" FunctionName="Model_contabilidad_FJ_Rpt.Store.spCONTA_FJ_Rpt001">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model_contabilidad_FJ_Rpt.spCONTA_FJ_Rpt001_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdCtaCble" ColumnName="IdCtaCble" />
+                <ScalarProperty Name="IdPunto_cargo" ColumnName="IdPunto_cargo" />
+                <ScalarProperty Name="pc_Cuenta" ColumnName="pc_Cuenta" />
+                <ScalarProperty Name="nom_punto_cargo" ColumnName="nom_punto_cargo" />
+                <ScalarProperty Name="IdNivelCta" ColumnName="IdNivelCta" />
+                <ScalarProperty Name="IdGrupoCble" ColumnName="IdGrupoCble" />
+                <ScalarProperty Name="gc_Orden" ColumnName="gc_Orden" />
+                <ScalarProperty Name="IdCtaCblePadre" ColumnName="IdCtaCblePadre" />
+                <ScalarProperty Name="gc_estado_financiero" ColumnName="gc_estado_financiero" />
+                <ScalarProperty Name="pc_EsMovimiento" ColumnName="pc_EsMovimiento" />
+                <ScalarProperty Name="gc_GrupoCble" ColumnName="gc_GrupoCble" />
+                <ScalarProperty Name="bg_saldo_inicial" ColumnName="bg_saldo_inicial" />
+                <ScalarProperty Name="bg_debitos_mes" ColumnName="bg_debitos_mes" />
+                <ScalarProperty Name="bg_creditos_mes" ColumnName="bg_creditos_mes" />
+                <ScalarProperty Name="bg_saldo_mes" ColumnName="bg_saldo_mes" />
+                <ScalarProperty Name="bg_saldo_final" ColumnName="bg_saldo_final" />
+                <ScalarProperty Name="IdCtaCble_2" ColumnName="IdCtaCble_2" />
+                <ScalarProperty Name="IdCtaCblePadre_2" ColumnName="IdCtaCblePadre_2" />
+                <ScalarProperty Name="bg_saldo_inicial_mov" ColumnName="bg_saldo_inicial_mov" />
+                <ScalarProperty Name="bg_debitos_mes_mov" ColumnName="bg_debitos_mes_mov" />
+                <ScalarProperty Name="bg_creditos_mes_mov" ColumnName="bg_creditos_mes_mov" />
+                <ScalarProperty Name="bg_saldo_mes_mov" ColumnName="bg_saldo_mes_mov" />
+                <ScalarProperty Name="bg_saldo_final_mov" ColumnName="bg_saldo_final_mov" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

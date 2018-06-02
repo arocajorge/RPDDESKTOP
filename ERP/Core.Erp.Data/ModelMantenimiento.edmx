@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelMantenimiento.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelMantenimientoStoreContainer">
+          <EntitySet Name="man_actividad" EntityType="ModelMantenimiento.Store.man_actividad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="man_actividad_det" EntityType="ModelMantenimiento.Store.man_actividad_det" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="man_tecnico" EntityType="ModelMantenimiento.Store.man_tecnico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="man_tipo_horas_facturacion" EntityType="ModelMantenimiento.Store.man_tipo_horas_facturacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vwman_tecnico" EntityType="ModelMantenimiento.Store.vwman_tecnico" store:Type="Views" store:Schema="dbo" store:Name="vwman_tecnico">
+            <DefiningQuery>SELECT 
+      [vwman_tecnico].[IdEmpresa] AS [IdEmpresa], 
+      [vwman_tecnico].[IdTecnico] AS [IdTecnico], 
+      [vwman_tecnico].[IdEmpleado] AS [IdEmpleado], 
+      [vwman_tecnico].[te_codigo] AS [te_codigo], 
+      [vwman_tecnico].[te_observacion] AS [te_observacion], 
+      [vwman_tecnico].[estado] AS [estado], 
+      [vwman_tecnico].[pe_nombreCompleto] AS [pe_nombreCompleto], 
+      [vwman_tecnico].[pe_cedulaRuc] AS [pe_cedulaRuc]
+      FROM [dbo].[vwman_tecnico] AS [vwman_tecnico]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_man_actividad_det_man_actividad" Association="ModelMantenimiento.Store.FK_man_actividad_det_man_actividad">
+            <End Role="man_actividad" EntitySet="man_actividad" />
+            <End Role="man_actividad_det" EntitySet="man_actividad_det" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="man_actividad">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdActividad" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdActividad" Type="numeric" Nullable="false" />
+          <Property Name="ac_codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ac_descripcion" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="ac_observacion" Type="varchar" MaxLength="500" />
+          <Property Name="ac_cant_horas_min" Type="float" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="man_actividad_det">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdActividad" />
+            <PropertyRef Name="ac_secuencia" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdActividad" Type="numeric" Nullable="false" />
+          <Property Name="ac_secuencia" Type="int" Nullable="false" />
+          <Property Name="IdActividad_hijo" Type="numeric" Nullable="false" />
+        </EntityType>
+        <EntityType Name="man_tecnico">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTecnico" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdTecnico" Type="numeric" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="te_codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="te_observacion" Type="varchar" MaxLength="500" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="man_tipo_horas_facturacion">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdTipo" Type="int" Nullable="false" />
+          <Property Name="IdProducto" Type="numeric" Nullable="false" />
+          <Property Name="ti_codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ti_observacion" Type="varchar" MaxLength="500" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_FJ_PRODUCCION.dbo.vwman_tecnico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwman_tecnico">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTecnico" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="te_codigo" />
+            <PropertyRef Name="estado" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="pe_cedulaRuc" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdTecnico" Type="numeric" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="te_codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="te_observacion" Type="varchar" MaxLength="500" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_man_actividad_det_man_actividad">
+          <End Role="man_actividad" Type="ModelMantenimiento.Store.man_actividad" Multiplicity="1" />
+          <End Role="man_actividad_det" Type="ModelMantenimiento.Store.man_actividad_det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="man_actividad">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdActividad" />
+            </Principal>
+            <Dependent Role="man_actividad_det">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelMantenimiento" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EntitiesMantenimiento" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="man_actividad_det" EntityType="ModelMantenimiento.man_actividad_det" />
+          <EntitySet Name="man_tipo_horas_facturacion" EntityType="ModelMantenimiento.man_tipo_horas_facturacion" />
+          <EntitySet Name="man_tecnico" EntityType="ModelMantenimiento.man_tecnico" />
+          <EntitySet Name="vwman_tecnico" EntityType="ModelMantenimiento.vwman_tecnico" />
+          <EntitySet Name="man_actividad" EntityType="ModelMantenimiento.man_actividad" />
+          <AssociationSet Name="FK_man_actividad_det_man_actividad" Association="ModelMantenimiento.FK_man_actividad_det_man_actividad">
+            <End Role="man_actividad" EntitySet="man_actividad" />
+            <End Role="man_actividad_det" EntitySet="man_actividad_det" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="man_actividad_det">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdActividad" />
+            <PropertyRef Name="ac_secuencia" />
+          </Key>
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="IdActividad" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ac_secuencia" Type="Int32" Nullable="false" />
+          <Property Name="IdActividad_hijo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="man_actividad" Relationship="ModelMantenimiento.FK_man_actividad_det_man_actividad" FromRole="man_actividad_det" ToRole="man_actividad" />
+        </EntityType>
+        <EntityType Name="man_tipo_horas_facturacion">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdTipo" Nullable="false" />
+          <Property Type="Decimal" Name="IdProducto" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="ti_codigo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ti_observacion" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+        </EntityType>
+        <EntityType Name="man_tecnico">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTecnico" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdTecnico" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="te_codigo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="te_observacion" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwman_tecnico">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTecnico" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="te_codigo" />
+            <PropertyRef Name="estado" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="pe_cedulaRuc" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdTecnico" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="te_codigo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="te_observacion" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="man_actividad">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdActividad" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdActividad" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="ac_codigo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ac_descripcion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ac_observacion" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="ac_cant_horas_min" Nullable="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <NavigationProperty Name="man_actividad_det" Relationship="ModelMantenimiento.FK_man_actividad_det_man_actividad" FromRole="man_actividad" ToRole="man_actividad_det" />
+        </EntityType>
+        <Association Name="FK_man_actividad_det_man_actividad">
+          <End Type="ModelMantenimiento.man_actividad" Role="man_actividad" Multiplicity="1" />
+          <End Type="ModelMantenimiento.man_actividad_det" Role="man_actividad_det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="man_actividad">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdActividad" />
+            </Principal>
+            <Dependent Role="man_actividad_det">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelMantenimientoStoreContainer" CdmEntityContainer="EntitiesMantenimiento">
+          <EntitySetMapping Name="man_actividad_det">
+            <EntityTypeMapping TypeName="ModelMantenimiento.man_actividad_det">
+              <MappingFragment StoreEntitySet="man_actividad_det">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+                <ScalarProperty Name="ac_secuencia" ColumnName="ac_secuencia" />
+                <ScalarProperty Name="IdActividad_hijo" ColumnName="IdActividad_hijo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="man_tipo_horas_facturacion">
+            <EntityTypeMapping TypeName="ModelMantenimiento.man_tipo_horas_facturacion">
+              <MappingFragment StoreEntitySet="man_tipo_horas_facturacion">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="ti_observacion" ColumnName="ti_observacion" />
+                <ScalarProperty Name="ti_codigo" ColumnName="ti_codigo" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="man_tecnico">
+            <EntityTypeMapping TypeName="ModelMantenimiento.man_tecnico">
+              <MappingFragment StoreEntitySet="man_tecnico">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="te_observacion" ColumnName="te_observacion" />
+                <ScalarProperty Name="te_codigo" ColumnName="te_codigo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdTecnico" ColumnName="IdTecnico" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwman_tecnico">
+            <EntityTypeMapping TypeName="ModelMantenimiento.vwman_tecnico">
+              <MappingFragment StoreEntitySet="vwman_tecnico">
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="te_observacion" ColumnName="te_observacion" />
+                <ScalarProperty Name="te_codigo" ColumnName="te_codigo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdTecnico" ColumnName="IdTecnico" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="man_actividad">
+            <EntityTypeMapping TypeName="ModelMantenimiento.man_actividad">
+              <MappingFragment StoreEntitySet="man_actividad">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="ac_cant_horas_min" ColumnName="ac_cant_horas_min" />
+                <ScalarProperty Name="ac_observacion" ColumnName="ac_observacion" />
+                <ScalarProperty Name="ac_descripcion" ColumnName="ac_descripcion" />
+                <ScalarProperty Name="ac_codigo" ColumnName="ac_codigo" />
+                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

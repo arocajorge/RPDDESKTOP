@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4210ee60b1b74f549abf6b3791ebf5e9" Name="Diagrama1" ZoomLevel="83">
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.ct_punto_cargo_FJ" Width="1.5" PointX="5.7249120314255881" PointY="10.686114748328047" />
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.ct_distribucion_gastos_x_periodo_det" Width="1.5" PointX="3.0162710524239906" PointY="6.2317546039036262" />
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.ct_distribucion_gastos_x_periodo" Width="1.5" PointX="6.911063804715436" PointY="14.133923194433526" />
+        <AssociationConnector Association="ModelContabilidad_FJ.FK_ct_distribucion_gastos_x_periodo_det_ct_distribucion_gastos_x_periodo" />
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.vwct_distribucion_gastos_x_periodo_det_para_distribuir" Width="1.5" PointX="10.717746767549658" PointY="1.8686982401966574" />
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.vwct_distribucion_gastos_x_periodo_det" Width="1.5" PointX="9.9978861967091852" PointY="13.067017263298396" />
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.vwct_punto_cargo_x_Af_Activo_fijo" Width="1.5" PointX="6.1089717010543545" PointY="28.03358958476856" />
+        <EntityTypeShape EntityType="ModelContabilidad_FJ.vwct_centro_costo_x_cliente" Width="1.5" PointX="9.9726985273755613" PointY="31.533874377391243" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

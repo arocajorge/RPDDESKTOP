@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5effc51941d435eb3072ab962ec0ec7" Name="Diagrama1" ZoomLevel="10">
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Config_Rubros_ParametrosGenerales" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Config_rubros_x_Prestamo" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Config_rubros_x_talonario" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Config_SueldoBasico_x_anio" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_estudios" Width="1.5" PointX="11.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_gastos_perso" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_gastos_perso_x_Gastos_deduci" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_gastos_perso_x_otros_gast_deduci" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_historial_Sueldo" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_centro_costo_x_rubro" Width="1.5" PointX="15" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_horario" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_Proyeccion_Gastos_Personales" Width="1.5" PointX="9.75" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_ro_tipoNomina" Width="1.5" PointX="9.75" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_titulos" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empresa_x_rubro" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empresa_x_TipoLiqui_Rol" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_IdRol" Width="1.5" PointX="9.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Ing_Egre_x_Empleado" Width="1.5" PointX="15.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_marcaciones_Equipo_x_TipoMarcacion" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_marcaciones_tipo" Width="1.5" PointX="17.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_nomina_tipo_liqui_orden" Width="1.5" PointX="15" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_novedad_x_empleado" Width="1.5" PointX="12" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Pago_decimos_x_Empleado" Width="1.5" PointX="13.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_periodo_x_ro_Nomina_TipoLiqui" Width="1.5" PointX="19.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_rdep" Width="1.5" PointX="9.75" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_rol" Width="1.5" PointX="12.5" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_rol_individual" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Rol_x_Empleado" Width="1.5" PointX="21.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_salario_digno" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_salario_digno_empleado" Width="1.5" PointX="10" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_tabla_Impu_Renta" Width="1.5" PointX="19.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_TablaSectorial" Width="1.5" PointX="5.25" PointY="48.125" IsExpanded="true" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_salario_digno_empleado_ro_salario_digno" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Catalogo_Bancos" Width="1.5" PointX="10.725585288706043" PointY="24.700162109313609" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_CentroCostoXEmpleado" Width="1.5" PointX="6.9614983363829079" PointY="22.348527501499525" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Conf_Rubros" Width="1.5" PointX="2.2697803705324326" PointY="29.108812286103522" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Conf_Rubros_Empleado" Width="1.5" PointX="5.3183180006771895" PointY="27.431784732002665" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Config_rubros_x_Prestamo" Width="1.5" PointX="0.12178147589870798" PointY="5.2418739969105808" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRO_Egreso_x_Empleado" Width="1.5" PointX="5.0926114307216421" PointY="21.035954440494979" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_empleado_gastos_perso_x_Gastos_deduci_x_sri_tipo_Gasto" Width="1.5" PointX="5.2207510942689854" PointY="8.170577365984478" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Empleado_Novedades_Rubros" Width="1.5" PointX="3.046617257896167" PointY="17.2670844426691" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_empleado_por_novedades" Width="1.5" PointX="5.6090917874169959" PointY="23.693378712839159" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_empleado_por_novedades_cabecera" Width="1.5" PointX="7.3393998105728064" PointY="13.726906425192443" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Empleado_TipoNomina" Width="1.5" PointX="10.811742709396288" PointY="5.17526376488398" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Empleado_TNomina" Width="1.5" PointX="7.0860541048860419" PointY="9.3778442188062918" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_FormaPago_Prestamo" Width="1.5" PointX="9.830693363133209" PointY="27.531632272308521" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_historicoSueldovsEmpl" Width="1.5" PointX="11.754529248808758" PointY="29.218562974230647" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Ing_Egr_x_Empleado" Width="1.5" PointX="10.971952193869255" PointY="7.5656063293878022" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Ing_Egre_x_Empleado" Width="1.5" PointX="7.4255478267676889" PointY="21.949796597449946" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRO_Ingreso_x_Empleado" Width="1.5" PointX="3.1599467187933374" PointY="29.882170288768677" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_marcaciones_Equipo_x_TipoMarcacion" Width="1.5" PointX="7.2801606763527555" PointY="16.327809684131207" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Motivo_Prestamo" Width="1.5" PointX="3.480173138659528" PointY="0.86920967738572963" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_MotivoPrestamo" Width="1.5" PointX="10.601905837004029" PointY="8.6313718895573963" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Nomina_Empleado_x_Rubro" Width="1.5" PointX="6.6263029382686618" PointY="19.105103188708938" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Nomina_x_periodo_x_rubro_x_empl_valor" Width="1.5" PointX="3.0015050224035535" PointY="4.202452929784755" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Novedades_X_Rubros" Width="1.5" PointX="7.2788297027716542" PointY="27.018984837000716" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_PeriocidadPago" Width="1.5" PointX="6.1856372254833758" PointY="12.592680415414591" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_periodo_x_ro_Nomina_TipoLiqui_Asignado" Width="1.5" PointX="1.6015003051615788" PointY="10.822210316929134" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Prestamo_TotalCobrado" Width="1.5" PointX="0.01013345830614374" PointY="20.257142404214079" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_ro_Ing_Egre_x_Empleado_x_totalValor" Width="1.5" PointX="8.4867259433896862" PointY="10.365047683178004" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Rol_DetalleXEmpleado" Width="1.5" PointX="0.72578535262764676" PointY="16.901539288881022" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Rubro_x_Empleado_x_nomina_x_TipoLiqui" Width="1.5" PointX="10.549257896165019" PointY="25.056086253866592" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Sueldo_Basico_x_Empleado_x_anio" Width="1.5" PointX="0.9523440212720744" PointY="13.407539746448183" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_TipoContrato" Width="1.5" PointX="3.2655046858198498" PointY="26.942911846070974" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_titulos" Width="1.5" PointX="4.1225339174841222" PointY="20.347701648412134" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Total_IngEgr_x_Empleado" Width="1.5" PointX="10.72445332385807" PointY="17.449538581748278" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_totalhoras_x_emp_turno_x_fecha" Width="1.5" PointX="5.3236996351385955" PointY="5.66401466991008" />
+        <EntityTypeShape EntityType="DBERPModelRoles.sri_ciudad" Width="1.5" PointX="9.0935062640782" PointY="24.129717182428443" />
+        <EntityTypeShape EntityType="DBERPModelRoles.sri_provincia" Width="1.5" PointX="2.391562114652042" PointY="12.357774621042317" />
+        <EntityTypeShape EntityType="DBERPModelRoles.sri_tipo_Gasto" Width="1.5" PointX="2.1973352684626986" PointY="28.035221649350238" />
+        <EntityTypeShape EntityType="DBERPModelRoles.sri_tipoIdentificacion" Width="1.5" PointX="3.1399005926865624" PointY="0.78333748913525492" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Nomina_Tipoliqui_x_Sueldo" Width="1.5" PointX="5.4125967535248938" PointY="31.631100714034915" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_contrato" Width="1.5" PointX="8.14333803958415" PointY="10.663940166432383" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Contrato" Width="1.5" PointX="9.2620706731742573" PointY="0.24102863680619219" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_area" Width="1.5" PointX="10.893290580666294" PointY="19.372571790298714" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_marcaciones_Equipo" Width="1.5" PointX="4.4855792617823829" PointY="1.0482572769039578" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_CentroCostoXEmpresa" Width="1.5" PointX="9.2637411864771231" PointY="24.503642168130558" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_DocumentoxEmp" Width="1.5" PointX="4.7158346626515657" PointY="30.236654265893929" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Area_x_Division" Width="1.5" PointX="10.569071094770482" PointY="11.820248534819227" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Division" Width="1.5" PointX="5.01021964708819" PointY="6.5166805714912153" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Area_ro_Division" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Capacitaciones_x_Empleado" Width="1.5" PointX="4.9617268782862123" PointY="16.80163423009293" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_rubro_acumulado" Width="1.5" PointX="9.16603216210661" PointY="5.6740909096198582" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_tipo_gastos_personales" Width="1.5" PointX="10.699501253058902" PointY="14.038449442963325" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_Proyeccion_Gastos_Personales_ro_tipo_gastos_personales" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_tipo_gastos_personales_tabla_valores_x_anio" Width="1.5" PointX="5.3849692798149622" PointY="4.7350726745720362" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_tipo_gastos_personales_tabla_valores_x_anio_ro_tipo_gastos_personales" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_ro_tipo_gastos_personales_tabla_valores_x_anio" Width="1.5" PointX="7.001473275479615" PointY="31.697834312775097" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_empleado_x_Proyeccion_Gastos_Personales" Width="1.5" PointX="6.81055520792052" PointY="12.088960683014692" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Novedad_Subida_Bach" Width="1.5" PointX="8.2665019427735835" PointY="9.0927937967203523" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Novedades_Batch" Width="1.5" PointX="5.7874504950770413" PointY="4.0642626453490287" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Config_Rubros_x_Empresa_AportaIess" Width="1.5" PointX="4.99805931607171" PointY="12.570422536027815" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_ConfLiqui_X_Empleado" Width="1.5" PointX="4.184832703408242" PointY="9.3070581598705875" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Empleado_Novedades" Width="1.5" PointX="11.860011750767013" PointY="29.408760412320849" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_dias" Width="1.5" PointX="1.8530551054762001" PointY="20.777390802641115" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRO_empleado_x_Perido_Nomina" Width="1.5" PointX="5.15901663394599" PointY="1.4008170670833517" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_marcaciones_Equipo_x_TipoMarcacion_ro_marcaciones_tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_ro_periodo_x_ro_Nomina_TipoLiqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_individual_ro_rol" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_archivos_bancos_generacion_x_empleado" Width="1.5" PointX="4.8250302806613181" PointY="4.1983070542096659" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Asignacion_Implemento_x_Empleado" Width="1.5" PointX="4.33989875593218" PointY="30.929893746473777" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_ro_Asignacion_Implemento_x_Empleado_xi_existen_pemdientes_devolver" Width="1.5" PointX="11.887890033371695" PointY="10.084549163507553" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Asignacion_Implemento_x_Empleado" Width="1.5" PointX="1.7309011657400526" PointY="6.5149049640236907" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Asignacion_Implemento_x_Empleado_det" Width="1.5" PointX="10.1372074029116" PointY="8.7604902129436333" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_rubros_acumulados_x_empleados" Width="1.5" PointX="2.2810469000977682" PointY="9.8168909893449818" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_rol_detalle_x_rubro_acumulado" Width="1.5" PointX="11.166879364832713" PointY="14.180998868393246" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_rol_detalle_x_rubro_acumulado" Width="1.5" PointX="0.25845521327967536" PointY="26.652361509693954" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Empleado_Rol_Detalle" Width="1.5" PointX="1.69506696504311" PointY="8.4313957581442764" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_archivos_bancos_generacion_x_empleado" Width="1.5" PointX="2.8744772686038527" PointY="29.233152283929826" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_rubro_tipo" Width="1.5" PointX="0.36154614033249494" PointY="11.135132705390049" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Archivos_Bancos_Generacion_det" Width="1.5" PointX="4.6775974317815141" PointY="19.547661477489239" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Config_Param_contable" Width="1.5" PointX="8.9931721729194614" PointY="26.430813160925553" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Config_Param_contable_ro_area" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_DiasFaltados_x_Empleado" Width="1.5" PointX="8.5519851728118876" PointY="27.685219792502568" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_DiasFaltados_x_Empleado" Width="1.5" PointX="11.977607231576744" PointY="20.216201985355561" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Nomina_Tipo" Width="1.5" PointX="11.624831015069425" PointY="23.806959103703015" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_ro_tipoNomina_ro_Nomina_Tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_ro_Nomina_Tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_salario_digno_ro_Nomina_Tipo" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Rol_Rubros_Acumulados" Width="1.5" PointX="2.8181926602582412" PointY="27.369081360925492" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_periodo" Width="1.5" PointX="11.474742186942484" PointY="16.237440236023367" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Ing_Egre_x_Empleado_ro_periodo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_periodo_x_ro_Nomina_TipoLiqui_ro_periodo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_ro_periodo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_salario_digno_ro_periodo" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_Novedad" Width="1.5" PointX="8.1048411205899153" PointY="28.003410486506024" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Novedad_x_Empleado_ro_Empleado_Novedad" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_novedad_det" Width="1.5" PointX="8.7629714555865963" PointY="1.0975447153195481" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_novedad_det_ro_empleado_Novedad" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Cuentas_contables_x_empleado" Width="1.5" PointX="4.9062216304737252" PointY="30.256740584157754" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_periodo_x_ro_Nomina_TipoLiquiDisponibles" Width="1.5" PointX="4.8133454717757855" PointY="30.384147732697496" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_permiso_x_empleado" Width="1.5" PointX="2.6974577432020834" PointY="3.0211001052619424" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Permiso_x_Empleado" Width="1.5" PointX="4.3795811777839351" PointY="2.5311001103981865" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_periodo_x_ro_Nomina_TipoLiqui" Width="1.5" PointX="4.8968348321024493" PointY="7.4398108308388906" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Comprobantes_Contables" Width="1.5" PointX="11.759882664196139" PointY="15.265235177830437" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_centro_costo" Width="1.5" PointX="0.34788978488551908" PointY="31.307233184253441" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_archivos_bancos_generacion" Width="1.5" PointX="3.8274715579242784" PointY="28.661317644948753" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Archivos_Bancos_Generacion" Width="1.5" PointX="4.7662865392706761" PointY="20.582532072711054" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_rol_detalle" Width="1.5" PointX="0.031291114180950041" PointY="17.785388165053625" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_detalle_ro_rol" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_detalle_x_rubro_acumulado" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_empleaco_x_activofijo_x_puntocargo" Width="1.5" PointX="1.5257273696017113" PointY="9.48692483151654" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_empleado_combo" Width="1.5" PointX="10.209010378554934" PointY="6.2782840907006916" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_parametro_contable_x_Nomina_Tipoliqui_Sueldo_x_Pagar" Width="1.5" PointX="4.3905429525256823" PointY="31.767398238073753" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Departamento" Width="1.5" PointX="2.6430011720596815" PointY="3.5035326050145237" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Config_Param_contable_ro_Departamento" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Tipo_Prestamo" Width="1.5" PointX="0.70539224366908526" PointY="19.982016408807606" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Parametros_Contables" Width="1.5" PointX="10.098267159470481" PointY="16.243130929881303" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Rol_Detalle" Width="1.5" PointX="10.222134723431493" PointY="12.384890830323515" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_NominaTipoLiquiOrdenXRubro" Width="1.5" PointX="7.4068510194340957" PointY="14.653815842538055" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Departamento_X_Area" Width="1.5" PointX="1.7346507933617807" PointY="20.729026342150302" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_cargo" Width="1.5" PointX="7.9649259894922952" PointY="9.1752790553380166" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Pago_Decimo" Width="1.5" PointX="11.292078645570241" PointY="3.6860394196985471" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Rubros_x_Empresa" Width="1.5" PointX="6.8311524273972744" PointY="2.6934638333942109" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Generar_Decimo" Width="1.5" PointX="6.5129011974264408" PointY="13.167553222350568" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_cargaFamiliar" Width="1.5" PointX="8.5819281640378424" PointY="9.4027377261792946" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_CargaFamiliar_X_Catalogo" Width="1.5" PointX="1.6446764830707927" PointY="10.582202707688419" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_empleadoXdepXcargo" Width="1.5" PointX="5.695505940213569" PointY="26.363326084969252" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Cargo_Empleado_X_Periodo" Width="1.5" PointX="5.7559712798129636" PointY="19.766943836476162" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Empleado_Nuevo_Sueldo" Width="1.5" PointX="9.0871139956112561" PointY="13.963105863874361" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Empleado_X_Nomina" Width="1.5" PointX="8.3730660511055337" PointY="19.494232216614407" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRO_Empleado_X_Nomina_Liquidar" Width="1.5" PointX="6.5154765092374181" PointY="8.6057504157562512" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_rubro_tipo" Width="1.5" PointX="2.2398321657627038" PointY="14.914616517217185" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_novedad_det_ro_rubro_tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_detalle_ro_rubro_tipo" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_participacion_utilidad" Width="1.5" PointX="3.5238242575544048" PointY="9.6617857560803113" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_participacion_utilidad_empleado" Width="1.5" PointX="5.6383340347736768" PointY="31.697714134910012" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_participacion_utilidad_empleado_ro_participacion_utilidad" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_participacion_utilidad_ro_periodo_x_ro_Nomina_TipoLiqui" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_participacion_utilidad_empleado" Width="1.5" PointX="11.438760766498168" PointY="28.6814848765179" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_participacion_utilidad" Width="1.5" PointX="4.9700570092397083" PointY="22.64811346989503" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Nomina_Tipoliqui" Width="1.5" PointX="3.9904072731688656" PointY="1.2238194501138382" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_turno" Width="1.5" PointX="0.93472407056704354" PointY="28.950749783288106" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_Novedad_ro_Nomina_Tipoliqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Ing_Egre_x_Empleado_ro_Nomina_Tipoliqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Nomina_Tipoliqui_ro_Nomina_Tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_nomina_tipo_liqui_formula_ro_Nomina_Tipoliqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_parametro_contable_x_Nomina_Tipoliqui_Sueldo_x_Pagar_ro_Nomina_Tipoliqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_periodo_x_ro_Nomina_TipoLiqui_ro_Nomina_Tipoliqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_ro_Nomina_Tipoliqui" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_catalogoTipo" Width="1.5" PointX="8.5735913163859347" PointY="22.271508569955596" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_contrato_ro_Nomina_Tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_rubro_acumulado_ro_rubro_tipo" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado_x_ro_rubro" Width="1.5" PointX="2.7959307277556187" PointY="10.862288003257611" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_ro_rubro_ro_Nomina_Tipoliqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_ro_rubro_ro_rubro_tipo" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_catalogo" Width="1.5" PointX="8.26890759368842" PointY="28.994144080669685" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_empleado" Width="1.5" PointX="0.6323984342778094" PointY="17.659699075696849" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_CargaFamiliar_ro_Catalogo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_CargaFamiliar_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Cargo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_catalogo_ro_catalogoTipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Catalogo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Catalogo1" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Catalogo2" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Catalogo3" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_contrato_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Departamento" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_DiasFaltados_x_Empleado_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_Division" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_DocumentoxEmp_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_estudios_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_historial_Sueldo_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_Novedad_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_ro_TablaSectorial" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_centro_costo_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_Proyeccion_Gastos_Personales_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_ro_rubro_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_ro_tipoNomina_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_rubro_acumulado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_titulos_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Ing_Egre_x_Empleado_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_participacion_utilidad_empleado_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rdep_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_detalle_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_rol_individual_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_salario_digno_empleado_ro_empleado" />
+        <EntityTypeShape EntityType="DBERPModelRoles.VWRO_empleado" Width="1.5" PointX="8.7530390120824055" PointY="22.502589176642982" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_horario" Width="1.5" PointX="9.3424463408731135" PointY="25.940800395766647" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_empleado_x_horario_ro_horario" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_marcaciones_x_empleado" Width="1.5" PointX="8.3349211441049924" PointY="19.97119859790951" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Planificacion_Horarios_x_Empleado" Width="1.5" PointX="10.419775971406967" PointY="8.0081270076372313" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_marcaciones_x_empleado_ro_catalogo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_marcaciones_x_empleado_ro_empleado" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_horario_planificacion" Width="1.5" PointX="5.2182658096860468" PointY="5.92683647848984" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_horario_planificacion_det" Width="1.5" PointX="10.102801981429943" PointY="29.12052830919648" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_horario_planificacion_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_horario_planificacion_ro_horario" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_horario_planificacion_det_ro_horario_planificacion" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_nomina_x_horas_extras" Width="1.5" PointX="8.2775466983567672" PointY="24.342125650654605" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_nomina_x_horas_extras_det" Width="1.5" PointX="8.4297186864678366" PointY="14.576481811039374" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Config_Param_contable_ro_rubro_tipo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_nomina_x_horas_extras_det_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_nomina_x_horas_extras_det_ro_horario" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_nomina_x_horas_extras_det_ro_nomina_x_horas_extras" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_nomina_x_horas_extras_ro_periodo_x_ro_Nomina_TipoLiqui" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_nomina_x_horas_extras_det_ro_turno" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_marcaciones_x_empleado" Width="1.5" PointX="4.511853192239931" PointY="27.675338474882459" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_nomina_x_horas_extras_det" Width="1.5" PointX="0.74364391376434069" PointY="11.759049421064113" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Nomina_X_Horas_Extras_Totales" Width="1.5" PointX="4.6281749143396391" PointY="12.94416052705802" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Nomina_x_Liqui_x_Rubro_x_Empleado" Width="1.5" PointX="3.1463422752666954" PointY="25.565717709048521" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Rdep_x_Empleado" Width="1.5" PointX="1.9956246120834837" PointY="17.385098435629672" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_area_x_departamento" Width="1.5" PointX="9.8634817757939377" PointY="21.9826365215623" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_area_x_departamento_ro_area" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_area_x_departamento_ro_Departamento" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Prestamo" Width="1.5" PointX="9.5541753943796159" PointY="25.855309930562651" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Prestamo_Detalle" Width="1.5" PointX="4.87580663192822" PointY="3.3909261987502344" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Acta_Finiquito_X_Empleado" Width="1.5" PointX="10.474204049666508" PointY="19.858560139247476" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Acta_Finiquito_Detalle_x_Decimos" Width="1.5" PointX="7.5089158562519192" PointY="3.8431565034404196" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Acta_Finiquito_Detalle_x_vacaciones" Width="1.5" PointX="0.67328022265493881" PointY="11.260507171629232" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Historico_Liquidacion_Vacaciones" Width="1.5" PointX="0.4211983515048392" PointY="30.54773081771458" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Historico_Liquidacion_Vacaciones_Det" Width="1.5" PointX="0.48616900317658157" PointY="13.341821691646159" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_historico_vacaciones_x_empleado" Width="1.5" PointX="0.25944085803788197" PointY="23.210169534762468" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_prestamo" Width="1.5" PointX="7.2645324334802721" PointY="22.11871440248504" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_prestamo_detalle" Width="1.5" PointX="1.7300910100946627" PointY="30.236734419240026" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Solicitud_Vacaciones_x_empleado" Width="1.5" PointX="6.6533080053763971" PointY="7.6624255067028226" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Historico_Liquidacion_Vacaciones_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_historico_vacaciones_x_empleado_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_prestamo_ro_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Historico_Liquidacion_Vacaciones_Det_ro_Historico_Liquidacion_Vacaciones" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Historico_Liquidacion_Vacaciones_ro_Solicitud_Vacaciones_x_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Solicitud_Vacaciones_x_empleado_ro_historico_vacaciones_x_empleado" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_prestamo_detalle_ro_prestamo" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Parametros" Width="1.5" PointX="2.3626359321003014" PointY="22.890247862269288" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Historico_Liquidacion_Vacaciones_Det_DescNovedad" Width="1.5" PointX="0.61717538378069892" PointY="24.151493486087535" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Historico_Liquidacion_Vacaciones_Det_DescNovedad_ro_empleado_novedad_det" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_Solicitud_Vacaciones" Width="1.5" PointX="6.7007855915933776" PointY="21.83276676658204" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwro_Solicitud_Vacaciones_x_empleado" Width="1.5" PointX="1.9526298912021469" PointY="3.6313999908191152" />
+        <EntityTypeShape EntityType="DBERPModelRoles.vwRo_ActaFiniquito" Width="1.5" PointX="9.88449003821448" PointY="21.980690802438506" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Acta_Finiquito" Width="1.5" PointX="11.108900734739798" PointY="18.042854779419887" />
+        <EntityTypeShape EntityType="DBERPModelRoles.ro_Acta_Finiquito_Detalle" Width="1.5" PointX="0.20823522480588186" PointY="2.0964374402987014" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Acta_Finiquito_Detalle_ro_Acta_Finiquito" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Acta_Finiquito_ro_cargo" />
+        <AssociationConnector Association="DBERPModelRoles.FK_ro_Acta_Finiquito_ro_empleado" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

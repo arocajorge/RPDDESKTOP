@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e69548080874d30be8fe786057538ee" Name="Diagrama1" ZoomLevel="67">
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_orden_trabajo_plataforma_det" Width="1.5" PointX="6.647265720482574" PointY="22.623784716531535" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente_Af_Depreciacion" Width="1.5" PointX="7.8660815022262192" PointY="5.9289449331951074" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre" Width="1.5" PointX="10.15381900507669" PointY="24.908198547041135" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente_Por_comision" Width="1.5" PointX="0.57572182667242444" PointY="16.888929792162465" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre" Width="1.5" PointX="5.0850406499044229" PointY="30.147203414769471" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_grupo_x_sub_centro_costo_det" Width="1.5" PointX="10.673473532625229" PointY="23.599103312752725" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_grupo_x_sub_centro_costo_det_scc_sin_grupo" Width="1.5" PointX="11.99981714598826" PointY="30.777758970287515" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_grupo_x_sub_centro_costo_det" Width="1.5" PointX="10.241484263092971" PointY="21.142661611150327" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_cliente_x_ct_centro_costo" Width="1.5" PointX="11.245595974496379" PointY="27.735352946322109" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_registro_unidades_x_equipo_det" Width="1.5" PointX="7.7954405880511928" PointY="25.819236946208047" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_registro_unidades_x_equipo_det" Width="1.5" PointX="7.3913153071847351" PointY="12.6259044914627" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_Parametro_x_Anio_x_Fuerza_MO_RRHH" Width="1.5" PointX="8.322046864927767" PointY="29.785440309804603" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_parametros" Width="1.5" PointX="7.4687716530024879" PointY="24.140979316151224" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_liquidacion_x_punto_cargo_det_ing_egr_inven" Width="1.5" PointX="9.298951320955041" PointY="14.867005966076164" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_ruta_x_centro_costo" Width="1.5" PointX="8.2111378294467645" PointY="23.752797942493483" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_ruta_x_centro_costo" Width="1.5" PointX="3.3601705373079378" PointY="22.517737369294156" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_det_logistica" Width="1.5" PointX="10.165617137293154" PointY="7.41456517922439" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_det_egresos_inventario" Width="1.5" PointX="4.8224224191263421" PointY="24.251943078009386" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_det_ingresos_consumo_directo" Width="1.5" PointX="10.318468825108589" PointY="0.92036730093898589" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_det_mano_obra" Width="1.5" PointX="2.83626224418928" PointY="19.822613263420116" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_compensacion_x_ct_centro_costo" Width="1.5" PointX="10.162682074197885" PointY="31.615585669696138" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_compensacion_x_ct_centro_costo_det" Width="1.5" PointX="4.8541749179615525" PointY="28.227032182843907" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_compensacion_x_ct_centro_costo" Width="1.5" PointX="11.440762990825233" PointY="29.47433395566155" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente" Width="1.5" PointX="3.6082600073927367" PointY="21.165935809335643" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_tarifario_facturacion_x_cliente" Width="1.5" PointX="4.5539439751552155" PointY="15.976995892812031" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_facturacion_x_cliente_Af_Depreciacion_fa_tarifario_facturacion_x_cliente" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre_fa_tarifario_facturacion_x_cliente" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_facturacion_x_cliente_Por_comision_fa_tarifario_facturacion_x_cliente" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_det" Width="1.5" PointX="2.148757937433551" PointY="11.852758025681952" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_parametro_FJ" Width="1.5" PointX="3.1511783707659591" PointY="17.304928221416162" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente_Af_Depreciacion_Det" Width="1.5" PointX="11.706014541772202" PointY="23.495231073114663" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwaf_fa_tarifario_facturacion_x_cliente_Af_Depreciacion_Det" Width="1.5" PointX="2.4393013168309352" PointY="23.71317138882036" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_facturacion_x_cliente_Af_Depreciacion_Det_fa_tarifario_facturacion_x_cliente_Af_Depreciacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_depreciacion_x_activo" Width="1.5" PointX="5.1957590138519922" PointY="28.25946545426709" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_proyeccion_mano_obra" Width="1.5" PointX="7.71641567522493" PointY="14.082953504325335" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_grupo_x_sub_centro_costo" Width="1.5" PointX="3.4831228365577394" PointY="9.47820502960971" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_grupo_x_sub_centro_costo_det_fa_grupo_x_sub_centro_costo" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_det_mano_obra_det" Width="1.5" PointX="11.601203385554815" PointY="16.107474111070612" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_liquidacion_x_punto_cargo_det_mano_obra_det_fa_liquidacion_x_punto_cargo_det_mano_obra" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_grupo_x_sub_centro_costo" Width="1.5" PointX="6.4442919783500443" PointY="8.9257736545641784" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_compensacion" Width="1.5" PointX="8.6802375059017152" PointY="24.7884484048879" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_Poliza_x_AF_det_cuota" Width="1.5" PointX="8.2067999542722472" PointY="23.18582011348839" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente_det" Width="1.5" PointX="0.34613291562820453" PointY="11.241225754488831" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_horometro_det" Width="1.5" PointX="3.9222955312218026" PointY="3.3181132987691617" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_registro_unidades_x_equipo" Width="1.5" PointX="6.9639680865052931" PointY="8.4022851923491277" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_facturacion_x_cliente_det_fa_tarifario_facturacion_x_cliente" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo" Width="1.5" PointX="8.4609373251259967" PointY="23.155688579732406" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwaf_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo" Width="1.5" PointX="2.2505724850346205" PointY="4.3981519957995747" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_fa_tarifario_facturacion_x_cliente" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_registro_unidades_x_equipo" Width="1.5" PointX="4.1280691922307344" PointY="28.440245239269103" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_registro_unidades_x_equipo_det_fa_registro_unidades_x_equipo" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_tarifario_horometro" Width="1.5" PointX="7.90063024866424" PointY="7.3344367478668859" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_tarifario_horometro" Width="1.5" PointX="2.9257761812423246" PointY="7.0198249849583139" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_tarifario_horometro_det_fa_tarifario_horometro" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion" Width="1.5" PointX="8.43137284388364" PointY="12.69379576141657" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion" Width="1.5" PointX="0.72453402389052046" PointY="4.4158058187066604" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_det_fa_pre_facturacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_registro_unidades_x_equipo_det_ini_x_Af" Width="1.5" PointX="4.9258506730784894" PointY="25.468880456624962" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_registro_unidades_x_equipo_para_facturacion" Width="1.5" PointX="0.31062691673199966" PointY="0.14360348886978044" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_registro_unidades_x_equipo_det_ini_x_Af_fa_registro_unidades_x_equipo" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_proyeccion_mano_obra" Width="1.5" PointX="4.1656771545138565" PointY="24.840189021471975" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_mano_obra_servindustria" Width="1.5" PointX="11.952617883660187" PointY="26.744642255243214" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_mano_obra_servindustria_fa_pre_facturacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_grupo_porc_ganancia_x_anio" Width="1.5" PointX="4.7613358072756489" PointY="20.344515869554371" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_mano_obra_servindustria" Width="1.5" PointX="2.9707036795889512" PointY="22.663490902010114" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_depreciacion_x_subcentro" Width="1.5" PointX="5.3566729469954382" PointY="23.10517510357554" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_factura_fj" Width="1.5" PointX="2.3363608784677279" PointY="0.56013315942144637" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_ing_egr_inven" Width="1.5" PointX="4.5324143639450956" PointY="9.8214901135403156" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_ing_egr_data" Width="1.5" PointX="1.47769166597989" PointY="27.400442776922343" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_orden_trabajo_plataforma" Width="1.5" PointX="7.67873219758213" PointY="30.720959439278097" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_orden_trabajo_plataforma" Width="1.5" PointX="1.6701775573520816" PointY="31.57687562684383" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo" Width="1.5" PointX="1.4554671279413007" PointY="29.277946843429444" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_liquidacion_x_punto_cargo_x_fa_factura" Width="1.5" PointX="2.4575893499225328" PointY="12.324518000858145" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_liquidacion_x_punto_cargo_det_egresos_inventario_fa_liquidacion_x_punto_cargo" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_liquidacion_x_punto_cargo_det_ingresos_consumo_directo_fa_liquidacion_x_punto_cargo" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_liquidacion_x_punto_cargo_det_logistica_fa_liquidacion_x_punto_cargo" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_liquidacion_x_punto_cargo_det_mano_obra_fa_liquidacion_x_punto_cargo" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_liquidacion_x_punto_cargo_x_fa_factura_fa_liquidacion_x_punto_cargo" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_liquidacion_x_punto_cargo_x_fa_factura_x_aplicar" Width="1.5" PointX="11.326847092866361" PointY="24.897918072015941" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_liquidacion_x_punto_cargo" Width="1.5" PointX="7.472693780191566" PointY="5.6207770731396867" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_activos_data" Width="1.5" PointX="3.2279009703676684" PointY="5.3795066053883671" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_det_otros" Width="1.5" PointX="7.45997807544655" PointY="13.970629028030965" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_det_otros_fa_pre_facturacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_activos" Width="1.5" PointX="2.7292997607632072" PointY="14.426476619404962" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_activos_fa_grupo_x_sub_centro_costo" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_activos_fa_pre_facturacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_det_ing_egr_inven" Width="1.5" PointX="4.0181287191892645" PointY="18.695568525556276" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_det_ing_egr_inven_fa_pre_facturacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.fa_pre_facturacion_det_Fact_x_Gastos" Width="1.5" PointX="0.68736039506614222" PointY="20.438132578711087" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_Fact_x_Gastos" Width="1.5" PointX="9.9308578045716764" PointY="31.265686973587464" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_pre_facturacion_det_Fact_x_Gastos_data" Width="1.5" PointX="11.155024783292332" PointY="24.065292056680327" />
+        <AssociationConnector Association="Facturacion_FJ.FK_fa_pre_facturacion_det_Fact_x_Gastos_fa_pre_facturacion" />
+        <EntityTypeShape EntityType="Facturacion_FJ.vwfa_cliente_x_ct_centro_costo" Width="1.5" PointX="7.7090779671953422" PointY="27.635224116796266" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

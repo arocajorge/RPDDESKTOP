@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model_importacion_Rpt.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Model_importacion_RptStoreContainer">
+          <EntitySet Name="vwIMP_Rpt001" EntityType="Model_importacion_Rpt.Store.vwIMP_Rpt001" store:Type="Views" store:Schema="dbo" store:Name="vwIMP_Rpt001">
+            <DefiningQuery>SELECT 
+      [vwIMP_Rpt001].[IdEmpresa] AS [IdEmpresa], 
+      [vwIMP_Rpt001].[IdOrdenCompra_ext] AS [IdOrdenCompra_ext], 
+      [vwIMP_Rpt001].[pe_direccion] AS [pe_direccion], 
+      [vwIMP_Rpt001].[pe_telefonoCasa] AS [pe_telefonoCasa], 
+      [vwIMP_Rpt001].[pe_apellido] AS [pe_apellido], 
+      [vwIMP_Rpt001].[pe_nombre] AS [pe_nombre], 
+      [vwIMP_Rpt001].[ca_descripcion] AS [ca_descripcion], 
+      [vwIMP_Rpt001].[pr_descripcion] AS [pr_descripcion], 
+      [vwIMP_Rpt001].[pr_codigo] AS [pr_codigo], 
+      [vwIMP_Rpt001].[Descripcion_Ciudad] AS [Descripcion_Ciudad], 
+      [vwIMP_Rpt001].[oe_fecha_llegada_est] AS [oe_fecha_llegada_est], 
+      [vwIMP_Rpt001].[oe_fecha_embarque_est] AS [oe_fecha_embarque_est], 
+      [vwIMP_Rpt001].[oe_fecha_desaduanizacion_est] AS [oe_fecha_desaduanizacion_est], 
+      [vwIMP_Rpt001].[oe_observacion] AS [oe_observacion], 
+      [vwIMP_Rpt001].[oe_codigo] AS [oe_codigo], 
+      [vwIMP_Rpt001].[oe_valor_flete] AS [oe_valor_flete], 
+      [vwIMP_Rpt001].[oe_valor_seguro] AS [oe_valor_seguro], 
+      [vwIMP_Rpt001].[fecha_creacion] AS [fecha_creacion], 
+      [vwIMP_Rpt001].[oe_fecha_llegada] AS [oe_fecha_llegada], 
+      [vwIMP_Rpt001].[oe_fecha_embarque] AS [oe_fecha_embarque], 
+      [vwIMP_Rpt001].[oe_fecha] AS [oe_fecha], 
+      [vwIMP_Rpt001].[od_cantidad] AS [od_cantidad], 
+      [vwIMP_Rpt001].[od_costo] AS [od_costo], 
+      [vwIMP_Rpt001].[od_por_descuento] AS [od_por_descuento], 
+      [vwIMP_Rpt001].[od_descuento] AS [od_descuento], 
+      [vwIMP_Rpt001].[od_costo_final] AS [od_costo_final], 
+      [vwIMP_Rpt001].[od_subtotal] AS [od_subtotal], 
+      [vwIMP_Rpt001].[od_cantidad_recepcion] AS [od_cantidad_recepcion], 
+      [vwIMP_Rpt001].[od_costo_convertido] AS [od_costo_convertido], 
+      [vwIMP_Rpt001].[od_total_fob] AS [od_total_fob], 
+      [vwIMP_Rpt001].[od_factor_costo] AS [od_factor_costo], 
+      [vwIMP_Rpt001].[od_costo_bodega] AS [od_costo_bodega], 
+      [vwIMP_Rpt001].[od_costo_total] AS [od_costo_total], 
+      [vwIMP_Rpt001].[paisOrigen] AS [paisOrigen], 
+      [vwIMP_Rpt001].[paisEmbarque] AS [paisEmbarque], 
+      [vwIMP_Rpt001].[pe_nombreCompleto] AS [pe_nombreCompleto]
+      FROM [dbo].[vwIMP_Rpt001] AS [vwIMP_Rpt001]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwIMP_Rpt002" EntityType="Model_importacion_Rpt.Store.vwIMP_Rpt002" store:Type="Views" store:Schema="dbo" store:Name="vwIMP_Rpt002">
+            <DefiningQuery>SELECT 
+      [vwIMP_Rpt002].[IdEmpresa] AS [IdEmpresa], 
+      [vwIMP_Rpt002].[IdLiquidacion] AS [IdLiquidacion], 
+      [vwIMP_Rpt002].[IdProveedor] AS [IdProveedor], 
+      [vwIMP_Rpt002].[pr_codigo] AS [pr_codigo], 
+      [vwIMP_Rpt002].[IdOrdenCompra_ext] AS [IdOrdenCompra_ext], 
+      [vwIMP_Rpt002].[li_fecha] AS [li_fecha], 
+      [vwIMP_Rpt002].[oe_fecha_llegada] AS [oe_fecha_llegada], 
+      [vwIMP_Rpt002].[oe_fecha_embarque] AS [oe_fecha_embarque], 
+      [vwIMP_Rpt002].[oe_fecha_desaduanizacion] AS [oe_fecha_desaduanizacion], 
+      [vwIMP_Rpt002].[fecha_modificacion] AS [fecha_modificacion], 
+      [vwIMP_Rpt002].[li_observacion] AS [li_observacion], 
+      [vwIMP_Rpt002].[li_factor_conversion] AS [li_factor_conversion], 
+      [vwIMP_Rpt002].[li_total_fob] AS [li_total_fob], 
+      [vwIMP_Rpt002].[li_total_gastos] AS [li_total_gastos], 
+      [vwIMP_Rpt002].[li_total_bodega] AS [li_total_bodega], 
+      [vwIMP_Rpt002].[li_factor_costo] AS [li_factor_costo], 
+      [vwIMP_Rpt002].[estado] AS [estado], 
+      [vwIMP_Rpt002].[cerrado] AS [cerrado], 
+      [vwIMP_Rpt002].[od_cantidad] AS [od_cantidad], 
+      [vwIMP_Rpt002].[od_costo] AS [od_costo], 
+      [vwIMP_Rpt002].[od_por_descuento] AS [od_por_descuento], 
+      [vwIMP_Rpt002].[od_descuento] AS [od_descuento], 
+      [vwIMP_Rpt002].[od_costo_final] AS [od_costo_final], 
+      [vwIMP_Rpt002].[od_subtotal] AS [od_subtotal], 
+      [vwIMP_Rpt002].[od_cantidad_recepcion] AS [od_cantidad_recepcion], 
+      [vwIMP_Rpt002].[od_costo_convertido] AS [od_costo_convertido], 
+      [vwIMP_Rpt002].[od_total_fob] AS [od_total_fob], 
+      [vwIMP_Rpt002].[od_factor_costo] AS [od_factor_costo], 
+      [vwIMP_Rpt002].[od_costo_bodega] AS [od_costo_bodega], 
+      [vwIMP_Rpt002].[od_costo_total] AS [od_costo_total], 
+      [vwIMP_Rpt002].[oe_valor_seguro] AS [oe_valor_seguro], 
+      [vwIMP_Rpt002].[oe_valor_flete] AS [oe_valor_flete], 
+      [vwIMP_Rpt002].[oe_codigo] AS [oe_codigo], 
+      [vwIMP_Rpt002].[oe_fecha_llegada_est] AS [oe_fecha_llegada_est], 
+      [vwIMP_Rpt002].[oe_fecha_embarque_est] AS [oe_fecha_embarque_est], 
+      [vwIMP_Rpt002].[oe_fecha_desaduanizacion_est] AS [oe_fecha_desaduanizacion_est], 
+      [vwIMP_Rpt002].[oe_fecha] AS [oe_fecha], 
+      [vwIMP_Rpt002].[ca_descripcion] AS [ca_descripcion]
+      FROM [dbo].[vwIMP_Rpt002] AS [vwIMP_Rpt002]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPID_DESARROLLO.dbo.vwIMP_Rpt001' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwIMP_Rpt001">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdOrdenCompra_ext" />
+            <PropertyRef Name="pe_direccion" />
+            <PropertyRef Name="pe_apellido" />
+            <PropertyRef Name="pe_nombre" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="pr_descripcion" />
+            <PropertyRef Name="pr_codigo" />
+            <PropertyRef Name="Descripcion_Ciudad" />
+            <PropertyRef Name="oe_valor_flete" />
+            <PropertyRef Name="oe_valor_seguro" />
+            <PropertyRef Name="oe_fecha" />
+            <PropertyRef Name="od_cantidad" />
+            <PropertyRef Name="od_costo" />
+            <PropertyRef Name="od_por_descuento" />
+            <PropertyRef Name="od_descuento" />
+            <PropertyRef Name="od_costo_final" />
+            <PropertyRef Name="od_subtotal" />
+            <PropertyRef Name="od_cantidad_recepcion" />
+            <PropertyRef Name="od_costo_convertido" />
+            <PropertyRef Name="od_total_fob" />
+            <PropertyRef Name="od_factor_costo" />
+            <PropertyRef Name="od_costo_bodega" />
+            <PropertyRef Name="od_costo_total" />
+            <PropertyRef Name="paisOrigen" />
+            <PropertyRef Name="paisEmbarque" />
+            <PropertyRef Name="pe_nombreCompleto" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdOrdenCompra_ext" Type="decimal" Nullable="false" />
+          <Property Name="pe_direccion" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="pe_telefonoCasa" Type="varchar" MaxLength="50" />
+          <Property Name="pe_apellido" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="pe_nombre" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="pr_descripcion" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="pr_codigo" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="Descripcion_Ciudad" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="oe_fecha_llegada_est" Type="datetime" />
+          <Property Name="oe_fecha_embarque_est" Type="datetime" />
+          <Property Name="oe_fecha_desaduanizacion_est" Type="datetime" />
+          <Property Name="oe_observacion" Type="varchar" MaxLength="100" />
+          <Property Name="oe_codigo" Type="varchar" MaxLength="30" />
+          <Property Name="oe_valor_flete" Type="float" Nullable="false" />
+          <Property Name="oe_valor_seguro" Type="float" Nullable="false" />
+          <Property Name="fecha_creacion" Type="datetime" />
+          <Property Name="oe_fecha_llegada" Type="datetime" />
+          <Property Name="oe_fecha_embarque" Type="datetime" />
+          <Property Name="oe_fecha" Type="datetime" Nullable="false" />
+          <Property Name="od_cantidad" Type="float" Nullable="false" />
+          <Property Name="od_costo" Type="float" Nullable="false" />
+          <Property Name="od_por_descuento" Type="float" Nullable="false" />
+          <Property Name="od_descuento" Type="float" Nullable="false" />
+          <Property Name="od_costo_final" Type="float" Nullable="false" />
+          <Property Name="od_subtotal" Type="float" Nullable="false" />
+          <Property Name="od_cantidad_recepcion" Type="float" Nullable="false" />
+          <Property Name="od_costo_convertido" Type="float" Nullable="false" />
+          <Property Name="od_total_fob" Type="float" Nullable="false" />
+          <Property Name="od_factor_costo" Type="float" Nullable="false" />
+          <Property Name="od_costo_bodega" Type="float" Nullable="false" />
+          <Property Name="od_costo_total" Type="float" Nullable="false" />
+          <Property Name="paisOrigen" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="paisEmbarque" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPID_DESARROLLO.dbo.vwIMP_Rpt002' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwIMP_Rpt002">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdLiquidacion" />
+            <PropertyRef Name="IdProveedor" />
+            <PropertyRef Name="pr_codigo" />
+            <PropertyRef Name="IdOrdenCompra_ext" />
+            <PropertyRef Name="li_fecha" />
+            <PropertyRef Name="li_factor_conversion" />
+            <PropertyRef Name="li_total_fob" />
+            <PropertyRef Name="li_total_gastos" />
+            <PropertyRef Name="li_total_bodega" />
+            <PropertyRef Name="li_factor_costo" />
+            <PropertyRef Name="estado" />
+            <PropertyRef Name="cerrado" />
+            <PropertyRef Name="od_cantidad" />
+            <PropertyRef Name="od_costo" />
+            <PropertyRef Name="od_por_descuento" />
+            <PropertyRef Name="od_descuento" />
+            <PropertyRef Name="od_costo_final" />
+            <PropertyRef Name="od_subtotal" />
+            <PropertyRef Name="od_cantidad_recepcion" />
+            <PropertyRef Name="od_costo_convertido" />
+            <PropertyRef Name="od_total_fob" />
+            <PropertyRef Name="od_factor_costo" />
+            <PropertyRef Name="od_costo_bodega" />
+            <PropertyRef Name="od_costo_total" />
+            <PropertyRef Name="oe_valor_seguro" />
+            <PropertyRef Name="oe_valor_flete" />
+            <PropertyRef Name="oe_fecha" />
+            <PropertyRef Name="ca_descripcion" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdLiquidacion" Type="numeric" Nullable="false" />
+          <Property Name="IdProveedor" Type="numeric" Nullable="false" />
+          <Property Name="pr_codigo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdOrdenCompra_ext" Type="decimal" Nullable="false" />
+          <Property Name="li_fecha" Type="datetime" Nullable="false" />
+          <Property Name="oe_fecha_llegada" Type="datetime" />
+          <Property Name="oe_fecha_embarque" Type="datetime" />
+          <Property Name="oe_fecha_desaduanizacion" Type="datetime" />
+          <Property Name="fecha_modificacion" Type="datetime" />
+          <Property Name="li_observacion" Type="varchar" MaxLength="500" />
+          <Property Name="li_factor_conversion" Type="float" Nullable="false" />
+          <Property Name="li_total_fob" Type="float" Nullable="false" />
+          <Property Name="li_total_gastos" Type="float" Nullable="false" />
+          <Property Name="li_total_bodega" Type="float" Nullable="false" />
+          <Property Name="li_factor_costo" Type="float" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="cerrado" Type="bit" Nullable="false" />
+          <Property Name="od_cantidad" Type="float" Nullable="false" />
+          <Property Name="od_costo" Type="float" Nullable="false" />
+          <Property Name="od_por_descuento" Type="float" Nullable="false" />
+          <Property Name="od_descuento" Type="float" Nullable="false" />
+          <Property Name="od_costo_final" Type="float" Nullable="false" />
+          <Property Name="od_subtotal" Type="float" Nullable="false" />
+          <Property Name="od_cantidad_recepcion" Type="float" Nullable="false" />
+          <Property Name="od_costo_convertido" Type="float" Nullable="false" />
+          <Property Name="od_total_fob" Type="float" Nullable="false" />
+          <Property Name="od_factor_costo" Type="float" Nullable="false" />
+          <Property Name="od_costo_bodega" Type="float" Nullable="false" />
+          <Property Name="od_costo_total" Type="float" Nullable="false" />
+          <Property Name="oe_valor_seguro" Type="float" Nullable="false" />
+          <Property Name="oe_valor_flete" Type="float" Nullable="false" />
+          <Property Name="oe_codigo" Type="varchar" MaxLength="30" />
+          <Property Name="oe_fecha_llegada_est" Type="datetime" />
+          <Property Name="oe_fecha_embarque_est" Type="datetime" />
+          <Property Name="oe_fecha_desaduanizacion_est" Type="datetime" />
+          <Property Name="oe_fecha" Type="datetime" Nullable="false" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model_importacion_Rpt" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entity_Importaciones_Rpt" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="vwIMP_Rpt001" EntityType="Model_importacion_Rpt.vwIMP_Rpt001" />
+          <EntitySet Name="vwIMP_Rpt002" EntityType="Model_importacion_Rpt.vwIMP_Rpt002" />
+        </EntityContainer>
+        <EntityType Name="vwIMP_Rpt001">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdOrdenCompra_ext" />
+            <PropertyRef Name="pe_direccion" />
+            <PropertyRef Name="pe_apellido" />
+            <PropertyRef Name="pe_nombre" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="pr_descripcion" />
+            <PropertyRef Name="pr_codigo" />
+            <PropertyRef Name="Descripcion_Ciudad" />
+            <PropertyRef Name="oe_valor_flete" />
+            <PropertyRef Name="oe_valor_seguro" />
+            <PropertyRef Name="oe_fecha" />
+            <PropertyRef Name="od_cantidad" />
+            <PropertyRef Name="od_costo" />
+            <PropertyRef Name="od_por_descuento" />
+            <PropertyRef Name="od_descuento" />
+            <PropertyRef Name="od_costo_final" />
+            <PropertyRef Name="od_subtotal" />
+            <PropertyRef Name="od_cantidad_recepcion" />
+            <PropertyRef Name="od_costo_convertido" />
+            <PropertyRef Name="od_total_fob" />
+            <PropertyRef Name="od_factor_costo" />
+            <PropertyRef Name="od_costo_bodega" />
+            <PropertyRef Name="od_costo_total" />
+            <PropertyRef Name="paisOrigen" />
+            <PropertyRef Name="paisEmbarque" />
+            <PropertyRef Name="pe_nombreCompleto" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdOrdenCompra_ext" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pe_direccion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_telefonoCasa" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_apellido" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pr_descripcion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pr_codigo" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion_Ciudad" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="oe_fecha_llegada_est" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_embarque_est" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_desaduanizacion_est" Precision="3" />
+          <Property Type="String" Name="oe_observacion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="oe_codigo" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="oe_valor_flete" Nullable="false" />
+          <Property Type="Double" Name="oe_valor_seguro" Nullable="false" />
+          <Property Type="DateTime" Name="fecha_creacion" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_llegada" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_embarque" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha" Nullable="false" Precision="3" />
+          <Property Type="Double" Name="od_cantidad" Nullable="false" />
+          <Property Type="Double" Name="od_costo" Nullable="false" />
+          <Property Type="Double" Name="od_por_descuento" Nullable="false" />
+          <Property Type="Double" Name="od_descuento" Nullable="false" />
+          <Property Type="Double" Name="od_costo_final" Nullable="false" />
+          <Property Type="Double" Name="od_subtotal" Nullable="false" />
+          <Property Type="Double" Name="od_cantidad_recepcion" Nullable="false" />
+          <Property Type="Double" Name="od_costo_convertido" Nullable="false" />
+          <Property Type="Double" Name="od_total_fob" Nullable="false" />
+          <Property Type="Double" Name="od_factor_costo" Nullable="false" />
+          <Property Type="Double" Name="od_costo_bodega" Nullable="false" />
+          <Property Type="Double" Name="od_costo_total" Nullable="false" />
+          <Property Type="String" Name="paisOrigen" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="paisEmbarque" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwIMP_Rpt002">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdLiquidacion" />
+            <PropertyRef Name="IdProveedor" />
+            <PropertyRef Name="pr_codigo" />
+            <PropertyRef Name="IdOrdenCompra_ext" />
+            <PropertyRef Name="li_fecha" />
+            <PropertyRef Name="li_factor_conversion" />
+            <PropertyRef Name="li_total_fob" />
+            <PropertyRef Name="li_total_gastos" />
+            <PropertyRef Name="li_total_bodega" />
+            <PropertyRef Name="li_factor_costo" />
+            <PropertyRef Name="estado" />
+            <PropertyRef Name="cerrado" />
+            <PropertyRef Name="od_cantidad" />
+            <PropertyRef Name="od_costo" />
+            <PropertyRef Name="od_por_descuento" />
+            <PropertyRef Name="od_descuento" />
+            <PropertyRef Name="od_costo_final" />
+            <PropertyRef Name="od_subtotal" />
+            <PropertyRef Name="od_cantidad_recepcion" />
+            <PropertyRef Name="od_costo_convertido" />
+            <PropertyRef Name="od_total_fob" />
+            <PropertyRef Name="od_factor_costo" />
+            <PropertyRef Name="od_costo_bodega" />
+            <PropertyRef Name="od_costo_total" />
+            <PropertyRef Name="oe_valor_seguro" />
+            <PropertyRef Name="oe_valor_flete" />
+            <PropertyRef Name="oe_fecha" />
+            <PropertyRef Name="ca_descripcion" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdLiquidacion" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="IdProveedor" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pr_codigo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="IdOrdenCompra_ext" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="li_fecha" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_llegada" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_embarque" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_desaduanizacion" Precision="3" />
+          <Property Type="DateTime" Name="fecha_modificacion" Precision="3" />
+          <Property Type="String" Name="li_observacion" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="li_factor_conversion" Nullable="false" />
+          <Property Type="Double" Name="li_total_fob" Nullable="false" />
+          <Property Type="Double" Name="li_total_gastos" Nullable="false" />
+          <Property Type="Double" Name="li_total_bodega" Nullable="false" />
+          <Property Type="Double" Name="li_factor_costo" Nullable="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="Boolean" Name="cerrado" Nullable="false" />
+          <Property Type="Double" Name="od_cantidad" Nullable="false" />
+          <Property Type="Double" Name="od_costo" Nullable="false" />
+          <Property Type="Double" Name="od_por_descuento" Nullable="false" />
+          <Property Type="Double" Name="od_descuento" Nullable="false" />
+          <Property Type="Double" Name="od_costo_final" Nullable="false" />
+          <Property Type="Double" Name="od_subtotal" Nullable="false" />
+          <Property Type="Double" Name="od_cantidad_recepcion" Nullable="false" />
+          <Property Type="Double" Name="od_costo_convertido" Nullable="false" />
+          <Property Type="Double" Name="od_total_fob" Nullable="false" />
+          <Property Type="Double" Name="od_factor_costo" Nullable="false" />
+          <Property Type="Double" Name="od_costo_bodega" Nullable="false" />
+          <Property Type="Double" Name="od_costo_total" Nullable="false" />
+          <Property Type="Double" Name="oe_valor_seguro" Nullable="false" />
+          <Property Type="Double" Name="oe_valor_flete" Nullable="false" />
+          <Property Type="String" Name="oe_codigo" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="oe_fecha_llegada_est" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_embarque_est" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha_desaduanizacion_est" Precision="3" />
+          <Property Type="DateTime" Name="oe_fecha" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model_importacion_RptStoreContainer" CdmEntityContainer="Entity_Importaciones_Rpt">
+          <EntitySetMapping Name="vwIMP_Rpt001">
+            <EntityTypeMapping TypeName="Model_importacion_Rpt.vwIMP_Rpt001">
+              <MappingFragment StoreEntitySet="vwIMP_Rpt001">
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+                <ScalarProperty Name="paisEmbarque" ColumnName="paisEmbarque" />
+                <ScalarProperty Name="paisOrigen" ColumnName="paisOrigen" />
+                <ScalarProperty Name="od_costo_total" ColumnName="od_costo_total" />
+                <ScalarProperty Name="od_costo_bodega" ColumnName="od_costo_bodega" />
+                <ScalarProperty Name="od_factor_costo" ColumnName="od_factor_costo" />
+                <ScalarProperty Name="od_total_fob" ColumnName="od_total_fob" />
+                <ScalarProperty Name="od_costo_convertido" ColumnName="od_costo_convertido" />
+                <ScalarProperty Name="od_cantidad_recepcion" ColumnName="od_cantidad_recepcion" />
+                <ScalarProperty Name="od_subtotal" ColumnName="od_subtotal" />
+                <ScalarProperty Name="od_costo_final" ColumnName="od_costo_final" />
+                <ScalarProperty Name="od_descuento" ColumnName="od_descuento" />
+                <ScalarProperty Name="od_por_descuento" ColumnName="od_por_descuento" />
+                <ScalarProperty Name="od_costo" ColumnName="od_costo" />
+                <ScalarProperty Name="od_cantidad" ColumnName="od_cantidad" />
+                <ScalarProperty Name="oe_fecha" ColumnName="oe_fecha" />
+                <ScalarProperty Name="oe_fecha_embarque" ColumnName="oe_fecha_embarque" />
+                <ScalarProperty Name="oe_fecha_llegada" ColumnName="oe_fecha_llegada" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="oe_valor_seguro" ColumnName="oe_valor_seguro" />
+                <ScalarProperty Name="oe_valor_flete" ColumnName="oe_valor_flete" />
+                <ScalarProperty Name="oe_codigo" ColumnName="oe_codigo" />
+                <ScalarProperty Name="oe_observacion" ColumnName="oe_observacion" />
+                <ScalarProperty Name="oe_fecha_desaduanizacion_est" ColumnName="oe_fecha_desaduanizacion_est" />
+                <ScalarProperty Name="oe_fecha_embarque_est" ColumnName="oe_fecha_embarque_est" />
+                <ScalarProperty Name="oe_fecha_llegada_est" ColumnName="oe_fecha_llegada_est" />
+                <ScalarProperty Name="Descripcion_Ciudad" ColumnName="Descripcion_Ciudad" />
+                <ScalarProperty Name="pr_codigo" ColumnName="pr_codigo" />
+                <ScalarProperty Name="pr_descripcion" ColumnName="pr_descripcion" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="pe_nombre" ColumnName="pe_nombre" />
+                <ScalarProperty Name="pe_apellido" ColumnName="pe_apellido" />
+                <ScalarProperty Name="pe_telefonoCasa" ColumnName="pe_telefonoCasa" />
+                <ScalarProperty Name="pe_direccion" ColumnName="pe_direccion" />
+                <ScalarProperty Name="IdOrdenCompra_ext" ColumnName="IdOrdenCompra_ext" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwIMP_Rpt002">
+            <EntityTypeMapping TypeName="Model_importacion_Rpt.vwIMP_Rpt002">
+              <MappingFragment StoreEntitySet="vwIMP_Rpt002">
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="oe_fecha" ColumnName="oe_fecha" />
+                <ScalarProperty Name="oe_fecha_desaduanizacion_est" ColumnName="oe_fecha_desaduanizacion_est" />
+                <ScalarProperty Name="oe_fecha_embarque_est" ColumnName="oe_fecha_embarque_est" />
+                <ScalarProperty Name="oe_fecha_llegada_est" ColumnName="oe_fecha_llegada_est" />
+                <ScalarProperty Name="oe_codigo" ColumnName="oe_codigo" />
+                <ScalarProperty Name="oe_valor_flete" ColumnName="oe_valor_flete" />
+                <ScalarProperty Name="oe_valor_seguro" ColumnName="oe_valor_seguro" />
+                <ScalarProperty Name="od_costo_total" ColumnName="od_costo_total" />
+                <ScalarProperty Name="od_costo_bodega" ColumnName="od_costo_bodega" />
+                <ScalarProperty Name="od_factor_costo" ColumnName="od_factor_costo" />
+                <ScalarProperty Name="od_total_fob" ColumnName="od_total_fob" />
+                <ScalarProperty Name="od_costo_convertido" ColumnName="od_costo_convertido" />
+                <ScalarProperty Name="od_cantidad_recepcion" ColumnName="od_cantidad_recepcion" />
+                <ScalarProperty Name="od_subtotal" ColumnName="od_subtotal" />
+                <ScalarProperty Name="od_costo_final" ColumnName="od_costo_final" />
+                <ScalarProperty Name="od_descuento" ColumnName="od_descuento" />
+                <ScalarProperty Name="od_por_descuento" ColumnName="od_por_descuento" />
+                <ScalarProperty Name="od_costo" ColumnName="od_costo" />
+                <ScalarProperty Name="od_cantidad" ColumnName="od_cantidad" />
+                <ScalarProperty Name="cerrado" ColumnName="cerrado" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="li_factor_costo" ColumnName="li_factor_costo" />
+                <ScalarProperty Name="li_total_bodega" ColumnName="li_total_bodega" />
+                <ScalarProperty Name="li_total_gastos" ColumnName="li_total_gastos" />
+                <ScalarProperty Name="li_total_fob" ColumnName="li_total_fob" />
+                <ScalarProperty Name="li_factor_conversion" ColumnName="li_factor_conversion" />
+                <ScalarProperty Name="li_observacion" ColumnName="li_observacion" />
+                <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+                <ScalarProperty Name="oe_fecha_desaduanizacion" ColumnName="oe_fecha_desaduanizacion" />
+                <ScalarProperty Name="oe_fecha_embarque" ColumnName="oe_fecha_embarque" />
+                <ScalarProperty Name="oe_fecha_llegada" ColumnName="oe_fecha_llegada" />
+                <ScalarProperty Name="li_fecha" ColumnName="li_fecha" />
+                <ScalarProperty Name="IdOrdenCompra_ext" ColumnName="IdOrdenCompra_ext" />
+                <ScalarProperty Name="pr_codigo" ColumnName="pr_codigo" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="IdLiquidacion" ColumnName="IdLiquidacion" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

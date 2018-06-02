@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model_alerta.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Model_alertaStoreContainer">
+          <EntitySet Name="tb_sis_alerta" EntityType="Model_alerta.Store.tb_sis_alerta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_alerta_auditoria" EntityType="Model_alerta.Store.tb_sis_alerta_auditoria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_alerta_x_usuario_x_empresa" EntityType="Model_alerta.Store.tb_sis_alerta_x_usuario_x_empresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_alerta_x_usuario_x_empresa_x_eventos" EntityType="Model_alerta.Store.tb_sis_alerta_x_usuario_x_empresa_x_eventos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos" EntityType="Model_alerta.Store.vwtb_sis_alerta_x_usuario_x_empresa_x_eventos" store:Type="Views" store:Schema="dbo" store:Name="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos">
+            <DefiningQuery>SELECT 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[IdEmpresa] AS [IdEmpresa], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[IdUsuario] AS [IdUsuario], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[CodAlerta] AS [CodAlerta], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[enum_evento] AS [enum_evento], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[IdSucursal] AS [IdSucursal], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[Nombre] AS [Nombre], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[Formulario] AS [Formulario], 
+      [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos].[nom_Asembly] AS [nom_Asembly]
+      FROM [dbo].[vwtb_sis_alerta_x_usuario_x_empresa_x_eventos] AS [vwtb_sis_alerta_x_usuario_x_empresa_x_eventos]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa" Association="Model_alerta.Store.FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa">
+            <End Role="tb_sis_alerta_x_usuario_x_empresa" EntitySet="tb_sis_alerta_x_usuario_x_empresa" />
+            <End Role="tb_sis_alerta_x_usuario_x_empresa_x_eventos" EntitySet="tb_sis_alerta_x_usuario_x_empresa_x_eventos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tb_sis_alerta">
+          <Key>
+            <PropertyRef Name="CodAlerta" />
+          </Key>
+          <Property Name="CodAlerta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="CodModulo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="VistaRpt" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Formulario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_NomReporte" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_Asembly" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_Info" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_Bus" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_Data" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_sis_alerta_auditoria">
+          <Key>
+            <PropertyRef Name="IdRegistro" />
+          </Key>
+          <Property Name="IdRegistro" Type="numeric" Nullable="false" />
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodAlerta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="enum_evento" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fecha_transac" Type="datetime" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="tb_sis_alerta_x_usuario_x_empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="CodAlerta" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodAlerta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdSucursal" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="CodAlerta" />
+            <PropertyRef Name="enum_evento" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodAlerta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="enum_evento" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="observacion" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_FJ_PRODUCCION.dbo.vwtb_sis_alerta_x_usuario_x_empresa_x_eventos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="CodAlerta" />
+            <PropertyRef Name="enum_evento" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Formulario" />
+            <PropertyRef Name="nom_Asembly" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodAlerta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="enum_evento" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="IdSucursal" Type="int" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="Formulario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_Asembly" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa">
+          <End Role="tb_sis_alerta_x_usuario_x_empresa" Type="Model_alerta.Store.tb_sis_alerta_x_usuario_x_empresa" Multiplicity="1" />
+          <End Role="tb_sis_alerta_x_usuario_x_empresa_x_eventos" Type="Model_alerta.Store.tb_sis_alerta_x_usuario_x_empresa_x_eventos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_sis_alerta_x_usuario_x_empresa">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdUsuario" />
+              <PropertyRef Name="CodAlerta" />
+            </Principal>
+            <Dependent Role="tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdUsuario" />
+              <PropertyRef Name="CodAlerta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model_alerta" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities_alerta" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_sis_alerta" EntityType="Model_alerta.tb_sis_alerta" />
+          <EntitySet Name="tb_sis_alerta_auditoria" EntityType="Model_alerta.tb_sis_alerta_auditoria" />
+          <EntitySet Name="tb_sis_alerta_x_usuario_x_empresa" EntityType="Model_alerta.tb_sis_alerta_x_usuario_x_empresa" />
+          <EntitySet Name="tb_sis_alerta_x_usuario_x_empresa_x_eventos" EntityType="Model_alerta.tb_sis_alerta_x_usuario_x_empresa_x_eventos" />
+          <EntitySet Name="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos" EntityType="Model_alerta.vwtb_sis_alerta_x_usuario_x_empresa_x_eventos" />
+          <AssociationSet Name="FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa" Association="Model_alerta.FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa">
+            <End Role="tb_sis_alerta_x_usuario_x_empresa" EntitySet="tb_sis_alerta_x_usuario_x_empresa" />
+            <End Role="tb_sis_alerta_x_usuario_x_empresa_x_eventos" EntitySet="tb_sis_alerta_x_usuario_x_empresa_x_eventos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tb_sis_alerta">
+          <Key>
+            <PropertyRef Name="CodAlerta" />
+          </Key>
+          <Property Name="CodAlerta" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="CodModulo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VistaRpt" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Formulario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Class_NomReporte" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nom_Asembly" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Class_Info" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Class_Bus" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Class_Data" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <Property Name="observacion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_alerta_auditoria">
+          <Key>
+            <PropertyRef Name="IdRegistro" />
+          </Key>
+          <Property Name="IdRegistro" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CodAlerta" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="enum_evento" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_transac" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="observacion" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_alerta_x_usuario_x_empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="CodAlerta" />
+          </Key>
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CodAlerta" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdSucursal" Type="Int32" />
+          <NavigationProperty Name="tb_sis_alerta_x_usuario_x_empresa_x_eventos" Relationship="Model_alerta.FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa" FromRole="tb_sis_alerta_x_usuario_x_empresa" ToRole="tb_sis_alerta_x_usuario_x_empresa_x_eventos" />
+        </EntityType>
+        <EntityType Name="tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="CodAlerta" />
+            <PropertyRef Name="enum_evento" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="String" Name="IdUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CodAlerta" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="enum_evento" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="observacion" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_sis_alerta_x_usuario_x_empresa" Relationship="Model_alerta.FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa" FromRole="tb_sis_alerta_x_usuario_x_empresa_x_eventos" ToRole="tb_sis_alerta_x_usuario_x_empresa" />
+        </EntityType>
+        <EntityType Name="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="CodAlerta" />
+            <PropertyRef Name="enum_evento" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Formulario" />
+            <PropertyRef Name="nom_Asembly" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="String" Name="IdUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CodAlerta" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="enum_evento" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdSucursal" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Formulario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Asembly" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_tb_sis_alerta_x_usuario_x_empresa_x_eventos_tb_sis_alerta_x_usuario_x_empresa">
+          <End Type="Model_alerta.tb_sis_alerta_x_usuario_x_empresa" Role="tb_sis_alerta_x_usuario_x_empresa" Multiplicity="1" />
+          <End Type="Model_alerta.tb_sis_alerta_x_usuario_x_empresa_x_eventos" Role="tb_sis_alerta_x_usuario_x_empresa_x_eventos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_sis_alerta_x_usuario_x_empresa">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdUsuario" />
+              <PropertyRef Name="CodAlerta" />
+            </Principal>
+            <Dependent Role="tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdUsuario" />
+              <PropertyRef Name="CodAlerta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model_alertaStoreContainer" CdmEntityContainer="Entities_alerta">
+          <EntitySetMapping Name="tb_sis_alerta">
+            <EntityTypeMapping TypeName="Model_alerta.tb_sis_alerta">
+              <MappingFragment StoreEntitySet="tb_sis_alerta">
+                <ScalarProperty Name="CodAlerta" ColumnName="CodAlerta" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CodModulo" ColumnName="CodModulo" />
+                <ScalarProperty Name="VistaRpt" ColumnName="VistaRpt" />
+                <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+                <ScalarProperty Name="Class_NomReporte" ColumnName="Class_NomReporte" />
+                <ScalarProperty Name="nom_Asembly" ColumnName="nom_Asembly" />
+                <ScalarProperty Name="Class_Info" ColumnName="Class_Info" />
+                <ScalarProperty Name="Class_Bus" ColumnName="Class_Bus" />
+                <ScalarProperty Name="Class_Data" ColumnName="Class_Data" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_alerta_auditoria">
+            <EntityTypeMapping TypeName="Model_alerta.tb_sis_alerta_auditoria">
+              <MappingFragment StoreEntitySet="tb_sis_alerta_auditoria">
+                <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="CodAlerta" ColumnName="CodAlerta" />
+                <ScalarProperty Name="enum_evento" ColumnName="enum_evento" />
+                <ScalarProperty Name="fecha_transac" ColumnName="fecha_transac" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_alerta_x_usuario_x_empresa">
+            <EntityTypeMapping TypeName="Model_alerta.tb_sis_alerta_x_usuario_x_empresa">
+              <MappingFragment StoreEntitySet="tb_sis_alerta_x_usuario_x_empresa">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="CodAlerta" ColumnName="CodAlerta" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+            <EntityTypeMapping TypeName="Model_alerta.tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+              <MappingFragment StoreEntitySet="tb_sis_alerta_x_usuario_x_empresa_x_eventos">
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="enum_evento" ColumnName="enum_evento" />
+                <ScalarProperty Name="CodAlerta" ColumnName="CodAlerta" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos">
+            <EntityTypeMapping TypeName="Model_alerta.vwtb_sis_alerta_x_usuario_x_empresa_x_eventos">
+              <MappingFragment StoreEntitySet="vwtb_sis_alerta_x_usuario_x_empresa_x_eventos">
+                <ScalarProperty Name="nom_Asembly" ColumnName="nom_Asembly" />
+                <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="enum_evento" ColumnName="enum_evento" />
+                <ScalarProperty Name="CodAlerta" ColumnName="CodAlerta" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

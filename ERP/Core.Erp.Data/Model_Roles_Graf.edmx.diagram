@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95dbafaea8144d27b1def62d7db1a677" Name="Diagrama1" ZoomLevel="52">
+        <EntityTypeShape EntityType="DBERP_GRAF_PRUEBAModel.vwRo_Solicitud_Vacaciones_Graf" Width="1.5" PointX="4.0635319743601288" PointY="17.39486173605307" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

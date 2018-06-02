@@ -1,0 +1,1462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Entities_RolesFj_Rpt.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Entities_RolesFj_RptStoreContainer">
+          <EntitySet Name="vwROLES_Rpt008" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt008" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt008">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt008].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt008].[IdTipoNomina] AS [IdTipoNomina], 
+      [vwROLES_Rpt008].[IdPeriodo] AS [IdPeriodo], 
+      [vwROLES_Rpt008].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt008].[pe_anio] AS [pe_anio], 
+      [vwROLES_Rpt008].[pe_mes] AS [pe_mes], 
+      [vwROLES_Rpt008].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwROLES_Rpt008].[zo_descripcion] AS [zo_descripcion], 
+      [vwROLES_Rpt008].[fu_descripcion] AS [fu_descripcion], 
+      [vwROLES_Rpt008].[Disco] AS [Disco], 
+      [vwROLES_Rpt008].[Placa] AS [Placa], 
+      [vwROLES_Rpt008].[ru_descripcion] AS [ru_descripcion], 
+      [vwROLES_Rpt008].[em_fechaIngaRol] AS [em_fechaIngaRol], 
+      [vwROLES_Rpt008].[pe_nombreCompleto] AS [pe_nombreCompleto], 
+      [vwROLES_Rpt008].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt008].[rubro] AS [rubro], 
+      [vwROLES_Rpt008].[Orden] AS [Orden], 
+      [vwROLES_Rpt008].[Id_Catalogo] AS [Id_Catalogo], 
+      [vwROLES_Rpt008].[pe_FechaIni] AS [pe_FechaIni], 
+      [vwROLES_Rpt008].[pe_FechaFin] AS [pe_FechaFin], 
+      [vwROLES_Rpt008].[Estado] AS [Estado], 
+      [vwROLES_Rpt008].[Valor] AS [Valor], 
+      [vwROLES_Rpt008].[Descripcion] AS [Descripcion], 
+      [vwROLES_Rpt008].[Grupo] AS [Grupo]
+      FROM [Fj_servindustrias].[vwROLES_Rpt008] AS [vwROLES_Rpt008]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt013" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt013" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt013">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt013].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt013].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt013].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwROLES_Rpt013].[Empleado] AS [Empleado], 
+      [vwROLES_Rpt013].[em_codigo] AS [em_codigo], 
+      [vwROLES_Rpt013].[Observacion] AS [Observacion], 
+      [vwROLES_Rpt013].[Ingresos] AS [Ingresos], 
+      [vwROLES_Rpt013].[Egresos] AS [Egresos], 
+      [vwROLES_Rpt013].[UltimaRemuneracion] AS [UltimaRemuneracion], 
+      [vwROLES_Rpt013].[FechaSalida] AS [FechaSalida], 
+      [vwROLES_Rpt013].[FechaIngreso] AS [FechaIngreso], 
+      [vwROLES_Rpt013].[IdCausaTerminacion] AS [IdCausaTerminacion], 
+      [vwROLES_Rpt013].[TipoTerminacion] AS [TipoTerminacion], 
+      [vwROLES_Rpt013].[de_descripcion] AS [de_descripcion], 
+      [vwROLES_Rpt013].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt013].[ValorDesaucio] AS [ValorDesaucio], 
+      [vwROLES_Rpt013].[Antiguedad] AS [Antiguedad], 
+      [vwROLES_Rpt013].[EstadoLiquidacion] AS [EstadoLiquidacion], 
+      [vwROLES_Rpt013].[antiguedad_string] AS [antiguedad_string]
+      FROM [Fj_servindustrias].[vwROLES_Rpt013] AS [vwROLES_Rpt013]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt014" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt014" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt014">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt014].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt014].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt014].[Descripcion] AS [Descripcion], 
+      [vwROLES_Rpt014].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt014].[Asistencia] AS [Asistencia]
+      FROM [Fj_servindustrias].[vwROLES_Rpt014] AS [vwROLES_Rpt014]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt015" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt015" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt015">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt015].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt015].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt015].[Id_remplazo] AS [Id_remplazo], 
+      [vwROLES_Rpt015].[Cedula_empleado_Remplazado] AS [Cedula_empleado_Remplazado], 
+      [vwROLES_Rpt015].[empleado_remplazado] AS [empleado_remplazado], 
+      [vwROLES_Rpt015].[Cedula_remplazo] AS [Cedula_remplazo], 
+      [vwROLES_Rpt015].[Remplazo] AS [Remplazo], 
+      [vwROLES_Rpt015].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt015].[Valor_descuento_empleado] AS [Valor_descuento_empleado], 
+      [vwROLES_Rpt015].[Fecha_descuenta_rol] AS [Fecha_descuenta_rol], 
+      [vwROLES_Rpt015].[valor_x_dia_remplazo] AS [valor_x_dia_remplazo], 
+      [vwROLES_Rpt015].[Total_pagar_remplazo] AS [Total_pagar_remplazo], 
+      [vwROLES_Rpt015].[Descuenta_rol] AS [Descuenta_rol], 
+      [vwROLES_Rpt015].[Fecha] AS [Fecha], 
+      [vwROLES_Rpt015].[Fecha_Salida] AS [Fecha_Salida], 
+      [vwROLES_Rpt015].[Fecha_Entrada] AS [Fecha_Entrada], 
+      [vwROLES_Rpt015].[Observacion] AS [Observacion], 
+      [vwROLES_Rpt015].[MotivoAusencia] AS [MotivoAusencia], 
+      [vwROLES_Rpt015].[DescripcionProcesoNomina] AS [DescripcionProcesoNomina]
+      FROM [Fj_servindustrias].[vwROLES_Rpt015] AS [vwROLES_Rpt015]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt016" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt016" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt016">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt016].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt016].[IdNomina_Tipo] AS [IdNomina_Tipo], 
+      [vwROLES_Rpt016].[IdNomina_Tipo_Liq] AS [IdNomina_Tipo_Liq], 
+      [vwROLES_Rpt016].[IdPeriodo] AS [IdPeriodo], 
+      [vwROLES_Rpt016].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt016].[cod_Pago_Variable] AS [cod_Pago_Variable], 
+      [vwROLES_Rpt016].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwROLES_Rpt016].[Nombres] AS [Nombres], 
+      [vwROLES_Rpt016].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt016].[Meta] AS [Meta], 
+      [vwROLES_Rpt016].[Real] AS [Real], 
+      [vwROLES_Rpt016].[Cumplimiento] AS [Cumplimiento], 
+      [vwROLES_Rpt016].[Variable_porcentaje_prorrateado] AS [Variable_porcentaje_prorrateado], 
+      [vwROLES_Rpt016].[Valor] AS [Valor], 
+      [vwROLES_Rpt016].[FechaPago] AS [FechaPago], 
+      [vwROLES_Rpt016].[ru_descripcion] AS [ru_descripcion], 
+      [vwROLES_Rpt016].[Valor_bono] AS [Valor_bono]
+      FROM [Fj_servindustrias].[vwROLES_Rpt016] AS [vwROLES_Rpt016]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt019" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt019" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt019">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt019].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt019].[IdNomina_Tipo] AS [IdNomina_Tipo], 
+      [vwROLES_Rpt019].[IdNomina_Tipo_Liq] AS [IdNomina_Tipo_Liq], 
+      [vwROLES_Rpt019].[IdPeriodo] AS [IdPeriodo], 
+      [vwROLES_Rpt019].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt019].[cod_Pago_Variable] AS [cod_Pago_Variable], 
+      [vwROLES_Rpt019].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwROLES_Rpt019].[Nombres] AS [Nombres], 
+      [vwROLES_Rpt019].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt019].[Meta] AS [Meta], 
+      [vwROLES_Rpt019].[Real] AS [Real], 
+      [vwROLES_Rpt019].[Cumplimiento] AS [Cumplimiento], 
+      [vwROLES_Rpt019].[Variable_porcentaje_prorrateado] AS [Variable_porcentaje_prorrateado], 
+      [vwROLES_Rpt019].[Valor] AS [Valor], 
+      [vwROLES_Rpt019].[FechaPago] AS [FechaPago], 
+      [vwROLES_Rpt019].[ru_descripcion] AS [ru_descripcion], 
+      [vwROLES_Rpt019].[Valor_bono] AS [Valor_bono]
+      FROM [Fj_servindustrias].[vwROLES_Rpt019] AS [vwROLES_Rpt019]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt020" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt020" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt020">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt020].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt020].[IdSucursal] AS [IdSucursal], 
+      [vwROLES_Rpt020].[IdMovi_inven_tipo] AS [IdMovi_inven_tipo], 
+      [vwROLES_Rpt020].[IdNumMovi] AS [IdNumMovi], 
+      [vwROLES_Rpt020].[Secuencia] AS [Secuencia], 
+      [vwROLES_Rpt020].[IdProducto] AS [IdProducto], 
+      [vwROLES_Rpt020].[pr_codigo] AS [pr_codigo], 
+      [vwROLES_Rpt020].[pr_descripcion] AS [pr_descripcion], 
+      [vwROLES_Rpt020].[dm_cantidad] AS [dm_cantidad], 
+      [vwROLES_Rpt020].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt020].[pe_nombreCompleto] AS [pe_nombreCompleto], 
+      [vwROLES_Rpt020].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwROLES_Rpt020].[IdCentroCosto] AS [IdCentroCosto], 
+      [vwROLES_Rpt020].[nom_Centro_costo] AS [nom_Centro_costo], 
+      [vwROLES_Rpt020].[IdCentroCosto_sub_centro_costo] AS [IdCentroCosto_sub_centro_costo], 
+      [vwROLES_Rpt020].[nom_Centro_costo_sub_centro_costo] AS [nom_Centro_costo_sub_centro_costo], 
+      [vwROLES_Rpt020].[IdPunto_cargo] AS [IdPunto_cargo], 
+      [vwROLES_Rpt020].[nom_punto_cargo] AS [nom_punto_cargo], 
+      [vwROLES_Rpt020].[cm_observacion] AS [cm_observacion], 
+      [vwROLES_Rpt020].[cm_fecha] AS [cm_fecha], 
+      [vwROLES_Rpt020].[CodMoviInven] AS [CodMoviInven], 
+      [vwROLES_Rpt020].[ca_descripcion] AS [ca_descripcion], 
+      [vwROLES_Rpt020].[de_descripcion] AS [de_descripcion], 
+      [vwROLES_Rpt020].[pe_apellido] AS [pe_apellido], 
+      [vwROLES_Rpt020].[pe_nombre] AS [pe_nombre]
+      FROM [Fj_servindustrias].[vwROLES_Rpt020] AS [vwROLES_Rpt020]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwROLES_Rpt021" EntityType="Entities_RolesFj_Rpt.Store.vwROLES_Rpt021" store:Type="Views" store:Schema="Fj_servindustrias" store:Name="vwROLES_Rpt021">
+            <DefiningQuery>SELECT 
+      [vwROLES_Rpt021].[IdEmpresa] AS [IdEmpresa], 
+      [vwROLES_Rpt021].[IdNomina_Tipo] AS [IdNomina_Tipo], 
+      [vwROLES_Rpt021].[IdEmpleado] AS [IdEmpleado], 
+      [vwROLES_Rpt021].[IdDescuento] AS [IdDescuento], 
+      [vwROLES_Rpt021].[pe_apellido] AS [pe_apellido], 
+      [vwROLES_Rpt021].[pe_nombre] AS [pe_nombre], 
+      [vwROLES_Rpt021].[nom_cargo] AS [nom_cargo], 
+      [vwROLES_Rpt021].[nom_rubro] AS [nom_rubro], 
+      [vwROLES_Rpt021].[Observacion] AS [Observacion], 
+      [vwROLES_Rpt021].[Valor] AS [Valor], 
+      [vwROLES_Rpt021].[Fecha_Incidente] AS [Fecha_Incidente], 
+      [vwROLES_Rpt021].[Estado] AS [Estado], 
+      [vwROLES_Rpt021].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwROLES_Rpt021].[Descripcion] AS [Descripcion]
+      FROM [Fj_servindustrias].[vwROLES_Rpt021] AS [vwROLES_Rpt021]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt008' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt008">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTipoNomina" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="rubro" />
+            <PropertyRef Name="Orden" />
+            <PropertyRef Name="Id_Catalogo" />
+            <PropertyRef Name="pe_FechaIni" />
+            <PropertyRef Name="pe_FechaFin" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Grupo" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdTipoNomina" Type="int" Nullable="false" />
+          <Property Name="IdPeriodo" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="pe_anio" Type="int" />
+          <Property Name="pe_mes" Type="int" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="zo_descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="fu_descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="Disco" Type="varchar" MaxLength="50" />
+          <Property Name="Placa" Type="varchar" MaxLength="50" />
+          <Property Name="ru_descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="em_fechaIngaRol" Type="datetime" />
+          <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="rubro" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Orden" Type="int" Nullable="false" />
+          <Property Name="Id_Catalogo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="pe_FechaIni" Type="smalldatetime" Nullable="false" />
+          <Property Name="pe_FechaFin" Type="smalldatetime" Nullable="false" />
+          <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="Grupo" Type="varchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt013' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt013">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="em_codigo" />
+            <PropertyRef Name="Ingresos" />
+            <PropertyRef Name="Egresos" />
+            <PropertyRef Name="UltimaRemuneracion" />
+            <PropertyRef Name="FechaIngreso" />
+            <PropertyRef Name="IdCausaTerminacion" />
+            <PropertyRef Name="TipoTerminacion" />
+            <PropertyRef Name="de_descripcion" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="EstadoLiquidacion" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Empleado" Type="varchar" MaxLength="201" />
+          <Property Name="em_codigo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Observacion" Type="varchar" MaxLength="250" />
+          <Property Name="Ingresos" Type="float" Nullable="false" />
+          <Property Name="Egresos" Type="float" Nullable="false" />
+          <Property Name="UltimaRemuneracion" Type="float" Nullable="false" />
+          <Property Name="FechaSalida" Type="date" />
+          <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+          <Property Name="IdCausaTerminacion" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="TipoTerminacion" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="de_descripcion" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ValorDesaucio" Type="float" />
+          <Property Name="Antiguedad" Type="int" />
+          <Property Name="EstadoLiquidacion" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="antiguedad_string" Type="varchar" MaxLength="57" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt014' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt014">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="Asistencia" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Asistencia" Type="varchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt015' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt015">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="Id_remplazo" />
+            <PropertyRef Name="Cedula_empleado_Remplazado" />
+            <PropertyRef Name="Cedula_remplazo" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="valor_x_dia_remplazo" />
+            <PropertyRef Name="Total_pagar_remplazo" />
+            <PropertyRef Name="Descuenta_rol" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Fecha_Salida" />
+            <PropertyRef Name="Fecha_Entrada" />
+            <PropertyRef Name="MotivoAusencia" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="Id_remplazo" Type="int" Nullable="false" />
+          <Property Name="Cedula_empleado_Remplazado" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="empleado_remplazado" Type="varchar" MaxLength="201" />
+          <Property Name="Cedula_remplazo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Remplazo" Type="varchar" MaxLength="201" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Valor_descuento_empleado" Type="float" />
+          <Property Name="Fecha_descuenta_rol" Type="date" />
+          <Property Name="valor_x_dia_remplazo" Type="float" Nullable="false" />
+          <Property Name="Total_pagar_remplazo" Type="float" Nullable="false" />
+          <Property Name="Descuenta_rol" Type="bit" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Fecha_Salida" Type="date" Nullable="false" />
+          <Property Name="Fecha_Entrada" Type="date" Nullable="false" />
+          <Property Name="Observacion" Type="varchar" MaxLength="300" />
+          <Property Name="MotivoAusencia" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="DescripcionProcesoNomina" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt016' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt016">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdNomina_Tipo_Liq" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="cod_Pago_Variable" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="FechaPago" />
+            <PropertyRef Name="ru_descripcion" />
+            <PropertyRef Name="Valor_bono" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdNomina_Tipo" Type="int" Nullable="false" />
+          <Property Name="IdNomina_Tipo_Liq" Type="int" Nullable="false" />
+          <Property Name="IdPeriodo" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="cod_Pago_Variable" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nombres" Type="varchar" MaxLength="201" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Meta" Type="float" />
+          <Property Name="Real" Type="float" />
+          <Property Name="Cumplimiento" Type="float" />
+          <Property Name="Variable_porcentaje_prorrateado" Type="float" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="FechaPago" Type="datetime" Nullable="false" />
+          <Property Name="ru_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Valor_bono" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt019' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt019">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdNomina_Tipo_Liq" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="cod_Pago_Variable" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="FechaPago" />
+            <PropertyRef Name="ru_descripcion" />
+            <PropertyRef Name="Valor_bono" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdNomina_Tipo" Type="int" Nullable="false" />
+          <Property Name="IdNomina_Tipo_Liq" Type="int" Nullable="false" />
+          <Property Name="IdPeriodo" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="cod_Pago_Variable" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nombres" Type="varchar" MaxLength="201" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Meta" Type="float" />
+          <Property Name="Real" Type="float" />
+          <Property Name="Cumplimiento" Type="float" />
+          <Property Name="Variable_porcentaje_prorrateado" Type="float" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="FechaPago" Type="datetime" Nullable="false" />
+          <Property Name="ru_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Valor_bono" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt020' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt020">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdSucursal" />
+            <PropertyRef Name="IdMovi_inven_tipo" />
+            <PropertyRef Name="IdNumMovi" />
+            <PropertyRef Name="Secuencia" />
+            <PropertyRef Name="IdProducto" />
+            <PropertyRef Name="pr_codigo" />
+            <PropertyRef Name="pr_descripcion" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="cm_fecha" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="de_descripcion" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdSucursal" Type="int" Nullable="false" />
+          <Property Name="IdMovi_inven_tipo" Type="int" Nullable="false" />
+          <Property Name="IdNumMovi" Type="numeric" Nullable="false" />
+          <Property Name="Secuencia" Type="int" Nullable="false" />
+          <Property Name="IdProducto" Type="numeric" Nullable="false" />
+          <Property Name="pr_codigo" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="pr_descripcion" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="dm_cantidad" Type="float" />
+          <Property Name="IdEmpleado" Type="numeric" />
+          <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdCentroCosto" Type="varchar" MaxLength="20" />
+          <Property Name="nom_Centro_costo" Type="varchar" MaxLength="250" />
+          <Property Name="IdCentroCosto_sub_centro_costo" Type="varchar" MaxLength="20" />
+          <Property Name="nom_Centro_costo_sub_centro_costo" Type="varchar" MaxLength="200" />
+          <Property Name="IdPunto_cargo" Type="int" />
+          <Property Name="nom_punto_cargo" Type="varchar" MaxLength="250" />
+          <Property Name="cm_observacion" Type="varchar" MaxLength="1000" />
+          <Property Name="cm_fecha" Type="datetime" Nullable="false" />
+          <Property Name="CodMoviInven" Type="varchar" MaxLength="25" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="de_descripcion" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="pe_apellido" Type="varchar" MaxLength="100" />
+          <Property Name="pe_nombre" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.Fj_servindustrias.vwROLES_Rpt021' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwROLES_Rpt021">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="IdDescuento" />
+            <PropertyRef Name="nom_cargo" />
+            <PropertyRef Name="nom_rubro" />
+            <PropertyRef Name="Observacion" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Fecha_Incidente" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdNomina_Tipo" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" />
+          <Property Name="IdDescuento" Type="int" Nullable="false" />
+          <Property Name="pe_apellido" Type="varchar" MaxLength="100" />
+          <Property Name="pe_nombre" Type="varchar" MaxLength="100" />
+          <Property Name="nom_cargo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_rubro" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Observacion" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="Fecha_Incidente" Type="date" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Function Name="spROLES_Rpt002" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina" Type="int" Mode="In" />
+          <Parameter Name="IdEmpleado" Type="numeric" Mode="In" />
+          <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+          <Parameter Name="Anio" Type="int" Mode="In" />
+          <Parameter Name="Mes" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt005" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo" Type="int" Mode="In" />
+          <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+          <Parameter Name="Fecha_Fin" Type="date" Mode="In" />
+          <Parameter Name="Idperiodo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt006" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo" Type="int" Mode="In" />
+          <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+          <Parameter Name="Fecha_Fin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt007" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_Tipo" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_Tipo_Liq" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+          <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+          <Parameter Name="Fecha_Fin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt010" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo_Liqui" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+          <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+          <Parameter Name="Fecha_Fin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt011" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo_Liqui" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+          <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+          <Parameter Name="Fecha_Fin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt012" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina_tipo" Type="int" Mode="In" />
+          <Parameter Name="Anio" Type="int" Mode="In" />
+          <Parameter Name="Mes" Type="int" Mode="In" />
+          <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt014" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="date" Mode="In" />
+          <Parameter Name="FechaFin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt017" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="IdNomina" Type="int" Mode="In" />
+          <Parameter Name="IdDivision" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="date" Mode="In" />
+          <Parameter Name="FechaFin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spROLES_Rpt018" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Fj_servindustrias">
+          <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="date" Mode="In" />
+          <Parameter Name="FechaFin" Type="date" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Entities_RolesFj_Rpt" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities_Roles_Fj_Rpt" p1:LazyLoadingEnabled="true" >
+          <EntitySet Name="vwROLES_Rpt008" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt008" />
+          <EntitySet Name="vwROLES_Rpt013" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt013" />
+          <EntitySet Name="vwROLES_Rpt014" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt014" />
+          <EntitySet Name="vwROLES_Rpt015" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt015" />
+          <EntitySet Name="vwROLES_Rpt016" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt016" />
+          <EntitySet Name="vwROLES_Rpt019" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt019" />
+          <EntitySet Name="vwROLES_Rpt020" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt020" />
+          <EntitySet Name="vwROLES_Rpt021" EntityType="Entities_RolesFj_Rpt.vwROLES_Rpt021" />
+          <FunctionImport Name="spROLES_Rpt002" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt002_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina" Mode="In" Type="Int32" />
+            <Parameter Name="IdEmpleado" Mode="In" Type="Decimal" />
+            <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+            <Parameter Name="Anio" Mode="In" Type="Int32" />
+            <Parameter Name="Mes" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt005">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_Fin" Mode="In" Type="DateTime" />
+            <Parameter Name="Idperiodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt006" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt006_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_Fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt007" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt007_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_Tipo" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_Tipo_Liq" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_Fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt010" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt010_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo_Liqui" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_Fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt011" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt011_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo_Liqui" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_Fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt012">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="Anio" Mode="In" Type="Int32" />
+            <Parameter Name="Mes" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt014" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt014_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt017" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt017_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina" Mode="In" Type="Int32" />
+            <Parameter Name="IdDivision" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt018" ReturnType="Collection(Entities_RolesFj_Rpt.spROLES_Rpt018_Result)">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt0051">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="Fecha_Fin" Mode="In" Type="DateTime" />
+            <Parameter Name="Idperiodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spROLES_Rpt0121">
+            <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="IdNomina_tipo" Mode="In" Type="Int32" />
+            <Parameter Name="Anio" Mode="In" Type="Int32" />
+            <Parameter Name="Mes" Mode="In" Type="Int32" />
+            <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="vwROLES_Rpt008">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdTipoNomina" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="rubro" />
+            <PropertyRef Name="Orden" />
+            <PropertyRef Name="Id_Catalogo" />
+            <PropertyRef Name="pe_FechaIni" />
+            <PropertyRef Name="pe_FechaFin" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Grupo" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdTipoNomina" Nullable="false" />
+          <Property Type="Int32" Name="IdPeriodo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="pe_anio" />
+          <Property Type="Int32" Name="pe_mes" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="zo_descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fu_descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Disco" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Placa" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ru_descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="em_fechaIngaRol" Precision="3" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="rubro" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Id_Catalogo" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="pe_FechaIni" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="pe_FechaFin" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor" Nullable="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Grupo" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt013">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="em_codigo" />
+            <PropertyRef Name="Ingresos" />
+            <PropertyRef Name="Egresos" />
+            <PropertyRef Name="UltimaRemuneracion" />
+            <PropertyRef Name="FechaIngreso" />
+            <PropertyRef Name="IdCausaTerminacion" />
+            <PropertyRef Name="TipoTerminacion" />
+            <PropertyRef Name="de_descripcion" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="EstadoLiquidacion" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Empleado" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="em_codigo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observacion" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Ingresos" Nullable="false" />
+          <Property Type="Double" Name="Egresos" Nullable="false" />
+          <Property Type="Double" Name="UltimaRemuneracion" Nullable="false" />
+          <Property Type="DateTime" Name="FechaSalida" Precision="0" />
+          <Property Type="DateTime" Name="FechaIngreso" Nullable="false" Precision="3" />
+          <Property Type="String" Name="IdCausaTerminacion" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TipoTerminacion" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="de_descripcion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="ValorDesaucio" />
+          <Property Type="Int32" Name="Antiguedad" />
+          <Property Type="String" Name="EstadoLiquidacion" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="antiguedad_string" MaxLength="57" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt014">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="Asistencia" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Asistencia" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt015">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="Id_remplazo" />
+            <PropertyRef Name="Cedula_empleado_Remplazado" />
+            <PropertyRef Name="Cedula_remplazo" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="valor_x_dia_remplazo" />
+            <PropertyRef Name="Total_pagar_remplazo" />
+            <PropertyRef Name="Descuenta_rol" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Fecha_Salida" />
+            <PropertyRef Name="Fecha_Entrada" />
+            <PropertyRef Name="MotivoAusencia" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Id_remplazo" Nullable="false" />
+          <Property Type="String" Name="Cedula_empleado_Remplazado" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="empleado_remplazado" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cedula_remplazo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Remplazo" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor_descuento_empleado" />
+          <Property Type="DateTime" Name="Fecha_descuenta_rol" Precision="0" />
+          <Property Type="Double" Name="valor_x_dia_remplazo" Nullable="false" />
+          <Property Type="Double" Name="Total_pagar_remplazo" Nullable="false" />
+          <Property Type="Boolean" Name="Descuenta_rol" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Fecha_Salida" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Fecha_Entrada" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Observacion" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MotivoAusencia" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescripcionProcesoNomina" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt016">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdNomina_Tipo_Liq" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="cod_Pago_Variable" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="FechaPago" />
+            <PropertyRef Name="ru_descripcion" />
+            <PropertyRef Name="Valor_bono" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo_Liq" Nullable="false" />
+          <Property Type="Int32" Name="IdPeriodo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="cod_Pago_Variable" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombres" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Meta" />
+          <Property Type="Double" Name="Real" />
+          <Property Type="Double" Name="Cumplimiento" />
+          <Property Type="Double" Name="Variable_porcentaje_prorrateado" />
+          <Property Type="Double" Name="Valor" Nullable="false" />
+          <Property Type="DateTime" Name="FechaPago" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ru_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor_bono" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt019">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdNomina_Tipo_Liq" />
+            <PropertyRef Name="IdPeriodo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="cod_Pago_Variable" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="FechaPago" />
+            <PropertyRef Name="ru_descripcion" />
+            <PropertyRef Name="Valor_bono" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo_Liq" Nullable="false" />
+          <Property Type="Int32" Name="IdPeriodo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="cod_Pago_Variable" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombres" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Meta" />
+          <Property Type="Double" Name="Real" />
+          <Property Type="Double" Name="Cumplimiento" />
+          <Property Type="Double" Name="Variable_porcentaje_prorrateado" />
+          <Property Type="Double" Name="Valor" Nullable="false" />
+          <Property Type="DateTime" Name="FechaPago" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ru_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor_bono" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt020">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdSucursal" />
+            <PropertyRef Name="IdMovi_inven_tipo" />
+            <PropertyRef Name="IdNumMovi" />
+            <PropertyRef Name="Secuencia" />
+            <PropertyRef Name="IdProducto" />
+            <PropertyRef Name="pr_codigo" />
+            <PropertyRef Name="pr_descripcion" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="cm_fecha" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="de_descripcion" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdSucursal" Nullable="false" />
+          <Property Type="Int32" Name="IdMovi_inven_tipo" Nullable="false" />
+          <Property Type="Decimal" Name="IdNumMovi" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Secuencia" Nullable="false" />
+          <Property Type="Decimal" Name="IdProducto" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pr_codigo" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pr_descripcion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="dm_cantidad" />
+          <Property Type="Decimal" Name="IdEmpleado" Precision="18" Scale="0" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdCentroCosto" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Centro_costo" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdCentroCosto_sub_centro_costo" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Centro_costo_sub_centro_costo" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdPunto_cargo" />
+          <Property Type="String" Name="nom_punto_cargo" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cm_observacion" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="cm_fecha" Nullable="false" Precision="3" />
+          <Property Type="String" Name="CodMoviInven" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="de_descripcion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_apellido" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwROLES_Rpt021">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="IdDescuento" />
+            <PropertyRef Name="nom_cargo" />
+            <PropertyRef Name="nom_rubro" />
+            <PropertyRef Name="Observacion" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Fecha_Incidente" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdDescuento" Nullable="false" />
+          <Property Type="String" Name="pe_apellido" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_cargo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_rubro" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observacion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha_Incidente" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="spROLES_Rpt002_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNominaTipo" Nullable="false" />
+          <Property Type="Int32" Name="pe_anio" Nullable="true" />
+          <Property Type="Int32" Name="pe_mes" Nullable="true" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombres" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="ru_descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="zo_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="fu_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ru_orden" Nullable="false" />
+          <Property Type="Double" Name="Expr1" Nullable="true" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="ru_tipo" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="DiasTraba" Nullable="true" />
+          <Property Type="Double" Name="Quincena" Nullable="true" />
+          <Property Type="Double" Name="FindeMes" Nullable="true" />
+          <Property Type="Double" Name="Variable" Nullable="false" />
+          <Property Type="Double" Name="FondoReserva" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt006_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="IdRegistro" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="pe_nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="pe_apellido" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="es_fecha_registro" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Cargo" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="IdTurno" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="es_jornada_desfasada" Nullable="false" />
+          <Property Type="String" Name="de_descripcion" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Id_catalogo_Cat" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="zo_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Disco" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ru_descripcion" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="fu_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Placa" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="em_status" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt007_Result">
+          <Property Type="String" Name="zo_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="fu_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="em_fecha_ingreso" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="pe_FechaIni" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pe_apellido" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pe_nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Cargo" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="SueldoActual" Nullable="true" />
+          <Property Type="Int32" Name="IdCargo" Nullable="true" />
+          <Property Type="Int32" Name="IdFuerza" Nullable="false" />
+          <Property Type="Decimal" Name="idempleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="String" Name="IdCentroCosto" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="IdSuccentroCosto" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="Dias" Nullable="true" />
+          <Property Type="Int32" Name="Falta" Nullable="true" />
+          <Property Type="Int32" Name="Vacaciones" Nullable="true" />
+          <Property Type="Int32" Name="Permiso_IESS" Nullable="true" />
+          <Property Type="Double" Name="Dias_Efectivos" Nullable="true" />
+          <Property Type="Double" Name="SUELDO_X_DIAS_TRABAJADOS" Nullable="true" />
+          <Property Type="Double" Name="HORAS__25_" Nullable="true" />
+          <Property Type="Double" Name="HORAS_50_" Nullable="true" />
+          <Property Type="Double" Name="HORAS_100_" Nullable="true" />
+          <Property Type="Double" Name="TRANSPORTE" Nullable="true" />
+          <Property Type="Double" Name="ALIMENTACION" Nullable="true" />
+          <Property Type="Double" Name="BONIFICACIÓN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt010_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Empleado" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="SueldoActual" Nullable="true" />
+          <Property Type="Double" Name="Valor_bono" Nullable="false" />
+          <Property Type="DateTime" Name="es_fecha_registro" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="IdNominaTipo" Nullable="false" />
+          <Property Type="Int32" Name="IdNominaTipoLiqui" Nullable="false" />
+          <Property Type="Int32" Name="IdPeriodo" Nullable="false" />
+          <Property Type="Double" Name="sueldo_x_dias_trabajados" Nullable="true" />
+          <Property Type="Double" Name="alimentacio" Nullable="true" />
+          <Property Type="Double" Name="transporte" Nullable="true" />
+          <Property Type="Double" Name="HorasExtras" Nullable="true" />
+          <Property Type="Double" Name="variable" Nullable="true" />
+          <Property Type="Double" Name="Iess" Nullable="true" />
+          <Property Type="Double" Name="dias_trabajados" Nullable="true" />
+          <Property Type="String" Name="TipoAsistencia" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="TotalPagar" Nullable="true" />
+          <Property Type="String" Name="fu_descripcion" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt011_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Empleado" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="SueldoActual" Nullable="true" />
+          <Property Type="Double" Name="Valor_bono" Nullable="false" />
+          <Property Type="String" Name="zo_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ru_descripcion" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="em_fechaIngaRol" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="em_fechaSalida" Nullable="true" Precision="23" />
+          <Property Type="String" Name="em_status" Nullable="true" MaxLength="10" />
+          <Property Type="Double" Name="Efectividad_Entrega" Nullable="false" />
+          <Property Type="Double" Name="Efectividad_Entrega_aplica" Nullable="false" />
+          <Property Type="Double" Name="Efectividad_Volumen" Nullable="false" />
+          <Property Type="Double" Name="Efectividad_Volumen_aplica" Nullable="false" />
+          <Property Type="Double" Name="Recuperacion_cartera" Nullable="false" />
+          <Property Type="Double" Name="Recuperacion_cartera_aplica" Nullable="false" />
+          <Property Type="Double" Name="Valor" Nullable="false" />
+          <Property Type="String" Name="Rubro" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="fu_descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="variable" Nullable="true" />
+          <Property Type="Double" Name="Iess" Nullable="true" />
+          <Property Type="Double" Name="dias_trabajados" Nullable="true" />
+          <Property Type="Double" Name="dias_Efectivos" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt014_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Asistencia" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="es_fecha_registro" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt017_Result">
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Empleado" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="Cargo" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Asistencia" Nullable="false" />
+          <Property Type="Int32" Name="Atraso" Nullable="false" />
+          <Property Type="Int32" Name="Falta" Nullable="false" />
+          <Property Type="Int32" Name="Permiso" Nullable="false" />
+          <Property Type="Int32" Name="SinLaborar" Nullable="false" />
+          <Property Type="Int32" Name="Suspendido" Nullable="false" />
+          <Property Type="Int32" Name="Vacaciones" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spROLES_Rpt018_Result">
+          <Property Type="Int32" Name="EmpleadosActivos" Nullable="true" />
+          <Property Type="Int32" Name="EmpleadosPasivos" Nullable="true" />
+          <Property Type="Int32" Name="EmpleadosNuevos" Nullable="true" />
+          <Property Type="Int32" Name="Falta" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Entities_RolesFj_RptStoreContainer" CdmEntityContainer="Entities_Roles_Fj_Rpt" >
+          <EntitySetMapping Name="vwROLES_Rpt008">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt008">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt008">
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="pe_FechaFin" ColumnName="pe_FechaFin" />
+                <ScalarProperty Name="pe_FechaIni" ColumnName="pe_FechaIni" />
+                <ScalarProperty Name="Id_Catalogo" ColumnName="Id_Catalogo" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="rubro" ColumnName="rubro" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+                <ScalarProperty Name="em_fechaIngaRol" ColumnName="em_fechaIngaRol" />
+                <ScalarProperty Name="ru_descripcion" ColumnName="ru_descripcion" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="Disco" ColumnName="Disco" />
+                <ScalarProperty Name="fu_descripcion" ColumnName="fu_descripcion" />
+                <ScalarProperty Name="zo_descripcion" ColumnName="zo_descripcion" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="pe_mes" ColumnName="pe_mes" />
+                <ScalarProperty Name="pe_anio" ColumnName="pe_anio" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="IdTipoNomina" ColumnName="IdTipoNomina" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt013">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt013">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt013">
+                <ScalarProperty Name="antiguedad_string" ColumnName="antiguedad_string" />
+                <ScalarProperty Name="EstadoLiquidacion" ColumnName="EstadoLiquidacion" />
+                <ScalarProperty Name="Antiguedad" ColumnName="Antiguedad" />
+                <ScalarProperty Name="ValorDesaucio" ColumnName="ValorDesaucio" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="de_descripcion" ColumnName="de_descripcion" />
+                <ScalarProperty Name="TipoTerminacion" ColumnName="TipoTerminacion" />
+                <ScalarProperty Name="IdCausaTerminacion" ColumnName="IdCausaTerminacion" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+                <ScalarProperty Name="UltimaRemuneracion" ColumnName="UltimaRemuneracion" />
+                <ScalarProperty Name="Egresos" ColumnName="Egresos" />
+                <ScalarProperty Name="Ingresos" ColumnName="Ingresos" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="em_codigo" ColumnName="em_codigo" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt014">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt014">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt014">
+                <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt015">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt015">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt015">
+                <ScalarProperty Name="DescripcionProcesoNomina" ColumnName="DescripcionProcesoNomina" />
+                <ScalarProperty Name="MotivoAusencia" ColumnName="MotivoAusencia" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Fecha_Entrada" ColumnName="Fecha_Entrada" />
+                <ScalarProperty Name="Fecha_Salida" ColumnName="Fecha_Salida" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Descuenta_rol" ColumnName="Descuenta_rol" />
+                <ScalarProperty Name="Total_pagar_remplazo" ColumnName="Total_pagar_remplazo" />
+                <ScalarProperty Name="valor_x_dia_remplazo" ColumnName="valor_x_dia_remplazo" />
+                <ScalarProperty Name="Fecha_descuenta_rol" ColumnName="Fecha_descuenta_rol" />
+                <ScalarProperty Name="Valor_descuento_empleado" ColumnName="Valor_descuento_empleado" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Remplazo" ColumnName="Remplazo" />
+                <ScalarProperty Name="Cedula_remplazo" ColumnName="Cedula_remplazo" />
+                <ScalarProperty Name="empleado_remplazado" ColumnName="empleado_remplazado" />
+                <ScalarProperty Name="Cedula_empleado_Remplazado" ColumnName="Cedula_empleado_Remplazado" />
+                <ScalarProperty Name="Id_remplazo" ColumnName="Id_remplazo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt016">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt016">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt016">
+                <ScalarProperty Name="Valor_bono" ColumnName="Valor_bono" />
+                <ScalarProperty Name="ru_descripcion" ColumnName="ru_descripcion" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Variable_porcentaje_prorrateado" ColumnName="Variable_porcentaje_prorrateado" />
+                <ScalarProperty Name="Cumplimiento" ColumnName="Cumplimiento" />
+                <ScalarProperty Name="Real" ColumnName="Real" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="cod_Pago_Variable" ColumnName="cod_Pago_Variable" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="IdNomina_Tipo_Liq" ColumnName="IdNomina_Tipo_Liq" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt019">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt019">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt019">
+                <ScalarProperty Name="Valor_bono" ColumnName="Valor_bono" />
+                <ScalarProperty Name="ru_descripcion" ColumnName="ru_descripcion" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Variable_porcentaje_prorrateado" ColumnName="Variable_porcentaje_prorrateado" />
+                <ScalarProperty Name="Cumplimiento" ColumnName="Cumplimiento" />
+                <ScalarProperty Name="Real" ColumnName="Real" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="cod_Pago_Variable" ColumnName="cod_Pago_Variable" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="IdNomina_Tipo_Liq" ColumnName="IdNomina_Tipo_Liq" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt020">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt020">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt020">
+                <ScalarProperty Name="pe_nombre" ColumnName="pe_nombre" />
+                <ScalarProperty Name="pe_apellido" ColumnName="pe_apellido" />
+                <ScalarProperty Name="de_descripcion" ColumnName="de_descripcion" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="CodMoviInven" ColumnName="CodMoviInven" />
+                <ScalarProperty Name="cm_fecha" ColumnName="cm_fecha" />
+                <ScalarProperty Name="cm_observacion" ColumnName="cm_observacion" />
+                <ScalarProperty Name="nom_punto_cargo" ColumnName="nom_punto_cargo" />
+                <ScalarProperty Name="IdPunto_cargo" ColumnName="IdPunto_cargo" />
+                <ScalarProperty Name="nom_Centro_costo_sub_centro_costo" ColumnName="nom_Centro_costo_sub_centro_costo" />
+                <ScalarProperty Name="IdCentroCosto_sub_centro_costo" ColumnName="IdCentroCosto_sub_centro_costo" />
+                <ScalarProperty Name="nom_Centro_costo" ColumnName="nom_Centro_costo" />
+                <ScalarProperty Name="IdCentroCosto" ColumnName="IdCentroCosto" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="dm_cantidad" ColumnName="dm_cantidad" />
+                <ScalarProperty Name="pr_descripcion" ColumnName="pr_descripcion" />
+                <ScalarProperty Name="pr_codigo" ColumnName="pr_codigo" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="IdNumMovi" ColumnName="IdNumMovi" />
+                <ScalarProperty Name="IdMovi_inven_tipo" ColumnName="IdMovi_inven_tipo" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwROLES_Rpt021">
+            <EntityTypeMapping TypeName="Entities_RolesFj_Rpt.vwROLES_Rpt021">
+              <MappingFragment StoreEntitySet="vwROLES_Rpt021">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Fecha_Incidente" ColumnName="Fecha_Incidente" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="nom_rubro" ColumnName="nom_rubro" />
+                <ScalarProperty Name="nom_cargo" ColumnName="nom_cargo" />
+                <ScalarProperty Name="pe_nombre" ColumnName="pe_nombre" />
+                <ScalarProperty Name="pe_apellido" ColumnName="pe_apellido" />
+                <ScalarProperty Name="IdDescuento" ColumnName="IdDescuento" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt002" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt002">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt002_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdNominaTipo" ColumnName="IdNominaTipo" />
+                <ScalarProperty Name="pe_anio" ColumnName="pe_anio" />
+                <ScalarProperty Name="pe_mes" ColumnName="pe_mes" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="ru_descripcion" ColumnName="ru_descripcion" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="zo_descripcion" ColumnName="zo_descripcion" />
+                <ScalarProperty Name="fu_descripcion" ColumnName="fu_descripcion" />
+                <ScalarProperty Name="ru_orden" ColumnName="ru_orden" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="ru_tipo" ColumnName="ru_tipo" />
+                <ScalarProperty Name="DiasTraba" ColumnName="DiasTraba" />
+                <ScalarProperty Name="Quincena" ColumnName="Quincena" />
+                <ScalarProperty Name="FindeMes" ColumnName="FindeMes" />
+                <ScalarProperty Name="Variable" ColumnName="Variable" />
+                <ScalarProperty Name="FondoReserva" ColumnName="FondoReserva" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt006" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt006">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt006_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="pe_nombre" ColumnName="pe_nombre" />
+                <ScalarProperty Name="pe_apellido" ColumnName="pe_apellido" />
+                <ScalarProperty Name="es_fecha_registro" ColumnName="es_fecha_registro" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+                <ScalarProperty Name="es_jornada_desfasada" ColumnName="es_jornada_desfasada" />
+                <ScalarProperty Name="de_descripcion" ColumnName="de_descripcion" />
+                <ScalarProperty Name="Id_catalogo_Cat" ColumnName="Id_catalogo_Cat" />
+                <ScalarProperty Name="zo_descripcion" ColumnName="zo_descripcion" />
+                <ScalarProperty Name="Disco" ColumnName="Disco" />
+                <ScalarProperty Name="ru_descripcion" ColumnName="ru_descripcion" />
+                <ScalarProperty Name="fu_descripcion" ColumnName="fu_descripcion" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="em_status" ColumnName="em_status" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt007" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt007">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt007_Result">
+                <ScalarProperty Name="zo_descripcion" ColumnName="zo_descripcion" />
+                <ScalarProperty Name="fu_descripcion" ColumnName="fu_descripcion" />
+                <ScalarProperty Name="em_fecha_ingreso" ColumnName="em_fecha_ingreso" />
+                <ScalarProperty Name="pe_FechaIni" ColumnName="pe_FechaIni" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="pe_apellido" ColumnName="pe_apellido" />
+                <ScalarProperty Name="pe_nombre" ColumnName="pe_nombre" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="SueldoActual" ColumnName="SueldoActual" />
+                <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+                <ScalarProperty Name="IdFuerza" ColumnName="IdFuerza" />
+                <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdCentroCosto" ColumnName="IdCentroCosto" />
+                <ScalarProperty Name="IdSuccentroCosto" ColumnName="IdSuccentroCosto" />
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
+                <ScalarProperty Name="Falta" ColumnName="Falta" />
+                <ScalarProperty Name="Vacaciones" ColumnName="Vacaciones" />
+                <ScalarProperty Name="Permiso_IESS" ColumnName="Permiso_IESS" />
+                <ScalarProperty Name="Dias_Efectivos" ColumnName="Dias_Efectivos" />
+                <ScalarProperty Name="SUELDO_X_DIAS_TRABAJADOS" ColumnName="SUELDO X DIAS TRABAJADOS" />
+                <ScalarProperty Name="HORAS__25_" ColumnName="HORAS  25%" />
+                <ScalarProperty Name="HORAS_50_" ColumnName="HORAS 50%" />
+                <ScalarProperty Name="HORAS_100_" ColumnName="HORAS 100%" />
+                <ScalarProperty Name="TRANSPORTE" ColumnName="TRANSPORTE" />
+                <ScalarProperty Name="ALIMENTACION" ColumnName="ALIMENTACION" />
+                <ScalarProperty Name="BONIFICACIÓN" ColumnName="BONIFICACIÓN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt010" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt010">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt010_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="SueldoActual" ColumnName="SueldoActual" />
+                <ScalarProperty Name="Valor_bono" ColumnName="Valor_bono" />
+                <ScalarProperty Name="es_fecha_registro" ColumnName="es_fecha_registro" />
+                <ScalarProperty Name="IdNominaTipo" ColumnName="IdNominaTipo" />
+                <ScalarProperty Name="IdNominaTipoLiqui" ColumnName="IdNominaTipoLiqui" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="sueldo_x_dias_trabajados" ColumnName="sueldo_x_dias_trabajados" />
+                <ScalarProperty Name="alimentacio" ColumnName="alimentacio" />
+                <ScalarProperty Name="transporte" ColumnName="transporte" />
+                <ScalarProperty Name="HorasExtras" ColumnName="HorasExtras" />
+                <ScalarProperty Name="variable" ColumnName="variable" />
+                <ScalarProperty Name="Iess" ColumnName="Iess" />
+                <ScalarProperty Name="dias_trabajados" ColumnName="dias_trabajados" />
+                <ScalarProperty Name="TipoAsistencia" ColumnName="TipoAsistencia" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="TotalPagar" ColumnName="TotalPagar" />
+                <ScalarProperty Name="fu_descripcion" ColumnName="fu_descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt011" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt011">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt011_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="SueldoActual" ColumnName="SueldoActual" />
+                <ScalarProperty Name="Valor_bono" ColumnName="Valor_bono" />
+                <ScalarProperty Name="zo_descripcion" ColumnName="zo_descripcion" />
+                <ScalarProperty Name="ru_descripcion" ColumnName="ru_descripcion" />
+                <ScalarProperty Name="em_fechaIngaRol" ColumnName="em_fechaIngaRol" />
+                <ScalarProperty Name="em_fechaSalida" ColumnName="em_fechaSalida" />
+                <ScalarProperty Name="em_status" ColumnName="em_status" />
+                <ScalarProperty Name="Efectividad_Entrega" ColumnName="Efectividad_Entrega" />
+                <ScalarProperty Name="Efectividad_Entrega_aplica" ColumnName="Efectividad_Entrega_aplica" />
+                <ScalarProperty Name="Efectividad_Volumen" ColumnName="Efectividad_Volumen" />
+                <ScalarProperty Name="Efectividad_Volumen_aplica" ColumnName="Efectividad_Volumen_aplica" />
+                <ScalarProperty Name="Recuperacion_cartera" ColumnName="Recuperacion_cartera" />
+                <ScalarProperty Name="Recuperacion_cartera_aplica" ColumnName="Recuperacion_cartera_aplica" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Rubro" ColumnName="Rubro" />
+                <ScalarProperty Name="fu_descripcion" ColumnName="fu_descripcion" />
+                <ScalarProperty Name="variable" ColumnName="variable" />
+                <ScalarProperty Name="Iess" ColumnName="Iess" />
+                <ScalarProperty Name="dias_trabajados" ColumnName="dias_trabajados" />
+                <ScalarProperty Name="dias_Efectivos" ColumnName="dias_Efectivos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt014" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt014">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt014_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
+                <ScalarProperty Name="es_fecha_registro" ColumnName="es_fecha_registro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt017" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt017">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt017_Result">
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
+                <ScalarProperty Name="Atraso" ColumnName="Atraso" />
+                <ScalarProperty Name="Falta" ColumnName="Falta" />
+                <ScalarProperty Name="Permiso" ColumnName="Permiso" />
+                <ScalarProperty Name="SinLaborar" ColumnName="SinLaborar" />
+                <ScalarProperty Name="Suspendido" ColumnName="Suspendido" />
+                <ScalarProperty Name="Vacaciones" ColumnName="Vacaciones" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt018" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt018">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_RolesFj_Rpt.spROLES_Rpt018_Result">
+                <ScalarProperty Name="EmpleadosActivos" ColumnName="EmpleadosActivos" />
+                <ScalarProperty Name="EmpleadosPasivos" ColumnName="EmpleadosPasivos" />
+                <ScalarProperty Name="EmpleadosNuevos" ColumnName="EmpleadosNuevos" />
+                <ScalarProperty Name="Falta" ColumnName="Falta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt0051" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt005" />
+          <FunctionImportMapping FunctionImportName="spROLES_Rpt0121" FunctionName="Entities_RolesFj_Rpt.Store.spROLES_Rpt012" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

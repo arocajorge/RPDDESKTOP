@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f8b012a59ea549d59c7a10cddc3a1736" Name="Diagrama1" ZoomLevel="52">
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt005" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt014" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt015_ingresos_egresos" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt015_logistica" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt015_mano_obra" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt015_mano_obra_det" Width="1.5" PointX="7.9030370283420375" PointY="18.618866467205279" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt015" Width="1.5" PointX="11.382244247655498" PointY="7.1604982498849266" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt002" Width="1.5" PointX="2.2253018683871728" PointY="7.03474003404134" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt003" Width="1.5" PointX="3.3180202428801078" PointY="7.5252738481039527" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt017" Width="1.5" PointX="6.8513110889360824" PointY="10.588019241852695" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt018" Width="1.5" PointX="8.7391200963124263" PointY="14.804690993765691" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt004" Width="1.5" PointX="10.449733278923544" PointY="5.2018665844583261" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt001" Width="1.5" PointX="6.6668177781006408" PointY="14.726533255878152" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt006" Width="1.5" PointX="8.3054976744137221" PointY="21.258623401289164" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt008" Width="1.5" PointX="1.651476335549483" PointY="24.4096997940958" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt009" Width="1.5" PointX="8.9562337961775409" PointY="16.971194722210612" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt007" Width="1.5" PointX="1.6903159123334643" PointY="20.81301615611325" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt016" Width="1.5" PointX="11.893783461253058" PointY="23.051678087120727" />
+        <EntityTypeShape EntityType="ModelFacturacion_FJ_Rpt.vwFAC_FJ_Rpt010" Width="1.5" PointX="11.30877673780023" PointY="5.3817578579214205" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

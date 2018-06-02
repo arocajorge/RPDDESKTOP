@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBERP_GRAF_PRUEBAModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DBERP_GRAF_PRUEBAModelStoreContainer">
+          <EntitySet Name="vwRo_Solicitud_Vacaciones_Graf" EntityType="DBERP_GRAF_PRUEBAModel.Store.vwRo_Solicitud_Vacaciones_Graf" store:Type="Views" store:Schema="Grafinpren" store:Name="vwRo_Solicitud_Vacaciones_Graf">
+            <DefiningQuery>SELECT 
+      [vwRo_Solicitud_Vacaciones_Graf].[IdEmpresa] AS [IdEmpresa], 
+      [vwRo_Solicitud_Vacaciones_Graf].[IdNomina_Tipo] AS [IdNomina_Tipo], 
+      [vwRo_Solicitud_Vacaciones_Graf].[IdEmpleado] AS [IdEmpleado], 
+      [vwRo_Solicitud_Vacaciones_Graf].[pe_cedulaRuc] AS [pe_cedulaRuc], 
+      [vwRo_Solicitud_Vacaciones_Graf].[Nombres] AS [Nombres], 
+      [vwRo_Solicitud_Vacaciones_Graf].[IdOrdenPago] AS [IdOrdenPago], 
+      [vwRo_Solicitud_Vacaciones_Graf].[Anio_Desde] AS [Anio_Desde], 
+      [vwRo_Solicitud_Vacaciones_Graf].[Anio_Hasta] AS [Anio_Hasta], 
+      [vwRo_Solicitud_Vacaciones_Graf].[ca_descripcion] AS [ca_descripcion], 
+      [vwRo_Solicitud_Vacaciones_Graf].[de_descripcion] AS [de_descripcion], 
+      [vwRo_Solicitud_Vacaciones_Graf].[Dias_a_disfrutar] AS [Dias_a_disfrutar], 
+      [vwRo_Solicitud_Vacaciones_Graf].[IdLiquidacion] AS [IdLiquidacion]
+      FROM [Grafinpren].[vwRo_Solicitud_Vacaciones_Graf] AS [vwRo_Solicitud_Vacaciones_Graf]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_GRAF_PRUEBA.Grafinpren.vwRo_Solicitud_Vacaciones_Graf' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+        <EntityType Name="vwRo_Solicitud_Vacaciones_Graf">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="Nombres" />
+            <PropertyRef Name="Anio_Desde" />
+            <PropertyRef Name="Anio_Hasta" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="de_descripcion" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdNomina_Tipo" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="numeric" Nullable="false" Precision="9" />
+          <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nombres" Type="varchar" Nullable="false" MaxLength="201" />
+          <Property Name="IdOrdenPago" Type="numeric" Precision="9" />
+          <Property Name="Anio_Desde" Type="date" Nullable="false" />
+          <Property Name="Anio_Hasta" Type="date" Nullable="false" />
+          <Property Name="ca_descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="de_descripcion" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="Dias_a_disfrutar" Type="int" />
+          <Property Name="IdLiquidacion" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBERP_GRAF_PRUEBAModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entiti_roles_Graf" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="vwRo_Solicitud_Vacaciones_Graf" EntityType="DBERP_GRAF_PRUEBAModel.vwRo_Solicitud_Vacaciones_Graf" />
+        </EntityContainer>
+        <EntityType Name="vwRo_Solicitud_Vacaciones_Graf">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdNomina_Tipo" />
+            <PropertyRef Name="IdEmpleado" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="Nombres" />
+            <PropertyRef Name="Anio_Desde" />
+            <PropertyRef Name="Anio_Hasta" />
+            <PropertyRef Name="ca_descripcion" />
+            <PropertyRef Name="de_descripcion" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdNomina_Tipo" Nullable="false" />
+          <Property Type="Decimal" Name="IdEmpleado" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombres" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="IdOrdenPago" Precision="9" Scale="0" />
+          <Property Type="DateTime" Name="Anio_Desde" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Anio_Hasta" Nullable="false" Precision="0" />
+          <Property Type="String" Name="ca_descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="de_descripcion" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="Dias_a_disfrutar" />
+          <Property Type="Int32" Name="IdLiquidacion" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBERP_GRAF_PRUEBAModelStoreContainer" CdmEntityContainer="Entiti_roles_Graf">
+          <EntitySetMapping Name="vwRo_Solicitud_Vacaciones_Graf">
+            <EntityTypeMapping TypeName="DBERP_GRAF_PRUEBAModel.vwRo_Solicitud_Vacaciones_Graf">
+              <MappingFragment StoreEntitySet="vwRo_Solicitud_Vacaciones_Graf">
+                <ScalarProperty Name="IdLiquidacion" ColumnName="IdLiquidacion" />
+                <ScalarProperty Name="Dias_a_disfrutar" ColumnName="Dias_a_disfrutar" />
+                <ScalarProperty Name="de_descripcion" ColumnName="de_descripcion" />
+                <ScalarProperty Name="ca_descripcion" ColumnName="ca_descripcion" />
+                <ScalarProperty Name="Anio_Hasta" ColumnName="Anio_Hasta" />
+                <ScalarProperty Name="Anio_Desde" ColumnName="Anio_Desde" />
+                <ScalarProperty Name="IdOrdenPago" ColumnName="IdOrdenPago" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="pe_cedulaRuc" ColumnName="pe_cedulaRuc" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdNomina_Tipo" ColumnName="IdNomina_Tipo" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
