@@ -2,20 +2,16 @@
 
 CREATE VIEW [dbo].[vwACTF_Rpt011] AS
 SELECT        dbo.Af_Depreciacion.IdEmpresa, dbo.Af_Depreciacion.IdDepreciacion, dbo.Af_Depreciacion.IdPeriodo, dbo.Af_Activo_fijo.Af_Nombre AS nom_activo, 
-                         dbo.Af_Tipo_Depreciacion.nom_tipo_depreciacion, dbo.Af_Activo_fijo.Af_costo_compra, dbo.Af_Depreciacion_Det.Valor_Depre_Acum, 
+                         dbo.Af_Activo_fijo.Af_costo_compra, dbo.Af_Depreciacion_Det.Valor_Depre_Acum, 
                          dbo.Af_Depreciacion_Det.Valor_Depreciacion AS Dep_Actual, dbo.Af_Depreciacion_Det.Porc_Depreciacion, 
-                         dbo.fxAf_Optener_Depreciacion_x_activo_x_periodo(dbo.Af_Depreciacion_Det.IdEmpresa, 
-                         dbo.Af_Depreciacion_Det.IdTipoDepreciacion, dbo.Af_Depreciacion_Det.IdActivoFijo, dbo.Af_Depreciacion_Det.Ciclo - 1, 
-                         dbo.Af_Depreciacion_Det.Es_Activo_x_Mejora) AS Valor_dep_Ant, dbo.Af_Depreciacion.Estado, dbo.Af_Activo_fijo_tipo.IdActivoFijoTipo, 
+                         dbo.Af_Depreciacion.Estado, dbo.Af_Activo_fijo_tipo.IdActivoFijoTipo, 
                          dbo.Af_Activo_fijo_tipo.Af_Descripcion AS nom_ActijoFijoTipo, dbo.Af_Activo_fijo_Categoria.IdCategoriaAF, 
-                         dbo.Af_Activo_fijo_Categoria.Descripcion AS nom_CategoriaAF, dbo.Af_Activo_fijo.Af_fecha_compra, dbo.Af_Depreciacion_Det.Ciclo
+                         dbo.Af_Activo_fijo_Categoria.Descripcion AS nom_CategoriaAF, dbo.Af_Activo_fijo.Af_fecha_compra
 FROM            dbo.Af_Activo_fijo INNER JOIN
                          dbo.Af_Depreciacion_Det ON dbo.Af_Activo_fijo.IdEmpresa = dbo.Af_Depreciacion_Det.IdEmpresa AND 
                          dbo.Af_Activo_fijo.IdActivoFijo = dbo.Af_Depreciacion_Det.IdActivoFijo INNER JOIN
                          dbo.Af_Depreciacion ON dbo.Af_Depreciacion_Det.IdEmpresa = dbo.Af_Depreciacion.IdEmpresa AND 
-                         dbo.Af_Depreciacion_Det.IdDepreciacion = dbo.Af_Depreciacion.IdDepreciacion AND 
-                         dbo.Af_Depreciacion_Det.IdTipoDepreciacion = dbo.Af_Depreciacion.IdTipoDepreciacion AND dbo.Af_Depreciacion.Estado = 'A' INNER JOIN
-                         dbo.Af_Tipo_Depreciacion ON dbo.Af_Depreciacion.IdTipoDepreciacion = dbo.Af_Tipo_Depreciacion.IdTipoDepreciacion INNER JOIN
+                         dbo.Af_Depreciacion_Det.IdDepreciacion = dbo.Af_Depreciacion.IdDepreciacion  AND dbo.Af_Depreciacion.Estado = 'A' INNER JOIN
                          dbo.Af_Activo_fijo_Categoria ON dbo.Af_Activo_fijo.IdEmpresa = dbo.Af_Activo_fijo_Categoria.IdEmpresa AND 
                          dbo.Af_Activo_fijo.IdCategoriaAF = dbo.Af_Activo_fijo_Categoria.IdCategoriaAF AND 
                          dbo.Af_Activo_fijo.IdActivoFijoTipo = dbo.Af_Activo_fijo_Categoria.IdActivoFijoTipo INNER JOIN

@@ -1,11 +1,11 @@
 ﻿CREATE VIEW [dbo].[vwAf_Depre_x_Ciclo_Valor]
 AS
-SELECT        depre.IdEmpresa, depre.IdDepreciacion, depre.IdTipoDepreciacion, depre.IdActivoFijo, ISNULL(MAX(depre.Ciclo), 0) + 1 AS Ciclo, 
-                         SUM(ISNULL(depre.Valor_Depreciacion, 0)) AS Valor_Depreciacion_Acum, depre.Es_Activo_x_Mejora
+SELECT        depre.IdEmpresa, depre.IdDepreciacion, depre.IdActivoFijo,  
+                         SUM(ISNULL(depre.Valor_Depreciacion, 0)) AS Valor_Depreciacion_Acum
 FROM            dbo.Af_Depreciacion AS depreCab INNER JOIN
                          dbo.Af_Depreciacion_Det AS depre ON depre.IdEmpresa = depreCab.IdEmpresa AND depreCab.IdDepreciacion = depre.IdDepreciacion AND 
-                         depreCab.IdTipoDepreciacion = depre.IdTipoDepreciacion AND depreCab.Estado = 'A'
-GROUP BY depre.IdEmpresa, depre.IdDepreciacion, depre.IdTipoDepreciacion, depre.IdActivoFijo, depre.Es_Activo_x_Mejora
+                         depreCab.Estado = 'A'
+GROUP BY depre.IdEmpresa, depre.IdDepreciacion, depre.IdActivoFijo
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depre_x_Ciclo_Valor';
 

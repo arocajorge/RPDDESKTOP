@@ -1,14 +1,12 @@
 ﻿CREATE VIEW [dbo].[vwACTF_Rpt005]
 AS
 SELECT        act.IdEmpresa, act.IdActivoFijo, act.Af_Codigo_Barra, 1 IdTipoDepreciacion, '' cod_tipo_depreciacion, 'lineal' nom_tipo_depreciacion, act.Af_Nombre, 
-                         1 IdDepartamento, suc.IdSucursal, suc.Su_Descripcion, act.Af_fecha_compra, act.Af_costo_compra, act.Estado_Proceso, det.IdDepreciacion, det.Secuencia, 
-                         det.Ciclo, det.Valor_Compra, det.Valor_Salvamento, det.Vida_Util, det.Valor_Depreciacion, det.Valor_Depre_Acum, det.Valor_Importe, ct.IdPeriodo, ct.IdanioFiscal, 
+                         1 IdDepartamento, suc.IdSucursal, suc.Su_Descripcion, act.Af_fecha_compra, act.Af_costo_compra, act.Estado_Proceso, det.IdDepreciacion, det.Secuencia, det.Valor_Compra, det.Valor_Salvamento, det.Vida_Util, det.Valor_Depreciacion, det.Valor_Depre_Acum,  ct.IdPeriodo, ct.IdanioFiscal, 
                          ct.pe_mes, mes.smes, mes.Nemonico
 FROM            dbo.Af_Activo_fijo AS act INNER JOIN
                          dbo.tb_sucursal AS suc ON suc.IdSucursal = act.IdSucursal AND suc.IdEmpresa = act.IdEmpresa INNER JOIN
                          dbo.Af_Depreciacion_Det AS det ON act.IdEmpresa = det.IdEmpresa AND act.IdActivoFijo = det.IdActivoFijo INNER JOIN
-                         dbo.Af_Depreciacion AS dpc ON dpc.IdEmpresa = det.IdEmpresa AND dpc.IdDepreciacion = det.IdDepreciacion AND 
-                         dpc.IdTipoDepreciacion = det.IdTipoDepreciacion AND dpc.Estado = 'A' INNER JOIN
+                         dbo.Af_Depreciacion AS dpc ON dpc.IdEmpresa = det.IdEmpresa AND dpc.IdDepreciacion = det.IdDepreciacion  AND dpc.Estado = 'A' INNER JOIN
                          dbo.ct_periodo AS ct ON dpc.IdEmpresa = ct.IdEmpresa AND dpc.IdPeriodo = ct.IdPeriodo INNER JOIN
                          dbo.tb_mes AS mes ON mes.idMes = ct.pe_mes
 GO

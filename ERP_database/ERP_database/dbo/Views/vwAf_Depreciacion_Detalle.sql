@@ -1,13 +1,12 @@
 ﻿
 CREATE VIEW dbo.vwAf_Depreciacion_Detalle
 AS
-SELECT        depre_Det.IdEmpresa, depre_Det.IdDepreciacion, depre_Det.IdTipoDepreciacion, tipo.cod_tipo_depreciacion, depre_Det.IdActivoFijo, act.Af_Nombre, 
-                         depre_Det.Valor_Compra, depre_Det.Valor_Salvamento, depre_Det.Vida_Util, depre_Det.Ciclo, depre_Det.Porc_Depreciacion, depre_Det.Valor_Depreciacion, 
-                         depre_Det.Valor_Depre_Acum, depre_Det.Valor_Importe, depre_Det.Concepto, depre_Det.Es_Activo_x_Mejora, act.CodActivoFijo
+SELECT        depre_Det.IdEmpresa, depre_Det.IdDepreciacion,  depre_Det.IdActivoFijo, act.Af_Nombre, 
+                         depre_Det.Valor_Compra, depre_Det.Valor_Salvamento, depre_Det.Vida_Util,  depre_Det.Porc_Depreciacion, depre_Det.Valor_Depreciacion, 
+                         depre_Det.Valor_Depre_Acum,  depre_Det.Concepto,  act.CodActivoFijo
 FROM            dbo.Af_Depreciacion AS depre INNER JOIN
-                         dbo.Af_Depreciacion_Det AS depre_Det ON depre.IdEmpresa = depre_Det.IdEmpresa AND depre.IdDepreciacion = depre_Det.IdDepreciacion AND 
-                         depre.IdTipoDepreciacion = depre_Det.IdTipoDepreciacion INNER JOIN
-                         dbo.Af_Tipo_Depreciacion AS tipo ON tipo.IdTipoDepreciacion = depre.IdTipoDepreciacion INNER JOIN
+                         dbo.Af_Depreciacion_Det AS depre_Det ON depre.IdEmpresa = depre_Det.IdEmpresa AND depre.IdDepreciacion = depre_Det.IdDepreciacion
+                         INNER JOIN
                          dbo.Af_Activo_fijo AS act ON act.IdEmpresa = depre_Det.IdEmpresa AND act.IdActivoFijo = depre_Det.IdActivoFijo
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depreciacion_Detalle';

@@ -23,6 +23,6 @@
     [ip]                  VARCHAR (25)  NULL,
     [Estado]              CHAR (1)      NULL,
     CONSTRAINT [PK_Af_His_Depre_1] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdHisDepreciacion] ASC),
-    CONSTRAINT [FK_Af_Depreciacion_His_Anulacion_Af_Depreciacion] FOREIGN KEY ([IdEmpresa], [IdDepreciacion], [IdTipoDepreciacion]) REFERENCES [dbo].[Af_Depreciacion] ([IdEmpresa], [IdDepreciacion], [IdTipoDepreciacion])
+    CONSTRAINT [FK_Af_Depreciacion_His_Anulacion_Af_Depreciacion] FOREIGN KEY ([IdEmpresa], [IdDepreciacion]) REFERENCES [dbo].[Af_Depreciacion] ([IdEmpresa], [IdDepreciacion])
 );
 

@@ -16,8 +16,8 @@ SELECT        'Depreacion' AS Tipo_Registro, vwAf_Activo_fijo.IdEmpresa, vwAf_Ac
 						 ,vwAf_Activo_fijo.IdSucursal,vwAf_Activo_fijo.nom_Sucursal
 						 FROM
                           Af_Depreciacion_Det INNER JOIN
-                         Af_Depreciacion ON Af_Depreciacion_Det.IdEmpresa = Af_Depreciacion.IdEmpresa AND Af_Depreciacion_Det.IdDepreciacion = Af_Depreciacion.IdDepreciacion AND 
-                         Af_Depreciacion_Det.IdTipoDepreciacion = Af_Depreciacion.IdTipoDepreciacion INNER JOIN
+                         Af_Depreciacion ON Af_Depreciacion_Det.IdEmpresa = Af_Depreciacion.IdEmpresa AND Af_Depreciacion_Det.IdDepreciacion = Af_Depreciacion.IdDepreciacion 
+                          INNER JOIN
                          vwAf_Activo_fijo ON Af_Depreciacion_Det.IdEmpresa = vwAf_Activo_fijo.IdEmpresa AND Af_Depreciacion_Det.IdActivoFijo = vwAf_Activo_fijo.IdActivoFijo
 
 

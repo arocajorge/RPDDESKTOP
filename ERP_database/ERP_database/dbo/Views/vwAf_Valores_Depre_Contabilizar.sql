@@ -1,10 +1,9 @@
 ﻿CREATE  VIEW [dbo].[vwAf_Valores_Depre_Contabilizar]
 AS
-SELECT        dpr.IdEmpresa, dpr.IdDepreciacion, dpr.IdTipoDepreciacion, dpr.Cod_Depreciacion, dpr.IdPeriodo, af.IdActivoFijo, af.IdActivoFijoTipo IdActijoFijoTipo, af.Af_Nombre, 
+SELECT        dpr.IdEmpresa, dpr.IdDepreciacion, dpr.Cod_Depreciacion, dpr.IdPeriodo, af.IdActivoFijo, af.IdActivoFijoTipo IdActijoFijoTipo, af.Af_Nombre, 
                          tip.Af_Descripcion, dpr.Descripcion, dpr.Fecha_Depreciacion, '' cod_tipo_depreciacion, ddt.Valor_Depreciacion
 FROM            dbo.Af_Depreciacion AS dpr INNER JOIN
-                         dbo.Af_Depreciacion_Det AS ddt ON dpr.IdEmpresa = ddt.IdEmpresa AND dpr.IdDepreciacion = ddt.IdDepreciacion AND 
-                         dpr.IdTipoDepreciacion = ddt.IdTipoDepreciacion INNER JOIN
+                         dbo.Af_Depreciacion_Det AS ddt ON dpr.IdEmpresa = ddt.IdEmpresa AND dpr.IdDepreciacion = ddt.IdDepreciacion INNER JOIN
                          dbo.Af_Activo_fijo AS af ON af.IdEmpresa = ddt.IdEmpresa AND af.IdActivoFijo = ddt.IdActivoFijo INNER JOIN
                          dbo.Af_Activo_fijo_tipo AS tip ON tip.IdEmpresa = af.IdEmpresa AND tip.IdActivoFijoTipo = af.IdActivoFijoTipo
 GO

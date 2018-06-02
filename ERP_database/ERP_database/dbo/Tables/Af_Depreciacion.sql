@@ -1,8 +1,7 @@
 ﻿CREATE TABLE [dbo].[Af_Depreciacion] (
     [IdEmpresa]           INT           NOT NULL,
     [IdDepreciacion]      DECIMAL (18)  NOT NULL,
-    [IdTipoDepreciacion]  INT           NOT NULL,
-    [Cod_Depreciacion]    CHAR (20)     NOT NULL,
+    [Cod_Depreciacion]    CHAR (20)     NULL,
     [IdPeriodo]           INT           NOT NULL,
     [Descripcion]         VARCHAR (200) NULL,
     [Fecha_Depreciacion]  DATETIME      NOT NULL,
@@ -18,11 +17,8 @@
     [IdUsuarioUltAnu]     VARCHAR (20)  NULL,
     [Fecha_UltAnu]        DATETIME      NULL,
     [MotivoAnula]         VARCHAR (100) NULL,
-    [nom_pc]              VARCHAR (50)  NULL,
-    [ip]                  VARCHAR (25)  NULL,
-    [Estado]              CHAR (1)      NULL,
-    CONSTRAINT [PK_Af_Depreciacion] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdDepreciacion] ASC, [IdTipoDepreciacion] ASC),
-    CONSTRAINT [FK_Af_Depreciacion_Af_Tipo_Depreciacion] FOREIGN KEY ([IdTipoDepreciacion]) REFERENCES [dbo].[Af_Tipo_Depreciacion] ([IdTipoDepreciacion]),
+    [Estado]              CHAR (1)      NOT NULL,
+    CONSTRAINT [PK_Af_Depreciacion] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdDepreciacion] ASC),
     CONSTRAINT [FK_Af_Depreciacion_ct_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ct_periodo] ([IdEmpresa], [IdPeriodo])
 );
 

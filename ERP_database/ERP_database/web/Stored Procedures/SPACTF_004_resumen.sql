@@ -37,8 +37,7 @@ FROM            Af_Activo_fijo AS AF INNER JOIN
 			det.Valor_Depreciacion,
 			row_number() over(partition by af.IdEmpresa, af.IdActivoFijo order by cab.Fecha_Depreciacion desc) as rn		
 			FROM  Af_Depreciacion AS cab INNER JOIN
-			Af_Depreciacion_Det AS det ON cab.IdEmpresa = det.IdEmpresa AND cab.IdDepreciacion = det.IdDepreciacion AND 
-			cab.IdTipoDepreciacion = det.IdTipoDepreciacion INNER JOIN
+			Af_Depreciacion_Det AS det ON cab.IdEmpresa = det.IdEmpresa AND cab.IdDepreciacion = det.IdDepreciacion INNER JOIN
 			Af_Activo_fijo AS af ON det.IdEmpresa = af.IdEmpresa AND det.IdActivoFijo = af.IdActivoFijo
 			WHERE cab.IdEmpresa = @IdEmpresa and cab.Fecha_Depreciacion <= @Fecha_corte
 			) t
@@ -84,8 +83,7 @@ FROM            Af_Activo_fijo AS AF INNER JOIN
 			det.Valor_Depreciacion,
 			row_number() over(partition by af.IdEmpresa, af.IdActivoFijo order by cab.Fecha_Depreciacion desc) as rn		
 			FROM  Af_Depreciacion AS cab INNER JOIN
-			Af_Depreciacion_Det AS det ON cab.IdEmpresa = det.IdEmpresa AND cab.IdDepreciacion = det.IdDepreciacion AND 
-			cab.IdTipoDepreciacion = det.IdTipoDepreciacion INNER JOIN
+			Af_Depreciacion_Det AS det ON cab.IdEmpresa = det.IdEmpresa AND cab.IdDepreciacion = det.IdDepreciacion INNER JOIN
 			Af_Activo_fijo AS af ON det.IdEmpresa = af.IdEmpresa AND det.IdActivoFijo = af.IdActivoFijo
 			WHERE cab.IdEmpresa = @IdEmpresa and cab.Fecha_Depreciacion <= @Fecha_corte
 			) t
@@ -126,8 +124,7 @@ FROM            Af_Activo_fijo AS AF INNER JOIN
 			det.Valor_Depreciacion,
 			row_number() over(partition by af.IdEmpresa, af.IdActivoFijo order by cab.Fecha_Depreciacion desc) as rn		
 			FROM  Af_Depreciacion AS cab INNER JOIN
-			Af_Depreciacion_Det AS det ON cab.IdEmpresa = det.IdEmpresa AND cab.IdDepreciacion = det.IdDepreciacion AND 
-			cab.IdTipoDepreciacion = det.IdTipoDepreciacion INNER JOIN
+			Af_Depreciacion_Det AS det ON cab.IdEmpresa = det.IdEmpresa AND cab.IdDepreciacion = det.IdDepreciacion INNER JOIN
 			Af_Activo_fijo AS af ON det.IdEmpresa = af.IdEmpresa AND det.IdActivoFijo = af.IdActivoFijo
 			WHERE cab.IdEmpresa = @IdEmpresa and cab.Fecha_Depreciacion <= @Fecha_corte
 			) t

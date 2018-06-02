@@ -2,27 +2,25 @@
 AS
 SELECT act.IdEmpresa, act.IdActivoFijo, 1 IdTipoDepreciacion, '' cod_tipo_depreciacion, LTRIM(RTRIM(act.Af_Nombre)) AS Af_Nombre, ISNULL(act.Af_costo_compra, 0) - ISNULL(act.Af_ValorResidual, 0) AS Af_costo_compra, 
                   ISNULL(act.Af_ValorSalvamento, 0) AS Af_ValorSalvamento, act.Af_Vida_Util, act.Af_Vida_Util * per.Valor_Ciclo_Anual AS Af_Vida_TipDepre, act.Af_fecha_ini_depre, act.Af_fecha_fin_depre, 
-                  act.Af_Meses_depreciar - ISNULL(MAX(vwDepre.Ciclo), 0) AS Af_Meses_depreciar, ISNULL(MAX(vwDepre.Ciclo), 1) AS Ciclo, act.Af_porcentaje_deprec, ROUND((ISNULL(act.Af_costo_compra, 0) - ISNULL(act.Af_ValorResidual, 0) 
-                  - ISNULL(act.Af_ValorSalvamento, 0)) / IIF((act.Af_Vida_Util * per.Valor_Ciclo_Anual)=0,1,(act.Af_Vida_Util * per.Valor_Ciclo_Anual)), 2) AS Valor_Depre, SUM(ISNULL(vwDepre.Valor_Depreciacion_Acum, 0)) AS Valor_Depreciacion_Acum, (ISNULL(act.Af_costo_compra, 0) 
-                  - ISNULL(act.Af_ValorResidual, 0)) - (SUM(ISNULL(vwDepre.Valor_Depreciacion_Acum, 0)) + ROUND((ISNULL(act.Af_costo_compra, 0) - ISNULL(act.Af_ValorResidual, 0) - ISNULL(act.Af_ValorSalvamento, 0)) 
-                  / IIF((act.Af_Vida_Util * per.Valor_Ciclo_Anual)=0,1,(act.Af_Vida_Util * per.Valor_Ciclo_Anual)), 2)) AS Valor_Importe, act.Estado_Proceso, 0 AS Es_Activo_x_Mejora, '' IdCentroCosto_sub_centro_costo
+                  act.Af_Meses_depreciar AS Af_Meses_depreciar, act.Af_porcentaje_deprec, ROUND((ISNULL(act.Af_costo_compra, 0) - ISNULL(act.Af_ValorResidual, 0) 
+                  - ISNULL(act.Af_ValorSalvamento, 0)) / IIF((act.Af_Vida_Util * per.Valor_Ciclo_Anual)=0,1,(act.Af_Vida_Util * per.Valor_Ciclo_Anual)), 2) AS Valor_Depre,  (ISNULL(act.Af_costo_compra, 0) 
+                  - ISNULL(act.Af_ValorResidual, 0)) + ROUND((ISNULL(act.Af_costo_compra, 0) - ISNULL(act.Af_ValorResidual, 0) - ISNULL(act.Af_ValorSalvamento, 0)) 
+                  / IIF((act.Af_Vida_Util * per.Valor_Ciclo_Anual)=0,1,(act.Af_Vida_Util * per.Valor_Ciclo_Anual)), 2) AS Valor_Importe, act.Estado_Proceso, 0 AS Es_Activo_x_Mejora, '' IdCentroCosto_sub_centro_costo
 FROM     dbo.Af_Activo_fijo AS act INNER JOIN
-                  dbo.Af_PeriodoDepreciacion AS per ON 0 = per.IdPeriodoDeprec LEFT OUTER JOIN
-                  dbo.vwAf_Depre_x_Ciclo_Valor AS vwDepre ON vwDepre.IdEmpresa = act.IdEmpresa AND vwDepre.IdActivoFijo = act.IdActivoFijo AND vwDepre.Es_Activo_x_Mejora = 0
+                  dbo.Af_PeriodoDepreciacion AS per ON 0 = per.IdPeriodoDeprec 
 GROUP BY act.IdEmpresa, act.IdActivoFijo, act.Af_Nombre, ISNULL(act.Af_costo_compra, 0) - ISNULL(act.Af_ValorResidual, 0), ISNULL(act.Af_ValorSalvamento, 0), act.Af_Vida_Util, 
                   act.Af_Vida_Util * per.Valor_Ciclo_Anual, act.Af_fecha_ini_depre, act.Af_fecha_fin_depre, act.Af_Meses_depreciar, act.Af_porcentaje_deprec, act.Estado_Proceso
 UNION ALL
 SELECT mej.IdEmpresa, mej.IdActivoFijo, tip.IdTipoDepreciacion, tip.cod_tipo_depreciacion, LTRIM(RTRIM(act.Af_Nombre)) AS Af_Nombre, ISNULL(mej.Valor_Mej_Baj_Activo, 0) AS Af_costo_compra, 0 AS Af_ValorSalvamento, act.Af_Vida_Util, 
                   act.Af_Vida_Util * per.Valor_Ciclo_Anual AS Af_Vida_TipDepre, mej.Fecha_Transac AS Af_fecha_ini_depre, DATEADD(MONTH, act.Af_Meses_depreciar, mej.Fecha_Transac) AS Af_fecha_fin_depre, 
-                  act.Af_Meses_depreciar - ISNULL(MAX(vwDepre.Ciclo), 0) AS Af_Meses_depreciar, ISNULL(MAX(vwDepre.Ciclo), 1) AS Ciclo, act.Af_porcentaje_deprec, ROUND((ISNULL(mej.Valor_Mej_Baj_Activo, 0)) 
-                  / (act.Af_Vida_Util * per.Valor_Ciclo_Anual), 2) AS Valor_Depre, SUM(ISNULL(vwDepre.Valor_Depreciacion_Acum, 0)) AS Valor_Depreciacion_Acum, (ISNULL(mej.Valor_Mej_Baj_Activo, 0)) 
-                  - (SUM(ISNULL(vwDepre.Valor_Depreciacion_Acum, 0)) + ROUND((ISNULL(mej.Valor_Mej_Baj_Activo, 0)) / (act.Af_Vida_Util * per.Valor_Ciclo_Anual), 2)) AS Valor_Importe, act.Estado_Proceso, 1 AS Es_Activo_x_Mejora,
+                  act.Af_Meses_depreciar  AS Af_Meses_depreciar, act.Af_porcentaje_deprec, ROUND((ISNULL(mej.Valor_Mej_Baj_Activo, 0)) 
+                  / (act.Af_Vida_Util * per.Valor_Ciclo_Anual), 2) AS Valor_Depre,  (ISNULL(mej.Valor_Mej_Baj_Activo, 0)) 
+                   + ROUND((ISNULL(mej.Valor_Mej_Baj_Activo, 0)) / (act.Af_Vida_Util * per.Valor_Ciclo_Anual), 2) AS Valor_Importe, act.Estado_Proceso, 1 AS Es_Activo_x_Mejora,
 				  ''IdCentroCosto_sub_centro_costo
 FROM     Af_Mej_Baj_Activo mej INNER JOIN
                   dbo.Af_Activo_fijo AS act ON act.IdEmpresa = mej.IdEmpresa AND act.IdActivoFijo = mej.IdActivoFijo AND mej.Id_Tipo = 'Mejo_Acti' INNER JOIN
                   dbo.Af_Tipo_Depreciacion AS tip ON tip.IdTipoDepreciacion = 1 INNER JOIN
-                  dbo.Af_PeriodoDepreciacion AS per ON 0 = per.IdPeriodoDeprec LEFT OUTER JOIN
-                  dbo.vwAf_Depre_x_Ciclo_Valor AS vwDepre ON vwDepre.IdEmpresa = act.IdEmpresa AND vwDepre.IdActivoFijo = act.IdActivoFijo AND vwDepre.Es_Activo_x_Mejora = 1
+                  dbo.Af_PeriodoDepreciacion AS per ON 0 = per.IdPeriodoDeprec 
 GROUP BY mej.IdEmpresa, mej.IdActivoFijo, tip.IdTipoDepreciacion, tip.cod_tipo_depreciacion, act.Af_Nombre, ISNULL(mej.Valor_Mej_Baj_Activo, 0), act.Af_Vida_Util, act.Af_Vida_Util * per.Valor_Ciclo_Anual, mej.Fecha_Transac, 
                   act.Af_fecha_fin_depre, act.Af_Meses_depreciar, act.Af_porcentaje_deprec, act.Estado_Proceso
 GO

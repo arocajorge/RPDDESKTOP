@@ -4,7 +4,7 @@ SELECT        act.IdEmpresa, act.IdActivoFijo, act.IdSucursal, act.IdActivoFijoT
                          0 IdDepartamento, mar.Descripcion AS Af_Marca, dis.Descripcion AS Af_Modelo, act.Af_NumSerie, col.Descripcion AS Af_Color, ubi.Descripcion AS Af_Ubicacion, '' AS NomCompleto, act.Af_observacion, 
                          act.Af_NumPlaca, act.Af_Anio_fabrica, act.Af_DescripcionCorta, act.Af_fecha_compra, act.Af_costo_compra, act.Af_Costo_historico, act.Af_Vida_Util, act.Af_Meses_depreciar, ISNULL(act.Af_ValorSalvamento, 0) 
                          AS Af_ValorSalvamento, ISNULL(act.Af_ValorResidual, 0) AS Af_ValorResidual, act.Estado_Proceso, 0 IdPeriodoDeprec, '' AS Descri_Periodo, ISNULL(vaDepre.Valor_Depreciacion, 0) AS Valor_Depreciacion, 
-                         ISNULL(vaDepre.Valor_Depre_Acum, 0) AS Valor_Depre_Acum, ISNULL(vaDepre.Valor_Importe, 0) AS Valor_Importe
+                         ISNULL(vaDepre.Valor_Depre_Acum, 0) AS Valor_Depre_Acum
 FROM            dbo.Af_Activo_fijo AS act INNER JOIN
                          dbo.Af_Activo_fijo_tipo AS tip ON tip.IdEmpresa = act.IdEmpresa AND tip.IdActivoFijoTipo = act.IdActivoFijoTipo INNER JOIN
                          dbo.tb_sucursal AS suc ON suc.IdEmpresa = act.IdEmpresa AND suc.IdSucursal = act.IdSucursal INNER JOIN

@@ -44,7 +44,7 @@ FROM   Af_Activo_fijo_tipo INNER JOIN
 	SELECT det.IdEmpresa, det.IdActivoFijo, SUM(det.Valor_Depreciacion) depr_acum FROM Af_Depreciacion cab
 	inner join Af_Depreciacion_Det det 
 	on cab.IdEmpresa = det.IdEmpresa
-	and cab.IdTipoDepreciacion = det.IdTipoDepreciacion
+	
 	and cab.IdDepreciacion = det.IdDepreciacion
 	where cab.IdEmpresa = @IdEmpresa
 	and cab.Fecha_Depreciacion < @Fecha_ini
