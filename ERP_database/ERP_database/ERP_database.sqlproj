@@ -1769,18 +1769,26 @@
     <Build Include="dbo\Views\vwro_nomina_x_horas_extras_aprobadas.sql" />
     <Build Include="dbo\Views\vwro_rol.sql" />
     <Build Include="dbo\Stored Procedures\spRo_LiquidarEmpleado.sql" />
-    <Build Include="web\Tables\tb_sis_reporte_1.sql" />
-    <Build Include="web\Tables\Af_SPACTF_004_resumen_1.sql" />
-    <Build Include="web\Tables\Af_SPACTF_004_detalle_1.sql" />
+    <Build Include="web\Tables\tb_sis_reporte.sql" />
+    <Build Include="web\Tables\Af_SPACTF_004_resumen.sql" />
+    <Build Include="web\Tables\Af_SPACTF_004_detalle.sql" />
     <Build Include="dbo\Tables\fa_cuotas_x_doc_1.sql" />
-    <Build Include="web\Views\VWCONTA_001_1.sql" />
-    <Build Include="web\Views\VWACTF_003_1.sql" />
-    <Build Include="web\Views\VWACTF_002_1.sql" />
-    <Build Include="web\Views\VWACTF_001_1.sql" />
+    <Build Include="web\Views\VWCONTA_001.sql" />
+    <Build Include="web\Views\VWACTF_003.sql" />
+    <Build Include="web\Views\VWACTF_002.sql" />
+    <Build Include="web\Views\VWACTF_001.sql" />
     <Build Include="dbo\Views\vwFAC_Rpt008_cuotas_1.sql" />
-    <Build Include="web\Stored Procedures\SPACTF_004_resumen_1.sql" />
-    <Build Include="web\Stored Procedures\SPACTF_004_detalle_1.sql" />
+    <Build Include="web\Stored Procedures\SPACTF_004_resumen.sql" />
+    <Build Include="web\Stored Procedures\SPACTF_004_detalle.sql" />
     <Build Include="dbo\Stored Procedures\spin_Producto_validar_anulacion_1.sql" />
+    <Build Include="Scripts iniciales\3.-Insert Data Reportes Web.sql" />
+    <Build Include="web\Views\VWCAJ_001.sql" />
+    <Build Include="web\Views\vwcp_proveedor_consulta.sql" />
+    <Build Include="web\Views\VWINV_001.sql" />
+    <Build Include="web\Views\VWINV_002.sql" />
+    <Build Include="web\Views\VWINV_004.sql" />
+    <Build Include="web\Stored Procedures\SPINV_003.sql" />
+    <Build Include="web\Tables\in_SPINV_003.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Views\vwin_Producto_x_man_tipo_horas_facturacion.sql" />
