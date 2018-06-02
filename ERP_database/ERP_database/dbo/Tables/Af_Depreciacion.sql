@@ -18,7 +18,13 @@
     [Fecha_UltAnu]        DATETIME      NULL,
     [MotivoAnula]         VARCHAR (100) NULL,
     [Estado]              CHAR (1)      NOT NULL,
+    [IdEmpresa_ct]        INT           NULL,
+    [IdTipoCbte]          INT           NULL,
+    [IdCbteCble]          NUMERIC (18)  NULL,
     CONSTRAINT [PK_Af_Depreciacion] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdDepreciacion] ASC),
+    CONSTRAINT [FK_Af_Depreciacion_ct_cbtecble] FOREIGN KEY ([IdEmpresa_ct], [IdTipoCbte], [IdCbteCble]) REFERENCES [dbo].[ct_cbtecble] ([IdEmpresa], [IdTipoCbte], [IdCbteCble]),
     CONSTRAINT [FK_Af_Depreciacion_ct_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ct_periodo] ([IdEmpresa], [IdPeriodo])
 );
+
+
 
