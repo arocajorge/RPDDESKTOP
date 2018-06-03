@@ -47,6 +47,7 @@ FROM   Af_Activo_fijo_tipo INNER JOIN
 	and cab.IdDepreciacion = det.IdDepreciacion
 	where cab.IdEmpresa = @IdEmpresa
 	and cab.Fecha_Depreciacion < @Fecha_ini
+	and cab.Estado = 'A'
 	group by det.IdEmpresa, det.IdActivoFijo
 ) Depreciacion_acumulada ON Depreciacion_acumulada.IdEmpresa = Af_Activo_fijo.IdEmpresa
 and Depreciacion_acumulada.IdActivoFijo = Af_Activo_fijo.IdActivoFijo
