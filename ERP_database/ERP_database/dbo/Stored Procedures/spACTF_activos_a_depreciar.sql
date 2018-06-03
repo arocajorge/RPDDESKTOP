@@ -1,5 +1,4 @@
-﻿
---exec [dbo].[spACTF_activos_a_depreciar] 1,'01/03/2017','31/03/2017','admin'
+﻿--exec [dbo].[spACTF_activos_a_depreciar] 1,'01/03/2017','31/03/2017','admin'
 CREATE PROCEDURE [dbo].[spACTF_activos_a_depreciar]
 (
 @IdEmpresa int,
@@ -60,12 +59,27 @@ update Af_spACTF_activos_a_depreciar set Af_valor_depreciacion = IIF((Af_dias_a_
 --ELIMINO LOS QUE YA NO DEBEN DEPRECIARSE XQ EL VALOR ES 0
 DELETE Af_spACTF_activos_a_depreciar WHERE ROUND(Af_valor_depreciacion,2) <= 0
 
+DECLARE @Tipo_contabilizacion varchar(30)
+select @Tipo_contabilizacion = FormaContabiliza from Af_Parametros where IdEmpresa = @IdEmpresa
+
+
+update Af_spACTF_activos_a_depreciar set IdCtaCble_Activo = A.IdCtaCble_Activo,
+IdCtaCble_Dep_Acum = A.IdCtaCble_Dep_Acum,
+IdCtaCble_Gastos_Depre = A.IdCtaCble_Gastos_Depre
+FROM(
+SELECT * FROM vwAf_Activo_fijo_cuentas_para_contabilizar_por_tipo
+where tipo = @Tipo_contabilizacion
+) A
+WHERE Af_spACTF_activos_a_depreciar.IdEmpresa = A.IdEmpresa
+and Af_spACTF_activos_a_depreciar.IdActivoFijo = A.IdActivoFijo
+and Af_spACTF_activos_a_depreciar.IdUsuario = @IdUsuario
+
 
 SELECT        Af_spACTF_activos_a_depreciar.IdEmpresa, Af_spACTF_activos_a_depreciar.IdActivoFijo, Af_Activo_fijo.CodActivoFijo, Af_Activo_fijo.Af_Nombre, 
                          Af_spACTF_activos_a_depreciar.IdUsuario, Af_spACTF_activos_a_depreciar.Af_costo_compra, Af_spACTF_activos_a_depreciar.Af_depreciacion_acum, 
                          Af_spACTF_activos_a_depreciar.Af_valor_depreciacion, Af_Activo_fijo_tipo.IdActivoFijoTipo IdActijoFijoTipo, Af_Activo_fijo_tipo.Af_Descripcion AS nom_tipo, 
                          Af_Activo_fijo_Categoria.IdCategoriaAF, Af_Activo_fijo_Categoria.Descripcion AS nom_categoria, Af_Activo_fijo.Af_porcentaje_deprec,
-						  Af_spACTF_activos_a_depreciar.Af_costo_compra -Af_spACTF_activos_a_depreciar.Af_depreciacion_acum Valor_importe
+						  Af_spACTF_activos_a_depreciar.Af_costo_compra -Af_spACTF_activos_a_depreciar.Af_depreciacion_acum Valor_importe, Af_spACTF_activos_a_depreciar.IdCtaCble_Activo, Af_spACTF_activos_a_depreciar.IdCtaCble_Dep_Acum, Af_spACTF_activos_a_depreciar.IdCtaCble_Gastos_Depre
 FROM            Af_Activo_fijo_tipo INNER JOIN
                          Af_Activo_fijo_Categoria ON Af_Activo_fijo_tipo.IdEmpresa = Af_Activo_fijo_Categoria.IdEmpresa AND 
                          Af_Activo_fijo_tipo.IdActivoFijoTipo = Af_Activo_fijo_Categoria.IdActivoFijoTipo INNER JOIN
