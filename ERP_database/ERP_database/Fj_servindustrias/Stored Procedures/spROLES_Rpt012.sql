@@ -42,7 +42,7 @@ SELECT        dbo.ro_rol_detalle.IdEmpresa, dbo.ro_rol_detalle.IdNominaTipo, dbo
 						 and vac.IdEmpleado=emp.IdEmpleado
 						 and vac.Fecha_Desde between @FechaI and @FechaF
 						 and vac.Fecha_Hasta  between @FechaI and @FechaF
-						 and IdOrdenPago>0) Dias_vacaciones
+						 ) Dias_vacaciones
 FROM            dbo.ro_periodo AS perio INNER JOIN
                          Fj_servindustrias.ro_zona INNER JOIN
                          Fj_servindustrias.ro_planificacion_x_ruta_x_empleado_det ON Fj_servindustrias.ro_zona.IdEmpresa = Fj_servindustrias.ro_planificacion_x_ruta_x_empleado_det.IdEmpresa AND 
@@ -198,7 +198,7 @@ union
 						 and vac.IdEmpleado=emp.IdEmpleado
 						 and vac.Fecha_Desde between @FechaI and @FechaF
 						 and vac.Fecha_Hasta  between @FechaI and @FechaF
-						 and IdOrdenPago>0) Dias_vacaciones
+						 ) Dias_vacaciones
 
 FROM            dbo.ro_catalogo AS ro_catalogo_1 INNER JOIN
                          Fj_servindustrias.ro_parametros_reporte AS param_repo ON ro_catalogo_1.CodCatalogo = param_repo.Id_Catalogo INNER JOIN

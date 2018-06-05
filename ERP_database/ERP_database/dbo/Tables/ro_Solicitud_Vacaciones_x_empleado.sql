@@ -11,11 +11,11 @@
     [Dias_q_Corresponde] INT           NOT NULL,
     [Dias_a_disfrutar]   INT           NOT NULL,
     [Dias_pendiente]     INT           NOT NULL,
-    [Anio_Desde]         DATE          NOT NULL,
-    [Anio_Hasta]         DATE          NOT NULL,
-    [Fecha_Desde]        DATE          NOT NULL,
-    [Fecha_Hasta]        DATE          NOT NULL,
-    [Fecha_Retorno]      DATE          NOT NULL,
+    [Anio_Desde]         DATETIME      NOT NULL,
+    [Anio_Hasta]         DATETIME      NOT NULL,
+    [Fecha_Desde]        DATETIME      NOT NULL,
+    [Fecha_Hasta]        DATETIME      NOT NULL,
+    [Fecha_Retorno]      DATETIME      NOT NULL,
     [Observacion]        VARCHAR (250) NOT NULL,
     [IdUsuario]          VARCHAR (25)  NULL,
     [IdUsuario_Anu]      VARCHAR (25)  NULL,
@@ -27,11 +27,14 @@
     [MotivoAnulacion]    VARCHAR (250) NULL,
     [ip]                 VARCHAR (250) NULL,
     [nom_pc]             VARCHAR (250) NULL,
-    [Gozadas_Pgadas]     BIT           NULL,
-    [Canceladas]         BIT           NULL,
+    [Gozadas_Pgadas]     BIT           NOT NULL,
+    [Canceladas]         BIT           NOT NULL,
     CONSTRAINT [PK_ro_Solicitud_Vacaciones_x_empleado_1] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdEmpleado] ASC, [IdSolicitud] ASC),
+    CONSTRAINT [FK_ro_Solicitud_Vacaciones_x_empleado_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado]),
     CONSTRAINT [FK_ro_Solicitud_Vacaciones_x_empleado_ro_historico_vacaciones_x_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado], [IdVacacion]) REFERENCES [dbo].[ro_historico_vacaciones_x_empleado] ([IdEmpresa], [IdEmpleado], [IdVacacion])
 );
+
+
 
 
 

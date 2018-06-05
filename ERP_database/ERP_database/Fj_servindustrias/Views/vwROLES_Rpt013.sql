@@ -11,7 +11,7 @@
 FROM            dbo.tb_persona AS pers INNER JOIN
                          dbo.ro_empleado AS emp ON pers.IdPersona = emp.IdPersona INNER JOIN
                          dbo.ro_Acta_Finiquito AS act_fin ON emp.IdEmpresa = act_fin.IdEmpresa AND emp.IdEmpleado = act_fin.IdEmpleado INNER JOIN
-                         dbo.ro_Acta_Finiquito_Detalle AS act_fin_det ON act_fin.IdEmpresa = act_fin_det.IdEmpresa AND act_fin.IdActaFiniquito = act_fin_det.IdActaFiniquito  INNER JOIN
+                         dbo.ro_Acta_Finiquito_Detalle AS act_fin_det ON act_fin.IdEmpresa = act_fin_det.IdEmpresa AND act_fin.IdActaFiniquito = act_fin_det.IdActaFiniquito AND act_fin.IdActaFiniquito = act_fin_det.IdActaFiniquito INNER JOIN
                          dbo.ro_cargo AS carg ON emp.IdEmpresa = carg.IdEmpresa AND emp.IdCargo = carg.IdCargo INNER JOIN
                          dbo.ro_Departamento AS dep ON emp.IdEmpresa = dep.IdEmpresa AND emp.IdDepartamento = dep.IdDepartamento INNER JOIN
                          dbo.ro_catalogo AS cat ON act_fin.IdCausaTerminacion = cat.IdCatalogo INNER JOIN

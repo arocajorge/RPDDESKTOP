@@ -6,7 +6,7 @@
     [IdEmpresa_OP]    INT           NOT NULL,
     [ValorCancelado]  FLOAT (53)    NOT NULL,
     [FechaPago]       DATE          NOT NULL,
-    [Observaciones]   VARCHAR (500) NOT NULL,
+    [Observaciones]   VARCHAR (500) NULL,
     [IdUsuario]       VARCHAR (25)  NULL,
     [Estado]          VARCHAR (1)   NULL,
     [Fecha_Transac]   DATETIME      NULL,
@@ -26,6 +26,8 @@
     CONSTRAINT [FK_ro_Historico_Liquidacion_Vacaciones_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa]),
     CONSTRAINT [FK_ro_Historico_Liquidacion_Vacaciones_tb_empresa1] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [web].[in_SPINV_003] (
+﻿CREATE TABLE [web].[in_SPINV_001] (
     [IdEmpresa]      INT          NOT NULL,
     [IdSucursal]     INT          NOT NULL,
     [IdBodega]       INT          NOT NULL,
@@ -10,6 +10,6 @@
     [IdLinea]        INT          NOT NULL,
     [IdGrupo]        INT          NOT NULL,
     [IdSubGrupo]     INT          NOT NULL,
-    CONSTRAINT [PK_in_SPINV_003] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdProducto] ASC)
+    CONSTRAINT [PK_in_SPINV_001] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdProducto] ASC)
 );
 

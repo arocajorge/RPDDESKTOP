@@ -64,7 +64,7 @@
     [IdAplicaConvenioDobleImposicionSRI]   VARCHAR (10)    NULL,
     [IdTipoResidenciaSRI]                  VARCHAR (10)    NULL,
     [IdTipoSistemaSalarioNetoSRI]          VARCHAR (10)    NULL,
-    [es_AcreditaHorasExtras]               BIT             NULL,
+    [es_AcreditaHorasExtras]               BIT             NOT NULL,
     [IdTipoAnticipo]                       VARCHAR (10)    NULL,
     [ValorAnticipo]                        FLOAT (53)      NULL,
     [CodigoSectorial]                      VARCHAR (25)    NULL,
@@ -72,7 +72,7 @@
     [em_AnticipoSueldo]                    FLOAT (53)      NULL,
     [IdBanco_Acreditacion]                 INT             NULL,
     [IdGrupo]                              INT             NULL,
-    [Marca_Biometrico]                     BIT             NULL,
+    [Marca_Biometrico]                     BIT             NOT NULL,
     [em_motivo_salisa]                     VARCHAR (500)   NULL,
     [IdHorario]                            INT             NULL,
     [IdPuntoCargo]                         INT             NULL,
@@ -91,6 +91,8 @@
     CONSTRAINT [FK_ro_empleado_tb_persona] FOREIGN KEY ([IdPersona]) REFERENCES [dbo].[tb_persona] ([IdPersona]),
     CONSTRAINT [FK_ro_empleado_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])
 );
+
+
 
 
 

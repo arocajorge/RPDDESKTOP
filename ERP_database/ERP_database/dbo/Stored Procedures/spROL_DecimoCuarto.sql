@@ -1,42 +1,98 @@
 ﻿
--- exec spROL_DecimoCuarto 1,'01/08/2016','31/07/2017','SIERRA'
+
+ --exec spROL_DecimoCuarto 1,'01/08/2016','41/07/2017','SIERRA'
 CREATE PROCEDURE [dbo].[spROL_DecimoCuarto]
 	(
-	@i_IdEmpresa int,	
-	@FechaInicio date,
-	@fecha_Fin date,
-	@Region varchar(10)
+	@IdEmpresa int,	
+	@IdPeriodo int,
+	@Region varchar(10),
+	@IdUsuario varchar(50),
+	@observacion varchar(200)
 	)
 	as
 BEGIN
 
-	SELECT        dbo.ro_rol_detalle.IdEmpresa, dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdNomina_TipoLiqui, dbo.ro_rol_detalle.IdEmpleado, SUM(dbo.ro_rol_detalle_x_rubro_acumulado.Valor) AS Valor 
+declare
+@IdRubro_calculado varchar(50),
+@Fi date,
+@Ff date
 
-FROM            dbo.ro_rol_detalle INNER JOIN
-                         dbo.ro_Nomina_Tipoliqui INNER JOIN
-                         dbo.ro_rol ON dbo.ro_Nomina_Tipoliqui.IdEmpresa = dbo.ro_rol.IdEmpresa AND dbo.ro_Nomina_Tipoliqui.IdNomina_Tipo = dbo.ro_rol.IdNominaTipo AND 
-                         dbo.ro_Nomina_Tipoliqui.IdNomina_TipoLiqui = dbo.ro_rol.IdNominaTipoLiqui ON dbo.ro_rol_detalle.IdEmpresa = dbo.ro_rol.IdEmpresa AND 
-                         dbo.ro_rol_detalle.IdNominaTipo = dbo.ro_rol.IdNominaTipo AND dbo.ro_rol_detalle.IdNominaTipoLiqui = dbo.ro_rol.IdNominaTipoLiqui AND 
-                         dbo.ro_rol_detalle.IdPeriodo = dbo.ro_rol.IdPeriodo INNER JOIN
-                         dbo.ro_empleado ON dbo.ro_rol_detalle.IdEmpleado = dbo.ro_empleado.IdEmpleado AND dbo.ro_rol_detalle.IdEmpresa = dbo.ro_empleado.IdEmpresa INNER JOIN
-                         dbo.ro_periodo_x_ro_Nomina_TipoLiqui ON dbo.ro_rol.IdEmpresa = dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdEmpresa AND 
-                         dbo.ro_rol.IdNominaTipo = dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdNomina_Tipo AND 
-                         dbo.ro_rol.IdNominaTipoLiqui = dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdNomina_TipoLiqui AND 
-                         dbo.ro_rol.IdPeriodo = dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdPeriodo INNER JOIN
-                         dbo.ro_periodo ON dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdPeriodo = dbo.ro_periodo.IdPeriodo AND 
-                         dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdEmpresa = dbo.ro_periodo.IdEmpresa AND dbo.ro_rol_detalle.IdRubro = 4 INNER JOIN
-                         dbo.ro_rol_detalle_x_rubro_acumulado ON dbo.ro_rol_detalle.IdEmpresa = dbo.ro_rol_detalle_x_rubro_acumulado.IdEmpresa AND 
-                         dbo.ro_rol_detalle.IdNominaTipo = dbo.ro_rol_detalle_x_rubro_acumulado.IdNominaTipo AND 
-                         dbo.ro_rol_detalle.IdNominaTipoLiqui = dbo.ro_rol_detalle_x_rubro_acumulado.IdNominaTipoLiqui AND 
-                         dbo.ro_rol_detalle.IdPeriodo = dbo.ro_rol_detalle_x_rubro_acumulado.IdPeriodo AND 
-                         dbo.ro_rol_detalle.IdEmpleado = dbo.ro_rol_detalle_x_rubro_acumulado.IdEmpleado INNER JOIN
-                         dbo.tb_ciudad ON dbo.ro_empleado.IdCiudad = dbo.tb_ciudad.IdCiudad INNER JOIN
-                         dbo.tb_provincia ON dbo.tb_ciudad.IdProvincia = dbo.tb_provincia.IdProvincia  
-						 and dbo.ro_empleado.em_status='EST_ACT'                      
-						 and dbo.ro_rol_detalle_x_rubro_acumulado.IdRubro=200
-						 and dbo.ro_rol_detalle.IdEmpresa=@i_IdEmpresa
-						 and ro_periodo.pe_FechaIni between @FechaInicio and @fecha_Fin
-						 and dbo.tb_provincia.Cod_Region=@Region
-GROUP BY dbo.ro_rol_detalle.IdEmpresa, dbo.ro_rol_detalle.IdEmpleado,  dbo.ro_periodo_x_ro_Nomina_TipoLiqui.IdNomina_TipoLiqui 
-                        
-END
+-- variables pruebas
+	--@IdEmpresa int,
+	--@IdPeriodo int,
+	--@Region varchar(10),
+	--@IdUsuario varchar(50),
+	--@observacion varchar(200)
+	--set @IdEmpresa =1
+	--set @IdPeriodo =2018
+	--set @Region ='COSTA'
+	--set @IdUsuario ='admin'
+	--set @observacion= '...'
+
+
+
+
+
+
+if(@Region='COSTA')
+select @fi=convert(varchar(4), (@IdPeriodo-1))+'-'+'12'+'-'+'01'
+select @ff=convert(varchar(4), (@IdPeriodo))+'-'+'11'+'-'+'40' 
+if((select  COUNT(IdPeriodo) from ro_periodo where IdEmpresa=@IdEmpresa and IdPeriodo=@IdPeriodo)=0)
+insert into ro_periodo (
+IdEmpresa,				IdPeriodo,			pe_FechaIni,					pe_FechaFin,					pe_estado			,Fecha_Transac
+)
+values
+(@IdEmpresa,			@IdPeriodo,			@Fi,							@Ff,							'A',				GETDATE())
+
+
+
+if((select  COUNT(IdPeriodo) from ro_periodo_x_ro_Nomina_TipoLiqui where IdEmpresa=@IdEmpresa and IdNomina_Tipo=1 and IdNomina_TipoLiqui=4)=0)
+insert into ro_periodo_x_ro_Nomina_TipoLiqui(
+IdEmpresa,				IdNomina_Tipo,			IdNomina_TipoLiqui,					IdPeriodo,					Cerrado			,Procesado,			Contabilizado
+)
+values
+(@IdEmpresa,			1,						4,									@IdPeriodo,					'N',			'S',				'N')
+
+
+
+
+
+if((select  COUNT(IdPeriodo) from ro_rol where IdEmpresa=@IdEmpresa and IdPeriodo=@IdPEriodo and IdNominaTipo=1 and IdNominaTipoLiqui=4)>0)
+update ro_rol set UsuarioModifica=@IdUsuario, FechaModifica=GETDATE() where IdEmpresa=@IdEmpresa and IdPeriodo=@IdPEriodo and IdNominaTipo=1 and IdNominaTipoLiqui=4
+else
+insert into ro_rol
+(IdEmpresa,		IdNominaTipo,		IdNominaTipoLiqui,		IdPeriodo,			Descripcion,				Observacion,				Cerrado,			FechaIngresa,
+UsuarioIngresa,	FechaModifica,		UsuarioModifica,		FechaAnula,			UsuarioAnula,				MotivoAnula,				UsuarioCierre,		FechaCierre,
+IdCentroCosto)
+values
+(@IdEmpresa		,1					,4						,@IdPEriodo			,@observacion				,@observacion				,'N'				,GETDATE()
+,@IdUsuario		,null				,null					,null				,null						,null						,null				,null
+,null)
+
+
+
+delete ro_rol_detalle where IdEmpresa=@IdEmpresa and IdNominaTipo=1 and IdNominaTipoLiqui=4 and IdPeriodo=@IdPeriodo
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+-------------calculando decimo cuarto sueldo-------------------------------------------------------------------------------------------------<
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+select @IdRubro_calculado= IdRubro_DIII from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
+insert into ro_rol_detalle
+(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,			Orden,			Valor
+,rub_visible_reporte,	Observacion,			TipoMovimiento,				IdCentroCosto		,IdCentroCosto_sub_centro_costo			,IdPunto_cargo)
+
+
+select
+
+@IdEmpresa,				1,						4,							@IdPeriodo,			emp.IdEmpleado,		@IdRubro_calculado, '1',			SUM(acum.Valor),
+1,						'Pago decimo cuarto sueldo', null,					null,				 null,										 null
+
+ from ro_rol_detalle_x_rubro_acumulado acum, ro_empleado emp
+ where acum.IdEmpresa=emp.IdEmpresa
+ and acum.IdEmpleado=emp.IdEmpleado    
+ and acum.Estado='PEN'
+ AND emp.em_status='EST_ACT'
+ AND acum.IdRubro='200'
+ group by emp.IdEmpleado               
+ end
