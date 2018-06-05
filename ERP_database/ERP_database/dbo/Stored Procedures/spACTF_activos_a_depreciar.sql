@@ -1,4 +1,5 @@
-﻿--exec [dbo].[spACTF_activos_a_depreciar] 1,'01/03/2017','31/03/2017','admin'
+﻿
+--exec [dbo].[spACTF_activos_a_depreciar] 1,'01/03/2017','31/03/2017','admin'
 CREATE PROCEDURE [dbo].[spACTF_activos_a_depreciar]
 (
 @IdEmpresa int,
@@ -35,7 +36,7 @@ SELECT Af_Activo_fijo.IdEmpresa,
 		Af_costo_compra, 
 		isnull(Af_Depreciacion_acum,0) + ISNULL(Depreciacion_acumulada.depr_acum,0), 
 		iif(Af_fecha_ini_depre between @Fecha_ini and @Fecha_fin,DATEDIFF(DAY,Af_fecha_ini_depre,@Fecha_fin),@Dias_depr),		
-		(((Af_costo_compra - isnull(Af_ValorResidual,0)) /Af_Vida_Util)/365),
+		(((Af_costo_compra + isnull(mb.Valor_Mej_Baj_Activo,0) - isnull(Af_ValorResidual,0)) /Af_Vida_Util)/365),
 		0
 FROM   Af_Activo_fijo_tipo INNER JOIN
        Af_Activo_fijo ON Af_Activo_fijo_tipo.IdEmpresa = Af_Activo_fijo.IdEmpresa AND Af_Activo_fijo_tipo.IdActivoFijoTipo = Af_Activo_fijo.IdActivoFijoTipo LEFT JOIN
@@ -50,7 +51,9 @@ FROM   Af_Activo_fijo_tipo INNER JOIN
 	and cab.Estado = 'A'
 	group by det.IdEmpresa, det.IdActivoFijo
 ) Depreciacion_acumulada ON Depreciacion_acumulada.IdEmpresa = Af_Activo_fijo.IdEmpresa
-and Depreciacion_acumulada.IdActivoFijo = Af_Activo_fijo.IdActivoFijo
+and Depreciacion_acumulada.IdActivoFijo = Af_Activo_fijo.IdActivoFijo 
+LEFT JOIN Af_Mej_Baj_Activo mb on mb.IdEmpresa = Af_Activo_fijo.IdEmpresa
+and mb.IdActivoFijo = Af_Activo_fijo.IdActivoFijo
 WHERE Estado_Proceso = 'TIP_ESTADO_AF_ACTIVO' AND ((@Fecha_ini BETWEEN Af_fecha_ini_depre AND Af_fecha_fin_depre )
 or (@Fecha_fin BETWEEN Af_fecha_ini_depre AND Af_fecha_fin_depre )) and Af_Activo_fijo_tipo.Se_Deprecia = 1
 
