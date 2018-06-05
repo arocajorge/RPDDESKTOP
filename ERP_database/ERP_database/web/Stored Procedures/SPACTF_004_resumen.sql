@@ -3,7 +3,12 @@
 CREATE PROCEDURE [web].[SPACTF_004_resumen]
 @IdEmpresa int,
 @Fecha_corte datetime,
-@IdUsuario varchar(20)
+@IdUsuario varchar(20),
+@IdActivoFijoTipo_ini int,
+@IdActivoFijoTipo_fin int,
+@IdCategoria_ini int,
+@IdCategoria_fin int,
+@Estado_Proceso varchar(20)
 as
 BEGIN
 
@@ -53,6 +58,9 @@ WHERE af.IdEmpresa = @IdEmpresa
 				where retiro.IdEmpresa = af.IdEmpresa
 				and retiro.IdActivoFijo = af.IdActivoFijo				
 				)
+				and af.IdActivoFijoTipo between @IdActivoFijoTipo_ini and @IdCategoria_fin
+				and af.IdCategoriaAF between @IdCategoria_ini and @IdCategoria_fin
+				and af.Estado_Proceso like '%'+@Estado_Proceso+'%'
 
 
 insert into [web].[Af_SPACTF_004_detalle]
@@ -95,6 +103,9 @@ WHERE af.IdEmpresa = @IdEmpresa
 				and venta.IdActivoFijo = af.IdActivoFijo
 				and venta.Fecha_Venta >= @Fecha_corte
 				)
+				and af.IdActivoFijoTipo between @IdActivoFijoTipo_ini and @IdCategoria_fin
+				and af.IdCategoriaAF between @IdCategoria_ini and @IdCategoria_fin
+				and af.Estado_Proceso like '%'+@Estado_Proceso+'%'
 
 insert into [web].[Af_SPACTF_004_detalle]
 
@@ -136,12 +147,14 @@ WHERE af.IdEmpresa = @IdEmpresa
 				and venta.IdActivoFijo = af.IdActivoFijo
 				and venta.Fecha_Retiro >= @Fecha_corte
 				)
-
+				and af.IdActivoFijoTipo between @IdActivoFijoTipo_ini and @IdCategoria_fin
+				and af.IdCategoriaAF between @IdCategoria_ini and @IdCategoria_fin
+				and af.Estado_Proceso like '%'+@Estado_Proceso+'%'
 
 insert into [web].[Af_SPACTF_004_resumen]
 SELECT        IdEmpresa, IdActivoFijoTipo, IdUsuario, tipo_AF, SUM(Af_costo_compra) AS Af_costo_compra, SUM(Af_Depreciacion_acum) AS Af_Depreciacion_acum, SUM(valor_ult_depreciacion) AS valor_ult_depreciacion, 
                          SUM(Costo_actual) AS Costo_actual
-FROM            Af_spACTF_Rpt012
+FROM            [web].[Af_SPACTF_004_detalle]
 WHERE IdEmpresa = @IdEmpresa and IdUsuario = @IdUsuario
 GROUP BY IdEmpresa, IdActivoFijoTipo, IdUsuario, tipo_AF
 

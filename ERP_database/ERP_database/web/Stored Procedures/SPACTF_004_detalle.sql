@@ -1,8 +1,14 @@
-﻿--exec [dbo].[spACTF_Rpt012] 1, '2017-01-08', 'admin'
+﻿
+--exec [dbo].[spACTF_Rpt012] 1, '2017-01-08', 'admin'
 CREATE PROCEDURE [web].[SPACTF_004_detalle]
 @IdEmpresa int,
 @Fecha_corte datetime,
-@IdUsuario varchar(20)
+@IdUsuario varchar(20),
+@IdActivoFijoTipo_ini int,
+@IdActivoFijoTipo_fin int,
+@IdCategoria_ini int,
+@IdCategoria_fin int,
+@Estado_Proceso varchar(20)
 AS
 delete [web].[Af_SPACTF_004_detalle] where IdEmpresa = @IdEmpresa and IdUsuario = @IdUsuario
 
@@ -50,7 +56,9 @@ WHERE af.IdEmpresa = @IdEmpresa
 				where retiro.IdEmpresa = af.IdEmpresa
 				and retiro.IdActivoFijo = af.IdActivoFijo				
 				)
-
+				and af.IdActivoFijoTipo between @IdActivoFijoTipo_ini and @IdCategoria_fin
+				and af.IdCategoriaAF between @IdCategoria_ini and @IdCategoria_fin
+				and af.Estado_Proceso like '%'+@Estado_Proceso+'%'
 
 insert into [web].[Af_SPACTF_004_detalle]
 
@@ -92,6 +100,9 @@ WHERE af.IdEmpresa = @IdEmpresa
 				and venta.IdActivoFijo = af.IdActivoFijo
 				and venta.Fecha_Venta >= @Fecha_corte
 				)
+				and af.IdActivoFijoTipo between @IdActivoFijoTipo_ini and @IdCategoria_fin
+				and af.IdCategoriaAF between @IdCategoria_ini and @IdCategoria_fin
+				and af.Estado_Proceso like '%'+@Estado_Proceso+'%'
 
 insert into [web].[Af_SPACTF_004_detalle]
 
@@ -133,6 +144,9 @@ WHERE af.IdEmpresa = @IdEmpresa
 				and venta.IdActivoFijo = af.IdActivoFijo
 				and venta.Fecha_Retiro >= @Fecha_corte
 				)
+				and af.IdActivoFijoTipo between @IdActivoFijoTipo_ini and @IdCategoria_fin
+				and af.IdCategoriaAF between @IdCategoria_ini and @IdCategoria_fin
+				and af.Estado_Proceso like '%'+@Estado_Proceso+'%'
 SELECT [IdEmpresa]
       ,[IdActivoFijo]
       ,[IdUsuario]
