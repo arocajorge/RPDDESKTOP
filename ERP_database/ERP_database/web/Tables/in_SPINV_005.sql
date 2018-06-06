@@ -12,6 +12,6 @@
     [mov_ing_cost]   FLOAT (53)   NOT NULL,
     [mov_egr_cant]   FLOAT (53)   NOT NULL,
     [mov_egr_cost]   FLOAT (53)   NOT NULL,
-    CONSTRAINT [PK_in_INV_Rpt010] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdProducto] ASC, [IdUsuario] ASC)
+    CONSTRAINT [PK_in_SPINV_005] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdProducto] ASC, [IdUsuario] ASC)
 );
 

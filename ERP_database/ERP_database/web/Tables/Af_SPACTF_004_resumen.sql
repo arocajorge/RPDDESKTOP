@@ -7,6 +7,6 @@
     [Valor_Depreciacion]     FLOAT (53)    NOT NULL,
     [Valor_ult_depreciacion] FLOAT (53)    NOT NULL,
     [Costo_neto]             FLOAT (53)    NOT NULL,
-    CONSTRAINT [PK_Af_spACTF_Rpt014] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdActivoFijoTipo] ASC, [IdUsuario] ASC)
+    CONSTRAINT [PK_Af_SPACTF_004_resumen] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdActivoFijoTipo] ASC, [IdUsuario] ASC)
 );
 

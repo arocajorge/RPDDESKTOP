@@ -15,6 +15,6 @@
     [Costo_actual]           FLOAT (53)    NOT NULL,
     [valor_ult_depreciacion] FLOAT (53)    NOT NULL,
     [Af_fecha_compra]        DATETIME      NOT NULL,
-    CONSTRAINT [PK_Af_spACTF_Rpt012] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdActivoFijo] ASC, [IdUsuario] ASC)
+    CONSTRAINT [PK_Af_SPACTF_004_detalle] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdActivoFijo] ASC, [IdUsuario] ASC)
 );
 
