@@ -1791,5 +1791,7 @@
     <Build Include="dbo\Views\vwin_Producto_x_man_tipo_horas_facturacion.sql" />
     <Build Include="dbo\Views\vwAf_Activo_fijo_cuentas_para_contabilizar_por_tipo.sql" />
     <Build Include="web\Stored Procedures\SPACTF_005.sql" />
+    <Build Include="web\Tables\in_SPINV_005.sql" />
+    <Build Include="web\Stored Procedures\SPINV_005.sql" />
   </ItemGroup>
 </Project>
