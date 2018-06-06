@@ -1797,5 +1797,7 @@
     <Build Include="dbo\Views\VWROL_001.sql" />
     <Build Include="dbo\Views\vwro_Historico_Liquidacion_Vacaciones.sql" />
     <Build Include="web\Stored Procedures\SPROL_002.sql" />
+    <Build Include="web\Stored Procedures\SPINV_005.sql" />
+    <Build Include="web\Tables\in_SPINV_005.sql" />
   </ItemGroup>
 </Project>
