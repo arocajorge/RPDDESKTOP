@@ -47,7 +47,8 @@ namespace Core.Erp.Reportes.Roles
           try
           {
 
-              txtSolicitud.Text = "Yo, " + info.pe_apellido + " con cedula identidad # " + info.pe_cedulaRuc + " solicitud se me conceda a disfrutar o se me cancelen las vacaciones correspondiente al periodo de: " + info.Anio_Desde.ToString().Substring(0, 10) + " al " + info.Anio_Hasta.ToString().Substring(0, 10) +
+              txtSolicitud.Text = "Yo, " + info.pe_apellido + " con cedula identidad # " + info.pe_cedulaRuc + " solicitud se me conceda a disfrutar o se me cancelen las vacaciones correspondiente al periodo de: " 
+                  + info.Anio_Desde.ToString().Substring(0, 10) + " al " + info.Anio_Hasta.ToString().Substring(0, 10) +
               " en las fechas de : " + info.Fecha_Desde.ToString().Substring(0, 10) + " al " + info.Fecha_Hasta.ToString().Substring(0, 10);
 
 
