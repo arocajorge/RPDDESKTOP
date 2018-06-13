@@ -1809,5 +1809,7 @@
     <Build Include="web\Views\VWROL_004.sql" />
     <Build Include="web\Views\VWROL_003.sql" />
     <Build Include="dbo\Stored Procedures\spseg_corregir_menu.sql" />
+    <Build Include="web\Views\VWCXP_004.sql" />
+    <Build Include="web\Views\VWCXP_003.sql" />
   </ItemGroup>
 </Project>
