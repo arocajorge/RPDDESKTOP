@@ -7191,7 +7191,6 @@
     <EmbeddedResource Include="Mantenimiento\FrmMan_tecnico_mant.resx">
       <DependentUpon>FrmMan_tecnico_mant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Roles\frmRo_Nomina_horas_extras_cosul.resx">
       <DependentUpon>frmRo_Nomina_horas_extras_cosul.cs</DependentUpon>
     </EmbeddedResource>

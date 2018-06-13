@@ -1,14 +1,15 @@
-﻿CREATE VIEW dbo.vwfa_factura
+﻿CREATE VIEW vwfa_factura
 AS
 SELECT        dbo.fa_factura.IdEmpresa, dbo.fa_factura.IdBodega, dbo.fa_factura.IdCbteVta, dbo.fa_factura.IdSucursal, dbo.fa_factura.CodCbteVta, dbo.fa_factura.vt_tipoDoc, dbo.fa_factura.vt_serie1, dbo.fa_factura.vt_serie2, 
-                         dbo.fa_factura.vt_NumFactura, dbo.fa_factura.IdCliente, dbo.fa_factura.IdVendedor, dbo.fa_factura.vt_fecha, dbo.fa_factura.vt_plazo, dbo.fa_factura.vt_fech_venc, dbo.fa_factura.vt_tipo_venta, dbo.fa_factura.vt_Observacion, 
-                         dbo.fa_factura.IdPeriodo, dbo.fa_factura.vt_anio, dbo.fa_factura.vt_mes, dbo.fa_factura.IdUsuario, dbo.fa_factura.Fecha_Transaccion, dbo.fa_factura.IdUsuarioUltModi, dbo.fa_factura.Fecha_UltMod, 
-                         dbo.fa_factura.IdUsuarioUltAnu, dbo.fa_factura.Fecha_UltAnu, dbo.fa_factura.MotivoAnulacion, dbo.fa_factura.Estado, dbo.tb_sucursal.Su_Descripcion, dbo.tb_bodega.bo_Descripcion, 0 AS Secuencia, 
-                         dbo.fa_Vendedor.Ve_Vendedor, dbo.tb_persona.pe_nombreCompleto, dbo.fa_factura.vt_autorizacion, dbo.tb_persona.IdTipoDocumento, dbo.tb_persona.pe_cedulaRuc, dbo.fa_factura.IdCaja, 
-                         ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_0, 0) + ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_Iva, 0) AS vt_Subtotal, ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.vt_iva, 0) AS vt_iva, 
-                         ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_0, 0) AS SubTotal_0, ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_Iva, 0) AS SubTotal_Iva, ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.vt_total, 0) 
-                         AS vt_total, dbo.fa_factura.IdPuntoVta, ct.cbte, ISNULL(cobro.valor_cobro, 0) AS valor_cobro, ROUND(ROUND(ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.vt_total, 0), 2) - ROUND(ISNULL(cobro.valor_cobro, 0), 2), 2) 
-                         AS vt_saldo, formas_pago.IdFormaPago, dbo.fa_formaPago.nom_FormaPago, formas_pago.cant_forma_pago, dbo.fa_factura.esta_impresa, dbo.fa_factura.IdContacto, dbo.fa_factura.fecha_primera_cuota, 
+                         dbo.fa_factura.vt_NumFactura, dbo.fa_factura.IdCliente, dbo.fa_factura.IdVendedor, dbo.fa_factura.vt_fecha, dbo.fa_factura.vt_plazo, dbo.fa_factura.vt_fech_venc, dbo.fa_factura.vt_tipo_venta, 
+                         dbo.fa_factura.vt_Observacion, dbo.fa_factura.IdPeriodo, dbo.fa_factura.vt_anio, dbo.fa_factura.vt_mes, dbo.fa_factura.IdUsuario, dbo.fa_factura.Fecha_Transaccion, dbo.fa_factura.IdUsuarioUltModi, 
+                         dbo.fa_factura.Fecha_UltMod, dbo.fa_factura.IdUsuarioUltAnu, dbo.fa_factura.Fecha_UltAnu, dbo.fa_factura.MotivoAnulacion, dbo.fa_factura.Estado, dbo.tb_sucursal.Su_Descripcion, 
+                         dbo.tb_bodega.bo_Descripcion, 0 AS Secuencia, dbo.fa_Vendedor.Ve_Vendedor, con.Nombres AS pe_nombreCompleto, dbo.fa_factura.vt_autorizacion, dbo.tb_persona.IdTipoDocumento, 
+                         dbo.tb_persona.pe_cedulaRuc, dbo.fa_factura.IdCaja, ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_0, 0) + ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_Iva, 0) AS vt_Subtotal, 
+                         ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.vt_iva, 0) AS vt_iva, ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_0, 0) AS SubTotal_0, 
+                         ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.SubTotal_Iva, 0) AS SubTotal_Iva, ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.vt_total, 0) AS vt_total, dbo.fa_factura.IdPuntoVta, ct.cbte, 
+                         ISNULL(cobro.valor_cobro, 0) AS valor_cobro, ROUND(ROUND(ISNULL(dbo.vwfa_factura_subtotal_iva_0_totales.vt_total, 0), 2) - ROUND(ISNULL(cobro.valor_cobro, 0), 2), 2) AS vt_saldo, 
+                         formas_pago.IdFormaPago, dbo.fa_formaPago.nom_FormaPago, formas_pago.cant_forma_pago, dbo.fa_factura.esta_impresa, dbo.fa_factura.IdContacto, dbo.fa_factura.fecha_primera_cuota, 
                          dbo.fa_factura.valor_abono
 FROM            dbo.fa_formaPago INNER JOIN
                              (SELECT        IdEmpresa, IdSucursal, IdBodega, IdCbteVta, MAX(IdFormaPago) AS IdFormaPago, COUNT(IdFormaPago) AS cant_forma_pago
@@ -20,8 +21,9 @@ FROM            dbo.fa_formaPago INNER JOIN
                          dbo.fa_Vendedor ON dbo.fa_factura.IdEmpresa = dbo.fa_Vendedor.IdEmpresa AND dbo.fa_factura.IdVendedor = dbo.fa_Vendedor.IdVendedor INNER JOIN
                          dbo.fa_cliente ON dbo.fa_factura.IdEmpresa = dbo.fa_cliente.IdEmpresa AND dbo.fa_factura.IdCliente = dbo.fa_cliente.IdCliente INNER JOIN
                          dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona LEFT OUTER JOIN
-                         dbo.vwfa_factura_subtotal_iva_0_totales ON dbo.fa_factura.IdEmpresa = dbo.vwfa_factura_subtotal_iva_0_totales.IdEmpresa AND dbo.fa_factura.IdSucursal = dbo.vwfa_factura_subtotal_iva_0_totales.IdSucursal AND 
-                         dbo.fa_factura.IdBodega = dbo.vwfa_factura_subtotal_iva_0_totales.IdBodega AND dbo.fa_factura.IdCbteVta = dbo.vwfa_factura_subtotal_iva_0_totales.IdCbteVta LEFT OUTER JOIN
+                         dbo.vwfa_factura_subtotal_iva_0_totales ON dbo.fa_factura.IdEmpresa = dbo.vwfa_factura_subtotal_iva_0_totales.IdEmpresa AND 
+                         dbo.fa_factura.IdSucursal = dbo.vwfa_factura_subtotal_iva_0_totales.IdSucursal AND dbo.fa_factura.IdBodega = dbo.vwfa_factura_subtotal_iva_0_totales.IdBodega AND 
+                         dbo.fa_factura.IdCbteVta = dbo.vwfa_factura_subtotal_iva_0_totales.IdCbteVta LEFT OUTER JOIN
                              (SELECT        f.vt_IdEmpresa, f.vt_IdSucursal, f.vt_IdBodega, f.vt_IdCbteVta, MAX(f.ct_IdCbteCble) AS cbte
                                FROM            dbo.fa_factura_x_ct_cbtecble AS f INNER JOIN
                                                          dbo.ct_cbtecble_det AS d ON f.ct_IdEmpresa = d.IdEmpresa AND f.ct_IdTipoCbte = d.IdTipoCbte AND f.ct_IdCbteCble = d.IdCbteCble
@@ -30,8 +32,10 @@ FROM            dbo.fa_formaPago INNER JOIN
                              (SELECT        IdEmpresa, IdSucursal, IdBodega_Cbte, IdCbte_vta_nota, dc_TipoDocumento, SUM(dc_ValorPago) AS valor_cobro
                                FROM            dbo.cxc_cobro_det AS c
                                GROUP BY IdEmpresa, IdSucursal, IdBodega_Cbte, IdCbte_vta_nota, dc_TipoDocumento) AS cobro ON dbo.fa_factura.IdEmpresa = cobro.IdEmpresa AND dbo.fa_factura.IdSucursal = cobro.IdSucursal AND 
-                         dbo.fa_factura.IdBodega = cobro.IdBodega_Cbte AND dbo.fa_factura.IdCbteVta = cobro.IdCbte_vta_nota AND dbo.fa_factura.vt_tipoDoc = cobro.dc_TipoDocumento ON formas_pago.IdEmpresa = dbo.fa_factura.IdEmpresa AND 
-                         formas_pago.IdSucursal = dbo.fa_factura.IdSucursal AND formas_pago.IdBodega = dbo.fa_factura.IdBodega AND formas_pago.IdCbteVta = dbo.fa_factura.IdCbteVta
+                         dbo.fa_factura.IdBodega = cobro.IdBodega_Cbte AND dbo.fa_factura.IdCbteVta = cobro.IdCbte_vta_nota AND dbo.fa_factura.vt_tipoDoc = cobro.dc_TipoDocumento ON 
+                         formas_pago.IdEmpresa = dbo.fa_factura.IdEmpresa AND formas_pago.IdSucursal = dbo.fa_factura.IdSucursal AND formas_pago.IdBodega = dbo.fa_factura.IdBodega AND 
+                         formas_pago.IdCbteVta = dbo.fa_factura.IdCbteVta INNER JOIN
+                         dbo.fa_cliente_contactos AS con ON con.IdEmpresa = dbo.fa_factura.IdEmpresa AND con.IdCliente = dbo.fa_factura.IdCliente AND con.IdContacto = dbo.fa_factura.IdContacto
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura';
 
