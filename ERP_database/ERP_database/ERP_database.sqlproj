@@ -1817,5 +1817,11 @@
     <Build Include="web\Views\VWCXP_005_cancelaciones.sql" />
     <Build Include="web\Views\VWCXP_005.sql" />
     <Build Include="web\Views\VWCXP_003_cancelaciones.sql" />
+    <Build Include="web\Views\VWCXP_006_diario.sql" />
+    <Build Include="web\Views\VWCXP_006.sql" />
+    <Build Include="web\Views\VWBAN_002_cancelaciones.sql" />
+    <Build Include="web\Views\VWBAN_002.sql" />
+    <Build Include="web\Views\VWBAN_001_cancelaciones.sql" />
+    <Build Include="web\Views\VWBAN_001.sql" />
   </ItemGroup>
 </Project>
