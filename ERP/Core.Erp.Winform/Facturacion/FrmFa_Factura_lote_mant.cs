@@ -500,12 +500,30 @@ namespace Core.Erp.Winform.Facturacion
                 {
                     fa_cuotas_x_doc_Info i_cuota = new fa_cuotas_x_doc_Info
                     {
-                        valor_a_cobrar = valor_a_distribuir * (item.Por_distribucion/100),
-                        fecha_vcto_cuota = num_cuota == 1 ? Convert.ToDateTime(primera_cuota) : Convert.ToDateTime(Convert.ToDateTime(primera_cuota).AddDays(item.Num_Dias_Vcto)),
+                        valor_a_cobrar =Math.Round( valor_a_distribuir * (item.Por_distribucion/100),2),
+                        fecha_vcto_cuota =  Convert.ToDateTime(primera_cuota),
                         num_cuota = num_cuota++,
                     };
+                    primera_cuota = Convert.ToDateTime(primera_cuota).AddMonths(1);
+                    
                     blst_cuotas.Add(i_cuota);
                 }
+
+                // calcular diferencia por valor truncado
+                double suma_cuota = blst_cuotas.Sum(v => v.valor_a_cobrar);
+                if (suma_cuota != valor_a_distribuir)
+                {
+                    double diferencia = valor_a_distribuir - suma_cuota;
+                    foreach (var item in blst_cuotas)
+                    {
+                        if (item.num_cuota == 1)
+                        {
+                            item.valor_a_cobrar = item.valor_a_cobrar + diferencia;
+                            break;
+                        }
+                    }
+                }
+
                 gridControl_detalle_cuotas.DataSource = null;
                 gridControl_detalle_cuotas.DataSource = blst_cuotas;                
             }

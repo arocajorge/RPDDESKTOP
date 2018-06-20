@@ -543,6 +543,7 @@ namespace Core.Erp.Winform.Facturacion
         {
             try
             {
+
                 Boolean Res = false;
 
                 if (get_Cliente() != null)
@@ -667,6 +668,13 @@ namespace Core.Erp.Winform.Facturacion
         {
             try
             {
+
+                if (cmbformapago.EditValue == null)
+                {
+                    MessageBox.Show("Seleccione la forma de pago", "Fixed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+
                 if (_Accion == Cl_Enumeradores.eTipo_action.grabar)
                 {
                     if (!ValidarCedula())
@@ -912,7 +920,19 @@ namespace Core.Erp.Winform.Facturacion
                     {
                         txt_cedula.MaxLength = 13;
                         if (txt_cedula.Text != "")
-                            txt_cedula.Text = txt_cedula.Text.Length > 13 ? txt_cedula.Text.Substring(0, 13) : txt_cedula.Text;
+                        {
+                            if (txt_cedula.Text.Length > 13)
+                            txt_cedula.Text = txt_cedula.Text.Substring(0, 13) ;
+                            else
+                            {
+                                if (txt_cedula.Text.Length == 10)
+                                {
+                                    txt_cedula.Text = txt_cedula.Text.ToString().PadRight(12, '0')+"1";
+
+                                }
+                            }
+                           
+                        }
                     }
                     if (UC_Doc_per.cmb_Docum_perso.SelectedValue.ToString() == "PAS")
                     {

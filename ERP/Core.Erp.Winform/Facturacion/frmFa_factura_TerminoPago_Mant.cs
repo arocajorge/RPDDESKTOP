@@ -26,7 +26,7 @@ namespace Core.Erp.Winform.Facturacion
         public Cl_Enumeradores.eTipo_action _Accion { get; set; }
         public delegate void delegate_frmFa_factura_TerminoPago_Mantenimiento_FormClosing(object sender, FormClosingEventArgs e);
         public event delegate_frmFa_factura_TerminoPago_Mantenimiento_FormClosing Event_frmFa_factura_TerminoPago_Mantenimiento_FormClosing;
-        float PorcentajeTotal = 0;
+        double PorcentajeTotal = 0;
 
         #endregion
              
@@ -304,18 +304,18 @@ namespace Core.Erp.Winform.Facturacion
                 gridControlDistribucion.DataSource = lstTerminoDis = new BindingList<fa_TerminoPago_Distribucion_Info>();
                 if (txtCuota.Text != "" && txtDias.Text != "" && txtCuota.Text != "0" && txtDias.Text != "0")
                 {
-                    int cuota = Convert.ToInt32(txtCuota.Text);
-                    int dias = Convert.ToInt32(txtDias.Text);
+                    double cuota = Convert.ToInt32(txtCuota.Text);
+                    double dias = Convert.ToInt32(txtDias.Text);
                     PorcentajeTotal = 0;
                     if (cuota <= dias)
                     {
                         
                         string codigo = txtCodigo.Text;
 
-                        int standarDias = dias / cuota; ;
-                        int acumDias = 0;
-                        int mod = dias % cuota;
-                        float Porcentaje = 100 / cuota;
+                        double standarDias = dias / cuota;
+                        double acumDias = 0;
+                        double mod = dias % cuota;
+                        double Porcentaje = Convert.ToDouble(100) / cuota;
 
 
                         fa_TerminoPago_Distribucion_Info TerminoPago;
@@ -333,7 +333,7 @@ namespace Core.Erp.Winform.Facturacion
                             TerminoPago = new fa_TerminoPago_Distribucion_Info();
 
                             TerminoPago.Secuencia = i;
-                            TerminoPago.Num_Dias_Vcto = acumDias;
+                            TerminoPago.Num_Dias_Vcto = Convert.ToInt32(acumDias);
                             if (cuota == i)
                             {
                                 Porcentaje = 100 - PorcentajeTotal;
@@ -544,7 +544,7 @@ namespace Core.Erp.Winform.Facturacion
                             porcentTotVali = porcentTotVali + item.Por_distribucion;
                     }
 
-                    if (porcentTotVali != 100)
+                    if (Math.Round(porcentTotVali,2) != 100)
                     {
                         MessageBox.Show("El Total del Porcentaje debe ser 100");
                         return false;

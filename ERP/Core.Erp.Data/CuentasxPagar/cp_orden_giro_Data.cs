@@ -144,7 +144,7 @@ namespace Core.Erp.Data.CuentasxPagar
             }
         }
 
-        public List<cp_orden_giro_Info> Get_List_orden_giro_x_Pagar(int IdEmpresa, bool Mostrar_fact_conci_caja, ref string mensaje)
+        public List<cp_orden_giro_Info>     Get_List_orden_giro_x_Pagar(int IdEmpresa, bool Mostrar_fact_conci_caja, ref string mensaje)
         {
             try
             {

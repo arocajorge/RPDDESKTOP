@@ -322,6 +322,8 @@ namespace Core.Erp.Business.Facturacion
                 }
                 else
                 {
+                    decimal idper = bus_persona.Get_Info_Persona(info.Persona_Info.pe_cedulaRuc).IdPersona;
+                    info.Persona_Info.IdPersona = idper;
                     Result = bus_persona.ModificarDB(info.Persona_Info, ref msg);
                     info.IdPersona = info.Persona_Info.IdPersona;
                 }
