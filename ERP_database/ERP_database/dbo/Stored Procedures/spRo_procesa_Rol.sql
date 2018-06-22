@@ -19,7 +19,7 @@ AS
 --set @IdEmpresa =1
 --set @IdNomina =1
 --set @IdNominaTipo =2
---set @IdPEriodo= 201803
+--set @IdPEriodo= 201806
 --set @IdUsuario ='admin'
 --set @observacion= 'prueba'
 
@@ -77,7 +77,7 @@ FROM            dbo.ro_contrato AS cont INNER JOIN
 where cont.IdEmpresa=@IdEmpresa 
 and cont.IdNomina=@IdNomina
 and cont.EstadoContrato='ECT_ACT'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 -------------calculando sueldo por días trabajados-------------------------------------------------------------------------------------------<
@@ -97,7 +97,7 @@ FROM            dbo.ro_contrato AS cont INNER JOIN
 where cont.IdEmpresa=@IdEmpresa 
 and cont.IdNomina=@IdNomina
 and cont.EstadoContrato='ECT_ACT'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 
 
 
@@ -124,7 +124,7 @@ and nov.IdNomina_Tipo_Liq=@IdNominaTipo
 and nov.FechaPago between @Fi and @Ff
 and nov.Estado='A'
 and nov.EstadoCobro='PEN'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 group by nov.IdEmpresa,nov.IdEmpleado,nov.IdRubro,rub.ru_orden,rub.ru_descripcion, emp.IdPuntoCargo
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -147,7 +147,7 @@ and pred.IdNominaTipoLiqui=@IdNominaTipo
 and pred.FechaPago between @Fi and @Ff
 and pred.Estado='A'
 and pred.EstadoPago='PEN'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 ----------------------------------------------------------------------------------------------------------------------------------------------
 -------------buscando rubros fijos e insertando al rol detalle-------------------------------------------------------------------------------<
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -167,7 +167,7 @@ and emp.IdEmpresa=@IdEmpresa
 and rub_fij.IdNomina_tipo=@IdNomina
 and rub_fij.IdNomina_TipoLiqui=@IdNominaTipo
 --and rub_fij.Estado='A'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 -------------calculando aporte personal------------------------------------------------------------------------------------------------------<
@@ -259,7 +259,7 @@ FROM  dbo.ro_empleado emp, ro_contrato cont
 where emp.IdEmpresa=cont.IdEmpresa
 and emp.IdEmpleado=cont.IdEmpleado
 and cont.EstadoContrato='ECT_ACT'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 and  not exists(select acum.IdEmpleado from ro_empleado_x_rubro_acumulado acum 
 where acum.IdEmpresa= @IdEmpresa
 and acum.IdEmpresa=emp.IdEmpresa
@@ -416,7 +416,7 @@ FROM  dbo.ro_empleado emp, ro_contrato cont
 where emp.IdEmpresa=cont.IdEmpresa
 and emp.IdEmpleado=cont.IdEmpleado
 and cont.EstadoContrato='ECT_ACT'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 and   exists(select acum.IdEmpleado from ro_empleado_x_rubro_acumulado acum 
 where acum.IdEmpresa= @IdEmpresa
 and acum.IdEmpresa=emp.IdEmpresa
@@ -466,10 +466,10 @@ group by rol_det.IdEmpresa,rol_det.IdEmpleado,rol_det.IdNominaTipo,rol_det.IdNom
 ----------------------------------------------------------------------------------------------------------------------------------------------
 select @IdRubro_calculado= IdRubro_prov_FR from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
 insert into ro_rol_detalle_x_rubro_acumulado
-(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor
+(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor, Estado
 )
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado	,			sum(rol_det.Valor)*0.0833
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado	,			sum(rol_det.Valor)*0.0833,'PEN'
 
 FROM            dbo.ro_rol_detalle AS rol_det INNER JOIN
                          dbo.ro_rubro_tipo AS rub ON rol_det.IdEmpresa = rub.IdEmpresa AND rol_det.IdRubro = rub.IdRubro INNER JOIN
@@ -492,10 +492,10 @@ group by rol_det.IdEmpresa,rol_det.IdEmpleado,rol_det.IdNominaTipo,rol_det.IdNom
 ----------------------------------------------------------------------------------------------------------------------------------------------
 select @IdRubro_calculado= IdRubro_prov_DIII from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
 insert into ro_rol_detalle_x_rubro_acumulado
-(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor
+(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor, Estado
 )
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado				,sum(rol_det.Valor)/12
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado				,sum(rol_det.Valor)/12,'PEN'
 FROM            dbo.ro_rol_detalle AS rol_det INNER JOIN
                          dbo.ro_rubro_tipo AS rub ON rol_det.IdEmpresa = rub.IdEmpresa AND rol_det.IdRubro = rub.IdRubro INNER JOIN
                          dbo.ro_empleado AS emp ON rol_det.IdEmpresa = emp.IdEmpresa AND rol_det.IdEmpleado = emp.IdEmpleado
@@ -518,15 +518,15 @@ group by rol_det.IdEmpresa,rol_det.IdEmpleado,rol_det.IdNominaTipo,rol_det.IdNom
 ----------------------------------------------------------------------------------------------------------------------------------------------
 select @IdRubro_calculado= IdRubro_prov_DIV from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
 insert into ro_rol_detalle_x_rubro_acumulado
-(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor
+(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor,	Estado
 )
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado				,(386/360)*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end)
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado				,(386/360)*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end),'PEN'
 FROM  dbo.ro_empleado emp, ro_contrato cont
 where emp.IdEmpresa=cont.IdEmpresa
 and emp.IdEmpleado=cont.IdEmpleado
 and cont.EstadoContrato='ECT_ACT'
-and (emp.em_status='EST_ACT' or emp.em_fechaSalida between @Fi and @Ff)
+and (emp.em_status='EST_ACT')
 and   exists(select acum.IdEmpleado from ro_empleado_x_rubro_acumulado acum 
 where acum.IdEmpresa= @IdEmpresa
 and acum.IdEmpresa=emp.IdEmpresa
@@ -540,10 +540,10 @@ group by emp.IdEmpresa,emp.IdEmpleado, emp.em_fechaSalida, cont.FechaInicio, con
 ----------------------------------------------------------------------------------------------------------------------------------------------
 select @IdRubro_calculado= IdRubro_prov_vac from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
 insert into ro_rol_detalle_x_rubro_acumulado
-(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor
+(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor,						Estado
 )
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado				,sum(rol_det.Valor)/24
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado				,sum(rol_det.Valor)/24, 'PEN'
 
 FROM            dbo.ro_rol_detalle AS rol_det INNER JOIN
                          dbo.ro_rubro_tipo AS rub ON rol_det.IdEmpresa = rub.IdEmpresa AND rol_det.IdRubro = rub.IdRubro INNER JOIN

@@ -5,7 +5,7 @@ SELECT        dbo.tb_persona.pe_nombreCompleto AS NombreCompleto, dbo.tb_persona
                          dbo.ro_Acta_Finiquito.Ingresos, dbo.ro_Acta_Finiquito.Egresos, dbo.ro_Acta_Finiquito.Estado AS EstadoActa, dbo.ro_Acta_Finiquito.IdCodSectorial, dbo.ro_Acta_Finiquito.EsMujerEmbarazada, 
                          dbo.ro_Acta_Finiquito.EsDirigenteSindical, dbo.ro_Acta_Finiquito.EsPorDiscapacidad, dbo.ro_Acta_Finiquito.EsPorEnfermedadNoProfesional, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, 
                          dbo.ro_empleado.em_codigo, dbo.ro_Acta_Finiquito.IdTipoCbte, dbo.ro_Acta_Finiquito.IdOrdenPago, dbo.ro_Acta_Finiquito.IdCbteCble, dbo.ro_catalogo.ca_descripcion, ro_catalogo_1.ca_descripcion AS Contrato, 
-                         ro_catalogo_1.CodCatalogo
+                         ro_catalogo_1.CodCatalogo, dbo.ro_contrato.EstadoContrato
 FROM            dbo.ro_catalogo AS ro_catalogo_1 INNER JOIN
                          dbo.ro_contrato ON ro_catalogo_1.CodCatalogo = dbo.ro_contrato.IdContrato_Tipo INNER JOIN
                          dbo.ro_Acta_Finiquito INNER JOIN
@@ -18,7 +18,7 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @leve
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'0
          Width = 1500
          Width = 1500
          Width = 2010
@@ -66,6 +66,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_ActaFiniquito';
+
+
 
 
 GO
@@ -158,7 +160,7 @@ Begin DesignProperties =
                Right = 288
             End
             DisplayFlags = 280
-            TopColumn = 1
+            TopColumn = 12
          End
          Begin Table = "ro_Acta_Finiquito"
             Begin Extent = 
@@ -209,5 +211,7 @@ Begin DesignProperties =
       End
       Begin ColumnWidths = 28
          Width = 284
-         Width = 1500', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_ActaFiniquito';
+         Width = 150', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_ActaFiniquito';
+
+
 

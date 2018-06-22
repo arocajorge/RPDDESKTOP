@@ -11,8 +11,12 @@
     [web_nom_Area]             VARCHAR (200) NULL,
     [web_nom_Controller]       VARCHAR (200) NULL,
     [web_nom_Action]           VARCHAR (300) NULL,
+    [es_web]                   BIT           NOT NULL,
+    [es_desktop]               BIT           NOT NULL,
     CONSTRAINT [PK_seg_Menu] PRIMARY KEY CLUSTERED ([IdMenu] ASC)
 );
+
+
 
 
 

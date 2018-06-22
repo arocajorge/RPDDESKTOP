@@ -1,7 +1,7 @@
 ﻿CREATE VIEW dbo.vwro_empleado_combo
 AS
 SELECT        dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa, dbo.ro_empleado_x_ro_tipoNomina.IdEmpleado, dbo.ro_empleado_x_ro_tipoNomina.IdTipoNomina, dbo.tb_persona.pe_apellido + ' ' + dbo.tb_persona.pe_nombre AS Empleado, 
-                         dbo.tb_persona.pe_cedulaRuc
+                         dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.em_status
 FROM            dbo.ro_empleado INNER JOIN
                          dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
                          dbo.ro_empleado_x_ro_tipoNomina ON dbo.ro_empleado.IdEmpresa = dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa AND dbo.ro_empleado.IdEmpleado = dbo.ro_empleado_x_ro_tipoNomina.IdEmpleado
@@ -16,7 +16,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[28] 4[5] 2[46] 3) )"
+         Configuration = "(H (1[55] 4[5] 2[22] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -90,7 +90,7 @@ Begin DesignProperties =
                Right = 707
             End
             DisplayFlags = 280
-            TopColumn = 9
+            TopColumn = 56
          End
          Begin Table = "tb_persona"
             Begin Extent = 
@@ -150,6 +150,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_empleado_combo';
+
+
 
 
 

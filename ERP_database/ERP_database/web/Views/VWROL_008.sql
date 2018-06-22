@@ -1,4 +1,5 @@
-﻿create view web.VWROL_008 AS
+﻿-- VISTA PARA EL REPORTE PRESTAMOS
+create view web.VWROL_008 AS
 
 SELECT        dbo.tb_persona.pe_cedulaRuc AS CedulaRuc, dbo.ro_empleado.IdEmpleado, dbo.ro_prestamo.IdPrestamo, dbo.ro_prestamo.IdEmpresa, dbo.ro_prestamo.Fecha, dbo.ro_prestamo.MontoSol, dbo.ro_prestamo.TasaInteres, 
                          dbo.ro_prestamo.TotalPrestamo, dbo.ro_prestamo.NumCuotas, dbo.ro_prestamo.Observacion, dbo.ro_prestamo_detalle.NumCuota, dbo.ro_prestamo_detalle.SaldoInicial, dbo.ro_prestamo_detalle.Interes, 
