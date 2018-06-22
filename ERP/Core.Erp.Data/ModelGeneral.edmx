@@ -505,6 +505,10 @@
             <End Role="tb_region" EntitySet="tb_region" />
             <End Role="tb_provincia" EntitySet="tb_provincia" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_region_tb_pais" Association="DBERPModelGeneral.Store.FK_tb_region_tb_pais">
+            <End Role="tb_pais" EntitySet="tb_pais" />
+            <End Role="tb_region" EntitySet="tb_region" />
+          </AssociationSet>
           <AssociationSet Name="FK_tb_sis_Documento_Tipo_Reporte_x_Empresa_tb_sis_Documento_Tipo" Association="DBERPModelGeneral.Store.FK_tb_sis_Documento_Tipo_Reporte_x_Empresa_tb_sis_Documento_Tipo">
             <End Role="tb_sis_Documento_Tipo" EntitySet="tb_sis_Documento_Tipo" />
             <End Role="tb_sis_Documento_Tipo_Reporte_x_Empresa" EntitySet="tb_sis_Documento_Tipo_Reporte_x_Empresa" />
@@ -965,6 +969,7 @@
           <Property Name="Nom_region" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="codigo" Type="varchar" MaxLength="10" />
           <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="IdPais" Type="varchar" Nullable="false" MaxLength="10" />
         </EntityType>
         <EntityType Name="tb_sis_Datos_Sistema">
           <Key>
@@ -1308,8 +1313,8 @@
           <Property Name="MotivoAnulacion" Type="varchar" MaxLength="100" />
           <Property Name="Placa" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.tbSys_Ge_Comparativo_Modulo_vs_Contas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.tbSys_Ge_Comparativo_Modulo_vs_Contas' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="tbSys_Ge_Comparativo_Modulo_vs_Contas">
           <Key>
@@ -1348,8 +1353,8 @@
           <Property Name="TIPO" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="referencia" Type="varchar" MaxLength="143" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vw_EstadoCivil' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vw_EstadoCivil' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_EstadoCivil">
           <Key>
@@ -1367,8 +1372,8 @@
           <Property Name="orden" Type="int" Nullable="false" />
           <Property Name="IdTipoCatalogo" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vw_NaturalezaPersona' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vw_NaturalezaPersona' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_NaturalezaPersona">
           <Key>
@@ -1386,8 +1391,8 @@
           <Property Name="orden" Type="int" Nullable="false" />
           <Property Name="IdTipoCatalogo" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vw_Persona' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vw_Persona' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Persona">
           <Key>
@@ -1415,8 +1420,8 @@
           <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="1" />
           <Property Name="Fecha_Creacion" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vw_TipoDocumento' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vw_TipoDocumento' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_TipoDocumento">
           <Key>
@@ -1434,8 +1439,8 @@
           <Property Name="orden" Type="int" Nullable="false" />
           <Property Name="IdTipoCatalogo" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vw_usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vw_usuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_usuario">
           <Key>
@@ -1454,8 +1459,8 @@
           <Property Name="pe_nombre" Type="varchar" MaxLength="50" />
           <Property Name="estado" Type="nvarchar" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwGe_tb_sis_Documento_Tipo_Talonario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwGe_tb_sis_Documento_Tipo_Talonario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwGe_tb_sis_Documento_Tipo_Talonario">
           <Key>
@@ -1483,8 +1488,8 @@
           <Property Name="es_Documento_Electronico" Type="bit" />
           <Property Name="NumDocumento_numero" Type="numeric" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwGe_tb_sis_Mensajes_sys_IdAuto_numeric' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwGe_tb_sis_Mensajes_sys_IdAuto_numeric' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwGe_tb_sis_Mensajes_sys_IdAuto_numeric">
           <Key>
@@ -1493,8 +1498,8 @@
           <Property Name="IdMensaje" Type="varchar" MaxLength="26" />
           <Property Name="observacion" Type="varchar" Nullable="false" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwGe_tb_Tarjeta_tb_Parametro' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwGe_tb_Tarjeta_tb_Parametro' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwGe_tb_Tarjeta_tb_Parametro">
           <Key>
@@ -1516,8 +1521,8 @@
           <Property Name="IdCobro_tipo_x_RetIva" Type="varchar" MaxLength="20" />
           <Property Name="IdCtaCble_Tarj" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_Bodega_x_Sucursal_TreeList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_Bodega_x_Sucursal_TreeList' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_Bodega_x_Sucursal_TreeList">
           <Key>
@@ -1536,8 +1541,8 @@
           <Property Name="IdSucursal" Type="int" Nullable="false" />
           <Property Name="IdBodega" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_Ciudad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_Ciudad' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_Ciudad">
           <Key>
@@ -1555,8 +1560,8 @@
           <Property Name="IdPais" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="IdProvincia" Type="varchar" Nullable="false" MaxLength="25" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_contacto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_contacto' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_contacto">
           <Key>
@@ -1612,8 +1617,8 @@
           <Property Name="pe_razonSocial" Type="varchar" MaxLength="150" />
           <Property Name="pe_Naturaleza" Type="varchar" Nullable="false" MaxLength="25" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_empresa_x_Usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_empresa_x_Usuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_empresa_x_Usuario">
           <Key>
@@ -1655,8 +1660,8 @@
           <Property Name="em_Email" Type="varchar" MaxLength="300" />
           <Property Name="em_fax" Type="char" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_persona_beneficiario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_persona_beneficiario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_persona_beneficiario">
           <Key>
@@ -1664,6 +1669,8 @@
             <PropertyRef Name="IdTipo_Persona" />
             <PropertyRef Name="IdPersona" />
             <PropertyRef Name="IdEntidad" />
+            
+            
             <PropertyRef Name="pe_cedulaRuc" />
             <PropertyRef Name="pe_Naturaleza" />
             <PropertyRef Name="pe_nombreCompleto" />
@@ -1675,8 +1682,8 @@
           <Property Name="IdPersona" Type="numeric" Nullable="false" />
           <Property Name="IdEntidad" Type="numeric" Nullable="false" />
           <Property Name="Codigo" Type="varchar" MaxLength="50" />
-          <Property Name="Nombre" Type="varchar" MaxLength="200" />
-          <Property Name="pr_girar_cheque_a" Type="varchar" MaxLength="200" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="pr_girar_cheque_a" Type="varchar" Nullable="false" MaxLength="200" />
           <Property Name="pe_razonSocial" Type="varchar" MaxLength="150" />
           <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="pe_Naturaleza" Type="varchar" Nullable="false" MaxLength="25" />
@@ -1698,8 +1705,8 @@
           <Property Name="pe_celular" Type="varchar" MaxLength="50" />
           <Property Name="pe_correo" Type="varchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_persona_beneficiario_por_Banco_Acreditacion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_persona_beneficiario_por_Banco_Acreditacion' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_persona_beneficiario_por_Banco_Acreditacion">
           <Key>
@@ -1707,6 +1714,8 @@
             <PropertyRef Name="IdTipo_Persona" />
             <PropertyRef Name="IdPersona" />
             <PropertyRef Name="IdEntidad" />
+            
+            
             <PropertyRef Name="pe_cedulaRuc" />
             <PropertyRef Name="pe_Naturaleza" />
             <PropertyRef Name="pe_nombreCompleto" />
@@ -1718,8 +1727,8 @@
           <Property Name="IdPersona" Type="numeric" Nullable="false" />
           <Property Name="IdEntidad" Type="numeric" Nullable="false" />
           <Property Name="Codigo" Type="varchar" MaxLength="50" />
-          <Property Name="Nombre" Type="varchar" MaxLength="200" />
-          <Property Name="pr_girar_cheque_a" Type="varchar" MaxLength="200" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="pr_girar_cheque_a" Type="varchar" Nullable="false" MaxLength="200" />
           <Property Name="pe_razonSocial" Type="varchar" MaxLength="150" />
           <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="pe_Naturaleza" Type="varchar" Nullable="false" MaxLength="25" />
@@ -1744,8 +1753,8 @@
           <Property Name="TieneFormatoTransferencia" Type="bit" />
           <Property Name="ba_descripcion" Type="varchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_sis_Documento_Tipo_x_Disenio_Report' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_sis_Documento_Tipo_x_Disenio_Report' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_sis_Documento_Tipo_x_Disenio_Report">
           <Key>
@@ -1759,8 +1768,8 @@
           <Property Name="File_Disenio_Reporte" Type="varbinary(max)" />
           <Property Name="ApareceCombo_FileReporte" Type="char" Nullable="false" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_sis_Documento_Tipo_x_Empresa_Anulados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_sis_Documento_Tipo_x_Empresa_Anulados' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_sis_Documento_Tipo_x_Empresa_Anulados">
           <Key>
@@ -1784,8 +1793,8 @@
           <Property Name="NumAutorizacion" Type="varchar" MaxLength="150" />
           <Property Name="Estado" Type="char" Nullable="false" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_tb_banco_procesos_bancarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_tb_banco_procesos_bancarios' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_tb_banco_procesos_bancarios">
           <Key>
@@ -1808,8 +1817,8 @@
           <Property Name="Se_contabiliza" Type="bit" />
           <Property Name="Tipo_Proc" Type="varchar" MaxLength="10" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_transportista_x_tb_persona' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_transportista_x_tb_persona' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_transportista_x_tb_persona">
           <Key>
@@ -1825,8 +1834,8 @@
           <Property Name="pe_nombreCompleto" Type="varchar" MaxLength="500" />
           <Property Name="pe_cedulaRuc" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwtb_Ubicacion_Geografica' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwtb_Ubicacion_Geografica' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_Ubicacion_Geografica">
           <Key>
@@ -2135,6 +2144,18 @@
             </Principal>
             <Dependent Role="tb_provincia">
               <PropertyRef Name="Cod_Region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_region_tb_pais">
+          <End Role="tb_pais" Type="DBERPModelGeneral.Store.tb_pais" Multiplicity="1" />
+          <End Role="tb_region" Type="DBERPModelGeneral.Store.tb_region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_pais">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="tb_region">
+              <PropertyRef Name="IdPais" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2476,11 +2497,6 @@
           </AssociationSet>
           <EntitySet Name="vwGe_tb_sis_Documento_Tipo_Talonario" EntityType="DBERPModelGeneral.vwGe_tb_sis_Documento_Tipo_Talonario" />
           <EntitySet Name="vwtb_empresa_x_Usuario" EntityType="DBERPModelGeneral.vwtb_empresa_x_Usuario" />
-          <EntitySet Name="tb_region" EntityType="DBERPModelGeneral.tb_region" />
-          <AssociationSet Name="FK_tb_provincia_tb_region" Association="DBERPModelGeneral.FK_tb_provincia_tb_region">
-            <End Role="tb_region" EntitySet="tb_region" />
-            <End Role="tb_provincia" EntitySet="tb_provincia" />
-          </AssociationSet>
           <EntitySet Name="tb_sis_Impuesto_x_ctacble" EntityType="DBERPModelGeneral.tb_sis_Impuesto_x_ctacble" />
           <AssociationSet Name="FK_tb_sis_Impuesto_x_ctacble_tb_sis_Impuesto" Association="DBERPModelGeneral.FK_tb_sis_Impuesto_x_ctacble_tb_sis_Impuesto">
             <End Role="tb_sis_Impuesto" EntitySet="tb_sis_Impuesto" />
@@ -2551,6 +2567,15 @@
           <AssociationSet Name="FK_tb_contacto_tb_provincia" Association="DBERPModelGeneral.FK_tb_contacto_tb_provincia">
             <End Role="tb_provincia" EntitySet="tb_provincia" />
             <End Role="tb_contacto" EntitySet="tb_contacto" />
+          </AssociationSet>
+          <EntitySet Name="tb_region" EntityType="DBERPModelGeneral.tb_region" />
+          <AssociationSet Name="FK_tb_region_tb_pais" Association="DBERPModelGeneral.FK_tb_region_tb_pais">
+            <End Role="tb_pais" EntitySet="tb_pais" />
+            <End Role="tb_region" EntitySet="tb_region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_provincia_tb_region" Association="DBERPModelGeneral.FK_tb_provincia_tb_region">
+            <End Role="tb_region" EntitySet="tb_region" />
+            <End Role="tb_provincia" EntitySet="tb_provincia" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="spSys_ObtenerFecha_SinFeriadoTampocoSabDom_Result">
@@ -2718,6 +2743,7 @@
           <NavigationProperty Name="tb_provincia" Relationship="DBERPModelGeneral.FK_tb_provincia_tb_pais" FromRole="tb_pais" ToRole="tb_provincia" />
           <NavigationProperty Name="tb_contacto" Relationship="DBERPModelGeneral.FK_tb_contacto_tb_pais" FromRole="tb_pais" ToRole="tb_contacto" />
           <NavigationProperty Name="tb_contacto1" Relationship="DBERPModelGeneral.FK_tb_contacto_tb_pais1" FromRole="tb_pais" ToRole="tb_contacto" />
+          <NavigationProperty Name="tb_region" Relationship="DBERPModelGeneral.FK_tb_region_tb_pais" FromRole="tb_pais" ToRole="tb_region" />
         </EntityType>
         <EntityType Name="tb_parametro">
           <Key>
@@ -3778,8 +3804,8 @@
           <Property Type="String" Name="Cod_Region" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_ciudad" Relationship="DBERPModelGeneral.FK_tb_ciudad_tb_provincia" FromRole="tb_provincia" ToRole="tb_ciudad" />
           <NavigationProperty Name="tb_pais" Relationship="DBERPModelGeneral.FK_tb_provincia_tb_pais" FromRole="tb_provincia" ToRole="tb_pais" />
-          <NavigationProperty Name="tb_region" Relationship="DBERPModelGeneral.FK_tb_provincia_tb_region" FromRole="tb_provincia" ToRole="tb_region" />
           <NavigationProperty Name="tb_contacto" Relationship="DBERPModelGeneral.FK_tb_contacto_tb_provincia" FromRole="tb_provincia" ToRole="tb_contacto" />
+          <NavigationProperty Name="tb_region" Relationship="DBERPModelGeneral.FK_tb_provincia_tb_region" FromRole="tb_provincia" ToRole="tb_region" />
         </EntityType>
         <Association Name="FK_tb_ciudad_tb_provincia">
           <End Type="DBERPModelGeneral.tb_provincia" Role="tb_provincia" Multiplicity="1" />
@@ -3902,28 +3928,6 @@
           <Property Type="String" Name="em_Email" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="em_fax" MaxLength="20" FixedLength="true" Unicode="false" />
         </EntityType>
-        <EntityType Name="tb_region">
-          <Key>
-            <PropertyRef Name="Cod_Region" />
-          </Key>
-          <Property Type="String" Name="Cod_Region" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nom_region" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="codigo" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="estado" Nullable="false" />
-          <NavigationProperty Name="tb_provincia" Relationship="DBERPModelGeneral.FK_tb_provincia_tb_region" FromRole="tb_region" ToRole="tb_provincia" />
-        </EntityType>
-        <Association Name="FK_tb_provincia_tb_region">
-          <End Type="DBERPModelGeneral.tb_region" Role="tb_region" Multiplicity="0..1" />
-          <End Type="DBERPModelGeneral.tb_provincia" Role="tb_provincia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_region">
-              <PropertyRef Name="Cod_Region" />
-            </Principal>
-            <Dependent Role="tb_provincia">
-              <PropertyRef Name="Cod_Region" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tb_sis_Impuesto_x_ctacble">
           <Key>
             <PropertyRef Name="IdCod_Impuesto" />
@@ -4231,8 +4235,8 @@
           <Property Type="Decimal" Name="IdPersona" Nullable="false" Precision="18" Scale="0" />
           <Property Type="Decimal" Name="IdEntidad" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Codigo" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nombre" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pr_girar_cheque_a" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="pr_girar_cheque_a" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Type="String" Name="pe_razonSocial" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="pe_Naturaleza" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -4271,8 +4275,8 @@
           <Property Type="Decimal" Name="IdPersona" Nullable="false" Precision="18" Scale="0" />
           <Property Type="Decimal" Name="IdEntidad" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Codigo" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nombre" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pr_girar_cheque_a" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="pr_girar_cheque_a" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Type="String" Name="pe_razonSocial" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="pe_Naturaleza" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -4366,6 +4370,42 @@
             </Principal>
             <Dependent Role="tb_contacto">
               <PropertyRef Name="IdProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_region">
+          <Key>
+            <PropertyRef Name="Cod_Region" />
+          </Key>
+          <Property Type="String" Name="Cod_Region" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_region" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="codigo" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="IdPais" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_pais" Relationship="DBERPModelGeneral.FK_tb_region_tb_pais" FromRole="tb_region" ToRole="tb_pais" />
+          <NavigationProperty Name="tb_provincia" Relationship="DBERPModelGeneral.FK_tb_provincia_tb_region" FromRole="tb_region" ToRole="tb_provincia" />
+        </EntityType>
+        <Association Name="FK_tb_region_tb_pais">
+          <End Type="DBERPModelGeneral.tb_pais" Role="tb_pais" Multiplicity="1" />
+          <End Type="DBERPModelGeneral.tb_region" Role="tb_region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_pais">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="tb_region">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_provincia_tb_region">
+          <End Type="DBERPModelGeneral.tb_region" Role="tb_region" Multiplicity="0..1" />
+          <End Type="DBERPModelGeneral.tb_provincia" Role="tb_provincia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_region">
+              <PropertyRef Name="Cod_Region" />
+            </Principal>
+            <Dependent Role="tb_provincia">
+              <PropertyRef Name="Cod_Region" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5383,16 +5423,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_region">
-            <EntityTypeMapping TypeName="DBERPModelGeneral.tb_region">
-              <MappingFragment StoreEntitySet="tb_region">
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-                <ScalarProperty Name="Nom_region" ColumnName="Nom_region" />
-                <ScalarProperty Name="Cod_Region" ColumnName="Cod_Region" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_sis_Impuesto_x_ctacble">
             <EntityTypeMapping TypeName="DBERPModelGeneral.tb_sis_Impuesto_x_ctacble">
               <MappingFragment StoreEntitySet="tb_sis_Impuesto_x_ctacble">
@@ -5598,6 +5628,17 @@
                 <ScalarProperty Name="IdTipo_Persona" ColumnName="IdTipo_Persona" />
                 <ScalarProperty Name="IdBeneficiario" ColumnName="IdBeneficiario" />
                 <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_region">
+            <EntityTypeMapping TypeName="DBERPModelGeneral.tb_region">
+              <MappingFragment StoreEntitySet="tb_region">
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="Nom_region" ColumnName="Nom_region" />
+                <ScalarProperty Name="Cod_Region" ColumnName="Cod_Region" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

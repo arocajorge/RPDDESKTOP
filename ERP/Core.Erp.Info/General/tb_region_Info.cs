@@ -10,5 +10,6 @@ namespace Core.Erp.Info.General
    {
        public string Cod_Region { get; set; }
        public string Nom_region { get; set; }
+       public string IdPais { get; set; }
     }
 }

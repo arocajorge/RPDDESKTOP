@@ -111,16 +111,11 @@ namespace Core.Erp.Data.SeguridadAcceso
                     {                        
                         registro.IdMenu = item.IdMenu;
                         registro.IdEmpresa = item.IdEmpresa;
-                        registro.Habilitado = true;
-                        registro.NombreAsambly_x_Emp = item.NombreAsambly_x_Emp;
-                        registro.NomFormulario_x_Emp = item.NomFormulario_x_Emp;
                         entity.seg_Menu_x_Empresa.Add(registro);
                     }
                     else if ((Listaregistros.Count() > 0) && (item.Checkeado))
                     {
                         registro = Listaregistros.First();
-                        registro.NombreAsambly_x_Emp = item.NombreAsambly_x_Emp;
-                        registro.NomFormulario_x_Emp = item.NomFormulario_x_Emp;
                     }
                     else if ((Listaregistros.Count() > 0) && (!item.Checkeado))
                     {

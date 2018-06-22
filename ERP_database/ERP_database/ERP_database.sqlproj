@@ -1830,5 +1830,7 @@
     <Build Include="web\Views\vwcp_orden_giro.sql" />
     <Build Include="web\Views\vwcp_nota_DebCre.sql" />
     <Build Include="dbo\Views\vwtb_pais.sql" />
+    <Build Include="web\Views\VWROL_010.sql" />
+    <Build Include="web\Views\VWROL_009.sql" />
   </ItemGroup>
 </Project>

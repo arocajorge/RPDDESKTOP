@@ -201,8 +201,7 @@ namespace Core.Erp.Data.SeguridadAcceso
                         info.nom_Formulario = (info.nom_Formulario == null) ? "" : info.nom_Formulario;
                         contact.nom_Formulario = info.nom_Formulario;
                         contact.nom_Asembly = info.nom_Asembly;
-                        contact.nivel = (info.nivel == null) ? 0 : Convert.ToInt32(info.nivel);
-
+                        contact.nivel = (info.nivel == null) ? 0 : Convert.ToInt32(info.nivel);                        
                         resultado = context.SaveChanges();
                     }
                     if (resultado > 0)
@@ -329,7 +328,9 @@ namespace Core.Erp.Data.SeguridadAcceso
                     address.Tiene_FormularioAsociado = info.Tiene_FormularioAsociado;
                     address.nom_Formulario = info.nom_Formulario;
                     address.nom_Asembly = info.nom_Asembly; 
-                    address.nivel = (info.nivel == null) ? 0 : Convert.ToInt32(info.nivel);                                        
+                    address.nivel = (info.nivel == null) ? 0 : Convert.ToInt32(info.nivel);
+                    address.es_desktop = true;
+                    address.es_web = false;
                     context.seg_Menu.Add(address);
                     context.SaveChanges();
                 }

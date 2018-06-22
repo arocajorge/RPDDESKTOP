@@ -97,10 +97,6 @@
             <End Role="seg_Menu" EntitySet="seg_Menu" />
             <End Role="seg_Menu_x_Empresa" EntitySet="seg_Menu_x_Empresa" />
           </AssociationSet>
-          <AssociationSet Name="FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa" Association="DBERPModelSeguridad.Store.FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa">
-            <End Role="seg_Menu_x_Empresa" EntitySet="seg_Menu_x_Empresa" />
-            <End Role="seg_Menu_x_Empresa_x_Usuario" EntitySet="seg_Menu_x_Empresa_x_Usuario" />
-          </AssociationSet>
           <AssociationSet Name="FK_seg_Menu_x_Empresa_x_Usuario_seg_usuario" Association="DBERPModelSeguridad.Store.FK_seg_Menu_x_Empresa_x_Usuario_seg_usuario">
             <End Role="seg_usuario" EntitySet="seg_usuario" />
             <End Role="seg_Menu_x_Empresa_x_Usuario" EntitySet="seg_Menu_x_Empresa_x_Usuario" />
@@ -124,12 +120,14 @@
           <Property Name="PosicionMenu" Type="int" Nullable="false" />
           <Property Name="Habilitado" Type="bit" Nullable="false" />
           <Property Name="Tiene_FormularioAsociado" Type="bit" Nullable="false" />
-          <Property Name="nom_Formulario" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="nom_Asembly" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="nom_Formulario" Type="varchar" MaxLength="255" />
+          <Property Name="nom_Asembly" Type="varchar" MaxLength="200" />
           <Property Name="nivel" Type="int" />
           <Property Name="web_nom_Area" Type="varchar" MaxLength="200" />
           <Property Name="web_nom_Controller" Type="varchar" MaxLength="200" />
           <Property Name="web_nom_Action" Type="varchar" MaxLength="300" />
+          <Property Name="es_web" Type="bit" Nullable="false" />
+          <Property Name="es_desktop" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="seg_Menu_Categoria">
           <Key>
@@ -211,9 +209,7 @@
           </Key>
           <Property Name="IdEmpresa" Type="int" Nullable="false" />
           <Property Name="IdMenu" Type="int" Nullable="false" />
-          <Property Name="Habilitado" Type="bit" Nullable="false" />
-          <Property Name="NombreAsambly_x_Emp" Type="varchar" Nullable="false" MaxLength="200" />
-          <Property Name="NomFormulario_x_Emp" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="observacion" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="seg_Menu_x_Empresa_x_Usuario">
           <Key>
@@ -263,8 +259,8 @@
           <Property Name="CodReporte" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="observacion" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vw_Seg_Menu_x_Usuario_x_Empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vw_Seg_Menu_x_Usuario_x_Empresa' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Seg_Menu_x_Usuario_x_Empresa">
           <Key>
@@ -273,13 +269,13 @@
             <PropertyRef Name="PosicionMenu" />
             <PropertyRef Name="Habilitado" />
             <PropertyRef Name="Tiene_FormularioAsociado" />
-            <PropertyRef Name="nom_Formulario" />
-            <PropertyRef Name="nom_Asembly" />
             <PropertyRef Name="IdEmpresa" />
             <PropertyRef Name="IdUsuario" />
             <PropertyRef Name="Eliminacion" />
             <PropertyRef Name="Escritura" />
             <PropertyRef Name="Lectura" />
+            <PropertyRef Name="nom_Formulario" />
+            <PropertyRef Name="nom_Asembly" />
           </Key>
           <Property Name="IdMenu" Type="int" Nullable="false" />
           <Property Name="IdMenuPadre" Type="int" />
@@ -287,8 +283,8 @@
           <Property Name="PosicionMenu" Type="int" Nullable="false" />
           <Property Name="Habilitado" Type="bit" Nullable="false" />
           <Property Name="Tiene_FormularioAsociado" Type="bit" Nullable="false" />
-          <Property Name="nom_Formulario" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="nom_Asembly" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="nom_Formulario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nom_Asembly" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="nivel" Type="int" />
           <Property Name="IdEmpresa" Type="int" Nullable="false" />
           <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
@@ -296,8 +292,8 @@
           <Property Name="Escritura" Type="bit" Nullable="false" />
           <Property Name="Lectura" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwseg_Usuario_x_Empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwseg_Usuario_x_Empresa' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwseg_Usuario_x_Empresa">
           <Key>
@@ -313,8 +309,8 @@
           <Property Name="em_ruc" Type="nvarchar" Nullable="false" MaxLength="13" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_RAPI_PRODUCCION.dbo.vwseg_usuario_x_tb_sis_reporte' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBERP_RAPI_PRODUCCION.dbo.vwseg_usuario_x_tb_sis_reporte' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwseg_usuario_x_tb_sis_reporte">
           <Key>
@@ -424,20 +420,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa">
-          <End Role="seg_Menu_x_Empresa" Type="DBERPModelSeguridad.Store.seg_Menu_x_Empresa" Multiplicity="1" />
-          <End Role="seg_Menu_x_Empresa_x_Usuario" Type="DBERPModelSeguridad.Store.seg_Menu_x_Empresa_x_Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="seg_Menu_x_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMenu" />
-            </Principal>
-            <Dependent Role="seg_Menu_x_Empresa_x_Usuario">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMenu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_seg_Menu_x_Empresa_x_Usuario_seg_usuario">
           <End Role="seg_usuario" Type="DBERPModelSeguridad.Store.seg_usuario" Multiplicity="1" />
           <End Role="seg_Menu_x_Empresa_x_Usuario" Type="DBERPModelSeguridad.Store.seg_Menu_x_Empresa_x_Usuario" Multiplicity="*" />
@@ -479,13 +461,8 @@
     <edmx:ConceptualModels>
       <Schema Namespace="DBERPModelSeguridad" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EntitiesSeguAcceso" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="seg_Menu_x_Empresa" EntityType="DBERPModelSeguridad.seg_Menu_x_Empresa" />
           <EntitySet Name="seg_Menu_x_Empresa_x_Usuario" EntityType="DBERPModelSeguridad.seg_Menu_x_Empresa_x_Usuario" />
           <EntitySet Name="seg_Usuario_x_Empresa" EntityType="DBERPModelSeguridad.seg_Usuario_x_Empresa" />
-          <AssociationSet Name="FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa" Association="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa">
-            <End Role="seg_Menu_x_Empresa" EntitySet="seg_Menu_x_Empresa" />
-            <End Role="seg_Menu_x_Empresa_x_Usuario" EntitySet="seg_Menu_x_Empresa_x_Usuario" />
-          </AssociationSet>
           <EntitySet Name="seg_Menu_Grupo" EntityType="DBERPModelSeguridad.seg_Menu_Grupo" />
           <EntitySet Name="seg_Menu_Item_Tipo" EntityType="DBERPModelSeguridad.seg_Menu_Item_Tipo" />
           <EntitySet Name="seg_Menu_Pagina" EntityType="DBERPModelSeguridad.seg_Menu_Pagina" />
@@ -530,24 +507,12 @@
           <EntitySet Name="vwseg_Usuario_x_Empresa" EntityType="DBERPModelSeguridad.vwseg_Usuario_x_Empresa" />
           <EntitySet Name="vw_Seg_Menu_x_Usuario_x_Empresa" EntityType="DBERPModelSeguridad.vw_Seg_Menu_x_Usuario_x_Empresa" />
           <EntitySet Name="seg_Menu" EntityType="DBERPModelSeguridad.seg_Menu" />
+          <EntitySet Name="seg_Menu_x_Empresa" EntityType="DBERPModelSeguridad.seg_Menu_x_Empresa" />
           <AssociationSet Name="FK_seg_Menu_x_Empresa_seg_Menu" Association="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_seg_Menu">
             <End Role="seg_Menu" EntitySet="seg_Menu" />
             <End Role="seg_Menu_x_Empresa" EntitySet="seg_Menu_x_Empresa" />
           </AssociationSet>
           </EntityContainer>
-        <EntityType Name="seg_Menu_x_Empresa">
-          <Key>
-            <PropertyRef Name="IdEmpresa" />
-            <PropertyRef Name="IdMenu" />
-          </Key>
-          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
-          <Property Name="IdMenu" Type="Int32" Nullable="false" />
-          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
-          <Property Name="NombreAsambly_x_Emp" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
-          <Property Name="NomFormulario_x_Emp" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="seg_Menu_x_Empresa_x_Usuario" Relationship="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa" FromRole="seg_Menu_x_Empresa" ToRole="seg_Menu_x_Empresa_x_Usuario" />
-          <NavigationProperty Name="seg_Menu" Relationship="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_seg_Menu" FromRole="seg_Menu_x_Empresa" ToRole="seg_Menu" />
-        </EntityType>
         <EntityType Name="seg_Menu_x_Empresa_x_Usuario">
           <Key>
             <PropertyRef Name="IdEmpresa" />
@@ -560,7 +525,6 @@
           <Property Name="Lectura" Type="Boolean" Nullable="false" />
           <Property Name="Escritura" Type="Boolean" Nullable="false" />
           <Property Name="Eliminacion" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="seg_Menu_x_Empresa" Relationship="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa" FromRole="seg_Menu_x_Empresa_x_Usuario" ToRole="seg_Menu_x_Empresa" />
           <NavigationProperty Name="seg_usuario" Relationship="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_x_Usuario_seg_usuario" FromRole="seg_Menu_x_Empresa_x_Usuario" ToRole="seg_usuario" />
         </EntityType>
         <EntityType Name="seg_Usuario_x_Empresa">
@@ -573,20 +537,6 @@
           <Property Name="Observacion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="seg_usuario" Relationship="DBERPModelSeguridad.FK_seg_Usuario_x_Empresa_seg_usuario" FromRole="seg_Usuario_x_Empresa" ToRole="seg_usuario" />
         </EntityType>
-        <Association Name="FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa">
-          <End Role="seg_Menu_x_Empresa" Type="DBERPModelSeguridad.seg_Menu_x_Empresa" Multiplicity="1" />
-          <End Role="seg_Menu_x_Empresa_x_Usuario" Type="DBERPModelSeguridad.seg_Menu_x_Empresa_x_Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="seg_Menu_x_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMenu" />
-            </Principal>
-            <Dependent Role="seg_Menu_x_Empresa_x_Usuario">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMenu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="seg_Menu_Grupo">
           <Key>
             <PropertyRef Name="Codigo_Grupo" />
@@ -886,13 +836,25 @@
           <Property Type="Int32" Name="PosicionMenu" Nullable="false" />
           <Property Type="Boolean" Name="Habilitado" Nullable="false" />
           <Property Type="Boolean" Name="Tiene_FormularioAsociado" Nullable="false" />
-          <Property Type="String" Name="nom_Formulario" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nom_Asembly" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Formulario" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Asembly" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="nivel" />
           <Property Type="String" Name="web_nom_Area" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="web_nom_Controller" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="web_nom_Action" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="es_web" Nullable="false" />
+          <Property Type="Boolean" Name="es_desktop" Nullable="false" />
           <NavigationProperty Name="seg_Menu_x_Empresa" Relationship="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_seg_Menu" FromRole="seg_Menu" ToRole="seg_Menu_x_Empresa" />
+        </EntityType>
+        <EntityType Name="seg_Menu_x_Empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdMenu" Nullable="false" />
+          <Property Type="String" Name="observacion" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="seg_Menu" Relationship="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_seg_Menu" FromRole="seg_Menu_x_Empresa" ToRole="seg_Menu" />
         </EntityType>
         <Association Name="FK_seg_Menu_x_Empresa_seg_Menu">
           <End Type="DBERPModelSeguridad.seg_Menu" Role="seg_Menu" Multiplicity="1" />
@@ -912,17 +874,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DBERPModelSeguridadStoreContainer" CdmEntityContainer="EntitiesSeguAcceso">
-          <EntitySetMapping Name="seg_Menu_x_Empresa">
-            <EntityTypeMapping TypeName="DBERPModelSeguridad.seg_Menu_x_Empresa">
-              <MappingFragment StoreEntitySet="seg_Menu_x_Empresa">
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
-                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
-                <ScalarProperty Name="NombreAsambly_x_Emp" ColumnName="NombreAsambly_x_Emp" />
-                <ScalarProperty Name="NomFormulario_x_Emp" ColumnName="NomFormulario_x_Emp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="seg_Menu_x_Empresa_x_Usuario">
             <EntityTypeMapping TypeName="DBERPModelSeguridad.seg_Menu_x_Empresa_x_Usuario">
               <MappingFragment StoreEntitySet="seg_Menu_x_Empresa_x_Usuario">
@@ -1113,6 +1064,8 @@
           <EntitySetMapping Name="seg_Menu">
             <EntityTypeMapping TypeName="DBERPModelSeguridad.seg_Menu">
               <MappingFragment StoreEntitySet="seg_Menu">
+                <ScalarProperty Name="es_desktop" ColumnName="es_desktop" />
+                <ScalarProperty Name="es_web" ColumnName="es_web" />
                 <ScalarProperty Name="web_nom_Action" ColumnName="web_nom_Action" />
                 <ScalarProperty Name="web_nom_Controller" ColumnName="web_nom_Controller" />
                 <ScalarProperty Name="web_nom_Area" ColumnName="web_nom_Area" />
@@ -1125,6 +1078,15 @@
                 <ScalarProperty Name="DescripcionMenu" ColumnName="DescripcionMenu" />
                 <ScalarProperty Name="IdMenuPadre" ColumnName="IdMenuPadre" />
                 <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seg_Menu_x_Empresa">
+            <EntityTypeMapping TypeName="DBERPModelSeguridad.seg_Menu_x_Empresa">
+              <MappingFragment StoreEntitySet="seg_Menu_x_Empresa">
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -87,8 +87,6 @@
         <AssociationConnector Association="DBERPModelGeneral.FK_tb_sis_Documento_Tipo_Reporte_x_Empresa_tb_sis_Documento_Tipo" />
         <EntityTypeShape EntityType="DBERPModelGeneral.vwGe_tb_sis_Documento_Tipo_Talonario" Width="1.5" PointX="5.0875439444033166" PointY="27.779157875002902" />
         <EntityTypeShape EntityType="DBERPModelGeneral.vwtb_empresa_x_Usuario" Width="1.5" PointX="4.2523758393956239" PointY="23.089723463677672" />
-        <EntityTypeShape EntityType="DBERPModelGeneral.tb_region" Width="1.5" PointX="2.8170955585395432" PointY="18.516645231524784" />
-        <AssociationConnector Association="DBERPModelGeneral.FK_tb_provincia_tb_region" />
         <EntityTypeShape EntityType="DBERPModelGeneral.tb_sis_Impuesto_x_ctacble" Width="1.5" PointX="7.8500748164253658" PointY="7.1392089310750411" />
         <AssociationConnector Association="DBERPModelGeneral.FK_tb_sis_Impuesto_x_ctacble_tb_sis_Impuesto" />
         <EntityTypeShape EntityType="DBERPModelGeneral.tb_persona" Width="1.5" PointX="5.10760009526629" PointY="20.581057543205588" />
@@ -112,6 +110,9 @@
         <AssociationConnector Association="DBERPModelGeneral.FK_tb_contacto_tb_pais1" />
         <AssociationConnector Association="DBERPModelGeneral.FK_tb_contacto_tb_persona" />
         <AssociationConnector Association="DBERPModelGeneral.FK_tb_contacto_tb_provincia" />
+        <EntityTypeShape EntityType="DBERPModelGeneral.tb_region" Width="1.5" PointX="8.9840910513811227" PointY="4.1614223290986487" />
+        <AssociationConnector Association="DBERPModelGeneral.FK_tb_region_tb_pais" />
+        <AssociationConnector Association="DBERPModelGeneral.FK_tb_provincia_tb_region" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

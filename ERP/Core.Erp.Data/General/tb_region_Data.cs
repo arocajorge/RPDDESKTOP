@@ -25,7 +25,8 @@ namespace Core.Erp.Data.General
                    {
                        tb_region_Info infoCiudad = new tb_region_Info();
                        infoCiudad.Cod_Region = item.Cod_Region;
-                       infoCiudad.Nom_region = item.Nom_region;                      
+                       infoCiudad.Nom_region = item.Nom_region;
+                       infoCiudad.IdPais = item.IdPais;
                        lstCiudad.Add(infoCiudad);
                    }
                }

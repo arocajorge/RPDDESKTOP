@@ -15,7 +15,7 @@ namespace Core.Erp.Data.SeguridadAcceso
                 List<seg_Menu_x_Empresa_x_Usuario_info> returnValue = new List<seg_Menu_x_Empresa_x_Usuario_info>();
                 EntitiesSeguAcceso entity = new EntitiesSeguAcceso();
                 var select_menu_x_empresa_x_usuario = from c in entity.vw_Seg_Menu_x_Usuario_x_Empresa
-                                                      where c.IdEmpresa == idEmpresa && c.IdUsuario == idUsuario
+                                                      where c.IdEmpresa == idEmpresa && c.IdUsuario == idUsuario                                                      
                                                       select c;
                 foreach (var item in select_menu_x_empresa_x_usuario.ToList())
                 {
@@ -98,7 +98,7 @@ namespace Core.Erp.Data.SeguridadAcceso
                 var select_no_menu_x_empresa_x_usuario = from c in lMenu_x_empresa
                                                          where !(from filtro in entity.vw_Seg_Menu_x_Usuario_x_Empresa
                                                                  where filtro.IdEmpresa == idEmpresa && filtro.IdUsuario == idUsuario
-                                                                 select filtro.IdMenu).Contains(c.IdMenu)
+                                                                 select filtro.IdMenu).Contains(c.IdMenu)                                                                 
                                                          select c;
                 foreach (var item in select_no_menu_x_empresa_x_usuario)
                 {

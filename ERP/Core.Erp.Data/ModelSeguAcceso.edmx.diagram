@@ -5,10 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="09a5fa1d690c47bcb79212c980eff885" Name="Diagrama1">
-        <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu_x_Empresa" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu_x_Empresa_x_Usuario" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Usuario_x_Empresa" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <AssociationConnector Association="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_x_Usuario_seg_Menu_x_Empresa" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu_Grupo" Width="1.5" PointX="6.2984401911024186" PointY="29.415567843902654" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu_Item_Tipo" Width="1.5" PointX="2.7809280933723448" PointY="27.975602058682405" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu_Pagina" Width="1.5" PointX="6.1257117586795751" PointY="7.8851819075109351" />
@@ -28,7 +26,8 @@
         <EntityTypeShape EntityType="DBERPModelSeguridad.vwseg_usuario_x_tb_sis_reporte" Width="1.5" PointX="3.6155847067085958" PointY="29.102859436116582" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.vwseg_Usuario_x_Empresa" Width="1.5" PointX="11.046797766837663" PointY="6.846036720483581" />
         <EntityTypeShape EntityType="DBERPModelSeguridad.vw_Seg_Menu_x_Usuario_x_Empresa" Width="1.5" PointX="4.0717511624431939" PointY="5.3134938205189508" />
-        <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu" Width="1.5" PointX="5.63235969917493" PointY="28.644437162505668" />
+        <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu" Width="1.5" PointX="8.3413701468805641" PointY="12.415943702876541" />
+        <EntityTypeShape EntityType="DBERPModelSeguridad.seg_Menu_x_Empresa" Width="1.5" PointX="3.728915028147826" PointY="13.17882826047895" />
         <AssociationConnector Association="DBERPModelSeguridad.FK_seg_Menu_x_Empresa_seg_Menu" />
         </Diagram>
     </edmx:Diagrams>
