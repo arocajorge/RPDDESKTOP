@@ -25,8 +25,6 @@ namespace Core.Erp.Data.SeguridadAcceso
                                                menu.DescripcionMenu,
                                                filtro.IdMenu,
                                                menu.IdMenuPadre,
-                                               filtro.NombreAsambly_x_Emp,
-                                               filtro.NomFormulario_x_Emp
                                            };
                 foreach (var item in selectMenu_x_Empresa)
                 {
@@ -35,8 +33,6 @@ namespace Core.Erp.Data.SeguridadAcceso
                     info.DescripcionMenu = item.DescripcionMenu;
                     info.IdMenu = item.IdMenu;
                     info.IdMenuPadre = (int)item.IdMenuPadre;
-                    info.NombreAsambly_x_Emp = item.NombreAsambly_x_Emp;
-                    info.NomFormulario_x_Emp = item.NomFormulario_x_Emp;
                     info.Existe = true;
                     info.Checkeado = true;
                     returnValue.Add(info);
