@@ -1832,5 +1832,8 @@
     <Build Include="dbo\Views\vwtb_pais.sql" />
     <Build Include="web\Views\VWROL_010.sql" />
     <Build Include="web\Views\VWROL_009.sql" />
+    <Build Include="dbo\Views\vwtb_provincia.sql" />
+    <Build Include="dbo\Views\vwtb_parroquia.sql" />
+    <Build Include="dbo\Views\vwtb_ciudad_id.sql" />
   </ItemGroup>
 </Project>

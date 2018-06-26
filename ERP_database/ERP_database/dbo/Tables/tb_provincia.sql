@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[tb_provincia] (
     [IdProvincia]      VARCHAR (25)  NOT NULL,
-    [Cod_Provincia]    VARCHAR (25)  NOT NULL,
+    [Cod_Provincia]    VARCHAR (25)  NULL,
     [Descripcion_Prov] VARCHAR (50)  NOT NULL,
     [Estado]           CHAR (1)      NOT NULL,
     [IdPais]           VARCHAR (10)  NOT NULL,
@@ -18,4 +18,6 @@
     CONSTRAINT [FK_tb_provincia_tb_pais] FOREIGN KEY ([IdPais]) REFERENCES [dbo].[tb_pais] ([IdPais]),
     CONSTRAINT [FK_tb_provincia_tb_region] FOREIGN KEY ([Cod_Region]) REFERENCES [dbo].[tb_region] ([Cod_Region])
 );
+
+
 

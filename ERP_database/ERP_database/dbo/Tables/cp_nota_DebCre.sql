@@ -35,14 +35,14 @@
     [IdCtaCble_Acre]           VARCHAR (20)  NULL,
     [IdCtaCble_IVA]            VARCHAR (20)  NULL,
     [IdUsuario]                VARCHAR (20)  NULL,
-    [Fecha_Transac]            DATETIME      NOT NULL,
+    [Fecha_Transac]            DATETIME      NULL,
     [Estado]                   VARCHAR (2)   NOT NULL,
     [IdUsuarioUltMod]          VARCHAR (20)  NULL,
     [Fecha_UltMod]             DATETIME      NULL,
     [IdUsuarioUltAnu]          VARCHAR (20)  NULL,
     [MotivoAnu]                VARCHAR (150) NULL,
-    [nom_pc]                   VARCHAR (50)  NOT NULL,
-    [ip]                       VARCHAR (25)  NOT NULL,
+    [nom_pc]                   VARCHAR (50)  NULL,
+    [ip]                       VARCHAR (25)  NULL,
     [Fecha_UltAnu]             DATETIME      NULL,
     [IdCbteCble_Anulacion]     NUMERIC (18)  NULL,
     [IdTipoCbte_Anulacion]     INT           NULL,
@@ -68,6 +68,10 @@
     CONSTRAINT [FK_cp_nota_DebCre_ct_plancta1] FOREIGN KEY ([IdEmpresa], [IdCtaCble_IVA]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble]),
     CONSTRAINT [FK_cp_nota_DebCre_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])
 );
+
+
+
+
 
 
 GO
