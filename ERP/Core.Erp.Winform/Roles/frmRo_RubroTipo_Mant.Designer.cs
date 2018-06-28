@@ -55,7 +55,6 @@
             this.textID = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtOrden = new System.Windows.Forms.NumericUpDown();
             this.textNombreC = new System.Windows.Forms.TextBox();
             this.textDescripcion = new System.Windows.Forms.TextBox();
             this.txtIdRubro = new System.Windows.Forms.TextBox();
@@ -67,6 +66,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControlMasConfig = new DevExpress.XtraEditors.GroupControl();
+            this.check_acumulad = new DevExpress.XtraEditors.CheckEdit();
             this.check_rub_Contabiliza_x_empleado = new DevExpress.XtraEditors.CheckEdit();
             this.cmbCuentaContable_ = new Core.Erp.Winform.Controles.UCCon_Plan_de_Cuenta_x_Movimiento();
             this.checkContabiliza = new DevExpress.XtraEditors.CheckEdit();
@@ -85,7 +85,7 @@
             this.LbtipoCampo = new System.Windows.Forms.Label();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.txtAcuedro = new System.Windows.Forms.TextBox();
-            this.check_acumulad = new DevExpress.XtraEditors.CheckEdit();
+            this.txtOrden = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.chkPermiteContabilizacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAplicaIESS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkPermiteMostrarReporte.Properties)).BeginInit();
@@ -100,13 +100,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.view)).BeginInit();
             this.panelCab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CheckEstado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOrden)).BeginInit();
             this.panelDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMasConfig)).BeginInit();
             this.groupControlMasConfig.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.check_acumulad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_rub_Contabiliza_x_empleado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkContabiliza.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkConsideraIESS.Properties)).BeginInit();
@@ -119,7 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkConcept.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditabelUsuario.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.check_acumulad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrden.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbCuentaContable
@@ -346,13 +346,13 @@
             // 
             // panelCab
             // 
+            this.panelCab.Controls.Add(this.txtOrden);
             this.panelCab.Controls.Add(this.CheckEstado);
             this.panelCab.Controls.Add(this.label8);
             this.panelCab.Controls.Add(this.txtIdRolProceso);
             this.panelCab.Controls.Add(this.textID);
             this.panelCab.Controls.Add(this.cmbTipo);
             this.panelCab.Controls.Add(this.label5);
-            this.panelCab.Controls.Add(this.txtOrden);
             this.panelCab.Controls.Add(this.textNombreC);
             this.panelCab.Controls.Add(this.textDescripcion);
             this.panelCab.Controls.Add(this.txtIdRubro);
@@ -418,13 +418,6 @@
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 154;
             this.label5.Text = "Orden:";
-            // 
-            // txtOrden
-            // 
-            this.txtOrden.Location = new System.Drawing.Point(396, 112);
-            this.txtOrden.Name = "txtOrden";
-            this.txtOrden.Size = new System.Drawing.Size(100, 20);
-            this.txtOrden.TabIndex = 149;
             // 
             // textNombreC
             // 
@@ -536,6 +529,14 @@
             this.groupControlMasConfig.Name = "groupControlMasConfig";
             this.groupControlMasConfig.Size = new System.Drawing.Size(523, 278);
             this.groupControlMasConfig.TabIndex = 0;
+            // 
+            // check_acumulad
+            // 
+            this.check_acumulad.Location = new System.Drawing.Point(245, 55);
+            this.check_acumulad.Name = "check_acumulad";
+            this.check_acumulad.Properties.Caption = "Este Rubro se acumula";
+            this.check_acumulad.Size = new System.Drawing.Size(157, 19);
+            this.check_acumulad.TabIndex = 173;
             // 
             // check_rub_Contabiliza_x_empleado
             // 
@@ -687,13 +688,12 @@
             this.txtAcuedro.Size = new System.Drawing.Size(523, 278);
             this.txtAcuedro.TabIndex = 0;
             // 
-            // check_acumulad
+            // txtOrden
             // 
-            this.check_acumulad.Location = new System.Drawing.Point(245, 55);
-            this.check_acumulad.Name = "check_acumulad";
-            this.check_acumulad.Properties.Caption = "Este Rubro se acumula";
-            this.check_acumulad.Size = new System.Drawing.Size(157, 19);
-            this.check_acumulad.TabIndex = 173;
+            this.txtOrden.Location = new System.Drawing.Point(391, 113);
+            this.txtOrden.Name = "txtOrden";
+            this.txtOrden.Size = new System.Drawing.Size(100, 20);
+            this.txtOrden.TabIndex = 159;
             // 
             // frmRo_RubroTipo_Mant
             // 
@@ -728,7 +728,6 @@
             this.panelCab.ResumeLayout(false);
             this.panelCab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CheckEstado.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOrden)).EndInit();
             this.panelDetalle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -736,6 +735,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMasConfig)).EndInit();
             this.groupControlMasConfig.ResumeLayout(false);
             this.groupControlMasConfig.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.check_acumulad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_rub_Contabiliza_x_empleado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkContabiliza.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkConsideraIESS.Properties)).EndInit();
@@ -749,7 +749,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditabelUsuario.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.check_acumulad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrden.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -785,7 +785,6 @@
         private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown txtOrden;
         private System.Windows.Forms.TextBox textNombreC;
         private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.TextBox txtIdRubro;
@@ -816,5 +815,6 @@
         private System.Windows.Forms.TextBox txtAcuedro;
         private DevExpress.XtraEditors.CheckEdit checkConsideraIESS;
         private DevExpress.XtraEditors.CheckEdit check_acumulad;
+        private DevExpress.XtraEditors.TextEdit txtOrden;
     }
 }

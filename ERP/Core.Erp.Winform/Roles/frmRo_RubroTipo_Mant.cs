@@ -207,7 +207,7 @@ namespace Core.Erp.Winform.Roles
                 txtIdRubro.Text = _SetInfo.rub_codigo;
                 textDescripcion.Text = _SetInfo.ru_descripcion;
                 textNombreC.Text = _SetInfo.NombreCorto;
-                txtOrden.Value = _SetInfo.ru_orden;
+                txtOrden.EditValue = _SetInfo.ru_orden;
                 CmbTipoCampo.SelectedValue = _SetInfo.rub_tipcal;
                 checkEditabelUsuario.Checked = (_SetInfo.ru_EditablexUser == "S") ? true : false;
                 CheckEstado.Checked=(_SetInfo.ru_estado == "A") ? true : false;
@@ -252,7 +252,7 @@ namespace Core.Erp.Winform.Roles
                 _Info.rub_codigo = txtIdRubro.Text;
                 _Info.NombreCorto = textNombreC.Text;
                 _Info.ru_descripcion = textDescripcion.Text;
-                _Info.ru_orden = Convert.ToInt32(txtOrden.Value);
+                _Info.ru_orden = Convert.ToInt32(txtOrden.EditValue);
                 _Info.ru_estado = (CheckEstado.Checked == true) ? "A" : "I";
                 _Info.ru_tipo = (cmbTipo.SelectedValue.ToString() == "") ? "I" : cmbTipo.SelectedValue.ToString();
                 _Info.ru_EditablexUser = (checkBox1.Checked == true) ? "S" : "N";
@@ -459,7 +459,6 @@ namespace Core.Erp.Winform.Roles
                     this.textNombreC.BackColor = System.Drawing.Color.White;
 
                      
-                    txtOrden.ReadOnly = true;
                     this.txtOrden.BackColor = System.Drawing.Color.White;
 
                     setInfo();
@@ -690,7 +689,7 @@ namespace Core.Erp.Winform.Roles
                 txtIdRubro.Text = "";
                 textDescripcion.Text = "";
                 textNombreC.Text = "";
-                txtOrden.Value = 0;
+                txtOrden.EditValue = 0;
                 CmbTipoCampo.SelectedValue = 0;
                 checkEditabelUsuario.Checked = false;
                 CheckEstado.Checked=false;
