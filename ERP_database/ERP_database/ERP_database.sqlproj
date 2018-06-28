@@ -1837,5 +1837,10 @@
     <Build Include="dbo\Views\vwtb_ciudad_id.sql" />
     <Build Include="web\Views\VWROL_011.sql" />
     <Build Include="web\Stored Procedures\SPROL_012.sql" />
+    <Build Include="web\Views\VWCXP_007.sql" />
+    <Build Include="web\Stored Procedures\SPCXP_008.sql" />
+    <Build Include="web\Stored Procedures\SPCXP_007.sql" />
+    <Build Include="web\Views\VWFAC_001.sql" />
+    <Build Include="web\Stored Procedures\SPFAC_002.sql" />
   </ItemGroup>
 </Project>
