@@ -34,6 +34,9 @@ namespace Core.Erp.Winform.Roles
         {
             try
             {
+
+
+
                 InitializeComponent();
                 var CataTipo = _CatTipo_B.ConsultaGeneral(IdEmpresa);
                 CataTipo.ForEach(var => var.tc_Descripcion = "[" + var.Codigo + "] - " + var.tc_Descripcion);
