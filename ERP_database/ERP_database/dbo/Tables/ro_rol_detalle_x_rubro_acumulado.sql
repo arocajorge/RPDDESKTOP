@@ -7,7 +7,8 @@
     [IdRubro]           VARCHAR (50) NOT NULL,
     [Valor]             FLOAT (53)   NOT NULL,
     [Estado]            VARCHAR (10) NULL,
-    CONSTRAINT [PK_ro_rol_detalle_x_rubro_acumulado] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNominaTipo] ASC, [IdNominaTipoLiqui] ASC, [IdPeriodo] ASC, [IdEmpleado] ASC, [IdRubro] ASC),
-    CONSTRAINT [FK_ro_rol_detalle_x_rubro_acumulado] FOREIGN KEY ([IdEmpresa], [IdNominaTipo], [IdNominaTipoLiqui], [IdPeriodo], [IdEmpleado], [IdRubro]) REFERENCES [dbo].[ro_rol_detalle] ([IdEmpresa], [IdNominaTipo], [IdNominaTipoLiqui], [IdPeriodo], [IdEmpleado], [IdRubro])
+    CONSTRAINT [PK_ro_rol_detalle_x_rubro_acumulado] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNominaTipo] ASC, [IdNominaTipoLiqui] ASC, [IdPeriodo] ASC, [IdEmpleado] ASC, [IdRubro] ASC)
 );
+
+
 
