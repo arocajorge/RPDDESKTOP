@@ -1,0 +1,39 @@
+Category: Error, Message: System.InvalidOperationException: No connection string named 'EntitiesGeneral' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Select[TSource,TResult](IQueryable`1 source, Expression`1 selector)
+   at Core.Erp.Data.General.tb_sis_Mensajes_sys_Data.Get_List_Mensajes_sys() in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\General\tb_sis_Mensajes_sys_Data.cs:line 49
+Category: Error, Message: System.InvalidOperationException: No connection string named 'EntitiesCaja' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Core.Erp.Data.Caja.caj_Caja_Movimiento_Tipo_Data.Get_list_Caja_Movimiento_Tipo(Int32 IdEmpresa, eTipo_Ing_Egr eTipo, String& MensajeError) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\Caja\caj_Caja_Movimiento_Tipo_Data.cs:line 67
+Category: Error, Message: cargar_Movimiento - Core.Erp.Info.Log_Exception.DalException ---> System.Exception: System.InvalidOperationException: No connection string named 'EntitiesCaja' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Core.Erp.Data.Caja.caj_Caja_Movimiento_Tipo_Data.Get_list_Caja_Movimiento_Tipo(Int32 IdEmpresa, eTipo_Ing_Egr eTipo, String& MensajeError) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\Caja\caj_Caja_Movimiento_Tipo_Data.cs:line 67
+   at Core.Erp.Data.Caja.caj_Caja_Movimiento_Tipo_Data.Get_list_Caja_Movimiento_Tipo(Int32 IdEmpresa, eTipo_Ing_Egr eTipo, String& MensajeError) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\Caja\caj_Caja_Movimiento_Tipo_Data.cs:line 94
+   at Core.Erp.Business.Caja.caj_Caja_Movimiento_Tipo_Bus.Get_list_Caja_Movimiento_Tipo(Int32 IdEmpresa, eTipo_Ing_Egr eTipo, String& MensajeError) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Bussines\Caja\caj_Caja_Movimiento_Tipo_Bus.cs:line 50
+   --- End of inner exception stack trace ---
+   at Core.Erp.Business.Caja.caj_Caja_Movimiento_Tipo_Bus.Get_list_Caja_Movimiento_Tipo(Int32 IdEmpresa, eTipo_Ing_Egr eTipo, String& MensajeError) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Bussines\Caja\caj_Caja_Movimiento_Tipo_Bus.cs:line 55
+   at Core.Erp.Winform.Controles.UCCaj_MovEgresoCaj_cmb.cargar_Movimiento() in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Winform\Controles\UCCaj_MovEgresoCaj_cmb.cs:line 113
+Category: Error, Message: cargar_TipoFlujo - Core.Erp.Info.Log_Exception.DalException ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Core.Erp.Data.Bancos.ba_TipoFlujo_Data.Get_List_TipoFlujo(Int32 IdEmpresa) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\Bancos\ba_TipoFlujo_Data.cs:line 103
+   at Core.Erp.Business.Bancos.ba_TipoFlujo_Bus.Get_List_TipoFlujo(Int32 IdEmpresa) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Bussines\Bancos\ba_TipoFlujo_Bus.cs:line 36
+   --- End of inner exception stack trace ---
+   at Core.Erp.Business.Bancos.ba_TipoFlujo_Bus.Get_List_TipoFlujo(Int32 IdEmpresa) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Bussines\Bancos\ba_TipoFlujo_Bus.cs:line 41
+   at Core.Erp.Winform.Controles.UCBa_TipoFlujo.cargar_TipoFlujo() in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Winform\Controles\UCBa_TipoFlujo.cs:line 170
+Category: Error, Message: 
