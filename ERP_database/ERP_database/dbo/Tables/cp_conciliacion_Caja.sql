@@ -2,8 +2,8 @@
     [IdEmpresa]             INT            NOT NULL,
     [IdConciliacion_Caja]   NUMERIC (18)   NOT NULL,
     [IdPeriodo]             INT            NOT NULL,
-    [Fecha_ini]             DATETIME       NULL,
-    [Fecha_fin]             DATETIME       NULL,
+    [Fecha_ini]             DATETIME       NOT NULL,
+    [Fecha_fin]             DATETIME       NOT NULL,
     [Fecha]                 DATETIME       NOT NULL,
     [IdCaja]                INT            NOT NULL,
     [IdEstadoCierre]        VARCHAR (25)   NOT NULL,
@@ -30,4 +30,6 @@
     CONSTRAINT [FK_cp_conciliacion_Caja_ct_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ct_periodo] ([IdEmpresa], [IdPeriodo]),
     CONSTRAINT [FK_cp_conciliacion_Caja_ct_plancta] FOREIGN KEY ([IdEmpresa], [IdCtaCble]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble])
 );
+
+
 
