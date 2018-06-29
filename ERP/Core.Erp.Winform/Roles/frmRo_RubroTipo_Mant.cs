@@ -259,7 +259,7 @@ namespace Core.Erp.Winform.Roles
                 _Info.rub_acumula = check_Acumula.Checked;
                 _Info.rub_grupo = Convert.ToInt32(CmbGrupos.SelectedValue == null ? 0 : CmbGrupos.SelectedValue);
                 _Info.rub_tipcal =(int) CmbTipoCampo.SelectedValue;
-                _Info.rub_concep = check_acumulad.Checked;
+                _Info.rub_concep = checkConcept.Checked;
                 _Info.rub_antici = checkAnticip.Checked;
                 _Info.rub_liquida = checkLiqui.Checked;
                 _Info.rub_provision =checkProvisiones.Checked;

@@ -37,3 +37,12 @@ Category: Error, Message: cargar_TipoFlujo - Core.Erp.Info.Log_Exception.DalExce
    at Core.Erp.Business.Bancos.ba_TipoFlujo_Bus.Get_List_TipoFlujo(Int32 IdEmpresa) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Bussines\Bancos\ba_TipoFlujo_Bus.cs:line 41
    at Core.Erp.Winform.Controles.UCBa_TipoFlujo.cargar_TipoFlujo() in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Winform\Controles\UCBa_TipoFlujo.cs:line 170
 Category: Error, Message: 
+Category: Error, Message: System.InvalidOperationException: No connection string named 'EntitiesDBConta' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Core.Erp.Data.Contabilidad.ct_Parametro_Data.Get_Info_Parametro(Int32 IdEmpresa) in c:\Users\jerry\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\Contabilidad\ct_Parametro_Data.cs:line 98
