@@ -6,8 +6,8 @@
     [IdCbteCble_Ogiro]               NUMERIC (18) NOT NULL,
     [IdTipoCbte_Ogiro]               INT          NOT NULL,
     [IdTipoMovi]                     INT          NULL,
-    [IdUsuario]                      VARCHAR (20) NOT NULL,
-    [Fecha_Transac]                  DATETIME     NOT NULL,
+    [IdUsuario]                      VARCHAR (20) NULL,
+    [Fecha_Transac]                  DATETIME     NULL,
     [nom_pc]                         VARCHAR (50) NULL,
     [ip]                             VARCHAR (25) NULL,
     [IdCentroCosto]                  VARCHAR (20) NULL,
@@ -21,4 +21,6 @@
     CONSTRAINT [FK_cp_conciliacion_Caja_det_ct_centro_costo] FOREIGN KEY ([IdEmpresa], [IdCentroCosto]) REFERENCES [dbo].[ct_centro_costo] ([IdEmpresa], [IdCentroCosto]),
     CONSTRAINT [FK_cp_conciliacion_Caja_det_ct_centro_costo_sub_centro_costo] FOREIGN KEY ([IdEmpresa], [IdCentroCosto], [IdCentroCosto_sub_centro_costo]) REFERENCES [dbo].[ct_centro_costo_sub_centro_costo] ([IdEmpresa], [IdCentroCosto], [IdCentroCosto_sub_centro_costo])
 );
+
+
 
