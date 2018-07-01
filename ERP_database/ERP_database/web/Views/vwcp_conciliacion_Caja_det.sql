@@ -5,7 +5,7 @@ SELECT        dbo.cp_conciliacion_Caja_det.IdEmpresa, dbo.cp_conciliacion_Caja_d
                          AS MontoAplicado, dbo.tb_persona.IdPersona, dbo.tb_persona.pe_nombreCompleto, dbo.cp_orden_giro.IdProveedor, dbo.cp_orden_giro.IdSucursal, dbo.cp_orden_giro.co_Por_iva, dbo.cp_orden_giro.co_FechaFactura, 
                          dbo.cp_orden_giro.co_observacion, dbo.cp_orden_giro.co_baseImponible, dbo.cp_orden_giro.co_valoriva, dbo.cp_orden_giro.co_valorpagar, 
                          ISNULL(dbo.cp_orden_giro.co_total - ISNULL(SUM(dbo.cp_orden_pago_cancelaciones.MontoAplicado), 0), 0) AS SaldoOG, dbo.cp_conciliacion_Caja_det.Valor_a_aplicar, dbo.cp_conciliacion_Caja_det.IdEmpresa_OP, 
-                         dbo.cp_conciliacion_Caja_det.IdOrdenPago_OP
+                         dbo.cp_conciliacion_Caja_det.IdOrdenPago_OP, dbo.cp_orden_giro.co_factura, dbo.cp_orden_giro.co_total
 FROM            dbo.cp_orden_pago_cancelaciones INNER JOIN
                          dbo.cp_orden_pago_det ON dbo.cp_orden_pago_cancelaciones.IdEmpresa_op = dbo.cp_orden_pago_det.IdEmpresa AND dbo.cp_orden_pago_cancelaciones.IdOrdenPago_op = dbo.cp_orden_pago_det.IdOrdenPago AND 
                          dbo.cp_orden_pago_cancelaciones.Secuencia_op = dbo.cp_orden_pago_det.Secuencia RIGHT OUTER JOIN
@@ -19,7 +19,7 @@ GROUP BY dbo.cp_conciliacion_Caja_det.IdEmpresa, dbo.cp_conciliacion_Caja_det.Id
                          dbo.cp_conciliacion_Caja_det.IdCbteCble_Ogiro, dbo.cp_conciliacion_Caja_det.IdTipoCbte_Ogiro, dbo.cp_conciliacion_Caja_det.Tipo_documento, dbo.tb_persona.IdPersona, dbo.tb_persona.pe_nombreCompleto, 
                          dbo.cp_orden_giro.IdProveedor, dbo.cp_orden_giro.IdSucursal, dbo.cp_orden_giro.co_Por_iva, dbo.cp_orden_giro.co_FechaFactura, dbo.cp_orden_giro.co_observacion, dbo.cp_orden_giro.co_baseImponible, 
                          dbo.cp_orden_giro.co_valoriva, dbo.cp_orden_giro.co_valorpagar, dbo.cp_orden_giro.co_total, dbo.cp_conciliacion_Caja_det.Valor_a_aplicar, dbo.cp_conciliacion_Caja_det.IdEmpresa_OP, 
-                         dbo.cp_conciliacion_Caja_det.IdOrdenPago_OP
+                         dbo.cp_conciliacion_Caja_det.IdOrdenPago_OP, dbo.cp_orden_giro.co_factura
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwcp_conciliacion_Caja_det';
 
@@ -153,11 +153,11 @@ Begin DesignProperties =
             Begin Extent = 
                Top = 6
                Left = 38
-               Bottom = 136
+               Bottom = 449
                Right = 313
             End
             DisplayFlags = 280
-            TopColumn = 0
+            TopColumn = 6
          End
          Begin Table = "cp_proveedor"
             Begin Extent = 
@@ -198,4 +198,6 @@ Begin DesignProperties =
       End
       Begin ColumnWidths = 9
          Width', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwcp_conciliacion_Caja_det';
+
+
 
