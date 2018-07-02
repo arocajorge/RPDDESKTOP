@@ -1848,5 +1848,8 @@
     <Build Include="web\Stored Procedures\SPCONTA_002.sql" />
     <Build Include="web\Views\vwcp_conciliacion_Caja_det_x_ValeCaja.sql" />
     <Build Include="web\Views\vwcp_conciliacion_Caja_det.sql" />
+    <Build Include="web\Views\vwcaj_Caja_Movimiento.sql" />
+    <Build Include="web\Views\VWCXC_001_diario.sql" />
+    <Build Include="web\Views\VWCXC_001.sql" />
   </ItemGroup>
 </Project>
