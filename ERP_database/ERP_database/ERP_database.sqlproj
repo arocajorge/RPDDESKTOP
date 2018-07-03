@@ -1852,5 +1852,6 @@
     <Build Include="web\Views\VWCXC_001_diario.sql" />
     <Build Include="web\Views\VWCXC_001.sql" />
     <Build Include="web\Views\vwcxc_cobro.sql" />
+    <Build Include="web\Tables\tb_sis_reporte_x_seg_usuario.sql" />
   </ItemGroup>
 </Project>
