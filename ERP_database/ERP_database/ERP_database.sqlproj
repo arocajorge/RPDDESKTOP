@@ -1851,5 +1851,6 @@
     <Build Include="web\Views\vwcaj_Caja_Movimiento.sql" />
     <Build Include="web\Views\VWCXC_001_diario.sql" />
     <Build Include="web\Views\VWCXC_001.sql" />
+    <Build Include="web\Views\vwcxc_cobro.sql" />
   </ItemGroup>
 </Project>
