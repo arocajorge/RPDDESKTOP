@@ -1,13 +1,9 @@
-﻿CREATE VIEW [dbo].[vwcxc_total_cobros_x_Docu]
+﻿CREATE VIEW dbo.vwcxc_total_cobros_x_Docu
 AS
-SELECT        A.IdEmpresa, A.IdSucursal, B.IdBodega_Cbte, B.dc_TipoDocumento, B.IdCbte_vta_nota, SUM(B.dc_ValorPago) AS dc_ValorPago, 
-                         dbo.cxc_cobro_x_EstadoCobro.IdEstadoCobro
-FROM            dbo.cxc_cobro AS A INNER JOIN
-                         dbo.cxc_cobro_det AS B ON A.IdEmpresa = B.IdEmpresa AND A.IdSucursal = B.IdSucursal AND A.IdCobro = B.IdCobro INNER JOIN
-                         dbo.cxc_cobro_x_EstadoCobro ON A.IdEmpresa = dbo.cxc_cobro_x_EstadoCobro.IdEmpresa AND A.IdSucursal = dbo.cxc_cobro_x_EstadoCobro.IdSucursal AND 
-                         A.IdCobro = dbo.cxc_cobro_x_EstadoCobro.IdCobro AND A.cr_estado = 'A'
-GROUP BY A.IdEmpresa, A.IdSucursal, B.IdBodega_Cbte, B.dc_TipoDocumento, B.IdCbte_vta_nota, dbo.cxc_cobro_x_EstadoCobro.IdEstadoCobro
-HAVING        (dbo.cxc_cobro_x_EstadoCobro.IdEstadoCobro = 'COBR')
+SELECT A.IdEmpresa, A.IdSucursal, B.IdBodega_Cbte, B.dc_TipoDocumento, B.IdCbte_vta_nota, SUM(B.dc_ValorPago) AS dc_ValorPago
+FROM     dbo.cxc_cobro AS A INNER JOIN
+                  dbo.cxc_cobro_det AS B ON A.IdEmpresa = B.IdEmpresa AND A.IdSucursal = B.IdSucursal AND A.IdCobro = B.IdCobro
+GROUP BY A.IdEmpresa, A.IdSucursal, B.IdBodega_Cbte, B.dc_TipoDocumento, B.IdCbte_vta_nota
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_total_cobros_x_Docu';
 
@@ -18,7 +14,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[10] 4[49] 2[28] 3) )"
+         Configuration = "(H (1[57] 4[3] 2[18] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -104,16 +100,6 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "cxc_cobro_x_EstadoCobro"
-            Begin Extent = 
-               Top = 7
-               Left = 573
-               Bottom = 203
-               Right = 761
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
       End
    End
    Begin SQLPane = 
@@ -137,14 +123,14 @@ Begin DesignProperties =
       Begin ColumnWidths = 12
          Column = 1440
          Alias = 900
-         Table = 1170
+         Table = 1176
          Output = 720
          Append = 1400
          NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
+         SortType = 1356
+         SortOrder = 1416
          GroupBy = 1350
-         Filter = 1350
+         Filter = 1356
          Or = 1350
          Or = 1350
          Or = 1350
@@ -152,4 +138,6 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_total_cobros_x_Docu';
+
+
 

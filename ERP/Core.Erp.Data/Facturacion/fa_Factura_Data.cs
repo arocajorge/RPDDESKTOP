@@ -260,7 +260,8 @@ namespace Core.Erp.Data.Facturacion
                      vt_saldo = Entity.vt_saldo,
                      Sucursal = Entity.Su_Descripcion,
                      Bodega = Entity.bo_Descripcion,
-                     Cliente = Entity.pe_nombreCompleto
+                     Cliente = Entity.pe_nombreCompleto,
+                     Subtotal = Entity.vt_Subtotal
                 };                   
 
                 return info;
