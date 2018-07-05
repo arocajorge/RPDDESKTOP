@@ -1,21 +1,16 @@
-﻿
-
-CREATE VIEW [dbo].[vwFa_Documento_DeclaracionSRI]
+﻿CREATE VIEW [dbo].[vwFa_Documento_DeclaracionSRI]
 AS
-SELECT        A.IdEmpresa, A.IdTipoDocumento, A.pe_cedulaRuc, A.vt_tipoDoc, A.SubTotal_0 AS baseNoGraIva, A.Subtotal_Iva AS baseImpGrav, A.vt_Subtotal AS baseImponible, A.vt_iva AS montoIva, A.IdCbteVta, 
-                         A.IdCliente, A.vt_serie1, A.vt_fecha, 'FA-' + A.vt_serie1 + '-' + A.vt_serie2 + '-' + CAST(A.vt_NumFactura AS varchar(20)) + '/' + CAST(A.IdCbteVta AS varchar(20)) 
-                         AS vt_NumDocumento,A.pe_nombreCompleto as Razon_Social
-FROM            vwfa_factura AS A
-WHERE        A.Estado = 'A' AND LTRIM(RTRIM(A.vt_tipoDoc)) = 'FACT'
-
+SELECT A.IdEmpresa, A.IdTipoDocumento, A.pe_cedulaRuc, A.vt_tipoDoc, A.SubTotal_0 AS baseNoGraIva, A.Subtotal_Iva AS baseImpGrav, A.vt_Subtotal AS baseImponible, A.vt_iva AS montoIva, A.IdCbteVta, A.IdCliente, A.vt_serie1, A.vt_fecha, 
+                  'FA-' + A.vt_serie1 + '-' + A.vt_serie2 + '-' + CAST(A.vt_NumFactura AS varchar(20)) + '/' + CAST(A.IdCbteVta AS varchar(20)) AS vt_NumDocumento, per.pe_nombreCompleto AS Razon_Social
+FROM     vwfa_factura AS A
+inner join fa_cliente as cli on a.IdEmpresa = cli.IdEmpresa
+and a.IdCliente = cli.IdCliente
+inner join tb_persona as per on cli.IdPersona = per.IdPersona
 UNION ALL
-
-SELECT        A.IdEmpresa, A.IdTipoDocumento, A.pe_cedulaRuc, A.CreDeb, vt_Subtotal0 as  baseNoGraIva, 
-vt_subtotalIva  AS baseImpGrav   , A.sc_Subtotal AS baseImponible, A.sc_iva AS montoIva, A.IdNota, A.IdCliente, A.Serie1, A.no_fecha, 
-                          A.CreDeb + '-' + cast(A.IdNota AS varchar(50))
-						  ,isnull(A.pe_apellido,'') + ' ' +isnull(A.pe_nombre,'') as Razon_Social
-FROM            vwfa_Nota_Credito AS A
-WHERE        A.Estado = 'A' AND LTRIM(RTRIM(A.NaturalezaNota)) = 'SRI'
+SELECT A.IdEmpresa, A.IdTipoDocumento, A.pe_cedulaRuc, A.CreDeb, vt_Subtotal0 AS baseNoGraIva, vt_subtotalIva AS baseImpGrav, A.sc_Subtotal AS baseImponible, A.sc_iva AS montoIva, A.IdNota, A.IdCliente, A.Serie1, A.no_fecha, 
+                  A.CreDeb + '-' + cast(A.IdNota AS varchar(50)), isnull(A.pe_apellido, '') + ' ' + isnull(A.pe_nombre, '') AS Razon_Social
+FROM     vwfa_Nota_Credito AS A
+WHERE  A.Estado = 'A' AND LTRIM(RTRIM(A.NaturalezaNota)) = 'SRI'
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI';
 
