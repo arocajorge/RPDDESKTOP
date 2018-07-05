@@ -549,6 +549,8 @@ namespace Core.Erp.Business.Inventario
                 in_Parametro_Info infoParam = new in_Parametro_Info();
                 string IdEstadoAproba_Param = "";
                 infoParam = busParam.Get_Info_Parametro(info.IdEmpresa);
+                if (InfoParam.IdEmpresa == 0)
+                    return false;
                 if (info.signo == "+")
                     IdEstadoAproba_Param = infoParam.IdEstadoAproba_x_Ing;
                 else
