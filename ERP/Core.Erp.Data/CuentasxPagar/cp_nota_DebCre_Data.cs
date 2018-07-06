@@ -320,7 +320,7 @@ namespace Core.Erp.Data.CuentasxPagar
                         dat.IdTipoNota = item.IdTipoNota;
                         dat.cn_num_doc_modificado = item.cn_num_doc_modificado;
                         dat.cn_Autorizacion_Imprenta = item.cn_Autorizacion_Imprenta;
-                        dat.fecha_autorizacion = Convert.ToDateTime(item.fecha_autorizacion);
+                        dat.fecha_autorizacion = item.fecha_autorizacion == null ? DateTime.Now : Convert.ToDateTime(item.fecha_autorizacion);
                         dat.Num_Nota = "NT" + item.DebCre + "#:" + item.cn_serie1 + "-" + item.cn_serie2 + "-" + item.cn_Nota;
                         dat.cn_Fecha_vcto = item.cn_Fecha_vcto;
                         dat.Fecha_contable = item.Fecha_contable;

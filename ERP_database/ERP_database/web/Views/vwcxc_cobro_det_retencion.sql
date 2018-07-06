@@ -1,12 +1,14 @@
-﻿CREATE VIEW dbo.vwcxc_total_cobros_x_Docu
+﻿CREATE VIEW web.vwcxc_cobro_det_retencion
 AS
-SELECT        A.IdEmpresa, A.IdSucursal, B.IdBodega_Cbte, B.dc_TipoDocumento, B.IdCbte_vta_nota, SUM(B.dc_ValorPago) AS dc_ValorPago
-FROM            dbo.cxc_cobro AS A INNER JOIN
-                         dbo.cxc_cobro_det AS B ON A.IdEmpresa = B.IdEmpresa AND A.IdSucursal = B.IdSucursal AND A.IdCobro = B.IdCobro
-WHERE        (B.estado = 'A')
-GROUP BY A.IdEmpresa, A.IdSucursal, B.IdBodega_Cbte, B.dc_TipoDocumento, B.IdCbte_vta_nota
+SELECT        dbo.cxc_cobro_det.IdEmpresa, dbo.cxc_cobro_det.IdSucursal, dbo.cxc_cobro_det.IdBodega_Cbte, dbo.cxc_cobro_det.IdCbte_vta_nota, dbo.cxc_cobro_det.dc_TipoDocumento, dbo.cxc_cobro_det.IdCobro, 
+                         dbo.cxc_cobro_det.secuencial, dbo.cxc_cobro_det.IdCobro_tipo, dbo.cxc_cobro_det.dc_ValorPago, dbo.cxc_cobro_tipo.tc_descripcion, dbo.cxc_cobro_tipo.ESRetenIVA, dbo.cxc_cobro_tipo.ESRetenFTE, 
+                         ISNULL(dbo.cxc_cobro_tipo.PorcentajeRet, 0) AS PorcentajeRet, dbo.cxc_cobro.cr_NumDocumento, dbo.cxc_cobro.cr_fecha
+FROM            dbo.cxc_cobro INNER JOIN
+                         dbo.cxc_cobro_det ON dbo.cxc_cobro.IdEmpresa = dbo.cxc_cobro_det.IdEmpresa AND dbo.cxc_cobro.IdSucursal = dbo.cxc_cobro_det.IdSucursal AND dbo.cxc_cobro.IdCobro = dbo.cxc_cobro_det.IdCobro INNER JOIN
+                         dbo.cxc_cobro_tipo ON dbo.cxc_cobro_det.IdCobro_tipo = dbo.cxc_cobro_tipo.IdCobro_tipo
+WHERE        (dbo.cxc_cobro_det.estado = 'A') AND (dbo.cxc_cobro.IdCobro_tipo IS NULL)
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_total_cobros_x_Docu';
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_det_retencion';
 
 
 GO
@@ -15,7 +17,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[57] 4[3] 2[18] 3) )"
+         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -81,22 +83,32 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
-         Begin Table = "A"
+         Begin Table = "cxc_cobro"
+            Begin Extent = 
+               Top = 0
+               Left = 598
+               Bottom = 283
+               Right = 792
+            End
+            DisplayFlags = 280
+            TopColumn = 10
+         End
+         Begin Table = "cxc_cobro_det"
             Begin Extent = 
                Top = 6
-               Left = 38
-               Bottom = 125
-               Right = 233
+               Left = 270
+               Bottom = 136
+               Right = 464
             End
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "B"
+         Begin Table = "cxc_cobro_tipo"
             Begin Extent = 
-               Top = 6
-               Left = 271
-               Bottom = 224
-               Right = 467
+               Top = 138
+               Left = 38
+               Bottom = 268
+               Right = 283
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -121,7 +133,7 @@ Begin DesignProperties =
       End
    End
    Begin CriteriaPane = 
-      Begin ColumnWidths = 12
+      Begin ColumnWidths = 11
          Column = 1440
          Alias = 900
          Table = 1170
@@ -138,9 +150,5 @@ Begin DesignProperties =
       End
    End
 End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_total_cobros_x_Docu';
-
-
-
-
+', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_det_retencion';
 

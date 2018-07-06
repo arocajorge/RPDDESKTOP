@@ -1857,5 +1857,9 @@
     <Build Include="web\Views\VWFAC_003_cuotas.sql" />
     <Build Include="web\Views\VWFAC_003.sql" />
     <Build Include="web\Views\vwcxc_cobro_det.sql" />
+    <Build Include="web\Views\vwcxc_cobro_para_retencion.sql" />
+    <Build Include="web\Views\vwcxc_cobro_det_retencion.sql" />
+    <Build Include="web\Views\VWCXC_002_diario.sql" />
+    <Build Include="web\Views\VWCXC_002.sql" />
   </ItemGroup>
 </Project>
