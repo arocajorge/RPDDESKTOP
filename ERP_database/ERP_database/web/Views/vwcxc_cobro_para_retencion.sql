@@ -1,24 +1,28 @@
-﻿CREATE VIEW web.vwcxc_cobro_para_retencion
+﻿CREATE VIEW [web].[vwcxc_cobro_para_retencion]
 AS
-SELECT        fa_factura_det.IdEmpresa, fa_factura_det.IdSucursal, fa_factura_det.IdBodega, fa_factura_det.IdCbteVta, fa_factura.vt_tipoDoc, SUM(fa_factura_det.vt_Subtotal) AS vt_Subtotal, SUM(fa_factura_det.vt_iva) AS vt_iva, 
-                         SUM(fa_factura_det.vt_total) AS vt_total, fa_cliente_contactos.Nombres, fa_factura.vt_fecha, fa_factura.vt_fech_venc, fa_factura.vt_Observacion,
-						 fa_factura.vt_tipoDoc +'-'+ cast(cast(fa_factura.vt_NumFactura as numeric) as varchar(20)) vt_NumFactura
-FROM            fa_factura INNER JOIN
-                         fa_factura_det ON fa_factura.IdEmpresa = fa_factura_det.IdEmpresa AND fa_factura.IdSucursal = fa_factura_det.IdSucursal AND fa_factura.IdBodega = fa_factura_det.IdBodega AND 
-                         fa_factura.IdCbteVta = fa_factura_det.IdCbteVta INNER JOIN
-                         fa_cliente_contactos ON fa_factura.IdEmpresa = fa_cliente_contactos.IdEmpresa AND fa_factura.IdCliente = fa_cliente_contactos.IdCliente AND fa_factura.IdContacto = fa_cliente_contactos.IdContacto
-WHERE fa_factura.Estado = 'A'
-GROUP BY fa_factura_det.IdEmpresa, fa_factura_det.IdSucursal, fa_factura_det.IdBodega, fa_factura_det.IdCbteVta, fa_factura.vt_tipoDoc, fa_cliente_contactos.Nombres, fa_factura.vt_fecha, fa_factura.vt_fech_venc, 
-                         fa_factura.vt_Observacion, fa_factura.vt_NumFactura
+SELECT        dbo.fa_factura_det.IdEmpresa, dbo.fa_factura_det.IdSucursal, dbo.fa_factura_det.IdBodega, dbo.fa_factura_det.IdCbteVta, dbo.fa_factura.vt_tipoDoc, ISNULL(SUM(dbo.fa_factura_det.vt_Subtotal),0) AS vt_Subtotal, 
+                         ISNULL(SUM(dbo.fa_factura_det.vt_iva),0) AS vt_iva, ISNULL(SUM(dbo.fa_factura_det.vt_total),0) AS vt_total, dbo.fa_cliente_contactos.Nombres, dbo.fa_factura.vt_fecha, dbo.fa_factura.vt_fech_venc, dbo.fa_factura.vt_Observacion, 
+                         dbo.fa_factura.vt_tipoDoc + '-' + CAST(CAST(dbo.fa_factura.vt_NumFactura AS numeric) AS varchar(20)) AS vt_NumFactura, dbo.tb_sucursal.Su_Descripcion
+FROM            dbo.fa_factura INNER JOIN
+                         dbo.fa_factura_det ON dbo.fa_factura.IdEmpresa = dbo.fa_factura_det.IdEmpresa AND dbo.fa_factura.IdSucursal = dbo.fa_factura_det.IdSucursal AND dbo.fa_factura.IdBodega = dbo.fa_factura_det.IdBodega AND 
+                         dbo.fa_factura.IdCbteVta = dbo.fa_factura_det.IdCbteVta INNER JOIN
+                         dbo.fa_cliente_contactos ON dbo.fa_factura.IdEmpresa = dbo.fa_cliente_contactos.IdEmpresa AND dbo.fa_factura.IdCliente = dbo.fa_cliente_contactos.IdCliente AND 
+                         dbo.fa_factura.IdContacto = dbo.fa_cliente_contactos.IdContacto INNER JOIN
+                         dbo.tb_sucursal ON dbo.fa_factura_det.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.fa_factura_det.IdSucursal = dbo.tb_sucursal.IdSucursal
+WHERE        (dbo.fa_factura.Estado = 'A')
+GROUP BY dbo.fa_factura_det.IdEmpresa, dbo.fa_factura_det.IdSucursal, dbo.fa_factura_det.IdBodega, dbo.fa_factura_det.IdCbteVta, dbo.fa_factura.vt_tipoDoc, dbo.fa_cliente_contactos.Nombres, dbo.fa_factura.vt_fecha, 
+                         dbo.fa_factura.vt_fech_venc, dbo.fa_factura.vt_Observacion, dbo.fa_factura.vt_NumFactura, dbo.tb_sucursal.Su_Descripcion
 UNION ALL
-SELECT        fa_notaCreDeb_det.IdEmpresa, fa_notaCreDeb_det.IdSucursal, fa_notaCreDeb_det.IdBodega, fa_notaCreDeb_det.IdNota, fa_notaCreDeb.CodDocumentoTipo, SUM(fa_notaCreDeb_det.sc_subtotal) AS sc_subtotal, 
-                         SUM(fa_notaCreDeb_det.sc_iva) AS sc_iva, SUM(fa_notaCreDeb_det.sc_total) AS sc_total, tb_persona.pe_nombreCompleto, fa_notaCreDeb.no_fecha, fa_notaCreDeb.no_fecha_venc, fa_notaCreDeb.sc_observacion,
-						 fa_notaCreDeb.CodDocumentoTipo + '-' + case when fa_notaCreDeb.NumNota_Impresa is null then fa_notaCreDeb.CodNota else cast(cast(fa_notaCreDeb.NumNota_Impresa as numeric) as varchar(20))end as vt_NumFactura
-FROM            fa_notaCreDeb INNER JOIN
-                         fa_notaCreDeb_det ON fa_notaCreDeb.IdEmpresa = fa_notaCreDeb_det.IdEmpresa AND fa_notaCreDeb.IdSucursal = fa_notaCreDeb_det.IdSucursal AND fa_notaCreDeb.IdBodega = fa_notaCreDeb_det.IdBodega AND 
-                         fa_notaCreDeb.IdNota = fa_notaCreDeb_det.IdNota INNER JOIN
-                         fa_cliente ON fa_notaCreDeb.IdEmpresa = fa_cliente.IdEmpresa AND fa_notaCreDeb.IdCliente = fa_cliente.IdCliente INNER JOIN
-                         tb_persona ON fa_cliente.IdPersona = tb_persona.IdPersona
-WHERE        (fa_notaCreDeb.CreDeb = 'D')
-GROUP BY fa_notaCreDeb_det.IdEmpresa, fa_notaCreDeb_det.IdSucursal, fa_notaCreDeb_det.IdBodega, fa_notaCreDeb_det.IdNota, fa_notaCreDeb.CodDocumentoTipo, tb_persona.pe_nombreCompleto, fa_notaCreDeb.no_fecha, fa_notaCreDeb.no_fecha_venc,
-fa_notaCreDeb.sc_observacion, fa_notaCreDeb.CodNota, fa_notaCreDeb.NumNota_Impresa
+SELECT        dbo.fa_notaCreDeb_det.IdEmpresa, dbo.fa_notaCreDeb_det.IdSucursal, dbo.fa_notaCreDeb_det.IdBodega, dbo.fa_notaCreDeb_det.IdNota, dbo.fa_notaCreDeb.CodDocumentoTipo, ISNULL(SUM(dbo.fa_notaCreDeb_det.sc_subtotal),0)
+                         AS sc_subtotal, ISNULL(SUM(dbo.fa_notaCreDeb_det.sc_iva),0) AS sc_iva, ISNULL(SUM(dbo.fa_notaCreDeb_det.sc_total),0) AS sc_total, dbo.tb_persona.pe_nombreCompleto, dbo.fa_notaCreDeb.no_fecha, dbo.fa_notaCreDeb.no_fecha_venc, 
+                         dbo.fa_notaCreDeb.sc_observacion, dbo.fa_notaCreDeb.CodDocumentoTipo + '-' + CASE WHEN fa_notaCreDeb.NumNota_Impresa IS NULL 
+                         THEN fa_notaCreDeb.CodNota ELSE CAST(CAST(fa_notaCreDeb.NumNota_Impresa AS numeric) AS varchar(20)) END AS vt_NumFactura, dbo.tb_sucursal.Su_Descripcion
+FROM            dbo.fa_notaCreDeb INNER JOIN
+                         dbo.fa_notaCreDeb_det ON dbo.fa_notaCreDeb.IdEmpresa = dbo.fa_notaCreDeb_det.IdEmpresa AND dbo.fa_notaCreDeb.IdSucursal = dbo.fa_notaCreDeb_det.IdSucursal AND 
+                         dbo.fa_notaCreDeb.IdBodega = dbo.fa_notaCreDeb_det.IdBodega AND dbo.fa_notaCreDeb.IdNota = dbo.fa_notaCreDeb_det.IdNota INNER JOIN
+                         dbo.fa_cliente ON dbo.fa_notaCreDeb.IdEmpresa = dbo.fa_cliente.IdEmpresa AND dbo.fa_notaCreDeb.IdCliente = dbo.fa_cliente.IdCliente INNER JOIN
+                         dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
+                         dbo.tb_sucursal ON dbo.fa_notaCreDeb_det.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.fa_notaCreDeb_det.IdSucursal = dbo.tb_sucursal.IdSucursal
+WHERE        (dbo.fa_notaCreDeb.CreDeb = 'D')
+GROUP BY dbo.fa_notaCreDeb_det.IdEmpresa, dbo.fa_notaCreDeb_det.IdSucursal, dbo.fa_notaCreDeb_det.IdBodega, dbo.fa_notaCreDeb_det.IdNota, dbo.fa_notaCreDeb.CodDocumentoTipo, dbo.tb_persona.pe_nombreCompleto, 
+                         dbo.fa_notaCreDeb.no_fecha, dbo.fa_notaCreDeb.no_fecha_venc, dbo.fa_notaCreDeb.sc_observacion, dbo.fa_notaCreDeb.CodNota, dbo.fa_notaCreDeb.NumNota_Impresa, dbo.tb_sucursal.Su_Descripcion
