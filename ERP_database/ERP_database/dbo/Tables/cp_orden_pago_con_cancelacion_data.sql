@@ -3,7 +3,7 @@
     [IdEmpresa]                 INT           NOT NULL,
     [IdTipo_op]                 VARCHAR (20)  NOT NULL,
     [Referencia]                VARCHAR (523) NULL,
-    [Referencia2]               VARCHAR (34)  NULL,
+    [Referencia2]               VARCHAR (523)  NULL,
     [IdOrdenPago]               NUMERIC (18)  NOT NULL,
     [Secuencia_OP]              INT           NOT NULL,
     [IdTipoPersona]             VARCHAR (20)  NULL,
