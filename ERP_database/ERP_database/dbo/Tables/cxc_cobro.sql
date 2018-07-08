@@ -4,7 +4,7 @@
     [IdCobro]           NUMERIC (18)  NOT NULL,
     [IdCobro_a_aplicar] NUMERIC (18)  NULL,
     [cr_Codigo]         VARCHAR (10)  NULL,
-    [IdCobro_tipo]      VARCHAR (20)  NOT NULL,
+    [IdCobro_tipo]      VARCHAR (20)  NULL,
     [IdCliente]         NUMERIC (18)  NOT NULL,
     [cr_TotalCobro]     FLOAT (53)    NOT NULL,
     [cr_fecha]          DATETIME      NOT NULL,
@@ -39,4 +39,6 @@
     CONSTRAINT [FK_cxc_cobro_fa_TipoNota] FOREIGN KEY ([IdTipoNotaCredito]) REFERENCES [dbo].[fa_TipoNota] ([IdTipoNota]),
     CONSTRAINT [FK_cxc_cobro_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])
 );
+
+
 
