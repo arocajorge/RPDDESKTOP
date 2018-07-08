@@ -1861,5 +1861,6 @@
     <Build Include="web\Views\vwcxc_cobro_det_retencion.sql" />
     <Build Include="web\Views\VWCXC_002_diario.sql" />
     <Build Include="web\Views\VWCXC_002.sql" />
+    <Build Include="web\Views\vwcp_orden_pago_con_cancelacion.sql" />
   </ItemGroup>
 </Project>
