@@ -41,7 +41,7 @@ namespace Core.Erp.Info.CuentasxPagar
        public string IdCtaCble_Acre { get; set; }
        public string IdCtaCble_IVA { get; set; }
        public string IdUsuario { get; set; }
-       public DateTime Fecha_Transac { get; set; }
+       public DateTime? Fecha_Transac { get; set; }
        public string Estado { get; set; }
        public string IdUsuarioUltMod { get; set; }
        public DateTime? Fecha_UltMod { get; set; }

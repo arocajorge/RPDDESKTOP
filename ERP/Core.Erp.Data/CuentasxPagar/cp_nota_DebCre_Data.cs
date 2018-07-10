@@ -263,74 +263,75 @@ namespace Core.Erp.Data.CuentasxPagar
 
                     foreach (var item in select_)
                     {
-                        cp_nota_DebCre_Info dat = new cp_nota_DebCre_Info();
+                        cp_nota_DebCre_Info dat = new cp_nota_DebCre_Info
+                        {
+                            IdEmpresa = item.IdEmpresa,
+                            IdCbteCble_Nota = item.IdCbteCble_Nota,
+                            IdTipoCbte_Nota = item.IdTipoCbte_Nota,
+                            IdProveedor = item.IdProveedor,
+                            cn_fecha = item.cn_fecha,
+                            cn_serie1 = item.cn_serie1,
+                            cn_serie2 = item.cn_serie2,
+                            cn_Nota = item.cn_Nota,
+                            Fecha_contable = item.Fecha_contable,
+                            cn_observacion = item.cn_observacion,
+                            cn_subtotal_iva = item.cn_subtotal_iva,
+                            cn_subtotal_siniva = item.cn_subtotal_siniva,
+                            cn_baseImponible = item.cn_baseImponible,
+                            cn_Por_iva = item.cn_Por_iva,
+                            cn_valoriva = item.cn_valoriva,
+                            IdCod_ICE = item.IdCod_ICE,
+                            cn_Ice_base = item.cn_Ice_base,
+                            cn_Ice_por = item.cn_Ice_por,
+                            cn_Ice_valor = item.cn_Ice_valor,
+                            cn_Serv_por = item.cn_Serv_por,
+                            cn_Serv_valor = item.cn_Serv_valor,
+                            cn_BaseSeguro = item.cn_BaseSeguro,
+                            cn_total = item.cn_total,
+                            cn_vaCoa = item.cn_vaCoa,
+                            cn_Autorizacion = item.cn_Autorizacion,
+                            IdTipoServicio = item.IdTipoServicio,
+                            IdCtaCble_Acre = item.IdCtaCble_Acre,
+                            IdCtaCble_IVA = item.IdCtaCble_IVA,
+                            IdUsuario = item.IdUsuario,
+                            Fecha_Transac = item.Fecha_Transac,
+                            Estado = item.Estado,
+                            IdUsuarioUltMod = item.IdUsuarioUltMod,
+                            Fecha_UltMod = item.Fecha_UltMod,
+                            IdUsuarioUltAnu = item.IdUsuarioUltAnu,
+                            MotivoAnu = item.MotivoAnu,
+                            nom_pc = item.nom_pc,
+                            ip = item.ip,
+                            Fecha_UltAnu = item.Fecha_UltAnu,
+                            IdCbteCble_Anulacion = item.IdCbteCble_Anulacion,
+                            IdTipoCbte_Anulacion = item.IdTipoCbte_Anulacion,
+                            nomProveedor = item.pr_nombre,
+                            cn_tipoLocacion = item.cn_tipoLocacion,
+                            IdCentroCosto = item.IdCentroCosto,
+                            IdSucursal = item.IdSucursal,
+                            IdTipoFlujo = item.IdTipoFlujo,
+                            DebCre = (item.DebCre == "C") ? "Credito" : "Debito",
+                            IdIden_credito = item.IdIden_credito,
+                            PagoLocExt = item.PagoLocExt,
+                            PaisPago = item.PaisPago,
+                            ConvenioTributacion = item.ConvenioTributacion,
+                            PagoSujetoRetencion = item.PagoSujetoRetencion,
+                            Saldo = item.Saldo,
+                            IdTipoNota = item.IdTipoNota,
+                            cn_num_doc_modificado = item.cn_num_doc_modificado,
+                            cn_Autorizacion_Imprenta = item.cn_Autorizacion_Imprenta,
+                            fecha_autorizacion = item.fecha_autorizacion == null ? DateTime.Now : Convert.ToDateTime(item.fecha_autorizacion),
+                            Num_Nota = "NT" + item.DebCre + "#:" + item.cn_serie1 + "-" + item.cn_serie2 + "-" + item.cn_Nota,
+                            cn_Fecha_vcto = item.cn_Fecha_vcto,
+                            cod_nota = item.cod_nota,
+                            InfoProveedor = new cp_proveedor_Info
+                            {
+                                pr_nombre = item.pr_nombre,
 
-                        dat.IdEmpresa = item.IdEmpresa;
-                        dat.IdCbteCble_Nota = item.IdCbteCble_Nota;
-                        dat.IdTipoCbte_Nota = item.IdTipoCbte_Nota;
-                        dat.IdProveedor = item.IdProveedor;
-                        dat.cn_fecha = item.cn_fecha;
-                        dat.cn_serie1 = item.cn_serie1;
-                        dat.cn_serie2 = item.cn_serie2;
-                        dat.cn_Nota = item.cn_Nota;
-                        dat.Fecha_contable = item.Fecha_contable;
-                        dat.cn_observacion = item.cn_observacion;
-                        dat.cn_subtotal_iva = item.cn_subtotal_iva;
-                        dat.cn_subtotal_siniva = item.cn_subtotal_siniva;
-                        dat.cn_baseImponible = item.cn_baseImponible;
-                        dat.cn_Por_iva = item.cn_Por_iva;
-                        dat.cn_valoriva = item.cn_valoriva;
-                        dat.IdCod_ICE = item.IdCod_ICE;
-                        dat.cn_Ice_base = item.cn_Ice_base;
-                        dat.cn_Ice_por = item.cn_Ice_por;
-                        dat.cn_Ice_valor = item.cn_Ice_valor;
-                        dat.cn_Serv_por = item.cn_Serv_por;
-                        dat.cn_Serv_valor = item.cn_Serv_valor;
-                        dat.cn_BaseSeguro = item.cn_BaseSeguro;
-                        dat.cn_total = item.cn_total;
-                        dat.cn_vaCoa = item.cn_vaCoa;
-                        dat.cn_Autorizacion = item.cn_Autorizacion;
-                        dat.IdTipoServicio = item.IdTipoServicio;
-                        dat.IdCtaCble_Acre = item.IdCtaCble_Acre;
-                        dat.IdCtaCble_IVA = item.IdCtaCble_IVA;
-                        dat.IdUsuario = item.IdUsuario;
-                        dat.Fecha_Transac = item.Fecha_Transac;
-                        dat.Estado = item.Estado;
-                        dat.IdUsuarioUltMod = item.IdUsuarioUltMod;
-                        dat.Fecha_UltMod = item.Fecha_UltMod;
-                        dat.IdUsuarioUltAnu = item.IdUsuarioUltAnu;
-                        dat.MotivoAnu = item.MotivoAnu;
-                        dat.nom_pc = item.nom_pc;
-                        dat.ip = item.ip;
-                        dat.Fecha_UltAnu = item.Fecha_UltAnu;
-                        dat.IdCbteCble_Anulacion = item.IdCbteCble_Anulacion;
-                        dat.IdTipoCbte_Anulacion = item.IdTipoCbte_Anulacion;
-                        dat.nomProveedor = item.pr_nombre;
-                        dat.cn_tipoLocacion = item.cn_tipoLocacion;
-                        dat.IdCentroCosto = item.IdCentroCosto;
-                        dat.IdSucursal = item.IdSucursal;
-                        dat.IdTipoFlujo = item.IdTipoFlujo;
-                        dat.DebCre = (item.DebCre == "C") ? "Credito" : "Debito";
-                        dat.IdIden_credito = item.IdIden_credito;
-                        dat.PagoLocExt = item.PagoLocExt;
-                        dat.PaisPago = item.PaisPago;
-                        dat.ConvenioTributacion = item.ConvenioTributacion;
-                        dat.PagoSujetoRetencion = item.PagoSujetoRetencion;
-                        dat.Saldo = item.Saldo;
-                        dat.IdTipoNota = item.IdTipoNota;
-                        dat.cn_num_doc_modificado = item.cn_num_doc_modificado;
-                        dat.cn_Autorizacion_Imprenta = item.cn_Autorizacion_Imprenta;
-                        dat.fecha_autorizacion = item.fecha_autorizacion == null ? DateTime.Now : Convert.ToDateTime(item.fecha_autorizacion);
-                        dat.Num_Nota = "NT" + item.DebCre + "#:" + item.cn_serie1 + "-" + item.cn_serie2 + "-" + item.cn_Nota;
-                        dat.cn_Fecha_vcto = item.cn_Fecha_vcto;
-                        dat.Fecha_contable = item.Fecha_contable;
-                        dat.cod_nota = item.cod_nota;
-                        dat.InfoProveedor.pr_nombre = item.pr_nombre;
-
-                        dat.InfoProveedor.IdClaseProveedor = item.IdClaseProveedor;
-                        dat.InfoProveedor.descripcion_clas_prove = item.descripcion_clas_prove;
-
-
+                                IdClaseProveedor = item.IdClaseProveedor,
+                                descripcion_clas_prove = item.descripcion_clas_prove,
+                            }
+                        };
                         lM.Add(dat);
                     }
                     return (lM);
@@ -622,9 +623,7 @@ namespace Core.Erp.Data.CuentasxPagar
                 mensaje = ex.ToString() + " " + ex.Message;
                 throw new Exception(ex.ToString());
             }
-        }
-
-        
+        }        
 
         public Boolean Existe_NumNotaCredito_Proveedor(int IdEmpresa, decimal IdProveedor, String ptoEmision, String Establecimiento,String secuencial, String Tipo, String IdTipoNota)
         {
@@ -675,7 +674,6 @@ namespace Core.Erp.Data.CuentasxPagar
                 throw new Exception(ex.ToString());
             }
         }
-
 
         public cp_nota_DebCre_Info Get_Info_nota_DebCre(int IdEmpresa, decimal IdCbteCble_NotaC, int IdTipoCbte_NotaC)
         {
