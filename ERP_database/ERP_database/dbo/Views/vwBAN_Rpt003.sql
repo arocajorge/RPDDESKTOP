@@ -22,9 +22,9 @@ SELECT        dbo.ba_Cbte_Ban.IdEmpresa, TipCbB.CodTipoCbteBan AS Tipo_Cbte, dbo
 						 dbo.ba_Cbte_Ban.IdPersona_Girado_a AS IdPersona_Girado_a,
 						 
 						  TPF.IdTipoFlujo, TPF.Descricion AS Tipo_Flujo, tipN.IdTipoNota, 
-                         tipN.Descripcion AS Tipo_Nota, dbo.ba_Cbte_Ban.PosFechado AS Fch_PostFechado, 
-                         CASE dbo.ba_Cbte_Ban.cb_ChequeImpreso WHEN 'S' THEN 'Impreso' ELSE 'No Impreso' END AS Es_Chq_Impreso, 
-                         dbo.ba_Cbte_Ban.cb_FechaCheque AS Fch_Chq, ban.IdCtaCble AS Cta_Cble_Banco, cal.IdCalendario, cal.AnioFiscal, cal.NombreMes, cal.NombreCortoFecha, 
+                         tipN.Descripcion AS Tipo_Nota, 'N' AS Fch_PostFechado, 
+                         CASE '' WHEN 'S' THEN 'Impreso' ELSE 'No Impreso' END AS Es_Chq_Impreso, 
+                         getdate() AS Fch_Chq, ban.IdCtaCble AS Cta_Cble_Banco, cal.IdCalendario, cal.AnioFiscal, cal.NombreMes, cal.NombreCortoFecha, 
                          cal.IdMes, plaCta.pc_Cuenta, opCan.MontoAplicado, opCan.IdOrdenPago_op, opCan.Secuencia_op, vwOPCan.Referencia, vwOPCan.Fecha_Venc_Fac_Prov, 
                          vwOPCan.Observacion AS Observacion_FP, 'CBTE_CHEQ' AS TipoRegistro,1 AS IdReg
 FROM            dbo.ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo INNER JOIN
@@ -66,9 +66,9 @@ SELECT        dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan AS 
 						 
 						 dbo.ba_TipoFlujo.IdTipoFlujo, 
                          dbo.ba_TipoFlujo.Descricion AS Tipo_Flujo, dbo.ba_tipo_nota.IdTipoNota, dbo.ba_tipo_nota.Descripcion AS Tipo_Nota, 
-                         dbo.ba_Cbte_Ban.PosFechado AS Fch_PostFechado, 
-                         CASE dbo.ba_Cbte_Ban.cb_ChequeImpreso WHEN 'S' THEN 'Impreso' ELSE 'No Impreso' END AS Es_Chq_Impreso, 
-                         dbo.ba_Cbte_Ban.cb_FechaCheque AS Fch_Chq, dbo.ba_Banco_Cuenta.IdCtaCble AS Cta_Cble_Banco, dbo.tb_Calendario.IdCalendario, 
+                         'N' AS Fch_PostFechado, 
+                         CASE '' WHEN 'S' THEN 'Impreso' ELSE 'No Impreso' END AS Es_Chq_Impreso, 
+                         GETDATE() AS Fch_Chq, dbo.ba_Banco_Cuenta.IdCtaCble AS Cta_Cble_Banco, dbo.tb_Calendario.IdCalendario, 
                          dbo.tb_Calendario.AnioFiscal, dbo.tb_Calendario.NombreMes, dbo.tb_Calendario.NombreCortoFecha, dbo.tb_Calendario.IdMes, dbo.ct_plancta.pc_Cuenta, 
                          0, NULL, NULL, NULL, NULL, NULL, 'CBTE_PAGO' AS TipoRegistro,0 AS IdReg
 FROM            dbo.ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo INNER JOIN

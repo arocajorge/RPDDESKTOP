@@ -3,7 +3,7 @@ AS
 SELECT ba_Cbte_Ban.IdEmpresa, ba_Cbte_Ban.IdTipocbte, ba_Cbte_Ban.IdCbteCble, tb_persona.IdPersona, tb_persona.pe_nombreCompleto
 FROM     cp_proveedor INNER JOIN
                   tb_persona ON cp_proveedor.IdPersona = tb_persona.IdPersona INNER JOIN
-                  ba_Cbte_Ban ON cp_proveedor.IdProveedor = ba_Cbte_Ban.IdProveedor AND cp_proveedor.IdEmpresa = ba_Cbte_Ban.IdEmpresa
+                  ba_Cbte_Ban ON cp_proveedor.IdProveedor = ba_Cbte_Ban.IdEntidad AND cp_proveedor.IdEmpresa = ba_Cbte_Ban.IdEmpresa
 where cb_Cheque is null
 UNION
 SELECT ba_Cbte_Ban.IdEmpresa, ba_Cbte_Ban.IdTipocbte, ba_Cbte_Ban.IdCbteCble, tb_persona.IdPersona, tb_persona.pe_nombreCompleto

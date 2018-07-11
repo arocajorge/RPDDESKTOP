@@ -2,7 +2,7 @@
 AS
 SELECT dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan AS Tipo_Cbte, dbo.ba_Cbte_Ban.IdCbteCble AS Num_Cbte, dbo.ba_Banco_Cuenta.IdBanco, dbo.ba_Banco_Cuenta.ba_descripcion AS Banco, 
                   dbo.ba_Cbte_Ban.cb_Fecha AS Fch_Cbte, dbo.ba_Cbte_Ban.cb_Observacion AS Observacion, dbo.ba_Cbte_Ban.cb_Valor AS Valor, dbo.ba_Cbte_Ban.cb_Cheque AS Cheque, dbo.vwba_Cbte_Ban_beneficiario.pe_nombreCompleto AS Chq_Girado_A, 
-                  dbo.ba_tipo_nota.IdTipoNota, dbo.ba_tipo_nota.Descripcion AS Tipo_Nota, dbo.ba_Cbte_Ban.PosFechado AS Fch_PostFechado, dbo.ba_Cbte_Ban.cb_FechaCheque AS Fch_Chq, dbo.ba_Banco_Cuenta.IdCtaCble AS Cta_Cble_Banco, 
+                  dbo.ba_tipo_nota.IdTipoNota, dbo.ba_tipo_nota.Descripcion AS Tipo_Nota, 'N' AS Fch_PostFechado, GETDATE() AS Fch_Chq, dbo.ba_Banco_Cuenta.IdCtaCble AS Cta_Cble_Banco, 
                   dbo.tb_Calendario.IdCalendario, dbo.tb_Calendario.AnioFiscal, '[' + RIGHT(CAST(dbo.tb_Calendario.IdMes AS varchar(6)), 2) + ']-' + LEFT(dbo.tb_Calendario.NombreMes, 3) AS NombreMes, dbo.tb_Calendario.NombreCortoFecha, 
                   dbo.tb_Calendario.IdMes, dbo.ct_plancta.pc_Cuenta, dbo.ba_Cbte_Ban.Estado, dbo.ba_Cbte_Ban.IdEstado_cheque_cat, dbo.ba_Catalogo.ca_descripcion
 FROM     dbo.ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo INNER JOIN

@@ -17,7 +17,7 @@ FROM            dbo.ba_Banco_Cuenta INNER JOIN
                          dbo.ct_cbtecble_tipo ON dbo.ba_Cbte_Ban.IdEmpresa = dbo.ct_cbtecble_tipo.IdEmpresa AND dbo.ba_Cbte_Ban.IdTipocbte = dbo.ct_cbtecble_tipo.IdTipoCbte ON 
                          dbo.ba_Banco_Cuenta.IdEmpresa = dbo.ba_Cbte_Ban.IdEmpresa AND dbo.ba_Banco_Cuenta.IdBanco = dbo.ba_Cbte_Ban.IdBanco LEFT OUTER JOIN
                          dbo.tb_persona AS per_prov INNER JOIN
-                         dbo.cp_proveedor ON per_prov.IdPersona = dbo.cp_proveedor.IdPersona ON dbo.ba_Cbte_Ban.IdEmpresa = dbo.cp_proveedor.IdEmpresa AND dbo.ba_Cbte_Ban.IdProveedor = dbo.cp_proveedor.IdProveedor LEFT OUTER JOIN
+                         dbo.cp_proveedor ON per_prov.IdPersona = dbo.cp_proveedor.IdPersona ON dbo.ba_Cbte_Ban.IdEmpresa = dbo.cp_proveedor.IdEmpresa AND dbo.ba_Cbte_Ban.IdEntidad = dbo.cp_proveedor.IdProveedor LEFT OUTER JOIN
                              (SELECT        IdEmpresa, IdTipoCbte, IdCbteCble, SUM(cb_Valor) AS cb_Valor
                                FROM            dbo.ct_cbtecble AS ct_cbtecble_1
                                GROUP BY IdEmpresa, IdTipoCbte, IdCbteCble) AS det ON dbo.ba_Cbte_Ban.IdEmpresa = det.IdEmpresa AND dbo.ba_Cbte_Ban.IdTipocbte = det.IdTipoCbte AND 

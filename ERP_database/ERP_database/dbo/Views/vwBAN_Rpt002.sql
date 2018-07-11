@@ -4,13 +4,13 @@ SELECT        dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan AS 
                          dbo.ba_Banco_Cuenta.ba_descripcion AS Banco, dbo.ba_Cbte_Ban.cb_Fecha AS Fch_Cbte, dbo.ba_Cbte_Ban.cb_Observacion AS Observacion, 
                          dbo.ba_Cbte_Ban.cb_Valor AS Valor, dbo.ba_Cbte_Ban.cb_Cheque AS Cheque, dbo.ba_Cbte_Ban.cb_giradoA AS Chq_Girado_A, dbo.ba_TipoFlujo.IdTipoFlujo, 
                          dbo.ba_TipoFlujo.Descricion AS Tipo_Flujo, dbo.ba_tipo_nota.IdTipoNota, dbo.ba_tipo_nota.Descripcion AS Tipo_Nota, 
-                         dbo.ba_Cbte_Ban.PosFechado AS Fch_PostFechado, 
-                         CASE dbo.ba_Cbte_Ban.cb_ChequeImpreso WHEN 'S' THEN 'Impreso' ELSE 'No Impreso' END AS Es_Chq_Impreso, 
+                         'N' AS Fch_PostFechado, 
+                         CASE '' WHEN 'S' THEN 'Impreso' ELSE 'No Impreso' END AS Es_Chq_Impreso, 
                          CASE WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'CHEQ' THEN 0 WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'NDBA' THEN 0 WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan
                           = 'NCBA' THEN dbo.ba_Cbte_Ban.cb_Valor WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'DEPO' THEN dbo.ba_Cbte_Ban.cb_Valor END AS debe, 
                          CASE WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'CHEQ' THEN dbo.ba_Cbte_Ban.cb_Valor WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'NDBA' THEN dbo.ba_Cbte_Ban.cb_Valor
                           WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'NCBA' THEN 0 WHEN dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'DEPO' THEN 0 END AS haber, 
-                         dbo.ba_Cbte_Ban.cb_Valor AS saldo, dbo.ba_Cbte_Ban.cb_FechaCheque AS Fch_Chq, dbo.ba_Banco_Cuenta.IdCtaCble AS Cta_Cble_Banco, 
+                         dbo.ba_Cbte_Ban.cb_Valor AS saldo, GETDATE() AS Fch_Chq, dbo.ba_Banco_Cuenta.IdCtaCble AS Cta_Cble_Banco, 
                          dbo.tb_Calendario.IdCalendario, dbo.tb_Calendario.AnioFiscal, dbo.tb_Calendario.NombreMes, dbo.tb_Calendario.NombreCortoFecha, dbo.tb_Calendario.IdMes, 
                          dbo.ct_plancta.pc_Cuenta, dbo.ba_Cbte_Ban.IdPersona_Girado_a
 FROM            dbo.ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo INNER JOIN
