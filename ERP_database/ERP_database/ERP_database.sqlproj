@@ -1863,5 +1863,7 @@
     <Build Include="web\Views\VWCXC_002.sql" />
     <Build Include="web\Views\vwcp_orden_pago_con_cancelacion.sql" />
     <Build Include="dbo\Tables\fa_cliente_x_fa_Vendedor_x_sucursal.sql" />
+    <Build Include="web\Views\vwba_Talonario_cheques_x_banco_ID.sql" />
+    <Build Include="web\Views\vwba_Cbte_Ban.sql" />
   </ItemGroup>
 </Project>
