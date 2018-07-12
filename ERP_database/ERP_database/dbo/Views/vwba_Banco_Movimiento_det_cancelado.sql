@@ -11,7 +11,7 @@ SELECT        dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban.IdCbteCble, dbo.ba_Cbte
                          dbo.vwcp_orden_pago_con_cancelacion.IdEstadoAprobacion, dbo.vwcp_orden_pago_con_cancelacion.IdFormaPago, 
                          dbo.vwcp_orden_pago_con_cancelacion.Fecha_Pago, dbo.vwcp_orden_pago_con_cancelacion.IdCtaCble, dbo.vwcp_orden_pago_con_cancelacion.IdCentroCosto, 
                          dbo.vwcp_orden_pago_con_cancelacion.IdSubCentro_Costo, dbo.vwcp_orden_pago_con_cancelacion.Cbte_cxp, dbo.vwcp_orden_pago_con_cancelacion.Estado, 
-                         dbo.vwcp_orden_pago_con_cancelacion.Nom_Beneficiario_2, dbo.ba_Cbte_Ban.PosFechado, dbo.vwcp_orden_pago_con_cancelacion.IdEmpresa_cxp, 
+                         dbo.vwcp_orden_pago_con_cancelacion.Nom_Beneficiario_2, 'N'PosFechado, dbo.vwcp_orden_pago_con_cancelacion.IdEmpresa_cxp, 
                          dbo.vwcp_orden_pago_con_cancelacion.IdTipoCbte_cxp, dbo.vwcp_orden_pago_con_cancelacion.IdCbteCble_cxp, 
                          dbo.cp_orden_pago_cancelaciones.Idcancelacion, dbo.cp_orden_pago_cancelaciones.MontoAplicado, dbo.cp_orden_pago_cancelaciones.SaldoAnterior, 
                          dbo.cp_orden_pago_cancelaciones.SaldoActual, dbo.cp_orden_pago_cancelaciones.Secuencia

@@ -31,7 +31,7 @@ where CodTipoCbteBan='DEPO'
 and  idempresa=@I_IdEmpresa
 
 select 'cabecera Bancos'
-
+/*
 SELECT      IdEmpresa, IdCbteCble, IdTipocbte, Cod_Cbtecble, IdPeriodo, IdBanco, IdProveedor, cb_Fecha, cb_Observacion, cb_secuencia, cb_Valor, cb_Cheque, 
                       cb_ChequeImpreso, cb_FechaCheque, IdUsuario, IdUsuario_Anu, FechaAnulacion, Fecha_Transac, Fecha_UltMod, IdUsuarioUltMod, Estado, MotivoAnulacion, ip, 
                       nom_pc, cb_giradoA, cb_ciudadChq, IdCbteCble_Anulacion, IdTipoCbte_Anulacion, IdTipoFlujo, IdTipoNota, IdTransaccion, Por_Anticipo, PosFechado
@@ -39,7 +39,7 @@ FROM         ba_Cbte_Ban
 WHERE     (IdEmpresa = @I_IdEmpresa) 
 AND (IdCbteCble = @I_IdCbteCble) 
 AND (IdTipocbte = @I_IdTipocbte)
-
+*/
 
 select 'cabecera contable'
 SELECT     IdEmpresa, IdTipoCbte, IdCbteCble, CodCbteCble, IdPeriodo, cb_Fecha, cb_Valor, cb_Observacion, 0 cb_Secuencia, cb_Estado, cb_Anio, cb_mes, IdUsuario, 

@@ -1,8 +1,8 @@
 ﻿CREATE VIEW dbo.vwBa_ChequexCbteCtble
 AS
 SELECT        dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban.IdCbteCble, dbo.ba_Cbte_Ban.IdTipocbte, dbo.ba_Cbte_Ban.Cod_Cbtecble, dbo.ba_Cbte_Ban.cb_Observacion, 
-                         dbo.ba_Cbte_Ban.cb_secuencia, dbo.ba_Cbte_Ban.cb_Valor, dbo.ba_Cbte_Ban.cb_Cheque, dbo.ba_Cbte_Ban.cb_ChequeImpreso, 
-                         dbo.ba_Cbte_Ban.cb_FechaCheque, dbo.ba_Cbte_Ban.Fecha_Transac, dbo.ba_Cbte_Ban.Estado, dbo.ba_Cbte_Ban.cb_giradoA, dbo.ba_Cbte_Ban.cb_ciudadChq, 
+                         0 cb_secuencia, dbo.ba_Cbte_Ban.cb_Valor, dbo.ba_Cbte_Ban.cb_Cheque, 'N' cb_ChequeImpreso, 
+                         GETDATE() cb_FechaCheque, dbo.ba_Cbte_Ban.Fecha_Transac, dbo.ba_Cbte_Ban.Estado, dbo.ba_Cbte_Ban.cb_giradoA, dbo.ba_Cbte_Ban.cb_ciudadChq, 
                          dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan, dbo.ba_Cbte_Ban.cb_Fecha, dbo.ct_cbtecble.cb_Fecha AS con_Fecha, dbo.ct_cbtecble.cb_Valor AS con_Valor, 
                          dbo.ct_cbtecble.cb_Observacion AS con_Observacion, dbo.ct_cbtecble.IdCbteCble AS con_IdCbteCble, dbo.ct_cbtecble_det.IdCtaCble, dbo.ct_plancta.pc_Cuenta, 
                          dbo.ct_cbtecble_det.dc_Valor, dbo.ba_Cbte_Ban.ValorEnLetras, dbo.tb_banco.IdBanco, dbo.tb_banco.ba_descripcion

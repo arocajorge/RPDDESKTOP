@@ -54,7 +54,6 @@
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_Conciliacion_Ing_Bodega_x_Orden_Giro" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_conciliacion_x_cbte_cble" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_conciliacion_x_orden_pago" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_nota_DebCre" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_nota_DebCre_total_saldo" Width="1.5" PointX="11.75" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_Orden_Giro_Conciliado_x_Factura" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_Orden_Giro_Conciliado_x_Ing_Bod_x_OC" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
@@ -160,6 +159,7 @@
         <AssociationConnector Association="ModelCuentasxPagar.FK_cp_reembolso_cp_proveedor" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_ProveedorRuc" Width="1.5" PointX="11.855951931260504" PointY="7.748017106087886" />
         <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_conciliacion_Caja_det_x_ValeCaja" Width="1.5" PointX="11.514984106419135" PointY="28.269660813859506" />
+        <EntityTypeShape EntityType="ModelCuentasxPagar.vwcp_nota_DebCre" Width="1.5" PointX="11.734178954611616" PointY="9.1602448416688684" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

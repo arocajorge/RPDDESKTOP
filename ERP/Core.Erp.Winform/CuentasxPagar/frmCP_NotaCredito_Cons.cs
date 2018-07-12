@@ -17,7 +17,7 @@ namespace Core.Erp.Winform.CuentasxPagar
 {
     public partial class frmCP_NotaCredito_Cons : Form
     {
-        tb_sis_Log_Error_Vzen_Bus Log_Error_bus ;
+        tb_sis_Log_Error_Vzen_Bus Log_Error_bus = new tb_sis_Log_Error_Vzen_Bus();
         cl_parametrosGenerales_Bus param = cl_parametrosGenerales_Bus.Instance;
         cp_nota_DebCre_Info notaCr_I = new cp_nota_DebCre_Info();
         ct_Cbtecble_Bus CbteCble_B = new ct_Cbtecble_Bus();

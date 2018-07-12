@@ -3,7 +3,7 @@
 CREATE view [dbo].[vwba_Conciliacion_det_IngEgr]  
 as  
 SELECT     A.IdEmpresa, A.IdCbteCble, A.IdTipocbte, J.CodTipoCbte, J.tc_TipoCbte, A2.CodTipoCbteBan, A2.Descripcion, A.IdPeriodo, A_1.IdBanco, A.cb_Fecha,   
-                      A.cb_Observacion, A_1.cb_Cheque, A_1.cb_FechaCheque, I.ba_descripcion, H.IdCtaCble, H.pc_Cuenta, C.dc_Valor, A_1.Estado, C.secuencia AS SecuenciaCbteCble,   
+                      A.cb_Observacion, A_1.cb_Cheque, GETDATE() cb_FechaCheque, I.ba_descripcion, H.IdCtaCble, H.pc_Cuenta, C.dc_Valor, A_1.Estado, C.secuencia AS SecuenciaCbteCble,   
                       A2.CodTipoCbteBan + ' - ' + A2.Descripcion AS ReferenciaCbte, co.IdConciliacion ,co.Secuencia as SecuenciaConciliacion,co.tipo_IngEgr  
 FROM  ba_Banco_Cuenta AS I   
    INNER JOIN ct_cbtecble_det AS C ON I.IdCtaCble = C.IdCtaCble AND I.IdEmpresa = C.IdEmpresa   

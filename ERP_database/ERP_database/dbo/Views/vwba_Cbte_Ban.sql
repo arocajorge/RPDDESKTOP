@@ -1,9 +1,9 @@
 ﻿CREATE view [dbo].[vwba_Cbte_Ban]
 as
-SELECT        B.tc_TipoCbte, C.ba_descripcion, '' AS NombreProveedor, Ba.IdEmpresa, Ba.IdCbteCble, Ba.IdTipocbte, Ba.Cod_Cbtecble, Ba.IdPeriodo, Ba.IdBanco, Ba.IdProveedor, Ba.cb_Fecha, Ba.cb_Observacion, 
-                         Ba.cb_secuencia, Ba.cb_Valor, Ba.cb_Cheque, Ba.cb_ChequeImpreso, Ba.cb_FechaCheque, Ba.IdUsuario, Ba.IdUsuario_Anu, Ba.FechaAnulacion, Ba.Fecha_Transac, Ba.Fecha_UltMod, Ba.IdUsuarioUltMod, 
-                         Ba.Estado, Ba.MotivoAnulacion, Ba.ip, Ba.nom_pc, Ba.cb_giradoA, Ba.cb_ciudadChq, Ba.IdCbteCble_Anulacion, Ba.IdTipoCbte_Anulacion, Ba.IdTipoFlujo, Ba.IdTipoNota, 
-                         dbo.ba_tipo_nota.Descripcion AS NomTipoNota, Ba.Por_Anticipo, Ba.PosFechado, Ba.IdPersona_Girado_a, Ba.ValorEnLetras, Ba.IdSucursal, ISNULL(Ba.IdEstado_Cbte_Ban_cat, '') AS IdEstado_Cbte_Ban_cat, 
+SELECT        B.tc_TipoCbte, C.ba_descripcion, '' AS NombreProveedor, Ba.IdEmpresa, Ba.IdCbteCble, Ba.IdTipocbte, Ba.Cod_Cbtecble, Ba.IdPeriodo, Ba.IdBanco, Ba.IdEntidad IdProveedor, Ba.cb_Fecha, Ba.cb_Observacion, 
+                         0 cb_secuencia, Ba.cb_Valor, Ba.cb_Cheque, 'N'cb_ChequeImpreso, GETDATE() cb_FechaCheque, Ba.IdUsuario, Ba.IdUsuario_Anu, Ba.FechaAnulacion, Ba.Fecha_Transac, Ba.Fecha_UltMod, Ba.IdUsuarioUltMod, 
+                         Ba.Estado, Ba.MotivoAnulacion, ''ip, ''nom_pc, Ba.cb_giradoA, Ba.cb_ciudadChq, null IdCbteCble_Anulacion, null IdTipoCbte_Anulacion, Ba.IdTipoFlujo, Ba.IdTipoNota, 
+                         dbo.ba_tipo_nota.Descripcion AS NomTipoNota, 'N'Por_Anticipo, 'N'PosFechado, Ba.IdPersona_Girado_a, Ba.ValorEnLetras, Ba.IdSucursal, ISNULL(Ba.IdEstado_Cbte_Ban_cat, '') AS IdEstado_Cbte_Ban_cat, 
                          dbo.vwba_Estado_cbte_ban.ca_descripcion AS nom_Estado_Cbte_Ban, MAX(CASE WHEN dbo.tb_persona.pe_nombreCompleto IS NULL AND tb_persona_1.pe_nombreCompleto IS NULL 
                          THEN tb_persona_2.pe_nombreCompleto WHEN dbo.tb_persona.pe_nombreCompleto IS NULL AND tb_persona_1.pe_nombreCompleto IS NOT NULL 
                          THEN tb_persona_1.pe_nombreCompleto ELSE dbo.tb_persona.pe_nombreCompleto END) AS Beneficiario, tb_persona_2.IdTipoDocumento, tb_persona_2.pe_cedulaRuc, 
@@ -33,8 +33,8 @@ FROM            dbo.caj_Caja_Movimiento INNER JOIN
                          dbo.vwba_Estado_cbte_ban ON Ba.IdEstado_Cbte_Ban_cat = dbo.vwba_Estado_cbte_ban.IdEstado_cbte_ban LEFT OUTER JOIN
                          dbo.ba_tipo_nota ON Ba.IdEmpresa = dbo.ba_tipo_nota.IdEmpresa AND Ba.IdTipoNota = dbo.ba_tipo_nota.IdTipoNota ON dbo.ba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.mba_IdEmpresa = Ba.IdEmpresa AND
                           dbo.ba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.mba_IdCbteCble = Ba.IdCbteCble AND dbo.ba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.mba_IdTipocbte = Ba.IdTipocbte
-GROUP BY B.tc_TipoCbte, C.ba_descripcion, Ba.IdEmpresa, Ba.IdCbteCble, Ba.IdTipocbte, Ba.Cod_Cbtecble, Ba.IdPeriodo, Ba.IdBanco, Ba.IdProveedor, Ba.cb_Fecha, Ba.cb_Observacion, Ba.cb_secuencia, Ba.cb_Valor, 
-                         Ba.cb_Cheque, Ba.cb_ChequeImpreso, Ba.cb_FechaCheque, Ba.IdUsuario, Ba.IdUsuario_Anu, Ba.FechaAnulacion, Ba.Fecha_Transac, Ba.Fecha_UltMod, Ba.IdUsuarioUltMod, Ba.Estado, Ba.MotivoAnulacion, 
-                         Ba.ip, Ba.nom_pc, Ba.cb_giradoA, Ba.cb_ciudadChq, Ba.IdCbteCble_Anulacion, Ba.IdTipoCbte_Anulacion, Ba.IdTipoFlujo, Ba.IdTipoNota, dbo.ba_tipo_nota.Descripcion, Ba.Por_Anticipo, Ba.PosFechado, 
+GROUP BY B.tc_TipoCbte, C.ba_descripcion, Ba.IdEmpresa, Ba.IdCbteCble, Ba.IdTipocbte, Ba.Cod_Cbtecble, Ba.IdPeriodo, Ba.IdBanco, Ba.IdEntidad, Ba.cb_Fecha, Ba.cb_Observacion, Ba.cb_Valor, 
+                         Ba.cb_Cheque,  Ba.IdUsuario, Ba.IdUsuario_Anu, Ba.FechaAnulacion, Ba.Fecha_Transac, Ba.Fecha_UltMod, Ba.IdUsuarioUltMod, Ba.Estado, Ba.MotivoAnulacion, 
+                          Ba.cb_giradoA, Ba.cb_ciudadChq,  Ba.IdTipoFlujo, Ba.IdTipoNota, dbo.ba_tipo_nota.Descripcion, 
                          Ba.IdPersona_Girado_a, Ba.ValorEnLetras, Ba.IdSucursal, ISNULL(Ba.IdEstado_Cbte_Ban_cat, ''), dbo.vwba_Estado_cbte_ban.ca_descripcion, tb_persona_2.IdTipoDocumento, tb_persona_2.pe_cedulaRuc, 
                          dbo.ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo.CodTipoCbteBan, Ba.IdEstado_cheque_cat, Ba.IdEstado_Preaviso_ch_cat

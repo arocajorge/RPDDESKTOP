@@ -15,8 +15,8 @@ namespace Core.Erp.Info.CuentasxPagar
         public int Secuencia { get; set; }
         public int IdCaja { get; set; }
         public DateTime? Fecha { get; set; }
-        public Nullable<DateTime> Fecha_ini { get; set; }
-        public Nullable<DateTime> Fecha_fin { get; set; }
+        public DateTime Fecha_ini { get; set; }
+        public DateTime Fecha_fin { get; set; }
      
         public string IdEstadoCierre { get; set; }
         public string Observacion { get; set; }
