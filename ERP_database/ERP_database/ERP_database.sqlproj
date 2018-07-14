@@ -80,6 +80,9 @@
     <Folder Include="web\Views\" />
     <Folder Include="web\Tables\" />
     <Folder Include="web\Stored Procedures\" />
+    <Folder Include="ats\" />
+    <Folder Include="ats\Tables\" />
+    <Folder Include="ats\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\tbSys_Ge_Comparativo_Modulo_vs_Contas.sql" />
@@ -1868,5 +1871,10 @@
     <Build Include="web\Views\VWROL_014.sql" />
     <Build Include="web\Views\VWINV_008.sql" />
     <Build Include="dbo\Stored Procedures\spcp_Get_Data_orden_pago_con_cancelacion_x_pago.sql" />
+    <Build Include="ats\Tables\comprobantes_anulados.sql" />
+    <Build Include="ats\Tables\ventas.sql" />
+    <Build Include="ats\Tables\compras.sql" />
+    <Build Include="ats\Stored Procedures\generarATS.sql" />
+    <Build Include="Security\ats.sql" />
   </ItemGroup>
 </Project>
