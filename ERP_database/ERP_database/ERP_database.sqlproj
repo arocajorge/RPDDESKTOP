@@ -1876,5 +1876,6 @@
     <Build Include="ats\Tables\compras.sql" />
     <Build Include="ats\Stored Procedures\generarATS.sql" />
     <Build Include="Security\ats.sql" />
+    <Build Include="ats\Tables\retenciones.sql" />
   </ItemGroup>
 </Project>
