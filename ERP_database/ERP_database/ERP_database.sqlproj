@@ -1866,12 +1866,22 @@
     <Build Include="web\Views\VWCXC_002.sql" />
     <Build Include="web\Views\vwcp_orden_pago_con_cancelacion.sql" />
     <Build Include="dbo\Tables\fa_cliente_x_fa_Vendedor_x_sucursal.sql" />
+    <Build Include="web\Views\vwba_Talonario_cheques_x_banco_ID.sql" />
+    <Build Include="web\Views\vwba_Cbte_Ban.sql" />
     <Build Include="web\Views\VWROL_014.sql" />
+    <Build Include="web\Views\VWINV_008.sql" />
+    <Build Include="dbo\Stored Procedures\spcp_Get_Data_orden_pago_con_cancelacion_x_pago.sql" />
     <Build Include="ats\Tables\comprobantes_anulados.sql" />
     <Build Include="ats\Tables\ventas.sql" />
     <Build Include="ats\Tables\compras.sql" />
     <Build Include="ats\Stored Procedures\generarATS.sql" />
     <Build Include="Security\ats.sql" />
     <Build Include="ats\Tables\retenciones.sql" />
+    <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito_x_depositar.sql" />
+    <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.sql" />
+    <Build Include="web\Views\VWINV_008.sql" />
+    <Build Include="web\Views\vwba_Talonario_cheques_x_banco_ID.sql" />
+    <Build Include="web\Views\vwba_Cbte_Ban.sql" />
+    <Build Include="dbo\Stored Procedures\spcp_Get_Data_orden_pago_con_cancelacion_x_pago.sql" />
   </ItemGroup>
 </Project>
