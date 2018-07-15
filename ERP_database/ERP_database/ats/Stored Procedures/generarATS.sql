@@ -1,5 +1,5 @@
 ﻿
-ALTER  PROCEDURE [ats].[generarATS]
+create  PROCEDURE [ats].[generarATS]
 @idempresa int,
 @idPeriodo int
 AS
