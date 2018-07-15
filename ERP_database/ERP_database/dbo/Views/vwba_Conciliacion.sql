@@ -1,10 +1,7 @@
-﻿CREATE VIEW dbo.vwba_Conciliacion
+﻿CREATE VIEW [dbo].[vwba_Conciliacion]
 AS
-SELECT        C.IdEmpresa, C.IdConciliacion, C.IdBanco, C.IdPeriodo, C.co_Fecha, C.co_SaldoContable_MesAnt, C.co_totalIng, C.co_totalEgr, C.co_SaldoContable_MesAct, 
-                         C.co_SaldoBanco_EstCta, C.co_Cant_Cheque, C.co_Cant_Deposito, C.co_Cant_NC, C.co_Cant_ND, C.co_TotalCheque, C.co_TotalDepositos, C.co_totalNC, 
-                         C.co_TotalND, C.Estado, C.IdUsuario, C.IdUsuario_Anu, C.IdUsuarioUltMod, C.Fecha_Transac, C.Fecha_UltMod, C.FechaAnulacion, C.ip, C.nom_pc, 
-                         C.MotivoAnulacion, C.co_Cant_OtrosIng, C.co_TotalOtrosIng, C.co_Cant_OtrosEgr, C.co_TotalOtrosEgr, C.co_Observacion, BC.ba_descripcion, BC.IdCtaCble, 
-                         dbo.tb_mes.smes + ' - ' + CAST(P.IdanioFiscal AS varchar(25)) AS Periodo, C.co_SaldoBanco_anterior
+SELECT        C.IdEmpresa, C.IdConciliacion, C.IdBanco, C.IdPeriodo, C.co_Fecha, C.co_SaldoContable_MesAnt, C.co_totalIng, C.co_totalEgr, C.co_SaldoContable_MesAct, C.Estado, C.co_Observacion, BC.ba_descripcion, 
+                         BC.IdCtaCble, dbo.tb_mes.smes + ' - ' + CAST(P.IdanioFiscal AS varchar(25)) AS Periodo, C.co_SaldoBanco_anterior, C.IdEstado_Concil_Cat, C.co_SaldoBanco_EstCta
 FROM            dbo.ba_Conciliacion AS C INNER JOIN
                          dbo.ba_Banco_Cuenta AS BC ON C.IdEmpresa = BC.IdEmpresa AND C.IdBanco = BC.IdBanco INNER JOIN
                          dbo.ct_periodo AS P ON C.IdPeriodo = P.IdPeriodo AND C.IdEmpresa = P.IdEmpresa INNER JOIN
