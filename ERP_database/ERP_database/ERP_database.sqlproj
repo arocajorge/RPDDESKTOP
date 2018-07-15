@@ -1873,6 +1873,5 @@
     <Build Include="ats\Stored Procedures\generarATS.sql" />
     <Build Include="Security\ats.sql" />
     <Build Include="ats\Tables\retenciones.sql" />
-    <Build Include="ats\Stored Procedures\generarATS_1.sql" />
   </ItemGroup>
 </Project>
