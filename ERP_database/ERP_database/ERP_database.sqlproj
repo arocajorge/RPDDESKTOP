@@ -1877,5 +1877,7 @@
     <Build Include="ats\Stored Procedures\generarATS.sql" />
     <Build Include="Security\ats.sql" />
     <Build Include="ats\Tables\retenciones.sql" />
+    <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito_x_depositar.sql" />
+    <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.sql" />
   </ItemGroup>
 </Project>
