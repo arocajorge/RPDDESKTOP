@@ -1,6 +1,6 @@
 ﻿
 
-create  PROCEDURE [EntidadRegulatoria].[generarATS]
+CREATE  PROCEDURE [EntidadRegulatoria].[generarATS]
 @idempresa int,
 @idPeriodo int
 AS
@@ -23,12 +23,12 @@ declare
 @fecha_fin date
 
 select @fecha_inicio=pe_FechaIni, @fecha_fin=pe_FechaFin from ct_periodo where IdEmpresa=@idempresa and IdPeriodo=@idPeriodo
-delete ats.ventas where IdEmpresa=@idempresa and IdPeriodo=@idPeriodo
-delete ats.compras where idempresa=@idempresa and idperiodo=@idPeriodo
-delete ats.retenciones where idempresa=@idempresa and idperiodo=@idPeriodo
-delete ats.comprobantes_anulados where idempresa=@idempresa and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_ventas where IdEmpresa=@idempresa and IdPeriodo=@idPeriodo
+delete EntidadRegulatoria.ATS_compras where idempresa=@idempresa and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_retenciones where idempresa=@idempresa and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_comprobantes_anulados where idempresa=@idempresa and idperiodo=@idPeriodo
 
-insert into ats.compras
+insert into EntidadRegulatoria.ATS_compras
 (
 IdEmpresa,																					IdPeriodo,			
 Secuencia,																					codSustento,
@@ -73,7 +73,7 @@ FROM            dbo.cp_orden_giro AS fac INNER JOIN
 --*****************************************************************************************************************************************************************++
 --**************************************************************************VENTAS*****************************************************************************+*****
 
-insert into ats.ventas
+insert into EntidadRegulatoria.ATS_ventas
 (IdEmpresa,									IdPeriodo,											Secuencia,															tpIdCliente,
 idCliente,									parteRel,											tipoCliente,														DenoCli,									
 tipoComprobante,							tipoEm,												numeroComprobantes,													baseNoGraIva,
@@ -122,6 +122,8 @@ FROM            dbo.fa_factura AS fac INNER JOIN
                          dbo.fa_cliente AS cli ON fac.IdEmpresa = cli.IdEmpresa AND fac.IdCliente = cli.IdCliente INNER JOIN
                          dbo.tb_persona AS per ON cli.IdPersona = per.IdPersona INNER JOIN
                          dbo.fa_formaPago AS f_pago ON cli.FormaPago = f_pago.IdFormaPago
+						  where  fac.vt_fecha between @fecha_inicio and @fecha_fin
+						 and  fac.Estado='A' 
 GROUP BY per.pe_cedulaRuc, per.pe_nombreCompleto,per.IdTipoDocumento, fac_det.vt_por_iva, fac.IdEmpresa,fac.IdCliente,
 fac.IdSucursal,
 fac.IdBodega,
@@ -153,7 +155,7 @@ isnull(case when SUBSTRING( cxc_cobro_det.IdCobro_tipo,0,5)= 'RTIV'then sum(dc_V
 
  --*****************************************************************************************************************************************************************++
 --**************************************************************************Retenciones****************************************************************+*****
-insert into ats.retenciones(
+insert into EntidadRegulatoria.ATS_retenciones(
 IdEmpresa,																						IdPeriodo,
 Secuencia,																						co_serie,
 co_factura,																						Cedula_ruc,
@@ -187,7 +189,7 @@ FROM            dbo.cp_orden_giro AS fac INNER JOIN
 
 --*****************************************************************************************************************************************************************++
 --**************************************************************************comprobantes anulados****************************************************************+*****
-	insert into ats.comprobantes_anulados
+	insert into EntidadRegulatoria.ATS_comprobantes_anulados
 	(
 IdEmpresa,									IdPeriodo,								Secuencia,
 tipoComprobante,							Establecimiento,						puntoEmision,
@@ -222,7 +224,7 @@ from cp_retencion, tb_sis_Documento_Tipo_Talonario
  )  anulados
 
 
- --select * from ats.ventas
- --select* from ats.compras
- --select * from ats.retenciones
+ --select * from EntidadRegulatoria.ventas
+ --select* from EntidadRegulatoria.compras
+ --select * from EntidadRegulatoria.retenciones
 END

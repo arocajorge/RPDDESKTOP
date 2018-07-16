@@ -11,9 +11,9 @@
     [valRetServ50]      NUMERIC (12, 2) NULL,
     [valorRetServicios] NUMERIC (12, 2) NULL,
     [valRetServ100]     NUMERIC (12, 2) NULL,
-    [codRetAir]         NUMERIC (12, 2) NULL,
+    [codRetAir]         VARCHAR (10)    NULL,
     [baseImpAir]        NUMERIC (12, 2) NULL,
-    [porcentajeAir]     NUMERIC (12, 2) NULL,
+    [porcentajeAir]     VARCHAR (5)     NULL,
     [valRetAir]         NUMERIC (12, 2) NULL,
     [estabRetencion1]   VARCHAR (3)     NULL,
     [ptoEmiRetencion1]  VARCHAR (3)     NULL,
@@ -27,4 +27,6 @@
     [autModificado]     VARCHAR (49)    NULL,
     CONSTRAINT [PK_retenciones] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdPeriodo] ASC, [Secuencia] ASC)
 );
+
+
 
