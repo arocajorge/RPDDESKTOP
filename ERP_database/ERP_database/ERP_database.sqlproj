@@ -80,9 +80,6 @@
     <Folder Include="web\Views\" />
     <Folder Include="web\Tables\" />
     <Folder Include="web\Stored Procedures\" />
-    <Folder Include="ats\" />
-    <Folder Include="ats\Tables\" />
-    <Folder Include="ats\Stored Procedures\" />
     <Folder Include="EntidadRegulatoria\" />
     <Folder Include="EntidadRegulatoria\Tables\" />
     <Folder Include="EntidadRegulatoria\Stored Procedures\" />
@@ -1874,8 +1871,6 @@
     <Build Include="web\Views\VWROL_014.sql" />
     <Build Include="web\Views\VWINV_008.sql" />
     <Build Include="dbo\Stored Procedures\spcp_Get_Data_orden_pago_con_cancelacion_x_pago.sql" />
-    <Build Include="ats\Stored Procedures\generarATS.sql" />
-    <Build Include="Security\ats.sql" />
     <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito_x_depositar.sql" />
     <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.sql" />
     <Build Include="web\Views\VWINV_008.sql" />
