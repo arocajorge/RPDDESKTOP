@@ -1883,5 +1883,9 @@
     <Build Include="web\Views\vwba_Talonario_cheques_x_banco_ID.sql" />
     <Build Include="web\Views\vwba_Cbte_Ban.sql" />
     <Build Include="dbo\Stored Procedures\spcp_Get_Data_orden_pago_con_cancelacion_x_pago.sql" />
+    <Build Include="web\Views\vwba_Conciliacion_det_IngEgr_x_conciliar.sql" />
+    <Build Include="web\Views\vwba_Conciliacion_det_IngEgr.sql" />
+    <Build Include="web\Views\VWBAN_006.sql" />
+    <Build Include="web\Views\VWBAN_005.sql" />
   </ItemGroup>
 </Project>
