@@ -83,6 +83,9 @@
     <Folder Include="ats\" />
     <Folder Include="ats\Tables\" />
     <Folder Include="ats\Stored Procedures\" />
+    <Folder Include="EntidadRegulatoria\" />
+    <Folder Include="EntidadRegulatoria\Tables\" />
+    <Folder Include="EntidadRegulatoria\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\tbSys_Ge_Comparativo_Modulo_vs_Contas.sql" />
@@ -1871,12 +1874,8 @@
     <Build Include="web\Views\VWROL_014.sql" />
     <Build Include="web\Views\VWINV_008.sql" />
     <Build Include="dbo\Stored Procedures\spcp_Get_Data_orden_pago_con_cancelacion_x_pago.sql" />
-    <Build Include="ats\Tables\comprobantes_anulados.sql" />
-    <Build Include="ats\Tables\ventas.sql" />
-    <Build Include="ats\Tables\compras.sql" />
     <Build Include="ats\Stored Procedures\generarATS.sql" />
     <Build Include="Security\ats.sql" />
-    <Build Include="ats\Tables\retenciones.sql" />
     <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito_x_depositar.sql" />
     <Build Include="dbo\Views\vwba_Caja_Movimiento_x_Cbte_Ban_x_Deposito.sql" />
     <Build Include="web\Views\VWINV_008.sql" />
@@ -1887,5 +1886,11 @@
     <Build Include="web\Views\vwba_Conciliacion_det_IngEgr.sql" />
     <Build Include="web\Views\VWBAN_006.sql" />
     <Build Include="web\Views\VWBAN_005.sql" />
+    <Build Include="EntidadRegulatoria\Tables\ATS_compras.sql" />
+    <Build Include="EntidadRegulatoria\Tables\ATS_retenciones.sql" />
+    <Build Include="EntidadRegulatoria\Tables\ATS_comprobantes_anulados.sql" />
+    <Build Include="EntidadRegulatoria\Tables\ATS_ventas.sql" />
+    <Build Include="EntidadRegulatoria\Stored Procedures\generarATS.sql" />
+    <Build Include="Security\EntidadRegulatoria.sql" />
   </ItemGroup>
 </Project>
