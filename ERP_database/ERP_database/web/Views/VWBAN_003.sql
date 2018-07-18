@@ -1,4 +1,4 @@
-﻿CREATE VIEW web.VWBAN_003
+﻿CREATE VIEW [web].[VWBAN_003]
 AS
 SELECT        dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan, dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban.IdCbteCble, dbo.ba_Cbte_Ban.IdTipocbte, dbo.ba_Cbte_Ban.IdBanco, dbo.ba_Banco_Cuenta.ba_descripcion, 
                          dbo.ba_Cbte_Ban.cb_Fecha, dbo.ba_Cbte_Ban.cb_Observacion, dbo.ba_Cbte_Ban.Estado, dbo.ba_Cbte_Ban.IdTipoNota, dbo.tb_persona.pe_nombreCompleto, dbo.ct_cbtecble_det.IdCtaCble, dbo.ct_plancta.pc_Cuenta, 
@@ -19,7 +19,7 @@ FROM            dbo.ba_Cbte_Ban_tipo INNER JOIN
 WHERE        (dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan = 'CHEQ')
 GROUP BY dbo.ba_Cbte_Ban_tipo.CodTipoCbteBan, dbo.ba_Cbte_Ban.IdEmpresa, dbo.ba_Cbte_Ban.IdCbteCble, dbo.ba_Cbte_Ban.IdTipocbte, dbo.ba_Cbte_Ban.IdBanco, dbo.ba_Banco_Cuenta.ba_descripcion, 
                          dbo.ba_Cbte_Ban.cb_Fecha, dbo.ba_Cbte_Ban.cb_Observacion, dbo.ba_Cbte_Ban.Estado, dbo.ba_Cbte_Ban.IdTipoNota, dbo.tb_persona.pe_nombreCompleto, dbo.ct_cbtecble_det.IdCtaCble, dbo.ct_plancta.pc_Cuenta, 
-                         dbo.ct_cbtecble_det.dc_Valor, dbo.ba_Cbte_Ban.cb_Cheque, dbo.ba_Cbte_Ban.cb_giradoA
+                         dbo.ct_cbtecble_det.dc_Valor, dbo.ba_Cbte_Ban.cb_Cheque, dbo.ba_Cbte_Ban.cb_giradoA, ct_cbtecble_det.secuencia
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWBAN_003';
 

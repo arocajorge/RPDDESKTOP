@@ -16,7 +16,10 @@
     [se_muestra_administrador_reportes] BIT            NOT NULL,
     [orden]                             INT            NOT NULL,
     [observacion]                       VARCHAR (2000) NULL,
+    [Se_Mustra_Disenador_rpt]           BIT            NOT NULL,
     CONSTRAINT [PK_tb_sis_reporte_1] PRIMARY KEY CLUSTERED ([CodReporte] ASC),
     CONSTRAINT [FK_tb_sis_reporte_tb_modulo] FOREIGN KEY ([CodModulo]) REFERENCES [dbo].[tb_modulo] ([CodModulo])
 );
+
+
 
