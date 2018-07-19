@@ -1640,7 +1640,7 @@
             this.xrTableCell59.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell59.Name = "xrTableCell59";
             this.xrTableCell59.StylePriority.UseFont = false;
-            this.xrTableCell59.Text = "xrTableCell59";
+            this.xrTableCell59.Text = "[Documento]";
             this.xrTableCell59.Weight = 3D;
             // 
             // GroupFooter_Documento

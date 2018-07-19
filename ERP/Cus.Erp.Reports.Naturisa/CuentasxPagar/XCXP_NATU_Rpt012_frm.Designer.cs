@@ -117,7 +117,7 @@
             this.ucCxp_MenuReportes1.EnableBotonSalir = true;
             this.ucCxp_MenuReportes1.Location = new System.Drawing.Point(0, 53);
             this.ucCxp_MenuReportes1.Name = "ucCxp_MenuReportes1";
-            this.ucCxp_MenuReportes1.Size = new System.Drawing.Size(769, 95);
+            this.ucCxp_MenuReportes1.Size = new System.Drawing.Size(875, 95);
             this.ucCxp_MenuReportes1.TabIndex = 0;
             this.ucCxp_MenuReportes1.Visiblebei_clase_prov = DevExpress.XtraBars.BarItemVisibility.Always;
             this.ucCxp_MenuReportes1.VisiblebeiCheck1 = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -734,14 +734,14 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(769, 53);
+            this.barDockControlTop.Size = new System.Drawing.Size(875, 53);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 392);
-            this.barDockControlBottom.Size = new System.Drawing.Size(769, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(875, 28);
             // 
             // barDockControlLeft
             // 
@@ -754,7 +754,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(769, 53);
+            this.barDockControlRight.Location = new System.Drawing.Point(875, 53);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 339);
             // 
             // printPreviewBarCheckItem1
@@ -937,7 +937,7 @@
             this.printControl1.IsMetric = true;
             this.printControl1.Location = new System.Drawing.Point(0, 148);
             this.printControl1.Name = "printControl1";
-            this.printControl1.Size = new System.Drawing.Size(769, 244);
+            this.printControl1.Size = new System.Drawing.Size(875, 244);
             this.printControl1.TabIndex = 5;
             this.printControl1.TooltipFont = new System.Drawing.Font("Tahoma", 8.25F);
             // 
@@ -945,7 +945,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 420);
+            this.ClientSize = new System.Drawing.Size(875, 420);
             this.Controls.Add(this.printControl1);
             this.Controls.Add(this.ucCxp_MenuReportes1);
             this.Controls.Add(this.barDockControlLeft);
