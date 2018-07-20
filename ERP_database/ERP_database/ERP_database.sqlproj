@@ -1887,5 +1887,6 @@
     <Build Include="EntidadRegulatoria\Tables\ATS_ventas.sql" />
     <Build Include="EntidadRegulatoria\Stored Procedures\generarATS.sql" />
     <Build Include="Security\EntidadRegulatoria.sql" />
+    <Build Include="EntidadRegulatoria\Tables\ATS_exportaciones.sql" />
   </ItemGroup>
 </Project>
