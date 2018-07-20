@@ -25,8 +25,12 @@
     [ptoEmiModificado]  VARCHAR (3)     NULL,
     [secModificado]     VARCHAR (9)     NULL,
     [autModificado]     VARCHAR (49)    NULL,
+    [re_tipo_Ret]       VARCHAR (10)    NOT NULL,
+    [denopr]            VARCHAR (500)   NULL,
     CONSTRAINT [PK_retenciones] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdPeriodo] ASC, [Secuencia] ASC)
 );
+
+
 
 
 
