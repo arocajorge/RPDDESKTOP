@@ -4361,6 +4361,9 @@
     <Compile Include="vwRo_Total_IngEgr_x_Empleado.cs">
       <DependentUpon>ModelRoles.tt</DependentUpon>
     </Compile>
+    <Compile Include="vwseg_Menu_x_Usuario_x_Empresa.cs">
+      <DependentUpon>ModelSeguAcceso.tt</DependentUpon>
+    </Compile>
     <Compile Include="vwseg_Usuario_x_Empresa.cs">
       <DependentUpon>ModelSeguAcceso.tt</DependentUpon>
     </Compile>
