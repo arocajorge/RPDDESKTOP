@@ -22,18 +22,16 @@ namespace Cus.Erp.Reports.Naturisa
             : base("name=EntitiesCXP_Rpt_Naturisa")
         {
         }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
         public void SetCommandTimeOut(int TimeOut)
         {
             ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = TimeOut;
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
     
         public DbSet<vwCXP_NATU_Rpt006> vwCXP_NATU_Rpt006 { get; set; }
-        public DbSet<vwCXP_NATU_Rpt007> vwCXP_NATU_Rpt007 { get; set; }
         public DbSet<vwCXP_NATU_Rpt005> vwCXP_NATU_Rpt005 { get; set; }
         public DbSet<vwCXP_NATU_Rpt002> vwCXP_NATU_Rpt002 { get; set; }
         public DbSet<vwCXP_NATU_Rpt003> vwCXP_NATU_Rpt003 { get; set; }
@@ -44,6 +42,7 @@ namespace Cus.Erp.Reports.Naturisa
         public DbSet<vwCXP_NATU_Rpt010> vwCXP_NATU_Rpt010 { get; set; }
         public DbSet<vwCXP_NATU_Rpt011> vwCXP_NATU_Rpt011 { get; set; }
         public DbSet<vwCXP_NATU_Rpt012> vwCXP_NATU_Rpt012 { get; set; }
+        public DbSet<vwCXP_NATU_Rpt007> vwCXP_NATU_Rpt007 { get; set; }
     
         public virtual ObjectResult<spCXP_NATU_Rpt003_Result> spCXP_NATU_Rpt003(Nullable<int> idEmpresa, Nullable<decimal> idProveedor, string tipo_Persona, Nullable<System.DateTime> fechaIni, Nullable<System.DateTime> fechaFin)
         {

@@ -1888,5 +1888,6 @@
     <Build Include="EntidadRegulatoria\Stored Procedures\generarATS.sql" />
     <Build Include="Security\EntidadRegulatoria.sql" />
     <Build Include="EntidadRegulatoria\Tables\ATS_exportaciones.sql" />
+    <Build Include="web\Views\VWCXP_009.sql" />
   </ItemGroup>
 </Project>
