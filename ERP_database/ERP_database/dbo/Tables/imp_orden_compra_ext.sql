@@ -1,8 +1,6 @@
 ﻿CREATE TABLE [dbo].[imp_orden_compra_ext] (
     [IdEmpresa]                    INT           NOT NULL,
     [IdOrdenCompra_ext]            DECIMAL (18)  NOT NULL,
-    [IdMoneda_origen]              INT           NOT NULL,
-    [IdMoneda_destino]             INT           NOT NULL,
     [IdProveedor]                  NUMERIC (18)  NOT NULL,
     [IdPais_origen]                VARCHAR (10)  NOT NULL,
     [IdPais_embarque]              VARCHAR (10)  NOT NULL,
@@ -36,8 +34,6 @@
     CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo1] FOREIGN KEY ([IdCatalogo_forma_pago]) REFERENCES [dbo].[imp_catalogo] ([IdCatalogo]),
     CONSTRAINT [FK_imp_orden_compra_ext_imp_liquidacion] FOREIGN KEY ([IdEmpresa], [IdLiquidacion]) REFERENCES [dbo].[imp_liquidacion] ([IdEmpresa], [IdLiquidacion]),
     CONSTRAINT [FK_imp_orden_compra_ext_tb_ciudad] FOREIGN KEY ([IdCiudad_destino]) REFERENCES [dbo].[tb_ciudad] ([IdCiudad]),
-    CONSTRAINT [FK_imp_orden_compra_ext_tb_moneda] FOREIGN KEY ([IdMoneda_origen]) REFERENCES [dbo].[tb_moneda] ([IdMoneda]),
-    CONSTRAINT [FK_imp_orden_compra_ext_tb_moneda1] FOREIGN KEY ([IdMoneda_destino]) REFERENCES [dbo].[tb_moneda] ([IdMoneda]),
     CONSTRAINT [FK_imp_orden_compra_ext_tb_pais] FOREIGN KEY ([IdPais_origen]) REFERENCES [dbo].[tb_pais] ([IdPais]),
     CONSTRAINT [FK_imp_orden_compra_ext_tb_pais1] FOREIGN KEY ([IdPais_embarque]) REFERENCES [dbo].[tb_pais] ([IdPais])
 );
