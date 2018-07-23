@@ -1891,5 +1891,6 @@
     <Build Include="web\Views\VWCXP_009.sql" />
     <Build Include="web\Views\VWFAC_005.sql" />
     <Build Include="web\Stored Procedures\SPFAC_005.sql" />
+    <Build Include="dbo\Views\vwfa_proforma_det.sql" />
   </ItemGroup>
 </Project>
