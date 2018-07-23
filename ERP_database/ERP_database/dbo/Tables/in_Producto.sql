@@ -49,6 +49,7 @@
     [signo_5]                 VARCHAR (3)     NULL,
     [porcentaje_5]            FLOAT (53)      NULL,
     [se_distribuye]           BIT             NULL,
+    [pr_imagen]               IMAGE           NULL,
     CONSTRAINT [PK_in_Producto] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdProducto] ASC),
     CONSTRAINT [FK_in_Producto_in_categorias] FOREIGN KEY ([IdEmpresa], [IdCategoria]) REFERENCES [dbo].[in_categorias] ([IdEmpresa], [IdCategoria]),
     CONSTRAINT [FK_in_Producto_in_Marca] FOREIGN KEY ([IdEmpresa], [IdMarca]) REFERENCES [dbo].[in_Marca] ([IdEmpresa], [IdMarca]),
@@ -60,6 +61,8 @@
     CONSTRAINT [FK_in_Producto_in_UnidadMedida1] FOREIGN KEY ([IdUnidadMedida_Consumo]) REFERENCES [dbo].[in_UnidadMedida] ([IdUnidadMedida]),
     CONSTRAINT [FK_in_Producto_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
+
+
 
 
 
