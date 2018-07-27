@@ -16,6 +16,9 @@ FROM            dbo.fa_factura INNER JOIN
                          dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
                          dbo.tb_sucursal ON dbo.fa_factura_det.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.fa_factura_det.IdSucursal = dbo.tb_sucursal.IdSucursal INNER JOIN
                          dbo.in_presentacion ON dbo.in_Producto.IdEmpresa = dbo.in_presentacion.IdEmpresa AND dbo.in_Producto.IdPresentacion = dbo.in_presentacion.IdPresentacion
+
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWFAC_001';
 

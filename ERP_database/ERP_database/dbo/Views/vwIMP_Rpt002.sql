@@ -8,7 +8,7 @@
                          dbo.imp_orden_compra_ext_det.od_costo_convertido, dbo.imp_orden_compra_ext_det.od_total_fob, dbo.imp_orden_compra_ext_det.od_factor_costo, dbo.imp_orden_compra_ext_det.od_costo_bodega, 
                          dbo.imp_orden_compra_ext_det.od_costo_total, dbo.imp_orden_compra_ext.oe_valor_seguro, dbo.imp_orden_compra_ext.oe_valor_flete, dbo.imp_orden_compra_ext.oe_codigo, 
                          dbo.imp_orden_compra_ext.oe_fecha_llegada_est, dbo.imp_orden_compra_ext.oe_fecha_embarque_est, dbo.imp_orden_compra_ext.oe_fecha_desaduanizacion_est, dbo.imp_orden_compra_ext.oe_fecha, 
-                         dbo.imp_catalogo.ca_descripcion
+                         dbo.cp_pagos_sri.formas_pago_sri
 FROM            dbo.imp_gasto_x_ct_plancta INNER JOIN
                          dbo.imp_gasto ON dbo.imp_gasto_x_ct_plancta.IdGasto_tipo = dbo.imp_gasto.IdGasto_tipo CROSS JOIN
                          dbo.imp_orden_compra_ext INNER JOIN
@@ -21,4 +21,4 @@ FROM            dbo.imp_gasto_x_ct_plancta INNER JOIN
                          dbo.imp_orden_compra_ext.IdProveedor = dbo.cp_proveedor.IdProveedor INNER JOIN
                          dbo.imp_orden_compra_ext_det ON dbo.imp_orden_compra_ext.IdEmpresa = dbo.imp_orden_compra_ext_det.IdEmpresa AND 
                          dbo.imp_orden_compra_ext.IdOrdenCompra_ext = dbo.imp_orden_compra_ext_det.IdOrdenCompra_ext INNER JOIN
-                         dbo.imp_catalogo ON dbo.imp_orden_compra_ext.IdCatalogo_forma_pago = dbo.imp_catalogo.IdCatalogo
+                         dbo.cp_pagos_sri ON dbo.imp_orden_compra_ext.codigo_pago_sri = dbo.cp_pagos_sri.codigo_pago_sri

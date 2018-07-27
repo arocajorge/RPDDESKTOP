@@ -2,7 +2,7 @@
 	AS 
 
 	SELECT        dbo.imp_orden_compra_ext.IdEmpresa, dbo.imp_orden_compra_ext.IdOrdenCompra_ext, dbo.tb_persona.pe_direccion, null pe_telefonoCasa, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, 
-                         dbo.imp_catalogo.ca_descripcion, dbo.in_Producto.pr_descripcion, dbo.in_Producto.pr_codigo, dbo.tb_ciudad.Descripcion_Ciudad, dbo.imp_orden_compra_ext.oe_fecha_llegada_est, 
+                         dbo.cp_pagos_sri.formas_pago_sri, dbo.in_Producto.pr_descripcion, dbo.in_Producto.pr_codigo, dbo.tb_ciudad.Descripcion_Ciudad, dbo.imp_orden_compra_ext.oe_fecha_llegada_est, 
                          dbo.imp_orden_compra_ext.oe_fecha_embarque_est, dbo.imp_orden_compra_ext.oe_fecha_desaduanizacion_est, dbo.imp_orden_compra_ext.oe_observacion, dbo.imp_orden_compra_ext.oe_codigo, 
                          dbo.imp_orden_compra_ext.oe_valor_flete, dbo.imp_orden_compra_ext.oe_valor_seguro, dbo.imp_orden_compra_ext.fecha_creacion, dbo.imp_orden_compra_ext.oe_fecha_llegada, 
                          dbo.imp_orden_compra_ext.oe_fecha_embarque, dbo.imp_orden_compra_ext.oe_fecha, dbo.imp_orden_compra_ext_det.od_cantidad, dbo.imp_orden_compra_ext_det.od_costo, 
@@ -18,4 +18,4 @@ FROM            dbo.imp_orden_compra_ext INNER JOIN
                          dbo.tb_pais AS paisOrigen ON dbo.imp_orden_compra_ext.IdPais_origen = paisOrigen.IdPais INNER JOIN
                          dbo.tb_pais AS paisEmbarque ON dbo.imp_orden_compra_ext.IdPais_embarque = paisEmbarque.IdPais INNER JOIN
                          dbo.tb_ciudad ON dbo.imp_orden_compra_ext.IdCiudad_destino = dbo.tb_ciudad.IdCiudad INNER JOIN
-                         dbo.imp_catalogo ON dbo.imp_orden_compra_ext.IdCatalogo_forma_pago = dbo.imp_catalogo.IdCatalogo
+                         dbo.cp_pagos_sri ON dbo.imp_orden_compra_ext.codigo_pago_sri = dbo.cp_pagos_sri.codigo_pago_sri
