@@ -3,7 +3,7 @@ AS
 SELECT      A.IdEmpresa, A.IdSucursal, A.IdBodega, A.Tipo, A.IdNota AS IdCbte, A.Serie1, A.Serie2, A.NumNota_Impresa, A.NumAutorizacion, A.IdCliente, 
                       A.no_fecha AS fecha, A.no_fecha_venc, CASE WHEN A.NumNota_Impresa IS NULL THEN 'N/D#:' + CAST(A.IdNota AS varchar(20)) 
                       ELSE 'N/D#:' + A.Serie1 + '-' + A.Serie2 + '-' + A.NumNota_Impresa + '/' + CAST(A.IdNota AS varchar(20)) END AS Referencia, SUM(fa_notaCreDeb_det.sc_subtotal) 
-                      SubTotal, SUM(fa_notaCreDeb_det.sc_iva) Iva, SUM(fa_notaCreDeb_det.sc_total) + AVG(A.flete) + AVG(A.interes) + AVG(A.valor1) + AVG(A.valor2) AS Total
+                      SubTotal, SUM(fa_notaCreDeb_det.sc_iva) Iva, SUM(fa_notaCreDeb_det.sc_total)  AS Total
 FROM         vwfa_notaCreDeb AS A INNER JOIN
                       fa_notaCreDeb_det ON A.IdEmpresa = fa_notaCreDeb_det.IdEmpresa AND A.IdSucursal = fa_notaCreDeb_det.IdSucursal AND 
                       A.IdBodega = fa_notaCreDeb_det.IdBodega AND A.IdNota = fa_notaCreDeb_det.IdNota

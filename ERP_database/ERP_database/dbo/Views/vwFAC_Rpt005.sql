@@ -5,9 +5,7 @@ SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_
                          + '-' + dbo.fa_notaCreDeb.Serie1 + '-' + dbo.fa_notaCreDeb.Serie2 + '-' + dbo.fa_notaCreDeb.NumNota_Impresa + '/' + CAST(dbo.fa_notaCreDeb.IdNota AS varchar(20)) 
                          AS numDocumento, dbo.fa_notaCreDeb.sc_observacion AS Referencia, CAST(dbo.fa_notaCreDeb.IdNota AS varchar(20)) AS IdComprobante, 
                          dbo.fa_notaCreDeb.CodNota AS CodComprobante, dbo.tb_sucursal.Su_Descripcion, dbo.fa_notaCreDeb.IdCliente, 
-                         dbo.tb_persona.pe_nombreCompleto AS nombreCliente, dbo.fa_notaCreDeb.no_fecha, ROUND(SUM(dbo.fa_notaCreDeb_det.sc_total) + AVG(dbo.fa_notaCreDeb.flete) 
-                         + AVG(dbo.fa_notaCreDeb.interes) + AVG(dbo.fa_notaCreDeb.valor1) + AVG(dbo.fa_notaCreDeb.valor2), 2) AS vt_total, ROUND(SUM(dbo.fa_notaCreDeb_det.sc_total) 
-                         + AVG(dbo.fa_notaCreDeb.flete) + AVG(dbo.fa_notaCreDeb.interes) + AVG(dbo.fa_notaCreDeb.valor1) + AVG(dbo.fa_notaCreDeb.valor2), 2) 
+                         dbo.tb_persona.pe_nombreCompleto AS nombreCliente, dbo.fa_notaCreDeb.no_fecha, ROUND(SUM(dbo.fa_notaCreDeb_det.sc_total),2)  AS vt_total, 
                          - (CASE WHEN SUM(notCxc.Valor_cobro) IS NULL THEN 0 ELSE SUM(notCxc.Valor_cobro) END) AS Saldo, (CASE WHEN SUM(notCxc.Valor_cobro) IS NULL 
                          THEN 0 ELSE SUM(notCxc.Valor_cobro) END) AS TotalCobrado, ROUND(SUM(dbo.fa_notaCreDeb_det.sc_subtotal), 2) AS vt_Subtotal, 
                          ROUND(SUM(dbo.fa_notaCreDeb_det.sc_iva), 2) AS vt_iva, dbo.fa_notaCreDeb.no_fecha_venc, dbo.in_Producto.IdProducto, 

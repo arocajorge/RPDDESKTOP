@@ -933,7 +933,6 @@
     <Build Include="dbo\Views\vwFAC_Rpt003.sql" />
     <Build Include="dbo\Views\vwFAC_Rpt002.sql" />
     <Build Include="dbo\Views\vwFAC_Rpt001.sql" />
-    <Build Include="dbo\Views\vwFAC_CUS_TAL_Rpt006.sql" />
     <Build Include="dbo\Views\vwFAC_CUS_TAL_Rpt004.sql" />
     <Build Include="dbo\Views\vwFAC_CUS_TAL_Rpt003.sql" />
     <Build Include="dbo\Views\vwFAC_CUS_NAT_Rpt002.sql" />
@@ -1342,12 +1341,7 @@
     <Build Include="Naturisa\Views\vwCXP_NATU_Rpt013.sql" />
     <Build Include="Grafinpren\Views\vwfa_Guia_Remision_graf.sql" />
     <Build Include="Grafinpren\Views\vwfa_factura_graf.sql" />
-    <Build Include="Grafinpren\Views\vwfa_NotaCre_graf.sql" />
-    <Build Include="Grafinpren\Views\vwcxc_Comisiones_x_vendedor.sql" />
-    <Build Include="Grafinpren\Views\vwCXC_GRAF_Rpt001.sql" />
-    <Build Include="Grafinpren\Views\vwFAC_GRAF_Rpt002.sql" />
     <Build Include="Grafinpren\Views\vwCXC_GRAF_Rpt003.sql" />
-    <Build Include="Grafinpren\Views\vwFAC_GRAF_Rpt001.sql" />
     <Build Include="Fj_servindustrias\Views\vwINV_FJ_Rpt007.sql" />
     <Build Include="Fj_servindustrias\Views\vwCOMP_FJ_Rpt001.sql" />
     <Build Include="Fj_servindustrias\Views\vwaf_Af_Poliza_x_AF.sql" />
@@ -1470,7 +1464,6 @@
     <Build Include="dbo\Stored Procedures\spSys_CargaInicialSistemas.sql" />
     <Build Include="dbo\Stored Procedures\spSys_CargaDataProducto_en_bodegas.sql" />
     <Build Include="dbo\Stored Procedures\spSys_CargaData_Mene_y_Menu_x_Usuario.sql" />
-    <Build Include="dbo\Stored Procedures\spSys_Carga_NotasDebCre_SIAC.sql" />
     <Build Include="dbo\Stored Procedures\spSys_Carga_Diarios_SIAC_DBERP.sql" />
     <Build Include="dbo\Stored Procedures\spSys_Carga_Clientes_desde_persona.sql" />
     <Build Include="dbo\Stored Procedures\spSys_Borrar_tablas_CXC_y_Relaciones_CAJBAN.sql" />
@@ -1582,7 +1575,6 @@
     <Build Include="Naturisa\Stored Procedures\spCXP_NATU_Rpt013.sql" />
     <Build Include="Naturisa\Stored Procedures\spCXP_NATU_Rpt012.sql" />
     <Build Include="Naturisa\Stored Procedures\spCXP_NATU_Rpt004.sql" />
-    <Build Include="Grafinpren\Stored Procedures\spCXC_GRAF_Rpt002.sql" />
     <Build Include="Fj_servindustrias\Stored Procedures\spro_empleados_sin_registro_asistencia.sql" />
     <Build Include="Fj_servindustrias\Stored Procedures\spro_empleados_con_jornadas_desfasada.sql" />
     <Build Include="Fj_servindustrias\Stored Procedures\spROLES_Rpt005.sql" />

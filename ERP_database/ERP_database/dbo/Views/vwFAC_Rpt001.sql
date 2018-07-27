@@ -33,7 +33,7 @@ SELECT        fa_notaCreDeb.IdEmpresa, fa_notaCreDeb.IdSucursal, fa_notaCreDeb.I
                          (CASE dbo.fa_TipoNota.Tipo WHEN 'C' THEN (dbo.fa_notaCreDeb_det.sc_iva * - 1) ELSE dbo.fa_notaCreDeb_det.sc_iva END) AS vt_iva, (CASE dbo.fa_TipoNota.Tipo WHEN 'C' THEN (dbo.fa_notaCreDeb_det.sc_total * - 1) 
                          ELSE dbo.fa_notaCreDeb_det.sc_total END) AS vt_total, tb_sucursal.Su_Descripcion, vwin_Cate_Lin_Grup_SubGrup.IdCategoria, vwin_Cate_Lin_Grup_SubGrup.IdLinea, vwin_Cate_Lin_Grup_SubGrup.IdGrupo, 
                          vwin_Cate_Lin_Grup_SubGrup.IdSubgrupo, vwin_Cate_Lin_Grup_SubGrup.ca_Categoria, vwin_Cate_Lin_Grup_SubGrup.nom_linea, vwin_Cate_Lin_Grup_SubGrup.nom_grupo, vwin_Cate_Lin_Grup_SubGrup.nom_subgrupo, 
-                         fa_cliente_tipo.Idtipo_cliente, fa_cliente_tipo.Descripcion_tip_cliente, fa_notaCreDeb.sc_observacion, fa_Vendedor.IdVendedor, fa_Vendedor.Ve_Vendedor AS Vendedor
+                         fa_cliente_tipo.Idtipo_cliente, fa_cliente_tipo.Descripcion_tip_cliente, fa_notaCreDeb.sc_observacion, 0 IdVendedor, '' AS Vendedor
 						
 FROM            fa_notaCreDeb INNER JOIN
                          tb_bodega ON fa_notaCreDeb.IdEmpresa = tb_bodega.IdEmpresa AND fa_notaCreDeb.IdSucursal = tb_bodega.IdSucursal AND fa_notaCreDeb.IdBodega = tb_bodega.IdBodega INNER JOIN
@@ -45,9 +45,7 @@ FROM            fa_notaCreDeb INNER JOIN
                          fa_notaCreDeb_det ON fa_notaCreDeb.IdEmpresa = fa_notaCreDeb_det.IdEmpresa AND fa_notaCreDeb.IdSucursal = fa_notaCreDeb_det.IdSucursal AND fa_notaCreDeb.IdBodega = fa_notaCreDeb_det.IdBodega AND 
                          fa_notaCreDeb.IdNota = fa_notaCreDeb_det.IdNota INNER JOIN
                          in_Producto ON fa_notaCreDeb_det.IdEmpresa = in_Producto.IdEmpresa AND fa_notaCreDeb_det.IdProducto = in_Producto.IdProducto INNER JOIN
-                         fa_TipoNota ON fa_notaCreDeb.IdTipoNota = fa_TipoNota.IdTipoNota INNER JOIN
-                         fa_Vendedor ON fa_notaCreDeb.IdEmpresa = fa_Vendedor.IdEmpresa AND fa_notaCreDeb.IdVendedor = fa_Vendedor.IdVendedor AND fa_notaCreDeb.IdEmpresa = fa_Vendedor.IdEmpresa AND 
-                         fa_notaCreDeb.IdVendedor = fa_Vendedor.IdVendedor AND fa_notaCreDeb.IdEmpresa = fa_Vendedor.IdEmpresa AND fa_notaCreDeb.IdVendedor = fa_Vendedor.IdVendedor LEFT OUTER JOIN
+                         fa_TipoNota ON fa_notaCreDeb.IdTipoNota = fa_TipoNota.IdTipoNota LEFT OUTER JOIN
                          vwin_Cate_Lin_Grup_SubGrup ON vwin_Cate_Lin_Grup_SubGrup.IdEmpresa = in_Producto.IdEmpresa AND vwin_Cate_Lin_Grup_SubGrup.IdCategoria = in_Producto.IdCategoria AND 
                          vwin_Cate_Lin_Grup_SubGrup.IdSubgrupo = in_Producto.IdSubGrupo
 						 where fa_notaCreDeb.Estado='A'

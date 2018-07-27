@@ -3,7 +3,7 @@ AS
 SELECT        conDet.IdEmpresa, conDet.IdSucursal, conDet.IdConciliacion, conDet.IdCobro, conDet.IdBodega_nt AS IdBodega, credDeb.Tipo, credDeb.IdNota, credDeb.CreDeb, 
                          credDeb.Serie1, credDeb.Serie2, credDeb.NumNota_Impresa, credDeb.IdCliente, credDeb.NomSucursal, credDeb.Nom_Bodega, credDeb.no_fecha, 
                          credDeb.no_fecha_venc, credDeb.sc_observacion, credDeb.Nom_Cliente, credDeb.Motivo_Nota, credDeb.Referencia, conDet.Valor_Aplicado AS sc_total, 
-                         conDet.Saldo_por_aplicar AS Saldo, conDet.IdTipoConciliacion, credDeb.IdTipoNota, credDeb.IdCaja
+                         conDet.Saldo_por_aplicar AS Saldo, conDet.IdTipoConciliacion, credDeb.IdTipoNota
 FROM            dbo.cxc_conciliacion AS conCab INNER JOIN
                          dbo.cxc_conciliacion_det AS conDet ON conCab.IdEmpresa = conDet.IdEmpresa AND conCab.IdSucursal = conDet.IdSucursal AND 
                          conCab.IdConciliacion = conDet.IdConciliacion INNER JOIN

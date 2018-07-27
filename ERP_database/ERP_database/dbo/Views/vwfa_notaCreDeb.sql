@@ -1,8 +1,8 @@
 ﻿CREATE view [dbo].[vwfa_notaCreDeb]
 as 
-SELECT d.IdEmpresa, d.IdSucursal, d.IdBodega, CASE CreDeb WHEN 'C' THEN 'NTCR' WHEN 'D' THEN 'NTDB' END AS Tipo, d.IdNota, CodNota, CreDeb, Serie1, Serie2, NumNota_Impresa, NumAutorizacion, d.IdCliente, d.IdVendedor, no_fecha, 
-                  no_fecha_venc, no_dev_venta, d.IdTipoNota, sc_observacion, d.Estado, flete, interes, valor1, valor2, IdCaja, IdPuntoVta, isnull(det.sc_subtotal,0) AS sc_subtotal,isnull(det.sc_iva,0) AS sc_iva, isnull(det.sc_total,0) as sc_total, isnull(cobro.valor_pago,0) valor_aplicado,
-				  round(isnull(det.sc_total,0) - isnull(cobro.valor_pago,0),2) as saldo, ltrim(rtrim(per.pe_nombreCompleto)) as nom_cliente, su.Su_Descripcion, bo.bo_descripcion, Ve_Vendedor, d.NaturalezaNota, tn.IdCtaCble
+SELECT d.IdEmpresa, d.IdSucursal, d.IdBodega, CASE CreDeb WHEN 'C' THEN 'NTCR' WHEN 'D' THEN 'NTDB' END AS Tipo, d.IdNota, CodNota, CreDeb, Serie1, Serie2, NumNota_Impresa, NumAutorizacion, d.IdCliente, no_fecha, 
+                  no_fecha_venc,  d.IdTipoNota, sc_observacion, d.Estado, IdPuntoVta, isnull(det.sc_subtotal,0) AS sc_subtotal,isnull(det.sc_iva,0) AS sc_iva, isnull(det.sc_total,0) as sc_total, isnull(cobro.valor_pago,0) valor_aplicado,
+				  round(isnull(det.sc_total,0) - isnull(cobro.valor_pago,0),2) as saldo, ltrim(rtrim(per.pe_nombreCompleto)) as nom_cliente, su.Su_Descripcion, bo.bo_descripcion, d.NaturalezaNota, tn.IdCtaCble
 FROM     dbo.fa_notaCreDeb d 
 
 left join (
@@ -27,7 +27,6 @@ inner join fa_cliente cli on d.IdEmpresa = cli.IdEmpresa AND cli.IdCliente = d.I
 inner join tb_persona per on cli.IdPersona = per.IdPersona
 left join tb_bodega bo on d.IdEmpresa = bo.IdEmpresa and d.IdSucursal = bo.IdSucursal and d.IdBodega = bo.IdBodega 
 inner join tb_sucursal su on bo.IdEmpresa = su.IdEmpresa and bo.IdSucursal = su.IdSucursal
-inner join fa_vendedor ve on ve.IdEmpresa = d.IdEmpresa and ve.IdVendedor = d.IdVendedor
 left join fa_TipoNota_x_Empresa_x_Sucursal tn on d.IdEmpresa = tn.IdEmpresa
 and d.IdSucursal = tn.IdSucursal and d.IdTipoNota = tn.IdTipoNota
 GO

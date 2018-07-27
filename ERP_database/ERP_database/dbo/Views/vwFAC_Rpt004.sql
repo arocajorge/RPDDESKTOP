@@ -6,10 +6,8 @@ SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_
                          + '-' + isnull(dbo.fa_notaCreDeb.Serie2, '') + '-' + isnull(dbo.fa_notaCreDeb.NumNota_Impresa, '') + '/' + CAST(dbo.fa_notaCreDeb.IdNota AS varchar(20)) 
                          END AS numDocumento, dbo.fa_notaCreDeb.sc_observacion AS Referencia, CAST(dbo.fa_notaCreDeb.IdNota AS varchar(20)) AS IdComprobante, 
                          dbo.fa_notaCreDeb.CodNota AS CodComprobante, dbo.tb_sucursal.Su_Descripcion, dbo.fa_notaCreDeb.IdCliente, 
-                         dbo.tb_persona.pe_nombreCompleto AS nombreCliente, dbo.tb_persona.pe_cedulaRuc, dbo.fa_notaCreDeb.no_fecha, ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.sc_total) 
-                         + AVG(dbo.fa_notaCreDeb.flete) + AVG(dbo.fa_notaCreDeb.interes) + AVG(dbo.fa_notaCreDeb.valor1) + AVG(dbo.fa_notaCreDeb.valor2), 2) AS vt_total, 
-                         ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.sc_total) + AVG(dbo.fa_notaCreDeb.flete) + AVG(dbo.fa_notaCreDeb.interes) + AVG(dbo.fa_notaCreDeb.valor1) 
-                         + AVG(dbo.fa_notaCreDeb.valor2), 2) - (CASE WHEN AVG(notCxc.Valor_cobro) IS NULL THEN 0 ELSE AVG(notCxc.Valor_cobro) END) AS Saldo, 
+                         dbo.tb_persona.pe_nombreCompleto AS nombreCliente, dbo.tb_persona.pe_cedulaRuc, dbo.fa_notaCreDeb.no_fecha, ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.sc_total), 2) AS vt_total, 
+                         ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.sc_total), 2) - (CASE WHEN AVG(notCxc.Valor_cobro) IS NULL THEN 0 ELSE AVG(notCxc.Valor_cobro) END) AS Saldo, 
                          (CASE WHEN AVG(notCxc.Valor_cobro) IS NULL THEN 0 ELSE AVG(notCxc.Valor_cobro) END) AS TotalCobrado, ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.SubTotal_0), 2) 
                          AS SubTotal_0,ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.SubTotal_Iva), 2) 
                          AS SubTotal_Iva, ROUND(SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.sc_iva), 2) AS vt_iva,SUM(dbo.vwfa_notaCreDeb_det_subtotal_iva_0_totales.sc_total) as total, dbo.fa_notaCreDeb.no_fecha_venc, dbo.fa_TipoNota.IdTipoNota, 

@@ -1,20 +1,19 @@
 ﻿CREATE VIEW [dbo].[vwfa_Nota_Credito] AS
 SELECT 
  notaCreDeb_agrupadas.IdEmpresa							,notaCreDeb_agrupadas.IdSucursal			,notaCreDeb_agrupadas.IdBodega				,notaCreDeb_agrupadas.IdNota				  
-,notaCreDeb_agrupadas.CreDeb							,notaCreDeb_agrupadas.IdCliente				,notaCreDeb_agrupadas.IdVendedor
-,notaCreDeb_agrupadas.no_fecha							,notaCreDeb_agrupadas.IdTipoNota			,notaCreDeb_agrupadas.sc_observacion		,notaCreDeb_agrupadas.IdDevolucion
+,notaCreDeb_agrupadas.CreDeb							,notaCreDeb_agrupadas.IdCliente				
+,notaCreDeb_agrupadas.no_fecha							,notaCreDeb_agrupadas.IdTipoNota			,notaCreDeb_agrupadas.sc_observacion	
 ,notaCreDeb_agrupadas.IdUsuarioUltMod					,notaCreDeb_agrupadas.Fecha_UltMod          ,notaCreDeb_agrupadas.IdUsuarioUltAnu		,notaCreDeb_agrupadas.Fecha_UltAnu
-,notaCreDeb_agrupadas.nom_pc							,notaCreDeb_agrupadas.ip					,notaCreDeb_agrupadas.MotiAnula				,notaCreDeb_agrupadas.bo_Descripcion
-,notaCreDeb_agrupadas.Su_Descripcion					,notaCreDeb_agrupadas.Ve_Vendedor			,notaCreDeb_agrupadas.pe_apellido			,notaCreDeb_agrupadas.pe_nombre
-,notaCreDeb_agrupadas.CodNota							,notaCreDeb_agrupadas.no_dev_venta			,notaCreDeb_agrupadas.no_fecha_venc			,notaCreDeb_agrupadas.Estado
-,notaCreDeb_agrupadas.interes							,notaCreDeb_agrupadas.valor1				,notaCreDeb_agrupadas.valor2				,notaCreDeb_agrupadas.IdUsuario
-,notaCreDeb_agrupadas.Serie1							,notaCreDeb_agrupadas.Serie2				,notaCreDeb_agrupadas.NumNota_Impresa		,notaCreDeb_agrupadas.flete
-,notaCreDeb_agrupadas.NaturalezaNota					,notaCreDeb_agrupadas.seguro				,notaCreDeb_agrupadas.IdTipoDocumento		,notaCreDeb_agrupadas.pe_cedulaRuc
-,notaCreDeb_agrupadas.IdCaja							,notaCreDeb_agrupadas.Caja					
+,notaCreDeb_agrupadas.MotiAnula				,notaCreDeb_agrupadas.bo_Descripcion
+,notaCreDeb_agrupadas.Su_Descripcion								,notaCreDeb_agrupadas.pe_apellido			,notaCreDeb_agrupadas.pe_nombre
+,notaCreDeb_agrupadas.CodNota							,notaCreDeb_agrupadas.no_fecha_venc			,notaCreDeb_agrupadas.Estado
+,notaCreDeb_agrupadas.IdUsuario
+,notaCreDeb_agrupadas.Serie1							,notaCreDeb_agrupadas.Serie2				,notaCreDeb_agrupadas.NumNota_Impresa	
+,notaCreDeb_agrupadas.NaturalezaNota									,notaCreDeb_agrupadas.IdTipoDocumento		,notaCreDeb_agrupadas.pe_cedulaRuc
+								
 
-,notaCreDeb_agrupadas.IdEmpresa_fac_doc_mod	,notaCreDeb_agrupadas.IdSucursal_fac_doc_mod
-,notaCreDeb_agrupadas.IdBodega_fac_doc_mod				,notaCreDeb_agrupadas.IdCbteVta_fac_doc_mod
-,notaCreDeb_agrupadas.IdCtaCble_TipoNota	,notaCreDeb_agrupadas.fecha_Ctble	
+
+,notaCreDeb_agrupadas.IdCtaCble_TipoNota	
 ,sum(notaCreDeb_agrupadas.sc_subtotal) sc_subtotal		
 ,sum(notaCreDeb_agrupadas.sc_total) sc_total
 ,sum(notaCreDeb_agrupadas.sc_iva) sc_iva
@@ -23,16 +22,15 @@ SELECT
 ,notaCreDeb_agrupadas.IdPuntoVta
 FROM 
 (
-SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_notaCreDeb.IdBodega, dbo.fa_notaCreDeb.IdNota, dbo.fa_notaCreDeb.CreDeb, dbo.fa_notaCreDeb.IdCliente, dbo.fa_notaCreDeb.IdVendedor, 
-                         dbo.fa_notaCreDeb.no_fecha, dbo.fa_notaCreDeb.IdTipoNota, dbo.fa_notaCreDeb.sc_observacion, dbo.fa_notaCreDeb.IdDevolucion, dbo.fa_notaCreDeb.IdUsuarioUltMod, dbo.fa_notaCreDeb.Fecha_UltMod, 
-                         dbo.fa_notaCreDeb.IdUsuarioUltAnu, dbo.fa_notaCreDeb.Fecha_UltAnu, dbo.fa_notaCreDeb.nom_pc, dbo.fa_notaCreDeb.ip, dbo.fa_notaCreDeb.MotiAnula, dbo.tb_bodega.bo_Descripcion, 
-                         dbo.tb_sucursal.Su_Descripcion, dbo.fa_Vendedor.Ve_Vendedor, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.fa_notaCreDeb.CodNota, dbo.fa_notaCreDeb.no_dev_venta, 
-                         dbo.fa_notaCreDeb.no_fecha_venc, dbo.fa_notaCreDeb.Estado, dbo.fa_notaCreDeb.interes, dbo.fa_notaCreDeb.valor1, dbo.fa_notaCreDeb.valor2, dbo.fa_notaCreDeb.IdUsuario, dbo.fa_notaCreDeb.Serie1, 
-                         dbo.fa_notaCreDeb.Serie2, dbo.fa_notaCreDeb.NumNota_Impresa, dbo.fa_notaCreDeb.flete, dbo.fa_notaCreDeb.NaturalezaNota, dbo.fa_notaCreDeb.seguro, dbo.tb_persona.IdTipoDocumento, 
-                         dbo.tb_persona.pe_cedulaRuc, dbo.fa_notaCreDeb.IdCaja, dbo.caj_Caja.ca_Descripcion AS Caja
-						 , dbo.fa_notaCreDeb.IdEmpresa_fac_doc_mod, dbo.fa_notaCreDeb.IdSucursal_fac_doc_mod, 
-                         dbo.fa_notaCreDeb.IdBodega_fac_doc_mod, dbo.fa_notaCreDeb.IdCbteVta_fac_doc_mod,
-						  dbo.fa_notaCreDeb.IdCtaCble_TipoNota, dbo.fa_notaCreDeb.fecha_Ctble,
+SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_notaCreDeb.IdBodega, dbo.fa_notaCreDeb.IdNota, dbo.fa_notaCreDeb.CreDeb, dbo.fa_notaCreDeb.IdCliente,
+                         dbo.fa_notaCreDeb.no_fecha, dbo.fa_notaCreDeb.IdTipoNota, dbo.fa_notaCreDeb.sc_observacion,  dbo.fa_notaCreDeb.IdUsuarioUltMod, dbo.fa_notaCreDeb.Fecha_UltMod, 
+                         dbo.fa_notaCreDeb.IdUsuarioUltAnu, dbo.fa_notaCreDeb.Fecha_UltAnu,  dbo.fa_notaCreDeb.MotiAnula, dbo.tb_bodega.bo_Descripcion, 
+                         dbo.tb_sucursal.Su_Descripcion,  dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.fa_notaCreDeb.CodNota, 
+                         dbo.fa_notaCreDeb.no_fecha_venc, dbo.fa_notaCreDeb.Estado,  dbo.fa_notaCreDeb.IdUsuario, dbo.fa_notaCreDeb.Serie1, 
+                         dbo.fa_notaCreDeb.Serie2, dbo.fa_notaCreDeb.NumNota_Impresa,  dbo.fa_notaCreDeb.NaturalezaNota, dbo.tb_persona.IdTipoDocumento, 
+                         dbo.tb_persona.pe_cedulaRuc, 
+						  
+						  dbo.fa_notaCreDeb.IdCtaCble_TipoNota,
 						 SUM(dbo.fa_notaCreDeb_det.sc_subtotal) 
                          AS sc_subtotal, SUM(dbo.fa_notaCreDeb_det.sc_iva) AS sc_iva,
 						 SUM(dbo.fa_notaCreDeb_det.sc_total) AS sc_total,
@@ -48,37 +46,34 @@ SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_
 FROM            dbo.fa_notaCreDeb INNER JOIN
                          dbo.fa_notaCreDeb_det ON dbo.fa_notaCreDeb.IdEmpresa = dbo.fa_notaCreDeb_det.IdEmpresa AND dbo.fa_notaCreDeb.IdSucursal = dbo.fa_notaCreDeb_det.IdSucursal AND 
                          dbo.fa_notaCreDeb.IdBodega = dbo.fa_notaCreDeb_det.IdBodega AND dbo.fa_notaCreDeb.IdNota = dbo.fa_notaCreDeb_det.IdNota INNER JOIN
-                         dbo.fa_Vendedor ON dbo.fa_notaCreDeb.IdEmpresa = dbo.fa_Vendedor.IdEmpresa AND dbo.fa_notaCreDeb.IdVendedor = dbo.fa_Vendedor.IdVendedor INNER JOIN
                          dbo.fa_cliente ON dbo.fa_notaCreDeb.IdEmpresa = dbo.fa_cliente.IdEmpresa AND dbo.fa_notaCreDeb.IdCliente = dbo.fa_cliente.IdCliente INNER JOIN
                          dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
                          dbo.tb_bodega ON dbo.fa_notaCreDeb.IdEmpresa = dbo.tb_bodega.IdEmpresa AND dbo.fa_notaCreDeb.IdSucursal = dbo.tb_bodega.IdSucursal AND 
                          dbo.fa_notaCreDeb.IdBodega = dbo.tb_bodega.IdBodega INNER JOIN
-                         dbo.tb_sucursal ON dbo.tb_bodega.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.tb_bodega.IdSucursal = dbo.tb_sucursal.IdSucursal INNER JOIN
-                         dbo.caj_Caja ON dbo.fa_notaCreDeb.IdEmpresa = dbo.caj_Caja.IdEmpresa AND dbo.fa_notaCreDeb.IdCaja = dbo.caj_Caja.IdCaja
-GROUP BY dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_notaCreDeb.IdBodega, dbo.fa_notaCreDeb.IdNota, dbo.fa_notaCreDeb.CreDeb, dbo.fa_notaCreDeb.IdCliente, dbo.fa_notaCreDeb.IdVendedor, 
-                         dbo.fa_notaCreDeb.no_fecha, dbo.fa_notaCreDeb.IdTipoNota, dbo.fa_notaCreDeb.sc_observacion, dbo.fa_notaCreDeb.IdDevolucion, dbo.fa_notaCreDeb.IdUsuarioUltMod, dbo.fa_notaCreDeb.Fecha_UltMod, 
-                         dbo.fa_notaCreDeb.IdUsuarioUltAnu, dbo.fa_notaCreDeb.Fecha_UltAnu, dbo.fa_notaCreDeb.nom_pc, dbo.fa_notaCreDeb.ip, dbo.fa_notaCreDeb.MotiAnula, dbo.tb_bodega.bo_Descripcion, 
-                         dbo.tb_sucursal.Su_Descripcion, dbo.fa_Vendedor.Ve_Vendedor, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.fa_notaCreDeb.CodNota, dbo.fa_notaCreDeb.no_dev_venta, 
-                         dbo.fa_notaCreDeb.no_fecha_venc, dbo.fa_notaCreDeb.Estado, dbo.fa_notaCreDeb.interes, dbo.fa_notaCreDeb.valor1, dbo.fa_notaCreDeb.valor2, dbo.fa_notaCreDeb.IdUsuario, dbo.fa_notaCreDeb.Serie1, 
-                         dbo.fa_notaCreDeb.Serie2, dbo.fa_notaCreDeb.NumNota_Impresa, dbo.fa_notaCreDeb.flete, dbo.fa_notaCreDeb.NaturalezaNota, dbo.fa_notaCreDeb.seguro, dbo.tb_persona.IdTipoDocumento, 
-                         dbo.tb_persona.pe_cedulaRuc, dbo.fa_notaCreDeb.IdCaja, dbo.caj_Caja.ca_Descripcion, dbo.fa_notaCreDeb.IdEmpresa_fac_doc_mod, dbo.fa_notaCreDeb.IdSucursal_fac_doc_mod, 
-                         dbo.fa_notaCreDeb.IdBodega_fac_doc_mod, dbo.fa_notaCreDeb.IdCbteVta_fac_doc_mod, dbo.fa_notaCreDeb.IdCtaCble_TipoNota, dbo.fa_notaCreDeb.fecha_Ctble
+                         dbo.tb_sucursal ON dbo.tb_bodega.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.tb_bodega.IdSucursal = dbo.tb_sucursal.IdSucursal 
+GROUP BY dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_notaCreDeb.IdBodega, dbo.fa_notaCreDeb.IdNota, dbo.fa_notaCreDeb.CreDeb, dbo.fa_notaCreDeb.IdCliente, 
+                         dbo.fa_notaCreDeb.no_fecha, dbo.fa_notaCreDeb.IdTipoNota, dbo.fa_notaCreDeb.sc_observacion,  dbo.fa_notaCreDeb.IdUsuarioUltMod, dbo.fa_notaCreDeb.Fecha_UltMod, 
+                         dbo.fa_notaCreDeb.IdUsuarioUltAnu, dbo.fa_notaCreDeb.Fecha_UltAnu, dbo.fa_notaCreDeb.MotiAnula, dbo.tb_bodega.bo_Descripcion, 
+                         dbo.tb_sucursal.Su_Descripcion,  dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.fa_notaCreDeb.CodNota, 
+                         dbo.fa_notaCreDeb.no_fecha_venc, dbo.fa_notaCreDeb.Estado,  dbo.fa_notaCreDeb.IdUsuario, dbo.fa_notaCreDeb.Serie1, 
+                         dbo.fa_notaCreDeb.Serie2, dbo.fa_notaCreDeb.NumNota_Impresa,  dbo.fa_notaCreDeb.NaturalezaNota, dbo.tb_persona.IdTipoDocumento, 
+                         dbo.tb_persona.pe_cedulaRuc, dbo.fa_notaCreDeb.IdCtaCble_TipoNota
 						 ,dbo.fa_notaCreDeb_det.IdCod_Impuesto_Iva,dbo.fa_notaCreDeb.IdPuntoVta
 )as  notaCreDeb_agrupadas
 group by  
 notaCreDeb_agrupadas.IdEmpresa							,notaCreDeb_agrupadas.IdSucursal			,notaCreDeb_agrupadas.IdBodega				,notaCreDeb_agrupadas.IdNota				  
-,notaCreDeb_agrupadas.CreDeb							,notaCreDeb_agrupadas.IdCliente				,notaCreDeb_agrupadas.IdVendedor
-,notaCreDeb_agrupadas.no_fecha							,notaCreDeb_agrupadas.IdTipoNota			,notaCreDeb_agrupadas.sc_observacion		,notaCreDeb_agrupadas.IdDevolucion
+,notaCreDeb_agrupadas.CreDeb							,notaCreDeb_agrupadas.IdCliente				
+,notaCreDeb_agrupadas.no_fecha							,notaCreDeb_agrupadas.IdTipoNota			,notaCreDeb_agrupadas.sc_observacion	
 ,notaCreDeb_agrupadas.IdUsuarioUltMod					,notaCreDeb_agrupadas.Fecha_UltMod          ,notaCreDeb_agrupadas.IdUsuarioUltAnu		,notaCreDeb_agrupadas.Fecha_UltAnu
-,notaCreDeb_agrupadas.nom_pc							,notaCreDeb_agrupadas.ip					,notaCreDeb_agrupadas.MotiAnula				,notaCreDeb_agrupadas.bo_Descripcion
-,notaCreDeb_agrupadas.Su_Descripcion					,notaCreDeb_agrupadas.Ve_Vendedor			,notaCreDeb_agrupadas.pe_apellido			,notaCreDeb_agrupadas.pe_nombre
-,notaCreDeb_agrupadas.CodNota							,notaCreDeb_agrupadas.no_dev_venta			,notaCreDeb_agrupadas.no_fecha_venc			,notaCreDeb_agrupadas.Estado
-,notaCreDeb_agrupadas.interes							,notaCreDeb_agrupadas.valor1				,notaCreDeb_agrupadas.valor2				,notaCreDeb_agrupadas.IdUsuario
-,notaCreDeb_agrupadas.Serie1							,notaCreDeb_agrupadas.Serie2				,notaCreDeb_agrupadas.NumNota_Impresa		,notaCreDeb_agrupadas.flete
-,notaCreDeb_agrupadas.NaturalezaNota					,notaCreDeb_agrupadas.seguro				,notaCreDeb_agrupadas.IdTipoDocumento		,notaCreDeb_agrupadas.pe_cedulaRuc
-,notaCreDeb_agrupadas.IdCaja							,notaCreDeb_agrupadas.Caja					,notaCreDeb_agrupadas.IdEmpresa_fac_doc_mod	,notaCreDeb_agrupadas.IdSucursal_fac_doc_mod
-,notaCreDeb_agrupadas.IdBodega_fac_doc_mod				,notaCreDeb_agrupadas.IdCtaCble_TipoNota	,notaCreDeb_agrupadas.fecha_Ctble			
-,notaCreDeb_agrupadas.IdCbteVta_fac_doc_mod				,notaCreDeb_agrupadas.IdPuntoVta
+									,notaCreDeb_agrupadas.MotiAnula				,notaCreDeb_agrupadas.bo_Descripcion
+,notaCreDeb_agrupadas.Su_Descripcion					,notaCreDeb_agrupadas.pe_apellido			,notaCreDeb_agrupadas.pe_nombre
+,notaCreDeb_agrupadas.CodNota			,notaCreDeb_agrupadas.no_fecha_venc			,notaCreDeb_agrupadas.Estado
+,notaCreDeb_agrupadas.IdUsuario
+,notaCreDeb_agrupadas.Serie1							,notaCreDeb_agrupadas.Serie2				,notaCreDeb_agrupadas.NumNota_Impresa	
+,notaCreDeb_agrupadas.NaturalezaNota								,notaCreDeb_agrupadas.IdTipoDocumento		,notaCreDeb_agrupadas.pe_cedulaRuc
+			
+			,notaCreDeb_agrupadas.IdCtaCble_TipoNota			
+				,notaCreDeb_agrupadas.IdPuntoVta
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_Nota_Credito';
 

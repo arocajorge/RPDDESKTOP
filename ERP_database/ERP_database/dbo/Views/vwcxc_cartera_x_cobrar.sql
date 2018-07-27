@@ -32,9 +32,7 @@ GROUP BY cabfac.vt_tipoDoc + '-' + cast(cast(cabfac.vt_NumFactura AS int) AS var
 UNION
 SELECT        A.IdEmpresa, A.IdSucursal, A.IdBodega, 'NTDB' AS CreDeb, CASE WHEN A.NumNota_Impresa IS NULL THEN 'N/D#' + CAST(A.IdNota AS varchar(20)) 
                          ELSE 'N/D#' + A.Serie1 + '-' + A.Serie2 + '' + A.NumNota_Impresa END AS Documento, A.sc_observacion, A.IdNota, A.CodNota, su.Su_Descripcion, A.IdCliente, 
-                         A.no_fecha, ROUND(SUM(B.sc_total) + ISNULL(AVG(A.flete), 0) + ISNULL(AVG(A.interes), 0) + ISNULL(AVG(A.valor1), 0) + ISNULL(AVG(A.valor2), 0) 
-                         + ISNULL(AVG(A.seguro), 0), 2) AS sc_total, ROUND(SUM(B.sc_total) + ISNULL(AVG(A.flete), 0) + ISNULL(AVG(A.interes), 0) + ISNULL(AVG(A.valor1), 0) 
-                         + ISNULL(AVG(A.valor2), 0) + ISNULL(AVG(A.seguro), 0) - ISNULL(SUM(CB.dc_ValorPago), 0), 2) AS Saldo, ISNULL(SUM(CB.dc_ValorPago), 0) AS totalCobrado, 
+                         A.no_fecha, ROUND(SUM(B.sc_total),2)AS sc_total, ROUND(SUM(B.sc_total) - ISNULL(SUM(CB.dc_ValorPago), 0), 2) AS Saldo, ISNULL(SUM(CB.dc_ValorPago), 0) AS totalCobrado, 
                          Bo.bo_Descripcion, ROUND(SUM(B.sc_subtotal), 2) AS sc_subtotal, ROUND(SUM(B.sc_iva), 2) AS sc_iva, A.no_fecha_venc, 
                          isnull(vwcxc_cobros_x_vta_nota_x_RetFuente_Sumatoria.dc_ValorPago, 0) AS RtFT, isnull(vwcxc_cobros_x_vta_nota_x_RetIVA_Sumatoria.dc_ValorPago, 0) 
                          AS RtIVA, Cli.Codigo AS CodCliente, tb_persona.pe_nombreCompleto, tb_empresa.em_nombre, A.Estado

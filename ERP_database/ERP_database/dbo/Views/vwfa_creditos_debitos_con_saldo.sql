@@ -4,16 +4,15 @@ SELECT        NT.IdEmpresa, NT.IdSucursal, NT.IdBodega, CASE NT.CreDeb WHEN 'C' 
                          NT.Serie2, NT.NumNota_Impresa, cli.IdCliente, sucu.Su_Descripcion AS NomSucursal, Bod.bo_Descripcion AS Nom_Bodega, NT.no_fecha, NT.no_fecha_venc, 
                          NT.sc_observacion, pe.pe_nombreCompleto AS Nom_Cliente, tipNt.No_Descripcion AS Motivo_Nota, CASE WHEN NT.NumNota_Impresa IS NOT NULL 
                          THEN 'NT' + NT.CreDeb + '-' + NT.Serie1 + NT.Serie2 + CAST(NT.NumNota_Impresa AS varchar(20)) + '/' + CAST(NT.IdNota AS varchar(25)) 
-                         ELSE 'NT' + NT.CreDeb + '-' + CAST(NT.IdNota AS varchar(25)) END AS Referencia, SUM(NT_det.sc_total) + AVG(NT.flete) + AVG(NT.interes) + AVG(NT.valor1) 
-                         + AVG(NT.valor2) AS sc_total, (SUM(NT_det.sc_total) + AVG(NT.flete) + AVG(NT.interes) + AVG(NT.valor1) + AVG(NT.valor2)) -
+                         ELSE 'NT' + NT.CreDeb + '-' + CAST(NT.IdNota AS varchar(25)) END AS Referencia, SUM(NT_det.sc_total) AS sc_total, SUM(NT_det.sc_total) -
                              ((SELECT        CASE WHEN SUM(notCxc.Valor_cobro) IS NULL THEN 0 ELSE SUM(notCxc.Valor_cobro) END AS Expr1
                                  FROM            dbo.fa_notaCreDeb_x_cxc_cobro AS notCxc
                                  WHERE        (IdEmpresa_nt = NT.IdEmpresa) AND (IdSucursal_nt = NT.IdSucursal) AND (IdNota_nt = NT.IdNota) AND (IdBodega_nt = NT.IdBodega)) +
                              (SELECT        ISNULL(ROUND(SUM(dc_ValorPago), 2), 0) AS Expr1
                                FROM            dbo.cxc_cobro_det AS cobro
                                WHERE        (IdEmpresa = NT.IdEmpresa) AND (IdSucursal = NT.IdSucursal) AND (IdBodega_Cbte = NT.IdBodega) AND (IdCbte_vta_nota = NT.IdNota) AND 
-                                                         (dc_TipoDocumento = (CASE NT.CreDeb WHEN 'C' THEN 'NTCR' ELSE 'NTDB' END)))) AS Saldo, 'NT_CR_DB' AS IdTipoConciliacion, tipNt.IdTipoNota, 
-                         NT.IdCaja
+                                                         (dc_TipoDocumento = (CASE NT.CreDeb WHEN 'C' THEN 'NTCR' ELSE 'NTDB' END)))) AS Saldo, 'NT_CR_DB' AS IdTipoConciliacion, tipNt.IdTipoNota
+                      
 FROM            dbo.fa_notaCreDeb AS NT INNER JOIN
                          dbo.fa_notaCreDeb_det AS NT_det ON NT.IdEmpresa = NT_det.IdEmpresa AND NT.IdSucursal = NT_det.IdSucursal AND NT.IdBodega = NT_det.IdBodega AND 
                          NT.IdNota = NT_det.IdNota INNER JOIN
@@ -25,8 +24,7 @@ FROM            dbo.fa_notaCreDeb AS NT INNER JOIN
                          dbo.cxc_cobro_det AS cobro ON cobro.IdEmpresa = NT.IdEmpresa AND cobro.IdSucursal = NT.IdSucursal AND cobro.IdBodega_Cbte = NT.IdBodega AND 
                          cobro.IdCbte_vta_nota = NT.IdNota AND cobro.dc_TipoDocumento = (CASE NT.CreDeb WHEN 'C' THEN 'NTCR' ELSE 'NTDB' END)
 GROUP BY NT.IdEmpresa, NT.IdSucursal, NT.IdBodega, NT.IdNota, NT.CodNota, NT.CreDeb, NT.Serie1, NT.Serie2, NT.NumNota_Impresa, NT.NumAutorizacion, cli.IdCliente, 
-                         sucu.Su_Descripcion, NT.no_fecha, NT.no_fecha_venc, NT.sc_observacion, pe.pe_nombreCompleto, tipNt.No_Descripcion, Bod.bo_Descripcion, tipNt.IdTipoNota, 
-                         NT.IdCaja
+                         sucu.Su_Descripcion, NT.no_fecha, NT.no_fecha_venc, NT.sc_observacion, pe.pe_nombreCompleto, tipNt.No_Descripcion, Bod.bo_Descripcion, tipNt.IdTipoNota
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_creditos_debitos_con_saldo';
 
@@ -237,5 +235,6 @@ Begin DesignProperties =
                Right = 268
             End
             DisplayFlags = 280
-            TopColumn = 0', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_creditos_debitos_con_saldo';
+            TopColumn = 0
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_creditos_debitos_con_saldo';
 

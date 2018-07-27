@@ -2,7 +2,7 @@
 AS
 SELECT        IdEmpresa, IdSucursal, IdBodega, IdConciliacion, Tipo, IdCobro, IdNota, CreDeb, Serie1, Serie2, NumNota_Impresa, IdCliente, NomSucursal, Nom_Bodega, 
                          no_fecha, no_fecha_venc, sc_observacion, Nom_Cliente, Motivo_Nota, Referencia, sc_total, Saldo, IdTipoConciliacion, 
-                         CASE [Tipo] WHEN 'NTCR' THEN 'NTCR' WHEN 'NTDB' THEN 'NTDE' END AS IdCobro_Tipo, IdTipoNota, IdCaja
+                         CASE [Tipo] WHEN 'NTCR' THEN 'NTCR' WHEN 'NTDB' THEN 'NTDE' END AS IdCobro_Tipo, IdTipoNota
 FROM            dbo.vwcxc_conciliacion_Det_CreDeb
 UNION
 SELECT        a.IdEmpresa AS IdEmpresa, a.IdSucursal AS IdSucursal, NULL AS IdBodega, IdConciliacion, a.IdCobro_tipo, a.IdCobro_cobro, NULL AS idnota, NULL 
