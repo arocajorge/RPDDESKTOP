@@ -1891,5 +1891,6 @@
     <Build Include="web\Views\VWFAC_006.sql" />
     <Build Include="web\Views\vwfa_factura.sql" />
     <Build Include="web\Views\vwfa_factura_det.sql" />
+    <Build Include="web\Views\VWFAC_007.sql" />
   </ItemGroup>
 </Project>
