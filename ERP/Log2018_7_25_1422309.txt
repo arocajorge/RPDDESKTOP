@@ -1,0 +1,18 @@
+Category: Error, Message: System.InvalidOperationException: No connection string named 'EntitiesGeneral' could be found in the application config file.
+   en System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   en System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   en System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   en System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   en System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   en System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   en System.Linq.Queryable.Select[TSource,TResult](IQueryable`1 source, Expression`1 selector)
+   en Core.Erp.Data.General.tb_sis_Mensajes_sys_Data.Get_List_Mensajes_sys() en c:\Users\AROCA\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\General\tb_sis_Mensajes_sys_Data.cs:línea 49
+Category: Error, Message: System.InvalidOperationException: No connection string named 'EntitiesFacturacion' could be found in the application config file.
+   en System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   en System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   en System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   en System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   en System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   en System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   en System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   en Core.Erp.Data.Facturacion.fa_parametro_Data.Get_Info_parametro(Int32 idEmpresa) en c:\Users\AROCA\Desktop\Proyectos GitHub\RPDDESKTOP\ERP\Core.Erp.Data\Facturacion\fa_parametro_Data.cs:línea 22

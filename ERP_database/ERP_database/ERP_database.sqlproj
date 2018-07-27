@@ -1896,5 +1896,8 @@
     <Build Include="dbo\Views\vwimp_orden_compra_ext_recepcion.sql" />
     <Build Include="dbo\Views\vwimp_orden_compra_ext_con_saldo.sql" />
     <Build Include="dbo\Views\vwimp_orden_compra_ext.sql" />
+    <Build Include="web\Views\VWFAC_006.sql" />
+    <Build Include="web\Views\vwfa_factura.sql" />
+    <Build Include="web\Views\vwfa_factura_det.sql" />
   </ItemGroup>
 </Project>
