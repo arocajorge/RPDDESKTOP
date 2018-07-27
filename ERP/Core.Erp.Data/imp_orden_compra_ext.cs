@@ -23,8 +23,6 @@ namespace Core.Erp.Data
     
         public int IdEmpresa { get; set; }
         public decimal IdOrdenCompra_ext { get; set; }
-        public int IdMoneda_origen { get; set; }
-        public int IdMoneda_destino { get; set; }
         public decimal IdProveedor { get; set; }
         public string IdPais_origen { get; set; }
         public string IdPais_embarque { get; set; }

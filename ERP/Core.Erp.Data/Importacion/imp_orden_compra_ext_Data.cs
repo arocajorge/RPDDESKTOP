@@ -28,8 +28,6 @@ namespace Core.Erp.Data.Importacion
                              {
                                  IdEmpresa = q.IdEmpresa,
                                  IdOrdenCompra_ext = q.IdOrdenCompra_ext,
-                                 IdMoneda_origen = q.IdMoneda_origen,
-                                 IdMoneda_destino = q.IdMoneda_destino,
                                  IdProveedor = q.IdProveedor,
                                  IdPais_origen = q.IdPais_origen,
                                  IdPais_embarque = q.IdPais_embarque,
@@ -84,8 +82,6 @@ namespace Core.Erp.Data.Importacion
                              {
                                  IdEmpresa = q.IdEmpresa,
                                  IdOrdenCompra_ext = q.IdOrdenCompra_ext,
-                                 IdMoneda_origen = q.IdMoneda_origen,
-                                 IdMoneda_destino = q.IdMoneda_destino,
                                  IdProveedor = q.IdProveedor,
                                  IdPais_origen = q.IdPais_origen,
                                  IdPais_embarque = q.IdPais_embarque,
@@ -165,8 +161,6 @@ namespace Core.Erp.Data.Importacion
                     imp_orden_compra_ext Entity = new imp_orden_compra_ext();
                     Entity.IdEmpresa = info.IdEmpresa;
                     Entity.IdOrdenCompra_ext = info.IdOrdenCompra_ext = get_id(info.IdEmpresa);
-                    Entity.IdMoneda_origen = info.IdMoneda_origen;
-                    Entity.IdMoneda_destino = info.IdMoneda_destino;
                     Entity.IdProveedor = info.IdProveedor;
                     Entity.IdPais_origen = info.IdPais_origen;
                     Entity.IdPais_embarque = info.IdPais_embarque;
@@ -213,8 +207,6 @@ namespace Core.Erp.Data.Importacion
                     imp_orden_compra_ext Entity = Context.imp_orden_compra_ext.FirstOrDefault(q => q.IdEmpresa == info.IdEmpresa && q.IdOrdenCompra_ext == info.IdOrdenCompra_ext);
                     if (Entity == null) return false;
 
-                    Entity.IdMoneda_origen = info.IdMoneda_origen;
-                    Entity.IdMoneda_destino = info.IdMoneda_destino;
                     Entity.IdProveedor = info.IdProveedor;
                     Entity.IdPais_origen = info.IdPais_origen;
                     Entity.IdPais_embarque = info.IdPais_embarque;

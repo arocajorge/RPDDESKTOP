@@ -5,29 +5,29 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="127c1f0677994890a18b9082244a9eae" Name="Diagrama1">
-        <EntityTypeShape EntityType="Model_importacion.imp_catalogo" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model_importacion.imp_catalogo_tipo" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model_importacion.imp_gasto" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model_importacion.imp_parametro" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <AssociationConnector Association="Model_importacion.FK_imp_catalogo_imp_catalogo_tipo" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Model_importacion.imp_gasto_x_ct_plancta" Width="1.5" PointX="3.0007550544108987" PointY="20.582796568322365" />
-        <AssociationConnector Association="Model_importacion.FK_imp_gasto_x_ct_plancta_imp_gasto" />
-        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext_recepcion" Width="1.5" PointX="0.81784349904295217" PointY="28.164595766069645" />
-        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext_ct_cbteble_det_gastos" Width="1.5" PointX="8.2259043176779088" PointY="2.4732242387129109" />
-        <EntityTypeShape EntityType="Model_importacion.vwimp_orden_compra_ext_ct_cbteble_det_gastos" Width="1.5" PointX="10.015654507100422" PointY="10.934084644044789" />
-        <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_ct_cbteble_det_gastos_imp_gasto" />
-        <EntityTypeShape EntityType="Model_importacion.imp_liquidacion_det_x_imp_orden_compra_ext" Width="1.5" PointX="7.6223790308564805" PointY="27.6279413977768" />
-        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext_det" Width="1.5" PointX="2.7426569157944325" PointY="8.3356868514491644" />
-        <EntityTypeShape EntityType="Model_importacion.imp_liquidacion" Width="1.5" PointX="8.2739156914287779" PointY="15.123119435796104" />
-        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext" Width="1.5" PointX="9.0983361457932439" PointY="6.1688330649253134" />
+        <EntityTypeShape EntityType="Model_importacion.imp_catalogo" Width="1.5" PointX="4.003636587412859" PointY="2.2764085243811869" />
+        <EntityTypeShape EntityType="Model_importacion.imp_catalogo_tipo" Width="1.5" PointX="7.103890481919" PointY="22.657015363991732" />
+        <EntityTypeShape EntityType="Model_importacion.imp_gasto" Width="1.5" PointX="4.89052510303004" PointY="20.101460630121391" />
+        <EntityTypeShape EntityType="Model_importacion.imp_gasto_x_ct_plancta" Width="1.5" PointX="4.9799141161981568" PointY="2.576008946903054" />
+        <EntityTypeShape EntityType="Model_importacion.imp_liquidacion" Width="1.5" PointX="4.5166896788946769" PointY="4.6202191582975063" />
+        <EntityTypeShape EntityType="Model_importacion.imp_liquidacion_det_x_imp_orden_compra_ext" Width="1.5" PointX="6.1119926954209767" PointY="1.1589854961070165" />
+        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext" Width="1.5" PointX="2.197114556188283" PointY="1.9242416778226577" />
+        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext_ct_cbteble_det_gastos" Width="1.5" PointX="7.3035120606904433" PointY="26.315972355341525" />
+        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext_det" Width="1.5" PointX="9.098633826290552" PointY="8.95216769396894" />
+        <EntityTypeShape EntityType="Model_importacion.imp_orden_compra_ext_recepcion" Width="1.5" PointX="10.672962242119462" PointY="21.294038961312751" />
+        <EntityTypeShape EntityType="Model_importacion.imp_parametro" Width="1.5" PointX="3.7152469827398877" PointY="9.8814459489106419" />
+        <EntityTypeShape EntityType="Model_importacion.vwimp_orden_compra_ext_ct_cbteble_det_gastos" Width="1.5" PointX="6.6881625459939995" PointY="19.814263561654027" />
+        <AssociationConnector Association="Model_importacion.FK_imp_catalogo_imp_catalogo_tipo" />
         <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_imp_catalogo" />
         <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_imp_catalogo1" />
+        <AssociationConnector Association="Model_importacion.FK_imp_gasto_x_ct_plancta_imp_gasto" />
+        <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_ct_cbteble_det_gastos_imp_gasto" />
         <AssociationConnector Association="Model_importacion.FK_imp_liquidacion_det_x_imp_orden_compra_ext_imp_liquidacion" />
         <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_imp_liquidacion" />
         <AssociationConnector Association="Model_importacion.FK_imp_liquidacion_det_x_imp_orden_compra_ext_imp_orden_compra_ext" />
         <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_ct_cbteble_det_gastos_imp_orden_compra_ext" />
         <AssociationConnector Association="Model_importacion.FK_imp_orden_compra_ext_det_imp_orden_compra_ext" />
-        </Diagram>
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

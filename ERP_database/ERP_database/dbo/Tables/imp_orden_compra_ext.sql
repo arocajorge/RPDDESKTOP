@@ -6,7 +6,7 @@
     [IdPais_embarque]              VARCHAR (10)  NOT NULL,
     [IdCiudad_destino]             VARCHAR (25)  NOT NULL,
     [IdCatalogo_via]               INT           NOT NULL,
-    [IdCatalogo_forma_pago]        INT           NOT NULL,
+    [codigo_pago_sri]              VARCHAR (25)  NOT NULL,
     [oe_fecha]                     DATETIME      NOT NULL,
     [oe_fecha_llegada_est]         DATETIME      NULL,
     [oe_fecha_embarque_est]        DATETIME      NULL,
@@ -28,15 +28,17 @@
     [oe_fecha_embarque]            DATETIME      NULL,
     [oe_fecha_desaduanizacion]     DATETIME      NULL,
     CONSTRAINT [PK_imp_orden_compra_ext] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdOrdenCompra_ext] ASC),
+    CONSTRAINT [FK_imp_orden_compra_ext_cp_pagos_sri] FOREIGN KEY ([codigo_pago_sri]) REFERENCES [dbo].[cp_pagos_sri] ([codigo_pago_sri]),
     CONSTRAINT [FK_imp_orden_compra_ext_cp_proveedor1] FOREIGN KEY ([IdEmpresa], [IdProveedor]) REFERENCES [dbo].[cp_proveedor] ([IdEmpresa], [IdProveedor]),
     CONSTRAINT [FK_imp_orden_compra_ext_ct_plancta1] FOREIGN KEY ([IdEmpresa], [IdCtaCble_importacion]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble]),
-    CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo] FOREIGN KEY ([IdCatalogo_via]) REFERENCES [dbo].[imp_catalogo] ([IdCatalogo]),
-    CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo1] FOREIGN KEY ([IdCatalogo_forma_pago]) REFERENCES [dbo].[imp_catalogo] ([IdCatalogo]),
+    CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo2] FOREIGN KEY ([IdCatalogo_via]) REFERENCES [dbo].[imp_catalogo] ([IdCatalogo]),
     CONSTRAINT [FK_imp_orden_compra_ext_imp_liquidacion] FOREIGN KEY ([IdEmpresa], [IdLiquidacion]) REFERENCES [dbo].[imp_liquidacion] ([IdEmpresa], [IdLiquidacion]),
     CONSTRAINT [FK_imp_orden_compra_ext_tb_ciudad] FOREIGN KEY ([IdCiudad_destino]) REFERENCES [dbo].[tb_ciudad] ([IdCiudad]),
     CONSTRAINT [FK_imp_orden_compra_ext_tb_pais] FOREIGN KEY ([IdPais_origen]) REFERENCES [dbo].[tb_pais] ([IdPais]),
     CONSTRAINT [FK_imp_orden_compra_ext_tb_pais1] FOREIGN KEY ([IdPais_embarque]) REFERENCES [dbo].[tb_pais] ([IdPais])
 );
+
+
 
 
 
