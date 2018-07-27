@@ -37,8 +37,6 @@
 GO
 
 
-GO
-
 ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_cp_proveedor1] FOREIGN KEY([IdEmpresa], [IdProveedor])
 REFERENCES [dbo].[cp_proveedor] ([IdEmpresa], [IdProveedor])
 GO
@@ -51,6 +49,20 @@ REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble])
 GO
 
 ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_ct_plancta1]
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo] FOREIGN KEY([IdCatalogo_via])
+REFERENCES [dbo].[imp_catalogo] ([IdCatalogo])
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo]
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo1] FOREIGN KEY([IdCatalogo_forma_pago])
+REFERENCES [dbo].[imp_catalogo] ([IdCatalogo])
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_imp_catalogo1]
 GO
 
 ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_imp_liquidacion] FOREIGN KEY([IdEmpresa], [IdLiquidacion])
@@ -67,6 +79,20 @@ GO
 ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_tb_ciudad]
 GO
 
+ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_tb_moneda] FOREIGN KEY([IdMoneda_origen])
+REFERENCES [dbo].[tb_moneda] ([IdMoneda])
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_tb_moneda]
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_tb_moneda1] FOREIGN KEY([IdMoneda_destino])
+REFERENCES [dbo].[tb_moneda] ([IdMoneda])
+GO
+
+ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_tb_moneda1]
+GO
+
 ALTER TABLE [dbo].[imp_orden_compra_ext]  WITH CHECK ADD  CONSTRAINT [FK_imp_orden_compra_ext_tb_pais] FOREIGN KEY([IdPais_origen])
 REFERENCES [dbo].[tb_pais] ([IdPais])
 GO
@@ -79,3 +105,6 @@ REFERENCES [dbo].[tb_pais] ([IdPais])
 GO
 
 ALTER TABLE [dbo].[imp_orden_compra_ext] CHECK CONSTRAINT [FK_imp_orden_compra_ext_tb_pais1]
+GO
+
+
