@@ -2,7 +2,7 @@
 AS
 SELECT        creDeb.IdEmpresa, creDeb.IdSucursal, creDeb.IdBodega, Tipo, NULL AS IdCobro, IdNota, CreDeb, Serie1, Serie2, NumNota_Impresa, creDeb.IdCliente, NomSucursal,
                           Nom_Bodega, no_fecha, no_fecha_venc, sc_observacion, Nom_Cliente, Motivo_Nota, Referencia, ROUND(sc_total, 2) AS sc_total , ROUND(Saldo, 2) AS Saldo, IdTipoConciliacion, 
-                         CASE [Tipo] WHEN 'NTCR' THEN 'NTCR' WHEN 'NTDB' THEN 'NTDE' END AS IdCobro_Tipo, IdTipoNota, faCli.IdCtaCble_cxc, faCli.IdCtaCble_Anti
+                         CASE [Tipo] WHEN 'NTCR' THEN 'NTCR' WHEN 'NTDB' THEN 'NTDE' END AS IdCobro_Tipo, IdTipoNota, 0 as IdCaja,  faCli.IdCtaCble_cxc, faCli.IdCtaCble_Anti
 FROM            dbo.vwfa_creditos_debitos_con_saldo creDeb INNER JOIN
                          fa_cliente AS faCli ON faCli.IdEmpresa = creDeb.IdEmpresa AND faCli.IdCliente = creDeb.IdCliente
 UNION
