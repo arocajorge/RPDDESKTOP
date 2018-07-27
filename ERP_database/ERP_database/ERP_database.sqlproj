@@ -1892,5 +1892,8 @@
     <Build Include="web\Views\vwfa_factura.sql" />
     <Build Include="web\Views\vwfa_factura_det.sql" />
     <Build Include="web\Views\VWFAC_007.sql" />
+    <Build Include="web\Views\VWFAC_008_cancelaciones.sql" />
+    <Build Include="web\Views\VWFAC_008.sql" />
+    <Build Include="web\Views\fa_notaCreDeb.sql" />
   </ItemGroup>
 </Project>
