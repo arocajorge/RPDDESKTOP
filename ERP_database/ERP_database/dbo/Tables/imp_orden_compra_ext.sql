@@ -27,7 +27,8 @@
 	[oe_fecha_desaduanizacion] [datetime] NULL,
 	[IdMoneda_origen] [int] NULL,
 	[IdMoneda_destino] [int] NULL,
- CONSTRAINT [PK_imp_orden_compra_ext] PRIMARY KEY CLUSTERED 
+ [Estado_cierre] BIT NOT NULL, 
+    CONSTRAINT [PK_imp_orden_compra_ext] PRIMARY KEY CLUSTERED 
 (
 	[IdEmpresa] ASC,
 	[IdOrdenCompra_ext] ASC
