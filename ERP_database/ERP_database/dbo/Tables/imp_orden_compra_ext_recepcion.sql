@@ -6,9 +6,10 @@
     [IdEmpresa_oc]           INT            NULL,
     [IdOrdenCompraExt]       DECIMAL (18)   NOT NULL,
     [IdEmpresa_inv]          INT            NOT NULL,
-    [IdBodega]               INT            NOT NULL,
     [IdSucursal_inv]         INT            NOT NULL,
+    [IdBodega]               INT            NOT NULL,
     [IdMovi_inven_tipo_inv]  INT            NOT NULL,
+    [IdMotivo_Inv]           INT            NOT NULL,
     [IdNumMovi_inv]          NUMERIC (18)   NOT NULL,
     [estado]                 BIT            NOT NULL,
     [IdUsuario_creacion]     VARCHAR (20)   NULL,
@@ -21,6 +22,8 @@
     CONSTRAINT [FK_imp_orden_compra_ext_recepcion_imp_orden_compra_ext] FOREIGN KEY ([IdEmpresa_oc], [IdOrdenCompraExt]) REFERENCES [dbo].[imp_orden_compra_ext] ([IdEmpresa], [IdOrdenCompra_ext]),
     CONSTRAINT [FK_imp_orden_compra_ext_recepcion_in_Ing_Egr_Inven] FOREIGN KEY ([IdEmpresa_inv], [IdSucursal_inv], [IdMovi_inven_tipo_inv], [IdNumMovi_inv]) REFERENCES [dbo].[in_Ing_Egr_Inven] ([IdEmpresa], [IdSucursal], [IdMovi_inven_tipo], [IdNumMovi])
 );
+
+
 
 
 
