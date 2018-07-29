@@ -1884,7 +1884,6 @@
     <Build Include="web\Views\VWFAC_005.sql" />
     <Build Include="web\Stored Procedures\SPFAC_005.sql" />
     <Build Include="dbo\Views\vwfa_proforma_det.sql" />
-    <Build Include="dbo\Tables\imp_orden_compra_ext_recepcion_det.sql" />
     <Build Include="dbo\Views\vwimp_orden_compra_ext_recepcion.sql" />
     <Build Include="dbo\Views\vwimp_orden_compra_ext_con_saldo.sql" />
     <Build Include="dbo\Views\vwimp_orden_compra_ext.sql" />
@@ -1892,12 +1891,12 @@
     <Build Include="web\Views\vwfa_factura.sql" />
     <Build Include="web\Views\vwfa_factura_det.sql" />
     <Build Include="web\Views\VWFAC_007.sql" />
-    <Build Include="web\Views\VWFAC_008_cancelaciones.sql" />
     <Build Include="web\Views\VWFAC_008.sql" />
     <Build Include="web\Views\vwfa_notaCreDeb.sql" />
     <Build Include="web\Views\VWIMP_001.sql" />
     <Build Include="dbo\Views\vwimp_orden_compra_ext_det.sql" />
     <Build Include="web\Views\VWFAC_008_aplicaciones.sql" />
     <Build Include="web\Views\vwfa_notaCreDeb_det.sql" />
+    <Build Include="dbo\Views\vwimp_liquidacion_det_x_imp_orden_compra_ext.sql" />
   </ItemGroup>
 </Project>
