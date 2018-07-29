@@ -14,7 +14,7 @@
     [sc_iva]                         FLOAT (53)     NOT NULL,
     [sc_total]                       FLOAT (53)     NOT NULL,
     [sc_costo]                       FLOAT (53)     NOT NULL,
-    [sc_observacion]                 VARCHAR (1000) NOT NULL,
+    [sc_observacion]                 VARCHAR (1000) NULL,
     [sc_estado]                      CHAR (1)       NOT NULL,
     [vt_por_iva]                     FLOAT (53)     NOT NULL,
     [IdPunto_Cargo]                  INT            NULL,
@@ -28,4 +28,6 @@
     CONSTRAINT [FK_fa_notaCreDeb_det_tb_sis_Impuesto] FOREIGN KEY ([IdCod_Impuesto_Iva]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto]),
     CONSTRAINT [FK_fa_notaCreDeb_det_tb_sis_Impuesto1] FOREIGN KEY ([IdCod_Impuesto_Ice]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto])
 );
+
+
 
