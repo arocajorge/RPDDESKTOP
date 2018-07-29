@@ -1,13 +1,22 @@
-﻿CREATE VIEW dbo.vwfa_proforma_det_por_facturar
+﻿CREATE VIEW [dbo].[vwfa_proforma_det_por_facturar]
 AS
-SELECT        pro.IdEmpresa, pro.IdSucursal, pro.IdProforma, pro.Secuencia, pro.IdProducto, pro.pd_cantidad, pro.pd_precio, pro.pd_por_descuento_uni, pro.pd_descuento_uni, pro.pd_precio_final, pro.pd_subtotal, pro.IdCod_Impuesto, 
-                         pro.pd_por_iva, pro.pd_iva, pro.pd_total, ISNULL(pro.pd_cantidad - ISNULL(SUM(fac.vt_cantidad), 0), 0) AS pd_cantidad_pendiente, dbo.fa_proforma.IdCliente, dbo.fa_proforma.IdBodega, pro.anulado
-FROM            dbo.fa_proforma_det AS pro INNER JOIN
-                         dbo.fa_proforma ON pro.IdEmpresa = dbo.fa_proforma.IdEmpresa AND pro.IdSucursal = dbo.fa_proforma.IdSucursal AND pro.IdProforma = dbo.fa_proforma.IdProforma LEFT OUTER JOIN
-                         dbo.fa_factura_det AS fac ON pro.IdEmpresa = fac.IdEmpresa_pf AND pro.IdSucursal = fac.IdSucursal_pf AND pro.IdProforma = fac.IdProforma AND pro.Secuencia = fac.Secuencia_pf
-WHERE        (dbo.fa_proforma.estado = 1)
-GROUP BY pro.IdEmpresa, pro.IdSucursal, pro.IdProforma, pro.Secuencia, pro.IdProducto, pro.pd_cantidad, pro.pd_precio, pro.pd_por_descuento_uni, pro.pd_descuento_uni, pro.pd_precio_final, pro.pd_subtotal, pro.IdCod_Impuesto, 
-                         pro.pd_por_iva, pro.pd_iva, pro.pd_total, dbo.fa_proforma.IdCliente, dbo.fa_proforma.IdTerminoPago, dbo.fa_proforma.IdBodega, pro.anulado
+SELECT        dbo.fa_proforma_det.IdEmpresa, dbo.fa_proforma_det.IdSucursal, dbo.fa_proforma_det.IdProforma, dbo.fa_proforma_det.Secuencia, dbo.fa_proforma_det.IdProducto, dbo.fa_proforma_det.pd_cantidad, 
+                         dbo.fa_proforma_det.pd_precio, dbo.fa_proforma_det.pd_por_descuento_uni, dbo.fa_proforma_det.pd_descuento_uni, dbo.fa_proforma_det.pd_precio_final, dbo.fa_proforma_det.pd_subtotal, 
+                         dbo.fa_proforma_det.IdCod_Impuesto, dbo.fa_proforma_det.pd_por_iva, dbo.fa_proforma_det.pd_iva, dbo.fa_proforma_det.pd_total, dbo.fa_proforma_det.anulado, dbo.in_Producto.pr_descripcion, 
+                         dbo.in_presentacion.nom_presentacion, dbo.in_Producto.lote_num_lote, dbo.in_Producto.lote_fecha_vcto, dbo.fa_proforma.IdCliente
+FROM            dbo.fa_proforma INNER JOIN
+                         dbo.fa_proforma_det ON dbo.fa_proforma.IdEmpresa = dbo.fa_proforma_det.IdEmpresa AND dbo.fa_proforma.IdSucursal = dbo.fa_proforma_det.IdSucursal AND 
+                         dbo.fa_proforma.IdProforma = dbo.fa_proforma_det.IdProforma LEFT OUTER JOIN
+                         dbo.in_presentacion INNER JOIN
+                         dbo.in_Producto ON dbo.in_presentacion.IdEmpresa = dbo.in_Producto.IdEmpresa AND dbo.in_presentacion.IdPresentacion = dbo.in_Producto.IdPresentacion ON 
+                         dbo.fa_proforma_det.IdEmpresa = dbo.in_Producto.IdEmpresa AND dbo.fa_proforma_det.IdProducto = dbo.in_Producto.IdProducto
+WHERE NOT EXISTS(
+select f.IdEmpresa from fa_factura_det as f
+where dbo.fa_proforma_det.IdEmpresa = f.IdEmpresa_pf
+and dbo.fa_proforma_det.IdSucursal = f.IdSucursal_pf
+and dbo.fa_proforma_det.IdProforma = f.IdProforma
+and dbo.fa_proforma_det.Secuencia = f.Secuencia_pf
+)
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_proforma_det_por_facturar';
 
