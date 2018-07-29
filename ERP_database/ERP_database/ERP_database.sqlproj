@@ -1899,5 +1899,8 @@
     <Build Include="web\Views\vwfa_notaCreDeb_det.sql" />
     <Build Include="dbo\Views\vwimp_liquidacion_det_x_imp_orden_compra_ext.sql" />
     <Build Include="web\Views\vwfa_notaCreDeb_x_fa_factura_NotaDeb.sql" />
+    <Build Include="web\Views\vwfa_factura_sin_guia.sql" />
+    <Build Include="web\Views\vwfa_guia_remision.sql" />
+    <Build Include="web\Views\vwfa_factura_det_x_productos.sql" />
   </ItemGroup>
 </Project>
