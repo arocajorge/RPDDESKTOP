@@ -1901,6 +1901,6 @@
     <Build Include="web\Views\vwfa_notaCreDeb_x_fa_factura_NotaDeb.sql" />
     <Build Include="web\Views\vwfa_factura_sin_guia.sql" />
     <Build Include="web\Views\vwfa_guia_remision.sql" />
-    <Build Include="web\Views\vwfa_factura_det_x_productos.sql" />
+    <Build Include="web\Views\vwfa_guia_remision_det.sql" />
   </ItemGroup>
 </Project>
