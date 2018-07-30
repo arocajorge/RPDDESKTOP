@@ -11,6 +11,7 @@
 	[NUAutorizacion] [varchar](50) NULL,
 	[Fecha_Autorizacion] [datetime] NULL,
 	[IdCliente] [numeric](18, 0) NOT NULL,
+	[IdContacto] [int] NOT NULL,
 	[IdTransportista] [numeric](18, 0) NOT NULL,
 	[gi_fecha] [datetime] NOT NULL,
 	[gi_plazo] [numeric](10, 0) NULL,
@@ -44,7 +45,6 @@
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-
 GO
 
 ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_catalogo] FOREIGN KEY([IdCatalogo_traslado])
@@ -59,6 +59,13 @@ REFERENCES [dbo].[fa_cliente] ([IdEmpresa], [IdCliente])
 GO
 
 ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_fa_cliente]
+GO
+
+ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_cliente_contactos] FOREIGN KEY([IdEmpresa], [IdCliente], [IdContacto])
+REFERENCES [dbo].[fa_cliente_contactos] ([IdEmpresa], [IdCliente], [IdContacto])
+GO
+
+ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_fa_cliente_contactos]
 GO
 
 ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_tb_bodega] FOREIGN KEY([IdEmpresa], [IdSucursal], [IdBodega])
