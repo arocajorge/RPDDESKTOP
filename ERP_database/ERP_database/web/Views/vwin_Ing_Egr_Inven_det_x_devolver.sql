@@ -1,8 +1,9 @@
 ﻿CREATE VIEW web.vwin_Ing_Egr_Inven_det_x_devolver
 AS
 SELECT dbo.in_Ing_Egr_Inven_det.IdEmpresa, dbo.in_Ing_Egr_Inven_det.IdSucursal, dbo.in_Ing_Egr_Inven_det.IdMovi_inven_tipo, dbo.in_Ing_Egr_Inven_det.IdNumMovi, dbo.in_Ing_Egr_Inven_det.Secuencia, dbo.in_Ing_Egr_Inven_det.IdBodega, 
-                  dbo.in_Ing_Egr_Inven_det.dm_cantidad_sinConversion, dbo.in_Ing_Egr_Inven_det.IdUnidadMedida_sinConversion, dbo.in_Ing_Egr_Inven_det.mv_costo_sinConversion, dbo.in_Producto.pr_descripcion, 
-                  dbo.in_presentacion.nom_presentacion, dbo.in_Producto.lote_fecha_vcto, dbo.in_Producto.lote_num_lote, ISNULL(dev.cant_devuelta, 0) AS cant_devuelta, dbo.in_UnidadMedida.Descripcion AS NomUnidad
+                  dbo.in_Ing_Egr_Inven_det.dm_cantidad_sinConversion, dbo.in_Ing_Egr_Inven_det.IdUnidadMedida_sinConversion, ISNULL(dbo.in_Ing_Egr_Inven_det.mv_costo_sinConversion, 0) AS mv_costo_sinConversion, 
+                  dbo.in_Producto.pr_descripcion, dbo.in_presentacion.nom_presentacion, dbo.in_Producto.lote_fecha_vcto, dbo.in_Producto.lote_num_lote, ISNULL(dev.cant_devuelta, 0) AS cant_devuelta, 
+                  dbo.in_UnidadMedida.Descripcion AS NomUnidad, dbo.in_Ing_Egr_Inven_det.IdProducto
 FROM     dbo.in_UnidadMedida INNER JOIN
                   dbo.in_Ing_Egr_Inven_det ON dbo.in_UnidadMedida.IdUnidadMedida = dbo.in_Ing_Egr_Inven_det.IdUnidadMedida_sinConversion LEFT OUTER JOIN
                   dbo.in_presentacion INNER JOIN
@@ -22,12 +23,33 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @leve
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'     Or = 1350
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'    Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1176
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1356
+         SortOrder = 1416
+         GroupBy = 1350
+         Filter = 1356
+         Or = 1350
+         Or = 1350
          Or = 1350
       End
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
+
+
 
 
 GO
@@ -102,6 +124,26 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
+         Begin Table = "in_UnidadMedida"
+            Begin Extent = 
+               Top = 401
+               Left = 457
+               Bottom = 564
+               Right = 665
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Ing_Egr_Inven_det"
+            Begin Extent = 
+               Top = 343
+               Left = 48
+               Bottom = 506
+               Right = 357
+            End
+            DisplayFlags = 280
+            TopColumn = 6
+         End
          Begin Table = "in_presentacion"
             Begin Extent = 
                Top = 7
@@ -122,32 +164,12 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "in_Ing_Egr_Inven_det"
-            Begin Extent = 
-               Top = 343
-               Left = 48
-               Bottom = 506
-               Right = 357
-            End
-            DisplayFlags = 280
-            TopColumn = 27
-         End
          Begin Table = "dev"
             Begin Extent = 
                Top = 511
                Left = 48
                Bottom = 674
                Right = 288
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_UnidadMedida"
-            Begin Extent = 
-               Top = 401
-               Left = 457
-               Bottom = 564
-               Right = 665
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -159,19 +181,21 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-    ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
+      Begin ColumnWidths = 17
+         Width = 284
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+     ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
+
+
 

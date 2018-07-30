@@ -1894,5 +1894,9 @@
     <Build Include="web\Views\vwfa_factura_sin_guia.sql" />
     <Build Include="web\Views\vwfa_guia_remision.sql" />
     <Build Include="web\Views\vwfa_guia_remision_det.sql" />
+    <Build Include="web\Views\vwin_Ing_Egr_Inven_por_devolver.sql" />
+    <Build Include="web\Views\vwin_Ing_Egr_Inven_det_x_devolver.sql" />
+    <Build Include="web\Views\vwin_Ing_Egr_Inven_det.sql" />
+    <Build Include="dbo\Views\vwin_devolucion_inven_det.sql" />
   </ItemGroup>
 </Project>
