@@ -1,6 +1,4 @@
-﻿
-
-CREATE TABLE [dbo].[fa_guia_remision](
+﻿CREATE TABLE [dbo].[fa_guia_remision](
 	[IdEmpresa] [int] NOT NULL,
 	[IdSucursal] [int] NOT NULL,
 	[IdBodega] [int] NOT NULL,
@@ -34,7 +32,9 @@ CREATE TABLE [dbo].[fa_guia_remision](
 	[ip] [varchar](25) NOT NULL,
 	[Estado] [char](1) NOT NULL,
 	[MotiAnula] [varchar](200) NULL,
-		[Direccion_Destino] [varchar](300) NULL,
+	[Direccion_Destino] [varchar](300) NULL,
+	[Num_declaracion_aduanera] [varchar](50) NULL,
+	[IdCatalogo_traslado] [varchar](15) NULL,
  CONSTRAINT [PK_fa_guia_remision] PRIMARY KEY CLUSTERED 
 (
 	[IdEmpresa] ASC,
@@ -44,6 +44,14 @@ CREATE TABLE [dbo].[fa_guia_remision](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+
+GO
+
+ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_catalogo] FOREIGN KEY([IdCatalogo_traslado])
+REFERENCES [dbo].[fa_catalogo] ([IdCatalogo])
+GO
+
+ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_fa_catalogo]
 GO
 
 ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_cliente] FOREIGN KEY([IdEmpresa], [IdCliente])
