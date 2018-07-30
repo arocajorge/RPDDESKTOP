@@ -271,7 +271,7 @@ where exists(
 								and secuencia_inv = @C2_Secuencia
 
 								--ACTUALIZO EL INGRESO DE LA DEVOLUCION EN IN_MOVI_INVEN
-								
+								/*
 								update in_movi_inve_detalle SET mv_costo = A.mv_costo, mv_costo_sinConversion = a.mv_costo_sinConversion
 								FROM(
 								SELECT        in_ingreso.IdEmpresa, in_ingreso.IdSucursal, in_ingreso.IdBodega, in_ingreso.IdMovi_inven_tipo, in_ingreso.IdNumMovi, in_ingreso.Secuencia, in_ingreso.IdEmpresa_dev, in_ingreso.IdSucursal_dev, 
@@ -293,7 +293,7 @@ where exists(
 								AND in_movi_inve_detalle.IdMovi_inven_tipo = A.IdMovi_inven_tipo
 								AND in_movi_inve_detalle.IdNumMovi = A.IdNumMovi
 								AND in_movi_inve_detalle.Secuencia = A.Secuencia 
-
+								
 								--ACTUALIZO EL INGRESO DE LA DEVOLUCION EN IN_ING_EGR
 								update in_Ing_Egr_Inven_det SET mv_costo = A.mv_costo, mv_costo_sinConversion = a.mv_costo_sinConversion
 								FROM(
@@ -320,7 +320,7 @@ where exists(
 								AND in_Ing_Egr_Inven_det.IdMovi_inven_tipo = A.IdMovi_inven_tipo_ing_egr
 								AND in_Ing_Egr_Inven_det.IdNumMovi = A.IdNumMovi_ing_egr
 								AND in_Ing_Egr_Inven_det.Secuencia = A.Secuencia_ing_egr
-								/*
+								
 						--CORRECCION CONTABLE
 								UPDATE ct_cbtecble_det set dc_Valor = A.valor_inv
 								FROM(

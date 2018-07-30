@@ -823,8 +823,6 @@
     <Build Include="dbo\Views\vwINV_Rpt028.sql" />
     <Build Include="dbo\Views\vwINV_Rpt025.sql" />
     <Build Include="dbo\Views\vwINV_Rpt024.sql" />
-    <Build Include="dbo\Views\vwINV_Rpt023.sql" />
-    <Build Include="dbo\Views\vwINV_Rpt022.sql" />
     <Build Include="dbo\Views\vwINV_Rpt020.sql" />
     <Build Include="dbo\Views\vwINV_Rpt019.sql" />
     <Build Include="dbo\Views\vwINV_Rpt017.sql" />
@@ -893,7 +891,6 @@
     <Build Include="dbo\Views\vwin_movi_inve.sql" />
     <Build Include="dbo\Views\vwin_Motivo_traslado_bodega.sql" />
     <Build Include="dbo\Views\vwin_Ing_Egr_Inven_x_in_movi_inve.sql" />
-    <Build Include="dbo\Views\vwin_Ing_Egr_Inven_para_devolucion.sql" />
     <Build Include="dbo\Views\vwin_Ing_Egr_Inven_det_x_Producto.sql" />
     <Build Include="dbo\Views\vwin_Ing_Egr_Inven_det_x_estado_aprob.sql" />
     <Build Include="dbo\Views\vwin_Ing_Egr_Inven_det_x_com_ordencompra_local_det_x_cp_Aprobacion_Ing_Bod_x_OC_det.sql" />
@@ -909,9 +906,6 @@
     <Build Include="dbo\Views\vwin_Guia_x_traspaso_bodega_det.sql" />
     <Build Include="dbo\Views\vwin_guia_x_traspaso_bodega.sql" />
     <Build Include="dbo\Views\vwin_GeneracionCompraCidersus.sql" />
-    <Build Include="dbo\Views\vwin_devolucion_inven_det_cantidad_devuelta.sql" />
-    <Build Include="dbo\Views\vwin_devolucion_inven_det.sql" />
-    <Build Include="dbo\Views\vwin_devolucion_inven.sql" />
     <Build Include="dbo\Views\vwin_categoria_lin_gr_subgr.sql" />
     <Build Include="dbo\Views\vwin_Cate_Lin_Grup_SubGrup.sql" />
     <Build Include="dbo\Views\vwin_ajusteFisico.sql" />
@@ -1664,8 +1658,6 @@
     <Build Include="Fj_servindustrias\Views\vwFAC_FJ_Rpt016.sql" />
     <Build Include="Fj_servindustrias\Views\vwfa_registro_unidades_x_equipo_para_facturacion.sql" />
     <Build Include="Fj_servindustrias\Tables\fa_pre_facturacion_det_ing_egr_inven.sql" />
-    <Build Include="Fj_servindustrias\Views\vwfa_pre_facturacion_ing_egr_data.sql" />
-    <Build Include="Fj_servindustrias\Views\vwfa_pre_facturacion_det_ing_egr_inven.sql" />
     <Build Include="dbo\Tables\caj_Caja_Movimiento_Tipo_grupo.sql" />
     <Build Include="Fj_servindustrias\Views\vwFAC_FJ_Rpt002.sql" />
     <Build Include="Fj_servindustrias\Views\vwfa_pre_facturacion_det_depreciacion_x_subcentro.sql" />

@@ -3,6 +3,7 @@
     [CodTipoNota]     VARCHAR (20)  NULL,
     [Tipo]            CHAR (1)      NOT NULL,
     [No_Descripcion]  VARCHAR (150) NOT NULL,
+    [GeneraMoviInven] BIT           NULL,
     [IdUsuario]       VARCHAR (20)  NULL,
     [Fecha_Transac]   DATETIME      NULL,
     [IdUsuarioUltMod] VARCHAR (20)  NULL,
@@ -15,4 +16,6 @@
     [MotiAnula]       VARCHAR (200) NULL,
     CONSTRAINT [PK_fa_TipoNota] PRIMARY KEY CLUSTERED ([IdTipoNota] ASC)
 );
+
+
 
