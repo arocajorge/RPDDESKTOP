@@ -1898,5 +1898,7 @@
     <Build Include="web\Views\vwin_Ing_Egr_Inven_det_x_devolver.sql" />
     <Build Include="web\Views\vwin_Ing_Egr_Inven_det.sql" />
     <Build Include="dbo\Views\vwin_devolucion_inven_det.sql" />
+    <Build Include="web\Tables\ct_CONTA_003_balances.sql" />
+    <Build Include="web\Stored Procedures\SPCONTA_003_balances.sql" />
   </ItemGroup>
 </Project>
