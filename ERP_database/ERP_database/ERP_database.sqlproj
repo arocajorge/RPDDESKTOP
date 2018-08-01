@@ -1896,5 +1896,11 @@
     <Build Include="web\Views\vwfa_guia_remision_det.sql" />
     <Build Include="web\Views\vwfa_factura_x_fa_guia_remision.sql" />
     <Build Include="web\Views\vwimp_gastos_no_asignados.sql" />
+    <Build Include="web\Views\vwin_Ing_Egr_Inven_por_devolver.sql" />
+    <Build Include="web\Views\vwin_Ing_Egr_Inven_det_x_devolver.sql" />
+    <Build Include="web\Views\vwin_Ing_Egr_Inven_det.sql" />
+    <Build Include="dbo\Views\vwin_devolucion_inven_det.sql" />
+    <Build Include="web\Tables\ct_CONTA_003_balances.sql" />
+    <Build Include="web\Stored Procedures\SPCONTA_003_balances.sql" />
   </ItemGroup>
 </Project>
