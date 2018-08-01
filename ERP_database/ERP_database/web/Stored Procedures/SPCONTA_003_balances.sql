@@ -1,4 +1,4 @@
-﻿--EXEC [web].[SPCONTA_003_balances] 1,2018,'2018/07/01','2018/07/31','ADMIN',2,0, ''
+﻿--EXEC [web].[SPCONTA_003_balances] 1,2018,'2018/06/30','2018/07/31','123',3,0, ''
 CREATE PROCEDURE [web].[SPCONTA_003_balances]
 (
 @IdEmpresa int,
@@ -37,9 +37,8 @@ INSERT INTO [web].[ct_CONTA_003_balances]
            ,[SaldoDebitosCreditos]
            ,[SaldoDebitos]
            ,[SaldoCreditos]
-           ,[SaldoFinal])
-
-
+           ,[SaldoFinal]
+		   ,[EsCuentaMovimiento])
 SELECT @IdUsuario, 
 ct_plancta.IdEmpresa, 
 ct_plancta.IdCtaCble, 
@@ -51,7 +50,7 @@ ct_plancta.IdGrupoCble,
 ct_grupocble.gc_GrupoCble, 
 ct_grupocble.gc_estado_financiero, 
 ct_grupocble.gc_Orden,
-0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
 FROM            ct_anio_fiscal_x_cuenta_utilidad RIGHT OUTER JOIN
         ct_plancta ON ct_anio_fiscal_x_cuenta_utilidad.IdEmpresa = ct_plancta.IdEmpresa AND ct_anio_fiscal_x_cuenta_utilidad.IdCtaCble = ct_plancta.IdCtaCble LEFT OUTER JOIN
         ct_grupocble ON ct_plancta.IdGrupoCble = ct_grupocble.IdGrupoCble
@@ -242,8 +241,7 @@ DECLARE @Contador int
 select @Contador = max(IdNivelCta) 
 from web.ct_CONTA_003_balances
 where IdUsuario = @IdUsuario
-
-
+and IdEmpresa = @IdEmpresa
 
 	WHILE @Contador > 0
 	BEGIN
@@ -270,9 +268,14 @@ where IdUsuario = @IdUsuario
            ,SUM([SaldoCreditos])[SaldoCreditos]
            ,SUM([SaldoFinal])[SaldoFinal]
 		FROM            web.ct_CONTA_003_balances
+		where web.ct_CONTA_003_balances.IdEmpresa = @IdEmpresa
+		and web.ct_CONTA_003_balances.IdUsuario = @IdUsuario
 		GROUP BY IdEmpresa, IdCtaCblePadre
+		
 		) A where web.ct_CONTA_003_balances.IdEmpresa = a.IdEmpresa
 		and web.ct_CONTA_003_balances.IdCtaCble = a.IdCtaCblePadre
+		and web.ct_CONTA_003_balances.IdUsuario = @IdUsuario
+		and web.ct_CONTA_003_balances.IdEmpresa = @IdEmpresa
 
 		SET @Contador = @Contador - 1
 	END
@@ -282,7 +285,21 @@ IF(@MostrarSaldo0 = 0)
 BEGIN
 	DELETE web.ct_CONTA_003_balances
 	WHERE SaldoInicial = 0 AND SaldoDebitosCreditos = 0 AND SaldoFinal = 0
+	and IdUsuario = @IdUsuario
 END
+
+select @Contador = 
+max(IdNivelCta) 
+from web.ct_CONTA_003_balances
+where IdUsuario = @IdUsuario
+and IdEmpresa = @IdEmpresa
+and IdNivelCta <= @IdNivel
+group by IdEmpresa, IdUsuario
+
+update web.ct_CONTA_003_balances set EsCuentaMovimiento = 1 
+where IdUsuario = @IdUsuario
+and IdEmpresa = @IdEmpresa
+and IdNivelCta = @Contador
 
 SELECT * FROM web.ct_CONTA_003_balances
 where gc_estado_financiero LIKE '%'+@Balance+'%'

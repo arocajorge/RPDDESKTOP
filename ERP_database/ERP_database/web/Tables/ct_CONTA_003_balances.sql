@@ -19,6 +19,9 @@
     [SaldoDebitos]         FLOAT (53)    NOT NULL,
     [SaldoCreditos]        FLOAT (53)    NOT NULL,
     [SaldoFinal]           FLOAT (53)    NOT NULL,
+    [EsCuentaMovimiento]   BIT           NOT NULL,
     CONSTRAINT [PK_ct_CONTA_003_balances] PRIMARY KEY CLUSTERED ([IdUsuario] ASC, [IdEmpresa] ASC, [IdCtaCble] ASC)
 );
+
+
 
