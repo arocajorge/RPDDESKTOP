@@ -1902,5 +1902,6 @@
     <Build Include="dbo\Views\vwin_devolucion_inven_det.sql" />
     <Build Include="web\Tables\ct_CONTA_003_balances.sql" />
     <Build Include="web\Stored Procedures\SPCONTA_003_balances.sql" />
+    <Build Include="web\Views\VWFAC_009.sql" />
   </ItemGroup>
 </Project>
