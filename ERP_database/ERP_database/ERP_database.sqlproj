@@ -1903,5 +1903,6 @@
     <Build Include="web\Tables\ct_CONTA_003_balances.sql" />
     <Build Include="web\Stored Procedures\SPCONTA_003_balances.sql" />
     <Build Include="web\Views\VWFAC_009.sql" />
+    <Build Include="dbo\Views\vwfa_cliente_contactos.sql" />
   </ItemGroup>
 </Project>
