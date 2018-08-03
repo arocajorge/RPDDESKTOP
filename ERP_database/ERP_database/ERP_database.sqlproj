@@ -1905,5 +1905,6 @@
     <Build Include="web\Views\VWFAC_009.sql" />
     <Build Include="dbo\Views\vwfa_cliente_contactos.sql" />
     <Build Include="dbo\Tables\cp_orden_pago_x_nomina.sql" />
+    <Build Include="dbo\Views\vwro_rol_detalle_generar_op.sql" />
   </ItemGroup>
 </Project>
