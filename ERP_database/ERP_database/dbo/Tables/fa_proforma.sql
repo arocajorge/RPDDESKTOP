@@ -16,6 +16,7 @@
     [fecha_modificacion]     DATETIME       NULL,
     [IdUsuario_anulacion]    VARCHAR (20)   NULL,
     [fecha_anulacion]        DATETIME       NULL,
+    [MotivoAnulacion]        VARCHAR (500)  NULL,
     [IdBodega]               INT            NOT NULL,
     [IdVendedor]             INT            NOT NULL,
     [pf_atencion_a]          VARCHAR (500)  NULL,
@@ -27,6 +28,8 @@
     CONSTRAINT [FK_fa_proforma_tb_bodega] FOREIGN KEY ([IdEmpresa], [IdSucursal], [IdBodega]) REFERENCES [dbo].[tb_bodega] ([IdEmpresa], [IdSucursal], [IdBodega]),
     CONSTRAINT [FK_fa_proforma_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])
 );
+
+
 
 
 
