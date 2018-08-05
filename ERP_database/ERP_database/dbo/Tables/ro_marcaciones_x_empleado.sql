@@ -29,8 +29,11 @@
     [Motivo_Anu]                   VARCHAR (200) NULL,
     CONSTRAINT [PK_ro_marcaciones_x_empleado_1] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdRegistro] ASC),
     CONSTRAINT [FK_ro_marcaciones_x_empleado_ro_catalogo] FOREIGN KEY ([IdTipoMarcaciones]) REFERENCES [dbo].[ro_catalogo] ([CodCatalogo]),
-    CONSTRAINT [FK_ro_marcaciones_x_empleado_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado])
+    CONSTRAINT [FK_ro_marcaciones_x_empleado_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado]),
+    CONSTRAINT [FK_ro_marcaciones_x_empleado_ro_marcaciones_tipo] FOREIGN KEY ([IdTipoMarcaciones]) REFERENCES [dbo].[ro_marcaciones_tipo] ([IdTipoMarcaciones])
 );
+
+
 
 
 
