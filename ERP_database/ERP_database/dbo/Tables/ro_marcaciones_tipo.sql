@@ -4,7 +4,3 @@
     CONSTRAINT [PK_ro_marcaciones_tipo] PRIMARY KEY CLUSTERED ([IdTipoMarcaciones] ASC)
 );
 
-
-
-
-

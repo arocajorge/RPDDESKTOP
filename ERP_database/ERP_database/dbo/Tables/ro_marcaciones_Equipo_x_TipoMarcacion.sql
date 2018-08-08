@@ -6,7 +6,3 @@
     CONSTRAINT [FK_ro_marcaciones_Equipo_x_TipoMarcacion_ro_marcaciones_tipo] FOREIGN KEY ([IdTipoMarcaciones_sys]) REFERENCES [dbo].[ro_marcaciones_tipo] ([IdTipoMarcaciones])
 );
 
-
-
-
-
