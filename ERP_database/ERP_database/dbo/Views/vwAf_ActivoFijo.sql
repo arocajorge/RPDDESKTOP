@@ -23,9 +23,6 @@ FROM     Af_Mej_Baj_Activo mej INNER JOIN
                   dbo.Af_PeriodoDepreciacion AS per ON 0 = per.IdPeriodoDeprec 
 GROUP BY mej.IdEmpresa, mej.IdActivoFijo, tip.IdTipoDepreciacion, tip.cod_tipo_depreciacion, act.Af_Nombre, ISNULL(mej.Valor_Mej_Baj_Activo, 0), act.Af_Vida_Util, act.Af_Vida_Util * per.Valor_Ciclo_Anual, mej.Fecha_Transac, 
                   act.Af_fecha_fin_depre, act.Af_Meses_depreciar, act.Af_porcentaje_deprec, act.Estado_Proceso
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_ActivoFijo';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -126,4 +123,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_ActivoFijo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_ActivoFijo';
 

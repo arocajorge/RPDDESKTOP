@@ -14,4 +14,4 @@ FROM            dbo.Af_Activo_fijo AS act INNER JOIN
                          dbo.Af_Catalogo AS col ON col.IdCatalogo = act.IdCatalogo_Color INNER JOIN
                          dbo.Af_Catalogo AS dis ON dis.IdCatalogo = act.IdCatalogo_Modelo LEFT OUTER JOIN
                          dbo.Af_Catalogo AS ubi ON ubi.IdCatalogo = act.IdTipoCatalogo_Ubicacion  LEFT OUTER JOIN
-                         dbo.vwAf_ValoresDepre_x_AF AS vaDepre ON vaDepre.IdEmpresa = act.IdEmpresa AND vaDepre.IdActivoFijo = act.IdActivoFijo 
+                         dbo.vwAf_ValoresDepre_x_AF AS vaDepre ON vaDepre.IdEmpresa = act.IdEmpresa AND vaDepre.IdActivoFijo = act.IdActivoFijo

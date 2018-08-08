@@ -29,101 +29,6 @@ FROM            dbo.ct_punto_cargo INNER JOIN
 						 inner join tb_persona as per on per.IdPersona = cp_proveedor.IdPersona
 WHERE        (dbo.cp_nota_DebCre.DebCre = 'C')
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt006';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' 1008
-            End
-            DisplayFlags = 280
-            TopColumn = 2
-         End
-         Begin Table = "tb_sucursal"
-            Begin Extent = 
-               Top = 250
-               Left = 786
-               Bottom = 379
-               Right = 1016
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_empresa"
-            Begin Extent = 
-               Top = 117
-               Left = 528
-               Bottom = 246
-               Right = 745
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_plancta"
-            Begin Extent = 
-               Top = 382
-               Left = 466
-               Bottom = 554
-               Right = 675
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 24
-         Width = 284
-         Width = 1500
-         Width = 2205
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 7890
-         Alias = 2580
-         Table = 2475
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt006';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -261,4 +166,99 @@ Begin DesignProperties =
                Left = 787
                Bottom = 248
                Right =', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt006';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' 1008
+            End
+            DisplayFlags = 280
+            TopColumn = 2
+         End
+         Begin Table = "tb_sucursal"
+            Begin Extent = 
+               Top = 250
+               Left = 786
+               Bottom = 379
+               Right = 1016
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_empresa"
+            Begin Extent = 
+               Top = 117
+               Left = 528
+               Bottom = 246
+               Right = 745
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_plancta"
+            Begin Extent = 
+               Top = 382
+               Left = 466
+               Bottom = 554
+               Right = 675
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 24
+         Width = 284
+         Width = 1500
+         Width = 2205
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 7890
+         Alias = 2580
+         Table = 2475
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt006';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt006';
 

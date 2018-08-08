@@ -9,10 +9,6 @@ FROM            dbo.vwcp_conciliacion_det_x_cbte_pago INNER JOIN
                          dbo.vwct_cbtecble_con_saldo_cxp AS Cbte ON dbo.vwcp_conciliacion_det_x_cbte_pago.IdEmpresa_pago = Cbte.IdEmpresa AND 
                          dbo.vwcp_conciliacion_det_x_cbte_pago.IdCbteCble_pago = Cbte.IdCbteCble AND dbo.vwcp_conciliacion_det_x_cbte_pago.IdTipoCbte_pago = Cbte.IdTipocbte
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwct_cbtecble_con_saldo_cxp_consulta';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -156,4 +152,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwct_cbtecble_con_saldo_cxp_consulta';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwct_cbtecble_con_saldo_cxp_consulta';
 

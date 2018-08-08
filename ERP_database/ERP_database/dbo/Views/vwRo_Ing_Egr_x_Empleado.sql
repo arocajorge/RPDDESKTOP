@@ -10,10 +10,6 @@ SELECT     dbo.ro_rubro_tipo.IdRubro, dbo.ro_rubro_tipo.ru_descripcion, dbo.ro_r
 FROM         dbo.ro_rubro_tipo INNER JOIN
                       dbo.ro_Ing_Egre_x_Empleado ON dbo.ro_rubro_tipo.IdRubro = dbo.ro_Ing_Egre_x_Empleado.IdRubro
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Ing_Egr_x_Empleado';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -143,4 +139,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Ing_Egr_x_Empleado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Ing_Egr_x_Empleado';
 

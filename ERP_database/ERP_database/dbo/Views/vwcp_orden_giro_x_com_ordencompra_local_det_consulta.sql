@@ -27,66 +27,6 @@ FROM            dbo.com_ordencompra_local_det AS OC INNER JOIN
                          dbo.in_movi_inve_detalle_x_com_ordencompra_local_det AS OC_x_MOVI ON OC.IdEmpresa = OC_x_MOVI.ocd_IdEmpresa AND 
                          OC.IdSucursal = OC_x_MOVI.ocd_IdSucursal AND OC.IdOrdenCompra = OC_x_MOVI.ocd_IdOrdenCompra AND OC.Secuencia = OC_x_MOVI.ocd_Secuencia
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_com_ordencompra_local_det_consulta';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'tom = 258
-               Right = 1106
-            End
-            DisplayFlags = 280
-            TopColumn = 19
-         End
-         Begin Table = "tb_sucursal"
-            Begin Extent = 
-               Top = 96
-               Left = 878
-               Bottom = 261
-               Right = 1108
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_Motivo_Orden_Compra"
-            Begin Extent = 
-               Top = 33
-               Left = 762
-               Bottom = 199
-               Right = 971
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 2490
-         Alias = 5325
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1410
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_com_ordencompra_local_det_consulta';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -223,4 +163,64 @@ Begin DesignProperties =
                Top = 40
                Left = 889
                Bot', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_com_ordencompra_local_det_consulta';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'tom = 258
+               Right = 1106
+            End
+            DisplayFlags = 280
+            TopColumn = 19
+         End
+         Begin Table = "tb_sucursal"
+            Begin Extent = 
+               Top = 96
+               Left = 878
+               Bottom = 261
+               Right = 1108
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_Motivo_Orden_Compra"
+            Begin Extent = 
+               Top = 33
+               Left = 762
+               Bottom = 199
+               Right = 971
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 2490
+         Alias = 5325
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1410
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_com_ordencompra_local_det_consulta';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_com_ordencompra_local_det_consulta';
 

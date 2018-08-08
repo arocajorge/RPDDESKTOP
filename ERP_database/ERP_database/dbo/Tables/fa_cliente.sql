@@ -1,5 +1,4 @@
-﻿
-CREATE TABLE [dbo].[fa_cliente] (
+﻿CREATE TABLE [dbo].[fa_cliente] (
     [IdEmpresa]              INT          NOT NULL,
     [IdCliente]              NUMERIC (18) NOT NULL,
     [Codigo]                 VARCHAR (50) NULL,
@@ -31,59 +30,4 @@ CREATE TABLE [dbo].[fa_cliente] (
     CONSTRAINT [FK_fa_cliente_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa]),
     CONSTRAINT [FK_fa_cliente_tb_persona] FOREIGN KEY ([IdPersona]) REFERENCES [dbo].[tb_persona] ([IdPersona])
 );
-
-
-
-
-
-
-
-GO
-
-
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
-
-
-GO
 

@@ -10,10 +10,6 @@ UNION
 SELECT        IdEmpresa, IdGuia, 'sin_oc' AS TipoDetalle, secuencia, NULL, NULL, NULL, NULL, observacion, IdProducto, Cantidad_enviar, nom_producto, NULL, NULL, Num_Fact, IdProveedor, nom_proveedor, null
 FROM            in_Guia_x_traspaso_bodega_det_sin_oc
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Guia_x_traspaso_bodega_det';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -112,4 +108,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Guia_x_traspaso_bodega_det';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Guia_x_traspaso_bodega_det';
 

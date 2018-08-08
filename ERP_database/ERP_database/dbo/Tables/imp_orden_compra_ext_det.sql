@@ -22,9 +22,3 @@
     CONSTRAINT [FK_imp_orden_compra_ext_det_in_UnidadMedida] FOREIGN KEY ([IdUnidadMedida]) REFERENCES [dbo].[in_UnidadMedida] ([IdUnidadMedida])
 );
 
-
-
-
-
-
-

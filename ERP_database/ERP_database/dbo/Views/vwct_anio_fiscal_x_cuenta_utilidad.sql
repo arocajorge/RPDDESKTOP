@@ -7,10 +7,6 @@ FROM            dbo.ct_anio_fiscal_x_cuenta_utilidad INNER JOIN
                          dbo.ct_anio_fiscal_x_cuenta_utilidad.IdCtaCble = dbo.ct_plancta.IdCtaCble INNER JOIN
                          dbo.ct_grupocble ON dbo.ct_plancta.IdGrupoCble = dbo.ct_grupocble.IdGrupoCble
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwct_anio_fiscal_x_cuenta_utilidad';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -150,4 +146,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwct_anio_fiscal_x_cuenta_utilidad';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwct_anio_fiscal_x_cuenta_utilidad';
 

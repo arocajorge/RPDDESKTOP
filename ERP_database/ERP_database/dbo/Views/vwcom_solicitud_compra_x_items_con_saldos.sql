@@ -67,136 +67,6 @@ FROM            dbo.com_solicitante INNER JOIN
 						 ) in_producto_precio_minimo on in_producto_precio_minimo.IdEmpresa = com_solicitud_compra_det.IdEmpresa
 						 and in_producto_precio_minimo.IdProducto = com_solicitud_compra_det.IdProducto
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_solicitud_compra_x_items_con_saldos';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'            Right = 301
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_departamento"
-            Begin Extent = 
-               Top = 930
-               Left = 38
-               Bottom = 1060
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_centro_costo"
-            Begin Extent = 
-               Top = 1062
-               Left = 38
-               Bottom = 1192
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_solicitud_compra_det_pre_aprobacion"
-            Begin Extent = 
-               Top = 1194
-               Left = 38
-               Bottom = 1324
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "vwcom_solicitud_compra_det_x_Orden_Compra"
-            Begin Extent = 
-               Top = 1326
-               Left = 38
-               Bottom = 1456
-               Right = 249
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_Producto"
-            Begin Extent = 
-               Top = 1458
-               Left = 38
-               Bottom = 1588
-               Right = 272
-            End
-            DisplayFlags = 280
-            TopColumn = 1
-         End
-         Begin Table = "vwcom_ordencompra_local_det_x_cant_pedida_solic_compra"
-            Begin Extent = 
-               Top = 1590
-               Left = 38
-               Bottom = 1720
-               Right = 250
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_centro_costo_sub_centro_costo"
-            Begin Extent = 
-               Top = 1722
-               Left = 38
-               Bottom = 1852
-               Right = 301
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "vwin_Producto_Stock_x_Sucursal"
-            Begin Extent = 
-               Top = 85
-               Left = 862
-               Bottom = 265
-               Right = 1071
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 9
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 5955
-         Alias = 900
-         Table = 3330
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_solicitud_compra_x_items_con_saldos';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -334,4 +204,134 @@ Begin DesignProperties =
                Left = 38
                Bottom = 928
    ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_solicitud_compra_x_items_con_saldos';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'            Right = 301
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_departamento"
+            Begin Extent = 
+               Top = 930
+               Left = 38
+               Bottom = 1060
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_centro_costo"
+            Begin Extent = 
+               Top = 1062
+               Left = 38
+               Bottom = 1192
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_solicitud_compra_det_pre_aprobacion"
+            Begin Extent = 
+               Top = 1194
+               Left = 38
+               Bottom = 1324
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "vwcom_solicitud_compra_det_x_Orden_Compra"
+            Begin Extent = 
+               Top = 1326
+               Left = 38
+               Bottom = 1456
+               Right = 249
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Producto"
+            Begin Extent = 
+               Top = 1458
+               Left = 38
+               Bottom = 1588
+               Right = 272
+            End
+            DisplayFlags = 280
+            TopColumn = 1
+         End
+         Begin Table = "vwcom_ordencompra_local_det_x_cant_pedida_solic_compra"
+            Begin Extent = 
+               Top = 1590
+               Left = 38
+               Bottom = 1720
+               Right = 250
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_centro_costo_sub_centro_costo"
+            Begin Extent = 
+               Top = 1722
+               Left = 38
+               Bottom = 1852
+               Right = 301
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "vwin_Producto_Stock_x_Sucursal"
+            Begin Extent = 
+               Top = 85
+               Left = 862
+               Bottom = 265
+               Right = 1071
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 5955
+         Alias = 900
+         Table = 3330
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_solicitud_compra_x_items_con_saldos';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_solicitud_compra_x_items_con_saldos';
 

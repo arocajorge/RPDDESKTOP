@@ -21,93 +21,6 @@ FROM            dbo.com_solicitud_compra_det_aprobacion AS apro INNER JOIN
                          dbo.ct_punto_cargo ON dbo.ct_punto_cargo.IdEmpresa = apro.IdEmpresa AND dbo.ct_punto_cargo.IdPunto_cargo = apro.IdPunto_cargo LEFT OUTER JOIN
                          dbo.in_UnidadMedida AS uniMed ON apro.IdUnidadMedida = uniMed.IdUnidadMedida inner join tb_persona as per on per.IdPersona = cp_proveedor.IdPersona
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt006';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
-            TopColumn = 0
-         End
-         Begin Table = "com_solicitante"
-            Begin Extent = 
-               Top = 924
-               Left = 732
-               Bottom = 1054
-               Right = 941
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_departamento"
-            Begin Extent = 
-               Top = 313
-               Left = 714
-               Bottom = 516
-               Right = 923
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "estPreApro"
-            Begin Extent = 
-               Top = 1096
-               Left = 407
-               Bottom = 1226
-               Right = 616
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_punto_cargo"
-            Begin Extent = 
-               Top = 1136
-               Left = 901
-               Bottom = 1266
-               Right = 1110
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "uniMed"
-            Begin Extent = 
-               Top = 1404
-               Left = 748
-               Bottom = 1534
-               Right = 958
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 2085
-         Alias = 4365
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt006';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -247,4 +160,91 @@ Begin DesignProperties =
                Right = 573
             End
             DisplayFlags = 280', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt006';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+            TopColumn = 0
+         End
+         Begin Table = "com_solicitante"
+            Begin Extent = 
+               Top = 924
+               Left = 732
+               Bottom = 1054
+               Right = 941
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_departamento"
+            Begin Extent = 
+               Top = 313
+               Left = 714
+               Bottom = 516
+               Right = 923
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "estPreApro"
+            Begin Extent = 
+               Top = 1096
+               Left = 407
+               Bottom = 1226
+               Right = 616
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_punto_cargo"
+            Begin Extent = 
+               Top = 1136
+               Left = 901
+               Bottom = 1266
+               Right = 1110
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "uniMed"
+            Begin Extent = 
+               Top = 1404
+               Left = 748
+               Bottom = 1534
+               Right = 958
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 2085
+         Alias = 4365
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt006';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt006';
 

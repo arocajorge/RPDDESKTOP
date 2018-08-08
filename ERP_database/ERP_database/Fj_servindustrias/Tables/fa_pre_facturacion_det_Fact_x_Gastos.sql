@@ -30,9 +30,3 @@
     CONSTRAINT [FK_fa_pre_facturacion_det_Fact_x_Gastos_fa_pre_facturacion] FOREIGN KEY ([IdEmpresa], [IdPreFacturacion]) REFERENCES [Fj_servindustrias].[fa_pre_facturacion] ([IdEmpresa], [IdPreFacturacion])
 );
 
-
-
-
-
-
-

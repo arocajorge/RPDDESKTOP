@@ -21,7 +21,3 @@
     CONSTRAINT [FK_ro_fuerza_ct_centro_costo_sub_centro_costo] FOREIGN KEY ([IdEmpresa], [IdCentroCosto], [IdSuccentroCosto]) REFERENCES [dbo].[ct_centro_costo_sub_centro_costo] ([IdEmpresa], [IdCentroCosto], [IdCentroCosto_sub_centro_costo])
 );
 
-
-
-
-

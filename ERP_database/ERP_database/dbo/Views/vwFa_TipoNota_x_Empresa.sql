@@ -4,10 +4,6 @@ SELECT        A.IdEmpresa, B.IdTipoNota, B.CodTipoNota, B.Tipo, B.No_Descripcion
 FROM            dbo.fa_TipoNota AS B INNER JOIN
                          dbo.fa_TipoNota_x_Empresa_x_Sucursal AS A ON B.IdTipoNota = A.IdTipoNota
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_TipoNota_x_Empresa';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -147,4 +143,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_TipoNota_x_Empresa';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_TipoNota_x_Empresa';
 

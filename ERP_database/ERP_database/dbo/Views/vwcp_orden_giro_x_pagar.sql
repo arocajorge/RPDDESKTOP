@@ -68,10 +68,6 @@ FROM     dbo.cp_conciliacion_Caja_det AS conci RIGHT OUTER JOIN
                   tb_persona AS per ON per.IdPersona = cp_proveedor.IdPersona
 WHERE  (dbo.cp_orden_pago_tipo_x_empresa.IdTipo_op = 'FACT_PROVEE') AND (dbo.cp_nota_DebCre.DebCre = 'D')
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_pagar';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -170,4 +166,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_pagar';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_x_pagar';
 

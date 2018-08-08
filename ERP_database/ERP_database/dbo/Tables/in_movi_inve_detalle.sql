@@ -29,5 +29,3 @@
     CONSTRAINT [FK_in_movi_inve_detalle_in_UnidadMedida1] FOREIGN KEY ([IdUnidadMedida_sinConversion]) REFERENCES [dbo].[in_UnidadMedida] ([IdUnidadMedida])
 );
 
-
-

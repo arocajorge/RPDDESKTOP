@@ -12,5 +12,3 @@
     CONSTRAINT [FK_ct_anio_fiscal_x_cuenta_utilidad_ct_plancta] FOREIGN KEY ([IdEmpresa], [IdCtaCble]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble])
 );
 
-
-

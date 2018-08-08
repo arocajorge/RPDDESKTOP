@@ -18,10 +18,6 @@ FROM            vwcxc_anticipos_x_cruzar AS a INNER JOIN
                          cxc_cobro_tipo_Param_conta_x_sucursal cobroTipo ON cobroTipo.IdEmpresa = a.IdEmpresa_Cobro AND cobroTipo.IdSucursal = a.IdSucursal_cobro AND 
                          cobroTipo.IdCobro_tipo = a.IdCobro_tipo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobros_Pendientes_x_conciliar';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -120,4 +116,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobros_Pendientes_x_conciliar';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobros_Pendientes_x_conciliar';
 

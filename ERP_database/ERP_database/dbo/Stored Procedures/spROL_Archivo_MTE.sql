@@ -78,5 +78,3 @@ select CON.IdEmpresa,CON.IdEmpleado, IIF(FechaInicio< @FechaI,datediff(DD,@Fecha
 where CON.EstadoContrato='ECT_ACT' and CON.Estado='A'and  CON.IdEmpresa=@IdEmpresa) tab_DiasTrabajados_x_Empleado
 on tab_DiasTrabajados_x_Empleado.IdEmpresa=Tab_Valores_Decimos_x_Empleado.IdEmpresa and tab_DiasTrabajados_x_Empleado.IdEmpleado=Tab_Valores_Decimos_x_Empleado.IdEmpleado
 end
-GO
-

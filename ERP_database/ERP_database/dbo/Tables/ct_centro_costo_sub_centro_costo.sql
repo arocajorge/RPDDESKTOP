@@ -12,5 +12,3 @@
     CONSTRAINT [FK_ct_centro_costo_sub_centro_costo_ct_plancta] FOREIGN KEY ([IdEmpresa], [IdCtaCble]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble])
 );
 
-
-

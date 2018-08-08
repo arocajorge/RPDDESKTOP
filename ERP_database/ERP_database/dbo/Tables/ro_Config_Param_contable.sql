@@ -15,5 +15,3 @@
     CONSTRAINT [FK_ro_Config_Param_contable_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-

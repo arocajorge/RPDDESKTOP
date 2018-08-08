@@ -15,5 +15,3 @@
     CONSTRAINT [PK_ro_CatalogoTipo] PRIMARY KEY CLUSTERED ([IdTipoCatalogo] ASC)
 );
 
-
-

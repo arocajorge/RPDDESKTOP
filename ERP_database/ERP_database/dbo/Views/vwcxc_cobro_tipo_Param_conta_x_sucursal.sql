@@ -7,10 +7,6 @@ FROM            dbo.cxc_cobro_tipo_Param_conta_x_sucursal INNER JOIN
                          dbo.tb_sucursal ON dbo.cxc_cobro_tipo_Param_conta_x_sucursal.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND 
                          dbo.cxc_cobro_tipo_Param_conta_x_sucursal.IdSucursal = dbo.tb_sucursal.IdSucursal
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_tipo_Param_conta_x_sucursal';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -129,4 +125,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_tipo_Param_conta_x_sucursal';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_tipo_Param_conta_x_sucursal';
 

@@ -13,12 +13,6 @@ FROM            Fj_servindustrias.ro_empleado_x_parametro_x_pago_variable INNER 
                          Fj_servindustrias.ro_fuerza ON Fj_servindustrias.ro_empleado_x_parametro_x_pago_variable.IdEmpresa = Fj_servindustrias.ro_fuerza.IdEmpresa AND 
                          Fj_servindustrias.ro_empleado_x_parametro_x_pago_variable.IdFuerza = Fj_servindustrias.ro_fuerza.IdFuerza
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_empleado_x_parametro_x_pago_variable';
-
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -161,14 +155,6 @@ Begin DesignProperties =
     ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_empleado_x_parametro_x_pago_variable';
 
 
-
-
-
-
-
-
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'     GroupBy = 1350
          Filter = 1350
@@ -181,8 +167,6 @@ End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_empleado_x_parametro_x_pago_variable';
 
 
-
-
-
-
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_empleado_x_parametro_x_pago_variable';
 

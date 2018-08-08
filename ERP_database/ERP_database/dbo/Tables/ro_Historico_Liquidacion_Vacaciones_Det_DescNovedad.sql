@@ -12,5 +12,3 @@
     CONSTRAINT [FK_ro_Historico_Liquidacion_Vacaciones_Det_DescNovedad_ro_empleado_novedad_det] FOREIGN KEY ([IdEmpresa], [IdNovedad], [IdEmpleado], [Secuencia]) REFERENCES [dbo].[ro_empleado_novedad_det] ([IdEmpresa], [IdNovedad], [IdEmpleado], [Secuencia])
 );
 
-
-

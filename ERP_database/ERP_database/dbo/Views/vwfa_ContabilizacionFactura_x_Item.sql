@@ -17,12 +17,6 @@ GROUP BY fac.IdEmpresa, fac.IdSucursal, fac.IdBodega, fac.IdCbteVta, Pro_Bod.IdC
                   Pro_Bod.IdProducto, fac.IdCod_Impuesto_Iva, fac.IdCod_Impuesto_Ice, fac.IdCentroCosto, fac.IdCentroCosto_sub_centro_costo, dbo.tb_sis_Impuesto_x_ctacble.IdCtaCble, tb_sis_Impuesto_x_ctacble_1.IdCtaCble, fac.IdPunto_Cargo, 
                   fac.IdPunto_cargo_grupo, dbo.in_categorias.IdCtaCble_venta, dbo.in_categorias.IdCtaCtble_Costo, dbo.in_categorias.IdCtaCtble_Inve, tb_sis_Impuesto_x_ctacble.IdCtaCble_vta
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Item';
-
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -162,8 +156,6 @@ Begin DesignProperties =
                Right =', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Item';
 
 
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' 1091
             End
@@ -211,4 +203,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' 1091
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Item';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Item';
 

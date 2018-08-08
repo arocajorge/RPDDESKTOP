@@ -15,20 +15,6 @@ FROM            dbo.ro_participacion_utilidad_empleado INNER JOIN
                          dbo.ro_participacion_utilidad_empleado.IdUtilidad = dbo.ro_participacion_utilidad.IdUtilidad INNER JOIN
                          dbo.vwro_empleadoXdepXcargo ON dbo.ro_participacion_utilidad_empleado.IdEmpresa = dbo.vwro_empleadoXdepXcargo.IdEmpresa AND 
                          dbo.ro_participacion_utilidad_empleado.IdEmpleado = dbo.vwro_empleadoXdepXcargo.IdEmpleado
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt008';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt008';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -175,4 +161,19 @@ Begin DesignProperties =
          SortOrder = 1410
          GroupBy = 1350
          Filter = ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt008';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt008';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt008';
 

@@ -1,6 +1,6 @@
 ﻿-- spSys_Ge_Comparativo_Modulo_vs_Contas  1 ,'01/06/2016','30/06/2016'
 
-create proc spSys_Ge_Comparativo_Modulo_vs_Contas 
+CREATE proc spSys_Ge_Comparativo_Modulo_vs_Contas 
 (
  @i_IdEmpresa int
 ,@i_fecha_ini datetime
@@ -274,5 +274,3 @@ from tbSys_Ge_Comparativo_Modulo_vs_Contas
 
 
 end
-GO
-

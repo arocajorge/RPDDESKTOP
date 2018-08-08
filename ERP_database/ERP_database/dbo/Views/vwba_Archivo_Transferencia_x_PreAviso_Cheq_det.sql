@@ -14,10 +14,6 @@ FROM            ba_Archivo_Transferencia_x_PreAviso_Cheq_det INNER JOIN
                          ba_Archivo_Transferencia_x_PreAviso_Cheq_det.IdTipocbte_mvba = ba_Cbte_Ban.IdTipocbte INNER JOIN
                          ct_cbtecble_tipo ON ba_Cbte_Ban.IdEmpresa = ct_cbtecble_tipo.IdEmpresa AND ba_Cbte_Ban.IdTipocbte = ct_cbtecble_tipo.IdTipoCbte
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_Archivo_Transferencia_x_PreAviso_Cheq_det';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -146,4 +142,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_Archivo_Transferencia_x_PreAviso_Cheq_det';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_Archivo_Transferencia_x_PreAviso_Cheq_det';
 

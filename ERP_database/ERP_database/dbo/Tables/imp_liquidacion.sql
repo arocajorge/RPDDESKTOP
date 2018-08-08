@@ -16,5 +16,3 @@
     CONSTRAINT [PK_imp_liquidacion] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdLiquidacion] ASC)
 );
 
-
-

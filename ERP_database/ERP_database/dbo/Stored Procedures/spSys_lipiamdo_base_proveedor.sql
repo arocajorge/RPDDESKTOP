@@ -1,5 +1,5 @@
 ﻿
-create proc [dbo].[spSys_lipiamdo_base_proveedor]
+CREATE proc [dbo].[spSys_lipiamdo_base_proveedor]
 as
 /*
 update cp_proveedor

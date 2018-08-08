@@ -19,5 +19,3 @@
     CONSTRAINT [FK_ro_participacion_utilidad_ro_periodo_x_ro_Nomina_TipoLiqui] FOREIGN KEY ([IdEmpresa], [IdNomina], [IdNominaTipo_liq], [IdPeriodo]) REFERENCES [dbo].[ro_periodo_x_ro_Nomina_TipoLiqui] ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui], [IdPeriodo])
 );
 
-
-

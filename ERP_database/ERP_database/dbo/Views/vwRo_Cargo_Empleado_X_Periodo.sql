@@ -26,10 +26,6 @@ FROM            (SELECT        IdEmpresa AS Id_Empresa, IdEmpleado AS Id_Emplead
                                                          recibi_uniforme, talla_pant, talla_camisa, talla_zapato
                                FROM            dbo.vwro_empleadoXdepXcargo) AS cargo ON IngEgr.Id_Empresa = cargo.IdEmpresa AND IngEgr.Id_Empleado = cargo.IdEmpleado
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Cargo_Empleado_X_Periodo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -148,4 +144,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Cargo_Empleado_X_Periodo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Cargo_Empleado_X_Periodo';
 

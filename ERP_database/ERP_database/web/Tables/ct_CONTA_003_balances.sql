@@ -23,5 +23,3 @@
     CONSTRAINT [PK_ct_CONTA_003_balances] PRIMARY KEY CLUSTERED ([IdUsuario] ASC, [IdEmpresa] ASC, [IdCtaCble] ASC)
 );
 
-
-

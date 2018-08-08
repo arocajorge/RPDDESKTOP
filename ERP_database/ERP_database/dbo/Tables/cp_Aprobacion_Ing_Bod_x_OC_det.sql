@@ -35,5 +35,3 @@
     CONSTRAINT [FK_cp_Aprobacion_Ing_Bod_x_OC_det_tb_sis_Impuesto] FOREIGN KEY ([IdCod_Impuesto_Iva]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto])
 );
 
-
-

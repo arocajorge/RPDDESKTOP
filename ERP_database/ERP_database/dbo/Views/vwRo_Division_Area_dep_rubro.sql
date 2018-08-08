@@ -17,9 +17,6 @@ FROM            dbo.ro_Config_Param_contable FULL OUTER JOIN
                          dbo.ro_Config_Param_contable.IdEmpresa = dbo.ro_area_x_departamento.IdEmpresa AND dbo.ro_Config_Param_contable.IdDivision = dbo.ro_area_x_departamento.IdDivision AND 
                          dbo.ro_Config_Param_contable.IdArea = dbo.ro_area_x_departamento.IdArea AND dbo.ro_Config_Param_contable.IdDepartamento = dbo.ro_area_x_departamento.IdDepartamento
 WHERE        (dbo.ro_rubro_tipo.rub_nocontab = 1)
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Division_Area_dep_rubro';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -120,4 +117,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Division_Area_dep_rubro';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Division_Area_dep_rubro';
 

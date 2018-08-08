@@ -8,10 +8,6 @@ FROM            dbo.cp_conciliacion AS Con INNER JOIN
                          dbo.vwcp_cbtes_cxp_para_conciliar AS cbte ON ConDet.IdEmpresa_cxp = cbte.IdEmpresa_cxp AND ConDet.IdTipoCbte_cxp = cbte.IdTipoCbte_cxp AND 
                          ConDet.IdCbteCble_cxp = cbte.IdCbteCble_cxp
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_cbtes_cxp_para_conciliar_consulta';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -140,4 +136,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_cbtes_cxp_para_conciliar_consulta';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_cbtes_cxp_para_conciliar_consulta';
 

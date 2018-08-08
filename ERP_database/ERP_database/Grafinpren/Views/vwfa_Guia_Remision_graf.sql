@@ -1,5 +1,5 @@
 ﻿
-create VIEW [Grafinpren].[vwfa_Guia_Remision_graf]
+CREATE VIEW [Grafinpren].[vwfa_Guia_Remision_graf]
 AS
 SELECT        dbo.fa_guia_remision.IdEmpresa, dbo.fa_guia_remision.IdSucursal, dbo.fa_guia_remision.IdBodega, dbo.fa_guia_remision.IdGuiaRemision, 
                          dbo.fa_Vendedor.Ve_Vendedor, dbo.fa_guia_remision.CodGuiaRemision, dbo.fa_guia_remision.Serie1, dbo.fa_guia_remision.Serie2, 

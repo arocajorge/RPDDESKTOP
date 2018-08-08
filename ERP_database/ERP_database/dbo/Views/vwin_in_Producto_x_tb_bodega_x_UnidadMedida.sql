@@ -1,7 +1,7 @@
 ﻿
 
 
-create VIEW [dbo].[vwin_in_Producto_x_tb_bodega_x_UnidadMedida]
+CREATE VIEW [dbo].[vwin_in_Producto_x_tb_bodega_x_UnidadMedida]
 AS
 SELECT        A.IdEmpresa, A.IdProducto, A.pr_codigo, A.pr_codigo_barra, A.IdProductoTipo, A.IdPresentacion, A.IdCategoria, A.pr_descripcion, A.pr_observacion, 
                          A.IdUnidadMedida, 0 pr_precio_publico, 0 AS pr_pedidos,
@@ -24,42 +24,6 @@ FROM            dbo.in_Producto AS A INNER JOIN
                          dbo.in_UnidadMedida AS consu ON A.IdUnidadMedida_Consumo = consu.IdUnidadMedida LEFT OUTER JOIN
                          dbo.vwin_Producto_Stock ON B.IdEmpresa = dbo.vwin_Producto_Stock.IdEmpresa AND B.IdSucursal = dbo.vwin_Producto_Stock.IdSucursal AND 
                          B.IdBodega = dbo.vwin_Producto_Stock.IdBodega AND B.IdProducto = dbo.vwin_Producto_Stock.IdProducto
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_in_Producto_x_tb_bodega_x_UnidadMedida';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'mn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_in_Producto_x_tb_bodega_x_UnidadMedida';
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -201,4 +165,40 @@ Begin DesignProperties =
             End
             DisplayFlags = 280
             TopColu', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_in_Producto_x_tb_bodega_x_UnidadMedida';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'mn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_in_Producto_x_tb_bodega_x_UnidadMedida';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_in_Producto_x_tb_bodega_x_UnidadMedida';
 

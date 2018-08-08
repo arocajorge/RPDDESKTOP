@@ -10,5 +10,3 @@
     CONSTRAINT [PK_ro_Comprobantes_Contables] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdTipoCbte] ASC, [IdCbteCble] ASC, [CodCtbteCble] ASC, [IdPeriodo] ASC)
 );
 
-
-

@@ -28,7 +28,3 @@
     CONSTRAINT [FK_fa_orden_trabajo_plataforma_tb_transportista] FOREIGN KEY ([IdEmpresa], [IdTransportista]) REFERENCES [dbo].[tb_transportista] ([IdEmpresa], [IdTransportista])
 );
 
-
-
-
-

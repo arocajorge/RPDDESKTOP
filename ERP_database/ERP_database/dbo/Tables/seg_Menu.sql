@@ -16,7 +16,3 @@
     CONSTRAINT [PK_seg_Menu] PRIMARY KEY CLUSTERED ([IdMenu] ASC)
 );
 
-
-
-
-

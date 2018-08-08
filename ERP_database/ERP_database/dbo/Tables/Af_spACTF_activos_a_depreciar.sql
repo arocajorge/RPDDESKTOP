@@ -12,5 +12,3 @@
     [IdCtaCble_Gastos_Depre] VARCHAR (30) NULL
 );
 
-
-

@@ -11,4 +11,4 @@ FROM            dbo.Af_Mej_Baj_Activo AS af INNER JOIN
                          dbo.Af_Catalogo AS dis ON dis.IdCatalogo = act.IdCatalogo_Modelo LEFT OUTER JOIN
                          dbo.Af_Catalogo AS ubi ON ubi.IdCatalogo = act.IdTipoCatalogo_Ubicacion LEFT OUTER JOIN
                          dbo.Af_Catalogo AS col ON col.IdCatalogo = act.IdCatalogo_Color LEFT OUTER JOIN
-                         dbo.Af_Catalogo AS mar ON mar.IdCatalogo = act.IdCatalogo_Marca 
+                         dbo.Af_Catalogo AS mar ON mar.IdCatalogo = act.IdCatalogo_Marca

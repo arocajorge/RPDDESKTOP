@@ -11,8 +11,7 @@ SELECT A.IdEmpresa, A.IdTipoDocumento, A.pe_cedulaRuc, A.CreDeb, vt_Subtotal0 AS
                   A.CreDeb + '-' + cast(A.IdNota AS varchar(50)), isnull(A.pe_apellido, '') + ' ' + isnull(A.pe_nombre, '') AS Razon_Social
 FROM     vwfa_Nota_Credito AS A
 WHERE  A.Estado = 'A' AND LTRIM(RTRIM(A.NaturalezaNota)) = 'SRI'
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI';
+
 
 
 GO
@@ -114,4 +113,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI';
 

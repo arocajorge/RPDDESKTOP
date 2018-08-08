@@ -36,5 +36,4 @@
     CONSTRAINT [PK_ro_Remplazo_x_emplado_1] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [Id_remplazo] ASC),
     CONSTRAINT [FK_ro_Remplazo_x_emplado_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado])
 );
-GO
 

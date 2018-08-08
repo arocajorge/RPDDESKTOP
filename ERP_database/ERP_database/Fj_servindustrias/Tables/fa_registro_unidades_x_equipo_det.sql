@@ -13,5 +13,3 @@
     CONSTRAINT [FK_fa_registro_unidades_x_equipo_det_fa_registro_unidades_x_equipo] FOREIGN KEY ([IdEmpresa], [IdRegistro]) REFERENCES [Fj_servindustrias].[fa_registro_unidades_x_equipo] ([IdEmpresa], [IdRegistro])
 );
 
-
-

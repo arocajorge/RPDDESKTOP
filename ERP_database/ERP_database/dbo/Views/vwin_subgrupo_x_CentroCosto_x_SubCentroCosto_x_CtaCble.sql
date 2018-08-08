@@ -24,10 +24,6 @@ FROM            in_subgrupo INNER JOIN
                          ct_centro_costo ON ct_centro_costo_sub_centro_costo.IdEmpresa = ct_centro_costo.IdEmpresa AND 
                          ct_centro_costo_sub_centro_costo.IdCentroCosto = ct_centro_costo.IdCentroCosto
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_subgrupo_x_CentroCosto_x_SubCentroCosto_x_CtaCble';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -126,4 +122,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_subgrupo_x_CentroCosto_x_SubCentroCosto_x_CtaCble';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_subgrupo_x_CentroCosto_x_SubCentroCosto_x_CtaCble';
 

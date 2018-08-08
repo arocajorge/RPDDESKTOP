@@ -12,7 +12,3 @@
     CONSTRAINT [FK_ro_empleado_x_centro_costo_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado])
 );
 
-
-
-
-

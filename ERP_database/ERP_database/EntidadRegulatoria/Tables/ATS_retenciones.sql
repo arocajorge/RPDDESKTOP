@@ -30,7 +30,3 @@
     CONSTRAINT [PK_retenciones] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdPeriodo] ASC, [Secuencia] ASC)
 );
 
-
-
-
-

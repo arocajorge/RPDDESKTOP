@@ -23,9 +23,3 @@
     CONSTRAINT [FK_fa_liquidacion_x_punto_cargo_det_ingresos_consumo_directo_in_UnidadMedida] FOREIGN KEY ([IdUnidadMedida]) REFERENCES [dbo].[in_UnidadMedida] ([IdUnidadMedida])
 );
 
-
-
-
-
-
-

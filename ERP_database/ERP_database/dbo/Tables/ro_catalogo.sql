@@ -18,5 +18,3 @@
     CONSTRAINT [FK_ro_catalogo_ro_catalogoTipo] FOREIGN KEY ([IdTipoCatalogo]) REFERENCES [dbo].[ro_catalogoTipo] ([IdTipoCatalogo])
 );
 
-
-

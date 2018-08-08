@@ -14,9 +14,3 @@
     CONSTRAINT [FK_fa_pre_facturacion_proyeccion_mano_obra_ro_cargo] FOREIGN KEY ([IdEmpresa], [IdCargo]) REFERENCES [dbo].[ro_cargo] ([IdEmpresa], [IdCargo])
 );
 
-
-
-
-
-
-

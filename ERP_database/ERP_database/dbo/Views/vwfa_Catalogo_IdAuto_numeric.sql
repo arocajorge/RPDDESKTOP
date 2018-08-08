@@ -4,10 +4,6 @@ SELECT     RIGHT('00000' + CAST(ISNULL(MAX(CAST(IdCatalogo AS numeric)), 0) + 1 
 FROM         dbo.fa_catalogo
 WHERE     (ISNUMERIC(IdCatalogo) <> 0)
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_Catalogo_IdAuto_numeric';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -127,4 +123,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_Catalogo_IdAuto_numeric';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_Catalogo_IdAuto_numeric';
 

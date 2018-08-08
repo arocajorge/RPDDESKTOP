@@ -36,143 +36,6 @@ FROM            dbo.fa_formaPago INNER JOIN
                          formas_pago.IdEmpresa = dbo.fa_factura.IdEmpresa AND formas_pago.IdSucursal = dbo.fa_factura.IdSucursal AND formas_pago.IdBodega = dbo.fa_factura.IdBodega AND 
                          formas_pago.IdCbteVta = dbo.fa_factura.IdCbteVta INNER JOIN
                          dbo.fa_cliente_contactos AS con ON con.IdEmpresa = dbo.fa_factura.IdEmpresa AND con.IdCliente = dbo.fa_factura.IdCliente AND con.IdContacto = dbo.fa_factura.IdContacto
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_persona"
-            Begin Extent = 
-               Top = 1173
-               Left = 48
-               Bottom = 1336
-               Right = 322
-            End
-            DisplayFlags = 280
-            TopColumn = 1
-         End
-         Begin Table = "vwfa_factura_subtotal_iva_0_totales"
-            Begin Extent = 
-               Top = 1277
-               Left = 633
-               Bottom = 1440
-               Right = 827
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct"
-            Begin Extent = 
-               Top = 1509
-               Left = 48
-               Bottom = 1672
-               Right = 242
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "cobro"
-            Begin Extent = 
-               Top = 1677
-               Left = 48
-               Bottom = 1840
-               Right = 273
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 54
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 4935
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 2280
-         Alias = 990
-         Table = 1080
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1305
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura';
-
-
-
-
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -315,8 +178,136 @@ Begin DesignProperties =
             End', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_persona"
+            Begin Extent = 
+               Top = 1173
+               Left = 48
+               Bottom = 1336
+               Right = 322
+            End
+            DisplayFlags = 280
+            TopColumn = 1
+         End
+         Begin Table = "vwfa_factura_subtotal_iva_0_totales"
+            Begin Extent = 
+               Top = 1277
+               Left = 633
+               Bottom = 1440
+               Right = 827
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct"
+            Begin Extent = 
+               Top = 1509
+               Left = 48
+               Bottom = 1672
+               Right = 242
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "cobro"
+            Begin Extent = 
+               Top = 1677
+               Left = 48
+               Bottom = 1840
+               Right = 273
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 54
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 4935
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 2280
+         Alias = 990
+         Table = 1080
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1305
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura';
 
 
-
-
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura';
 

@@ -8,10 +8,6 @@ FROM            Fj_servindustrias.ro_fectividad_Entrega_x_Periodo_Empleado INNER
                          dbo.ro_periodo ON Fj_servindustrias.ro_fectividad_Entrega_x_Periodo_Empleado.IdEmpresa = dbo.ro_periodo.IdEmpresa AND 
                          Fj_servindustrias.ro_fectividad_Entrega_x_Periodo_Empleado.IdPeriodo = dbo.ro_periodo.IdPeriodo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_fectividad_Entrega_x_Periodo_Empleado';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -141,4 +137,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_fectividad_Entrega_x_Periodo_Empleado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_fectividad_Entrega_x_Periodo_Empleado';
 

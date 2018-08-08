@@ -6,9 +6,6 @@ FROM            dbo.Af_Depreciacion AS depreCab INNER JOIN
                          dbo.Af_Depreciacion_Det AS depre ON depre.IdEmpresa = depreCab.IdEmpresa AND depreCab.IdDepreciacion = depre.IdDepreciacion AND 
                          depreCab.Estado = 'A'
 GROUP BY depre.IdEmpresa, depre.IdDepreciacion, depre.IdActivoFijo
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depre_x_Ciclo_Valor';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -129,4 +126,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depre_x_Ciclo_Valor';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depre_x_Ciclo_Valor';
 

@@ -21,7 +21,3 @@
     CONSTRAINT [FK_fa_pre_facturacion_mano_obra_servindustria_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado])
 );
 
-
-
-
-

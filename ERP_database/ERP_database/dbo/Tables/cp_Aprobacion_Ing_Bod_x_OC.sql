@@ -26,10 +26,8 @@
     [co_FechaVctoAutorizacion] DATETIME      NULL,
     [IdTipoMovi]               INT           NULL,
     CONSTRAINT [PK_cp_Aprobacion_Ing_Bod_x_OC] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdAprobacion] ASC),
-    CONSTRAINT [FK_cp_Aprobacion_Ing_Bod_x_OC_caj_Caja_Movimiento_Tipo] FOREIGN KEY ([IdEmpresa],[IdTipoMovi]) REFERENCES [dbo].[caj_Caja_Movimiento_Tipo] ([IdEmpresa],[IdTipoMovi]),
+    CONSTRAINT [FK_cp_Aprobacion_Ing_Bod_x_OC_caj_Caja_Movimiento_Tipo] FOREIGN KEY ([IdEmpresa], [IdTipoMovi]) REFERENCES [dbo].[caj_Caja_Movimiento_Tipo] ([IdEmpresa], [IdTipoMovi]),
     CONSTRAINT [FK_cp_Aprobacion_Ing_Bod_x_OC_cp_orden_giro] FOREIGN KEY ([IdEmpresa_Ogiro], [IdCbteCble_Ogiro], [IdTipoCbte_Ogiro]) REFERENCES [dbo].[cp_orden_giro] ([IdEmpresa], [IdCbteCble_Ogiro], [IdTipoCbte_Ogiro]),
     CONSTRAINT [FK_cp_Aprobacion_Ing_Bod_x_OC_cp_proveedor] FOREIGN KEY ([IdEmpresa], [IdProveedor]) REFERENCES [dbo].[cp_proveedor] ([IdEmpresa], [IdProveedor])
 );
-
-
 

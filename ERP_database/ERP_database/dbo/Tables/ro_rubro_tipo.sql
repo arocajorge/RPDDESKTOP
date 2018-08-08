@@ -33,13 +33,3 @@
     CONSTRAINT [FK_ro_rubro_tipo_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-
-
-
-
-
-
-
-
-

@@ -9,9 +9,6 @@ SELECT        dbo.ro_nomina_tipo_liqui_orden.IdEmpresa, dbo.ro_nomina_tipo_liqui
 FROM            dbo.ro_nomina_tipo_liqui_orden INNER JOIN
                          dbo.ro_rubro_tipo ON dbo.ro_nomina_tipo_liqui_orden.IdRubro = dbo.ro_rubro_tipo.IdRubro AND 
                          dbo.ro_nomina_tipo_liqui_orden.IdEmpresa = dbo.ro_rubro_tipo.IdEmpresa
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_NominaTipoLiquiOrdenXRubro';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -156,4 +153,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_NominaTipoLiquiOrdenXRubro';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_NominaTipoLiquiOrdenXRubro';
 

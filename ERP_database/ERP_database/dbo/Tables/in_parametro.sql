@@ -57,13 +57,3 @@
     CONSTRAINT [FK_in_parametro_in_ProductoTipo] FOREIGN KEY ([IdEmpresa], [P_IdProductoTipo_para_lote_0]) REFERENCES [dbo].[in_ProductoTipo] ([IdEmpresa], [IdProductoTipo])
 );
 
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,5 @@
 ﻿
-create view  vwROL_Rpt022 as 
+CREATE view  vwROL_Rpt022 as 
 SELECT        dbo.ro_empleado.IdEmpresa, dbo.ro_empleado_x_ro_tipoNomina.IdTipoNomina, dbo.ro_Departamento.IdDepartamento, dbo.ro_empleado.IdEmpleado, 
                          dbo.ro_prestamo_detalle.IdPrestamo, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, 
                          dbo.ro_prestamo_detalle.EstadoPago, dbo.ro_Nomina_Tipo.Descripcion, dbo.ro_Departamento.de_descripcion, 

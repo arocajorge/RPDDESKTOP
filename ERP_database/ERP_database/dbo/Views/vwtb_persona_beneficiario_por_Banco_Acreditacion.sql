@@ -13,10 +13,6 @@ SELECT        dbo.vwtb_persona_beneficiario.IdEmpresa, dbo.vwtb_persona_benefici
 FROM            dbo.vwtb_persona_beneficiario LEFT OUTER JOIN
                          dbo.tb_banco ON dbo.vwtb_persona_beneficiario.IdBanco_acreditacion = dbo.tb_banco.IdBanco
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_persona_beneficiario_por_Banco_Acreditacion';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -146,4 +142,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_persona_beneficiario_por_Banco_Acreditacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_persona_beneficiario_por_Banco_Acreditacion';
 

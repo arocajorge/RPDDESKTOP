@@ -16,5 +16,3 @@
     CONSTRAINT [FK_ro_marcaciones_x_empleado_x_incidentes_falt_Perm_ro_Nomina_Tipo] FOREIGN KEY ([IdEmpresa], [IdNomina_Tipo]) REFERENCES [dbo].[ro_Nomina_Tipo] ([IdEmpresa], [IdNomina_Tipo])
 );
 
-
-

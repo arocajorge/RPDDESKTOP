@@ -7,5 +7,3 @@
     CONSTRAINT [PK_fa_factura_tipo_formaPago] PRIMARY KEY CLUSTERED ([IdTerminoPago] ASC)
 );
 
-
-

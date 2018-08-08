@@ -11,7 +11,7 @@
     [co_SaldoContable_MesAct] FLOAT (53)    NOT NULL,
     [co_SaldoBanco_EstCta]    FLOAT (53)    NOT NULL,
     [co_SaldoBanco_anterior]  FLOAT (53)    NOT NULL,
-	[Estado]                  CHAR (1)      NOT NULL,
+    [Estado]                  CHAR (1)      NOT NULL,
     [IdUsuario]               VARCHAR (50)  NULL,
     [IdUsuario_Anu]           VARCHAR (50)  NULL,
     [IdUsuarioUltMod]         VARCHAR (50)  NULL,
@@ -20,7 +20,6 @@
     [FechaAnulacion]          DATETIME      NULL,
     [MotivoAnulacion]         VARCHAR (250) NULL,
     [co_Observacion]          VARCHAR (500) NULL,
-    
     CONSTRAINT [PK_ba_ConciliacionBancaria] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdConciliacion] ASC),
     CONSTRAINT [FK_ba_Conciliacion_ba_Banco_Cuenta] FOREIGN KEY ([IdEmpresa], [IdBanco]) REFERENCES [dbo].[ba_Banco_Cuenta] ([IdEmpresa], [IdBanco]),
     CONSTRAINT [FK_ba_Conciliacion_ba_Catalogo] FOREIGN KEY ([IdEstado_Concil_Cat]) REFERENCES [dbo].[ba_Catalogo] ([IdCatalogo]),

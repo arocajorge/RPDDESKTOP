@@ -27,7 +27,3 @@
     CONSTRAINT [FK_ro_Historico_Liquidacion_Vacaciones_tb_empresa1] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-
-
-

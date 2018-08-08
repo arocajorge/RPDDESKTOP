@@ -14,5 +14,3 @@
     CONSTRAINT [FK_ro_horario_planificacion_ro_horario] FOREIGN KEY ([IdEmpresa], [IdHorario]) REFERENCES [dbo].[ro_horario] ([IdEmpresa], [IdHorario])
 );
 
-
-

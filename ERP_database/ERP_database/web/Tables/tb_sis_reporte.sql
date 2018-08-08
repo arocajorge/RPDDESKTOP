@@ -21,5 +21,3 @@
     CONSTRAINT [FK_tb_sis_reporte_tb_modulo] FOREIGN KEY ([CodModulo]) REFERENCES [dbo].[tb_modulo] ([CodModulo])
 );
 
-
-

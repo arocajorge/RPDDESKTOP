@@ -13,7 +13,3 @@
     CONSTRAINT [PK_ro_tipoNomina] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNomina_Tipo] ASC)
 );
 
-
-
-
-

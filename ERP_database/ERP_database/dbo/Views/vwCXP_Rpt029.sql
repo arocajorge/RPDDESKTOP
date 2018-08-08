@@ -28,10 +28,6 @@ FROM            (SELECT        dbo.tb_empresa.IdEmpresa, dbo.tb_empresa.em_nombr
                           WHERE        (dbo.cp_orden_giro.co_vaCoa = 'S') AND (dbo.cp_retencion_det.re_tipoRet = 'RTF')/*OR (dbo.cp_retencion_det.re_tipoRet = 'IVA' AND dbo.cp_retencion.re_Tiene_RFuente = 'N'))*/ ) AS Data
 GROUP BY IdEmpresa, em_nombre, pr_codigo, pr_nombre, Factura, NumRetencion, fecha, Tiene_retencion, re_tipoRet
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt029';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -150,4 +146,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt029';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXP_Rpt029';
 

@@ -10,18 +10,6 @@ FROM         dbo.in_Zona_vs_CentroDeCosto INNER JOIN
                       dbo.in_Zona AS in_Zona_1 ON dbo.in_Zona_vs_CentroDeCosto.IdEmpresaIdZona = in_Zona_1.IdEmpresa AND 
                       dbo.in_Zona_vs_CentroDeCosto.IdSubZona = in_Zona_1.IdZona
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Zona_vs_ct_Centro_Costo';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Zona_vs_ct_Centro_Costo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -167,4 +155,16 @@ Begin DesignProperties =
          Or = 1350
          Or = 1350
          ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Zona_vs_ct_Centro_Costo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Zona_vs_ct_Centro_Costo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Zona_vs_ct_Centro_Costo';
 

@@ -15,10 +15,6 @@ FROM            dbo.vwcxc_cobro INNER JOIN
                          dbo.cxc_cobro_det.IdCbte_vta_nota = dbo.cxc_cobro_x_tarjeta.IdCbte_vta_aplicado AND dbo.vwcxc_cobro.IdSucursal = dbo.cxc_cobro_x_tarjeta.IdSucursal AND 
                          dbo.vwcxc_cobro.IdCobro = dbo.cxc_cobro_x_tarjeta.IdCobro_Aplicado AND dbo.vwcxc_cobro.IdCobro_tipo = dbo.cxc_cobro_x_tarjeta.IdCobro_tipo_Aplicado
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_cobro_det';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -147,4 +143,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_cobro_det';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_cobro_det';
 

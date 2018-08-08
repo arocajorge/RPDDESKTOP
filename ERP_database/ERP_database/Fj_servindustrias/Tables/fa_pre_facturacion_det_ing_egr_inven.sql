@@ -34,13 +34,3 @@
     CONSTRAINT [FK_fa_pre_facturacion_det_ing_egr_inven_in_Producto] FOREIGN KEY ([IdEmpresa], [IdProducto]) REFERENCES [dbo].[in_Producto] ([IdEmpresa], [IdProducto])
 );
 
-
-
-
-
-
-
-
-
-
-

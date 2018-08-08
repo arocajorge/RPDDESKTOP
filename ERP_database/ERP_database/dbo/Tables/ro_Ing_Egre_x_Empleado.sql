@@ -22,5 +22,3 @@
     CONSTRAINT [FK_ro_Ing_Egre_x_Empleado_ro_Nomina_Tipoliqui] FOREIGN KEY ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui]) REFERENCES [dbo].[ro_Nomina_Tipoliqui] ([IdEmpresa], [IdNomina_Tipo], [IdNomina_TipoLiqui])
 );
 
-
-

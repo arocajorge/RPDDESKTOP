@@ -14,10 +14,6 @@ SELECT        dbo.vwba_Cbte_Ban.tc_TipoCbte, dbo.vwba_Cbte_Ban.ba_descripcion, d
 FROM            dbo.vwba_Cbte_Ban LEFT OUTER JOIN
                          dbo.tb_ciudad ON dbo.vwba_Cbte_Ban.cb_ciudadChq = dbo.tb_ciudad.IdCiudad
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwBAN_Rpt006';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -126,4 +122,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwBAN_Rpt006';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwBAN_Rpt006';
 

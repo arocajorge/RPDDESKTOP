@@ -1,5 +1,4 @@
-﻿
-CREATE TABLE [dbo].[fa_cliente_contactos] (
+﻿CREATE TABLE [dbo].[fa_cliente_contactos] (
     [IdEmpresa]   INT            NOT NULL,
     [IdCliente]   NUMERIC (18)   NOT NULL,
     [IdContacto]  INT            NOT NULL,
@@ -15,17 +14,4 @@ CREATE TABLE [dbo].[fa_cliente_contactos] (
     CONSTRAINT [FK_fa_cliente_contactos_tb_ciudad] FOREIGN KEY ([IdCiudad]) REFERENCES [dbo].[tb_ciudad] ([IdCiudad]),
     CONSTRAINT [FK_fa_cliente_contactos_tb_parroquia] FOREIGN KEY ([IdParroquia]) REFERENCES [dbo].[tb_parroquia] ([IdParroquia])
 );
-
-
-
-GO
-
-
-
-
-GO
-
-
-GO
-
 

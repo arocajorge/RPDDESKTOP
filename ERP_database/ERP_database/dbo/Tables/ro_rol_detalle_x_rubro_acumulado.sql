@@ -10,5 +10,3 @@
     CONSTRAINT [PK_ro_rol_detalle_x_rubro_acumulado] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNominaTipo] ASC, [IdNominaTipoLiqui] ASC, [IdPeriodo] ASC, [IdEmpleado] ASC, [IdRubro] ASC)
 );
 
-
-

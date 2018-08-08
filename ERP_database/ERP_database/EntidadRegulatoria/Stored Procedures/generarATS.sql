@@ -1,6 +1,6 @@
 ﻿
 
-create  PROCEDURE [EntidadRegulatoria].[generarATS]
+CREATE  PROCEDURE [EntidadRegulatoria].[generarATS]
 @idempresa int,
 @idPeriodo int
 AS

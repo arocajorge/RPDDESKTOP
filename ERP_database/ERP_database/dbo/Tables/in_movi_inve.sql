@@ -48,7 +48,3 @@
     CONSTRAINT [FK_in_movi_inve_tb_mes] FOREIGN KEY ([cm_mes]) REFERENCES [dbo].[tb_mes] ([idMes])
 );
 
-
-
-
-

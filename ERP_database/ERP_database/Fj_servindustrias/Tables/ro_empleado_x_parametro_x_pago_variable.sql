@@ -20,5 +20,3 @@
     CONSTRAINT [FK_ro_empleado_x_parametro_x_pago_variable_ro_zona] FOREIGN KEY ([IdEmpresa], [IdFuerza]) REFERENCES [Fj_servindustrias].[ro_zona] ([IdEmpresa], [IdZona])
 );
 
-
-

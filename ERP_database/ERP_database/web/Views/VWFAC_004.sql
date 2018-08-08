@@ -1,4 +1,4 @@
-﻿create view web.VWFAC_004 as
+﻿CREATE view web.VWFAC_004 as
 SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.IdSucursal, dbo.fa_notaCreDeb.IdBodega, dbo.fa_notaCreDeb.IdNota, dbo.fa_notaCreDeb_det.Secuencia, dbo.fa_TipoNota.CodTipoNota, 
                          (CASE dbo.fa_TipoNota.Tipo WHEN 'C' THEN 'NTCR' ELSE 'NTDB' END) AS IdTipoDocumento, 
                          dbo.fa_notaCreDeb.Serie1 + '-' + dbo.fa_notaCreDeb.Serie2 + '-' + dbo.fa_notaCreDeb.NumNota_Impresa + '/' + CAST(dbo.fa_notaCreDeb.IdNota AS varchar(20)) AS numDocumento, dbo.fa_notaCreDeb.IdCliente, 

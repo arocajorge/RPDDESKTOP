@@ -13,28 +13,6 @@ WHERE        (d.EstadoPago = 'PEN')
 GROUP BY c.IdEmpresa, c.IdPrestamo, c.IdMotivo_Prestamo, c.IdMetCalc, d.NumCuota, d.TotalCuota, pag.ca_descripcion, d.EstadoPago, d.FechaPago, canc.Observacion_canc, 
                          c.IdBanco, c.NomBanco, c.IdCtaCble_Prestamo, c.IdCtaCble, d.Interes, d.SaldoInicial, d.AbonoCapital, d.Saldo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_prestamo_detalle_cancelacion';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'ble = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_prestamo_detalle_cancelacion';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -182,4 +160,26 @@ Begin DesignProperties =
          Column = 1440
          Alias = 1890
          Ta', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_prestamo_detalle_cancelacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'ble = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_prestamo_detalle_cancelacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_prestamo_detalle_cancelacion';
 

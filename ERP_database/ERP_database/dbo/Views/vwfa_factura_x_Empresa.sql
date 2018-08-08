@@ -4,10 +4,6 @@ SELECT        dbo.fa_factura.IdEmpresa, dbo.tb_empresa.em_ruc, dbo.fa_factura.vt
 FROM            dbo.tb_empresa INNER JOIN
                          dbo.fa_factura ON dbo.tb_empresa.IdEmpresa = dbo.fa_factura.IdEmpresa
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura_x_Empresa';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -137,4 +133,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura_x_Empresa';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_factura_x_Empresa';
 

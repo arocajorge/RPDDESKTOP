@@ -22,5 +22,3 @@
     CONSTRAINT [FK_ro_horario_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-

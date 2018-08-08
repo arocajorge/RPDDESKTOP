@@ -5,10 +5,6 @@ SELECT        IdEmpresa_cxp AS IdEmpresa_cbtecble, IdTipoCbte_cxp AS IdTipoCbte_
 FROM            dbo.cp_orden_pago_cancelaciones
 GROUP BY IdEmpresa_cxp, IdTipoCbte_cxp, IdCbteCble_cxp
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_pago_cancelacion_Total_pagado_x_cbteble';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -128,4 +124,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_pago_cancelacion_Total_pagado_x_cbteble';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_pago_cancelacion_Total_pagado_x_cbteble';
 

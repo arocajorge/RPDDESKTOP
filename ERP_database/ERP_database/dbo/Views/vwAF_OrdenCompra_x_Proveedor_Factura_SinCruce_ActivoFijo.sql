@@ -10,10 +10,6 @@ SELECT        IdEmpresa, IdSucursal, IdNumMovi, Secuencia, IdBodega, IdProducto,
                                                          AND (Secuencia_oc = vwAF_Orden.Secuencia_oc) AND (IdProducto = vwAF_Orden.IdProducto) AND (Estado = 'A')) AS Saldo_Factu
 FROM            dbo.vwAF_OrdenCompra_x_Proveedor_Factura_ActivoFijo AS vwAF_Orden
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAF_OrdenCompra_x_Proveedor_Factura_SinCruce_ActivoFijo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -122,4 +118,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAF_OrdenCompra_x_Proveedor_Factura_SinCruce_ActivoFijo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAF_OrdenCompra_x_Proveedor_Factura_SinCruce_ActivoFijo';
 

@@ -1,4 +1,6 @@
-﻿CREATE VIEW [web].[VWCXC_002]
+﻿
+
+CREATE VIEW [web].[VWCXC_002]
 AS
 SELECT        dbo.cxc_cobro_det.IdEmpresa, dbo.cxc_cobro_det.IdSucursal, dbo.cxc_cobro_det.IdCobro, dbo.cxc_cobro_det.secuencial, dbo.cxc_cobro_det.dc_TipoDocumento, dbo.cxc_cobro_det.IdBodega_Cbte, 
                          dbo.cxc_cobro_det.IdCbte_vta_nota, dbo.cxc_cobro_tipo.tc_descripcion, dbo.cxc_cobro_det.dc_ValorPago, dbo.tb_sucursal.Su_Descripcion, ISNULL(dbo.fa_cliente_contactos.Nombres, dbo.tb_persona.pe_nombreCompleto) 
@@ -28,94 +30,6 @@ FROM            dbo.cxc_cobro INNER JOIN
                                GROUP BY IdEmpresa, IdSucursal, IdBodega, IdNota) AS nd ON dbo.fa_notaCreDeb.IdEmpresa = nd.IdEmpresa AND dbo.fa_notaCreDeb.IdSucursal = nd.IdSucursal AND dbo.fa_notaCreDeb.IdBodega = nd.IdBodega AND 
                          dbo.fa_notaCreDeb.IdNota = nd.IdNota
 WHERE        (dbo.cxc_cobro.IdCobro_tipo IS NULL)
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWCXC_002';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "fa_notaCreDeb"
-            Begin Extent = 
-               Top = 666
-               Left = 38
-               Bottom = 796
-               Right = 258
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_persona"
-            Begin Extent = 
-               Top = 798
-               Left = 38
-               Bottom = 928
-               Right = 270
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "fd"
-            Begin Extent = 
-               Top = 402
-               Left = 275
-               Bottom = 532
-               Right = 445
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "nd"
-            Begin Extent = 
-               Top = 534
-               Left = 292
-               Bottom = 664
-               Right = 462
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 9
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWCXC_002';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -256,4 +170,93 @@ Begin DesignProperties =
                Bottom = 664
                Right = 254
             ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWCXC_002';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "fa_notaCreDeb"
+            Begin Extent = 
+               Top = 666
+               Left = 38
+               Bottom = 796
+               Right = 258
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_persona"
+            Begin Extent = 
+               Top = 798
+               Left = 38
+               Bottom = 928
+               Right = 270
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "fd"
+            Begin Extent = 
+               Top = 402
+               Left = 275
+               Bottom = 532
+               Right = 445
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "nd"
+            Begin Extent = 
+               Top = 534
+               Left = 292
+               Bottom = 664
+               Right = 462
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWCXC_002';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWCXC_002';
 

@@ -19,40 +19,6 @@ FROM     dbo.in_UnidadMedida INNER JOIN
                   dbo.in_Ing_Egr_Inven_det.IdMovi_inven_tipo = dev.inv_IdMovi_inven_tipo AND dbo.in_Ing_Egr_Inven_det.IdNumMovi = dev.inv_IdNumMovi AND dbo.in_Ing_Egr_Inven_det.Secuencia = dev.inv_Secuencia
 WHERE  (ROUND(ABS(dbo.in_Ing_Egr_Inven_det.dm_cantidad_sinConversion) - ISNULL(dev.cant_devuelta, 0), 2) > 0)
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'    Width = 1200
-         Width = 1200
-         Width = 1200
-         Width = 1200
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1176
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1356
-         SortOrder = 1416
-         GroupBy = 1350
-         Filter = 1356
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
-
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -198,4 +164,34 @@ Begin DesignProperties =
      ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'    Width = 1200
+         Width = 1200
+         Width = 1200
+         Width = 1200
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1176
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1356
+         SortOrder = 1416
+         GroupBy = 1350
+         Filter = 1356
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'vwin_Ing_Egr_Inven_det_x_devolver';
 

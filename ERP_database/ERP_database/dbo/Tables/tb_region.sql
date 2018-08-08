@@ -8,7 +8,3 @@
     CONSTRAINT [FK_tb_region_tb_pais] FOREIGN KEY ([IdPais]) REFERENCES [dbo].[tb_pais] ([IdPais])
 );
 
-
-
-
-

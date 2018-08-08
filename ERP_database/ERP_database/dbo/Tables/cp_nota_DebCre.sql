@@ -70,10 +70,6 @@
 );
 
 
-
-
-
-
 GO
 CREATE NONCLUSTERED INDEX [IX_cp_nota_DebCre]
     ON [dbo].[cp_nota_DebCre]([IdEmpresa] ASC, [IdTipoCbte_Nota] ASC, [IdCbteCble_Nota] ASC, [IdProveedor] ASC);

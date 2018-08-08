@@ -41,10 +41,6 @@
 );
 
 
-
-
-
-
 GO
 CREATE NONCLUSTERED INDEX [IX_fa_notaCreDeb]
     ON [dbo].[fa_notaCreDeb]([IdEmpresa] ASC, [CodDocumentoTipo] ASC, [Serie1] ASC, [Serie2] ASC, [NumNota_Impresa] ASC);

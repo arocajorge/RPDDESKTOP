@@ -31,7 +31,3 @@
     CONSTRAINT [FK_cp_conciliacion_Caja_ct_plancta] FOREIGN KEY ([IdEmpresa], [IdCtaCble]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble])
 );
 
-
-
-
-

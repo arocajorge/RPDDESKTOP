@@ -9,10 +9,6 @@ FROM         dbo.cxc_cobro_x_Anticipo_det AS cbr_ant_det INNER JOIN
                       dbo.cxc_cobro_det AS cbr_det ON cbr.IdEmpresa = cbr_det.IdEmpresa AND cbr.IdSucursal = cbr_det.IdSucursal AND cbr.IdCobro = cbr_det.IdCobro
 GROUP BY cbr_ant_det.IdEmpresa, cbr_ant_det.IdAnticipo, cbr_ant_det.Secuencia, cbr_det.IdEmpresa, cbr_det.IdSucursal, cbr_det.IdCobro
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_anticipo_total_respaldado';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -141,4 +137,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_anticipo_total_respaldado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_anticipo_total_respaldado';
 

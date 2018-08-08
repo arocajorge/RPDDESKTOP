@@ -13,10 +13,6 @@ WHERE        A.IdEmpresa = B.IdEmpresa AND A.IdCobro = B.IdCobro AND A.IdSucursa
                          B.IdEmpresa = S.IdEmpresa
 GROUP BY A.IdEmpresa, A.IdSucursal, S.Su_Descripcion, A.IdCliente, a.IdCobro_tipo, a.cr_NumDocumento, b.IdCbte_vta_nota, a.cr_fecha, a.cr_fechaCobro
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXC_EstadoCta_x_Cliente';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -115,4 +111,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXC_EstadoCta_x_Cliente';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCXC_EstadoCta_x_Cliente';
 

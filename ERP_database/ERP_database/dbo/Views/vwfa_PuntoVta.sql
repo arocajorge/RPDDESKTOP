@@ -5,10 +5,6 @@ SELECT        dbo.fa_PuntoVta.IdEmpresa, dbo.fa_PuntoVta.IdSucursal, dbo.tb_sucu
 FROM            dbo.fa_PuntoVta INNER JOIN
                          dbo.tb_sucursal ON dbo.fa_PuntoVta.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.fa_PuntoVta.IdSucursal = dbo.tb_sucursal.IdSucursal
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_PuntoVta';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -140,4 +136,6 @@ End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_PuntoVta';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_PuntoVta';
 

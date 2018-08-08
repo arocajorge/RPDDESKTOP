@@ -27,5 +27,3 @@
     CONSTRAINT [FK_ro_archivos_bancos_generacion_ba_Archivo_Transferencia] FOREIGN KEY ([IdEmpesa_mod_banco], [IdArchivo_mod_banco]) REFERENCES [dbo].[ba_Archivo_Transferencia] ([IdEmpresa], [IdArchivo])
 );
 
-
-

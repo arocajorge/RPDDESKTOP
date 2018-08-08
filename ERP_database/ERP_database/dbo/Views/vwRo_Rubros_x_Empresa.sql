@@ -9,9 +9,6 @@ SELECT        dbo.ro_rubro_tipo.IdRubro, dbo.ro_rubro_tipo.rub_codigo, dbo.ro_ru
                          dbo.ro_rubro_tipo.rub_provision, dbo.ro_rubro_tipo.rub_noafecta,  dbo.ro_rubro_tipo.rub_nocontab, 
                           dbo.ro_rubro_tipo.rub_guarda_rol, dbo.ro_rubro_tipo.rub_aplica_IESS
 FROM            dbo.ro_rubro_tipo
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rubros_x_Empresa';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -143,4 +140,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rubros_x_Empresa';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rubros_x_Empresa';
 

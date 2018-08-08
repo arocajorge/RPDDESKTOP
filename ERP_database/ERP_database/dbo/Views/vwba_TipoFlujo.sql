@@ -5,10 +5,6 @@ SELECT        dbo.ba_TipoFlujo.IdEmpresa, dbo.ba_TipoFlujo.IdTipoFlujo, dbo.ba_T
 FROM            dbo.ba_TipoFlujo LEFT OUTER JOIN
                          dbo.ba_TipoFlujo AS ba_TipoFlujo_1 ON dbo.ba_TipoFlujo.IdEmpresa = ba_TipoFlujo_1.IdEmpresa AND dbo.ba_TipoFlujo.IdTipoFlujoPadre = ba_TipoFlujo_1.IdTipoFlujo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_TipoFlujo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -138,4 +134,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_TipoFlujo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_TipoFlujo';
 

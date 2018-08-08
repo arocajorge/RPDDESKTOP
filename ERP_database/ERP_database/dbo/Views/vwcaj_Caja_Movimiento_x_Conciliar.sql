@@ -15,10 +15,6 @@ GROUP BY mov_caj.IdEmpresa, mov_caj.IdCbteCble, mov_caj.IdTipocbte, mov_caj.cm_S
                          dbo.vwcp_conciliacion_Caja_det_Ing_Caja_total_aplicado.Total_aplicado, mov_caj.IdCaja, mov_caj.Estado
 HAVING        (mov_caj.cm_Signo = '+') AND (mov_caj.Estado = 'A')
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcaj_Caja_Movimiento_x_Conciliar';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -162,4 +158,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcaj_Caja_Movimiento_x_Conciliar';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcaj_Caja_Movimiento_x_Conciliar';
 

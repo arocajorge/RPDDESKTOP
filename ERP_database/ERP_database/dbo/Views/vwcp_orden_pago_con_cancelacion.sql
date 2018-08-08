@@ -77,12 +77,6 @@ FROM            (SELECT        A.IdEmpresa, A.IdTipo_op, SUBSTRING(D .Descripcio
                                                          WHERE        (IdEmpresa_cxp IS NOT NULL) AND (IdCbteCble_cxp IS NOT NULL)
                                                          GROUP BY IdEmpresa_cxp, IdCbteCble_cxp, IdTipoCbte_cxp) AS Total_OP ON Total_OP.IdEmpresa_cxp = C.IdEmpresa AND Total_OP.IdTipoCbte_cxp = C.IdTipoCbte_Ogiro AND 
                                                    Total_OP.IdCbteCble_cxp = C.IdCbteCble_Ogiro) A
-														 
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_pago_con_cancelacion';
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -216,4 +210,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_pago_con_cancelacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_pago_con_cancelacion';
 

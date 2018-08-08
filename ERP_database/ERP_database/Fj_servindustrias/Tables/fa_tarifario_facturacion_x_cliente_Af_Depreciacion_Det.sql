@@ -18,5 +18,3 @@
     CONSTRAINT [FK_fa_tarifario_facturacion_x_cliente_Af_Depreciacion_Det_fa_tarifario_facturacion_x_cliente_Af_Depreciacion] FOREIGN KEY ([IdEmpresa], [IdDepreciacion], [IdTarifario]) REFERENCES [Fj_servindustrias].[fa_tarifario_facturacion_x_cliente_Af_Depreciacion] ([IdEmpresa], [IdDepreciacion], [IdTarifario])
 );
 
-
-

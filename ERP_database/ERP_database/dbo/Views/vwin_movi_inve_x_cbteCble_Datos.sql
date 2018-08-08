@@ -45,126 +45,6 @@ FROM            dbo.in_movi_inve INNER JOIN
                          dbo.in_movi_inve.IdMovi_inven_tipo = dbo.in_movi_inve_x_ct_cbteCble.IdMovi_inven_tipo AND 
                          dbo.in_movi_inve.IdNumMovi = dbo.in_movi_inve_x_ct_cbteCble.IdNumMovi
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_movi_inve_x_cbteCble_Datos';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' 272
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_punto_cargo"
-            Begin Extent = 
-               Top = 1194
-               Left = 38
-               Bottom = 1323
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_cbtecble"
-            Begin Extent = 
-               Top = 6
-               Left = 38
-               Bottom = 135
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_movi_inve_x_ct_cbteCble"
-            Begin Extent = 
-               Top = 47
-               Left = 376
-               Bottom = 176
-               Right = 585
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_cbtecble_tipo"
-            Begin Extent = 
-               Top = 270
-               Left = 38
-               Bottom = 399
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_Ing_Egr_Inven"
-            Begin Extent = 
-               Top = 9
-               Left = 1017
-               Bottom = 254
-               Right = 1280
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 29
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 2175
-         Width = 1485
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 5250
-         Alias = 2355
-         Table = 4440
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_movi_inve_x_cbteCble_Datos';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -302,4 +182,124 @@ Begin DesignProperties =
                Left = 38
                Bottom = 1191
                Right =', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_movi_inve_x_cbteCble_Datos';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' 272
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_punto_cargo"
+            Begin Extent = 
+               Top = 1194
+               Left = 38
+               Bottom = 1323
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_cbtecble"
+            Begin Extent = 
+               Top = 6
+               Left = 38
+               Bottom = 135
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_movi_inve_x_ct_cbteCble"
+            Begin Extent = 
+               Top = 47
+               Left = 376
+               Bottom = 176
+               Right = 585
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_cbtecble_tipo"
+            Begin Extent = 
+               Top = 270
+               Left = 38
+               Bottom = 399
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Ing_Egr_Inven"
+            Begin Extent = 
+               Top = 9
+               Left = 1017
+               Bottom = 254
+               Right = 1280
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 29
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 2175
+         Width = 1485
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 5250
+         Alias = 2355
+         Table = 4440
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_movi_inve_x_cbteCble_Datos';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_movi_inve_x_cbteCble_Datos';
 

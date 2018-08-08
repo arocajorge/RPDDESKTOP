@@ -8,15 +8,6 @@ FROM            dbo.Af_Depreciacion AS depre INNER JOIN
                          dbo.Af_Depreciacion_Det AS depre_Det ON depre.IdEmpresa = depre_Det.IdEmpresa AND depre.IdDepreciacion = depre_Det.IdDepreciacion
                          INNER JOIN
                          dbo.Af_Activo_fijo AS act ON act.IdEmpresa = depre_Det.IdEmpresa AND act.IdActivoFijo = depre_Det.IdActivoFijo
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depreciacion_Detalle';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depreciacion_Detalle';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -166,4 +157,14 @@ Begin DesignProperties =
          Or = 1350
       End
    End', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depreciacion_Detalle';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depreciacion_Detalle';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Depreciacion_Detalle';
 

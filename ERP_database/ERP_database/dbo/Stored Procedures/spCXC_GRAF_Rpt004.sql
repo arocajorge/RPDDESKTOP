@@ -1,5 +1,5 @@
 ﻿
-create PROCEDURE [dbo].[spCXC_GRAF_Rpt004]
+CREATE PROCEDURE [dbo].[spCXC_GRAF_Rpt004]
 	@IdEmpresa as int,	
 	@SucursalIni as int,
 	@SucursalFin as int,

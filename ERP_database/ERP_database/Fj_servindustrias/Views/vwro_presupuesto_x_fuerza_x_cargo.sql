@@ -9,10 +9,6 @@ FROM            Fj_servindustrias.ro_presupuesto_x_fuerza_x_cargo INNER JOIN
                          Fj_servindustrias.ro_fuerza ON Fj_servindustrias.ro_presupuesto_x_fuerza_x_cargo.IdEmpresa = Fj_servindustrias.ro_fuerza.IdEmpresa AND 
                          Fj_servindustrias.ro_presupuesto_x_fuerza_x_cargo.IdFuerza = Fj_servindustrias.ro_fuerza.IdFuerza
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_presupuesto_x_fuerza_x_cargo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -131,4 +127,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_presupuesto_x_fuerza_x_cargo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwro_presupuesto_x_fuerza_x_cargo';
 

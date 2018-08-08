@@ -34,149 +34,6 @@ FROM            dbo.in_Ing_Egr_Inven INNER JOIN
                          dbo.in_Motivo_Inven ON dbo.in_Motivo_Inven.IdMotivo_Inv = dbo.in_Ing_Egr_Inven.IdMotivo_Inv AND dbo.in_Motivo_Inven.IdEmpresa = dbo.in_Ing_Egr_Inven.IdEmpresa
 						 inner join tb_persona as per on cp_proveedor.IdPersona = per.IdPersona
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt003';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
-            End
-            DisplayFlags = 280
-            TopColumn = 1
-         End
-         Begin Table = "uniSin"
-            Begin Extent = 
-               Top = 940
-               Left = 87
-               Bottom = 1070
-               Right = 297
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "suc"
-            Begin Extent = 
-               Top = 986
-               Left = 1108
-               Bottom = 1116
-               Right = 1338
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_empresa"
-            Begin Extent = 
-               Top = 1192
-               Left = 919
-               Bottom = 1454
-               Right = 1138
-            End
-            DisplayFlags = 280
-            TopColumn = 14
-         End
-         Begin Table = "prod"
-            Begin Extent = 
-               Top = 1326
-               Left = 38
-               Bottom = 1456
-               Right = 272
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "minv_tip"
-            Begin Extent = 
-               Top = 397
-               Left = 1252
-               Bottom = 690
-               Right = 1467
-            End
-            DisplayFlags = 280
-            TopColumn = 10
-         End
-         Begin Table = "ct_punto_cargo"
-            Begin Extent = 
-               Top = 87
-               Left = 1302
-               Bottom = 250
-               Right = 1538
-            End
-            DisplayFlags = 280
-            TopColumn = 2
-         End
-         Begin Table = "mov_inv_det"
-            Begin Extent = 
-               Top = 1590
-               Left = 38
-               Bottom = 1837
-               Right = 293
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "mov_inv"
-            Begin Extent = 
-               Top = 1751
-               Left = 519
-               Bottom = 1969
-               Right = 782
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_Motivo_Inven"
-            Begin Extent = 
-               Top = 271
-               Left = 53
-               Bottom = 447
-               Right = 262
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 10
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1176
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1356
-         SortOrder = 1416
-         GroupBy = 1350
-         Filter = 1356
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt003';
-
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -316,4 +173,143 @@ Begin DesignProperties =
                Right = 263', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt003';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+            End
+            DisplayFlags = 280
+            TopColumn = 1
+         End
+         Begin Table = "uniSin"
+            Begin Extent = 
+               Top = 940
+               Left = 87
+               Bottom = 1070
+               Right = 297
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "suc"
+            Begin Extent = 
+               Top = 986
+               Left = 1108
+               Bottom = 1116
+               Right = 1338
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_empresa"
+            Begin Extent = 
+               Top = 1192
+               Left = 919
+               Bottom = 1454
+               Right = 1138
+            End
+            DisplayFlags = 280
+            TopColumn = 14
+         End
+         Begin Table = "prod"
+            Begin Extent = 
+               Top = 1326
+               Left = 38
+               Bottom = 1456
+               Right = 272
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "minv_tip"
+            Begin Extent = 
+               Top = 397
+               Left = 1252
+               Bottom = 690
+               Right = 1467
+            End
+            DisplayFlags = 280
+            TopColumn = 10
+         End
+         Begin Table = "ct_punto_cargo"
+            Begin Extent = 
+               Top = 87
+               Left = 1302
+               Bottom = 250
+               Right = 1538
+            End
+            DisplayFlags = 280
+            TopColumn = 2
+         End
+         Begin Table = "mov_inv_det"
+            Begin Extent = 
+               Top = 1590
+               Left = 38
+               Bottom = 1837
+               Right = 293
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "mov_inv"
+            Begin Extent = 
+               Top = 1751
+               Left = 519
+               Bottom = 1969
+               Right = 782
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Motivo_Inven"
+            Begin Extent = 
+               Top = 271
+               Left = 53
+               Bottom = 447
+               Right = 262
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 10
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1176
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1356
+         SortOrder = 1416
+         GroupBy = 1350
+         Filter = 1356
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt003';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt003';
 

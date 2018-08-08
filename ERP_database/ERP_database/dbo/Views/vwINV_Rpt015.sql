@@ -40,117 +40,6 @@ FROM     dbo.ct_centro_costo RIGHT OUTER JOIN
 				  inner join tb_persona as per on per.IdPersona = cp_proveedor.IdPersona
 WHERE  (dbo.in_Motivo_Inven.Genera_Movi_Inven = 'N')
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt015';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'             Bottom = 1985
-               Right = 301
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_Ing_Egr_Inven"
-            Begin Extent = 
-               Top = 1903
-               Left = 737
-               Bottom = 2177
-               Right = 1000
-            End
-            DisplayFlags = 280
-            TopColumn = 11
-         End
-         Begin Table = "in_Producto"
-            Begin Extent = 
-               Top = 2120
-               Left = 38
-               Bottom = 2249
-               Right = 272
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_Motivo_Inven"
-            Begin Extent = 
-               Top = 2252
-               Left = 38
-               Bottom = 2381
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_centro_costo_sub_centro_costo"
-            Begin Extent = 
-               Top = 2384
-               Left = 38
-               Bottom = 2513
-               Right = 301
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_bodega"
-            Begin Extent = 
-               Top = 2516
-               Left = 38
-               Bottom = 2645
-               Right = 299
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_sucursal"
-            Begin Extent = 
-               Top = 2648
-               Left = 38
-               Bottom = 2777
-               Right = 268
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 9
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt015';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -287,4 +176,115 @@ Begin DesignProperties =
                Top = 1856
                Left = 38
   ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt015';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'             Bottom = 1985
+               Right = 301
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Ing_Egr_Inven"
+            Begin Extent = 
+               Top = 1903
+               Left = 737
+               Bottom = 2177
+               Right = 1000
+            End
+            DisplayFlags = 280
+            TopColumn = 11
+         End
+         Begin Table = "in_Producto"
+            Begin Extent = 
+               Top = 2120
+               Left = 38
+               Bottom = 2249
+               Right = 272
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Motivo_Inven"
+            Begin Extent = 
+               Top = 2252
+               Left = 38
+               Bottom = 2381
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_centro_costo_sub_centro_costo"
+            Begin Extent = 
+               Top = 2384
+               Left = 38
+               Bottom = 2513
+               Right = 301
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_bodega"
+            Begin Extent = 
+               Top = 2516
+               Left = 38
+               Bottom = 2645
+               Right = 299
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_sucursal"
+            Begin Extent = 
+               Top = 2648
+               Left = 38
+               Bottom = 2777
+               Right = 268
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt015';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt015';
 

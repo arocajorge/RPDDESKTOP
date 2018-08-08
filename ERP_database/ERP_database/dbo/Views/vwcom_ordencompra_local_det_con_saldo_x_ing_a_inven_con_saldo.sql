@@ -15,10 +15,6 @@ GROUP BY IdEmpresa, IdSucursal, IdOrdenCompra, secuencia_oc_det, nom_sucu, IdPro
                          Nom_Motivo, IdEstado_cierre, nom_estado_cierre, Nomsub_centro_costo, IdUnidadMedida_Consumo, Descripcion, oc_NumDocumento
 HAVING        (IdEmpresa IS NOT NULL)
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven_con_saldo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -162,4 +158,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven_con_saldo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven_con_saldo';
 

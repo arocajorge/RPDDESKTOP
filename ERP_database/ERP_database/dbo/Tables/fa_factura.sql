@@ -47,10 +47,6 @@
 );
 
 
-
-
-
-
 GO
 CREATE NONCLUSTERED INDEX [IX_fa_factura]
     ON [dbo].[fa_factura]([IdEmpresa] ASC, [vt_tipoDoc] ASC, [vt_serie1] ASC, [vt_serie2] ASC, [vt_NumFactura] ASC);

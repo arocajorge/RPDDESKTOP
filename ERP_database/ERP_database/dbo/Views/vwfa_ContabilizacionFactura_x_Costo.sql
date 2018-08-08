@@ -5,10 +5,6 @@ SELECT        a.IdEmpresa, a.IdSucursal, a.IdBodega, a.IdCbteVta, a.IdProducto, 
 FROM            dbo.fa_factura_det AS a INNER JOIN
                          dbo.in_producto_x_tb_bodega AS b ON a.IdEmpresa = b.IdEmpresa AND a.IdProducto = b.IdProducto AND a.IdSucursal = b.IdSucursal AND a.IdBodega = b.IdBodega
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Costo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -127,4 +123,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Costo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwfa_ContabilizacionFactura_x_Costo';
 

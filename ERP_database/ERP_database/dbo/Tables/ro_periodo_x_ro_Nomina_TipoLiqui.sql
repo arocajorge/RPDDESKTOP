@@ -11,7 +11,3 @@
     CONSTRAINT [FK_ro_periodo_x_ro_Nomina_TipoLiqui_ro_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ro_periodo] ([IdEmpresa], [IdPeriodo])
 );
 
-
-
-
-

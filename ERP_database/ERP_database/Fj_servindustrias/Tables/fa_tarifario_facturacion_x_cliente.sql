@@ -21,5 +21,3 @@
     CONSTRAINT [PK_fa_contrato_facturacion_x_cliente] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdTarifario] ASC)
 );
 
-
-

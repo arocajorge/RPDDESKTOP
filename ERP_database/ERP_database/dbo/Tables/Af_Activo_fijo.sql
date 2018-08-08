@@ -26,9 +26,9 @@
     [Estado]                   CHAR (1)       NOT NULL,
     [MotiAnula]                VARCHAR (100)  NULL,
     [Af_foto]                  IMAGE          NULL,
-    [Af_DescripcionCorta]      VARCHAR (500)   NULL,
+    [Af_DescripcionCorta]      VARCHAR (500)  NULL,
     [Af_Codigo_Barra]          VARCHAR (50)   NULL,
-    [Af_DescripcionTecnica]    VARCHAR (1000)  NULL,
+    [Af_DescripcionTecnica]    VARCHAR (1000) NULL,
     [Estado_Proceso]           VARCHAR (35)   NULL,
     [Af_ValorSalvamento]       FLOAT (53)     NULL,
     [Af_ValorResidual]         FLOAT (53)     NULL,
@@ -51,6 +51,4 @@
     CONSTRAINT [FK_Af_Activo_fijo_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa]),
     CONSTRAINT [FK_Af_Activo_fijo_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])
 );
-
-
 

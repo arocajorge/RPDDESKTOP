@@ -18,9 +18,3 @@
     CONSTRAINT [PK_ro_periodo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdPeriodo] ASC)
 );
 
-
-
-
-
-
-

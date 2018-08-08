@@ -34,143 +34,6 @@ FROM            dbo.ct_centro_costo_sub_centro_costo RIGHT OUTER JOIN
                          dbo.ct_punto_cargo ON OC_det.IdEmpresa = dbo.ct_punto_cargo.IdEmpresa AND OC_det.IdPunto_cargo = dbo.ct_punto_cargo.IdPunto_cargo LEFT OUTER JOIN
                          dbo.ct_centro_costo ON OC_det.IdEmpresa = dbo.ct_centro_costo.IdEmpresa AND OC_det.IdCentroCosto = dbo.ct_centro_costo.IdCentroCosto
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Naturisa', @level1type = N'VIEW', @level1name = N'vwCOMP_NATU_Rpt007';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "Prod"
-            Begin Extent = 
-               Top = 138
-               Left = 833
-               Bottom = 268
-               Right = 1067
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "per_prov"
-            Begin Extent = 
-               Top = 270
-               Left = 38
-               Bottom = 400
-               Right = 270
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_comprador"
-            Begin Extent = 
-               Top = 270
-               Left = 308
-               Bottom = 400
-               Right = 517
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_Motivo_Orden_Compra"
-            Begin Extent = 
-               Top = 466
-               Left = 527
-               Bottom = 596
-               Right = 736
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_TerminoPago"
-            Begin Extent = 
-               Top = 270
-               Left = 802
-               Bottom = 400
-               Right = 1011
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_departamento"
-            Begin Extent = 
-               Top = 270
-               Left = 1049
-               Bottom = 400
-               Right = 1258
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_UnidadMedida"
-            Begin Extent = 
-               Top = 402
-               Left = 38
-               Bottom = 532
-               Right = 248
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_solicitante"
-            Begin Extent = 
-               Top = 402
-               Left = 286
-               Bottom = 532
-               Right = 495
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_punto_cargo"
-            Begin Extent = 
-               Top = 402
-               Left = 533
-               Bottom = 532
-               Right = 742
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_centro_costo"
-            Begin Extent = 
-               Top = 402
-               Left = 780
-               Bottom = 532
-               Right = 989
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'Naturisa', @level1type = N'VIEW', @level1name = N'vwCOMP_NATU_Rpt007';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -310,4 +173,141 @@ Begin DesignProperties =
                Right = 795
             End
            ', @level0type = N'SCHEMA', @level0name = N'Naturisa', @level1type = N'VIEW', @level1name = N'vwCOMP_NATU_Rpt007';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Prod"
+            Begin Extent = 
+               Top = 138
+               Left = 833
+               Bottom = 268
+               Right = 1067
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "per_prov"
+            Begin Extent = 
+               Top = 270
+               Left = 38
+               Bottom = 400
+               Right = 270
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_comprador"
+            Begin Extent = 
+               Top = 270
+               Left = 308
+               Bottom = 400
+               Right = 517
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_Motivo_Orden_Compra"
+            Begin Extent = 
+               Top = 466
+               Left = 527
+               Bottom = 596
+               Right = 736
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_TerminoPago"
+            Begin Extent = 
+               Top = 270
+               Left = 802
+               Bottom = 400
+               Right = 1011
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_departamento"
+            Begin Extent = 
+               Top = 270
+               Left = 1049
+               Bottom = 400
+               Right = 1258
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_UnidadMedida"
+            Begin Extent = 
+               Top = 402
+               Left = 38
+               Bottom = 532
+               Right = 248
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_solicitante"
+            Begin Extent = 
+               Top = 402
+               Left = 286
+               Bottom = 532
+               Right = 495
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_punto_cargo"
+            Begin Extent = 
+               Top = 402
+               Left = 533
+               Bottom = 532
+               Right = 742
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_centro_costo"
+            Begin Extent = 
+               Top = 402
+               Left = 780
+               Bottom = 532
+               Right = 989
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'Naturisa', @level1type = N'VIEW', @level1name = N'vwCOMP_NATU_Rpt007';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Naturisa', @level1type = N'VIEW', @level1name = N'vwCOMP_NATU_Rpt007';
 

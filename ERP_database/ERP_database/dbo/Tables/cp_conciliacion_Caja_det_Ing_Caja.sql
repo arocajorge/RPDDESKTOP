@@ -12,7 +12,3 @@
     CONSTRAINT [FK_cp_conciliacion_Caja_det_Ing_Caja_cp_conciliacion_Caja] FOREIGN KEY ([IdEmpresa], [IdConciliacion_Caja]) REFERENCES [dbo].[cp_conciliacion_Caja] ([IdEmpresa], [IdConciliacion_Caja])
 );
 
-
-
-
-

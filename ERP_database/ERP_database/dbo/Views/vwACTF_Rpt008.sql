@@ -3,11 +3,7 @@ AS
 SELECT        af.IdEmpresa, af.IdRetiroActivo, af.Cod_Ret_Activo, act.IdActivoFijo, act.Af_Nombre, '' AS NomCompleto, af.ValorActivo, af.Valor_Tot_Bajas, 
                          af.Valor_Tot_Mejora, af.Valor_Depre_Acu, af.Valor_Neto, af.NumComprobante, af.Concepto_Retiro, af.Estado, af.Fecha_Retiro
 FROM            dbo.Af_Retiro_Activo AS af INNER JOIN
-                         dbo.Af_Activo_fijo AS act ON af.IdEmpresa = act.IdEmpresa AND af.IdActivoFijo = act.IdActivoFijo 
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwACTF_Rpt008';
-
-
+                         dbo.Af_Activo_fijo AS act ON af.IdEmpresa = act.IdEmpresa AND af.IdActivoFijo = act.IdActivoFijo
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -137,4 +133,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwACTF_Rpt008';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwACTF_Rpt008';
 

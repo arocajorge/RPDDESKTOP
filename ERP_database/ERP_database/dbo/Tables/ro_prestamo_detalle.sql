@@ -16,5 +16,3 @@
     CONSTRAINT [FK_ro_prestamo_detalle_ro_prestamo] FOREIGN KEY ([IdEmpresa], [IdPrestamo]) REFERENCES [dbo].[ro_prestamo] ([IdEmpresa], [IdPrestamo])
 );
 
-
-

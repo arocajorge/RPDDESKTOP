@@ -16,5 +16,3 @@
     CONSTRAINT [FK_ro_CargaFamiliar_tb_Catalogo] FOREIGN KEY ([Sexo]) REFERENCES [dbo].[tb_Catalogo] ([CodCatalogo])
 );
 
-
-

@@ -1,4 +1,4 @@
-﻿ create VIEW web.vwba_Cbte_Ban
+﻿ CREATE VIEW web.vwba_Cbte_Ban
 AS
 SELECT ba_Cbte_Ban.IdEmpresa, ba_Cbte_Ban.IdTipocbte, ba_Cbte_Ban.IdCbteCble, ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo.CodTipoCbteBan, ba_Cbte_Ban_tipo_x_ct_CbteCble_tipo.IdTipoCbteCble, ba_Cbte_Ban.IdPeriodo, 
                   ba_Cbte_Ban.IdBanco, ba_Banco_Cuenta.ba_descripcion, ba_Cbte_Ban.cb_Fecha, ba_Cbte_Ban.cb_Observacion, ba_Cbte_Ban.cb_Valor, ba_Cbte_Ban.cb_Cheque, ba_Cbte_Ban.Estado, ba_Cbte_Ban.cb_giradoA, 

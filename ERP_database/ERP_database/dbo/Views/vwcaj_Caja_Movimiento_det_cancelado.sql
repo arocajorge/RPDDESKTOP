@@ -3,11 +3,7 @@ AS
 SELECT        dbo.caj_Caja_Movimiento_det.IdEmpresa, dbo.caj_Caja_Movimiento_det.IdCbteCble, dbo.caj_Caja_Movimiento_det.IdTipocbte, 
                          dbo.caj_Caja_Movimiento_det.Secuencia, dbo.caj_Caja_Movimiento_det.IdCobro_tipo, 
                          dbo.caj_Caja_Movimiento_det.cr_Valor
-FROM            dbo.caj_Caja_Movimiento_det 
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcaj_Caja_Movimiento_det_cancelado';
-
-
+FROM            dbo.caj_Caja_Movimiento_det
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -127,4 +123,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcaj_Caja_Movimiento_det_cancelado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcaj_Caja_Movimiento_det_cancelado';
 

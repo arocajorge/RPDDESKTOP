@@ -22,9 +22,3 @@
     CONSTRAINT [FK_fa_grupo_x_sub_centro_costo_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-
-
-
-
-

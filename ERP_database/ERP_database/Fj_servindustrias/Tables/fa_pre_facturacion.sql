@@ -12,7 +12,3 @@
     CONSTRAINT [PK_fa_pre_facturacion_1] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdPreFacturacion] ASC)
 );
 
-
-
-
-

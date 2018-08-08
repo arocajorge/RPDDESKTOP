@@ -26,11 +26,9 @@
     [IdEmpresa_ct]          INT           NULL,
     [IdTipoCbte]            INT           NULL,
     [IdCbteCble]            NUMERIC (18)  NULL,
-    [Fecha_MejBaj] DATETIME NOT NULL, 
+    [Fecha_MejBaj]          DATETIME      NOT NULL,
     CONSTRAINT [PK_Af_Mej_Baj_Activo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [Id_Mejora_Baja_Activo] ASC, [Id_Tipo] ASC),
     CONSTRAINT [FK_Af_Mej_Baj_Activo_Af_Activo_fijo] FOREIGN KEY ([IdEmpresa], [IdActivoFijo]) REFERENCES [dbo].[Af_Activo_fijo] ([IdEmpresa], [IdActivoFijo]),
     CONSTRAINT [FK_Af_Mej_Baj_Activo_ct_cbtecble] FOREIGN KEY ([IdEmpresa_ct], [IdTipoCbte], [IdCbteCble]) REFERENCES [dbo].[ct_cbtecble] ([IdEmpresa], [IdTipoCbte], [IdCbteCble])
 );
-
-
 

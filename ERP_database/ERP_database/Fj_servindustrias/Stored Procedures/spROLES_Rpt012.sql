@@ -248,5 +248,3 @@ and dbo.ro_rol_detalle.IdPeriodo = @IdPeriodo
 --
 ) a --where a.Cedula = '0914915749'
 order by   a.ca_descripcion, a.Orden
-GO
-

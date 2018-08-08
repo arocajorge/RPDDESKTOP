@@ -5,10 +5,6 @@ SELECT dbo.tb_sis_Documento_Tipo_Talonario.IdEmpresa, dbo.tb_empresa.em_ruc, dbo
 FROM     dbo.tb_empresa INNER JOIN
                   dbo.tb_sis_Documento_Tipo_Talonario ON dbo.tb_empresa.IdEmpresa = dbo.tb_sis_Documento_Tipo_Talonario.IdEmpresa
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_tb_sis_Documento_Tipo_Talonario';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -138,4 +134,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_tb_sis_Documento_Tipo_Talonario';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_tb_sis_Documento_Tipo_Talonario';
 

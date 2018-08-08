@@ -10,5 +10,3 @@
     CONSTRAINT [FK_in_Producto_Composicion_in_UnidadMedida] FOREIGN KEY ([IdUnidadMedida]) REFERENCES [dbo].[in_UnidadMedida] ([IdUnidadMedida])
 );
 
-
-

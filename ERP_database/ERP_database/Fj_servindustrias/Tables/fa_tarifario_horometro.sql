@@ -17,9 +17,3 @@
     CONSTRAINT [FK_fa_tarifario_horometro_tb_sis_Impuesto] FOREIGN KEY ([IdCod_Impuesto]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto])
 );
 
-
-
-
-
-
-

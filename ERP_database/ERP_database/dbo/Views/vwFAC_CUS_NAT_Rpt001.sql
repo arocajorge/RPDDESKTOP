@@ -8,4 +8,4 @@ FROM         fa_cliente INNER JOIN
                       fa_factura ON fa_cliente.IdEmpresa = fa_factura.IdEmpresa AND fa_cliente.IdCliente = fa_factura.IdCliente INNER JOIN
                       fa_factura_det ON fa_factura.IdEmpresa = fa_factura_det.IdEmpresa AND fa_factura.IdSucursal = fa_factura_det.IdSucursal AND 
                       fa_factura.IdBodega = fa_factura_det.IdBodega AND fa_factura.IdCbteVta = fa_factura_det.IdCbteVta INNER JOIN
-                      tb_persona ON fa_cliente.IdPersona = tb_persona.IdPersona 
+                      tb_persona ON fa_cliente.IdPersona = tb_persona.IdPersona

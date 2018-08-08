@@ -39,3 +39,4 @@ FROM            dbo.ro_empleado INNER JOIN
                          dbo.ro_Departamento ON dbo.ro_empleado.IdEmpresa = dbo.ro_Departamento.IdEmpresa AND dbo.ro_empleado.IdDepartamento = dbo.ro_Departamento.IdDepartamento
 
 WHERE        (dbo.ro_empleado.em_status <> 'EST_LIQ')
+

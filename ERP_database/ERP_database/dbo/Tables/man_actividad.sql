@@ -9,5 +9,3 @@
     CONSTRAINT [PK_man_actividad] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdActividad] ASC)
 );
 
-
-

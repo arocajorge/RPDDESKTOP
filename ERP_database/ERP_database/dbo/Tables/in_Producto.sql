@@ -63,22 +63,6 @@
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 GO
 create  trigger dbo.trg_In_Producto 
 on dbo.in_producto

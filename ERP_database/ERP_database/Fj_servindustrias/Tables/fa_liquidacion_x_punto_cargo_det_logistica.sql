@@ -16,7 +16,3 @@
     CONSTRAINT [FK_fa_liquidacion_x_punto_cargo_det_logistica_fa_liquidacion_x_punto_cargo] FOREIGN KEY ([IdEmpresa], [IdSucursal], [IdCentroCosto], [IdLiquidacion]) REFERENCES [Fj_servindustrias].[fa_liquidacion_x_punto_cargo] ([IdEmpresa], [IdSucursal], [IdCentroCosto], [IdLiquidacion])
 );
 
-
-
-
-

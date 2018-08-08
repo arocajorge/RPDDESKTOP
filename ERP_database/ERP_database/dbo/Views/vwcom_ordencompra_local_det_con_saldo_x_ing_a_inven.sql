@@ -63,7 +63,141 @@ FROM            dbo.in_Ing_Egr_Inven INNER JOIN
                          dbo.in_Ing_Egr_Inven_det.secuencia_inv = dbo.in_movi_inve_detalle.Secuencia INNER JOIN
 						 tb_persona as per on cp_proveedor.IdPersona = per.IdPersona
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven';
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[8] 4[4] 2[55] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1[50] 2[25] 3) )"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2[66] 3) )"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[18] 4[69] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1[5] 4) )"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[47] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2) )"
+      End
+      ActivePaneConfig = 10
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = -288
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "in_Ing_Egr_Inven"
+            Begin Extent = 
+               Top = 50
+               Left = 1036
+               Bottom = 179
+               Right = 1299
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "in_Ing_Egr_Inven_det"
+            Begin Extent = 
+               Top = 116
+               Left = 707
+               Bottom = 245
+               Right = 970
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ct_centro_costo_sub_centro_costo"
+            Begin Extent = 
+               Top = 1122
+               Left = 59
+               Bottom = 1251
+               Right = 322
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "vwin_Producto_Stock_x_Sucursal"
+            Begin Extent = 
+               Top = 208
+               Left = 1038
+               Bottom = 337
+               Right = 1247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "com_ordencompra_local_det"
+            Begin Extent = 
+               Top = 279
+               Left = 217
+               Bottom = 487
+               Right = 480
+            End
+            DisplayFlags = 280
+            TopColumn = 16
+         End
+         Begin Table = "in_Producto"
+            Begin Extent = 
+               Top = 197
+               Left = 759
+               Bottom = 576
+               Right = 993
+            End
+            DisplayFlags = 280
+            TopColumn = 19
+         End
+         Begin Table = "in_UnidadMedida"
+            Begin Extent = 
+               Top = 930
+               Lef', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven';
 
 
 GO
@@ -214,139 +348,5 @@ End
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
-Begin DesignProperties = 
-   Begin PaneConfigurations = 
-      Begin PaneConfiguration = 0
-         NumPanes = 4
-         Configuration = "(H (1[8] 4[4] 2[55] 3) )"
-      End
-      Begin PaneConfiguration = 1
-         NumPanes = 3
-         Configuration = "(H (1 [50] 4 [25] 3))"
-      End
-      Begin PaneConfiguration = 2
-         NumPanes = 3
-         Configuration = "(H (1[50] 2[25] 3) )"
-      End
-      Begin PaneConfiguration = 3
-         NumPanes = 3
-         Configuration = "(H (4 [30] 2 [40] 3))"
-      End
-      Begin PaneConfiguration = 4
-         NumPanes = 2
-         Configuration = "(H (1 [56] 3))"
-      End
-      Begin PaneConfiguration = 5
-         NumPanes = 2
-         Configuration = "(H (2[66] 3) )"
-      End
-      Begin PaneConfiguration = 6
-         NumPanes = 2
-         Configuration = "(H (4 [50] 3))"
-      End
-      Begin PaneConfiguration = 7
-         NumPanes = 1
-         Configuration = "(V (3))"
-      End
-      Begin PaneConfiguration = 8
-         NumPanes = 3
-         Configuration = "(H (1[18] 4[69] 2) )"
-      End
-      Begin PaneConfiguration = 9
-         NumPanes = 2
-         Configuration = "(H (1[5] 4) )"
-      End
-      Begin PaneConfiguration = 10
-         NumPanes = 2
-         Configuration = "(H (1[47] 2) )"
-      End
-      Begin PaneConfiguration = 11
-         NumPanes = 2
-         Configuration = "(H (4 [60] 2))"
-      End
-      Begin PaneConfiguration = 12
-         NumPanes = 1
-         Configuration = "(H (1) )"
-      End
-      Begin PaneConfiguration = 13
-         NumPanes = 1
-         Configuration = "(V (4))"
-      End
-      Begin PaneConfiguration = 14
-         NumPanes = 1
-         Configuration = "(V (2) )"
-      End
-      ActivePaneConfig = 10
-   End
-   Begin DiagramPane = 
-      Begin Origin = 
-         Top = -288
-         Left = 0
-      End
-      Begin Tables = 
-         Begin Table = "in_Ing_Egr_Inven"
-            Begin Extent = 
-               Top = 50
-               Left = 1036
-               Bottom = 179
-               Right = 1299
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "in_Ing_Egr_Inven_det"
-            Begin Extent = 
-               Top = 116
-               Left = 707
-               Bottom = 245
-               Right = 970
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ct_centro_costo_sub_centro_costo"
-            Begin Extent = 
-               Top = 1122
-               Left = 59
-               Bottom = 1251
-               Right = 322
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "vwin_Producto_Stock_x_Sucursal"
-            Begin Extent = 
-               Top = 208
-               Left = 1038
-               Bottom = 337
-               Right = 1247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "com_ordencompra_local_det"
-            Begin Extent = 
-               Top = 279
-               Left = 217
-               Bottom = 487
-               Right = 480
-            End
-            DisplayFlags = 280
-            TopColumn = 16
-         End
-         Begin Table = "in_Producto"
-            Begin Extent = 
-               Top = 197
-               Left = 759
-               Bottom = 576
-               Right = 993
-            End
-            DisplayFlags = 280
-            TopColumn = 19
-         End
-         Begin Table = "in_UnidadMedida"
-            Begin Extent = 
-               Top = 930
-               Lef', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven';
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven';
 

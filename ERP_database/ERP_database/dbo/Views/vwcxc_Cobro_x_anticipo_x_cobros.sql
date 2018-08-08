@@ -9,29 +9,6 @@ FROM         dbo.cxc_cobro_x_Anticipo_det AS B INNER JOIN
                       dbo.cxc_cobro AS C ON B.IdEmpresa_Cobro = C.IdEmpresa AND B.IdSucursal_cobro = C.IdSucursal AND B.IdCobro_cobro = C.IdCobro LEFT OUTER JOIN
                       dbo.cxc_cobro_x_caj_Caja_Movimiento AS D ON C.IdEmpresa = D.cbr_IdEmpresa AND C.IdSucursal = D.cbr_IdSucursal AND C.IdCobro = D.cbr_IdCobro
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_Cobro_x_anticipo_x_cobros';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_Cobro_x_anticipo_x_cobros';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -179,4 +156,27 @@ Begin DesignProperties =
       Begin ColumnWidths = 11
          Column = 1440
          Alias = ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_Cobro_x_anticipo_x_cobros';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_Cobro_x_anticipo_x_cobros';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_Cobro_x_anticipo_x_cobros';
 

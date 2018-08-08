@@ -1,4 +1,4 @@
-﻿create view vwINV_Rpt028
+﻿CREATE view vwINV_Rpt028
 as
 SELECT        com_ordencompra_local_det.IdEmpresa, com_ordencompra_local_det.IdSucursal, com_ordencompra_local_det.IdOrdenCompra, 
                          com_ordencompra_local_det.Secuencia, com_ordencompra_local_det.IdProducto, in_Producto.pr_codigo AS cod_prod, in_Producto.pr_descripcion, 

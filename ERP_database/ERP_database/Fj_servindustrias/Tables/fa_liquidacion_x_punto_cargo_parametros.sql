@@ -6,5 +6,3 @@
     CONSTRAINT [PK_fa_liquidacion_x_punto_cargo_parametros] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC)
 );
 
-
-

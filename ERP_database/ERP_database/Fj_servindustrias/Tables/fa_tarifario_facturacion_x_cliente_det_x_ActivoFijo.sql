@@ -9,7 +9,3 @@
     CONSTRAINT [FK_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_fa_tarifario_facturacion_x_cliente] FOREIGN KEY ([IdEmpresa], [IdTarifario]) REFERENCES [Fj_servindustrias].[fa_tarifario_facturacion_x_cliente] ([IdEmpresa], [IdTarifario])
 );
 
-
-
-
-

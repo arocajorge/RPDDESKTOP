@@ -21,4 +21,4 @@ FROM fa_factura fac INNER JOIN
      fac.IdBodega = dbo.tb_bodega.IdBodega INNER JOIN
      dbo.fa_Vendedor ON fac.IdEmpresa = dbo.fa_Vendedor.IdEmpresa AND fac.IdVendedor = dbo.fa_Vendedor.IdVendedor INNER JOIN
      dbo.tb_persona ON cli.IdPersona = dbo.tb_persona.IdPersona LEFT OUTER JOIN 
-	 dbo.fa_motivo_venta ON dbo.fa_motivo_venta.IdEmpresa = dbo.in_Producto.IdEmpresa 
+	 dbo.fa_motivo_venta ON dbo.fa_motivo_venta.IdEmpresa = dbo.in_Producto.IdEmpresa

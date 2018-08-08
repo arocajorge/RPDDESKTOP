@@ -22,69 +22,6 @@ GROUP BY dbo.ro_novedad_x_empleado.IdEmpresa, dbo.ro_novedad_x_empleado.IdTransa
                          dbo.ro_Nomina_Tipoliqui.IdNomina_TipoLiqui, dbo.ro_Nomina_Tipoliqui.DescripcionProcesoNomina, dbo.ro_novedad_x_empleado.Observacion, 
                          dbo.ro_novedad_x_empleado.estado
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_empleado_por_novedades';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'       Width = 2610
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 3075
-         Width = 1500
-         Width = 2655
-         Width = 2400
-         Width = 2655
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 2040
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 3270
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 12
-         Column = 3450
-         Alias = 2880
-         Table = 2880
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 2190
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_empleado_por_novedades';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -226,4 +163,67 @@ Begin DesignProperties =
       Begin ColumnWidths = 36
          Width = 284
   ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_empleado_por_novedades';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'       Width = 2610
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 3075
+         Width = 1500
+         Width = 2655
+         Width = 2400
+         Width = 2655
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 2040
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 3270
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 12
+         Column = 3450
+         Alias = 2880
+         Table = 2880
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 2190
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_empleado_por_novedades';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_empleado_por_novedades';
 

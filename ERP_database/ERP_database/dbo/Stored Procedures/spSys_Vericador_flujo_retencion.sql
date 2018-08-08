@@ -1,4 +1,4 @@
-﻿create proc [dbo].[spSys_Vericador_flujo_retencion]
+﻿CREATE proc [dbo].[spSys_Vericador_flujo_retencion]
 (
  @i_idempresa int
 ,@i_idRetencion numeric

@@ -76,4 +76,3 @@ and ta_x_cl_x_af.IdActivoFijo in (select E.IdActivo_fijo from Fj_servindustrias.
 GROUP BY ta_x_cl_x_af.IdEmpresa, ta_x_cl_x_af.IdCentroCosto, ta_x_cl_x_af.IdCentroCosto_sub_centro_costo, cc.Centro_costo, sub_c.Centro_costo, TotalEquipos, ValorFacturar, IdPeriodo
 */
 END
-

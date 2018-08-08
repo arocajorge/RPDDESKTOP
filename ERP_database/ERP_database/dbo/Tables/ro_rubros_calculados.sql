@@ -25,5 +25,3 @@
     CONSTRAINT [FK_ro_rubros_calculados_ro_rubro_tipo5] FOREIGN KEY ([IdEmpresa], [IdRubro_tot_pagar]) REFERENCES [dbo].[ro_rubro_tipo] ([IdEmpresa], [IdRubro])
 );
 
-
-

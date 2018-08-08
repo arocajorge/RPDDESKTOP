@@ -47,7 +47,6 @@ FROM     Fj_servindustrias.fa_liquidacion_x_punto_cargo INNER JOIN
                   Fj_servindustrias.fa_liquidacion_x_punto_cargo.IdSucursal = mano_obra.IdSucursal AND Fj_servindustrias.fa_liquidacion_x_punto_cargo.IdCentroCosto = mano_obra.IdCentroCosto AND 
                   Fj_servindustrias.fa_liquidacion_x_punto_cargo.IdLiquidacion = mano_obra.IdLiquidacion
 GO
-
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -188,8 +187,9 @@ Begin DesignProperties =
       End
    End
    Begi', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_liquidacion_x_punto_cargo';
-GO
 
+
+GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'n CriteriaPane = 
       Begin ColumnWidths = 11
          Column = 1440
@@ -209,8 +209,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'n Criteria
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_liquidacion_x_punto_cargo';
-GO
 
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_liquidacion_x_punto_cargo';
+
 GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_liquidacion_x_punto_cargo';
 

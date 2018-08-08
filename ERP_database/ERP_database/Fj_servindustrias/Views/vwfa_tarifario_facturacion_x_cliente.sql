@@ -8,11 +8,7 @@ SELECT Fj_servindustrias.fa_tarifario_facturacion_x_cliente.IdEmpresa, Fj_servin
                   Fj_servindustrias.fa_tarifario_facturacion_x_cliente.MotiAnula, Fj_servindustrias.fa_tarifario_facturacion_x_cliente.IdCentroCosto, Fj_servindustrias.fa_tarifario_facturacion_x_cliente.valor_minimo_movilizacion, 
                   dbo.ct_centro_costo.Centro_costo, Fj_servindustrias.fa_tarifario_facturacion_x_cliente.por_ganancia_inicial
 FROM     Fj_servindustrias.fa_tarifario_facturacion_x_cliente INNER JOIN
-                  dbo.ct_centro_costo ON Fj_servindustrias.fa_tarifario_facturacion_x_cliente.IdCentroCosto = dbo.ct_centro_costo.IdCentroCosto AND Fj_servindustrias.fa_tarifario_facturacion_x_cliente.IdEmpresa = dbo.ct_centro_costo.IdEmpresa 
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_tarifario_facturacion_x_cliente';
-
-
+                  dbo.ct_centro_costo ON Fj_servindustrias.fa_tarifario_facturacion_x_cliente.IdCentroCosto = dbo.ct_centro_costo.IdCentroCosto AND Fj_servindustrias.fa_tarifario_facturacion_x_cliente.IdEmpresa = dbo.ct_centro_costo.IdEmpresa
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -134,4 +130,6 @@ End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_tarifario_facturacion_x_cliente';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_tarifario_facturacion_x_cliente';
 

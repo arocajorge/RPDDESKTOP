@@ -14,32 +14,6 @@ SELECT        dbo.ro_rdep.IdEmpresa, dbo.ro_rdep.IdEmpleado, dbo.ro_rdep.AnioFis
 FROM            dbo.vwro_empleadoXdepXcargo INNER JOIN
                          dbo.ro_rdep ON dbo.vwro_empleadoXdepXcargo.IdEmpresa = dbo.ro_rdep.IdEmpresa AND dbo.vwro_empleadoXdepXcargo.IdEmpleado = dbo.ro_rdep.IdEmpleado
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rdep_x_Empleado';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'egin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 2520
-         Alias = 1695
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rdep_x_Empleado';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -189,4 +163,30 @@ Begin DesignProperties =
       End
    End
    B', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rdep_x_Empleado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'egin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 2520
+         Alias = 1695
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rdep_x_Empleado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Rdep_x_Empleado';
 

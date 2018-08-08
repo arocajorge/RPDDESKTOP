@@ -1,5 +1,5 @@
 ﻿--select * from tb_sis_reporte where modulo='CXP'
-create view vwCXP_Rpt032
+CREATE view vwCXP_Rpt032
 AS
 SELECT        cp_conciliacion_Caja_det.IdEmpresa, cp_conciliacion_Caja_det.IdConciliacion_Caja, cp_conciliacion_Caja_det.Secuencia, cp_conciliacion_Caja_det.IdEmpresa_OGiro, 
                          cp_conciliacion_Caja_det.IdCbteCble_Ogiro, cp_conciliacion_Caja_det.IdTipoCbte_Ogiro, cp_conciliacion_Caja_det.IdTipoMovi, cp_conciliacion_Caja_det.Valor_a_aplicar, 

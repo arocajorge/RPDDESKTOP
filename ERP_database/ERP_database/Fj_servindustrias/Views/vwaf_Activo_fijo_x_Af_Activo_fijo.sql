@@ -17,4 +17,4 @@ FROM            dbo.tb_persona INNER JOIN
                          dbo.Af_Activo_fijo_Categoria ON Af_Cabezal.IdEmpresa = dbo.Af_Activo_fijo_Categoria.IdEmpresa AND 
                          Af_Cabezal.IdCategoriaAF = dbo.Af_Activo_fijo_Categoria.IdCategoriaAF ON  
                          dbo.cp_proveedor.IdEmpresa = Af_Cabezal.IdEmpresa AND  
-                         dbo.cp_proveedor.IdEmpresa = Af_Carrocerias.IdEmpresa 
+                         dbo.cp_proveedor.IdEmpresa = Af_Carrocerias.IdEmpresa

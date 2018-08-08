@@ -23,9 +23,3 @@
     CONSTRAINT [PK_in_productoTipo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdProductoTipo] ASC)
 );
 
-
-
-
-
-
-

@@ -22,5 +22,3 @@
     CONSTRAINT [PK_in_movi_inven_tipo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdMovi_inven_tipo] ASC)
 );
 
-
-

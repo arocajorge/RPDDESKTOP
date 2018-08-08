@@ -26,7 +26,3 @@
     CONSTRAINT [PK_ct_spCONTA_FJ_Rpt001] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdCtaCble] ASC, [IdPunto_cargo] ASC)
 );
 
-
-
-
-

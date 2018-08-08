@@ -11,10 +11,6 @@ FROM            dbo.in_transferencia AS trans INNER JOIN
                          dbo.in_Ing_Egr_Inven AS inv_Destino ON trans.IdEmpresa_Ing_Egr_Inven_Destino = inv_Destino.IdEmpresa AND 
                          trans.IdSucursal_Ing_Egr_Inven_Destino = inv_Destino.IdSucursal AND trans.IdNumMovi_Ing_Egr_Inven_Destino = inv_Destino.IdNumMovi
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Transferencia_x_Ing_Egr_Inven';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -143,4 +139,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Transferencia_x_Ing_Egr_Inven';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Transferencia_x_Ing_Egr_Inven';
 

@@ -57,7 +57,3 @@
     CONSTRAINT [FK_fa_parametro_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-
-
-

@@ -18,10 +18,6 @@ FROM            Fj_servindustrias.fa_tarifario_facturacion_x_cliente_det_x_Activ
                          dbo.Af_Activo_fijo ON Fj_servindustrias.fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre.IdEmpresa = dbo.Af_Activo_fijo.IdEmpresa AND 
                          Fj_servindustrias.fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre.IdActivoFijo = dbo.Af_Activo_fijo.IdActivoFijo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -151,4 +147,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_fa_tarifario_facturacion_x_cliente_det_x_ActivoFijo_Param_depre';
 

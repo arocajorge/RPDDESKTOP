@@ -11,88 +11,6 @@ FROM            dbo.ro_Acta_Finiquito INNER JOIN
                          dbo.ro_cargo ON dbo.ro_Acta_Finiquito.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_Acta_Finiquito.IdCargo = dbo.ro_cargo.IdCargo AND dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND 
                          dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo INNER JOIN
                          dbo.ro_catalogo AS ro_catalogo_1 ON dbo.ro_Acta_Finiquito.IdCausaTerminacion = ro_catalogo_1.IdCatalogo
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt028';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'        End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_empleado_x_Activo_Fijo (Fj_servindustrias)"
-            Begin Extent = 
-               Top = 207
-               Left = 323
-               Bottom = 451
-               Right = 507
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "Af_Activo_fijo"
-            Begin Extent = 
-               Top = 187
-               Left = 383
-               Bottom = 458
-               Right = 646
-            End
-            DisplayFlags = 280
-            TopColumn = 26
-         End
-         Begin Table = "ct_centro_costo_sub_centro_costo"
-            Begin Extent = 
-               Top = 236
-               Left = 699
-               Bottom = 440
-               Right = 962
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 13
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1935
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 2310
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt028';
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -233,4 +151,87 @@ Begin DesignProperties =
                Bottom = 254
                Right = 171
     ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt028';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'        End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_empleado_x_Activo_Fijo (Fj_servindustrias)"
+            Begin Extent = 
+               Top = 207
+               Left = 323
+               Bottom = 451
+               Right = 507
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Af_Activo_fijo"
+            Begin Extent = 
+               Top = 187
+               Left = 383
+               Bottom = 458
+               Right = 646
+            End
+            DisplayFlags = 280
+            TopColumn = 26
+         End
+         Begin Table = "ct_centro_costo_sub_centro_costo"
+            Begin Extent = 
+               Top = 236
+               Left = 699
+               Bottom = 440
+               Right = 962
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 13
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1935
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 2310
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt028';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwROL_Rpt028';
 

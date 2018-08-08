@@ -17,10 +17,6 @@ FROM            (SELECT        IdTipoDocumento, pe_cedulaRuc, vt_tipoDoc, SUM(ba
                                GROUP BY pe_cedulaRuc, vt_tipoDoc, anio, mes, IdEmpresa) T2 ON T1.pe_cedulaRuc = T2.pe_cedulaRuc AND T1.vt_tipoDoc = T2.vt_tipoDoc AND 
                          T1.IdEmpresa = T2.IdEmpresa AND T1.anio = T2.anio AND T1.mes = T2.mes
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI_DATA';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -119,4 +115,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI_DATA';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Documento_DeclaracionSRI_DATA';
 

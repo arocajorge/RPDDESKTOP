@@ -9,10 +9,6 @@ FROM            Fj_servindustrias.ro_empleado_x_Activo_Fijo INNER JOIN
                          Fj_servindustrias.Af_Activo_fijo_x_ct_punto_cargo ON Fj_servindustrias.ro_empleado_x_Activo_Fijo.IdEmpresa = Fj_servindustrias.Af_Activo_fijo_x_ct_punto_cargo.IdEmpresa_AF AND 
                          Fj_servindustrias.ro_empleado_x_Activo_Fijo.IdActivo_fijo = Fj_servindustrias.Af_Activo_fijo_x_ct_punto_cargo.IdActivoFijo_AF
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_empleaco_x_activofijo_x_puntocargo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -152,4 +148,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_empleaco_x_activofijo_x_puntocargo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_empleaco_x_activofijo_x_puntocargo';
 

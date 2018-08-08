@@ -85,4 +85,3 @@ FROM            (SELECT        A.IdEmpresa, A.IdTipo_op, SUBSTRING(D .Descripcio
                                                          WHERE        (IdEmpresa_cxp IS NOT NULL) AND (IdCbteCble_cxp IS NOT NULL)
                                                          GROUP BY IdEmpresa_cxp, IdCbteCble_cxp, IdTipoCbte_cxp) AS Total_OP ON Total_OP.IdEmpresa_cxp = C.IdEmpresa AND 
                                                    Total_OP.IdTipoCbte_cxp = C.IdTipoCbte_Ogiro AND Total_OP.IdCbteCble_cxp = C.IdCbteCble_Ogiro) A
-												   

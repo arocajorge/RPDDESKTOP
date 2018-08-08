@@ -44,135 +44,6 @@ FROM            dbo.ro_rubro_tipo INNER JOIN
                          dbo.ro_archivos_bancos_generacion.IdArchivo = dbo.ro_archivos_bancos_generacion_x_empleado.IdArchivo AND 
                          dbo.ro_rol_detalle.IdEmpresa = dbo.ro_archivos_bancos_generacion_x_empleado.IdEmpresa AND dbo.ro_rol_detalle.IdEmpleado = dbo.ro_archivos_bancos_generacion_x_empleado.IdEmpleado
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Archivos_Bancos_Generacion_det';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_Departamento"
-            Begin Extent = 
-               Top = 930
-               Left = 38
-               Bottom = 1060
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_periodo_x_ro_Nomina_TipoLiqui"
-            Begin Extent = 
-               Top = 1062
-               Left = 38
-               Bottom = 1192
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_periodo"
-            Begin Extent = 
-               Top = 1194
-               Left = 38
-               Bottom = 1324
-               Right = 259
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_empresa"
-            Begin Extent = 
-               Top = 1326
-               Left = 38
-               Bottom = 1456
-               Right = 257
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_Division"
-            Begin Extent = 
-               Top = 1458
-               Left = 38
-               Bottom = 1588
-               Right = 247
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_banco"
-            Begin Extent = 
-               Top = 1590
-               Left = 38
-               Bottom = 1720
-               Right = 272
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_archivos_bancos_generacion_x_empleado"
-            Begin Extent = 
-               Top = 135
-               Left = 432
-               Bottom = 301
-               Right = 641
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "ro_archivos_bancos_generacion"
-            Begin Extent = 
-               Top = 114
-               Left = 81
-               Bottom = 357
-               Right = 426
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 9
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Archivos_Bancos_Generacion_det';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -311,4 +182,133 @@ Begin DesignProperties =
                Bottom = 928
                Right = 270
             End', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Archivos_Bancos_Generacion_det';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_Departamento"
+            Begin Extent = 
+               Top = 930
+               Left = 38
+               Bottom = 1060
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_periodo_x_ro_Nomina_TipoLiqui"
+            Begin Extent = 
+               Top = 1062
+               Left = 38
+               Bottom = 1192
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_periodo"
+            Begin Extent = 
+               Top = 1194
+               Left = 38
+               Bottom = 1324
+               Right = 259
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_empresa"
+            Begin Extent = 
+               Top = 1326
+               Left = 38
+               Bottom = 1456
+               Right = 257
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_Division"
+            Begin Extent = 
+               Top = 1458
+               Left = 38
+               Bottom = 1588
+               Right = 247
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_banco"
+            Begin Extent = 
+               Top = 1590
+               Left = 38
+               Bottom = 1720
+               Right = 272
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_archivos_bancos_generacion_x_empleado"
+            Begin Extent = 
+               Top = 135
+               Left = 432
+               Bottom = 301
+               Right = 641
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "ro_archivos_bancos_generacion"
+            Begin Extent = 
+               Top = 114
+               Left = 81
+               Bottom = 357
+               Right = 426
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Archivos_Bancos_Generacion_det';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_Archivos_Bancos_Generacion_det';
 

@@ -11,10 +11,6 @@ FROM            dbo.in_transferencia_det INNER JOIN
                                FROM            dbo.in_Guia_x_traspaso_bodega_x_in_transferencia_det AS G
                                WHERE        (IdTransferencia = IdTransferencia) AND (dt_secuencia = dt_secuencia) AND (cantidad < dbo.in_transferencia_det.dt_cantidad))
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Transferencia_sin_guia';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -145,4 +141,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Transferencia_sin_guia';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwin_Transferencia_sin_guia';
 

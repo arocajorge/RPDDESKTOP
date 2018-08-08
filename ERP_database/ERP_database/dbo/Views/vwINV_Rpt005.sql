@@ -10,10 +10,6 @@ FROM            dbo.in_Ing_Egr_Inven_det AS a INNER JOIN
                          dbo.in_Producto AS c ON a.IdProducto = c.IdProducto AND b.IdEmpresa = c.IdEmpresa INNER JOIN
                          dbo.in_movi_inven_tipo AS d ON b.IdEmpresa = d.IdEmpresa AND b.IdMovi_inven_tipo = d.IdMovi_inven_tipo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt005';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -152,4 +148,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt005';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwINV_Rpt005';
 

@@ -15,5 +15,3 @@
     CONSTRAINT [FK_ro_presupuesto_x_fuerza_x_cargo_ro_Nomina_Tipo] FOREIGN KEY ([IdEmpresa], [IdNomina]) REFERENCES [dbo].[ro_Nomina_Tipo] ([IdEmpresa], [IdNomina_Tipo])
 );
 
-
-

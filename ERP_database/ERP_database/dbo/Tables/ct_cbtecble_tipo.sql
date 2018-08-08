@@ -18,8 +18,6 @@
 );
 
 
-
-
 GO
 CREATE NONCLUSTERED INDEX [IX_ct_cbtecble_tipo]
     ON [dbo].[ct_cbtecble_tipo]([IdEmpresa] ASC, [IdTipoCbte] ASC);

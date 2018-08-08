@@ -31,5 +31,3 @@
     CONSTRAINT [FK_Af_Venta_Activo_ct_cbtecble] FOREIGN KEY ([IdEmpresa_ct], [IdTipoCbte], [IdCbteCble]) REFERENCES [dbo].[ct_cbtecble] ([IdEmpresa], [IdTipoCbte], [IdCbteCble])
 );
 
-
-

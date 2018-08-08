@@ -12,18 +12,6 @@ FROM            dbo.vwcxc_cobro LEFT OUTER JOIN
                          dbo.cxc_cobro_x_EstadoCobro ON dbo.vwcxc_cobro.IdCobro = dbo.cxc_cobro_x_EstadoCobro.IdCobro AND 
                          dbo.vwcxc_cobro.IdSucursal = dbo.cxc_cobro_x_EstadoCobro.IdSucursal AND dbo.vwcxc_cobro.IdEmpresa = dbo.cxc_cobro_x_EstadoCobro.IdEmpresa
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_EstadoCobro';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'   Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_EstadoCobro';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -172,4 +160,16 @@ Begin DesignProperties =
          Or = 1350
          Or = 1350
       ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_EstadoCobro';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'   Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_EstadoCobro';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_EstadoCobro';
 

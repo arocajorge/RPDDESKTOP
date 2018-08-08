@@ -29,7 +29,3 @@
     CONSTRAINT [FK_ro_nomina_x_horas_extras_det_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
 
-
-
-
-

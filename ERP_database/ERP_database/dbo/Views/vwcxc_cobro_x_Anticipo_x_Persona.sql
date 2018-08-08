@@ -7,10 +7,6 @@ FROM            dbo.cxc_cobro_x_Anticipo AS A INNER JOIN
                          dbo.fa_cliente AS B ON A.IdCliente = B.IdCliente AND A.IdEmpresa = B.IdEmpresa INNER JOIN
                          dbo.tb_persona AS C ON B.IdPersona = C.IdPersona
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_Anticipo_x_Persona';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -161,4 +157,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_Anticipo_x_Persona';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_cobro_x_Anticipo_x_Persona';
 

@@ -12,10 +12,6 @@ FROM            dbo.cxc_conciliacion AS conCab INNER JOIN
                          dbo.cxc_cobro_det AS cobro ON cobro.IdEmpresa = conDet.IdEmpresa_cbr AND cobro.IdSucursal = conDet.IdSucursal_cbr AND cobro.IdCobro = conDet.IdCobro AND 
                          cobro.IdCbte_vta_nota = conDet.IdCbteVta_fa AND cobro.dc_TipoDocumento = conDet.TipoDoc_vta
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_conciliacion_Det_Cobro';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -154,4 +150,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_conciliacion_Det_Cobro';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcxc_conciliacion_Det_Cobro';
 

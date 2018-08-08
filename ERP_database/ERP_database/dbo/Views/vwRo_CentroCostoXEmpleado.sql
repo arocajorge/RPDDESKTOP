@@ -7,10 +7,6 @@ FROM            dbo.ro_empleado_x_centro_costo INNER JOIN
                          dbo.ct_centro_costo ON dbo.ro_empleado_x_centro_costo.IdEmpresa = dbo.ct_centro_costo.IdEmpresa AND 
                          dbo.ro_empleado_x_centro_costo.IdCentroCosto = dbo.ct_centro_costo.IdCentroCosto
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_CentroCostoXEmpleado';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -140,4 +136,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_CentroCostoXEmpleado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwRo_CentroCostoXEmpleado';
 

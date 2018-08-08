@@ -18,7 +18,3 @@
     CONSTRAINT [PK_fa_registro_unidades_x_equipo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdRegistro] ASC)
 );
 
-
-
-
-

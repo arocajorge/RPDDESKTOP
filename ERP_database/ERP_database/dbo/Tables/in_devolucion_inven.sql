@@ -26,7 +26,3 @@
     CONSTRAINT [FK_in_devolucion_inven_in_Ing_Egr_Inven1] FOREIGN KEY ([IdEmpresa_inv], [IdSucursal_inv], [IdMovi_inven_tipo_inv], [IdNumMovi_inv]) REFERENCES [dbo].[in_Ing_Egr_Inven] ([IdEmpresa], [IdSucursal], [IdMovi_inven_tipo], [IdNumMovi])
 );
 
-
-
-
-

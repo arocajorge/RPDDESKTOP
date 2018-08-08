@@ -1,4 +1,4 @@
-﻿CREATE view web.VWCXC_002_diario
+﻿CREATE view [web].[VWCXC_002_diario]
 as
 
 SELECT        dbo.cxc_cobro_det.IdEmpresa, dbo.cxc_cobro_det.IdSucursal, dbo.cxc_cobro_det.IdCobro, 1 as secuencial, dbo.cxc_cobro_det.dc_TipoDocumento, dbo.cxc_cobro_det.IdBodega_Cbte, dbo.cxc_cobro_det.IdCbte_vta_nota, 

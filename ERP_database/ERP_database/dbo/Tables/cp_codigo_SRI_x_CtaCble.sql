@@ -11,5 +11,3 @@
     CONSTRAINT [FK_cp_codigo_SRI_x_CtaCble_ct_plancta] FOREIGN KEY ([IdEmpresa], [IdCtaCble]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble])
 );
 
-
-

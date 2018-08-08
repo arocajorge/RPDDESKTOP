@@ -25,10 +25,6 @@ FROM            dbo.ct_centro_costo_sub_centro_costo RIGHT OUTER JOIN
                          dbo.ct_punto_cargo ON sc_dt_oc.IdEmpresa = dbo.ct_punto_cargo.IdEmpresa AND sc_dt_oc.IdPunto_cargo = dbo.ct_punto_cargo.IdPunto_cargo LEFT OUTER JOIN
                          dbo.in_Producto AS prod ON sc_dt_oc.IdEmpresa = prod.IdEmpresa AND sc_dt_oc.IdProducto = prod.IdProducto
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt002';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -158,4 +154,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt002';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwCOMP_Rpt002';
 

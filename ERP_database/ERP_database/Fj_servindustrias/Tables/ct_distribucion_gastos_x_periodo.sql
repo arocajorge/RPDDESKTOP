@@ -8,5 +8,3 @@
     CONSTRAINT [PK_ct_distribucion_gastos_x_periodo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdDistribucion] ASC)
 );
 
-
-

@@ -23,12 +23,6 @@ FROM     Fj_servindustrias.fa_orden_trabajo_plataforma_det INNER JOIN
                   dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona ON Fj_servindustrias.fa_orden_trabajo_plataforma.IdEmpresa = dbo.fa_cliente.IdEmpresa AND 
                   Fj_servindustrias.fa_orden_trabajo_plataforma.IdCliente = dbo.fa_cliente.IdCliente
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_orden_trabajo_plataforma';
-
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -166,10 +160,6 @@ Begin DesignProperties =
                Left = ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_orden_trabajo_plataforma';
 
 
-
-
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'1357
                Bottom = 247
@@ -218,4 +208,6 @@ End
 ', @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_orden_trabajo_plataforma';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'Fj_servindustrias', @level1type = N'VIEW', @level1name = N'vwfa_orden_trabajo_plataforma';
 

@@ -1,5 +1,5 @@
 ﻿
-create view [dbo].[vwCXC_Rpt005] as
+CREATE view [dbo].[vwCXC_Rpt005] as
 SELECT        dbo.cxc_cobro.IdEmpresa, dbo.cxc_cobro.IdSucursal, dbo.cxc_cobro.IdCobro, dbo.cxc_cobro.IdCobro_tipo, dbo.cxc_cobro.cr_Banco, dbo.cxc_cobro.cr_cuenta, 
                          dbo.cxc_cobro.cr_NumDocumento, dbo.cxc_cobro.cr_Tarjeta, dbo.cxc_cobro.cr_propietarioCta, dbo.cxc_cobro.cr_TotalCobro, dbo.cxc_cobro.cr_fechaCobro, 
                          dbo.cxc_cobro.cr_observacion, dbo.cxc_cobro.IdCliente, dbo.cxc_cobro.IdUsuario, dbo.cxc_cobro_det.dc_TipoDocumento, dbo.cxc_cobro_det.IdBodega_Cbte, 

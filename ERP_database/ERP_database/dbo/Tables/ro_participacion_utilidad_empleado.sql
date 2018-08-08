@@ -14,5 +14,3 @@
     CONSTRAINT [FK_ro_participacion_utilidad_empleado_ro_participacion_utilidad] FOREIGN KEY ([IdEmpresa], [IdUtilidad]) REFERENCES [dbo].[ro_participacion_utilidad] ([IdEmpresa], [IdUtilidad])
 );
 
-
-

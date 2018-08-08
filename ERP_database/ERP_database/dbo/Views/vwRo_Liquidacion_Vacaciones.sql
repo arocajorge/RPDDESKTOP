@@ -1,4 +1,4 @@
-﻿create view  [dbo].[vwRo_Liquidacion_Vacaciones] as 
+﻿CREATE view  [dbo].[vwRo_Liquidacion_Vacaciones] as 
 
 SELECT        dbo.ro_rol_individual.IdEmpresa, dbo.ro_rol_individual.IdNominaTipo, dbo.ro_rol_individual.IdNominaTipoLiqui, dbo.ro_rol_individual.IdPeriodo, 
                          dbo.ro_rol_individual.IdEmpleado, dbo.ro_rol_individual.IdRubro, dbo.ro_rol_individual.Ingreso, dbo.ro_rol_individual.Egreso, dbo.ro_rol_individual.Orden, 

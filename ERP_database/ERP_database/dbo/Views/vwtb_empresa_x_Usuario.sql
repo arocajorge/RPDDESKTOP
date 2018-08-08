@@ -8,10 +8,6 @@ SELECT dbo.tb_empresa.IdEmpresa, dbo.tb_empresa.codigo, dbo.tb_empresa.em_nombre
 FROM     dbo.seg_Usuario_x_Empresa INNER JOIN
                   dbo.tb_empresa ON dbo.seg_Usuario_x_Empresa.IdEmpresa = dbo.tb_empresa.IdEmpresa
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_empresa_x_Usuario';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -132,4 +128,6 @@ End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_empresa_x_Usuario';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_empresa_x_Usuario';
 

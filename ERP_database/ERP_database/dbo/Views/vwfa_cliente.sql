@@ -8,4 +8,4 @@ SELECT        dbo.tb_persona.pe_nombreCompleto, dbo.tb_persona.pe_razonSocial, d
                          0 AS IdTipoPersona, NULL AS pe_telefonoCasa, dbo.tb_persona.pe_telfono_Contacto, dbo.tb_persona.pe_celular, NULL AS pe_telefonoInter, NULL AS pe_correo_secundario1, NULL AS pe_correo_secundario2, NULL 
                          AS pe_celularSecundario, dbo.fa_cliente.Codigo, '' IdParroquia, dbo.fa_cliente.es_empresa_relacionada, dbo.fa_cliente.NivelPrecio, dbo.fa_cliente.FormaPago, '' Direccion, '' Telefono, '' Celular
 FROM            dbo.fa_cliente INNER JOIN
-                         dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona 
+                         dbo.tb_persona ON dbo.fa_cliente.IdPersona = dbo.tb_persona.IdPersona

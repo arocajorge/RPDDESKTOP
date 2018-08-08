@@ -29,82 +29,6 @@ GROUP BY SUBSTRING(cabfac.vt_tipoDoc, 1, 2) + '-' + cabfac.vt_serie1 + '-' + cab
                          cabfac.vt_fecha, cabfac.vt_Observacion, Bod.bo_Descripcion, cabfac.vt_fech_venc, Cli.Codigo, dbo.tb_persona.pe_nombreCompleto, dbo.tb_empresa.em_nombre, 
                          cabfac.vt_plazo, dbo.in_Producto.IdProducto, dbo.in_Producto.pr_descripcion, cabfac.IdUsuario
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt003';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'     TopColumn = 0
-         End
-         Begin Table = "tb_empresa"
-            Begin Extent = 
-               Top = 930
-               Left = 38
-               Bottom = 1059
-               Right = 271
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "Cob_RtIVA"
-            Begin Extent = 
-               Top = 1062
-               Left = 38
-               Bottom = 1191
-               Right = 263
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "Cob_RtFu"
-            Begin Extent = 
-               Top = 1194
-               Left = 38
-               Bottom = 1323
-               Right = 263
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "vwcxc_total_cobros_x_Docu"
-            Begin Extent = 
-               Top = 1326
-               Left = 38
-               Bottom = 1455
-               Right = 263
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 12
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt003';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -245,4 +169,80 @@ Begin DesignProperties =
             End
             DisplayFlags = 280
        ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt003';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'     TopColumn = 0
+         End
+         Begin Table = "tb_empresa"
+            Begin Extent = 
+               Top = 930
+               Left = 38
+               Bottom = 1059
+               Right = 271
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Cob_RtIVA"
+            Begin Extent = 
+               Top = 1062
+               Left = 38
+               Bottom = 1191
+               Right = 263
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Cob_RtFu"
+            Begin Extent = 
+               Top = 1194
+               Left = 38
+               Bottom = 1323
+               Right = 263
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "vwcxc_total_cobros_x_Docu"
+            Begin Extent = 
+               Top = 1326
+               Left = 38
+               Bottom = 1455
+               Right = 263
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 12
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt003';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt003';
 

@@ -10,10 +10,6 @@ FROM            dbo.vwIn_Ing_Egr_Inven_det_x_Producto AS vw_Ing_Egr INNER JOIN
                          in_Movi.IdMovi_inven_tipo = vw_Ing_Egr.IdMovi_inven_tipo_inv INNER JOIN
                          dbo.ct_cbtecble AS cbte ON cbte.IdEmpresa = in_Movi.IdEmpresa AND cbte.IdTipoCbte = in_Movi.IdTipoCbte AND cbte.IdCbteCble = in_Movi.IdCbteCble
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwIn_Ing_Egr_Inven_det_x_Cbte_Cble';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -142,4 +138,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwIn_Ing_Egr_Inven_det_x_Cbte_Cble';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwIn_Ing_Egr_Inven_det_x_Cbte_Cble';
 

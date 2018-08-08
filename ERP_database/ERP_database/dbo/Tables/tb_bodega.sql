@@ -26,5 +26,3 @@
     CONSTRAINT [FK_tb_bodega_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])
 );
 
-
-

@@ -34,5 +34,3 @@
     CONSTRAINT [FK_fa_factura_det_tb_sis_Impuesto1] FOREIGN KEY ([IdCod_Impuesto_Ice]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto])
 );
 
-
-

@@ -10,10 +10,6 @@ FROM            dbo.tb_banco_procesos_bancarios_x_empresa INNER JOIN
                          dbo.tb_banco_procesos_bancarios_tipo ON 
                          dbo.tb_banco_procesos_bancarios_x_empresa.IdProceso_bancario_tipo = dbo.tb_banco_procesos_bancarios_tipo.IdProceso_bancario_tipo
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_tb_banco_procesos_bancarios';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -143,4 +139,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_tb_banco_procesos_bancarios';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwtb_tb_banco_procesos_bancarios';
 

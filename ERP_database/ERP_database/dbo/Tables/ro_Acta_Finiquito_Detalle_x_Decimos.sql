@@ -12,5 +12,3 @@
     CONSTRAINT [PK_ro_Acta_Finiquito_Detalle_x_Decimos] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdNominatipo] ASC, [IdLiquidacion] ASC, [IdEmpleado] ASC, [Sec] ASC)
 );
 
-
-

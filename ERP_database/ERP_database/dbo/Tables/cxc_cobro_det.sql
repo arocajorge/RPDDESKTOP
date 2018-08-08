@@ -22,5 +22,3 @@
     CONSTRAINT [FK_cxc_cobro_det_cxc_cobro_tipo] FOREIGN KEY ([IdCobro_tipo]) REFERENCES [dbo].[cxc_cobro_tipo] ([IdCobro_tipo])
 );
 
-
-

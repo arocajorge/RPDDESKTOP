@@ -9,5 +9,3 @@
     CONSTRAINT [FK_ro_area_x_departamento_ro_Departamento] FOREIGN KEY ([IdEmpresa], [IdDepartamento]) REFERENCES [dbo].[ro_Departamento] ([IdEmpresa], [IdDepartamento])
 );
 
-
-

@@ -23,93 +23,6 @@ FROM            dbo.caj_Caja AS E INNER JOIN
                          dbo.fa_cliente AS C ON B.IdCliente = C.IdCliente AND B.IdEmpresa = C.IdEmpresa ON D.IdPersona = C.IdPersona INNER JOIN
                          dbo.cxc_cobro_x_caj_Caja_Movimiento AS H ON B.IdEmpresa = H.cbr_IdEmpresa AND B.IdSucursal = H.cbr_IdSucursal AND B.IdCobro = H.cbr_IdCobro ON 
                          G.IdEmpresa = H.mcj_IdEmpresa AND G.IdCbteCble = H.mcj_IdCbteCble AND G.IdTipocbte = H.mcj_IdTipocbte
-						 
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_MoviCaja_Depositados';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'         Begin Table = "C"
-            Begin Extent = 
-               Top = 0
-               Left = 455
-               Bottom = 119
-               Right = 665
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "H"
-            Begin Extent = 
-               Top = 179
-               Left = 288
-               Bottom = 408
-               Right = 453
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 30
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1755
-         Width = 1500
-         Width = 1500
-         Width = 1695
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 3405
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_MoviCaja_Depositados';
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -253,4 +166,90 @@ Begin DesignProperties =
             TopColumn = 0
          End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_MoviCaja_Depositados';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'         Begin Table = "C"
+            Begin Extent = 
+               Top = 0
+               Left = 455
+               Bottom = 119
+               Right = 665
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "H"
+            Begin Extent = 
+               Top = 179
+               Left = 288
+               Bottom = 408
+               Right = 453
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 30
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1755
+         Width = 1500
+         Width = 1500
+         Width = 1695
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 3405
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_MoviCaja_Depositados';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwba_MoviCaja_Depositados';
 

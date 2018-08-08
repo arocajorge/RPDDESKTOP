@@ -88,5 +88,3 @@ FROM     (SELECT dbo.fa_factura.IdEmpresa, dbo.fa_factura.IdSucursal, dbo.fa_fac
                                     fa_notaCreDeb.IdSucursal = nc.IdSucursal_fac_nd_doc_mod AND fa_notaCreDeb.IdBodega = nc.IdBodega_fac_nd_doc_mod AND fa_notaCreDeb.IdNota = nc.IdCbteVta_fac_nd_doc_mod AND 
                                     fa_notaCreDeb.CodDocumentoTipo = nc.vt_tipoDoc
                   WHERE  fa_notaCreDeb.Estado = 'A' AND fa_notaCreDeb.CreDeb = 'D') A
-GO
-

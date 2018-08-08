@@ -1,4 +1,4 @@
-﻿create view [dbo].[vw_Persona]
+﻿CREATE view [dbo].[vw_Persona]
 as
 
 SELECT     IdPersona, pe_nombreCompleto AS Nombre_Completo, pe_razonSocial AS Razon_Social, pe_apellido AS Apellido, pe_nombre AS Nombre, 

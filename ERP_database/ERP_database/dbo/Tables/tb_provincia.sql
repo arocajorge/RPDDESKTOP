@@ -19,5 +19,3 @@
     CONSTRAINT [FK_tb_provincia_tb_region] FOREIGN KEY ([Cod_Region]) REFERENCES [dbo].[tb_region] ([Cod_Region])
 );
 
-
-

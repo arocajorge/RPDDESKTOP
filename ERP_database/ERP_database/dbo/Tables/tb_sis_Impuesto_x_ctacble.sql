@@ -9,7 +9,3 @@
     CONSTRAINT [FK_tb_sis_Impuesto_x_ctacble_tb_sis_Impuesto] FOREIGN KEY ([IdCod_Impuesto]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto])
 );
 
-
-
-
-

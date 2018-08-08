@@ -24,10 +24,6 @@ FROM            dbo.cp_Aprobacion_Ing_Bod_x_OC_det INNER JOIN
                          dbo.vwcp_Aprobacion_Ing_Bod_x_OC_det.IdNumMovi_Ing_Egr_Inv = vwin_Ing_Egr.IdNumMovi AND 
                          dbo.vwcp_Aprobacion_Ing_Bod_x_OC_det.Secuencia_Ing_Egr_Inv = vwin_Ing_Egr.Secuencia
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAF_OrdenCompra_x_Proveedor_Factura_ActivoFijo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -166,4 +162,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAF_OrdenCompra_x_Proveedor_Factura_ActivoFijo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAF_OrdenCompra_x_Proveedor_Factura_ActivoFijo';
 

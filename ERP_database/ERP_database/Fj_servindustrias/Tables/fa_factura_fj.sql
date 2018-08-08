@@ -12,7 +12,3 @@
     CONSTRAINT [FK_fa_factura_fj_fa_factura] FOREIGN KEY ([IdEmpresa], [IdSucursal], [IdBodega], [IdCbteVta]) REFERENCES [dbo].[fa_factura] ([IdEmpresa], [IdSucursal], [IdBodega], [IdCbteVta])
 );
 
-
-
-
-

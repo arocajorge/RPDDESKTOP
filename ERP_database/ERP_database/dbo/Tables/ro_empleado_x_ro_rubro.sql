@@ -22,5 +22,3 @@
     CONSTRAINT [FK_ro_empleado_x_ro_rubro_ro_rubro_tipo] FOREIGN KEY ([IdEmpresa], [IdRubro]) REFERENCES [dbo].[ro_rubro_tipo] ([IdEmpresa], [IdRubro])
 );
 
-
-

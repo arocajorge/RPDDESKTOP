@@ -22,10 +22,6 @@ FROM         fa_factura AS A INNER JOIN
 GROUP BY A.IdEmpresa, A.IdSucursal, A.IdBodega, A.vt_tipoDoc, A.IdCbteVta, A.vt_serie1, A.vt_serie2, A.vt_NumFactura, A.vt_autorizacion, A.IdCliente, A.vt_fecha, 
                       A.vt_fech_venc
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Facturas_y_NotasDebito';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -124,4 +120,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Facturas_y_NotasDebito';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFa_Facturas_y_NotasDebito';
 

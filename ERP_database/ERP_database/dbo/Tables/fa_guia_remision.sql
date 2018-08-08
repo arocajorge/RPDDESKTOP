@@ -1,92 +1,47 @@
-﻿CREATE TABLE [dbo].[fa_guia_remision](
-	[IdEmpresa] [int] NOT NULL,
-	[IdSucursal] [int] NOT NULL,
-	[IdBodega] [int] NOT NULL,
-	[IdGuiaRemision] [numeric](18, 0) NOT NULL,
-	[CodGuiaRemision] [varchar](20) NOT NULL,
-	[CodDocumentoTipo] [varchar](20) NULL,
-	[Serie1] [varchar](3) NULL,
-	[Serie2] [varchar](3) NULL,
-	[NumGuia_Preimpresa] [varchar](20) NULL,
-	[NUAutorizacion] [varchar](50) NULL,
-	[Fecha_Autorizacion] [datetime] NULL,
-	[IdCliente] [numeric](18, 0) NOT NULL,
-	[IdContacto] [int] NOT NULL,
-	[IdTransportista] [numeric](18, 0) NOT NULL,
-	[gi_fecha] [datetime] NOT NULL,
-	[gi_plazo] [numeric](10, 0) NULL,
-	[gi_fech_venc] [datetime] NULL,
-	[gi_Observacion] [varchar](1000) NULL,
-	[Impreso] [char](1) NULL,
-	[gi_FechaFinTraslado] [date] NOT NULL,
-	[gi_FechaInicioTraslado] [date] NOT NULL,
-	[placa] [varchar](20) NOT NULL,
-	[ruta] [varchar](300) NULL,
-	[Direccion_Origen] [varchar](300) NOT NULL,
-	[IdUsuario] [varchar](20) NOT NULL,
-	[Fecha_Transac] [datetime] NOT NULL,
-	[IdUsuarioUltMod] [varchar](20) NULL,
-	[Fecha_UltMod] [datetime] NULL,
-	[IdUsuarioUltAnu] [varchar](20) NULL,
-	[Fecha_UltAnu] [datetime] NULL,
-	[nom_pc] [varchar](50) NOT NULL,
-	[ip] [varchar](25) NOT NULL,
-	[Estado] [char](1) NOT NULL,
-	[MotiAnula] [varchar](200) NULL,
-	[Direccion_Destino] [varchar](300) NULL,
-	[Num_declaracion_aduanera] [varchar](50) NULL,
-	[IdCatalogo_traslado] [varchar](15) NULL,
- CONSTRAINT [PK_fa_guia_remision] PRIMARY KEY CLUSTERED 
-(
-	[IdEmpresa] ASC,
-	[IdSucursal] ASC,
-	[IdBodega] ASC,
-	[IdGuiaRemision] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_catalogo] FOREIGN KEY([IdCatalogo_traslado])
-REFERENCES [dbo].[fa_catalogo] ([IdCatalogo])
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_fa_catalogo]
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_cliente] FOREIGN KEY([IdEmpresa], [IdCliente])
-REFERENCES [dbo].[fa_cliente] ([IdEmpresa], [IdCliente])
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_fa_cliente]
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_fa_cliente_contactos] FOREIGN KEY([IdEmpresa], [IdCliente], [IdContacto])
-REFERENCES [dbo].[fa_cliente_contactos] ([IdEmpresa], [IdCliente], [IdContacto])
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_fa_cliente_contactos]
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_tb_bodega] FOREIGN KEY([IdEmpresa], [IdSucursal], [IdBodega])
-REFERENCES [dbo].[tb_bodega] ([IdEmpresa], [IdSucursal], [IdBodega])
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_tb_bodega]
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_tb_sis_Documento_Tipo_Talonario] FOREIGN KEY([IdEmpresa], [CodDocumentoTipo], [Serie2], [Serie1], [NumGuia_Preimpresa])
-REFERENCES [dbo].[tb_sis_Documento_Tipo_Talonario] ([IdEmpresa], [CodDocumentoTipo], [PuntoEmision], [Establecimiento], [NumDocumento])
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_tb_sis_Documento_Tipo_Talonario]
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision]  WITH CHECK ADD  CONSTRAINT [FK_fa_guia_remision_tb_transportista] FOREIGN KEY([IdEmpresa], [IdTransportista])
-REFERENCES [dbo].[tb_transportista] ([IdEmpresa], [IdTransportista])
-GO
-
-ALTER TABLE [dbo].[fa_guia_remision] CHECK CONSTRAINT [FK_fa_guia_remision_tb_transportista]
-GO
-
+﻿CREATE TABLE [dbo].[fa_guia_remision] (
+    [IdEmpresa]                INT            NOT NULL,
+    [IdSucursal]               INT            NOT NULL,
+    [IdBodega]                 INT            NOT NULL,
+    [IdGuiaRemision]           NUMERIC (18)   NOT NULL,
+    [CodGuiaRemision]          VARCHAR (20)   NOT NULL,
+    [CodDocumentoTipo]         VARCHAR (20)   NULL,
+    [Serie1]                   VARCHAR (3)    NULL,
+    [Serie2]                   VARCHAR (3)    NULL,
+    [NumGuia_Preimpresa]       VARCHAR (20)   NULL,
+    [NUAutorizacion]           VARCHAR (50)   NULL,
+    [Fecha_Autorizacion]       DATETIME       NULL,
+    [IdCliente]                NUMERIC (18)   NOT NULL,
+    [IdContacto]               INT            NOT NULL,
+    [IdTransportista]          NUMERIC (18)   NOT NULL,
+    [gi_fecha]                 DATETIME       NOT NULL,
+    [gi_plazo]                 NUMERIC (10)   NULL,
+    [gi_fech_venc]             DATETIME       NULL,
+    [gi_Observacion]           VARCHAR (1000) NULL,
+    [Impreso]                  CHAR (1)       NULL,
+    [gi_FechaFinTraslado]      DATE           NOT NULL,
+    [gi_FechaInicioTraslado]   DATE           NOT NULL,
+    [placa]                    VARCHAR (20)   NOT NULL,
+    [ruta]                     VARCHAR (300)  NULL,
+    [Direccion_Origen]         VARCHAR (300)  NOT NULL,
+    [IdUsuario]                VARCHAR (20)   NOT NULL,
+    [Fecha_Transac]            DATETIME       NOT NULL,
+    [IdUsuarioUltMod]          VARCHAR (20)   NULL,
+    [Fecha_UltMod]             DATETIME       NULL,
+    [IdUsuarioUltAnu]          VARCHAR (20)   NULL,
+    [Fecha_UltAnu]             DATETIME       NULL,
+    [nom_pc]                   VARCHAR (50)   NOT NULL,
+    [ip]                       VARCHAR (25)   NOT NULL,
+    [Estado]                   CHAR (1)       NOT NULL,
+    [MotiAnula]                VARCHAR (200)  NULL,
+    [Direccion_Destino]        VARCHAR (300)  NULL,
+    [Num_declaracion_aduanera] VARCHAR (50)   NULL,
+    [IdCatalogo_traslado]      VARCHAR (15)   NULL,
+    CONSTRAINT [PK_fa_guia_remision] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdGuiaRemision] ASC),
+    CONSTRAINT [FK_fa_guia_remision_fa_catalogo] FOREIGN KEY ([IdCatalogo_traslado]) REFERENCES [dbo].[fa_catalogo] ([IdCatalogo]),
+    CONSTRAINT [FK_fa_guia_remision_fa_cliente] FOREIGN KEY ([IdEmpresa], [IdCliente]) REFERENCES [dbo].[fa_cliente] ([IdEmpresa], [IdCliente]),
+    CONSTRAINT [FK_fa_guia_remision_fa_cliente_contactos] FOREIGN KEY ([IdEmpresa], [IdCliente], [IdContacto]) REFERENCES [dbo].[fa_cliente_contactos] ([IdEmpresa], [IdCliente], [IdContacto]),
+    CONSTRAINT [FK_fa_guia_remision_tb_bodega] FOREIGN KEY ([IdEmpresa], [IdSucursal], [IdBodega]) REFERENCES [dbo].[tb_bodega] ([IdEmpresa], [IdSucursal], [IdBodega]),
+    CONSTRAINT [FK_fa_guia_remision_tb_sis_Documento_Tipo_Talonario] FOREIGN KEY ([IdEmpresa], [CodDocumentoTipo], [Serie2], [Serie1], [NumGuia_Preimpresa]) REFERENCES [dbo].[tb_sis_Documento_Tipo_Talonario] ([IdEmpresa], [CodDocumentoTipo], [PuntoEmision], [Establecimiento], [NumDocumento]),
+    CONSTRAINT [FK_fa_guia_remision_tb_transportista] FOREIGN KEY ([IdEmpresa], [IdTransportista]) REFERENCES [dbo].[tb_transportista] ([IdEmpresa], [IdTransportista])
+);
 

@@ -38,138 +38,6 @@ inner join fa_cliente_contactos as con on con.IdEmpresa = c.IdEmpresa and con.Id
 inner join tb_persona as per on cli.IdPersona = per.IdPersona inner join tb_ciudad as ciu on con.IdCiudad = ciu.IdCiudad
 inner join fa_Vendedor as ve on ve.IdEmpresa = c.IdEmpresa and ve.IdVendedor = c.IdVendedor
 where c.vt_Observacion is not null and c.vt_Observacion <> ''
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt008';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'           DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "tb_ciudad"
-            Begin Extent = 
-               Top = 6
-               Left = 548
-               Bottom = 136
-               Right = 742
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "fa_Vendedor"
-            Begin Extent = 
-               Top = 70
-               Left = 882
-               Bottom = 348
-               Right = 1086
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "fa_factura_x_formaPago"
-            Begin Extent = 
-               Top = 154
-               Left = 790
-               Bottom = 283
-               Right = 999
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "pre"
-            Begin Extent = 
-               Top = 420
-               Left = 38
-               Bottom = 550
-               Right = 225
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 49
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 4515
-         Width = 1500
-         Width = 2055
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 75
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      PaneHidden = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt008';
-
-
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -312,4 +180,131 @@ Begin DesignProperties =
  ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt008';
 
 
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'           DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "tb_ciudad"
+            Begin Extent = 
+               Top = 6
+               Left = 548
+               Bottom = 136
+               Right = 742
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "fa_Vendedor"
+            Begin Extent = 
+               Top = 70
+               Left = 882
+               Bottom = 348
+               Right = 1086
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "fa_factura_x_formaPago"
+            Begin Extent = 
+               Top = 154
+               Left = 790
+               Bottom = 283
+               Right = 999
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "pre"
+            Begin Extent = 
+               Top = 420
+               Left = 38
+               Bottom = 550
+               Right = 225
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 49
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 4515
+         Width = 1500
+         Width = 2055
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 75
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      PaneHidden = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt008';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwFAC_Rpt008';
 

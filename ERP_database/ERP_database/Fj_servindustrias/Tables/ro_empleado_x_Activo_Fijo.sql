@@ -13,13 +13,3 @@
     CONSTRAINT [FK_ro_empleado_x_Activo_Fijo_ro_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado]) REFERENCES [dbo].[ro_empleado] ([IdEmpresa], [IdEmpleado])
 );
 
-
-
-
-
-
-
-
-
-
-

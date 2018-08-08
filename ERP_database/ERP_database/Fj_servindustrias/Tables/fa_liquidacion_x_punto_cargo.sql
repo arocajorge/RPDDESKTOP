@@ -36,15 +36,3 @@
     CONSTRAINT [FK_fa_liquidacion_x_punto_cargo_tb_sis_Impuesto] FOREIGN KEY ([IdCod_Impuesto]) REFERENCES [dbo].[tb_sis_Impuesto] ([IdCod_Impuesto])
 );
 
-
-
-
-
-
-
-
-
-
-
-
-

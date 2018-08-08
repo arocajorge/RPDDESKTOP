@@ -34,7 +34,3 @@
     CONSTRAINT [FK_ro_Solicitud_Vacaciones_x_empleado_ro_historico_vacaciones_x_empleado] FOREIGN KEY ([IdEmpresa], [IdEmpleado], [IdVacacion]) REFERENCES [dbo].[ro_historico_vacaciones_x_empleado] ([IdEmpresa], [IdEmpleado], [IdVacacion])
 );
 
-
-
-
-

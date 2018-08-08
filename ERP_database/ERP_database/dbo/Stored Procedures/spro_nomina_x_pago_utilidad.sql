@@ -47,5 +47,3 @@ or (emp.em_fechaSalida between @FechaInicio and @FechaFin)
 group by emp.IdEmpresa,emp.IdEmpleado ,car.ca_descripcion, per.pe_apellido, per.pe_nombre, per.pe_cedulaRuc, emp.em_status, emp.em_fechaIngaRol, emp.em_fecha_ingreso, emp.em_fechaSalida
 
 END
-
-

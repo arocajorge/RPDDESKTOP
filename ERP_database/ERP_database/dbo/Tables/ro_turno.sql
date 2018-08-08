@@ -1,5 +1,4 @@
-﻿
-CREATE TABLE [dbo].[ro_turno] (
+﻿CREATE TABLE [dbo].[ro_turno] (
     [IdEmpresa]       INT           NOT NULL,
     [IdTurno]         NUMERIC (18)  NOT NULL,
     [tu_descripcion]  VARCHAR (50)  NOT NULL,
@@ -23,8 +22,4 @@ CREATE TABLE [dbo].[ro_turno] (
     CONSTRAINT [PK_ro_turno_1] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdTurno] ASC),
     CONSTRAINT [FK_ro_turno_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
-
-
-
-
 

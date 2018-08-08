@@ -12,114 +12,7 @@ FROM     dbo.Af_Catalogo AS Af_Catalogo_1 RIGHT OUTER JOIN
                   dbo.Af_Activo_fijo ON dbo.Af_Activo_fijo_Categoria.IdCategoriaAF = dbo.Af_Activo_fijo.IdCategoriaAF AND dbo.Af_Activo_fijo_Categoria.IdEmpresa = dbo.Af_Activo_fijo.IdEmpresa LEFT OUTER JOIN
                   dbo.Af_Catalogo AS cat_Color ON dbo.Af_Activo_fijo.IdCatalogo_Color = cat_Color.IdCatalogo LEFT OUTER JOIN
                   dbo.Af_Catalogo AS Af_Catalogo_2 ON dbo.Af_Activo_fijo.IdCatalogo_Marca = Af_Catalogo_2.IdCatalogo ON Af_Catalogo_1.IdCatalogo = dbo.Af_Activo_fijo.IdCatalogo_Modelo LEFT OUTER JOIN
-                  dbo.tb_sucursal ON dbo.Af_Activo_fijo.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.Af_Activo_fijo.IdSucursal = dbo.tb_sucursal.IdSucursal 
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Activo_fijo';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'         Bottom = 227
-               Right = 1219
-            End
-            DisplayFlags = 344
-            TopColumn = 0
-         End
-         Begin Table = "Af_Catalogo_2"
-            Begin Extent = 
-               Top = 43
-               Left = 1063
-               Bottom = 172
-               Right = 1272
-            End
-            DisplayFlags = 344
-            TopColumn = 0
-         End
-         Begin Table = "tb_sucursal"
-            Begin Extent = 
-               Top = 308
-               Left = 916
-               Bottom = 437
-               Right = 1146
-            End
-            DisplayFlags = 344
-            TopColumn = 0
-         End
-         Begin Table = "Af_Encargado"
-            Begin Extent = 
-               Top = 105
-               Left = 31
-               Bottom = 234
-               Right = 240
-            End
-            DisplayFlags = 344
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 35
-         Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 2280
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 4380
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Activo_fijo';
-
-
+                  dbo.tb_sucursal ON dbo.Af_Activo_fijo.IdEmpresa = dbo.tb_sucursal.IdEmpresa AND dbo.Af_Activo_fijo.IdSucursal = dbo.tb_sucursal.IdSucursal
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -257,4 +150,111 @@ Begin DesignProperties =
                Top = 98
                Left = 1010
       ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Activo_fijo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'         Bottom = 227
+               Right = 1219
+            End
+            DisplayFlags = 344
+            TopColumn = 0
+         End
+         Begin Table = "Af_Catalogo_2"
+            Begin Extent = 
+               Top = 43
+               Left = 1063
+               Bottom = 172
+               Right = 1272
+            End
+            DisplayFlags = 344
+            TopColumn = 0
+         End
+         Begin Table = "tb_sucursal"
+            Begin Extent = 
+               Top = 308
+               Left = 916
+               Bottom = 437
+               Right = 1146
+            End
+            DisplayFlags = 344
+            TopColumn = 0
+         End
+         Begin Table = "Af_Encargado"
+            Begin Extent = 
+               Top = 105
+               Left = 31
+               Bottom = 234
+               Right = 240
+            End
+            DisplayFlags = 344
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 35
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 2280
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 4380
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Activo_fijo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwAf_Activo_fijo';
 

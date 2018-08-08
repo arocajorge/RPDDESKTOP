@@ -9,10 +9,6 @@ FROM     dbo.cp_orden_giro LEFT OUTER JOIN
                   dbo.vwcp_orden_giro_total_pagodo ON dbo.cp_orden_giro.IdEmpresa = dbo.vwcp_orden_giro_total_pagodo.IdEmpresa_cxp AND dbo.cp_orden_giro.IdTipoCbte_Ogiro = dbo.vwcp_orden_giro_total_pagodo.IdTipoCbte_cxp AND 
                   dbo.cp_orden_giro.IdCbteCble_Ogiro = dbo.vwcp_orden_giro_total_pagodo.IdCbteCble_cxp
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_total_saldo';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -131,4 +127,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_total_saldo';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_orden_giro_total_saldo';
 

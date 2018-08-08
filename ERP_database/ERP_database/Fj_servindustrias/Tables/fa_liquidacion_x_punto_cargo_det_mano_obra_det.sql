@@ -11,5 +11,3 @@
     CONSTRAINT [FK_fa_liquidacion_x_punto_cargo_det_mano_obra_det_man_actividad] FOREIGN KEY ([IdEmpresa], [IdActividad]) REFERENCES [dbo].[man_actividad] ([IdEmpresa], [IdActividad])
 );
 
-
-

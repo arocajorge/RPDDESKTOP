@@ -13,5 +13,3 @@
     CONSTRAINT [FK_ro_salario_digno_ro_Nomina_Tipo] FOREIGN KEY ([IdEmpresa], [IdNominaTipo]) REFERENCES [dbo].[ro_Nomina_Tipo] ([IdEmpresa], [IdNomina_Tipo])
 );
 
-
-

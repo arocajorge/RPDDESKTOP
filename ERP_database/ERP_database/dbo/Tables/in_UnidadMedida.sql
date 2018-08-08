@@ -10,5 +10,3 @@
     CONSTRAINT [PK_in_Unidad_Medida] PRIMARY KEY CLUSTERED ([IdUnidadMedida] ASC)
 );
 
-
-

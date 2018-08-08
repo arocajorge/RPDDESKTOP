@@ -44,8 +44,6 @@
 );
 
 
-
-
 GO
 CREATE NONCLUSTERED INDEX [IX_ba_Cbte_Ban]
     ON [dbo].[ba_Cbte_Ban]([IdEmpresa] ASC, [IdTipocbte] ASC, [IdCbteCble] ASC, [IdBanco] ASC);

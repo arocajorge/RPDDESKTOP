@@ -17,5 +17,3 @@
     CONSTRAINT [PK_fa_TipoNota] PRIMARY KEY CLUSTERED ([IdTipoNota] ASC)
 );
 
-
-

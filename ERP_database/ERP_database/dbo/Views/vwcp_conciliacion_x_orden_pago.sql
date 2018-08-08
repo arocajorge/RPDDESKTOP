@@ -12,10 +12,6 @@ FROM         dbo.cp_conciliacion_det INNER JOIN
                       dbo.vwcp_orden_pago_con_cancelacion AS B ON dbo.cp_conciliacion_det.IdEmpresa_op = B.IdEmpresa AND 
                       dbo.cp_conciliacion_det.IdOrdenPago_op = B.IdOrdenPago AND dbo.cp_conciliacion_det.Secuencia_op = B.Secuencia_OP
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_conciliacion_x_orden_pago';
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
@@ -144,4 +140,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_conciliacion_x_orden_pago';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 1, @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_conciliacion_x_orden_pago';
 

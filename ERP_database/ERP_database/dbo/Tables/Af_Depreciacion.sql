@@ -26,5 +26,3 @@
     CONSTRAINT [FK_Af_Depreciacion_ct_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ct_periodo] ([IdEmpresa], [IdPeriodo])
 );
 
-
-
