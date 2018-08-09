@@ -16,7 +16,7 @@ declare
 @Fi date,
 @Ff date
 
--- variables pruebas
+ ----variables pruebas
 	--@IdEmpresa int,
 	--@IdPeriodo int,
 	--@Region varchar(10),
@@ -71,7 +71,7 @@ values
 
 
 
-delete ro_rol_detalle where IdEmpresa=@IdEmpresa and IdNominaTipo=1 and IdNominaTipoLiqui=4 and IdPeriodo=@IdPeriodo
+delete ro_rol_detalle where IdEmpresa=@IdEmpresa and IdNominaTipo=1 and IdNominaTipoLiqui=3 and IdPeriodo=@IdPeriodo
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 -------------calculando decimo cuarto sueldo-------------------------------------------------------------------------------------------------<

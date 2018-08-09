@@ -1,5 +1,4 @@
 ﻿
-
  --exec spROL_DecimoCuarto 1,'01/08/2016','41/07/2017','SIERRA'
 CREATE PROCEDURE [dbo].[spROL_DecimoCuarto]
 	(
@@ -36,7 +35,7 @@ declare
 
 if(@Region='COSTA')
 select @fi=convert(varchar(4), (@IdPeriodo-1))+'-'+'12'+'-'+'01'
-select @ff=convert(varchar(4), (@IdPeriodo))+'-'+'11'+'-'+'40' 
+select @ff=convert(varchar(4), (@IdPeriodo))+'-'+'11'+'-'+'30' 
 if((select  COUNT(IdPeriodo) from ro_periodo where IdEmpresa=@IdEmpresa and IdPeriodo=@IdPeriodo)=0)
 insert into ro_periodo (
 IdEmpresa,				IdPeriodo,			pe_FechaIni,					pe_FechaFin,					pe_estado			,Fecha_Transac
