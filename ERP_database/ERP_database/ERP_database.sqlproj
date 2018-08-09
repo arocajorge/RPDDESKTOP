@@ -1897,5 +1897,7 @@
     <Build Include="Security\Naturisa.sql" />
     <Build Include="Security\Talento_humano.sql" />
     <Build Include="Security\web.sql" />
+    <Build Include="web\Views\VWIMP_002_gastos.sql" />
+    <Build Include="web\Views\VWIMP_002.sql" />
   </ItemGroup>
 </Project>
