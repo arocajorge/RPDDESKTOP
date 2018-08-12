@@ -4,7 +4,8 @@ SELECT        dbo.imp_orden_compra_ext.IdEmpresa, dbo.imp_orden_compra_ext.IdOrd
                          dbo.imp_orden_compra_ext.oe_fecha_embarque_est, dbo.imp_orden_compra_ext.oe_observacion, dbo.tb_moneda.im_descripcion AS NomMoneda, dbo.in_Producto.pr_codigo, dbo.in_Producto.pr_descripcion, 
                          dbo.imp_orden_compra_ext_det.od_cantidad, dbo.imp_orden_compra_ext_det.od_costo, dbo.imp_orden_compra_ext_det.od_por_descuento, dbo.imp_orden_compra_ext_det.od_descuento, 
                          dbo.imp_orden_compra_ext_det.od_costo_final, dbo.imp_orden_compra_ext_det.od_subtotal, dbo.tb_persona.pe_nombreCompleto, dbo.tb_pais.Nombre AS NomPais, dbo.in_presentacion.nom_presentacion, 
-                         ViaEmbarque.ca_descripcion AS NomVia, FormaPago.ca_descripcion AS NomFormaPago, dbo.in_UnidadMedida.Descripcion AS NomUnidad, dbo.tb_ciudad.Descripcion_Ciudad
+                         ViaEmbarque.ca_descripcion AS NomVia, FormaPago.ca_descripcion AS NomFormaPago, dbo.in_UnidadMedida.Descripcion AS NomUnidad, dbo.tb_ciudad.Descripcion_Ciudad, 
+                         dbo.imp_orden_compra_ext_det.od_total_fob
 FROM            dbo.imp_orden_compra_ext INNER JOIN
                          dbo.imp_orden_compra_ext_det ON dbo.imp_orden_compra_ext.IdEmpresa = dbo.imp_orden_compra_ext_det.IdEmpresa AND 
                          dbo.imp_orden_compra_ext.IdOrdenCompra_ext = dbo.imp_orden_compra_ext_det.IdOrdenCompra_ext INNER JOIN
@@ -102,13 +103,13 @@ Begin DesignProperties =
          End
          Begin Table = "imp_orden_compra_ext_det"
             Begin Extent = 
-               Top = 138
-               Left = 38
-               Bottom = 268
-               Right = 249
+               Top = 41
+               Left = 268
+               Bottom = 319
+               Right = 502
             End
             DisplayFlags = 280
-            TopColumn = 0
+            TopColumn = 5
          End
          Begin Table = "cp_proveedor"
             Begin Extent = 
@@ -157,6 +158,8 @@ Begin DesignProperties =
                Bottom = 796
                Right = 217
        ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWIMP_001';
+
+
 
 
 GO
@@ -221,8 +224,9 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'     End
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 9
+      Begin ColumnWidths = 10
          Width = 284
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -252,6 +256,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'     End
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWIMP_001';
+
+
 
 
 GO

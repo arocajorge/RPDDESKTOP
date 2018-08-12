@@ -2,7 +2,7 @@
 AS
 SELECT        dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdEmpresa, dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdOrdenCompra_ext, dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdEmpresa_ct, 
                          dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdTipoCbte, dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdCbteCble, dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.secuencia_ct, 
-                         dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdGasto_tipo, dbo.ct_cbtecble_det.dc_Valor, dbo.ct_plancta.pc_Cuenta, dbo.ct_cbtecble_det.dc_Observacion
+                         dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdGasto_tipo, dbo.ct_cbtecble_det.dc_Valor, dbo.ct_plancta.pc_Cuenta, dbo.ct_cbtecble_det.dc_Observacion, dbo.ct_cbtecble_det.IdCtaCble
 FROM            dbo.ct_cbtecble_det INNER JOIN
                          dbo.imp_orden_compra_ext_ct_cbteble_det_gastos ON dbo.ct_cbtecble_det.IdEmpresa = dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdEmpresa_ct AND 
                          dbo.ct_cbtecble_det.IdTipoCbte = dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdTipoCbte AND dbo.ct_cbtecble_det.IdCbteCble = dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdCbteCble AND 
@@ -82,10 +82,10 @@ Begin DesignProperties =
       Begin Tables = 
          Begin Table = "ct_cbtecble_det"
             Begin Extent = 
-               Top = 0
-               Left = 263
-               Bottom = 306
-               Right = 526
+               Top = 10
+               Left = 405
+               Bottom = 316
+               Right = 668
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -95,17 +95,17 @@ Begin DesignProperties =
                Top = 23
                Left = 0
                Bottom = 333
-               Right = 195
+               Right = 330
             End
             DisplayFlags = 280
             TopColumn = 0
          End
          Begin Table = "ct_plancta"
             Begin Extent = 
-               Top = 6
-               Left = 572
-               Bottom = 340
-               Right = 755
+               Top = 10
+               Left = 696
+               Bottom = 344
+               Right = 879
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -150,6 +150,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwimp_orden_compra_ext_ct_cbteble_det_gastos';
+
+
 
 
 GO
