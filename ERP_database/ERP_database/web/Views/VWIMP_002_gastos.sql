@@ -1,6 +1,6 @@
 ﻿CREATE VIEW web.VWIMP_002_gastos
 AS
-SELECT        dbo.imp_orden_compra_ext.IdEmpresa, dbo.imp_orden_compra_ext.IdOrdenCompra_ext, dbo.imp_gasto.gt_descripcion, dbo.ct_cbtecble_det.dc_Valor, dbo.ct_cbtecble_det.dc_Observacion
+SELECT        dbo.imp_orden_compra_ext.IdEmpresa, dbo.imp_orden_compra_ext.IdOrdenCompra_ext, dbo.imp_gasto.gt_descripcion, dbo.ct_cbtecble_det.dc_Valor, dbo.ct_cbtecble_det.dc_Observacion, dbo.imp_gasto.gt_orden
 FROM            dbo.imp_orden_compra_ext INNER JOIN
                          dbo.imp_orden_compra_ext_ct_cbteble_det_gastos ON dbo.imp_orden_compra_ext.IdEmpresa = dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdEmpresa AND 
                          dbo.imp_orden_compra_ext.IdOrdenCompra_ext = dbo.imp_orden_compra_ext_ct_cbteble_det_gastos.IdOrdenCompra_ext INNER JOIN
@@ -107,26 +107,6 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
-         Begin Table = "imp_gasto"
-            Begin Extent = 
-               Top = 63
-               Left = 98
-               Bottom = 193
-               Right = 268
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "imp_gasto_x_ct_plancta"
-            Begin Extent = 
-               Top = 61
-               Left = 313
-               Bottom = 174
-               Right = 507
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
          Begin Table = "imp_orden_compra_ext"
             Begin Extent = 
                Top = 25
@@ -143,6 +123,26 @@ Begin DesignProperties =
                Left = 524
                Bottom = 249
                Right = 812
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "imp_gasto"
+            Begin Extent = 
+               Top = 1
+               Left = 127
+               Bottom = 165
+               Right = 297
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "imp_gasto_x_ct_plancta"
+            Begin Extent = 
+               Top = 61
+               Left = 313
+               Bottom = 174
+               Right = 507
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -178,4 +178,6 @@ Begin DesignProperties =
    End
    Begin CriteriaPane = 
       Begin Co', @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWIMP_002_gastos';
+
+
 
