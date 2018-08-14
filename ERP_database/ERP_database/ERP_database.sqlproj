@@ -1899,5 +1899,7 @@
     <Build Include="Security\web.sql" />
     <Build Include="web\Views\VWIMP_002_gastos.sql" />
     <Build Include="web\Views\VWIMP_002.sql" />
+    <Build Include="web\Views\vwcxc_cobro_det_valor_retenciones.sql" />
+    <Build Include="web\Views\VWCXC_003.sql" />
   </ItemGroup>
 </Project>
