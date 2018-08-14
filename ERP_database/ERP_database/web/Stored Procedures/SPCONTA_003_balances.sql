@@ -38,7 +38,13 @@ INSERT INTO [web].[ct_CONTA_003_balances]
            ,[SaldoDebitos]
            ,[SaldoCreditos]
            ,[SaldoFinal]
-		   ,[EsCuentaMovimiento])
+		   ,[EsCuentaMovimiento]
+		   ,[Naturaleza]
+           ,[SaldoInicialNaturaleza]
+           ,[SaldoDebitosCreditosNaturaleza]
+           ,[SaldoDebitosNaturaleza]
+           ,[SaldoCreditosNaturaleza]
+           ,[SaldoFinalNaturaleza])
 SELECT @IdUsuario, 
 ct_plancta.IdEmpresa, 
 ct_plancta.IdCtaCble, 
@@ -50,7 +56,7 @@ ct_plancta.IdGrupoCble,
 ct_grupocble.gc_GrupoCble, 
 ct_grupocble.gc_estado_financiero, 
 ct_grupocble.gc_Orden,
-0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,ct_plancta.pc_Naturaleza,0,0,0,0,0
 FROM            ct_anio_fiscal_x_cuenta_utilidad RIGHT OUTER JOIN
         ct_plancta ON ct_anio_fiscal_x_cuenta_utilidad.IdEmpresa = ct_plancta.IdEmpresa AND ct_anio_fiscal_x_cuenta_utilidad.IdCtaCble = ct_plancta.IdCtaCble LEFT OUTER JOIN
         ct_grupocble ON ct_plancta.IdGrupoCble = ct_grupocble.IdGrupoCble
@@ -288,20 +294,34 @@ BEGIN
 	and IdUsuario = @IdUsuario
 END
 
-select @Contador = 
-max(IdNivelCta) 
-from web.ct_CONTA_003_balances
-where IdUsuario = @IdUsuario
+delete web.ct_CONTA_003_balances 
+where IdNivelCta > @IdNivel
 and IdEmpresa = @IdEmpresa
-and IdNivelCta <= @IdNivel
-group by IdEmpresa, IdUsuario
+and IdUsuario = @IdUsuario
 
 update web.ct_CONTA_003_balances set EsCuentaMovimiento = 1 
 where IdUsuario = @IdUsuario
 and IdEmpresa = @IdEmpresa
-and IdNivelCta = @Contador
+and not exists(
+select * from web.ct_CONTA_003_balances as f
+where f.IdEmpresa = web.ct_CONTA_003_balances.IdEmpresa
+and f.IdCtaCblePadre = web.ct_CONTA_003_balances.IdCtaCble
+and f.IdEmpresa = @IdEmpresa
+and f.IdUsuario = @IdUsuario
+)
+
+UPDATE web.ct_CONTA_003_balances SET 
+SaldoInicialNaturaleza = iif(Naturaleza = 'C', SaldoInicial * -1, SaldoInicial),
+SaldoDebitosCreditosNaturaleza = iif(Naturaleza = 'C', SaldoDebitosCreditos * -1, SaldoDebitosCreditos),
+SaldoDebitosNaturaleza =  ABS(Debitos),
+SaldoCreditosNaturaleza = ABS(Creditos),
+SaldoFinalNaturaleza = iif(Naturaleza = 'C', SaldoFinal * -1, SaldoFinal)
+where web.ct_CONTA_003_balances.IdEmpresa = @IdEmpresa 
+and web.ct_CONTA_003_balances.IdUsuario = @IdUsuario
 
 SELECT * FROM web.ct_CONTA_003_balances
 where gc_estado_financiero LIKE '%'+@Balance+'%'
 and [IdNivelCta] <= @IdNivel AND IdUsuario = @IdUsuario
 and IdEmpresa = @IdEmpresa
+GO
+

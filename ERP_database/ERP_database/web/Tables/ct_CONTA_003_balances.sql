@@ -20,6 +20,12 @@
     [SaldoCreditos]        FLOAT (53)    NOT NULL,
     [SaldoFinal]           FLOAT (53)    NOT NULL,
     [EsCuentaMovimiento]   BIT           NOT NULL,
+	[Naturaleza]                     VARCHAR (2)   NOT NULL,
+    [SaldoInicialNaturaleza]         FLOAT (53)    NOT NULL,
+    [SaldoDebitosCreditosNaturaleza] FLOAT (53)    NOT NULL,
+    [SaldoDebitosNaturaleza]         FLOAT (53)    NOT NULL,
+    [SaldoCreditosNaturaleza]        FLOAT (53)    NOT NULL,
+    [SaldoFinalNaturaleza]           FLOAT (53)    NOT NULL,
     CONSTRAINT [PK_ct_CONTA_003_balances] PRIMARY KEY CLUSTERED ([IdUsuario] ASC, [IdEmpresa] ASC, [IdCtaCble] ASC)
 );
 
