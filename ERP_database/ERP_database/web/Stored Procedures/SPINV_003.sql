@@ -1,4 +1,5 @@
-﻿--EXEC web.SPINV_003 1,1,9999,1,9999,1,999999,'',0,0,0,'2018/05/30',1
+﻿
+--EXEC web.SPINV_003 1,1,9999,1,9999,1,999999,'',0,0,0,'2018/05/30',1
 CREATE PROCEDURE [web].[SPINV_003]
 (
 @IdEmpresa int,
@@ -97,23 +98,15 @@ BEGIN
 	WHERE Stock = 0
 END
 
-SELECT sp.IdEmpresa, sp.IdSucursal, sp.IdBodega, sp.IdProducto, sp.Stock, sp.Costo_promedio, sp.Costo_total,
-s.Su_Descripcion, b.bo_Descripcion, p.pr_codigo, p.pr_descripcion, p.lote_num_lote, p.lote_fecha_vcto,
-c.IdCategoria, c.ca_Categoria, l.IdLinea, l.nom_linea, g.IdGrupo, g.nom_grupo, sg.IdSubgrupo, sg.nom_subgrupo, pr.IdPresentacion, pr.nom_presentacion
-FROM web.in_SPINV_003 as sp
-inner join in_Producto as p
-on sp.IdEmpresa = p.IdEmpresa
-and sp.IdProducto = p.IdProducto
-inner join tb_sucursal as s
-on sp.IdEmpresa = s.IdEmpresa
-and sp.IdSucursal = s.IdSucursal
-inner join tb_bodega as b
-on sp.IdEmpresa = b.IdEmpresa
-and sp.IdSucursal = b.IdSucursal
-and sp.IdBodega = b.IdBodega
-inner join in_categorias as c on c.IdEmpresa = p.IdEmpresa and c.IdCategoria = p.IdEmpresa
-inner join in_linea as l on l.IdEmpresa = p.IdEmpresa and l.IdCategoria = p.IdCategoria and l.IdLinea = p.IdLinea
-inner join in_grupo as g on g.IdEmpresa = p.IdEmpresa and g.IdCategoria = p.IdCategoria and g.IdLinea = p.IdLinea and g.IdGrupo = p.IdGrupo
-inner join in_subgrupo as sg on sg.IdEmpresa = p.IdEmpresa and sg.IdCategoria = p.IdCategoria and sg.IdLinea = p.IdLinea and sg.IdGrupo = p.IdGrupo and sg.IdSubgrupo = p.IdSubGrupo
-inner join in_presentacion as pr on pr.IdEmpresa = p.IdEmpresa and pr.IdPresentacion = p.IdPresentacion
+SELECT sp.IdEmpresa, sp.IdSucursal, sp.IdBodega, sp.IdProducto, sp.Stock, sp.Costo_promedio, sp.Costo_total, s.Su_Descripcion, b.bo_Descripcion, p.pr_codigo, p.pr_descripcion, p.lote_num_lote, p.lote_fecha_vcto, c.IdCategoria, c.ca_Categoria, 
+                  l.IdLinea, l.nom_linea, g.IdGrupo, g.nom_grupo, sg.IdSubgrupo, sg.nom_subgrupo, pr.IdPresentacion, pr.nom_presentacion
+FROM     web.in_SPINV_003 AS sp INNER JOIN
+                  in_Producto AS p ON sp.IdEmpresa = p.IdEmpresa AND sp.IdProducto = p.IdProducto INNER JOIN
+                  tb_sucursal AS s ON sp.IdEmpresa = s.IdEmpresa AND sp.IdSucursal = s.IdSucursal INNER JOIN
+                  tb_bodega AS b ON sp.IdEmpresa = b.IdEmpresa AND sp.IdSucursal = b.IdSucursal AND sp.IdBodega = b.IdBodega INNER JOIN
+                  in_linea AS l ON l.IdEmpresa = p.IdEmpresa AND l.IdCategoria = p.IdCategoria AND l.IdLinea = p.IdLinea INNER JOIN
+                  in_grupo AS g ON g.IdEmpresa = p.IdEmpresa AND g.IdCategoria = p.IdCategoria AND g.IdLinea = p.IdLinea AND g.IdGrupo = p.IdGrupo INNER JOIN
+                  in_subgrupo AS sg ON sg.IdEmpresa = p.IdEmpresa AND sg.IdCategoria = p.IdCategoria AND sg.IdLinea = p.IdLinea AND sg.IdGrupo = p.IdGrupo AND sg.IdSubgrupo = p.IdSubGrupo INNER JOIN
+                  in_presentacion AS pr ON pr.IdEmpresa = p.IdEmpresa AND pr.IdPresentacion = p.IdPresentacion INNER JOIN
+                  in_categorias AS c ON p.IdEmpresa = c.IdEmpresa AND p.IdCategoria = c.IdCategoria
 END
