@@ -1901,5 +1901,6 @@
     <Build Include="web\Views\VWIMP_002.sql" />
     <Build Include="web\Views\vwcxc_cobro_det_valor_retenciones.sql" />
     <Build Include="web\Views\VWCXC_003.sql" />
+    <Build Include="web\Views\vwin_Producto_Composicion.sql" />
   </ItemGroup>
 </Project>
