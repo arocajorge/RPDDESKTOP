@@ -21,10 +21,8 @@ FROM            dbo.imp_orden_compra_ext INNER JOIN
                          dbo.imp_catalogo ON dbo.imp_orden_compra_ext.IdCatalogo_forma_pago = dbo.imp_catalogo.IdCatalogo INNER JOIN
                          dbo.imp_catalogo AS imp_catalogo_1 ON dbo.imp_orden_compra_ext.IdCatalogo_via = imp_catalogo_1.IdCatalogo INNER JOIN
                          dbo.in_Producto ON dbo.imp_orden_compra_ext_det.IdEmpresa = dbo.in_Producto.IdEmpresa AND dbo.imp_orden_compra_ext_det.IdProducto = dbo.in_Producto.IdProducto INNER JOIN
-                         dbo.tb_ciudad ON dbo.imp_orden_compra_ext.IdCiudad_destino = dbo.tb_ciudad.IdCiudad LEFT OUTER JOIN
-                         dbo.imp_liquidacion_det_x_imp_orden_compra_ext ON dbo.imp_orden_compra_ext.IdEmpresa = dbo.imp_liquidacion_det_x_imp_orden_compra_ext.IdEmpresa_oe AND 
-                         dbo.imp_orden_compra_ext.IdOrdenCompra_ext = dbo.imp_liquidacion_det_x_imp_orden_compra_ext.IdOrdenCompra_ext
-GO
+                         dbo.tb_ciudad ON dbo.imp_orden_compra_ext.IdCiudad_destino = dbo.tb_ciudad.IdCiudad 
+						 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWIMP_002';
 
 

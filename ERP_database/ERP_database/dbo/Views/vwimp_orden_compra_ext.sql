@@ -3,11 +3,10 @@ AS
 SELECT        dbo.imp_orden_compra_ext.IdEmpresa, dbo.imp_orden_compra_ext.IdOrdenCompra_ext, dbo.imp_orden_compra_ext.IdProveedor, dbo.imp_orden_compra_ext.IdPais_origen, dbo.imp_orden_compra_ext.IdPais_embarque, 
                          dbo.imp_orden_compra_ext.IdCiudad_destino, dbo.imp_orden_compra_ext.IdCatalogo_via, dbo.imp_orden_compra_ext.oe_fecha, dbo.imp_orden_compra_ext.oe_fecha_llegada_est, 
                          dbo.imp_orden_compra_ext.oe_fecha_embarque_est, dbo.imp_orden_compra_ext.oe_fecha_desaduanizacion_est, dbo.imp_orden_compra_ext.IdCtaCble_importacion, dbo.imp_orden_compra_ext.oe_observacion, 
-                         dbo.imp_orden_compra_ext.oe_codigo, dbo.imp_orden_compra_ext.estado, dbo.imp_orden_compra_ext.IdLiquidacion, dbo.imp_orden_compra_ext.oe_fecha_llegada, dbo.imp_orden_compra_ext.oe_fecha_embarque, 
+                         dbo.imp_orden_compra_ext.oe_codigo, dbo.imp_orden_compra_ext.estado, dbo.imp_orden_compra_ext.oe_fecha_llegada, dbo.imp_orden_compra_ext.oe_fecha_embarque, 
                          dbo.imp_orden_compra_ext.oe_fecha_desaduanizacion, dbo.tb_persona.pe_nombreCompleto, dbo.tb_persona.pe_cedulaRuc, dbo.vwimp_orden_compra_ext_con_saldo.cantidad_x_recibir, 
                          dbo.vwimp_orden_compra_ext_con_saldo.cantidad_global, dbo.imp_orden_compra_ext.IdCatalogo_forma_pago, dbo.imp_orden_compra_ext.IdMoneda_origen, dbo.imp_orden_compra_ext.IdMoneda_destino, 
-                         dbo.imp_orden_compra_ext.Estado_cierre, dbo.imp_orden_compra_ext.IdEmpresa_inv, dbo.imp_orden_compra_ext.IdSucursal_inv, dbo.imp_orden_compra_ext.IdMovi_inven_tipo_inv, 
-                         dbo.imp_orden_compra_ext.IdNumMovi_inv, dbo.imp_orden_compra_ext.IdEmpresa_ct, dbo.imp_orden_compra_ext.IdTipoCbte_ct, dbo.imp_orden_compra_ext.IdCbteCble_ct, dbo.imp_orden_compra_ext.IdBodega_inv
+                         dbo.imp_orden_compra_ext.Estado_cierre
 FROM            dbo.imp_orden_compra_ext INNER JOIN
                          dbo.cp_proveedor ON dbo.imp_orden_compra_ext.IdEmpresa = dbo.cp_proveedor.IdEmpresa AND dbo.imp_orden_compra_ext.IdProveedor = dbo.cp_proveedor.IdProveedor INNER JOIN
                          dbo.tb_persona ON dbo.cp_proveedor.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
@@ -19,7 +18,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[76] 4[5] 2[9] 3) )"
+         Configuration = "(H (1[32] 4[5] 2[55] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -87,40 +86,40 @@ Begin DesignProperties =
       Begin Tables = 
          Begin Table = "imp_orden_compra_ext"
             Begin Extent = 
-               Top = 17
-               Left = 295
-               Bottom = 325
-               Right = 544
+               Top = 37
+               Left = 158
+               Bottom = 345
+               Right = 407
             End
             DisplayFlags = 280
-            TopColumn = 23
+            TopColumn = 0
          End
          Begin Table = "cp_proveedor"
             Begin Extent = 
-               Top = 0
-               Left = 575
-               Bottom = 222
-               Right = 807
+               Top = 31
+               Left = 406
+               Bottom = 253
+               Right = 638
             End
             DisplayFlags = 280
             TopColumn = 0
          End
          Begin Table = "tb_persona"
             Begin Extent = 
-               Top = 0
-               Left = 841
-               Bottom = 263
-               Right = 1073
+               Top = 13
+               Left = 736
+               Bottom = 276
+               Right = 968
             End
             DisplayFlags = 280
             TopColumn = 0
          End
          Begin Table = "vwimp_orden_compra_ext_con_saldo"
             Begin Extent = 
-               Top = 78
-               Left = 0
-               Bottom = 230
-               Right = 223
+               Top = 74
+               Left = 9
+               Bottom = 226
+               Right = 198
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -157,11 +156,13 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-   ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwimp_orden_compra_ext';
+  ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwimp_orden_compra_ext';
+
+
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'      Width = 1500
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'       Width = 1500
          Width = 1500
          Width = 1500
       End
@@ -185,6 +186,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'      Widt
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwimp_orden_compra_ext';
+
+
 
 
 GO
