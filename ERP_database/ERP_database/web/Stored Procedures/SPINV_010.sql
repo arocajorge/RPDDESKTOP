@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [web].[SPINV_010]
+﻿-- EXEC WEB.SPINV_010 1,0,99999,'',0,0,0,'','','01/01/2018','2018/12/31',0
+CREATE PROCEDURE [web].[SPINV_010]
 (
 @IdEmpresa int,
 @IdProductoPadreIni numeric,
@@ -8,7 +9,8 @@
 @IdGrupo int,
 @IdSubGrupo int,
 @IdUsuario varchar(50),
-@IdMarca varchar(20),
+@IdMarcaIni int,
+@IdMarcaFin int,
 @FechaIni datetime,
 @FechaFin datetime,
 @MostrarSinMovimiento bit
@@ -38,6 +40,7 @@ BEGIN --INSERT DATA
 					   ,[IdUsuario]
 					   ,[IdAnio]
 					   ,[IdProducto]
+					   ,[pr_descripcion]
 					   ,[IdPresentacion]
 					   ,[IdCategoria]
 					   ,[IdLinea]
@@ -58,17 +61,17 @@ BEGIN --INSERT DATA
 					   ,[Diciembre]
 					   ,[Total]
 					   ,[StockActual])
-			select A.IdEmpresa, A.IdUsuario,@AnioInicio, A.IdProducto, a.IdPresentacion ,A.IdCategoria, A.IdLinea, A.IdGrupo, A.IdSubGrupo, A.IdMarca,
+			select A.IdEmpresa, A.IdUsuario,@AnioInicio, A.IdProducto,a.pr_descripcion, a.IdPresentacion ,A.IdCategoria, A.IdLinea, A.IdGrupo, A.IdSubGrupo, A.IdMarca,
 			0,0,0,0,0,0,0,0,0,0,0,0,0,0
 			from(
-			SELECT        fa_factura_det.IdEmpresa, @IdUsuario IdUsuario, ISNULL(in_Producto.IdProducto_padre, in_producto.IdProducto) IdProducto, in_Producto.IdPresentacion, in_Producto.IdCategoria, in_Producto.IdLinea, in_Producto.IdGrupo, in_Producto.IdSubGrupo, in_Producto.IdMarca
+			SELECT        fa_factura_det.IdEmpresa, @IdUsuario IdUsuario, CASE WHEN in_Producto.IdProducto_padre IS NULL THEN  in_Producto.IdProducto ELSE IN_producto.IdProducto_Padre end as IdProducto, in_Producto.pr_descripcion, in_Producto.IdPresentacion, in_Producto.IdCategoria, in_Producto.IdLinea, in_Producto.IdGrupo, in_Producto.IdSubGrupo, in_Producto.IdMarca
 			FROM            fa_factura_det INNER JOIN
 									 in_Producto ON fa_factura_det.IdEmpresa = in_Producto.IdEmpresa AND fa_factura_det.IdProducto = in_Producto.IdProducto INNER JOIN
 									 fa_factura ON fa_factura_det.IdEmpresa = fa_factura.IdEmpresa AND fa_factura_det.IdSucursal = fa_factura.IdSucursal AND fa_factura_det.IdBodega = fa_factura.IdBodega AND fa_factura_det.IdCbteVta = fa_factura.IdCbteVta
-			where fa_factura.IdEmpresa = @IdEmpresa and fa_factura.vt_fecha between @FechaIni and @FechaFin AND fa_factura.Estado = 'A' AND in_Producto.Estado = 'A'
+			where fa_factura.IdEmpresa = @IdEmpresa and fa_factura.vt_fecha between @FechaIni and @FechaFin AND fa_factura.Estado = 'A' AND in_Producto.Estado = 'A' AND in_producto.IdMarca between @IdMarcaIni and @IdMarcaFin
 			
 			) A
-			GROUP BY A.IdEmpresa, A.IdUsuario, A.IdProducto,a.IdPresentacion, A.IdCategoria, A.IdLinea, A.IdGrupo, A.IdSubGrupo, A.IdMarca
+			GROUP BY A.IdEmpresa, A.IdUsuario, A.IdProducto,a.pr_descripcion, a.IdPresentacion, A.IdCategoria, A.IdLinea, A.IdGrupo, A.IdSubGrupo, A.IdMarca
 		SET @AnioInicio = @AnioInicio + 1
 		END
 	END	
@@ -81,6 +84,7 @@ BEGIN --INSERT DATA
 					   ,[IdUsuario]
 					   ,[IdAnio]
 					   ,[IdProducto]
+					   ,[pr_descripcion]
 					   ,[IdPresentacion]
 					   ,[IdCategoria]
 					   ,[IdLinea]
@@ -101,10 +105,10 @@ BEGIN --INSERT DATA
 					   ,[Diciembre]
 					   ,[Total]
 					   ,[StockActual])
-			SELECT IdEmpresa, @IdUsuario, @AnioInicio, IdProducto, IdPresentacion, IdCategoria, IdLinea, IdGrupo, IdSubGrupo, IdMarca,
+			SELECT IdEmpresa, @IdUsuario, @AnioInicio, IdProducto,pr_descripcion, IdPresentacion, IdCategoria, IdLinea, IdGrupo, IdSubGrupo, IdMarca,
 			0,0,0,0,0,0,0,0,0,0,0,0,0,0
 			FROM in_Producto
-			WHERE IdEmpresa = @IdEmpresa AND Estado = 'A' AND IdProducto_padre IS NULL
+			WHERE IdEmpresa = @IdEmpresa AND Estado = 'A' AND IdProducto_padre IS NULL and IdMarca between @IdMarcaIni and @IdMarcaFin
 		SET @AnioInicio = @AnioInicio + 1
 		END
 	END
@@ -148,14 +152,6 @@ BEGIN --FILTRO POR CATEGORIZACION
 			AND IdEmpresa = @IdEmpresa
 			AND IdUsuario = @IdUsuario
 	END
-	
-	IF(@IdMarca != '')
-	BEGIN
-		DELETE web.in_SPINV_010 
-		WHERE IdMarca <> @IdMarca
-		AND IdEmpresa = @IdEmpresa
-		AND IdUsuario = @IdUsuario
-	END
 END
 
 SET @AnioInicio = YEAR(@FechaIni)
@@ -192,7 +188,7 @@ BEGIN --RELLENO VENTAS POR PERIODOS
 						FROM            fa_factura AS FC INNER JOIN
 						fa_factura_det AS FD ON FC.IdEmpresa = FD.IdEmpresa AND FC.IdSucursal = FD.IdSucursal AND FC.IdBodega = FD.IdBodega AND FC.IdCbteVta = FD.IdCbteVta INNER JOIN
 						in_Producto AS P ON FD.IdEmpresa = P.IdEmpresa AND FD.IdProducto = P.IdProducto
-						WHERE FC.IdEmpresa = @IdEmpresa AND FC.IdPeriodo = @PeriodoIni 
+						WHERE FC.IdEmpresa = @IdEmpresa AND FC.IdPeriodo = @PeriodoIni and P.IdMarca between @IdMarcaIni and @IdMarcaFin
 						) G group by G.IdEmpresa, G.IdProducto
 					) A WHERE web.in_SPINV_010.IdEmpresa = @IdEmpresa AND web.in_SPINV_010.IdProducto = A.IdProducto
 					AND web.in_SPINV_010.IdUsuario = @IdUsuario and web.in_SPINV_010.IdAnio = @AnioInicio				
@@ -228,7 +224,7 @@ BEGIN --ACTUALIZO STOCK A LA FECHA
 	AND WEB.in_SPINV_010.IdEmpresa = @IdEmpresa
 END
 
-SELECT        web.in_SPINV_010.IdEmpresa, web.in_SPINV_010.IdUsuario, web.in_SPINV_010.IdAnio, web.in_SPINV_010.IdProducto, web.in_SPINV_010.IdCategoria, web.in_SPINV_010.IdLinea, web.in_SPINV_010.IdGrupo, 
+SELECT        web.in_SPINV_010.IdEmpresa, web.in_SPINV_010.IdUsuario, web.in_SPINV_010.IdAnio, web.in_SPINV_010.IdProducto,web.in_SPINV_010.pr_descripcion, web.in_SPINV_010.IdCategoria, web.in_SPINV_010.IdLinea, web.in_SPINV_010.IdGrupo, 
                          web.in_SPINV_010.IdSubGrupo, web.in_SPINV_010.IdMarca, web.in_SPINV_010.Enero, web.in_SPINV_010.Febrero, web.in_SPINV_010.Marzo, web.in_SPINV_010.Abril, web.in_SPINV_010.Mayo, web.in_SPINV_010.Junio, 
                          web.in_SPINV_010.Julio, web.in_SPINV_010.Agosto, web.in_SPINV_010.Septiembre, web.in_SPINV_010.Octubre, web.in_SPINV_010.Noviembre, web.in_SPINV_010.Diciembre, web.in_SPINV_010.Total, 
                          web.in_SPINV_010.StockActual, in_categorias.ca_Categoria, in_linea.nom_linea, in_grupo.nom_grupo, in_subgrupo.nom_subgrupo, in_Marca.Descripcion AS NomMarca, web.in_SPINV_010.IdPresentacion, 
