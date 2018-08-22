@@ -17,6 +17,16 @@ CREATE PROCEDURE [web].[SPINV_010]
 )
 AS
 
+update in_Producto set pr_descripcion = a.pr_descripcion, IdMarca = a.IdMarca, IdPresentacion = a.IdPresentacion, IdCod_Impuesto_Iva = a.IdCod_Impuesto_Iva, IdCategoria = a.IdCategoria,
+IdLinea = a.IdLinea, IdGrupo = a.IdGrupo, IdSubGrupo = a.IdSubGrupo
+from
+(
+select * from in_Producto as f
+where f.IdProducto_padre is null
+)a
+where in_Producto.IdEmpresa = a.IdEmpresa
+and in_Producto.IdProducto_padre = a.IdProducto
+
 DELETE [web].[in_SPINV_010] WHERE IdEmpresa = @IdEmpresa and IdUsuario = @IdUsuario
 
 BEGIN --SET RANGO DE FECHAS
@@ -71,6 +81,7 @@ BEGIN --INSERT DATA
 			where fa_factura.IdEmpresa = @IdEmpresa and fa_factura.vt_fecha between @FechaIni and @FechaFin AND fa_factura.Estado = 'A' AND in_Producto.Estado = 'A' AND in_producto.IdMarca between @IdMarcaIni and @IdMarcaFin
 			
 			) A
+			where a.IdProducto between @IdProductoPadreIni and @IdProductoPadreFin
 			GROUP BY A.IdEmpresa, A.IdUsuario, A.IdProducto,a.pr_descripcion, a.IdPresentacion, A.IdCategoria, A.IdLinea, A.IdGrupo, A.IdSubGrupo, A.IdMarca
 		SET @AnioInicio = @AnioInicio + 1
 		END
@@ -109,6 +120,7 @@ BEGIN --INSERT DATA
 			0,0,0,0,0,0,0,0,0,0,0,0,0,0
 			FROM in_Producto
 			WHERE IdEmpresa = @IdEmpresa AND Estado = 'A' AND IdProducto_padre IS NULL and IdMarca between @IdMarcaIni and @IdMarcaFin
+			and IdProducto between @IdProductoPadreIni and @IdProductoPadreFin
 		SET @AnioInicio = @AnioInicio + 1
 		END
 	END
