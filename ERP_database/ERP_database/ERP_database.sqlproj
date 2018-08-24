@@ -1909,5 +1909,6 @@
     <Build Include="dbo\Views\vwimp_orden_compra_ext_por_liquidar.sql" />
     <Build Include="dbo\Views\vwimp_liquidacion.sql" />
     <Build Include="dbo\Tables\tb_visor_video.sql" />
+    <Build Include="dbo\Views\vwtb_comprobantes_no_autorizados.sql" />
   </ItemGroup>
 </Project>
