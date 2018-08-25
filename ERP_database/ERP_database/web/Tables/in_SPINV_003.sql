@@ -10,6 +10,9 @@
     [IdLinea]        INT          NOT NULL,
     [IdGrupo]        INT          NOT NULL,
     [IdSubGrupo]     INT          NOT NULL,
+    [IdMarca]        INT          NOT NULL,
     CONSTRAINT [PK_in_SPINV_003] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdProducto] ASC)
 );
+
+
 
