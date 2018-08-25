@@ -83,6 +83,7 @@
     <Folder Include="EntidadRegulatoria\Stored Procedures\" />
     <Folder Include="Naturisa\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="EntidadRegulatoria\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\in_Ing_Egr_Inven.sql" />
@@ -1910,5 +1911,15 @@
     <Build Include="dbo\Views\vwimp_liquidacion.sql" />
     <Build Include="dbo\Tables\tb_visor_video.sql" />
     <Build Include="dbo\Views\vwtb_comprobantes_no_autorizados.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_nota_credito_detalle.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_nota_credito.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_guia_remision_x_factura.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_guia_remision_detalle.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_guia_remision.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_factura_impuestos.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_factura_detalle.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_factura.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwcp_retencion_detalle.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwcp_retencion.sql" />
   </ItemGroup>
 </Project>
