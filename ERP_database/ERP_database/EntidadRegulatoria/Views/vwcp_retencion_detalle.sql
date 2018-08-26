@@ -1,7 +1,7 @@
 ﻿CREATE VIEW EntidadRegulatoria.vwcp_retencion_detalle
 AS
-SELECT        dbo.cp_retencion_det.IdEmpresa, dbo.cp_retencion_det.IdRetencion, dbo.cp_retencion_det.Idsecuencia, dbo.cp_retencion_det.re_tipoRet, dbo.cp_retencion_det.re_baseRetencion, dbo.cp_retencion_det.IdCodigo_SRI, 
-                         dbo.cp_retencion_det.re_Codigo_impuesto, dbo.cp_retencion_det.re_Porcen_retencion, dbo.cp_retencion_det.re_valor_retencion
+SELECT        dbo.cp_retencion_det.IdEmpresa, dbo.cp_retencion_det.IdRetencion, dbo.cp_retencion_det.Idsecuencia, dbo.cp_retencion_det.re_tipoRet, CAST(dbo.cp_retencion_det.re_baseRetencion AS numeric(10, 2)) AS baseRetencion, 
+                         dbo.cp_retencion_det.IdCodigo_SRI, dbo.cp_retencion_det.re_Codigo_impuesto, dbo.cp_retencion_det.re_Porcen_retencion, CAST(dbo.cp_retencion_det.re_valor_retencion AS numeric(10, 2)) AS re_valor_retencion
 FROM            dbo.cp_retencion_det INNER JOIN
                          dbo.cp_codigo_SRI ON dbo.cp_retencion_det.IdCodigo_SRI = dbo.cp_codigo_SRI.IdCodigo_SRI
 GO
@@ -14,7 +14,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[48] 4[5] 2[5] 3) )"
+         Configuration = "(H (1[20] 4[5] 2[35] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -139,4 +139,6 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion_detalle';
+
+
 

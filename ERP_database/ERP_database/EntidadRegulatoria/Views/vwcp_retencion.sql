@@ -4,23 +4,68 @@ SELECT        dbo.cp_retencion.IdEmpresa, dbo.cp_retencion.IdRetencion, dbo.cp_r
                          dbo.cp_retencion.Fecha_Autorizacion, dbo.cp_retencion.fecha, dbo.cp_retencion.observacion, dbo.cp_orden_giro.IdCbteCble_Ogiro, dbo.cp_orden_giro.IdTipoCbte_Ogiro, dbo.cp_orden_giro.co_fechaOg, 
                          dbo.cp_orden_giro.co_serie, dbo.cp_orden_giro.co_factura, dbo.cp_orden_giro.co_FechaFactura, dbo.cp_orden_giro.Num_Autorizacion, dbo.cp_orden_giro.Num_Autorizacion_Imprenta, dbo.tb_persona.pe_Naturaleza, 
                          dbo.tb_persona.IdTipoDocumento, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_nombreCompleto, dbo.tb_persona.pe_direccion, dbo.tb_persona.pe_telfono_Contacto, dbo.tb_persona.pe_celular, 
-                         dbo.tb_persona.pe_correo, dbo.tb_persona.pe_razonSocial
+                         dbo.tb_persona.pe_correo, dbo.tb_persona.pe_razonSocial, dbo.tb_empresa.em_nombre, dbo.tb_empresa.RazonSocial, dbo.tb_empresa.NombreComercial, dbo.tb_empresa.ContribuyenteEspecial, 
+                         dbo.tb_empresa.ObligadoAllevarConta, dbo.tb_empresa.em_ruc, dbo.tb_empresa.em_direccion, dbo.tb_empresa.em_telefonos, dbo.tb_empresa.em_Email, dbo.cp_orden_giro.IdOrden_giro_Tipo
 FROM            dbo.cp_proveedor INNER JOIN
                          dbo.cp_orden_giro ON dbo.cp_proveedor.IdEmpresa = dbo.cp_orden_giro.IdEmpresa AND dbo.cp_proveedor.IdProveedor = dbo.cp_orden_giro.IdProveedor INNER JOIN
                          dbo.cp_retencion ON dbo.cp_orden_giro.IdEmpresa = dbo.cp_retencion.IdEmpresa_Ogiro AND dbo.cp_orden_giro.IdCbteCble_Ogiro = dbo.cp_retencion.IdCbteCble_Ogiro AND 
                          dbo.cp_orden_giro.IdTipoCbte_Ogiro = dbo.cp_retencion.IdTipoCbte_Ogiro INNER JOIN
-                         dbo.tb_persona ON dbo.cp_proveedor.IdPersona = dbo.tb_persona.IdPersona
+                         dbo.tb_persona ON dbo.cp_proveedor.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
+                         dbo.tb_empresa ON dbo.cp_proveedor.IdEmpresa = dbo.tb_empresa.IdEmpresa
+WHERE        (dbo.cp_retencion.NumRetencion IS NOT NULL)
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'1350
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
          Or = 1350
       End
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
+
+
 
 
 GO
@@ -29,7 +74,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[78] 4[5] 2[5] 3) )"
+         Configuration = "(H (1[53] 4[5] 2[35] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -97,10 +142,20 @@ Begin DesignProperties =
       Begin Tables = 
          Begin Table = "cp_proveedor"
             Begin Extent = 
-               Top = 9
-               Left = 716
-               Bottom = 139
-               Right = 948
+               Top = 444
+               Left = 1228
+               Bottom = 574
+               Right = 1460
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "cp_orden_giro"
+            Begin Extent = 
+               Top = 72
+               Left = 172
+               Bottom = 495
+               Right = 431
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -115,16 +170,6 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "cp_orden_giro"
-            Begin Extent = 
-               Top = 0
-               Left = 415
-               Bottom = 423
-               Right = 674
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
          Begin Table = "tb_persona"
             Begin Extent = 
                Top = 0
@@ -135,6 +180,16 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
+         Begin Table = "tb_empresa"
+            Begin Extent = 
+               Top = 11
+               Left = 495
+               Bottom = 461
+               Right = 714
+            End
+            DisplayFlags = 280
+            TopColumn = 1
+         End
       End
    End
    Begin SQLPane = 
@@ -142,7 +197,7 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 10
+      Begin ColumnWidths = 38
          Width = 284
          Width = 1500
          Width = 1500
@@ -153,20 +208,10 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = ', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
+
+
 

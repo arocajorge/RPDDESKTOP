@@ -2,15 +2,20 @@
 AS
 SELECT        factura.IdEmpresa, factura.IdSucursal, factura.IdBodega, factura.IdCbteVta, factura.vt_serie1, factura.vt_serie2, factura.vt_NumFactura, factura.vt_fecha, factura.pe_Naturaleza, factura.IdTipoDocumento, factura.pe_cedulaRuc, 
                          factura.Nombres, factura.Telefono, factura.Celular, factura.Correo, factura.Direccion, factura.RazonSocial, factura.NombreComercial, factura.ContribuyenteEspecial, factura.ObligadoAllevarConta, factura.em_ruc, 
-                         factura.em_direccion, factura_detalle.IdEmpresa AS Expr1, factura_detalle.IdSucursal AS Expr2, factura_detalle.IdBodega AS Expr3, factura_detalle.IdCbteVta AS Expr4, factura_detalle.Base_imponible, factura_detalle.impuesto, 
-                         factura_detalle.totalDescuento, factura_detalle.total_sin_impuesto, factura_detalle.importeTotal
+                         factura.em_direccion, factura.nom_FormaPago, factura.IdFormaPago, factura.Dias_Vct, factura_detalle.Base_imponible, factura_detalle.impuesto, factura_detalle.totalDescuento, factura_detalle.total_sin_impuesto, 
+                         factura_detalle.importeTotal
 FROM            (SELECT        fac.IdEmpresa, fac.IdSucursal, fac.IdBodega, fac.IdCbteVta, fac.vt_serie1, fac.vt_serie2, fac.vt_NumFactura, fac.vt_fecha, per.pe_Naturaleza, per.IdTipoDocumento, per.pe_cedulaRuc, cl_cont.Nombres, 
-                                                    cl_cont.Telefono, cl_cont.Celular, cl_cont.Correo, cl_cont.Direccion, emp.RazonSocial, emp.NombreComercial, emp.ContribuyenteEspecial, emp.ObligadoAllevarConta, emp.em_ruc, emp.em_direccion
+                                                    cl_cont.Telefono, cl_cont.Celular, cl_cont.Correo, cl_cont.Direccion, emp.RazonSocial, emp.NombreComercial, emp.ContribuyenteEspecial, emp.ObligadoAllevarConta, emp.em_ruc, emp.em_direccion, 
+                                                    dbo.fa_formaPago.nom_FormaPago, dbo.fa_formaPago.IdFormaPago, dbo.fa_TerminoPago.Dias_Vct
                           FROM            dbo.fa_cliente_contactos AS cl_cont INNER JOIN
                                                     dbo.fa_factura AS fac ON cl_cont.IdEmpresa = fac.IdEmpresa AND cl_cont.IdCliente = fac.IdCliente AND cl_cont.IdContacto = fac.IdContacto INNER JOIN
                                                     dbo.tb_persona AS per INNER JOIN
                                                     dbo.fa_cliente AS cli ON per.IdPersona = cli.IdPersona ON cl_cont.IdEmpresa = cli.IdEmpresa AND cl_cont.IdCliente = cli.IdCliente INNER JOIN
-                                                    dbo.tb_empresa AS emp ON cli.IdEmpresa = emp.IdEmpresa) AS factura INNER JOIN
+                                                    dbo.tb_empresa AS emp ON cli.IdEmpresa = emp.IdEmpresa INNER JOIN
+                                                    dbo.fa_factura_x_formaPago ON fac.IdEmpresa = dbo.fa_factura_x_formaPago.IdEmpresa AND fac.IdSucursal = dbo.fa_factura_x_formaPago.IdSucursal AND 
+                                                    fac.IdBodega = dbo.fa_factura_x_formaPago.IdBodega AND fac.IdCbteVta = dbo.fa_factura_x_formaPago.IdCbteVta INNER JOIN
+                                                    dbo.fa_formaPago ON dbo.fa_factura_x_formaPago.IdFormaPago = dbo.fa_formaPago.IdFormaPago INNER JOIN
+                                                    dbo.fa_TerminoPago ON cli.IdTipoCredito = dbo.fa_TerminoPago.IdTerminoPago) AS factura INNER JOIN
                              (SELECT        IdEmpresa, IdSucursal, IdBodega, IdCbteVta, CAST(SUM(vt_Subtotal) AS numeric(10, 2)) AS Base_imponible, CAST(SUM(vt_iva) AS numeric(10, 2)) AS impuesto, CAST(SUM(vt_DescUnitario) AS numeric(10, 2)) 
                                                          AS totalDescuento, CAST(SUM(vt_Subtotal) AS numeric(10, 2)) AS total_sin_impuesto, CAST(SUM(vt_total) AS numeric(10, 2)) AS importeTotal
                                FROM            dbo.fa_factura_det
@@ -26,7 +31,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[24] 4[5] 2[56] 3) )"
+         Configuration = "(H (1[21] 4[5] 2[33] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -92,22 +97,22 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
+         Begin Table = "factura_detalle"
+            Begin Extent = 
+               Top = 0
+               Left = 664
+               Bottom = 130
+               Right = 852
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
          Begin Table = "factura"
             Begin Extent = 
                Top = 6
                Left = 38
                Bottom = 136
                Right = 245
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "factura_detalle"
-            Begin Extent = 
-               Top = 6
-               Left = 283
-               Bottom = 136
-               Right = 471
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -119,8 +124,9 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 17
+      Begin ColumnWidths = 18
          Width = 284
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -158,4 +164,6 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwfa_factura';
+
+
 
