@@ -25,7 +25,11 @@ FROM            (SELECT        dbo.fa_notaCreDeb.IdEmpresa, dbo.fa_notaCreDeb.Id
                                                     dbo.fa_factura ON dbo.fa_notaCreDeb_x_fa_factura_NotaDeb.IdEmpresa_fac_nd_doc_mod = dbo.fa_factura.IdEmpresa AND 
                                                     dbo.fa_notaCreDeb_x_fa_factura_NotaDeb.IdSucursal_fac_nd_doc_mod = dbo.fa_factura.IdSucursal AND dbo.fa_notaCreDeb_x_fa_factura_NotaDeb.IdBodega_fac_nd_doc_mod = dbo.fa_factura.IdBodega AND 
                                                     dbo.fa_notaCreDeb_x_fa_factura_NotaDeb.IdCbteVta_fac_nd_doc_mod = dbo.fa_factura.IdCbteVta
-                          WHERE        (dbo.fa_notaCreDeb.NaturalezaNota = 'SRI')) AS nota_credito INNER JOIN
+                          WHERE        (dbo.fa_notaCreDeb.NaturalezaNota = 'SRI') AND (dbo.fa_notaCreDeb.Estado = 'A') AND (dbo.fa_notaCreDeb.aprobada_enviar_sri = 1) AND (NOT EXISTS
+                                                        (SELECT        ID_REGISTRO
+                                                          FROM            EntidadRegulatoria.fa_elec_registros_generados
+                                                          WHERE        (ID_REGISTRO = SUBSTRING(dbo.tb_empresa.em_nombre, 0, 4) + '-' + 'NTC' + '-' + dbo.fa_notaCreDeb.Serie1 + '-' + dbo.fa_notaCreDeb.Serie2 + '-' + dbo.fa_notaCreDeb.NumNota_Impresa)))) 
+                         AS nota_credito INNER JOIN
                              (SELECT        IdEmpresa, IdSucursal, IdBodega, IdNota, CAST(SUM(sc_subtotal) AS numeric(10, 2)) AS Base_imponible, CAST(SUM(sc_iva) AS numeric(10, 2)) AS impuesto, CAST(SUM(sc_Precio) AS numeric(10, 2)) 
                                                          AS totalDescuento, CAST(SUM(sc_subtotal) AS numeric(10, 2)) AS total_sin_impuesto, CAST(SUM(sc_total) AS numeric(10, 2)) AS importeTotal
                                FROM            dbo.fa_notaCreDeb_det

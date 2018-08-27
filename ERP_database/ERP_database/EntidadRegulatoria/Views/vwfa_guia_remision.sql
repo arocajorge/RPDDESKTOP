@@ -13,7 +13,10 @@ FROM            dbo.tb_transportista INNER JOIN
                          dbo.fa_guia_remision.IdContacto = dbo.fa_cliente_contactos.IdContacto INNER JOIN
                          dbo.tb_persona INNER JOIN
                          dbo.fa_cliente ON dbo.tb_persona.IdPersona = dbo.fa_cliente.IdPersona ON dbo.fa_cliente_contactos.IdEmpresa = dbo.fa_cliente.IdEmpresa AND dbo.fa_cliente_contactos.IdCliente = dbo.fa_cliente.IdCliente INNER JOIN
-                         dbo.tb_empresa ON dbo.fa_cliente.IdEmpresa = dbo.tb_empresa.IdEmpresa
+                         dbo.tb_empresa ON dbo.fa_cliente.IdEmpresa = dbo.tb_empresa.IdEmpresa AND dbo.fa_guia_remision.Estado = 'A' AND dbo.fa_guia_remision.aprobada_enviar_sri = 1 AND NOT EXISTS
+                             (SELECT        ID_REGISTRO, FECHA_CARGA, ESTADO
+                               FROM            EntidadRegulatoria.fa_elec_registros_generados
+                               WHERE        (ID_REGISTRO = SUBSTRING(dbo.tb_empresa.em_nombre, 0, 4) + '-' + 'GUI' + '-' + dbo.fa_guia_remision.Serie1 + '-' + dbo.fa_guia_remision.Serie2 + '-' + dbo.fa_guia_remision.NumGuia_Preimpresa))
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwfa_guia_remision';
 
@@ -51,9 +54,20 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'h = 1500
          Width = 1500
          Width = 1500
          Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
       End
    End
    Begin CriteriaPane = 
+      PaneHidden = 
       Begin ColumnWidths = 11
          Column = 1440
          Alias = 900
@@ -76,13 +90,15 @@ End
 
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[85] 4[5] 2[5] 3) )"
+         Configuration = "(H (1[28] 4[5] 2[65] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -90,7 +106,7 @@ Begin DesignProperties =
       End
       Begin PaneConfiguration = 2
          NumPanes = 3
-         Configuration = "(H (1 [50] 2 [25] 3))"
+         Configuration = "(H (1[50] 2[25] 3) )"
       End
       Begin PaneConfiguration = 3
          NumPanes = 3
@@ -118,7 +134,7 @@ Begin DesignProperties =
       End
       Begin PaneConfiguration = 9
          NumPanes = 2
-         Configuration = "(H (1 [75] 4))"
+         Configuration = "(H (1[75] 4) )"
       End
       Begin PaneConfiguration = 10
          NumPanes = 2
@@ -140,7 +156,7 @@ Begin DesignProperties =
          NumPanes = 1
          Configuration = "(V (2))"
       End
-      ActivePaneConfig = 0
+      ActivePaneConfig = 2
    End
    Begin DiagramPane = 
       Begin Origin = 
@@ -215,9 +231,11 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 33
+      Begin ColumnWidths = 43
          Width = 284
          Widt', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwfa_guia_remision';
+
+
 
 
 

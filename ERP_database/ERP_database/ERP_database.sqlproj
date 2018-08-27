@@ -1921,5 +1921,6 @@
     <Build Include="EntidadRegulatoria\Views\vwfa_factura.sql" />
     <Build Include="EntidadRegulatoria\Views\vwcp_retencion_detalle.sql" />
     <Build Include="EntidadRegulatoria\Views\vwcp_retencion.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwfa_nota_credito_impuestos.sql" />
   </ItemGroup>
 </Project>

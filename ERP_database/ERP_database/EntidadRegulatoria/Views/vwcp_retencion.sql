@@ -11,14 +11,18 @@ FROM            dbo.cp_proveedor INNER JOIN
                          dbo.cp_retencion ON dbo.cp_orden_giro.IdEmpresa = dbo.cp_retencion.IdEmpresa_Ogiro AND dbo.cp_orden_giro.IdCbteCble_Ogiro = dbo.cp_retencion.IdCbteCble_Ogiro AND 
                          dbo.cp_orden_giro.IdTipoCbte_Ogiro = dbo.cp_retencion.IdTipoCbte_Ogiro INNER JOIN
                          dbo.tb_persona ON dbo.cp_proveedor.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
-                         dbo.tb_empresa ON dbo.cp_proveedor.IdEmpresa = dbo.tb_empresa.IdEmpresa
-WHERE        (dbo.cp_retencion.NumRetencion IS NOT NULL)
+                         dbo.tb_empresa ON dbo.cp_proveedor.IdEmpresa = dbo.tb_empresa.IdEmpresa AND dbo.cp_retencion.Estado = 'A' AND dbo.cp_retencion.aprobada_enviar_sri = 1
+WHERE        (dbo.cp_retencion.NumRetencion IS NOT NULL) AND (NOT EXISTS
+                             (SELECT        ID_REGISTRO, FECHA_CARGA, ESTADO
+                               FROM            EntidadRegulatoria.fa_elec_registros_generados
+                               WHERE        (ID_REGISTRO = SUBSTRING(dbo.tb_empresa.em_nombre, 0, 4) + '-' + 'RET' + '-' + dbo.cp_retencion.serie1 + '-' + dbo.cp_retencion.serie2 + '-' + dbo.cp_orden_giro.Num_Autorizacion_Imprenta)))
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' = 1500
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'= 1500
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -68,13 +72,15 @@ End
 
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[53] 4[5] 2[35] 3) )"
+         Configuration = "(H (1[17] 4[5] 2[41] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -142,10 +148,10 @@ Begin DesignProperties =
       Begin Tables = 
          Begin Table = "cp_proveedor"
             Begin Extent = 
-               Top = 444
-               Left = 1228
-               Bottom = 574
-               Right = 1460
+               Top = 78
+               Left = 977
+               Bottom = 208
+               Right = 1209
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -172,10 +178,10 @@ Begin DesignProperties =
          End
          Begin Table = "tb_persona"
             Begin Extent = 
-               Top = 0
-               Left = 989
-               Bottom = 459
-               Right = 1221
+               Top = 473
+               Left = 722
+               Bottom = 932
+               Right = 954
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -197,7 +203,7 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 38
+      Begin ColumnWidths = 39
          Width = 284
          Width = 1500
          Width = 1500
@@ -211,7 +217,9 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-         Width', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
+         Width ', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwcp_retencion';
+
+
 
 
 

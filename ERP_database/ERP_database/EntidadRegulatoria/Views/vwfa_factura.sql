@@ -15,7 +15,10 @@ FROM            (SELECT        fac.IdEmpresa, fac.IdSucursal, fac.IdBodega, fac.
                                                     dbo.fa_factura_x_formaPago ON fac.IdEmpresa = dbo.fa_factura_x_formaPago.IdEmpresa AND fac.IdSucursal = dbo.fa_factura_x_formaPago.IdSucursal AND 
                                                     fac.IdBodega = dbo.fa_factura_x_formaPago.IdBodega AND fac.IdCbteVta = dbo.fa_factura_x_formaPago.IdCbteVta INNER JOIN
                                                     dbo.fa_formaPago ON dbo.fa_factura_x_formaPago.IdFormaPago = dbo.fa_formaPago.IdFormaPago INNER JOIN
-                                                    dbo.fa_TerminoPago ON cli.IdTipoCredito = dbo.fa_TerminoPago.IdTerminoPago) AS factura INNER JOIN
+                                                    dbo.fa_TerminoPago ON cli.IdTipoCredito = dbo.fa_TerminoPago.IdTerminoPago AND fac.Estado = 'A' AND fac.esta_impresa = 1 AND NOT EXISTS
+                                                        (SELECT        ID_REGISTRO
+                                                          FROM            EntidadRegulatoria.fa_elec_registros_generados
+                                                          WHERE        (ID_REGISTRO = SUBSTRING(emp.em_nombre, 0, 4) + '-' + 'FSC' + '-' + fac.vt_serie1 + '-' + fac.vt_serie2 + '-' + fac.vt_NumFactura))) AS factura INNER JOIN
                              (SELECT        IdEmpresa, IdSucursal, IdBodega, IdCbteVta, CAST(SUM(vt_Subtotal) AS numeric(10, 2)) AS Base_imponible, CAST(SUM(vt_iva) AS numeric(10, 2)) AS impuesto, CAST(SUM(vt_DescUnitario) AS numeric(10, 2)) 
                                                          AS totalDescuento, CAST(SUM(vt_Subtotal) AS numeric(10, 2)) AS total_sin_impuesto, CAST(SUM(vt_total) AS numeric(10, 2)) AS importeTotal
                                FROM            dbo.fa_factura_det
@@ -31,7 +34,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[21] 4[5] 2[33] 3) )"
+         Configuration = "(H (1[5] 4[5] 2[73] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -164,6 +167,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'EntidadRegulatoria', @level1type = N'VIEW', @level1name = N'vwfa_factura';
+
+
 
 
 
