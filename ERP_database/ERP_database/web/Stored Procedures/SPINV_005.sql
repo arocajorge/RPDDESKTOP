@@ -10,7 +10,9 @@
 @Fecha_fin datetime,
 @IdUsuario varchar(20),
 @No_Mostrar_valores_en_0 bit,
-@Mostrar_detallado bit
+@Mostrar_detallado bit,
+@IdProductoPadre_ini numeric,
+@IdProductoPadre_fin numeric
 AS
 BEGIN
 
@@ -21,20 +23,22 @@ DELETE [web].[in_SPINV_005] WHERE IdUsuario = @IdUsuario
 			INSERT INTO [web].[in_SPINV_005]
            ([IdEmpresa]           ,[IdSucursal]           ,[IdBodega]           ,[IdProducto]		,[IdUsuario]
 		   ,[Saldo_ini_cant]      ,[Saldo_ini_cost]       ,[Saldo_fin_cant]     ,[Saldo_fin_cost]
-		   ,[mov_ing_cant]		  ,[mov_ing_cost]		  ,[mov_egr_cant]		,[mov_egr_cost])
+		   ,[mov_ing_cant]		  ,[mov_ing_cost]		  ,[mov_egr_cant]		,[mov_egr_cost]		,[IdProductoPadre])
 			SELECT		det.IdEmpresa	      ,det.IdSucursal		  ,det.IdBodega		    ,det.IdProducto 	,@IdUsuario
 			,0					  ,0					  ,0					,0
-			,0					  ,0					  ,0					,0
+			,0					  ,0					  ,0					,0			,isnull(p.IdProducto_padre,0)
 			FROM		in_movi_inve cab inner join in_movi_inve_detalle det
 			on cab.IdEmpresa = det.IdEmpresa and cab.IdSucursal = det.IdSucursal
 			and cab.IdBodega = det.IdBodega and cab.IdMovi_inven_tipo = det.IdMovi_inven_tipo
-			and cab.IdNumMovi = det.IdNumMovi
+			and cab.IdNumMovi = det.IdNumMovi inner join in_Producto as p
+			on det.IdEmpresa = p.IdEmpresa and det.IdProducto = p.IdProducto
 			WHERE cab.IdEmpresa = @IdEmpresa
 			and cab.IdSucursal between @IdSucursal_ini and @IdSucursal_fin
 			and cab.IdBodega between @IdBodega_ini and @IdBodega_fin
 			and det.IdProducto between @IdProducto_ini and @IdProducto_fin
 			and cab.cm_fecha <= @Fecha_fin
-			group by det.IdEmpresa, det.IdSucursal, det.IdBodega, det.IdProducto
+			and isnull(p.IdProducto_padre,0) between @IdProductoPadre_ini and @IdProductoPadre_fin
+			group by det.IdEmpresa, det.IdSucursal, det.IdBodega, det.IdProducto, p.IdProducto_padre
 
 --SI NO DEBE MOSTRAR ITEMS SIN MOVIMIENTOS BORRO LOS ITEMS QUE NO TUVIERON MOVIMIENTO EN ESE RANGO DE FECHAS
 		if(@No_Mostrar_valores_en_0 = 1)
@@ -179,7 +183,7 @@ SELECT * FROM (
 						, [web].[in_SPINV_005].IdUsuario, det.dm_observacion, cab.cm_fecha, in_movi_inven_tipo.cm_descripcionCorta as tipo_movi, tb_bodega.cod_bodega, tb_bodega.bo_Descripcion AS nom_bodega, 
 						tb_sucursal.codigo AS cod_sucursal, tb_sucursal.Su_Descripcion AS nom_sucursal, in_Ing_Egr_Inven_det.IdEmpresa_oc, in_Ing_Egr_Inven_det.IdSucursal_oc, 
 						in_Ing_Egr_Inven_det.IdOrdenCompra, cast(cast(cp_orden_giro.co_factura as numeric) as varchar) AS num_factura, tb_persona.pe_nombreCompleto AS nom_proveedor, in_Producto.pr_codigo, 
-						in_Producto.pr_descripcion, in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo
+						in_Producto.pr_descripcion, in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo, [web].[in_SPINV_005].[IdProductoPadre]
 FROM            tb_persona INNER JOIN
                          cp_proveedor ON tb_persona.IdPersona = cp_proveedor.IdPersona INNER JOIN
                          com_ordencompra_local ON cp_proveedor.IdEmpresa = com_ordencompra_local.IdEmpresa AND 
@@ -238,7 +242,7 @@ FROM            tb_persona INNER JOIN
 						,[web].[in_SPINV_005].IdUsuario, '', @Fecha_ini, '' as tipo_movi, tb_bodega.cod_bodega, tb_bodega.bo_Descripcion AS nom_bodega, 
 						tb_sucursal.codigo AS cod_sucursal, tb_sucursal.Su_Descripcion AS nom_sucursal, null, null, 
 						null, null AS num_factura, null AS nom_proveedor, in_Producto.pr_codigo, 
-						in_Producto.pr_descripcion, in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo
+						in_Producto.pr_descripcion, in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo, [web].[in_SPINV_005].[IdProductoPadre]
 						FROM            in_Producto INNER JOIN
 						[web].[in_SPINV_005] ON in_Producto.IdEmpresa = [web].[in_SPINV_005].IdEmpresa AND in_Producto.IdProducto = [web].[in_SPINV_005].IdProducto INNER JOIN
 						tb_sucursal INNER JOIN
@@ -276,7 +280,8 @@ FROM            tb_persona INNER JOIN
 									,[web].[in_SPINV_005].IdUsuario, '', @Fecha_ini, '' as tipo_movi, tb_bodega.cod_bodega, tb_bodega.bo_Descripcion AS nom_bodega, 
 									tb_sucursal.codigo AS cod_sucursal, tb_sucursal.Su_Descripcion AS nom_sucursal, null, null, 
 									null, null AS num_factura, null AS nom_proveedor, in_Producto.pr_codigo, 
-									in_Producto.pr_descripcion, in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo
+									in_Producto.pr_descripcion, in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo,
+									[web].[in_SPINV_005].[IdProductoPadre]
 						FROM            [web].[in_SPINV_005] INNER JOIN
 								in_Producto ON [web].[in_SPINV_005].IdEmpresa = in_Producto.IdEmpresa AND [web].[in_SPINV_005].IdProducto = in_Producto.IdProducto INNER JOIN
 								tb_sucursal INNER JOIN
