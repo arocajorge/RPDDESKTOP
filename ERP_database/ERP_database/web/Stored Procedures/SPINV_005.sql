@@ -227,8 +227,8 @@ FROM            fa_factura INNER JOIN
 						 
 						WHERE 
 						det.IdEmpresa=@IdEmpresa
-						and det.IdSucursal=@IdSucursal_ini 
-						and det.IdBodega=@IdBodega_ini
+						and det.IdSucursal between @IdSucursal_ini and @IdSucursal_fin
+						and det.IdBodega between @IdBodega_ini and @IdBodega_fin
 						and [web].[in_SPINV_005].IdUsuario = @IdUsuario 
 						and cab.cm_fecha between @Fecha_ini and @Fecha_fin
 						AND @Mostrar_detallado = 1
@@ -309,8 +309,8 @@ FROM            fa_factura INNER JOIN
 						WHERE [web].[in_SPINV_005].IdUsuario = @IdUsuario 
 						and @Mostrar_detallado = 0
 						and tb_bodega.IdEmpresa=@IdEmpresa
-						and tb_bodega.IdSucursal=@IdSucursal_ini 
-						and tb_bodega.IdBodega=@IdBodega_ini
+						and tb_bodega.IdSucursal between @IdSucursal_ini and @IdSucursal_fin
+						and tb_bodega.IdBodega between @IdBodega_ini and @IdBodega_fin
 	
 
 
