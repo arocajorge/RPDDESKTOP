@@ -2,10 +2,10 @@
 AS
 SELECT        A.IdEmpresa, A.IdCbteCble_Ogiro, A.IdTipoCbte_Ogiro, A.IdOrden_giro_Tipo, A.IdProveedor, A.co_fechaOg, A.co_serie, A.co_factura, A.co_FechaFactura, 
                          A.co_FechaFactura_vct, A.co_plazo, A.co_observacion, A.co_subtotal_iva, A.co_subtotal_siniva, A.co_baseImponible, A.co_Por_iva, A.co_valoriva, A.IdCod_ICE, 
-                         A.co_Ice_base, A.co_Ice_por, A.co_Ice_valor, A.co_Serv_por, A.co_Serv_valor, A.co_OtroValor_a_descontar, A.co_OtroValor_a_Sumar, A.co_BaseSeguro, A.co_total, 
-                         A.co_valorpagar, A.co_vaCoa, A.IdIden_credito, A.IdCod_101, A.IdTipoServicio, A.IdCtaCble_Gasto, A.IdCtaCble_IVA, A.IdUsuario, A.Fecha_Transac, A.Estado, 
-                         A.IdUsuarioUltMod, A.Fecha_UltMod, A.IdUsuarioUltAnu, A.MotivoAnu, A.nom_pc, A.ip, A.Fecha_UltAnu, A.co_retencionManual, A.IdCbteCble_Anulacion, 
-                         A.IdTipoCbte_Anulacion, A.SaldoOG, A.em_nombre, A.IdCentroCosto, A.tc_TipoCbte, A.IdSucursal, A.Sucursal, A.IdTipoFlujo, A.TipoFlujo, A.PagoLocExt, A.PaisPago, 
+                          A.co_total, 
+                         A.co_valorpagar, A.co_vaCoa, A.IdIden_credito, A.IdCod_101, A.IdTipoServicio,  A.IdUsuario, A.Fecha_Transac, A.Estado, 
+                         A.IdUsuarioUltMod, A.Fecha_UltMod, A.IdUsuarioUltAnu, A.MotivoAnu,  A.Fecha_UltAnu,  
+                          A.SaldoOG, A.em_nombre, A.tc_TipoCbte, A.IdSucursal, A.Sucursal, A.IdTipoFlujo, A.TipoFlujo, A.PagoLocExt, A.PaisPago, 
                          A.PagoSujetoRetencion, A.ConvenioTributacion, A.co_FechaContabilizacion, A.BseImpNoObjDeIva, pe_nombreCompleto pr_nombre, 
                          dbo.cp_TipoDocumento.Descripcion AS Tipo_Documento, dbo.cp_proveedor.IdCtaCble_CXP
 FROM            dbo.vwcp_orden_giro_x_Pagos_saldo AS A INNER JOIN

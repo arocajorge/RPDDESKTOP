@@ -3,11 +3,11 @@ AS
 SELECT ISNULL(ROW_NUMBER() OVER (ORDER BY A.IdEmpresa), 0) AS IdRow, A.*
 FROM     (SELECT OG.IdEmpresa, OG.IdCbteCble_Ogiro, OG.IdTipoCbte_Ogiro, OG.co_fechaOg, prov.IdPersona, pers.pe_cedulaRuc, pers.IdTipoDocumento, OG.IdOrden_giro_Tipo, tip_doc.Descripcion, prov.IdProveedor, OG.Num_Autorizacion, 
                                     OG.co_serie, OG.co_factura, OG.co_FechaFactura, con_caj.IdConciliacion_Caja, caj.IdCaja, caj.ca_Descripcion, caj.IdCtaCble, OG.co_observacion, caj_mov_tip.IdTipoMovi, caj_mov_tip.tm_descripcion, OG.co_baseImponible, 
-                                    OG.co_subtotal_iva, OG.co_subtotal_siniva, OG.co_valoriva, OG.co_Serv_valor, OG.co_total, con_det.Valor_a_aplicar AS co_valorpagar, RT_ft.IdRetencion, RT_ft.serie, RT_ft.NumRetencion, RT_ft.NAutorizacion, 
+                                    OG.co_subtotal_iva, OG.co_subtotal_siniva, OG.co_valoriva, 0 co_Serv_valor, OG.co_total, con_det.Valor_a_aplicar AS co_valorpagar, RT_ft.IdRetencion, RT_ft.serie, RT_ft.NumRetencion, RT_ft.NAutorizacion, 
                                     RT_ft.re_tipoRet_RF, RT_ft.re_baseRetencion_RF, RT_ft.re_Porcen_retencion_RF, RT_ft.re_valor_retencion_RF, RT_Iva.re_tipoRet_RIVA, RT_Iva.re_baseRetencion_RIVA, RT_Iva.re_Porcen_retencion_RIVA, 
                                     RT_Iva.re_valor_retencion_RIVA, pers.pe_nombreCompleto, pers.pe_razonSocial, pers.pe_apellido, pers.pe_nombre, con_caj.IdPeriodo, per.IdanioFiscal, per.pe_mes, mes.smes, con_caj.Fecha_ini AS pe_FechaIni, 
                                     con_caj.Fecha_fin AS pe_FechaFin, con_caj.Fecha, con_caj.IdEstadoCierre, con_caj.Observacion, con_caj.Saldo_cont_al_periodo, con_caj.Ingresos, con_caj.Total_Ing, con_caj.Total_fact_vale, con_caj.Total_fondo, 
-                                    con_caj.Dif_x_pagar_o_cobrar, OG.co_OtroValor_a_descontar
+                                    con_caj.Dif_x_pagar_o_cobrar, 0 co_OtroValor_a_descontar
                   FROM      dbo.vwcp_retencion_x_RET_FT AS RT_ft RIGHT OUTER JOIN
                                     dbo.caj_Caja_Movimiento_Tipo_x_CtaCble INNER JOIN
                                     dbo.caj_Caja_Movimiento_Tipo AS caj_mov_tip ON dbo.caj_Caja_Movimiento_Tipo_x_CtaCble.IdTipoMovi = caj_mov_tip.IdTipoMovi INNER JOIN

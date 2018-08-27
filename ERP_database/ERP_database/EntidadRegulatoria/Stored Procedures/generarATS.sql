@@ -57,7 +57,7 @@ CASe when perso.IdTipoDocumento='CED' THEN '01' else '02' end AS tipoProv,					p
  fac.co_FechaFactura,																		fac.Num_Autorizacion,																				 
  isnull(fac.BseImpNoObjDeIva,0.00),															fac.co_subtotal_siniva, 
  fac.co_subtotal_iva,																		isnull(fac.BseImpNoObjDeIva,0.00),
- fac.co_Ice_valor,																			fac.co_valoriva,																					
+ 0 co_Ice_valor,																			fac.co_valoriva,																					
  fac.PagoLocExt,																			f_pago.formas_pago_sri,  
  f_pago.codigo_pago_sri,																	f_pago.codigo_pago_sri
 FROM            dbo.cp_orden_giro AS fac INNER JOIN

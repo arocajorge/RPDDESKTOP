@@ -6,7 +6,7 @@ SELECT        og.IdEmpresa, og.IdCbteCble_Ogiro, og.IdTipoCbte_Ogiro, og.IdOrden
                          flu.Descricion AS TipoFlujo, og.IdIden_credito, (CASE WHEN (rtrim(ltrim(og.co_serie)) = '' OR
                          rtrim(ltrim(og.co_serie)) IS NULL) THEN '000' ELSE (substring(og.co_serie, 1, 3)) END) AS Serie, (CASE WHEN (rtrim(ltrim(og.co_serie)) = '' OR
                          rtrim(ltrim(og.co_serie)) IS NULL) THEN '000' ELSE (substring(og.co_serie, 5, 3)) END) AS Serie2, og.co_factura AS numDocFactura, og.Num_Autorizacion, 
-                         og.Num_Autorizacion_Imprenta, og.co_OtroValor_a_descontar, og.co_Por_iva, og.co_valoriva, og.fecha_autorizacion, dbo.vwct_cbtecble_con_ctacble_acreedora.IdCtaCble_Acreedora IdCtaCble_Gasto, og.IdCtaCble_IVA
+                         og.Num_Autorizacion_Imprenta, 0 co_OtroValor_a_descontar, og.co_Por_iva, og.co_valoriva, og.fecha_autorizacion, dbo.vwct_cbtecble_con_ctacble_acreedora.IdCtaCble_Acreedora IdCtaCble_Gasto, '' IdCtaCble_IVA
                          
 FROM            dbo.cp_orden_giro AS og INNER JOIN
                          dbo.cp_proveedor AS pro ON og.IdEmpresa = pro.IdEmpresa AND og.IdProveedor = pro.IdProveedor INNER JOIN

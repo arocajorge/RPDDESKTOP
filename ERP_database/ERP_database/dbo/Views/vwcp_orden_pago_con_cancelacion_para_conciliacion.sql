@@ -7,7 +7,7 @@ FROM            (SELECT        A.IdEmpresa, A.IdTipo_op, SUBSTRING(D .Descripcio
                                                     pe_nombreCompleto AS Nom_Beneficiario, pe_nombreCompleto AS Girar_Cheque_a, C.co_valorpagar AS Valor_a_pagar, 
                                                     B.Valor_a_pagar AS Valor_estimado_a_pagar_OP, ISNULL(Can.Total_cancelado, 0) AS Total_cancelado_OP, 
                                                     B.Valor_a_pagar - ISNULL(Can.Total_cancelado, 0) AS Saldo_x_Pagar_OP, B.IdEstadoAprobacion, B.IdFormaPago, B.Fecha_Pago, 
-                                                    vwct_cbtecble_con_ctacble_acreedora.IdCtaCble_Acreedora AS IdCtaCble, C.IdCentroCosto, NULL AS IdSubCentro_Costo, 
+                                                    vwct_cbtecble_con_ctacble_acreedora.IdCtaCble_Acreedora AS IdCtaCble, NULL IdCentroCosto, NULL AS IdSubCentro_Costo, 
                                                     C.IdCbteCble_Ogiro AS Cbte_cxp, A.Estado, '[PROVEE]' + '[' + CAST(Pr.IdPersona AS varchar(20)) + ']' + '[' + CAST(C.IdProveedor AS varchar(20)) 
                                                     + ']' + pe_nombreCompleto AS Nom_Beneficiario_2, C.IdEmpresa AS IdEmpresa_cxp, C.IdTipoCbte_Ogiro AS IdTipoCbte_cxp, 
                                                     C.IdCbteCble_Ogiro AS IdCbteCble_cxp, A.IdBanco
@@ -70,7 +70,7 @@ FROM            (SELECT        A.IdEmpresa, A.IdTipo_op, SUBSTRING(D .Descripcio
                                                    C.co_FechaFactura_vct AS Fecha_Venc_Fac_Prov, C.co_observacion, pe_nombreCompleto AS Nom_Beneficiario, pe_nombreCompleto AS Girar_Cheque_a, 
                                                    C.co_valorpagar AS Valor_a_pagar, C.co_valorpagar AS Valor_estimado_a_pagar_OP, ISNULL(Total_OP.Valor_a_pagar, 0) AS Total_cancelado_OP, 
                                                    C.co_valorpagar - ISNULL(Total_OP.Valor_a_pagar, 0) AS Saldo_x_Pagar_OP, 'APRO' AS IdEstadoAprobacion, 'EFEC' AS IdFormaPago, NULL 
-                                                   AS Fecha_Pago, vwct_cbtecble_con_ctacble_acreedora.IdCtaCble_Acreedora AS IdCtaCble, C.IdCentroCosto, NULL AS IdSubCentro_Costo, 
+                                                   AS Fecha_Pago, vwct_cbtecble_con_ctacble_acreedora.IdCtaCble_Acreedora AS IdCtaCble, NULL IdCentroCosto, NULL AS IdSubCentro_Costo, 
                                                    C.IdCbteCble_Ogiro AS Cbte_cxp, C.Estado, '[PROVEE]' + '[' + CAST(Pr.IdPersona AS varchar(20)) + ']' + '[' + CAST(C.IdProveedor AS varchar(20)) 
                                                    + ']' + pe_nombreCompleto AS Nom_Beneficiario_2, C.IdEmpresa AS IdEmpresa_cxp, C.IdTipoCbte_Ogiro AS IdTipoCbte_cxp, 
                                                    C.IdCbteCble_Ogiro AS IdCbteCble_cxp, NULL AS IdBanco

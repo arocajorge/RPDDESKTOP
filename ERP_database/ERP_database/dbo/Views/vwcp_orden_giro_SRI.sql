@@ -4,8 +4,8 @@ SELECT        dbo.cp_orden_giro.IdEmpresa, dbo.cp_orden_giro.IdCbteCble_Ogiro, d
                          dbo.cp_orden_giro.co_serie, dbo.cp_orden_giro.co_factura, dbo.cp_orden_giro.co_FechaFactura, dbo.cp_orden_giro.co_FechaContabilizacion, dbo.cp_orden_giro.co_FechaFactura_vct,
                          dbo.cp_orden_giro.co_observacion, dbo.cp_orden_giro.co_total, dbo.tb_persona.IdTipoDocumento, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_razonSocial, dbo.tb_persona.pe_Naturaleza,
                          dbo.cp_orden_giro.co_vaCoa, dbo.cp_orden_giro.IdIden_credito, dbo.cp_orden_giro.IdCod_101, dbo.cp_orden_giro.co_subtotal_iva, dbo.cp_orden_giro.co_subtotal_siniva, dbo.cp_orden_giro.co_baseImponible,
-                         dbo.cp_orden_giro.co_Por_iva, dbo.cp_orden_giro.co_valoriva, dbo.cp_orden_giro.IdCod_ICE, dbo.cp_orden_giro.co_Ice_base, dbo.cp_orden_giro.co_Ice_por, dbo.cp_orden_giro.co_Ice_valor,
-                         dbo.cp_orden_giro.co_Serv_por, dbo.cp_orden_giro.co_Serv_valor, dbo.cp_orden_giro.Estado, dbo.cp_orden_giro.PagoLocExt, dbo.cp_orden_giro.PaisPago, dbo.cp_orden_giro.Num_Autorizacion,
+                         dbo.cp_orden_giro.co_Por_iva, dbo.cp_orden_giro.co_valoriva, dbo.cp_orden_giro.IdCod_ICE, 
+                         dbo.cp_orden_giro.Estado, dbo.cp_orden_giro.PagoLocExt, dbo.cp_orden_giro.PaisPago, dbo.cp_orden_giro.Num_Autorizacion,
                          dbo.cp_orden_giro.cp_es_comprobante_electronico, dbo.cp_proveedor.es_empresa_relacionada, dbo.cp_orden_giro.Tipodoc_a_Modificar, dbo.cp_orden_giro.estable_a_Modificar,
                          dbo.cp_orden_giro.ptoEmi_a_Modificar, dbo.cp_orden_giro.num_docu_Modificar, dbo.cp_orden_giro.aut_doc_Modificar
 FROM            dbo.cp_orden_giro INNER JOIN

@@ -2,10 +2,10 @@
 AS
 SELECT        gir.IdEmpresa, gir.IdCbteCble_Ogiro, gir.IdTipoCbte_Ogiro, gir.IdOrden_giro_Tipo, gir.IdProveedor, gir.co_fechaOg, gir.co_serie, gir.co_factura, gir.co_FechaFactura, 
                          gir.co_FechaContabilizacion, gir.co_FechaFactura_vct, gir.co_plazo, gir.co_observacion, gir.co_subtotal_iva, gir.co_subtotal_siniva, gir.co_baseImponible, 
-                         gir.co_Por_iva, gir.co_valoriva, gir.IdCod_ICE, gir.co_Ice_base, gir.co_Ice_por, gir.co_Ice_valor, gir.co_Serv_por, gir.co_Serv_valor, gir.co_OtroValor_a_descontar, 
-                         gir.co_OtroValor_a_Sumar, gir.co_BaseSeguro, gir.co_total, gir.co_valorpagar, gir.co_vaCoa, gir.IdIden_credito, gir.IdCod_101, gir.IdTipoFlujo, gir.IdTipoServicio, 
-                         gir.IdCtaCble_Gasto, gir.IdCtaCble_IVA, gir.IdUsuario, gir.Fecha_Transac, gir.Estado AS gir_Estado, gir.IdUsuarioUltMod, gir.Fecha_UltMod, gir.IdUsuarioUltAnu, 
-                         gir.MotivoAnu, gir.nom_pc, gir.Fecha_UltAnu, gir.ip, gir.co_retencionManual, gir.IdCbteCble_Anulacion, gir.IdTipoCbte_Anulacion, gir.IdCentroCosto, gir.IdSucursal, 
+                         gir.co_Por_iva, gir.co_valoriva, gir.IdCod_ICE, 0 co_Ice_base, 0 co_Ice_por, 0 co_Ice_valor, 0 co_Serv_por,  0 co_Serv_valor, 0 co_OtroValor_a_descontar, 
+                         0 co_OtroValor_a_Sumar, 0 co_BaseSeguro, gir.co_total, gir.co_valorpagar, gir.co_vaCoa, gir.IdIden_credito, gir.IdCod_101, gir.IdTipoFlujo, gir.IdTipoServicio, 
+                         0 IdCtaCble_Gasto, '' IdCtaCble_IVA, gir.IdUsuario, gir.Fecha_Transac, gir.Estado AS gir_Estado, gir.IdUsuarioUltMod, gir.Fecha_UltMod, gir.IdUsuarioUltAnu, 
+                         gir.MotivoAnu, '' nom_pc, gir.Fecha_UltAnu, '' ip, 'N' co_retencionManual, 0 IdCbteCble_Anulacion, 0 IdTipoCbte_Anulacion, '' IdCentroCosto, gir.IdSucursal, 
                          gir.PagoLocExt, gir.PaisPago, gir.ConvenioTributacion, gir.PagoSujetoRetencion, gir.BseImpNoObjDeIva, ret.IdRetencion, ret.re_Tiene_RTiva, ret.re_Tiene_RFuente, 
                          ret.observacion, ret.fecha, ret.serie1 + '' + ret.serie2 as serie, ret.NumRetencion, ret.ct_IdEmpresa_Anu, ret.ct_IdTipoCbte_Anu, ret.ct_IdCbteCble_Anu, ret.re_EstaImpresa, 
                          ret.Estado AS ret_estado, det.Idsecuencia, det.re_tipoRet, det.re_baseRetencion, det.IdCodigo_SRI, det.re_Codigo_impuesto, det.re_Porcen_retencion, 
@@ -161,7 +161,8 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-         Width = 1500', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_comprobante_x_retencion';
+         Width = 1500
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwcp_comprobante_x_retencion';
 
 
 GO
