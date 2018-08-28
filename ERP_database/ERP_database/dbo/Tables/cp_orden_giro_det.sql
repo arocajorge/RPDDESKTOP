@@ -9,6 +9,7 @@
     [ing_IdNumMovi]         NUMERIC (18) NOT NULL,
     [ing_Secuencia]         INT          NOT NULL,
     [IdProducto]            NUMERIC (18) NOT NULL,
+    [IdUnidadMedida]        VARCHAR (25) NOT NULL,
     [Cantidad]              FLOAT (53)   NOT NULL,
     [CostoUni]              FLOAT (53)   NOT NULL,
     [PorDescuento]          FLOAT (53)   NOT NULL,
@@ -26,4 +27,6 @@
     CONSTRAINT [FK_cp_orden_giro_det_in_Ing_Egr_Inven_det] FOREIGN KEY ([ing_IdEmpresa], [ing_IdSucursal], [ing_IdMovi_inven_tipo], [ing_IdNumMovi], [ing_Secuencia]) REFERENCES [dbo].[in_Ing_Egr_Inven_det] ([IdEmpresa], [IdSucursal], [IdMovi_inven_tipo], [IdNumMovi], [Secuencia]),
     CONSTRAINT [FK_cp_orden_giro_det_in_Producto] FOREIGN KEY ([IdEmpresa], [IdProducto]) REFERENCES [dbo].[in_Producto] ([IdEmpresa], [IdProducto])
 );
+
+
 
