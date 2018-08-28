@@ -1,8 +1,8 @@
-﻿CREATE VIEW web.VWFAC_003_cuotas
+﻿CREATE VIEW [web].[VWFAC_003_cuotas]
 AS
 SELECT isnull(ROW_NUMBER() OVER (ORDER BY IdEmpresa), 0) AS IdRow, *
 FROM     (SELECT dbo.fa_factura_det.IdEmpresa, dbo.fa_factura_det.IdSucursal, dbo.fa_factura_det.IdBodega, dbo.fa_factura_det.IdCbteVta, dbo.fa_factura_det.Secuencia, dbo.fa_factura.vt_tipoDoc, dbo.fa_factura.vt_serie1, 
-                                    dbo.fa_factura.vt_serie2, dbo.fa_factura.vt_NumFactura, dbo.fa_factura.vt_fecha, dbo.fa_factura.Estado, dbo.fa_factura_det.IdProducto, dbo.in_Producto.pr_descripcion + ' - ' + pre.nom_presentacion AS pr_descripcion, 
+                                    dbo.fa_factura.vt_serie2, dbo.fa_factura.vt_NumFactura, dbo.fa_factura.vt_fecha, dbo.fa_factura.Estado, dbo.fa_factura_det.IdProducto, dbo.in_Producto.pr_descripcion + ' - ' + pre.nom_presentacion +' - '+ isnull(in_producto.lote_num_lote,'') AS pr_descripcion, 
                                     dbo.fa_factura_det.vt_cantidad, dbo.fa_factura_det.vt_Precio, dbo.fa_factura_det.vt_Subtotal, dbo.fa_factura_det.vt_detallexItems AS Observacion_x_item, dbo.fa_factura.IdCliente, con.Nombres AS pe_nombreCompleto, 
                                     dbo.tb_persona.pe_cedulaRuc, con.Direccion AS pe_direccion, con.Telefono AS pe_telefonoOfic, dbo.fa_factura.vt_Observacion AS Observacion_central, DAY(dbo.fa_factura.vt_fecha) AS dia, MONTH(dbo.fa_factura.vt_fecha) 
                                     AS mes, YEAR(dbo.fa_factura.vt_fecha) AS anio, dbo.fa_factura_det.vt_iva, CASE WHEN dbo.fa_factura_det.vt_iva = 0 THEN dbo.fa_factura_det.vt_Subtotal ELSE 0 END AS subtotal_0, 
