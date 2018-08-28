@@ -188,7 +188,7 @@ SELECT * FROM (
 						IIF(cp_orden_giro.co_factura is null, cast(cast(fa_factura.vt_numFactura as numeric) as varchar(20)), cast(cast(cp_orden_giro.co_factura as numeric) as varchar(20))) AS num_factura, 
 
 						iif(tb_persona.pe_nombreCompleto is null,fa_cliente_contactos.Nombres,tb_persona.pe_nombreCompleto) AS nom_proveedor, in_Producto.pr_codigo, 
-						in_Producto.pr_descripcion + ' '+pre.nom_presentacion + ' ' + in_Producto.lote_num_lote + ' ' + (iif(in_Producto.lote_fecha_vcto is null,'',CONVERT(varchar(10), in_Producto.lote_fecha_vcto, 103))) pr_descripcion, 
+						in_Producto.pr_descripcion + ' '+pre.nom_presentacion + ' ' + ISNULL(in_Producto.lote_num_lote,'') + ' ' + (iif(in_Producto.lote_fecha_vcto is null,'',CONVERT(varchar(10), in_Producto.lote_fecha_vcto, 103))) pr_descripcion, 
 						in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo, [web].[in_SPINV_005].[IdProductoPadre]
 FROM            fa_factura INNER JOIN
                          fa_factura_x_in_Ing_Egr_Inven ON fa_factura.IdEmpresa = fa_factura_x_in_Ing_Egr_Inven.IdEmpresa_fa AND fa_factura.IdSucursal = fa_factura_x_in_Ing_Egr_Inven.IdSucursal_fa AND 
@@ -253,7 +253,7 @@ FROM            fa_factura INNER JOIN
 						tb_sucursal.codigo AS cod_sucursal, tb_sucursal.Su_Descripcion AS nom_sucursal, null, null, 
 						null, null AS num_factura, null AS nom_proveedor, in_Producto.pr_codigo, 
 
-						in_Producto.pr_descripcion + ' '+pre.nom_presentacion + ' ' + in_Producto.lote_num_lote + ' ' + (iif(in_Producto.lote_fecha_vcto is null,'',CONVERT(varchar(10), in_Producto.lote_fecha_vcto, 103))) pr_descripcion, 
+						in_Producto.pr_descripcion + ' '+pre.nom_presentacion + ' ' + ISNULL(in_Producto.lote_num_lote,'') + ' ' + (iif(in_Producto.lote_fecha_vcto is null,'',CONVERT(varchar(10), in_Producto.lote_fecha_vcto, 103))) pr_descripcion, 
 
 						in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo, [web].[in_SPINV_005].[IdProductoPadre]
 						FROM            in_Producto INNER JOIN
@@ -295,7 +295,7 @@ FROM            fa_factura INNER JOIN
 									,[web].[in_SPINV_005].IdUsuario, '', @Fecha_ini, '' as tipo_movi, tb_bodega.cod_bodega, tb_bodega.bo_Descripcion AS nom_bodega, 
 									tb_sucursal.codigo AS cod_sucursal, tb_sucursal.Su_Descripcion AS nom_sucursal, null, null, 
 									null, null AS num_factura, null AS nom_proveedor, in_Producto.pr_codigo, 
-									in_Producto.pr_descripcion + ' '+pre.nom_presentacion + ' ' + in_Producto.lote_num_lote + ' ' + (iif(in_Producto.lote_fecha_vcto is null,'',CONVERT(varchar(10), in_Producto.lote_fecha_vcto, 103))) pr_descripcion,
+									in_Producto.pr_descripcion + ' '+pre.nom_presentacion + ' ' + ISNULL(in_Producto.lote_num_lote,'') + ' ' + (iif(in_Producto.lote_fecha_vcto is null,'',CONVERT(varchar(10), in_Producto.lote_fecha_vcto, 103))) pr_descripcion,
 									in_UnidadMedida.IdUnidadMedida, in_UnidadMedida.Descripcion as nom_unidad_consumo, in_UnidadMedida.cod_alterno as cod_unidad_consumo,
 									[web].[in_SPINV_005].[IdProductoPadre]
 						FROM            [web].[in_SPINV_005] INNER JOIN
