@@ -1925,5 +1925,6 @@
     <Build Include="EntidadRegulatoria\Tables\fa_elec_registros_generados.sql" />
     <Build Include="dbo\Tables\cp_orden_giro_det.sql" />
     <Build Include="web\Views\vwtb_bodega_x_sucursal.sql" />
+    <Build Include="dbo\Tables\tbl_usuario_ftp.sql" />
   </ItemGroup>
 </Project>
