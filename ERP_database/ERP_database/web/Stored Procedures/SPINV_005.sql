@@ -1,4 +1,5 @@
 ﻿
+
 CREATE PROCEDURE [web].[SPINV_005] 	
 @IdEmpresa int,
 @IdSucursal_ini int,
@@ -38,7 +39,7 @@ DELETE [web].[in_SPINV_005] WHERE IdUsuario = @IdUsuario
 			and cab.IdBodega between @IdBodega_ini and @IdBodega_fin
 			and det.IdProducto between @IdProducto_ini and @IdProducto_fin
 			and cab.cm_fecha <= @Fecha_fin
-			and isnull(p.IdProducto_padre,0) between @IdProductoPadre_ini and @IdProductoPadre_fin
+			and isnull(p.IdProducto_padre,p.IdProducto) between @IdProductoPadre_ini and @IdProductoPadre_fin
 			group by det.IdEmpresa, det.IdSucursal, det.IdBodega, det.IdProducto, p.IdProducto_padre
 
 --SI NO DEBE MOSTRAR ITEMS SIN MOVIMIENTOS BORRO LOS ITEMS QUE NO TUVIERON MOVIMIENTO EN ESE RANGO DE FECHAS
