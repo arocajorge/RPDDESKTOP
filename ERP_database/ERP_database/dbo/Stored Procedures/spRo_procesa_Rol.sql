@@ -1,4 +1,5 @@
 ﻿
+
 CREATE PROCEDURE [dbo].[spRo_procesa_Rol] (
 @IdEmpresa int,
 @IdNomina numeric,
@@ -19,7 +20,7 @@ AS
 --set @IdEmpresa =1
 --set @IdNomina =1
 --set @IdNominaTipo =2
---set @IdPEriodo= 201806
+--set @IdPEriodo= 201808
 --set @IdUsuario ='admin'
 --set @observacion= 'prueba'
 
@@ -70,7 +71,7 @@ insert into ro_rol_detalle
 
 select 
 
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'0' ,case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@fi, @Ff)+1, DATEDIFF(day ,cont.FechaInicio, @Ff)+1) ELSE iif(emp.em_fechaSalida>=@Ff,DATEDIFF(day ,@fi, @Ff)+1, DATEDIFF(day ,emp.em_fechaSalida, @Ff)+1) end
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'0' ,case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@fi, @Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,DATEDIFF(day ,@fi, @Ff), DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end
 ,1						,'Días trabajados'		, null						, null				,null									,null
 FROM            dbo.ro_contrato AS cont INNER JOIN
                 dbo.ro_empleado AS emp ON cont.IdEmpresa = emp.IdEmpresa AND cont.IdEmpleado = emp.IdEmpleado
@@ -90,7 +91,7 @@ insert into ro_rol_detalle
 
 select 
 
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'1' ,cont.sueldo/30*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff)+1, DATEDIFF(day ,cont.FechaInicio, @Ff)+1) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)+1) end)
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'1' ,cont.sueldo/30*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end)
 ,1						,'Sueldo base'		, null						, null				,null									,null
 FROM            dbo.ro_contrato AS cont INNER JOIN
                 dbo.ro_empleado AS emp ON cont.IdEmpresa = emp.IdEmpresa AND cont.IdEmpleado = emp.IdEmpleado
