@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[com_departamento] (
     [IdEmpresa]        INT           NOT NULL,
     [IdDepartamento]   NUMERIC (18)  NOT NULL,
-    [nom_departamento] VARCHAR (200) NOT NULL,
+    [nom_departamento] VARCHAR (500) NOT NULL,
     [Estado]           VARCHAR (1)   NOT NULL,
     [IdUsuario]        VARCHAR (50)  NULL,
     [Fecha_Transac]    DATETIME      NULL,
@@ -12,6 +12,8 @@
     [MotiAnula]        VARCHAR (150) NULL,
     CONSTRAINT [PK_com_departamento] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdDepartamento] ASC)
 );
+
+
 
 
 
