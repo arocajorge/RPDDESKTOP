@@ -1926,5 +1926,7 @@
     <Build Include="dbo\Tables\cp_orden_giro_det.sql" />
     <Build Include="web\Views\vwtb_bodega_x_sucursal.sql" />
     <Build Include="dbo\Tables\tbl_usuario_ftp.sql" />
+    <Build Include="dbo\Tables\cp_orden_giro_x_in_Ing_Egr_Inven.sql" />
+    <Build Include="web\Views\vwcp_orden_giro_det.sql" />
   </ItemGroup>
 </Project>
