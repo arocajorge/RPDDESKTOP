@@ -1932,5 +1932,7 @@
     <Build Include="dbo\Tables\cxc_liquidacion_comisiones.sql" />
     <Build Include="dbo\Views\vwcxc_liquidacion_comisiones_det_x_comisionar.sql" />
     <Build Include="dbo\Views\vwcxc_liquidacion_comisiones_det.sql" />
+    <Build Include="web\Views\VWINV_011.sql" />
+    <Build Include="dbo\Functions\calcular_dias_trabajados.sql" />
   </ItemGroup>
 </Project>
