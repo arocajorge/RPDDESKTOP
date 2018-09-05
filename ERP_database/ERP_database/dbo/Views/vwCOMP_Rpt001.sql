@@ -1,9 +1,9 @@
 ﻿CREATE VIEW dbo.vwCOMP_Rpt001
 AS
-SELECT        OC.IdEmpresa, OC.IdSucursal, OC.IdOrdenCompra, OC.IdProveedor, OC.oc_NumDocumento, OC.Tipo, OC.IdTerminoPago, OC.oc_plazo AS Plazo, 
-                         OC.oc_fecha AS Fecha, OC.oc_flete AS Flete, OC.oc_observacion AS Observacion, OC.Estado, OC.IdSolicitante, OC.IdComprador, OC.IdDepartamento, 
+SELECT        OC.IdEmpresa, OC.IdSucursal, OC.IdOrdenCompra, OC.IdProveedor, OC.oc_NumDocumento,  OC.IdTerminoPago, OC.oc_plazo AS Plazo, 
+                         OC.oc_fecha AS Fecha, OC.oc_observacion AS Observacion, OC.Estado,  OC.IdComprador, OC.IdDepartamento, 
                          OC_det.Secuencia, OC_det.IdProducto, OC_det.do_Cantidad AS cantidad, OC_det.do_precioCompra AS precio, OC_det.do_porc_des AS por_desc, 
-                         OC_det.do_descuento AS valor_descuento, OC_det.do_subtotal AS subtotal, OC_det.do_iva AS iva, OC_det.do_total AS total, OC_det.do_peso AS peso, 
+                         OC_det.do_descuento AS valor_descuento, OC_det.do_subtotal AS subtotal, OC_det.do_iva AS iva, OC_det.do_total AS total,
                          Prod.pr_codigo AS cod_producto, Prod.pr_descripcion AS nom_producto, sucu.Su_Descripcion AS sucursal, empr.em_nombre AS empresa, 
                          empr.em_ruc AS ruc_empresa, empr.em_logo AS logo_empresa, per_prov.pe_nombreCompleto AS nom_proveedor, per_prov.pe_cedulaRuc AS ced_ruc_provee, 
                          per_prov.pe_direccion AS direc_provee, null AS telef_provee, dbo.in_UnidadMedida.Descripcion AS NomUnidad, 
@@ -29,7 +29,7 @@ FROM            dbo.ct_centro_costo_sub_centro_costo RIGHT OUTER JOIN
                          dbo.com_Motivo_Orden_Compra.IdMotivo = OC.IdMotivo ON dbo.ct_centro_costo_sub_centro_costo.IdEmpresa = OC_det.IdEmpresa AND 
                          dbo.ct_centro_costo_sub_centro_costo.IdCentroCosto_sub_centro_costo = OC_det.IdCentroCosto_sub_centro_costo LEFT OUTER JOIN
                          dbo.in_UnidadMedida ON OC_det.IdUnidadMedida = dbo.in_UnidadMedida.IdUnidadMedida LEFT OUTER JOIN
-                         dbo.com_solicitante ON OC.IdEmpresa = dbo.com_solicitante.IdEmpresa AND OC.IdSolicitante = dbo.com_solicitante.IdSolicitante LEFT OUTER JOIN
+                         dbo.com_solicitante ON OC.IdEmpresa = dbo.com_solicitante.IdEmpresa AND 1 = dbo.com_solicitante.IdSolicitante LEFT OUTER JOIN
                          dbo.ct_punto_cargo ON OC_det.IdEmpresa = dbo.ct_punto_cargo.IdEmpresa AND OC_det.IdPunto_cargo = dbo.ct_punto_cargo.IdPunto_cargo LEFT OUTER JOIN
                          dbo.ct_centro_costo ON OC_det.IdEmpresa = dbo.ct_centro_costo.IdEmpresa AND OC_det.IdCentroCosto = dbo.ct_centro_costo.IdCentroCosto
 GO

@@ -6,7 +6,7 @@ SELECT        dbo.in_Ing_Egr_Inven.IdEmpresa, dbo.in_Ing_Egr_Inven.IdSucursal, d
                          dbo.in_Ing_Egr_Inven_det.mv_costo, dbo.in_Ing_Egr_Inven_det.dm_cantidad * dbo.in_Ing_Egr_Inven_det.mv_costo AS SubTotal, 
                          0 dm_precio, dbo.in_Ing_Egr_Inven_det.dm_observacion, 0 dm_peso, dbo.tb_empresa.em_nombre, 
                          dbo.tb_empresa.em_ruc, dbo.tb_empresa.em_telefonos, dbo.tb_empresa.em_direccion, dbo.tb_empresa.em_logo, dbo.cp_proveedor.IdProveedor, 
-                         pe_nombreCompleto pr_nombre, dbo.com_ordencompra_local_det.do_ManejaIva, dbo.com_ordencompra_local.IdOrdenCompra, 
+                         pe_nombreCompleto pr_nombre,  dbo.com_ordencompra_local.IdOrdenCompra, 
                          dbo.in_Ing_Egr_Inven_det.IdUnidadMedida, uniSin.Descripcion AS nom_unidad, dbo.in_Motivo_Inven.IdMotivo_Inv, dbo.in_Motivo_Inven.Desc_mov_inv, 
                          dbo.in_Ing_Egr_Inven_det.dm_cantidad_sinConversion, dbo.in_Ing_Egr_Inven_det.IdUnidadMedida_sinConversion, 
                          uniSin.Descripcion AS nom_unidad_sinConversion, dbo.in_Ing_Egr_Inven_det.mv_costo_sinConversion, 

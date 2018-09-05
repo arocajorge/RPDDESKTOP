@@ -29,12 +29,10 @@
     [IdComprador]            NUMERIC (18)   NOT NULL,
     CONSTRAINT [PK_in_ordencompra_local] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdOrdenCompra] ASC),
     CONSTRAINT [FK_com_ordencompra_local_com_catalogo] FOREIGN KEY ([IdEstadoAprobacion_cat]) REFERENCES [dbo].[com_catalogo] ([IdCatalogocompra]),
-    CONSTRAINT [FK_com_ordencompra_local_com_catalogo1] FOREIGN KEY ([IdEstadoRecepcion_cat]) REFERENCES [dbo].[com_catalogo] ([IdCatalogocompra]),
     CONSTRAINT [FK_com_ordencompra_local_com_comprador] FOREIGN KEY ([IdEmpresa], [IdComprador]) REFERENCES [dbo].[com_comprador] ([IdEmpresa], [IdComprador]),
     CONSTRAINT [FK_com_ordencompra_local_com_departamento] FOREIGN KEY ([IdEmpresa], [IdDepartamento]) REFERENCES [dbo].[com_departamento] ([IdEmpresa], [IdDepartamento]),
     CONSTRAINT [FK_com_ordencompra_local_com_estado_cierre] FOREIGN KEY ([IdEstado_cierre]) REFERENCES [dbo].[com_estado_cierre] ([IdEstado_cierre]),
     CONSTRAINT [FK_com_ordencompra_local_com_Motivo_Orden_Compra] FOREIGN KEY ([IdEmpresa], [IdMotivo]) REFERENCES [dbo].[com_Motivo_Orden_Compra] ([IdEmpresa], [IdMotivo]),
-    CONSTRAINT [FK_com_ordencompra_local_com_solicitante] FOREIGN KEY ([IdEmpresa], [IdSolicitante]) REFERENCES [dbo].[com_solicitante] ([IdEmpresa], [IdSolicitante]),
     CONSTRAINT [FK_com_ordencompra_local_com_TerminoPago] FOREIGN KEY ([IdTerminoPago]) REFERENCES [dbo].[com_TerminoPago] ([IdTerminoPago]),
     CONSTRAINT [FK_com_ordencompra_local_cp_proveedor] FOREIGN KEY ([IdEmpresa], [IdProveedor]) REFERENCES [dbo].[cp_proveedor] ([IdEmpresa], [IdProveedor]),
     CONSTRAINT [FK_com_ordencompra_local_tb_sucursal] FOREIGN KEY ([IdEmpresa], [IdSucursal]) REFERENCES [dbo].[tb_sucursal] ([IdEmpresa], [IdSucursal])

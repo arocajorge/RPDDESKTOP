@@ -4,9 +4,9 @@
 CREATE VIEW [dbo].[vwCOMP_NATU_Rpt004]
 AS
 SELECT        dbo.com_ordencompra_local.IdEmpresa, dbo.com_ordencompra_local.IdSucursal, dbo.com_ordencompra_local.IdOrdenCompra, 
-                         dbo.com_ordencompra_local.IdProveedor, dbo.com_ordencompra_local.Tipo, dbo.com_ordencompra_local.IdTerminoPago, 
+                         dbo.com_ordencompra_local.IdProveedor,  dbo.com_ordencompra_local.IdTerminoPago, 
                          dbo.com_ordencompra_local.oc_plazo AS Plazo, dbo.com_ordencompra_local.oc_fecha AS Fecha_oc, 
-                         dbo.com_ordencompra_local.oc_observacion AS Observacion_oc, dbo.com_ordencompra_local.Estado, dbo.com_ordencompra_local.IdEstadoRecepcion_cat, 
+                         dbo.com_ordencompra_local.oc_observacion AS Observacion_oc, dbo.com_ordencompra_local.Estado,  
                          dbo.com_ordencompra_local_det.do_total AS Total, '' AS nom_proveedor, dbo.tb_sucursal.Su_Descripcion AS nom_sucursal, 
                          dbo.com_ordencompra_local_det.IdProducto, dbo.com_ordencompra_local_det.do_Cantidad AS Cantidad, 
                          dbo.com_ordencompra_local_det.do_precioCompra AS Precio, dbo.com_ordencompra_local_det.do_subtotal AS Subtotal, 

@@ -1,0 +1,16 @@
+Category: Error, Message: System.InvalidOperationException: No connection string named 'EntitiesGeneral' could be found in the application config file.
+   en System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   en System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   en System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   en System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   en System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   en System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   en System.Linq.Queryable.Select[TSource,TResult](IQueryable`1 source, Expression`1 selector)
+   en Core.Erp.Data.General.tb_sis_Mensajes_sys_Data.Get_List_Mensajes_sys() en c:\Users\OBANDO\Desktop\PROYECTOS GITHUB\RPDDESKTOP\ERP\Core.Erp.Data\General\tb_sis_Mensajes_sys_Data.cs:línea 49
+Category: Error, Message: Referencia a objeto no establecida como instancia de un objeto.
+Category: Error, Message: Core.Erp.Info.Log_Exception.DalException ---> System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en Core.Erp.Data.Bancos.ba_Cbte_Ban_tipo_Data.Get_List_Cbte_Ban_tipo() en c:\Users\OBANDO\Desktop\PROYECTOS GITHUB\RPDDESKTOP\ERP\Core.Erp.Data\Bancos\ba_Cbte_Ban_tipo_Data.cs:línea 77
+   en Core.Erp.Business.Bancos.ba_Cbte_Ban_tipo_Bus.Get_List_Cbte_Ban_tipo() en c:\Users\OBANDO\Desktop\PROYECTOS GITHUB\RPDDESKTOP\ERP\Core.Erp.Bussines\Bancos\ba_Cbte_Ban_tipo_Bus.cs:línea 34
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en Core.Erp.Business.Bancos.ba_Cbte_Ban_tipo_Bus.Get_List_Cbte_Ban_tipo() en c:\Users\OBANDO\Desktop\PROYECTOS GITHUB\RPDDESKTOP\ERP\Core.Erp.Bussines\Bancos\ba_Cbte_Ban_tipo_Bus.cs:línea 39
+   en Core.Erp.Reportes.Controles.UCBa_Menu_Reportes.UCBa_Menu_Reportes_Load(Object sender, EventArgs e) en c:\Users\OBANDO\Desktop\PROYECTOS GITHUB\RPDDESKTOP\ERP\Core.Erp.Reportes\Controles\UCBa_Menu_Reportes.cs:línea 286

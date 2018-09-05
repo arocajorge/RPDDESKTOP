@@ -4,7 +4,7 @@ SELECT       ISNULL(ROW_NUMBER() OVER(ORDER BY dbo.in_Ing_Egr_Inven.IdEmpresa),0
                          dbo.in_Ing_Egr_Inven.cm_observacion, dbo.in_Ing_Egr_Inven.cm_fecha, dbo.in_Ing_Egr_Inven.Estado, suc.Su_Descripcion, bod.bo_Descripcion, minv_tip.tm_descripcion, prod.IdProducto, prod.pr_codigo, prod.pr_descripcion, 
                          dbo.in_Ing_Egr_Inven_det.dm_cantidad, dbo.in_Ing_Egr_Inven_det.mv_costo, dbo.in_Ing_Egr_Inven_det.dm_cantidad * dbo.in_Ing_Egr_Inven_det.mv_costo AS SubTotal, 0 dm_precio, 
                          dbo.in_Ing_Egr_Inven_det.dm_observacion, 0 dm_peso, dbo.tb_empresa.em_nombre, dbo.tb_empresa.em_ruc, dbo.tb_empresa.em_telefonos, dbo.tb_empresa.em_direccion, 
-                         dbo.cp_proveedor.IdProveedor, pe_nombreCompleto pr_nombre, dbo.com_ordencompra_local_det.do_ManejaIva, dbo.com_ordencompra_local.IdOrdenCompra, dbo.in_Ing_Egr_Inven_det.IdUnidadMedida, 
+                         dbo.cp_proveedor.IdProveedor, pe_nombreCompleto pr_nombre,  dbo.com_ordencompra_local.IdOrdenCompra, dbo.in_Ing_Egr_Inven_det.IdUnidadMedida, 
                          uniMed.Descripcion AS nom_unidad, dbo.in_Motivo_Inven.IdMotivo_Inv, dbo.in_Motivo_Inven.Desc_mov_inv, dbo.in_Ing_Egr_Inven_det.dm_cantidad_sinConversion, dbo.in_Ing_Egr_Inven_det.IdUnidadMedida_sinConversion,
                           uniSin.Descripcion AS nom_unidad_sinConversion, dbo.in_Ing_Egr_Inven_det.mv_costo_sinConversion, 
                          dbo.in_Ing_Egr_Inven_det.dm_cantidad_sinConversion * dbo.in_Ing_Egr_Inven_det.mv_costo_sinConversion AS SubTotal_sinConversion, dbo.in_Ing_Egr_Inven.CodMoviInven, dbo.ct_punto_cargo.IdPunto_cargo, 
