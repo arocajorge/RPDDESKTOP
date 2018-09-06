@@ -3,7 +3,7 @@
     [IdSucursal]             INT            NOT NULL,
     [IdOrdenCompra]          NUMERIC (18)   NOT NULL,
     [IdProveedor]            NUMERIC (18)   NOT NULL,
-    [oc_NumDocumento]        VARCHAR (50)   NOT NULL,
+    [oc_NumDocumento]        VARCHAR (50)   NULL,
     [IdTerminoPago]          VARCHAR (25)   NOT NULL,
     [oc_plazo]               INT            NOT NULL,
     [oc_fecha]               DATETIME       NOT NULL,
