@@ -6,7 +6,7 @@ SELECT        dbo.in_Ing_Egr_Inven_det.IdEmpresa, dbo.in_Ing_Egr_Inven_det.IdSuc
                          dbo.in_Ing_Egr_Inven_det.IdOrdenCompra, dbo.in_Ing_Egr_Inven_det.Secuencia_oc, dbo.in_Ing_Egr_Inven_det.IdEmpresa_inv, 
                          dbo.in_Ing_Egr_Inven_det.IdSucursal_inv, dbo.in_Ing_Egr_Inven_det.IdBodega_inv, dbo.in_Ing_Egr_Inven_det.IdMovi_inven_tipo_inv, 
                          dbo.in_Ing_Egr_Inven_det.IdNumMovi_inv, dbo.in_Ing_Egr_Inven_det.secuencia_inv, dbo.com_ordencompra_local_det.do_precioCompra AS precioCompra_det_oc, 
-                         dbo.com_ordencompra_local_det.do_descuento AS descuento_det_oc, dbo.com_ordencompra_local_det.do_ManejaIva AS ManejaIva_det_oc, 
+                         dbo.com_ordencompra_local_det.do_descuento AS descuento_det_oc,  
                          dbo.com_ordencompra_local_det.do_subtotal AS Subtotal_det_oc, dbo.com_ordencompra_local_det.do_iva AS valor_iva_det_oc, 
                          dbo.com_ordencompra_local_det.do_total AS total_det_oc, dbo.tb_sucursal.Su_Descripcion AS nom_sucursal, dbo.tb_bodega.bo_Descripcion AS nom_bodega, 
                          dbo.in_Producto.pr_descripcion AS nom_producto, dbo.in_UnidadMedida.Descripcion AS nom_unidad, dbo.in_Ing_Egr_Inven.cm_fecha AS Fecha_Ing_Bod

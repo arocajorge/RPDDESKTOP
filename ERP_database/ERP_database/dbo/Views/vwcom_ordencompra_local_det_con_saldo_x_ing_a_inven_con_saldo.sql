@@ -1,6 +1,6 @@
 ﻿CREATE view [dbo].[vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven_con_saldo]
 as
-SELECT        isnull(ROW_NUMBER() OVER (ORDER BY IdEmpresa),0) AS fila, IdEmpresa, IdSucursal, IdOrdenCompra, secuencia_oc_det, nom_sucu, IdProveedor, nom_proveedor, Tipo, 
+SELECT        isnull(ROW_NUMBER() OVER (ORDER BY IdEmpresa),0) AS fila, IdEmpresa, IdSucursal, IdOrdenCompra, secuencia_oc_det, nom_sucu, IdProveedor, nom_proveedor,  
 oc_fecha, oc_observacion, cod_producto, nom_producto, IdProducto, AVG(oc_precio) AS oc_precio, AVG(cantidad_pedida_OC) AS cantidad_pedida_OC, 
 SUM(ISNULL(cantidad_ing_a_Inven, 0)) AS cantidad_ing_a_Inven, SUM(ISNULL(cantidad_ingresada, 0)) AS cantidad_ingresada, AVG(cantidad_pedida_OC) 
 - SUM(ISNULL(cantidad_ingresada, 0)) AS Saldo_OC_x_Ing, AVG(pr_stock) AS pr_stock, 0 AS pr_peso, 0 AS CostoProducto, Estado, 
@@ -10,7 +10,7 @@ THEN 'PEN_X_RECI' ELSE 'PEN_X_RECI' END AS IdEstadoRecepcion, IdCentroCosto, IdC
 IdMotivo_oc, Nom_Motivo, IdEstado_cierre, nom_estado_cierre, Nomsub_centro_costo, SUM(do_descuento) AS do_descuento, SUM(do_subtotal) AS do_subtotal, SUM(do_iva) 
 AS do_iva, SUM(do_total) AS do_total, IdUnidadMedida_Consumo, Descripcion, oc_NumDocumento
 FROM            dbo.vwcom_ordencompra_local_det_con_saldo_x_ing_a_inven
-GROUP BY IdEmpresa, IdSucursal, IdOrdenCompra, secuencia_oc_det, nom_sucu, IdProveedor, nom_proveedor, Tipo, oc_fecha, oc_observacion, cod_producto, nom_producto, 
+GROUP BY IdEmpresa, IdSucursal, IdOrdenCompra, secuencia_oc_det, nom_sucu, IdProveedor, nom_proveedor,  oc_fecha, oc_observacion, cod_producto, nom_producto, 
                          IdProducto, Estado, IdEstadoAprobacion_cat, IdCentroCosto, IdCentroCosto_sub_centro_costo, IdPunto_cargo_grupo, IdPunto_cargo, IdUnidadMedida, IdMotivo_oc, 
                          Nom_Motivo, IdEstado_cierre, nom_estado_cierre, Nomsub_centro_costo, IdUnidadMedida_Consumo, Descripcion, oc_NumDocumento
 HAVING        (IdEmpresa IS NOT NULL)

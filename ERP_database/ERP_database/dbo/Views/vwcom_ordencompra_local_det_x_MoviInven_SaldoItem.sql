@@ -6,7 +6,7 @@ AS
 SELECT     B.IdEmpresa, B.IdSucursal, B.IdOrdenCompra, B.Secuencia, B.IdProducto, ISNULL(AVG(B.do_Cantidad), 0) AS do_CantidadOC, ISNULL(SUM(D.dm_cantidad), 0) 
                       AS dm_cantidad_Inv, AVG(B.do_Cantidad) - ISNULL(SUM(D.dm_cantidad), 0) AS SaldoxRecibir, per.pe_nombreCompleto pr_nombre, 
                       dbo.com_ordencompra_local.IdProveedor, dbo.com_ordencompra_local.Estado, dbo.com_ordencompra_local.oc_fecha, 
-                      dbo.com_ordencompra_local.oc_NumDocumento, dbo.com_ordencompra_local.oc_observacion, dbo.com_ordencompra_local.Solicitante, 
+                      dbo.com_ordencompra_local.oc_NumDocumento, dbo.com_ordencompra_local.oc_observacion, 
                       dbo.com_ordencompra_local.MotivoAnulacion, dbo.com_ordencompra_local.MotivoReprobacion, dbo.com_ordencompra_local.co_fechaReproba, 
                       dbo.com_ordencompra_local.IdUsuario_Reprue, dbo.com_ordencompra_local.IdUsuario_Aprueba, dbo.com_ordencompra_local.co_fecha_aprobacion
 FROM         dbo.com_ordencompra_local INNER JOIN
@@ -22,6 +22,6 @@ FROM         dbo.com_ordencompra_local INNER JOIN
 					  tb_persona as per on cp_proveedor.IdPersona = per.IdPersona
 GROUP BY B.IdEmpresa, B.IdSucursal, B.IdOrdenCompra, B.Secuencia, B.IdProducto, per.pe_nombreCompleto, dbo.com_ordencompra_local.IdProveedor, 
                       dbo.com_ordencompra_local.Estado, dbo.com_ordencompra_local.oc_fecha, dbo.com_ordencompra_local.oc_NumDocumento, 
-                      dbo.com_ordencompra_local.oc_observacion, D.IdProducto, dbo.com_ordencompra_local.Solicitante, dbo.com_ordencompra_local.MotivoAnulacion, 
+                      dbo.com_ordencompra_local.oc_observacion, D.IdProducto,  dbo.com_ordencompra_local.MotivoAnulacion, 
                       dbo.com_ordencompra_local.MotivoReprobacion, dbo.com_ordencompra_local.co_fechaReproba, dbo.com_ordencompra_local.IdUsuario_Reprue, 
                       dbo.com_ordencompra_local.IdUsuario_Aprueba, dbo.com_ordencompra_local.co_fecha_aprobacion

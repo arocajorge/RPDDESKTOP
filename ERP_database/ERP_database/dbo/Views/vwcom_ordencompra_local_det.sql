@@ -1,11 +1,11 @@
 ﻿CREATE view [dbo].[vwcom_ordencompra_local_det]
 as
 SELECT        IdEmpresa, IdSucursal, IdOrdenCompra, Secuencia, IdProducto, do_Cantidad, do_precioCompra, do_porc_des, do_descuento, do_precioFinal, do_subtotal, do_iva, 
-                         do_total, do_ManejaIva, do_Costeado, do_peso, do_observacion, Tiene_Movi_Inven, IdCentroCosto, IdCentroCosto_sub_centro_costo, IdPunto_cargo_grupo, 
+                         do_total, do_observacion, Tiene_Movi_Inven, IdCentroCosto, IdCentroCosto_sub_centro_costo, IdPunto_cargo_grupo, 
                          IdPunto_cargo, IdUnidadMedida, nom_sub_centro_costo, oc_fecha, oc_observacion, Su_Descripcion, IdMotivo, nom_motivo_OC, pr_descripcion, nom_medida, 
                          IdUnidadMedida_Consumo, Por_Iva, IdCod_Impuesto
 FROM            (SELECT        OC.IdEmpresa, OC.IdSucursal, OC.IdOrdenCompra, OC.Secuencia, OC.IdProducto, OC.do_Cantidad, OC.do_precioCompra, OC.do_porc_des, 
-                                                    OC.do_descuento, OC.do_precioFinal, OC.do_subtotal, OC.do_iva, OC.do_total, OC.do_ManejaIva, OC.do_Costeado, OC.do_peso, OC.do_observacion, 
+                                                    OC.do_descuento, OC.do_precioFinal, OC.do_subtotal, OC.do_iva, OC.do_total,  OC.do_observacion, 
                                                     CASE WHEN OC_x_MOVI.mi_IdEmpresa IS NULL THEN 'N' ELSE 'S' END AS Tiene_Movi_Inven, OC.IdCentroCosto, OC.IdCentroCosto_sub_centro_costo, 
                                                     OC.IdPunto_cargo_grupo, OC.IdPunto_cargo, OC.IdUnidadMedida, dbo.ct_centro_costo_sub_centro_costo.Centro_costo AS nom_sub_centro_costo, 
                                                     dbo.vwcom_ordencompra_local.oc_fecha, dbo.vwcom_ordencompra_local.oc_observacion, dbo.vwcom_ordencompra_local.Su_Descripcion, 

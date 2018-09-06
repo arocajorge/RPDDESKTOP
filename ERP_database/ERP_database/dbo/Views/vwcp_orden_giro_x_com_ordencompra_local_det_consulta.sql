@@ -1,7 +1,7 @@
 ﻿CREATE VIEW dbo.vwcp_orden_giro_x_com_ordencompra_local_det_consulta
 AS
 SELECT        OC.IdEmpresa, OC.IdSucursal, OC.IdOrdenCompra, OC.Secuencia, OC.IdProducto, OC.do_Cantidad, OC.do_precioCompra, OC.do_porc_des, OC.do_descuento, 
-                         OC.do_subtotal, OC.do_iva, OC.do_total, OC.do_ManejaIva, OC.do_Costeado, OC.do_peso, OC.do_observacion, CASE WHEN OC_x_MOVI.mi_IdEmpresa IS NULL 
+                         OC.do_subtotal, OC.do_iva, OC.do_total,  OC.do_observacion, CASE WHEN OC_x_MOVI.mi_IdEmpresa IS NULL 
                          THEN 'N' ELSE 'S' END AS Tiene_Movi_Inven, OC.IdCentroCosto, OC.IdCentroCosto_sub_centro_costo, OC.IdPunto_cargo, OC.IdUnidadMedida, 
                          dbo.ct_centro_costo_sub_centro_costo.Centro_costo AS nom_sub_centro_costo, dbo.com_ordencompra_local.oc_fecha, 
                          dbo.com_ordencompra_local.oc_observacion, dbo.tb_sucursal.Su_Descripcion, dbo.com_ordencompra_local.IdMotivo, 

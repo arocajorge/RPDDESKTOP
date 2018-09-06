@@ -16,7 +16,7 @@
   select 
   cab.idempresa ,@i_IdUsuario ,GETDATE(),@i_nom_pc, cab.IdSucursal, cab.IdOrdenCompra , 
   (det.do_precioCompra -det.do_descuento) as valorunitario, det.do_subtotal as valortotal, 
-  det.do_iva as ivaxreg,  cab.oc_fecha,cab.pr_nombre,cab.Solicitante,
+  det.do_iva as ivaxreg,  
    pro.pr_descripcion ,pro.IdUnidadMedida , (0 *det.do_Cantidad )as pesoxreg,
   0, pro.IdProducto  , det.do_Cantidad as cantidad,det.Secuencia 
   from vwcom_ordencompra_local cab inner join com_ordencompra_local_det  det

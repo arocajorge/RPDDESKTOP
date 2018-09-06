@@ -1,7 +1,7 @@
 ﻿CREATE VIEW [dbo].[vwcp_Orden_Giro_Conciliado_x_Ing_Bod_x_OC] AS
 SELECT det.IdEmpresa, det.IdAprobacion, conci.IdEmpresa AS IdEmpresaConciliacion, conci.IdConciliacion , det.Secuencia  , det.IdEmpresa_Ing_Egr_Inv, det.IdSucursal_Ing_Egr_Inv, det.IdNumMovi_Ing_Egr_Inv,
 		det.Secuencia_Ing_Egr_Inv, vwin_Ing_Egr.IdBodega, vwin_Ing_Egr.cm_fecha as  Fecha_Ing_Bod, vwin_Ing_Egr.IdProducto, vwin_Ing_Egr.nom_producto, vwin_Ing_Egr.IdUnidadMedida, vwin_Ing_Egr.nom_medida,
-		vwin_Ing_Egr.nom_bodega, vwin_Ing_Egr.nom_sucursal, det.Cantidad, det.Costo_uni, vwin_Ing_Egr.do_porc_des, vwin_Ing_Egr.do_ManejaIva, cab.IdProveedor, pe_nombreCompleto pr_nombre,
+		vwin_Ing_Egr.nom_bodega, vwin_Ing_Egr.nom_sucursal, det.Cantidad, det.Costo_uni, vwin_Ing_Egr.do_porc_des,  cab.IdProveedor, pe_nombreCompleto pr_nombre,
 		vwin_Ing_Egr.IdOrdenCompra
 FROM dbo.cp_Aprobacion_Ing_Bod_x_OC_det det INNER JOIN 
 			dbo.cp_Aprobacion_Ing_Bod_x_OC  cab ON det.IdEmpresa = cab.IdEmpresa AND det.IdAprobacion = cab.IdAprobacion INNER JOIN 

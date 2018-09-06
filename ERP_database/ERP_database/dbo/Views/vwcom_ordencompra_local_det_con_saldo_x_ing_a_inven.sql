@@ -2,7 +2,7 @@
 AS
 SELECT        dbo.com_ordencompra_local.IdEmpresa, dbo.com_ordencompra_local.IdSucursal, dbo.com_ordencompra_local.IdOrdenCompra, 
                          dbo.com_ordencompra_local_det.Secuencia AS secuencia_oc_det, dbo.tb_sucursal.Su_Descripcion AS nom_sucu, dbo.com_ordencompra_local.IdProveedor, 
-                         per.pe_nombreCompleto AS nom_proveedor, dbo.com_ordencompra_local.Tipo, dbo.com_ordencompra_local.oc_fecha, 
+                         per.pe_nombreCompleto AS nom_proveedor,  dbo.com_ordencompra_local.oc_fecha, 
                          dbo.com_ordencompra_local.oc_observacion, dbo.in_Producto.pr_codigo AS cod_producto, dbo.in_Producto.pr_descripcion AS nom_producto, 
                          dbo.com_ordencompra_local_det.IdProducto, CASE WHEN dbo.com_ordencompra_local_det.do_precioFinal = 0 OR
                          dbo.com_ordencompra_local_det.do_precioFinal = NULL 
