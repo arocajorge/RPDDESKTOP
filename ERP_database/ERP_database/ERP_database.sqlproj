@@ -361,7 +361,6 @@
     <Build Include="dbo\Tables\tb_transportista.sql" />
     <Build Include="dbo\Tables\cxc_cobro_det.sql" />
     <Build Include="dbo\Tables\seg_Menu_Grupo_x_seg_Menu_Item.sql" />
-    <Build Include="dbo\Tables\ro_empleado_gastos_perso.sql" />
     <Build Include="Fj_servindustrias\Tables\fa_pre_facturacion_det_otros.sql" />
     <Build Include="Fj_servindustrias\Tables\ro_Grupo_empleado_det.sql" />
     <Build Include="dbo\Tables\ba_Talonario_cheques_x_banco.sql" />
@@ -370,7 +369,6 @@
     <Build Include="dbo\Tables\cxc_cobro_det_x_ct_cbtecble_det.sql" />
     <Build Include="dbo\Tables\seg_Menu_Item.sql" />
     <Build Include="dbo\Tables\cp_orden_pago.sql" />
-    <Build Include="dbo\Tables\ro_empleado_gastos_perso_x_Gastos_deduci.sql" />
     <Build Include="Fj_servindustrias\Tables\ct_distribucion_gastos_x_periodo_det.sql" />
     <Build Include="dbo\Tables\fa_TerminoPago_Distribucion.sql" />
     <Build Include="dbo\Tables\in_Marca.sql" />
@@ -382,7 +380,6 @@
     <Build Include="dbo\Tables\cxc_cobro_tipo.sql" />
     <Build Include="dbo\Tables\seg_Menu_Item_Tipo.sql" />
     <Build Include="dbo\Tables\cp_orden_pago_cancelaciones.sql" />
-    <Build Include="dbo\Tables\ro_empleado_gastos_perso_x_otros_gast_deduci.sql" />
     <Build Include="Grafinpren\Tables\cxc_Comisiones_x_vendedor.sql" />
     <Build Include="Fj_servindustrias\Tables\ro_fectividad_Entrega_x_Periodo_Empleado_Det.sql" />
     <Build Include="dbo\Tables\tbCONTA_Rpt005.sql" />
@@ -1197,7 +1194,6 @@
     <Build Include="dbo\Views\vwba_Catalogo_IdAuto_numeric.sql" />
     <Build Include="dbo\Views\vwcaj_caj_Caja_Movimiento.sql" />
     <Build Include="Fj_servindustrias\Views\vwro_ro_empleado_x_Activo_Fijo_Historico.sql" />
-    <Build Include="dbo\Views\vwRo_empleado_gastos_perso_x_Gastos_deduci_x_sri_tipo_Gasto.sql" />
     <Build Include="dbo\Views\vwFAC_Rpt011.sql" />
     <Build Include="dbo\Views\vwct_centro_costo_sub_centro_costo.sql" />
     <Build Include="dbo\Views\vwro_empleado_datos_generales.sql" />
