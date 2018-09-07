@@ -1,6 +1,7 @@
-﻿create view web.VWROL_005 AS
-						 SELECT        dbo.ro_Acta_Finiquito.IdEmpresa, dbo.ro_Acta_Finiquito.IdActaFiniquito, dbo.ro_Acta_Finiquito.IdEmpleado, dbo.ro_Acta_Finiquito.IdCausaTerminacion, dbo.ro_Acta_Finiquito.IdContrato, dbo.ro_Acta_Finiquito.FechaIngreso, 
-                         dbo.ro_Acta_Finiquito.FechaSalida, dbo.ro_Acta_Finiquito.UltimaRemuneracion, dbo.ro_Acta_Finiquito.Observacion, dbo.ro_Acta_Finiquito.Ingresos, dbo.ro_Acta_Finiquito.Egresos, dbo.ro_Acta_Finiquito.EsMujerEmbarazada, 
+﻿
+create view  web.VWROL_005 as
+SELECT        dbo.ro_Acta_Finiquito.IdEmpresa, dbo.ro_Acta_Finiquito.IdActaFiniquito, dbo.ro_Acta_Finiquito.IdEmpleado, dbo.ro_Acta_Finiquito.IdCausaTerminacion, dbo.ro_Acta_Finiquito.IdContrato, dbo.ro_Acta_Finiquito.FechaIngreso, 
+                         dbo.ro_Acta_Finiquito.FechaSalida, dbo.ro_Acta_Finiquito.UltimaRemuneracion, dbo.ro_Acta_Finiquito.Observacion,IIF(valor>0, valor,0.00) Ingresos,iif(valor<1, valor,0.00)Egresos, dbo.ro_Acta_Finiquito.EsMujerEmbarazada, 
                          dbo.ro_Acta_Finiquito.EsDirigenteSindical, dbo.ro_Acta_Finiquito.EsPorDiscapacidad, dbo.ro_Acta_Finiquito.EsPorEnfermedadNoProfesional, dbo.ro_Acta_Finiquito_Detalle.IdSecuencia, 
                          dbo.ro_Acta_Finiquito_Detalle.Observacion AS DescripcionDetalle, dbo.ro_Acta_Finiquito_Detalle.Valor, dbo.ro_Acta_Finiquito.IdCargo, dbo.ro_contrato.NumDocumento, dbo.tb_persona.pe_cedulaRuc, 
                          dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_cargo.ca_descripcion, dbo.ro_rubro_tipo.ru_descripcion
@@ -12,6 +13,5 @@ FROM            dbo.ro_Acta_Finiquito INNER JOIN
                          dbo.ro_empleado ON dbo.ro_Acta_Finiquito.IdEmpresa = dbo.ro_empleado.IdEmpresa AND dbo.ro_Acta_Finiquito.IdEmpleado = dbo.ro_empleado.IdEmpleado AND dbo.ro_contrato.IdEmpresa = dbo.ro_empleado.IdEmpresa AND 
                          dbo.ro_contrato.IdEmpleado = dbo.ro_empleado.IdEmpleado INNER JOIN
                          dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
-                         dbo.ro_cargo ON dbo.ro_Acta_Finiquito.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_Acta_Finiquito.IdCargo = dbo.ro_cargo.IdCargo AND dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND 
-                         dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo INNER JOIN
+                         dbo.ro_cargo ON dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo INNER JOIN
                          dbo.ro_rubro_tipo ON dbo.ro_Acta_Finiquito_Detalle.IdEmpresa = dbo.ro_rubro_tipo.IdEmpresa AND dbo.ro_Acta_Finiquito_Detalle.IdRubro = dbo.ro_rubro_tipo.IdRubro
