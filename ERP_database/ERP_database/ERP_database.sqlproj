@@ -84,6 +84,7 @@
     <Folder Include="Naturisa\Stored Procedures\" />
     <Folder Include="Security\" />
     <Folder Include="EntidadRegulatoria\Views\" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\in_Ing_Egr_Inven.sql" />
@@ -455,7 +456,6 @@
     <Build Include="dbo\Tables\sri_ciudad.sql" />
     <Build Include="dbo\Tables\ro_rubro_tipo.sql" />
     <Build Include="dbo\Tables\cp_pagos_sri.sql" />
-    <Build Include="dbo\Tables\ro_empleado_x_Proyeccion_Gastos_Personales.sql" />
     <Build Include="Fj_servindustrias\Tables\ro_ruta.sql" />
     <Build Include="dbo\Tables\tbCXP_Rpt004.sql" />
     <Build Include="dbo\Tables\tb_provincia.sql" />
@@ -1930,6 +1930,11 @@
     <Build Include="web\Views\VWINV_011.sql" />
     <Build Include="dbo\Functions\calcular_dias_trabajados.sql" />
     <Build Include="dbo\Tables\tbl_TransaccionesAutorizadas.sql" />
-    <Build Include="web\Views\ro_empleado_x_Proyeccion_Gastos_Personales.sql" />
+    <Build Include="dbo\Tables\ro_empleado_proyeccion_gastos_det.sql" />
+    <Build Include="dbo\Tables\ro_empleado_proyeccion_gastos.sql" />
+    <Build Include="web\Views\vwro_empleado_x_Proyeccion_Gastos_Personales.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
   </ItemGroup>
 </Project>
