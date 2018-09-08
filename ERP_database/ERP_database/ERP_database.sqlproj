@@ -1933,6 +1933,8 @@
     <Build Include="dbo\Tables\ro_empleado_proyeccion_gastos_det.sql" />
     <Build Include="dbo\Tables\ro_empleado_proyeccion_gastos.sql" />
     <Build Include="web\Views\vwro_empleado_x_Proyeccion_Gastos_Personales.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwrdep_IngrEgr_x_Empleado.sql" />
+    <Build Include="EntidadRegulatoria\Views\vwrdep_gastos_x_rubros_deducibles.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
