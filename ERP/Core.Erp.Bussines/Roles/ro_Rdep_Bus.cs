@@ -1,8 +1,4 @@
-﻿/*CLASE: ro_Rdep_Bus
- *CREADO POR: ALBERTO MENA
- *FECHA: 05-06-2015
- *DERECHOS RESERVADOS - INNOVATECORP
- */
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;

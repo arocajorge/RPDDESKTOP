@@ -3,7 +3,7 @@ create view EntidadRegulatoria.vwrdep_IngrEgr_x_Empleado as
 select Ingresos_fijos.*, Ingresos_varios.IngresoVarios
 from 
 (
-SELECT  IdEmpresa,IdEmpleado,pe_anio, Su_CodigoEstablecimiento,pe_cedulaRuc,pe_nombre,pe_apellido, [24] as Sueldo,CAST( isnull( [198],0) as numeric(10,2)) as FondosReserva, CAST( [199] as numeric(10,2)) as DecimoTercerSueldo,[200] as DecimoCuartoSueldo,CAST( ISNULL( [295],0) as numeric(10,2)) as Vacaciones,
+SELECT  IdEmpresa,IdEmpleado,pe_anio, Su_CodigoEstablecimiento,pe_cedulaRuc,pe_nombre,pe_apellido, [24] as Sueldo,CAST( isnull( [198],0) as numeric(10,2)) as FondosReserva, CAST( [199] as numeric(10,2)) as DecimoTercerSueldo,[200] as DecimoCuartoSueldo,CAST( ISNULL( [295],0) as numeric(10,2)) as Vacaciones,[6] AportePErsonal,
 ISNULL( GastoAlimentacion,0)GastoAlimentacion,ISNULL( GastoEucacion,0)GastoEucacion,ISNULL( GastoSalud,0)GastoSalud,ISNULL( GastoVestimenta,0)GastoVestimenta,ISNULL( GastoVivienda,0) GastoVivienda,
 ISNULL(Utilidades,0)Utilidades
 FROM (
@@ -33,7 +33,7 @@ GROUP BY rol_det.IdEmpresa, rol_det.IdEmpleado, rol_det.IdRubro, rol_det.Valor, 
 PIVOT
 (
    sum([Valor])
-    FOR [IdRubro] IN ([24],[199],[200],[198],[295])
+    FOR [IdRubro] IN ([24],[199],[200],[198],[295],[6])
 )AS pvt
 
 ) as Ingresos_fijos
