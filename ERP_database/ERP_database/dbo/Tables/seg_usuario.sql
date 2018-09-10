@@ -13,8 +13,12 @@
     [CambiarContraseniaSgtSesion] BIT           NULL,
     [es_super_admin]              BIT           NOT NULL,
     [contrasena_admin]            VARCHAR (MAX) NULL,
-    CONSTRAINT [PK_seg_usuario] PRIMARY KEY CLUSTERED ([IdUsuario] ASC)
+    [IdMenu]                      INT           NULL,
+    CONSTRAINT [PK_seg_usuario] PRIMARY KEY CLUSTERED ([IdUsuario] ASC),
+    CONSTRAINT [FK_seg_usuario_seg_Menu] FOREIGN KEY ([IdMenu]) REFERENCES [dbo].[seg_Menu] ([IdMenu])
 );
+
+
 
 
 

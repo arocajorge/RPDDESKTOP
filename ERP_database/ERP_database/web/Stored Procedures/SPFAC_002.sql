@@ -1,4 +1,5 @@
-﻿--exec [web].[SPFAC_002] 1,1,1,57,57,1,9999,'2018/08/02'
+﻿
+--exec [web].[SPFAC_002] 1,1,1,57,57,1,9999,'2018/08/02'
 CREATE PROCEDURE [web].[SPFAC_002]
 	@IdEmpresa as int,
 	@SucursalIni as int,
@@ -7,7 +8,8 @@ CREATE PROCEDURE [web].[SPFAC_002]
 	@IdClienteFin as numeric,
 	@IdClienteContactoIni as int,
 	@IdClienteContactoFin as int,
-	@fechaCorte as datetime
+	@fechaCorte as datetime,
+	@MostrarSoloCarteraVencida bit
 AS
 BEGIN
 	SET NOCOUNT ON;
@@ -105,7 +107,7 @@ and Facturas_y_notas_deb.IdCbteVta=Cobros_x_fac.IdCbte_vta_nota
 and Facturas_y_notas_deb.vt_tipoDoc=Cobros_x_fac.dc_TipoDocumento
 where 
     Facturas_y_notas_deb.IdEmpresa = @IdEmpresa 
-	and round(Facturas_y_notas_deb.Valor_Original,2) - round(isnull(Cobros_x_fac.dc_ValorPago,0),2)<>0
-
+	and round(Facturas_y_notas_deb.Valor_Original,2) - round(isnull(Cobros_x_fac.dc_ValorPago,0),2) > 0
+	and iif(@MostrarSoloCarteraVencida = 1,DATEDIFF( day,Facturas_y_notas_deb.vt_fech_venc,@fechaCorte), 0) >= 0
 
 END
