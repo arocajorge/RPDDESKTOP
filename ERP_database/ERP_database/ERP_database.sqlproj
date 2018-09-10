@@ -1719,7 +1719,6 @@
     <Build Include="dbo\Stored Procedures\spSys_Borrar_Movimiento_Caja.sql" />
     <Build Include="Fj_servindustrias\Stored Procedures\spROLES_Rpt017.sql" />
     <Build Include="dbo\Stored Procedures\spSys_Borrar_Orden_Pago.sql" />
-    <Build Include="dbo\Stored Procedures\spSys_Borrar_tablas_CXC_y_Relaciones_CAJBAN.sql" />
     <Build Include="Fj_servindustrias\Stored Procedures\spINV_FJ_Rpt009.sql" />
     <Build Include="dbo\Stored Procedures\spRo_LiquidarEmpleado.sql" />
     <Build Include="dbo\Stored Procedures\spSys_Carga_Clientes_desde_persona.sql" />
@@ -1940,6 +1939,7 @@
     <Build Include="web\Stored Procedures\SPCXC_005.sql" />
     <Build Include="web\Stored Procedures\SPINV_012.sql" />
     <Build Include="web\Stored Procedures\SPINV_004.sql" />
+    <Build Include="web\Views\vwcom_ordencompra_local_det.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
