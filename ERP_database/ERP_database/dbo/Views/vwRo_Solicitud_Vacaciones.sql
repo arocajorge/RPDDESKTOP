@@ -1,16 +1,24 @@
 ﻿CREATE VIEW dbo.vwRo_Solicitud_Vacaciones
 AS
-SELECT        dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa, dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitud, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.AnioServicio, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_q_Corresponde, dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_a_disfrutar, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Dias_pendiente, dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Desde, dbo.ro_Solicitud_Vacaciones_x_empleado.Anio_Hasta, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Desde, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Hasta, dbo.ro_Solicitud_Vacaciones_x_empleado.Fecha_Retorno, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.Observacion, dbo.ro_Solicitud_Vacaciones_x_empleado.IdUsuario_Anu, dbo.ro_Solicitud_Vacaciones_x_empleado.Estado, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEstadoAprobacion, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado_aprue, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado_remp, dbo.ro_Solicitud_Vacaciones_x_empleado.Gozadas_Pgadas, dbo.ro_Solicitud_Vacaciones_x_empleado.Canceladas, 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdVacacion, dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.em_codigo, dbo.ro_Historico_Liquidacion_Vacaciones.IdLiquidacion
-FROM            dbo.ro_Solicitud_Vacaciones_x_empleado INNER JOIN
-                         dbo.ro_empleado ON dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa = dbo.ro_empleado.IdEmpresa AND dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado = dbo.ro_empleado.IdEmpleado INNER JOIN
-                         dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona LEFT OUTER JOIN
-                         dbo.ro_Historico_Liquidacion_Vacaciones ON dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpresa = dbo.ro_Historico_Liquidacion_Vacaciones.IdEmpresa AND 
-                         dbo.ro_Solicitud_Vacaciones_x_empleado.IdEmpleado = dbo.ro_Historico_Liquidacion_Vacaciones.IdEmpleado AND dbo.ro_Solicitud_Vacaciones_x_empleado.IdSolicitud = dbo.ro_Historico_Liquidacion_Vacaciones.IdSolicitud
+SELECT        comp_det.IdEmpresa, comp_det.IdTipoCbte, comp_det.IdCbteCble, comp_det.secuencia, comp_det.IdCtaCble, CASE WHEN comp_det.dc_Valor < 0 THEN comp_det.dc_Valor * - 1 ELSE comp_det.dc_Valor END AS dc_Valor, 
+                         comp_det.dc_Observacion, ct_cuentas.pc_Cuenta
+FROM            dbo.ct_cbtecble_det AS comp_det INNER JOIN
+                         dbo.ct_plancta AS ct_cuentas ON comp_det.IdEmpresa = ct_cuentas.IdEmpresa AND comp_det.IdCtaCble = ct_cuentas.IdCtaCble INNER JOIN
+                         dbo.ct_cbtecble AS comp ON comp_det.IdEmpresa = comp.IdEmpresa AND comp_det.IdTipoCbte = comp.IdTipoCbte AND comp_det.IdCbteCble = comp.IdCbteCble
+WHERE        (NOT EXISTS
+                             (SELECT        IdEmpresa, IdOrdenCompra_ext, IdEmpresa_ct, IdTipoCbte, IdCbteCble, secuencia_ct, IdGasto_tipo
+                               FROM            dbo.imp_orden_compra_ext_ct_cbteble_det_gastos AS imp
+                               WHERE        (comp_det.IdEmpresa = IdEmpresa) AND (comp_det.IdTipoCbte = imp.IdTipoCbte) AND (comp_det.IdCbteCble = imp.IdCbteCble) AND (comp.cb_Estado = 'A') AND (comp.cb_Observacion NOT LIKE '%REVERSO%') AND 
+                                                         (comp_det.dc_Observacion NOT LIKE '%REVERSO%'))) 
+										AND (NOT EXISTS
+                             (SELECT        IdEmpresa, IdTipoCbte, IdCbteCble, IdEmpresa_Anu, IdTipoCbte_Anu, IdCbteCble_Anu, ip
+                               FROM            dbo.ct_cbtecble_Reversado AS rev
+                               WHERE        (comp_det.IdEmpresa = rev.IdEmpresa) AND (comp_det.IdTipoCbte = rev.IdTipoCbte) AND (comp_det.IdCbteCble = rev.IdCbteCble) AND (comp.cb_Observacion NOT LIKE '%REVERSO%') AND 
+                                                         (comp_det.dc_Observacion NOT LIKE '%REVERSO%')))
 
+							AND (NOT EXISTS
+                             (SELECT        IdEmpresa
+                               FROM            dbo.imp_liquidacion AS rev
+                               WHERE        (comp_det.IdEmpresa =rev. IdEmpresa) AND (comp_det.IdTipoCbte = rev.IdTipoCbte_ct) AND (comp_det.IdCbteCble = rev.IdCbteCble_ct) AND (comp.cb_Observacion NOT LIKE '%REVERSO%') AND 
+                                                         (comp_det.dc_Observacion NOT LIKE '%REVERSO%')))
+							

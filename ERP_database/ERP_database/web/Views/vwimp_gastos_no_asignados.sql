@@ -1,22 +1,18 @@
-﻿create view web.vwimp_gastos_no_asignados as
-SELECT        comp_det.IdEmpresa, comp_det.IdTipoCbte, comp_det.IdCbteCble, comp_det.secuencia, comp_det.IdCtaCble, case when  comp_det.dc_Valor<0 then  comp_det.dc_Valor*-1 else comp_det.dc_Valor end  dc_Valor, comp_det.dc_Observacion, ct_cuentas.pc_Cuenta
+﻿SELECT        comp_det.IdEmpresa, comp_det.IdTipoCbte, comp_det.IdCbteCble, comp_det.secuencia, comp_det.IdCtaCble, CASE WHEN comp_det.dc_Valor < 0 THEN comp_det.dc_Valor * - 1 ELSE comp_det.dc_Valor END AS dc_Valor, 
+                         comp_det.dc_Observacion, ct_cuentas.pc_Cuenta
 FROM            dbo.ct_cbtecble_det AS comp_det INNER JOIN
                          dbo.ct_plancta AS ct_cuentas ON comp_det.IdEmpresa = ct_cuentas.IdEmpresa AND comp_det.IdCtaCble = ct_cuentas.IdCtaCble INNER JOIN
-                         dbo.ct_cbtecble AS comp ON comp_det.IdEmpresa = comp.IdEmpresa AND comp_det.IdTipoCbte = comp.IdTipoCbte AND comp_det.IdCbteCble = comp.IdCbteCble	
-	where not exists
-	(select * from imp_orden_compra_ext_ct_cbteble_det_gastos imp
-	where comp_det.IdEmpresa=imp.IdEmpresa
-	and comp_det.IdTipoCbte=imp.IdTipoCbte
-	and comp_det.IdCbteCble=imp.IdCbteCble
-	and comp.cb_Estado='A'
-	and comp.cb_Observacion not like '%REVERSO%'
-	and comp_det.dc_Observacion not like '%REVERSO%'
-	)
-	and not exists
-	(select * from ct_cbtecble_Reversado rev
-	where comp_det.IdEmpresa=rev.IdEmpresa
-	and comp_det.IdTipoCbte=rev.IdTipoCbte
-	and comp_det.IdCbteCble=rev.IdCbteCble
-    and comp.cb_Observacion not like '%REVERSO%'
-    and comp_det.dc_Observacion not like '%REVERSO%'
-	)
+                         dbo.ct_cbtecble AS comp ON comp_det.IdEmpresa = comp.IdEmpresa AND comp_det.IdTipoCbte = comp.IdTipoCbte AND comp_det.IdCbteCble = comp.IdCbteCble
+WHERE        (NOT EXISTS
+                             (SELECT        IdEmpresa, IdOrdenCompra_ext, IdEmpresa_ct, IdTipoCbte, IdCbteCble, secuencia_ct, IdGasto_tipo
+                               FROM            dbo.imp_orden_compra_ext_ct_cbteble_det_gastos AS imp
+                               WHERE        (comp_det.IdEmpresa = IdEmpresa) AND (comp_det.IdTipoCbte = IdTipoCbte) AND (comp_det.IdCbteCble = IdCbteCble) AND (comp.cb_Estado = 'A') AND (comp.cb_Observacion NOT LIKE '%REVERSO%') AND 
+                                                         (comp_det.dc_Observacion NOT LIKE '%REVERSO%'))) AND (NOT EXISTS
+                             (SELECT        IdEmpresa, IdTipoCbte, IdCbteCble, IdEmpresa_Anu, IdTipoCbte_Anu, IdCbteCble_Anu, ip
+                               FROM            dbo.ct_cbtecble_Reversado AS rev
+                               WHERE        (comp_det.IdEmpresa = IdEmpresa) AND (comp_det.IdTipoCbte = IdTipoCbte) AND (comp_det.IdCbteCble = IdCbteCble) AND (comp.cb_Observacion NOT LIKE '%REVERSO%') AND 
+                                                         (comp_det.dc_Observacion NOT LIKE '%REVERSO%'))) AND (NOT EXISTS
+                             (SELECT        IdEmpresa
+                               FROM            dbo.imp_liquidacion AS rev
+                               WHERE        (comp_det.IdEmpresa = IdEmpresa) AND (comp_det.IdTipoCbte = IdTipoCbte_ct) AND (comp_det.IdCbteCble = IdCbteCble_ct) AND (comp.cb_Observacion NOT LIKE '%REVERSO%') AND 
+                                                         (comp_det.dc_Observacion NOT LIKE '%REVERSO%')))
