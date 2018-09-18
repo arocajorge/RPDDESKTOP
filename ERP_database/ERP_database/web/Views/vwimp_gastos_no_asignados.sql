@@ -1,4 +1,5 @@
-﻿SELECT        comp_det.IdEmpresa, comp_det.IdTipoCbte, comp_det.IdCbteCble, comp_det.secuencia, comp_det.IdCtaCble, CASE WHEN comp_det.dc_Valor < 0 THEN comp_det.dc_Valor * - 1 ELSE comp_det.dc_Valor END AS dc_Valor, 
+﻿create view web.vwimp_gastos_no_asignados as
+SELECT        comp_det.IdEmpresa, comp_det.IdTipoCbte, comp_det.IdCbteCble, comp_det.secuencia, comp_det.IdCtaCble, CASE WHEN comp_det.dc_Valor < 0 THEN comp_det.dc_Valor * - 1 ELSE comp_det.dc_Valor END AS dc_Valor, 
                          comp_det.dc_Observacion, ct_cuentas.pc_Cuenta
 FROM            dbo.ct_cbtecble_det AS comp_det INNER JOIN
                          dbo.ct_plancta AS ct_cuentas ON comp_det.IdEmpresa = ct_cuentas.IdEmpresa AND comp_det.IdCtaCble = ct_cuentas.IdCtaCble INNER JOIN

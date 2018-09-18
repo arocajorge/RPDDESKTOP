@@ -12,7 +12,7 @@
     [oe_fecha_embarque_est]        DATETIME      NULL,
     [oe_fecha_desaduanizacion_est] DATETIME      NULL,
     [IdCtaCble_importacion]        VARCHAR (20)  NOT NULL,
-    [oe_observacion]               VARCHAR (100) NULL,
+    [oe_observacion]               VARCHAR (max) NULL,
     [oe_codigo]                    VARCHAR (30)  NULL,
     [estado]                       BIT           NOT NULL,
     [IdUsuario_creacion]           VARCHAR (20)  NULL,
