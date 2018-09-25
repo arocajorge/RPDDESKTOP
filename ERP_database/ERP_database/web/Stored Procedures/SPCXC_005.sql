@@ -1,4 +1,4 @@
-﻿
+﻿--exec [web].[SPCXC_005] 1,1,9999,1,9999,'2018/12/31',0
 CREATE PROCEDURE [web].[SPCXC_005]
 (
 @IdEmpresa int,

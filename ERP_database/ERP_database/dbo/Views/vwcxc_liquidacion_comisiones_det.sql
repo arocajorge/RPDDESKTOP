@@ -1,23 +1,26 @@
-﻿CREATE VIEW vwcxc_liquidacion_comisiones_det
-AS
-SELECT        cxc_liquidacion_comisiones.IdEmpresa, cxc_liquidacion_comisiones.IdLiquidacion, fa_factura.IdSucursal, fa_factura.IdBodega, fa_factura.IdCbteVta, fa_factura.vt_tipoDoc, fa_factura.vt_serie1, fa_factura.vt_serie2, 
-                         fa_factura.vt_NumFactura, fa_cliente_contactos.Nombres, fa_Vendedor.Ve_Vendedor, fa_Vendedor.NomInterno, fa_TerminoPago.nom_TerminoPago, fa_factura.vt_fecha, fa_factura.vt_fech_venc, SUM(fa_factura_det.vt_Subtotal) 
-                         AS vt_Subtotal, SUM(fa_factura_det.vt_iva) AS vt_iva, SUM(fa_factura_det.vt_total) AS vt_total, fa_Vendedor.IdVendedor, fa_Vendedor.PorComision, cxc_liquidacion_comisiones_det.SubtotalFactura, 
-                         cxc_liquidacion_comisiones_det.IvaFactura, cxc_liquidacion_comisiones_det.TotalFactura, cxc_liquidacion_comisiones_det.TotalCobrado, cxc_liquidacion_comisiones_det.BaseComision, 
-                         cxc_liquidacion_comisiones_det.PorcentajeComision, cxc_liquidacion_comisiones_det.TotalAComisionar, cxc_liquidacion_comisiones_det.TotalComisionado, cxc_liquidacion_comisiones_det.TotalLiquidacion, 
-                         cxc_liquidacion_comisiones_det.NoComisiona
-FROM            fa_factura INNER JOIN
-                         fa_factura_det ON fa_factura.IdEmpresa = fa_factura_det.IdEmpresa AND fa_factura.IdSucursal = fa_factura_det.IdSucursal AND fa_factura.IdBodega = fa_factura_det.IdBodega AND 
-                         fa_factura.IdCbteVta = fa_factura_det.IdCbteVta INNER JOIN
-                         fa_cliente_contactos ON fa_factura.IdEmpresa = fa_cliente_contactos.IdEmpresa AND fa_factura.IdCliente = fa_cliente_contactos.IdCliente AND fa_factura.IdContacto = fa_cliente_contactos.IdContacto INNER JOIN
-                         fa_TerminoPago ON fa_factura.vt_tipo_venta = fa_TerminoPago.IdTerminoPago RIGHT OUTER JOIN
-                         cxc_liquidacion_comisiones_det INNER JOIN
-                         fa_Vendedor ON cxc_liquidacion_comisiones_det.IdEmpresa = fa_Vendedor.IdEmpresa AND cxc_liquidacion_comisiones_det.IdVendedor = fa_Vendedor.IdVendedor INNER JOIN
-                         cxc_liquidacion_comisiones ON cxc_liquidacion_comisiones_det.IdEmpresa = cxc_liquidacion_comisiones.IdEmpresa AND cxc_liquidacion_comisiones_det.IdLiquidacion = cxc_liquidacion_comisiones.IdLiquidacion ON 
-                         fa_factura.IdEmpresa = cxc_liquidacion_comisiones_det.fa_IdEmpresa AND fa_factura.IdSucursal = cxc_liquidacion_comisiones_det.fa_IdSucursal AND fa_factura.IdBodega = cxc_liquidacion_comisiones_det.fa_IdBodega AND 
-                         fa_factura.IdCbteVta = cxc_liquidacion_comisiones_det.fa_IdCbteVta
-GROUP BY fa_factura.IdSucursal, fa_factura.IdBodega, fa_factura.IdCbteVta, fa_factura.vt_tipoDoc, fa_factura.vt_serie1, fa_factura.vt_serie2, fa_factura.vt_NumFactura, fa_cliente_contactos.Nombres, fa_factura.IdVendedor, 
-                         fa_Vendedor.Ve_Vendedor, fa_Vendedor.NomInterno, fa_TerminoPago.nom_TerminoPago, fa_factura.vt_fecha, fa_factura.vt_fech_venc, fa_Vendedor.PorComision, fa_Vendedor.IdVendedor, 
-                         cxc_liquidacion_comisiones.IdEmpresa, cxc_liquidacion_comisiones.IdLiquidacion, cxc_liquidacion_comisiones_det.SubtotalFactura, cxc_liquidacion_comisiones_det.IvaFactura, cxc_liquidacion_comisiones_det.TotalFactura, 
-                         cxc_liquidacion_comisiones_det.TotalCobrado, cxc_liquidacion_comisiones_det.BaseComision, cxc_liquidacion_comisiones_det.PorcentajeComision, cxc_liquidacion_comisiones_det.TotalAComisionar, 
-                         cxc_liquidacion_comisiones_det.TotalComisionado, cxc_liquidacion_comisiones_det.TotalLiquidacion, cxc_liquidacion_comisiones_det.NoComisiona
+﻿CREATE view [dbo].[vwcxc_liquidacion_comisiones_det]
+as
+SELECT dbo.cxc_liquidacion_comisiones.IdEmpresa, dbo.cxc_liquidacion_comisiones.IdLiquidacion, dbo.cxc_liquidacion_comisiones_det.Secuencia, dbo.fa_factura.IdSucursal, dbo.fa_factura.IdBodega, dbo.fa_factura.IdCbteVta, 
+                  dbo.fa_factura.vt_tipoDoc, dbo.fa_factura.vt_serie1, dbo.fa_factura.vt_serie2, dbo.fa_factura.vt_NumFactura, dbo.fa_cliente_contactos.Nombres, dbo.fa_Vendedor.Ve_Vendedor, dbo.fa_Vendedor.NomInterno, 
+                  dbo.fa_TerminoPago.nom_TerminoPago, dbo.fa_factura.vt_fecha, dbo.fa_factura.vt_fech_venc, ISNULL(SUM(dbo.fa_factura_det.vt_Subtotal), 0) AS vt_Subtotal, ISNULL(SUM(dbo.fa_factura_det.vt_iva), 0) AS vt_iva, 
+                  ISNULL(SUM(dbo.fa_factura_det.vt_total), 0) AS vt_total, dbo.fa_Vendedor.IdVendedor, dbo.fa_Vendedor.PorComision, dbo.cxc_liquidacion_comisiones_det.SubtotalFactura, dbo.cxc_liquidacion_comisiones_det.IvaFactura, 
+                  dbo.cxc_liquidacion_comisiones_det.Secuencia AS Expr1, dbo.cxc_liquidacion_comisiones_det.TotalFactura, dbo.cxc_liquidacion_comisiones_det.TotalCobrado, dbo.cxc_liquidacion_comisiones_det.BaseComision, 
+                  dbo.cxc_liquidacion_comisiones_det.PorcentajeComision, dbo.cxc_liquidacion_comisiones_det.TotalAComisionar, dbo.cxc_liquidacion_comisiones_det.TotalComisionado, dbo.cxc_liquidacion_comisiones_det.TotalLiquidacion, 
+                  dbo.cxc_liquidacion_comisiones_det.NoComisiona
+FROM     dbo.fa_factura INNER JOIN
+                  dbo.fa_cliente_contactos ON dbo.fa_factura.IdEmpresa = dbo.fa_cliente_contactos.IdEmpresa AND dbo.fa_factura.IdCliente = dbo.fa_cliente_contactos.IdCliente AND 
+                  dbo.fa_factura.IdContacto = dbo.fa_cliente_contactos.IdContacto INNER JOIN
+                  dbo.fa_TerminoPago ON dbo.fa_factura.vt_tipo_venta = dbo.fa_TerminoPago.IdTerminoPago INNER JOIN
+                  dbo.cxc_liquidacion_comisiones_det INNER JOIN
+                  dbo.fa_Vendedor ON dbo.cxc_liquidacion_comisiones_det.IdEmpresa = dbo.fa_Vendedor.IdEmpresa AND dbo.cxc_liquidacion_comisiones_det.IdVendedor = dbo.fa_Vendedor.IdVendedor INNER JOIN
+                  dbo.cxc_liquidacion_comisiones ON dbo.cxc_liquidacion_comisiones_det.IdEmpresa = dbo.cxc_liquidacion_comisiones.IdEmpresa AND dbo.cxc_liquidacion_comisiones_det.IdLiquidacion = dbo.cxc_liquidacion_comisiones.IdLiquidacion ON 
+                  dbo.fa_factura.IdEmpresa = dbo.cxc_liquidacion_comisiones_det.fa_IdEmpresa AND dbo.fa_factura.IdSucursal = dbo.cxc_liquidacion_comisiones_det.fa_IdSucursal AND 
+                  dbo.fa_factura.IdBodega = dbo.cxc_liquidacion_comisiones_det.fa_IdBodega AND dbo.fa_factura.IdCbteVta = dbo.cxc_liquidacion_comisiones_det.fa_IdCbteVta LEFT OUTER JOIN
+                  dbo.fa_factura_det ON dbo.fa_factura.IdEmpresa = dbo.fa_factura_det.IdEmpresa AND dbo.fa_factura.IdSucursal = dbo.fa_factura_det.IdSucursal AND dbo.fa_factura.IdBodega = dbo.fa_factura_det.IdBodega AND 
+                  dbo.fa_factura.IdCbteVta = dbo.fa_factura_det.IdCbteVta
+GROUP BY dbo.fa_factura.IdSucursal, dbo.fa_factura.IdBodega, dbo.fa_factura.IdCbteVta, dbo.fa_factura.vt_tipoDoc, dbo.fa_factura.vt_serie1, dbo.fa_factura.vt_serie2, dbo.fa_factura.vt_NumFactura, dbo.fa_cliente_contactos.Nombres, 
+                  dbo.fa_factura.IdVendedor, dbo.fa_Vendedor.Ve_Vendedor, dbo.fa_Vendedor.NomInterno, dbo.fa_TerminoPago.nom_TerminoPago, dbo.fa_factura.vt_fecha, dbo.fa_factura.vt_fech_venc, dbo.fa_Vendedor.PorComision, 
+                  dbo.fa_Vendedor.IdVendedor, dbo.cxc_liquidacion_comisiones.IdEmpresa, dbo.cxc_liquidacion_comisiones.IdLiquidacion, dbo.cxc_liquidacion_comisiones_det.Secuencia, dbo.cxc_liquidacion_comisiones_det.SubtotalFactura, 
+                  dbo.cxc_liquidacion_comisiones_det.IvaFactura, dbo.cxc_liquidacion_comisiones_det.TotalFactura, dbo.cxc_liquidacion_comisiones_det.TotalCobrado, dbo.cxc_liquidacion_comisiones_det.BaseComision, 
+                  dbo.cxc_liquidacion_comisiones_det.PorcentajeComision, dbo.cxc_liquidacion_comisiones_det.TotalAComisionar, dbo.cxc_liquidacion_comisiones_det.TotalComisionado, dbo.cxc_liquidacion_comisiones_det.TotalLiquidacion, 
+                  dbo.cxc_liquidacion_comisiones_det.NoComisiona
