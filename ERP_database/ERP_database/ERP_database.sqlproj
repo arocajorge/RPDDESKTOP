@@ -1940,6 +1940,8 @@
     <Build Include="web\Stored Procedures\SPINV_012.sql" />
     <Build Include="web\Stored Procedures\SPINV_004.sql" />
     <Build Include="web\Views\vwcom_ordencompra_local_det.sql" />
+    <Build Include="web\Views\VWCXC_006_sin_comision.sql" />
+    <Build Include="web\Views\VWCXC_006.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
