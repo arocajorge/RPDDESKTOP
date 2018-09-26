@@ -19,7 +19,7 @@ AS
 --set @IdEmpresa =1
 --set @IdNomina =1
 --set @IdNominaTipo =2
---set @IdPEriodo= 201808
+--set @IdPEriodo= 201812
 --set @IdUsuario ='admin'
 --set @observacion= 'prueba'
 
@@ -71,7 +71,7 @@ insert into ro_rol_detalle
 
 select 
 
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'0' ,case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@fi, @Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,DATEDIFF(day ,@fi, @Ff), DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'0' ,dbo.calcular_dias_trabajados(@Fi,@Ff,emp.em_fechaIngaRol)
 ,1						,'Días trabajados'		, null						, null				,null									,null
 FROM            dbo.ro_contrato AS cont INNER JOIN
                 dbo.ro_empleado AS emp ON cont.IdEmpresa = emp.IdEmpresa AND cont.IdEmpleado = emp.IdEmpleado
@@ -91,7 +91,7 @@ insert into ro_rol_detalle
 
 select 
 
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'1' ,cont.sueldo/30*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end)
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,cont.IdEmpleado		,@IdRubro_calculado	,'1' ,cont.sueldo/30*(dbo.calcular_dias_trabajados(@Fi,@Ff,emp.em_fechaIngaRol))
 ,1						,'Sueldo base'		, null						, null				,null									,null
 FROM            dbo.ro_contrato AS cont INNER JOIN
                 dbo.ro_empleado AS emp ON cont.IdEmpresa = emp.IdEmpresa AND cont.IdEmpleado = emp.IdEmpleado
@@ -256,7 +256,7 @@ insert into ro_rol_detalle
 (IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,			Orden,			Valor
 ,rub_visible_reporte,	Observacion,			TipoMovimiento,				IdCentroCosto		,IdCentroCosto_sub_centro_costo			,IdPunto_cargo)
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado	,'51'			,(386/360)*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end)
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado	,'51'			,(386/360)*(dbo.calcular_dias_trabajados(@Fi,@Ff,cont.FechaInicio))
 ,1						,'Decimo cuarto sueldo'	,	null						, null				,null									,null
 FROM  dbo.ro_empleado emp, ro_contrato cont
 where emp.IdEmpresa=cont.IdEmpresa
@@ -458,7 +458,7 @@ insert into ro_rol_detalle_x_rubro_acumulado
 (IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,						Valor,	Estado
 )
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado				,round( (386/360),2)*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end),'PEN'
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado				,round( (386/360),2)*(dbo.calcular_dias_trabajados(@Fi,@Ff,cont.FechaInicio)),'PEN'
 FROM  dbo.ro_empleado emp, ro_contrato cont
 where emp.IdEmpresa=cont.IdEmpresa
 and emp.IdEmpleado=cont.IdEmpleado
@@ -566,7 +566,7 @@ insert into ro_rol_detalle
 (IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,			Orden,			Valor
 ,rub_visible_reporte,	Observacion,			TipoMovimiento,				IdCentroCosto		,IdCentroCosto_sub_centro_costo			,IdPunto_cargo)
 select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado	,'51'			,round( (386/360),2)*( case when emp.em_status!='EST_PLQ' THEN	iif(cont.FechaInicio<=@Fi,DATEDIFF(day ,@Fi,@Ff), DATEDIFF(day ,cont.FechaInicio, @Ff)) ELSE iif(emp.em_fechaSalida>=@Ff,30, DATEDIFF(day ,emp.em_fechaSalida, @Ff)) end)
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,emp.IdEmpleado		,@IdRubro_calculado	,'51'			,round( (386/360),2)*(dbo.calcular_dias_trabajados(@Fi,@Ff,cont.FechaInicio))
 ,0						,'Decimo cuarto sueldo'	,	null						, null				,null									,null
 FROM  dbo.ro_empleado emp, ro_contrato cont
 where emp.IdEmpresa=cont.IdEmpresa
