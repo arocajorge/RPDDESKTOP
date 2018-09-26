@@ -1942,6 +1942,8 @@
     <Build Include="web\Views\vwcom_ordencompra_local_det.sql" />
     <Build Include="web\Views\VWCXC_006_sin_comision.sql" />
     <Build Include="web\Views\VWCXC_006.sql" />
+    <Build Include="web\Views\vwcp_retencion_det.sql" />
+    <Build Include="web\Views\vwcp_retencion_1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
