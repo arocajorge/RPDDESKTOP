@@ -1,4 +1,4 @@
-﻿--EXEC [web].[SPCONTA_003_balances] 1,2018,'2018/06/30','2018/07/31','123',3,0, ''
+﻿--EXEC [web].[SPCONTA_003_balances] 1,2018,'2018/06/30','2018/08/31','123',6,0, ''
 CREATE PROCEDURE [web].[SPCONTA_003_balances]
 (
 @IdEmpresa int,
@@ -249,6 +249,7 @@ from web.ct_CONTA_003_balances
 where IdUsuario = @IdUsuario
 and IdEmpresa = @IdEmpresa
 
+
 	WHILE @Contador > 0
 	BEGIN
 
@@ -285,6 +286,7 @@ and IdEmpresa = @IdEmpresa
 
 		SET @Contador = @Contador - 1
 	END
+
 END
 
 IF(@MostrarSaldo0 = 0)
