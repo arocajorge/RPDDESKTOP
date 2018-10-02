@@ -295,8 +295,39 @@ and rub.ru_tipo='I'
 group by rol_det.IdEmpresa,rol_det.IdEmpleado,rol_det.IdNominaTipo,rol_det.IdNominaTipoLiqui,rol_det.IdPeriodo
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+-------------calculandoliquido impuesto a la renta--------------------------------------------------------------------------------------------<
+----------------------------------------------------------------------------------------------------------------------------------------------
+/*
+select @IdRubro_calculado= IdRubro_IR from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
+insert into ro_rol_detalle
+(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,			Orden,			Valor
+,rub_visible_reporte,	Observacion,			TipoMovimiento,				IdCentroCosto		,IdCentroCosto_sub_centro_costo			,IdPunto_cargo)
 
+select
+@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado	,rub.ru_orden			,
 
+isnull( (
+select ISNULL(valor,0) from (
+select ROW_NUMBER() over(partition by FraccionBasica order by FraccionBasica) as IdRow, ( (( (Valor*12) -FraccionBasica)*Por_ImpFraccion_Exce)+ImpFraccionBasica)/12 as valor
+from ro_tabla_Impu_Renta 
+where  (Valor*12) between FraccionBasica and ExcesoHasta and AnioFiscal=AnioFiscal
+and FraccionBasica>0
+) a where a.IdRow = 1
+
+)
+
+,0)
+
+,1						,'Provisión impuesto a la renta'	,	null						, null				,null									,null
+FROM            dbo.ro_rol_detalle AS rol_det INNER JOIN
+                         dbo.ro_rubro_tipo AS rub ON rol_det.IdEmpresa = rub.IdEmpresa AND rol_det.IdRubro = rub.IdRubro
+where rol_det.IdEmpresa=@IdEmpresa
+and rol_det.IdNominaTipo=@IdNomina
+and rol_det.IdNominaTipoLiqui=@IdNominaTipo
+and rol_det.IdPeriodo=@IdPEriodo
+and rol_det.IdRubro=500
+*/
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 -------------calculando total egreso por empleado--------------------------------------------------------------------------------------------<
@@ -318,6 +349,10 @@ and rol_det.IdNominaTipoLiqui=@IdNominaTipo
 and rol_det.IdPeriodo=@IdPEriodo
 and rub.ru_tipo='E'
 group by rol_det.IdEmpresa,rol_det.IdEmpleado,rol_det.IdNominaTipo,rol_det.IdNominaTipoLiqui,rol_det.IdPeriodo
+
+
+
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -349,39 +384,6 @@ PIVOT
 
 
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------
--------------calculandoliquido impuesto a la renta--------------------------------------------------------------------------------------------<
-----------------------------------------------------------------------------------------------------------------------------------------------
-
-select @IdRubro_calculado= IdRubro_IR from ro_rubros_calculados where IdEmpresa=@IdEmpresa-- obteniendo el idrubro desde parametros
-insert into ro_rol_detalle
-(IdEmpresa,				IdNominaTipo,			IdNominaTipoLiqui,			IdPeriodo,			IdEmpleado,			IdRubro,			Orden,			Valor
-,rub_visible_reporte,	Observacion,			TipoMovimiento,				IdCentroCosto		,IdCentroCosto_sub_centro_costo			,IdPunto_cargo)
-
-select
-@IdEmpresa				,@IdNomina				,@IdNominaTipo				,@IdPEriodo			,rol_det.IdEmpleado		,@IdRubro_calculado	,'200'			,
-
-isnull( (
-select ISNULL(valor,0) from (
-select ROW_NUMBER() over(partition by FraccionBasica order by FraccionBasica) as IdRow, ( (( (Valor*12) -FraccionBasica)*Por_ImpFraccion_Exce)+ImpFraccionBasica)/12 as valor
-from ro_tabla_Impu_Renta 
-where  (Valor*12) between FraccionBasica and ExcesoHasta and AnioFiscal=AnioFiscal
-and FraccionBasica>0
-) a where a.IdRow = 1
-
-)
-
-,0)
-
-,1						,'Provisión impuesto a la renta'	,	null						, null				,null									,null
-FROM            dbo.ro_rol_detalle AS rol_det INNER JOIN
-                         dbo.ro_rubro_tipo AS rub ON rol_det.IdEmpresa = rub.IdEmpresa AND rol_det.IdRubro = rub.IdRubro
-where rol_det.IdEmpresa=@IdEmpresa
-and rol_det.IdNominaTipo=@IdNomina
-and rol_det.IdNominaTipoLiqui=@IdNominaTipo
-and rol_det.IdPeriodo=@IdPEriodo
-and rol_det.IdRubro=500
 
 
 

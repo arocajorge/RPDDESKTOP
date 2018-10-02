@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[TB_EFIRM_LOAD_CARGA](
+	[ID_REGISTRO] [varchar](30) NOT NULL,
+	[FECHA_CARGA] [date] NOT NULL,
+	[ESTADO] [char](1) NOT NULL
+) ON [PRIMARY]
