@@ -1943,7 +1943,6 @@
     <Build Include="web\Views\VWCXC_006_sin_comision.sql" />
     <Build Include="web\Views\VWCXC_006.sql" />
     <Build Include="web\Views\vwcp_retencion_det.sql" />
-    <Build Include="dbo\Tables\TB_EFIRM_LOAD_CARGA.sql" />
     <Build Include="web\Stored Procedures\SPFAC_011.sql" />
     <Build Include="web\Stored Procedures\SPCXP_010.sql" />
   </ItemGroup>
