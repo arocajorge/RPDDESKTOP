@@ -1,10 +1,8 @@
 ﻿CREATE VIEW dbo.vwro_empleado_combo
 AS
-SELECT        dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa, dbo.ro_empleado_x_ro_tipoNomina.IdEmpleado, dbo.ro_empleado_x_ro_tipoNomina.IdTipoNomina, dbo.tb_persona.pe_apellido + ' ' + dbo.tb_persona.pe_nombre AS Empleado, 
-                         dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.em_status
+SELECT        dbo.tb_persona.pe_apellido + ' ' + dbo.tb_persona.pe_nombre AS Empleado, dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.em_status, dbo.ro_empleado.IdEmpresa, dbo.ro_empleado.IdEmpleado
 FROM            dbo.ro_empleado INNER JOIN
-                         dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
-                         dbo.ro_empleado_x_ro_tipoNomina ON dbo.ro_empleado.IdEmpresa = dbo.ro_empleado_x_ro_tipoNomina.IdEmpresa AND dbo.ro_empleado.IdEmpleado = dbo.ro_empleado_x_ro_tipoNomina.IdEmpleado
+                         dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona
 WHERE        (dbo.ro_empleado.em_status <> 'EST_LIQ') AND (dbo.ro_empleado.em_estado = 'A')
 
 GO

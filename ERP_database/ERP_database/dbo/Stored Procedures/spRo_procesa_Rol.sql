@@ -1,5 +1,6 @@
 ﻿
-create PROCEDURE [dbo].[spRo_procesa_Rol] (
+
+CREATE PROCEDURE [dbo].[spRo_procesa_Rol] (
 @IdEmpresa int,
 @IdNomina numeric,
 @IdNominaTipo numeric,
@@ -16,12 +17,12 @@ AS
 --@IdPEriodo numeric,
 --@IdUsuario varchar(50),
 --@observacion varchar(500)
---set @IdEmpresa =1
+--set @IdEmpresa =2
 --set @IdNomina =1
 --set @IdNominaTipo =2
---set @IdPEriodo= 201812
+--set @IdPEriodo= 201809
 --set @IdUsuario ='admin'
---set @observacion= 'prueba'
+--set @observacion= 'PERIODO'+CAST( @IdPEriodo AS varchar(15))
 
 BEGIN
 
@@ -270,6 +271,7 @@ and acum.IdEmpleado=emp.IdEmpleado
 and acum.IdRubro='289'
 and acum.IdEmpresa=@IdEmpresa
 and emp.IdEmpresa=@IdEmpresa)
+AND emp.IdEmpresa=@IdEmpresa
 group by emp.IdEmpresa,emp.IdEmpleado, emp.em_fechaSalida, cont.FechaInicio, cont.FechaFin, emp.em_status
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
