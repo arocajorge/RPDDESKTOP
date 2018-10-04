@@ -34,6 +34,7 @@
     [esta_impresa]        BIT           NULL,
     [fecha_primera_cuota] DATETIME      NULL,
     [valor_abono]         FLOAT (53)    NULL,
+	[aprobada_enviar_sri]         bit not    NULL,
     CONSTRAINT [PK_fa_factura] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdBodega] ASC, [IdCbteVta] ASC),
     CONSTRAINT [FK_fa_factura_caj_Caja] FOREIGN KEY ([IdEmpresa], [IdCaja]) REFERENCES [dbo].[caj_Caja] ([IdEmpresa], [IdCaja]),
     CONSTRAINT [FK_fa_factura_ct_periodo] FOREIGN KEY ([IdEmpresa], [IdPeriodo]) REFERENCES [dbo].[ct_periodo] ([IdEmpresa], [IdPeriodo]),
