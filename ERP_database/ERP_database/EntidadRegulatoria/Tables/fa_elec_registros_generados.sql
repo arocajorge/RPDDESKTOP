@@ -1,12 +1,11 @@
-﻿CREATE TABLE [EntidadRegulatoria].[fa_elec_registros_generados](
-	[ID_REGISTRO] [varchar](30) NOT NULL,
-	[FECHA_CARGA] [date] NOT NULL,
-	[ESTADO] [char](1) NOT NULL,
- CONSTRAINT [PK_fa_elec_registros_generados_1] PRIMARY KEY CLUSTERED 
-(
-	[ID_REGISTRO] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+﻿CREATE TABLE [EntidadRegulatoria].[fa_elec_registros_generados] (
+    [ID_REGISTRO] VARCHAR (100) NOT NULL,
+    [FECHA_CARGA] DATE          NOT NULL,
+    [ESTADO]      CHAR (1)      NOT NULL,
+    CONSTRAINT [PK_fa_elec_registros_generados] PRIMARY KEY CLUSTERED ([ID_REGISTRO] ASC)
+);
+
+
 
 GO
 

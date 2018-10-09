@@ -14,7 +14,7 @@ AS
 delete web.ct_CONTA_003_balances where IdUsuario = @IdUsuario
 
 DECLARE @IdCtaCbleUtilidad varchar(20) 
-SELECT @IdCtaCbleUtilidad = IdCtaCble FROM ct_anio_fiscal_x_cuenta_utilidad WHERE IdanioFiscal = @IdAnio 
+SELECT @IdCtaCbleUtilidad = IdCtaCble FROM ct_anio_fiscal_x_cuenta_utilidad WHERE IdanioFiscal = @IdAnio and IdEmpresa = @IdEmpresa
 
 BEGIN --INSERTO PLAN DE CUENTAS
 INSERT INTO [web].[ct_CONTA_003_balances]

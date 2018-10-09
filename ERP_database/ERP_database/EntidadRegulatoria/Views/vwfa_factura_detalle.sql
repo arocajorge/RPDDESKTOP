@@ -1,8 +1,8 @@
-﻿CREATE VIEW EntidadRegulatoria.vwfa_factura_detalle
-AS
+﻿
+CREATE view EntidadRegulatoria.vwfa_factura_detalle as
 SELECT        dbo.fa_factura_det.IdEmpresa, dbo.fa_factura_det.IdSucursal, dbo.fa_factura_det.IdBodega, dbo.fa_factura_det.IdCbteVta, dbo.fa_factura_det.Secuencia, dbo.in_Producto.pr_codigo, dbo.in_Producto.pr_codigo2, 
-                         dbo.in_Producto.pr_descripcion, dbo.fa_factura_det.vt_detallexItems, dbo.fa_factura_det.vt_cantidad, dbo.fa_factura_det.vt_Precio, dbo.fa_factura_det.vt_PorDescUnitario, dbo.fa_factura_det.vt_DescUnitario, 
-                         dbo.fa_factura_det.vt_PrecioFinal, dbo.fa_factura_det.vt_Subtotal, dbo.fa_factura_det.vt_iva, dbo.fa_factura_det.vt_total, dbo.fa_factura_det.vt_por_iva
+                         dbo.in_Producto.pr_descripcion, dbo.fa_factura_det.vt_detallexItems, dbo.fa_factura_det.vt_cantidad, CAST( dbo.fa_factura_det.vt_Precio as numeric(10,2))vt_Precio ,dbo.fa_factura_det.vt_PorDescUnitario ,CAST( dbo.fa_factura_det.vt_DescUnitario as numeric(10,2))vt_DescUnitario, 
+                        CAST( dbo.fa_factura_det.vt_PrecioFinal as numeric(10,2))vt_PrecioFinal,CAST( dbo.fa_factura_det.vt_Subtotal as numeric(10,2))vt_Subtotal,CAST( dbo.fa_factura_det.vt_iva as numeric(10,2))vt_iva,CAST( dbo.fa_factura_det.vt_total as numeric(10,2))vt_total, dbo.fa_factura_det.vt_por_iva
 FROM            dbo.fa_factura_det INNER JOIN
                          dbo.in_Producto ON dbo.fa_factura_det.IdEmpresa = dbo.in_Producto.IdEmpresa AND dbo.fa_factura_det.IdProducto = dbo.in_Producto.IdProducto
 GO

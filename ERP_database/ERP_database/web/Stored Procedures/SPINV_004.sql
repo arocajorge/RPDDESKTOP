@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE WEB.SPINV_004
+﻿CREATE PROCEDURE [web].[SPINV_004]
 (
 @IdEmpresa int,
 @IdSucursalIni int,
@@ -35,3 +35,4 @@ FROM            in_ProductoTipo RIGHT OUTER JOIN
 WHERE        in_producto_x_tb_bodega.IdEmpresa = @IdEmpresa and in_producto_x_tb_bodega.IdSucursal between @IdSucursalIni and @IdSucursalFin and in_producto_x_tb_bodega.IdBodega between @IdBodegaIni and @IdBodegaFin and
 in_producto_x_tb_bodega.IdProducto between @IdProductoIni and @IdProductoFin and (in_Producto.se_distribuye = 0) 
 AND (in_Producto.IdProducto_padre IS NULL) and in_producto_x_tb_bodega.Stock_minimo > 0 and ISNULL(mov.StockActual, 0) <= in_producto_x_tb_bodega.Stock_minimo and in_producto.IdMarca between @IdMarcaIni and @IdMarcaFin AND in_Producto.Estado = 'A'
+order by in_Marca.Descripcion

@@ -1,5 +1,5 @@
-﻿CREATE VIEW dbo.vwro_empleado_combo
-AS
+﻿CREATE view  vwro_empleado_combo as
+
 SELECT        dbo.tb_persona.pe_apellido + ' ' + dbo.tb_persona.pe_nombre AS Empleado, dbo.tb_persona.pe_cedulaRuc, dbo.ro_empleado.em_status, dbo.ro_empleado.IdEmpresa, dbo.ro_empleado.IdEmpleado
 FROM            dbo.ro_empleado INNER JOIN
                          dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona

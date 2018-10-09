@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[ct_plancta] (
     [IdEmpresa]       INT           NOT NULL,
     [IdCtaCble]       VARCHAR (20)  NOT NULL,
-    [pc_Cuenta]       VARCHAR (150) NOT NULL,
+    [pc_Cuenta]       VARCHAR (500) NOT NULL,
     [IdCtaCblePadre]  VARCHAR (20)  NULL,
     [pc_Naturaleza]   CHAR (1)      NOT NULL,
     [IdNivelCta]      INT           NOT NULL,
@@ -26,6 +26,8 @@
     CONSTRAINT [FK_ct_plancta_ct_plancta_nivel] FOREIGN KEY ([IdEmpresa], [IdNivelCta]) REFERENCES [dbo].[ct_plancta_nivel] ([IdEmpresa], [IdNivelCta]),
     CONSTRAINT [FK_ct_plancta_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa])
 );
+
+
 
 
 GO
