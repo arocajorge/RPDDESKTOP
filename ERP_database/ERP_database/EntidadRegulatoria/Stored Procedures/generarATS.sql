@@ -1,5 +1,4 @@
-﻿
-
+﻿ --  exec [EntidadRegulatoria].[generarATS] 2,201810
 CREATE  PROCEDURE [EntidadRegulatoria].[generarATS]
 @idempresa int,
 @idPeriodo int
@@ -22,12 +21,13 @@ declare
 @fecha_inicio date,
 @fecha_fin date
 
+delete EntidadRegulatoria.ATS_ventas
 select @fecha_inicio=pe_FechaIni, @fecha_fin=pe_FechaFin from ct_periodo where IdEmpresa=@idempresa and IdPeriodo=@idPeriodo
-delete EntidadRegulatoria.ATS_ventas where IdEmpresa=@idempresa and IdPeriodo=@idPeriodo
-delete EntidadRegulatoria.ATS_compras where idempresa=@idempresa and idperiodo=@idPeriodo
-delete EntidadRegulatoria.ATS_retenciones where idempresa=@idempresa and idperiodo=@idPeriodo
-delete EntidadRegulatoria.ATS_comprobantes_anulados where idempresa=@idempresa and idperiodo=@idPeriodo
-delete EntidadRegulatoria.ATS_exportaciones where idempresa=@idempresa and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_ventas where IdEmpresa=@idempresa --and IdPeriodo=@idPeriodo
+delete EntidadRegulatoria.ATS_compras where idempresa=@idempresa-- and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_retenciones where idempresa=@idempresa-- and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_comprobantes_anulados where idempresa=@idempresa-- and idperiodo=@idPeriodo
+delete EntidadRegulatoria.ATS_exportaciones where idempresa=@idempresa --and idperiodo=@idPeriodo
 
 insert into EntidadRegulatoria.ATS_compras
 (
@@ -85,7 +85,7 @@ ventasEstab,								ivaComp)
 select 
 
 @idempresa,									@idPeriodo,											ROW_NUMBER()OVER (ORDER BY ventas.IdEmpresa),						ventas.tpIdCliente,
-ventas.pe_cedulaRuc,							ventas.parteRel,									ventas.tipoCliente,													ventas.pe_nombreCompleto,
+ventas.pe_cedulaRuc,						ventas.parteRel,									ventas.tipoCliente,													ventas.pe_nombreCompleto,
 ventas.tipoEmtipoComprobante,				ventas.tipoEm,										count(ventas.IdCbteVta),											sum(ventas.baseNoGraIva),
 sum(ventas.baseImponible),					sum(ventas.baseImpGrav),							SUM(ventas.montoIva),												sum(ventas.montoIce),
 isnull(sum(cobros.valorRetIva),0.00),		isnull(sum(cobros.valorRetRenta),0.00),				ventas.IdFormaPago,													ventas.vt_serie1,
@@ -108,8 +108,8 @@ fac.IdCliente,
  '18' AS tipoEmtipoComprobante, 
  'F' AS tipoEm,
  0.00 as baseNoGraIva,
-isnull(CASe when fac_det.vt_por_iva=0 then SUM( fac_det.vt_Subtotal)end,0.00) baseImponible,
-isnull(CASe when fac_det.vt_por_iva>0 then SUM( fac_det.vt_Subtotal) end ,0.00)baseImpGrav,
+CASe when fac_det.IdCod_Impuesto_Iva='IVA0' then SUM( fac_det.vt_Subtotal) else 0.00 end baseImponible,
+CASe when fac_det.IdCod_Impuesto_Iva='IVA12' then SUM( fac_det.vt_Subtotal) else 0.00 end baseImpGrav,
 sum(fac_det.vt_iva)montoIva,
 0.00 montoIce,
 fac.vt_serie1,
@@ -128,6 +128,7 @@ FROM            dbo.fa_factura AS fac INNER JOIN
 						 and  fac.Estado='A' 
 						 and fac.vt_fecha between @fecha_inicio and @fecha_fin
 						 and per.IdTipoDocumento!='PAS'
+						 and fac.IdEmpresa = @idempresa
 GROUP BY per.pe_cedulaRuc, per.pe_nombreCompleto,per.IdTipoDocumento, fac_det.vt_por_iva, fac.IdEmpresa,fac.IdCliente,
 fac.IdSucursal,
 fac.IdBodega,
@@ -135,9 +136,24 @@ fac.IdCbteVta,
 fac.vt_serie1,
 fac.vt_serie2,
 fac.vt_NumFactura,
-f_pago.IdFormaPago
+f_pago.IdFormaPago,
+IdCod_Impuesto_Iva
 ) ventas
 left join
+(
+ 
+ 
+ (
+
+
+
+
+
+ 
+
+select cobro_x_retencion.IdEmpresa,cobro_x_retencion.IdSucursal,cobro_x_retencion.IdBodega_Cbte,
+cobro_x_retencion.IdCliente,SUM( cobro_x_retencion.valorRetIva)valorRetIva,SUM( cobro_x_retencion.valorRetRenta)valorRetRenta,cobro_x_retencion.IdCbte_vta_nota
+from
 (
 select  cxc_cobro.idempresa,cxc_cobro.IdSucursal, IdBodega_Cbte,IdCbte_vta_nota, cxc_cobro.idCliente,
 isnull( case when SUBSTRING( cxc_cobro_det.IdCobro_tipo,0,5)= 'RTFT'then sum(dc_ValorPago) end,0.00) valorRetRenta,
@@ -147,18 +163,31 @@ isnull(case when SUBSTRING( cxc_cobro_det.IdCobro_tipo,0,5)= 'RTIV'then sum(dc_V
  and cxc_cobro_det.IdEmpresa=cxc_cobro.IdEmpresa
  and cxc_cobro_det.IdCobro=cxc_cobro.IdCobro
  and cxc_cobro_tipo.IdMotivo_tipo_cobro='RET'
- and cxc_cobro.cr_fecha between @fecha_inicio and @fecha_fin
- and cxc_cobro.cr_estado='A'
- GROUP by cxc_cobro.idempresa,cxc_cobro.IdSucursal, IdBodega_Cbte,IdCbte_vta_nota,sUBSTRING( cxc_cobro_det.IdCobro_tipo,0,5),cxc_cobro.IdCliente
+ and cxc_cobro_det.IdEmpresa=@idempresa
+ GROUP by cxc_cobro.idempresa,cxc_cobro.IdSucursal, IdBodega_Cbte,IdCbte_vta_nota,cxc_cobro.IdCliente, cxc_cobro_det.IdCobro_tipo
+ ) as 
+ cobro_x_retencion
+ group by 
+ cobro_x_retencion.IdEmpresa,cobro_x_retencion.IdSucursal,cobro_x_retencion.IdBodega_Cbte,
+cobro_x_retencion.IdCliente,cobro_x_retencion.IdCbte_vta_nota
+
+
+
+
+
+
+
+ )
  ) as cobros
  on ventas.IdEmpresa=cobros.IdEmpresa
  and ventas.IdSucursal=cobros.IdSucursal
  and ventas.IdBodega=cobros.IdBodega_Cbte
  and ventas.IdCbteVta=cobros.IdCbte_vta_nota
  and ventas.idcliente=cobros.IdCliente
+ and ventas.IdEmpresa=@idempresa
  
  group by ventas.IdEmpresa,ventas.tpIdCliente,ventas.parteRel,ventas.tipoCliente,ventas.tipoEmtipoComprobante,ventas.tipoEm,ventas.IdFormaPago,ventas.vt_serie1, ventas.vt_serie2, ventas.IdCliente, ventas.pe_nombreCompleto, ventas.pe_cedulaRuc
-
+ 
  --*****************************************************************************************************************************************************************++
 --**************************************************************************Retenciones****************************************************************+*****
 insert into EntidadRegulatoria.ATS_retenciones(
@@ -196,7 +225,7 @@ FROM            dbo.cp_orden_giro AS fac INNER JOIN
 						 where fac.co_fechaOg between @fecha_inicio and @fecha_fin
 						 and fac.Estado='A'
 						 and ret.Estado='A'
-
+						 AND FAC.IdEmpresa = @idempresa
 
 
 
@@ -233,6 +262,7 @@ FROM            dbo.fa_factura_det AS f_det INNER JOIN
                          dbo.tb_persona AS per ON cli.IdPersona = per.IdPersona
 						 where fac.vt_fecha between @fecha_inicio and @fecha_fin
 						 and per.IdTipoDocumento='PAS'
+						 and fac.IdEmpresa=@idempresa
 						 GROUP BY fac.IdCliente,fac.IdCbteVta, fac.IdEmpresa, per.pe_nombreCompleto,fac.vt_fecha, fac.vt_serie1, fac.vt_serie2, fac.vt_NumFactura, fac.vt_autorizacion,
 						 per.pe_cedulaRuc
 
@@ -266,13 +296,14 @@ anulados.ini ,								anulados.fin,							anulados.NumAutorizacion
 from(
 select  
 '01'tipoComprobante,						vt_serie1,								vt_serie2,
-vt_NumFactura ini,								vt_NumFactura fin,							tb_sis_Documento_Tipo_Talonario.NumAutorizacion,fa_factura.IdEmpresa												
+vt_NumFactura ini,							vt_NumFactura fin,							tb_sis_Documento_Tipo_Talonario.NumAutorizacion,fa_factura.IdEmpresa												
 from fa_factura, tb_sis_Documento_Tipo_Talonario
  where fa_factura.Estado='I'
  and fa_factura.IdEmpresa=tb_sis_Documento_Tipo_Talonario.IdEmpresa
  and fa_factura.vt_serie1=tb_sis_Documento_Tipo_Talonario.Establecimiento
  and fa_factura.vt_serie2=tb_sis_Documento_Tipo_Talonario.PuntoEmision
  and fa_factura.vt_NumFactura=tb_sis_Documento_Tipo_Talonario.NumDocumento
+ AND FA_fACTURA.IdEMPRESA = @IdEMPRESA
  union
  select  
 '07'tipoComprobante,						serie1,									serie2,
@@ -283,7 +314,7 @@ from cp_retencion, tb_sis_Documento_Tipo_Talonario
  and cp_retencion.serie1=tb_sis_Documento_Tipo_Talonario.Establecimiento
  and cp_retencion.serie2=tb_sis_Documento_Tipo_Talonario.PuntoEmision
  and cp_retencion.NumRetencion=tb_sis_Documento_Tipo_Talonario.NumDocumento
-
+ AND cp_retencion.IdEmpresa = @idempresa
  )  anulados
 
 
