@@ -1,5 +1,4 @@
 ﻿
-
 create  PROCEDURE [web].[SPROL_013]
 @idempresa int,
 @idnomina int,
@@ -27,7 +26,7 @@ AS
 BEGIN
 	
 	
-SELECT        dbo.ro_empleado.IdDepartamento, dbo.ro_periodo.pe_anio, dbo.ro_periodo.pe_FechaIni, dbo.ro_periodo.pe_FechaFin, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, 
+SELECT        dbo.ro_empleado.IdDepartamento,ro_empleado.IdEmpleado, dbo.ro_periodo.pe_anio, dbo.ro_periodo.pe_FechaIni, dbo.ro_periodo.pe_FechaFin, dbo.tb_persona.pe_cedulaRuc, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, 
                          dbo.ro_rubro_tipo.ru_descripcion, dbo.ro_Departamento.de_descripcion, dbo.ro_Nomina_Tipo.Descripcion AS Nomina, dbo.ro_cargo.ca_descripcion, dbo.ro_periodo.pe_mes, dbo.ro_empleado.em_fechaSalida, 
                          dbo.ro_empleado.em_fechaIngaRol, '' AS Descripcion,ro_rol_detalle_x_rubro_acumulado.Valor
 FROM            dbo.tb_persona INNER JOIN
