@@ -1,4 +1,5 @@
-﻿ --  exec [EntidadRegulatoria].[generarATS] 2,201810
+﻿
+ --  exec [EntidadRegulatoria].[generarATS] 2,201810
 CREATE  PROCEDURE [EntidadRegulatoria].[generarATS]
 @idempresa int,
 @idPeriodo int
@@ -217,7 +218,7 @@ ret.serie1,																						ret.serie2,
 ret.NumRetencion,																				ret.NAutorizacion,
 cast(ret.fecha as date),																		ret_det.re_tipoRet,
 per.pe_nombreCompleto																					
-FROM            dbo.cp_orden_giro AS fac INNER JOIN
+FROM            dbo.cp_orden_giro AS fac left JOIN
                          dbo.cp_retencion AS ret ON fac.IdEmpresa = ret.IdEmpresa_Ogiro AND fac.IdCbteCble_Ogiro = ret.IdCbteCble_Ogiro AND fac.IdTipoCbte_Ogiro = ret.IdTipoCbte_Ogiro INNER JOIN
                          dbo.cp_retencion_det AS ret_det ON ret.IdEmpresa = ret_det.IdEmpresa AND ret.IdRetencion = ret_det.IdRetencion INNER JOIN
                          dbo.cp_proveedor AS prov ON fac.IdEmpresa = prov.IdEmpresa AND fac.IdProveedor = prov.IdProveedor INNER JOIN
