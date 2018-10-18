@@ -5,13 +5,13 @@ SELECT        dbo.ro_marcaciones_x_empleado.IdEmpresa, dbo.ro_marcaciones_x_empl
                          dbo.ro_marcaciones_x_empleado.es_semana, dbo.ro_marcaciones_x_empleado.es_dia, dbo.ro_marcaciones_x_empleado.es_sdia, dbo.ro_marcaciones_x_empleado.es_idDia, 
                          dbo.ro_marcaciones_x_empleado.es_EsActualizacion, dbo.ro_marcaciones_x_empleado.IdTipoMarcaciones_Biometrico, dbo.tb_persona.pe_nombreCompleto AS nom_compl_empleado, 
                          dbo.ro_marcaciones_x_empleado.Motivo_Anu, dbo.ro_marcaciones_x_empleado.Estado, dbo.ro_marcaciones_x_empleado.Observacion, dbo.ro_marcaciones_x_empleado.IdUsuario, 
-                         dbo.ro_marcaciones_x_empleado.Fecha_Transac, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_empleado.em_codigo, dbo.tb_persona.pe_cedulaRuc, dbo.ro_catalogo.ca_descripcion, 
-                         dbo.ro_cargo.ca_descripcion AS cargo
+                         dbo.ro_marcaciones_x_empleado.Fecha_Transac, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_empleado.em_codigo, dbo.tb_persona.pe_cedulaRuc, dbo.ro_cargo.ca_descripcion AS cargo, 
+                         dbo.ro_marcaciones_tipo.ma_descripcion
 FROM            dbo.ro_marcaciones_x_empleado INNER JOIN
                          dbo.ro_empleado ON dbo.ro_marcaciones_x_empleado.IdEmpresa = dbo.ro_empleado.IdEmpresa AND dbo.ro_marcaciones_x_empleado.IdEmpleado = dbo.ro_empleado.IdEmpleado INNER JOIN
                          dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
-                         dbo.ro_catalogo ON dbo.ro_marcaciones_x_empleado.IdTipoMarcaciones = dbo.ro_catalogo.CodCatalogo INNER JOIN
-                         dbo.ro_cargo ON dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo
+                         dbo.ro_cargo ON dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo INNER JOIN
+                         dbo.ro_marcaciones_tipo ON dbo.ro_marcaciones_x_empleado.IdTipoMarcaciones = dbo.ro_marcaciones_tipo.IdTipoMarcaciones
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
