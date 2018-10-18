@@ -1510,7 +1510,6 @@
     <Build Include="dbo\Stored Procedures\spRo_Calculo_Dias_Trabajados.sql" />
     <Build Include="dbo\Stored Procedures\spRo_Calculo_Dias_Trabajados_detalle.sql" />
     <Build Include="dbo\Stored Procedures\spRo_Cierre_Rol.sql" />
-    <Build Include="dbo\Stored Procedures\spRO_Dias_Subsidio.sql" />
     <Build Include="dbo\Stored Procedures\spRo_Nomina_Tipoliqui_x_Sueldo.sql" />
     <Build Include="dbo\Stored Procedures\spRO_Novedades_no_cobradas.sql" />
     <Build Include="dbo\Stored Procedures\spRo_ObtenerPeriodoAnterior.sql" />
@@ -1770,6 +1769,8 @@
     <Build Include="EntidadRegulatoria\Views\vwfa_nota_debito_detalle.sql" />
     <Build Include="EntidadRegulatoria\Views\vwfa_nota_debito.sql" />
     <Build Include="web\Stored Procedures\SPROL_017.sql" />
+    <Build Include="dbo\Tables\ro_permiso_x_empleado.sql" />
+    <Build Include="dbo\Views\vwro_permiso_x_empleado.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
