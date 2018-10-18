@@ -305,6 +305,7 @@ from fa_factura, tb_sis_Documento_Tipo_Talonario
  and fa_factura.vt_serie2=tb_sis_Documento_Tipo_Talonario.PuntoEmision
  and fa_factura.vt_NumFactura=tb_sis_Documento_Tipo_Talonario.NumDocumento
  AND FA_fACTURA.IdEMPRESA = @IdEMPRESA
+ and fa_factura.vt_fecha  between @fecha_inicio and @fecha_fin
  union
  select  
 '07'tipoComprobante,						serie1,									serie2,
@@ -316,6 +317,23 @@ from cp_retencion, tb_sis_Documento_Tipo_Talonario
  and cp_retencion.serie2=tb_sis_Documento_Tipo_Talonario.PuntoEmision
  and cp_retencion.NumRetencion=tb_sis_Documento_Tipo_Talonario.NumDocumento
  AND cp_retencion.IdEmpresa = @idempresa
+ and cp_retencion.fecha  between @fecha_inicio and @fecha_fin
+
+ union
+
+ select  
+'04'tipoComprobante,						Serie1,								Serie2,
+NumNota_Impresa ini,							NumNota_Impresa fin,							tb_sis_Documento_Tipo_Talonario.NumAutorizacion,fa_notaCreDeb.IdEmpresa												
+from fa_notaCreDeb, tb_sis_Documento_Tipo_Talonario
+ where fa_notaCreDeb.Estado='I'
+ and fa_notaCreDeb.IdEmpresa=tb_sis_Documento_Tipo_Talonario.IdEmpresa
+ and fa_notaCreDeb.Serie1=tb_sis_Documento_Tipo_Talonario.Establecimiento
+ and fa_notaCreDeb.Serie1=tb_sis_Documento_Tipo_Talonario.PuntoEmision
+ and fa_notaCreDeb.Serie2=tb_sis_Documento_Tipo_Talonario.NumDocumento
+ AND fa_notaCreDeb.IdEMPRESA = @IdEMPRESA
+ and fa_notaCreDeb.no_fecha  between @fecha_inicio and @fecha_fin
+
+
  )  anulados
 
 
@@ -323,3 +341,4 @@ from cp_retencion, tb_sis_Documento_Tipo_Talonario
  --select* from EntidadRegulatoria.ATS_compras where idProv='0909594202001'
  --select * from EntidadRegulatoria.ATS_retenciones where cedula_ruc='0909090797001'
 END
+
