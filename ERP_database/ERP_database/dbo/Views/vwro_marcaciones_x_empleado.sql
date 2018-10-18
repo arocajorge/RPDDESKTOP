@@ -18,7 +18,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[48] 4[5] 2[17] 3) )"
+         Configuration = "(H (1[79] 4[5] 2[5] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -97,9 +97,9 @@ Begin DesignProperties =
          Begin Table = "ro_empleado"
             Begin Extent = 
                Top = 0
-               Left = 463
+               Left = 751
                Bottom = 308
-               Right = 752
+               Right = 1040
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -114,22 +114,22 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "ro_catalogo"
+         Begin Table = "ro_cargo"
             Begin Extent = 
-               Top = 80
-               Left = 601
-               Bottom = 317
-               Right = 787
+               Top = 302
+               Left = 684
+               Bottom = 432
+               Right = 901
             End
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "ro_cargo"
+         Begin Table = "ro_marcaciones_tipo"
             Begin Extent = 
-               Top = 222
-               Left = 194
-               Bottom = 352
-               Right = 411
+               Top = 154
+               Left = 400
+               Bottom = 317
+               Right = 590
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -154,12 +154,14 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-         Width = 1500
-        ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_marcaciones_x_empleado';
+         Width = 1500', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_marcaciones_x_empleado';
+
+
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' Width = 1500
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -194,6 +196,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' Width = 1
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_marcaciones_x_empleado';
+
+
 
 
 GO
