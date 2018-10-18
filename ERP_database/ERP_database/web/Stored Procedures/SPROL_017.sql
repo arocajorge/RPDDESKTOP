@@ -1,4 +1,9 @@
-﻿CREATE procedure [web].[SPROL_017]
+﻿
+--  exec [web].[SPROL_017] 1,'2018-01-01','2018-12-12'
+
+
+CREATE procedure [web].[SPROL_017]
+
 (
 @IdEmpresa int,
 @FechaInicio date,
@@ -7,6 +12,11 @@
 
 as
 begin
+
+select listaMarc.IdEmpresa,listaMarc.IdEmpleado,listaMarc.Entrada1, listaMarc.Entrada2, listaMarc.Salida1, listaMarc.Salida2, listaMarc.SalidaLounch, listaMarc.RegresoLounch, listaMarc.pe_nombreCompleto, listaMarc.pe_cedulaRuc, listaMarc.es_fechaRegistro, listaMarc.es_mes, listaMarc.es_anio, listaMarc.es_semana, listaMarc.es_dia, listaMarc.es_sdia
+from 
+(
+
 
 select marcaciones.Entrada1, marcaciones.Entrada2,marcaciones.Salida1,marcaciones.Salida2,marcaciones.SalidaLounch,marcaciones.RegresoLounch, empleado.*
 from (
@@ -19,8 +29,8 @@ FROM            dbo.ro_marcaciones_tipo AS m_tipo INNER JOIN
 ) empleado
 inner join (
 (
- SELECT  IdEmpresa,IdEmpleado,IdCalendadrio, es_fechaRegistro, ISNULL( [ING1],'00:00:00')Entrada1 ,ISNULL([ING2],'00:00:00')Entrada2,
- ISNULL([SAL1],'00:00:00')Salida1,ISNULL([SAL2],'00:00:00')Salida2, ISNULL([SLUNCH],'00:00:00')SalidaLounch,ISNULL([RLUNCH],'00:00:00')RegresoLounch
+ SELECT  IdEmpresa,IdEmpleado,IdCalendadrio, es_fechaRegistro, ISNULL( [IN1],'00:00:00')Entrada1 ,ISNULL([IN2],'00:00:00')Entrada2,
+ ISNULL([OUT1],'00:00:00')Salida1,ISNULL([OUT2],'00:00:00')Salida2, ISNULL([SLUNCH],'00:00:00')SalidaLounch,ISNULL([RLUNCH],'00:00:00')RegresoLounch
 FROM (
     SELECT 
         IdEmpresa,IdEmpleado,IdCalendadrio,es_fechaRegistro,IdTipoMarcaciones, es_Hora
@@ -29,12 +39,16 @@ FROM (
 PIVOT
 (
    max([es_Hora])
-    FOR [IdTipoMarcaciones] IN ([ING1],[ING2],[SAL1],[SAL2],[RLUNCH],[SLUNCH])
+    FOR [IdTipoMarcaciones] IN ([IN1],[IN2],[OUT1],[OUT2],[RLUNCH],[SLUNCH])
 )AS pvt)
 ) marcaciones
 
 on
  empleado.IdEmpresa=marcaciones.IdEmpresa
  and empleado.IdEmpleado=marcaciones.IdEmpleado
- 
+ ) listaMarc
+
+ group by listaMarc.IdEmpresa,listaMarc.IdEmpleado,listaMarc.Entrada1, listaMarc.Entrada2, listaMarc.Salida1, listaMarc.Salida2, listaMarc.SalidaLounch, listaMarc.RegresoLounch, listaMarc.pe_nombreCompleto, listaMarc.pe_cedulaRuc, listaMarc.es_fechaRegistro, listaMarc.es_mes, listaMarc.es_anio, listaMarc.es_semana, listaMarc.es_dia, listaMarc.es_sdia
  end
+
+ 
