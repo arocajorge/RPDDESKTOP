@@ -247,7 +247,6 @@
     <Build Include="Fj_servindustrias\Tables\ct_distribucion_gastos_x_periodo.sql" />
     <Build Include="dbo\Tables\ct_saldoxCuentas_Movi_x_RangoFecha.sql" />
     <Build Include="dbo\Tables\in_movi_inven_tipo_x_tb_bodega.sql" />
-    <Build Include="dbo\Tables\tb_sis_Log_Error_Vzen.sql" />
     <Build Include="dbo\Tables\cp_Conciliacion_Ing_Bodega_x_Orden_Giro.sql" />
     <Build Include="dbo\Tables\ro_nomina_x_horas_extras_det.sql" />
     <Build Include="dbo\Tables\fa_TipoNota.sql" />
@@ -1771,6 +1770,7 @@
     <Build Include="web\Stored Procedures\SPROL_017.sql" />
     <Build Include="dbo\Tables\ro_permiso_x_empleado.sql" />
     <Build Include="dbo\Views\vwro_permiso_x_empleado.sql" />
+    <Build Include="dbo\Tables\tb_sis_log_error.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
