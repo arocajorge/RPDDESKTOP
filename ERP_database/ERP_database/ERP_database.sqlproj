@@ -1772,6 +1772,7 @@
     <Build Include="dbo\Views\vwro_permiso_x_empleado.sql" />
     <Build Include="dbo\Tables\tb_sis_log_error.sql" />
     <Build Include="web\Views\VWROL_018.sql" />
+    <Build Include="web\Views\VWROL_019.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\ERP_database_20180907_23-41-21.dacpac" />
