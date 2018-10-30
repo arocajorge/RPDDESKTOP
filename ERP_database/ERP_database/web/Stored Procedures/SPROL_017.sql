@@ -51,4 +51,6 @@ on
  group by listaMarc.IdEmpresa,listaMarc.IdEmpleado,listaMarc.Entrada1, listaMarc.Entrada2, listaMarc.Salida1, listaMarc.Salida2, listaMarc.SalidaLounch, listaMarc.RegresoLounch, listaMarc.pe_nombreCompleto, listaMarc.pe_cedulaRuc, listaMarc.es_fechaRegistro, listaMarc.es_mes, listaMarc.es_anio, listaMarc.es_semana, listaMarc.es_dia, listaMarc.es_sdia
  end
 
+ SELECT * from ro_marcaciones_x_empleado
+
  
