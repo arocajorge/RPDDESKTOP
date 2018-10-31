@@ -11,3 +11,5 @@ FROM            dbo.ro_Historico_Liquidacion_Vacaciones AS hist_liq INNER JOIN
 group by
                                           hist_liq.IdEmpresa, hist_liq.IdEmpleado, hist_liq.IdLiquidacion, his_vac.IdPeriodo_Inicio, his_vac.IdPeriodo_Fin, his_vac.FechaIni, his_vac.FechaFin, sol_vac.Dias_q_Corresponde, sol_vac.Dias_a_disfrutar, 
                          sol_vac.Dias_pendiente, per.pe_cedulaRuc, per.pe_nombreCompleto, hist_liq.FechaPago, sol_vac.Fecha_Desde, sol_vac.Fecha_Hasta
+
+

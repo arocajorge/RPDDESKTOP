@@ -341,3 +341,4 @@ from fa_notaCreDeb, tb_sis_Documento_Tipo_Talonario
  --select* from EntidadRegulatoria.ATS_compras where idProv='0909594202001'
  --select * from EntidadRegulatoria.ATS_retenciones where cedula_ruc='0909090797001'
 END
+
