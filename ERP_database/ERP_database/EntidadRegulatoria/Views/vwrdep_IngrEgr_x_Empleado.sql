@@ -1,15 +1,16 @@
-﻿create view EntidadRegulatoria.vwrdep_IngrEgr_x_Empleado as
-SELECT        Ingresos_fijos.IdEmpresa, Ingresos_fijos.IdEmpleado,Ingresos_fijos.pe_anio,Ingresos_fijos.Su_CodigoEstablecimiento, Ingresos_fijos.pe_cedulaRuc, Ingresos_fijos.pe_nombre,Ingresos_fijos.pe_apellido,
-SUM(Ingresos_fijos.Sueldo)Sueldo, SUM(Ingresos_fijos.FondosReserva)FondosReserva,SUM(Ingresos_fijos.DecimoTercerSueldo)DecimoTercerSueldo ,SUM(Ingresos_fijos.DecimoCuartoSueldo)DecimoCuartoSueldo,
-SUM(Ingresos_fijos.Vacaciones)Vacaciones,SUM(Ingresos_fijos.AportePErsonal)AportePErsonal,Ingresos_fijos.GastoAlimentacion,Ingresos_fijos.GastoEucacion,Ingresos_fijos.GastoSalud,Ingresos_fijos.GastoVestimenta,Ingresos_fijos.GastoVivienda,Ingresos_fijos.Utilidades, Ingresos_varios.IngresoVarios
-FROM            (
-SELECT        IdEmpresa, IdEmpleado, pe_anio, Su_CodigoEstablecimiento, pe_cedulaRuc, pe_nombre, pe_apellido, [24] AS Sueldo, CAST(isnull([198], 0) AS numeric(10, 2)) AS FondosReserva, CAST([199] AS numeric(10, 2)) 
+﻿
+CREATE view EntidadRegulatoria.vwrdep_IngrEgr_x_Empleado as
+SELECT        Ingresos_fijos.IdEmpresa, Ingresos_fijos.IdEmpleado, Ingresos_fijos.pe_anio, Ingresos_fijos.Su_CodigoEstablecimiento, Ingresos_fijos.pe_cedulaRuc, Ingresos_fijos.pe_nombre, Ingresos_fijos.pe_apellido, 
+                         SUM(Ingresos_fijos.Sueldo) Sueldo, SUM(Ingresos_fijos.FondosReserva) FondosReserva, SUM(Ingresos_fijos.DecimoTercerSueldo) DecimoTercerSueldo, SUM(Ingresos_fijos.DecimoCuartoSueldo) DecimoCuartoSueldo, 
+                         SUM(Ingresos_fijos.Vacaciones) Vacaciones, SUM(Ingresos_fijos.AportePErsonal) AportePErsonal, Ingresos_fijos.GastoAlimentacion, Ingresos_fijos.GastoEucacion, Ingresos_fijos.GastoSalud, Ingresos_fijos.GastoVestimenta, 
+                         Ingresos_fijos.GastoVivienda, Ingresos_fijos.Utilidades, Ingresos_varios.IngresoVarios
+FROM            (SELECT        IdEmpresa, IdEmpleado, pe_anio, Su_CodigoEstablecimiento, pe_cedulaRuc, pe_nombre, pe_apellido, [24] AS Sueldo, CAST(isnull([198], 0) AS numeric(10, 2)) AS FondosReserva, CAST([199] AS numeric(10, 2)) 
                                                     AS DecimoTercerSueldo, [200] AS DecimoCuartoSueldo, CAST(ISNULL([295], 0) AS numeric(10, 2)) AS Vacaciones, [6] AportePErsonal, ISNULL(GastoAlimentacion, 0) GastoAlimentacion, ISNULL(GastoEucacion, 0) 
                                                     GastoEucacion, ISNULL(GastoSalud, 0) GastoSalud, ISNULL(GastoVestimenta, 0) GastoVestimenta, ISNULL(GastoVivienda, 0) GastoVivienda, ISNULL(Utilidades, 0) Utilidades
                           FROM            (
-
-						  SELECT        rol_det.IdEmpresa,rol_det.IdPeriodo, rol_det.IdEmpleado, rol_det.IdRubro, rol_det.Valor, per.pe_cedulaRuc, per.pe_apellido, per.pe_nombre, per.pe_sexo, per.pe_direccion, per.pe_telfono_Contacto, per.pe_celular, 
-                                                                              per.pe_correo, per.IdEstadoCivil, per.pe_fechaNacimiento, pe.pe_anio, sucr.Su_CodigoEstablecimiento, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoAlimentacion, 
+						  
+						  SELECT        rol_det.IdEmpresa, rol_det.IdPeriodo, rol_det.IdEmpleado, rol_det.IdRubro, rol_det.Valor, per.pe_cedulaRuc, per.pe_apellido, per.pe_nombre, per.pe_sexo, per.pe_direccion, per.pe_telfono_Contacto, 
+                                                                              per.pe_celular, per.pe_correo, per.IdEstadoCivil, per.pe_fechaNacimiento, pe.pe_anio, sucr.Su_CodigoEstablecimiento, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoAlimentacion, 
                                                                               EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoEucacion, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoSalud, 
                                                                               EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoVestimenta, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoVivienda, SUM(utilidad_det.ValorTotal) Utilidades
                                                     FROM            dbo.ro_rol AS rol INNER JOIN
@@ -27,13 +28,11 @@ SELECT        IdEmpresa, IdEmpleado, pe_anio, Su_CodigoEstablecimiento, pe_cedul
                                                                               EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles ON emp.IdEmpresa = EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.IdEmpresa AND 
                                                                               emp.IdEmpleado = EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.IdEmpleado AND pe.IdEmpresa = EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.IdEmpresa AND 
                                                                               pe.pe_anio = EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.AnioFiscal
-                                                    GROUP BY rol_det.IdEmpresa,rol_det.IdPeriodo, rol_det.IdEmpleado, rol_det.IdRubro, rol_det.Valor, per.pe_cedulaRuc, per.pe_apellido, per.pe_nombre, per.pe_sexo, per.pe_direccion, per.pe_telfono_Contacto, per.pe_celular, 
-                                                                              per.pe_correo, per.IdEstadoCivil, per.pe_fechaNacimiento, pe.pe_anio, sucr.Su_CodigoEstablecimiento, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoAlimentacion, 
+                                                    GROUP BY rol_det.IdEmpresa, rol_det.IdPeriodo, rol_det.IdEmpleado, rol_det.IdRubro, rol_det.Valor, per.pe_cedulaRuc, per.pe_apellido, per.pe_nombre, per.pe_sexo, per.pe_direccion, per.pe_telfono_Contacto, 
+                                                                              per.pe_celular, per.pe_correo, per.IdEstadoCivil, per.pe_fechaNacimiento, pe.pe_anio, sucr.Su_CodigoEstablecimiento, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoAlimentacion, 
                                                                               EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoEucacion, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoSalud, 
-                                                                              EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoVestimenta, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoVivienda
-																			  
-																			  ) AS s PIVOT (sum([Valor]) FOR [IdRubro] IN ([24], 
-                                                    [199], [200], [198], [295], [6])) AS pvt) AS Ingresos_fijos INNER JOIN
+                                                                              EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoVestimenta, EntidadRegulatoria.vwrdep_gastos_x_rubros_deducibles.GastoVivienda) AS s PIVOT (sum([Valor]) FOR [IdRubro] IN ([24], 
+                                                    [199], [200], [198], [295], [6])) AS pvt) AS Ingresos_fijos left JOIN
                              (SELECT        rol_det.IdEmpresa, rol_det.IdEmpleado, ro_pe.pe_anio, SUM(rol_det.Valor) AS IngresoVarios
                                FROM            dbo.ro_rubro_tipo AS rub INNER JOIN
                                                          dbo.ro_rol_detalle AS rol_det ON rub.IdEmpresa = rol_det.IdEmpresa AND rub.IdRubro = rol_det.IdRubro INNER JOIN
@@ -42,7 +41,5 @@ SELECT        IdEmpresa, IdEmpleado, pe_anio, Su_CodigoEstablecimiento, pe_cedul
                                                          dbo.ro_periodo AS ro_pe ON pe_nom.IdEmpresa = ro_pe.IdEmpresa AND pe_nom.IdPeriodo = ro_pe.IdPeriodo AND rub.ru_tipo = 'I' AND rub.IdRubro <> 24
                                GROUP BY rol_det.IdEmpresa, rol_det.IdEmpleado, ro_pe.pe_anio) Ingresos_varios ON Ingresos_fijos.IdEmpresa = Ingresos_varios.IdEmpresa AND Ingresos_fijos.IdEmpleado = Ingresos_varios.IdEmpleado AND 
                          Ingresos_fijos.pe_anio = Ingresos_varios.pe_anio
-
-
-						 group by Ingresos_fijos.IdEmpresa, Ingresos_fijos.IdEmpleado, Ingresos_fijos.pe_anio, Ingresos_fijos.Su_CodigoEstablecimiento,Ingresos_fijos.pe_cedulaRuc, Ingresos_fijos.pe_nombre,
-						 Ingresos_fijos.pe_apellido,Ingresos_fijos.GastoAlimentacion, Ingresos_fijos.GastoSalud, Ingresos_fijos.GastoVivienda, Ingresos_fijos.GastoVestimenta, Ingresos_fijos.GastoEucacion, Ingresos_fijos.Utilidades, Ingresos_varios.IngresoVarios
+GROUP BY Ingresos_fijos.IdEmpresa, Ingresos_fijos.IdEmpleado, Ingresos_fijos.pe_anio, Ingresos_fijos.Su_CodigoEstablecimiento, Ingresos_fijos.pe_cedulaRuc, Ingresos_fijos.pe_nombre, Ingresos_fijos.pe_apellido, 
+                         Ingresos_fijos.GastoAlimentacion, Ingresos_fijos.GastoSalud, Ingresos_fijos.GastoVivienda, Ingresos_fijos.GastoVestimenta, Ingresos_fijos.GastoEucacion, Ingresos_fijos.Utilidades, Ingresos_varios.IngresoVarios

@@ -1,4 +1,5 @@
-﻿--EXEC [web].[SPCONTA_003_balances] 1,2018,'2018/06/30','2018/08/31','123',6,0, ''
+﻿
+--EXEC [web].[SPCONTA_003_balances] 2,2018,'2018/06/30','2018/12/31','123',6,1, ''
 CREATE PROCEDURE [web].[SPCONTA_003_balances]
 (
 @IdEmpresa int,

@@ -5,20 +5,20 @@ SELECT        dbo.ro_marcaciones_x_empleado.IdEmpresa, dbo.ro_marcaciones_x_empl
                          dbo.ro_marcaciones_x_empleado.es_semana, dbo.ro_marcaciones_x_empleado.es_dia, dbo.ro_marcaciones_x_empleado.es_sdia, dbo.ro_marcaciones_x_empleado.es_idDia, 
                          dbo.ro_marcaciones_x_empleado.es_EsActualizacion, dbo.ro_marcaciones_x_empleado.IdTipoMarcaciones_Biometrico, dbo.tb_persona.pe_nombreCompleto AS nom_compl_empleado, 
                          dbo.ro_marcaciones_x_empleado.Motivo_Anu, dbo.ro_marcaciones_x_empleado.Estado, dbo.ro_marcaciones_x_empleado.Observacion, dbo.ro_marcaciones_x_empleado.IdUsuario, 
-                         dbo.ro_marcaciones_x_empleado.Fecha_Transac, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_empleado.em_codigo, dbo.tb_persona.pe_cedulaRuc, dbo.ro_catalogo.ca_descripcion, 
-                         dbo.ro_cargo.ca_descripcion AS cargo
+                         dbo.ro_marcaciones_x_empleado.Fecha_Transac, dbo.tb_persona.pe_apellido, dbo.tb_persona.pe_nombre, dbo.ro_empleado.em_codigo, dbo.tb_persona.pe_cedulaRuc, dbo.ro_cargo.ca_descripcion AS cargo, 
+                         dbo.ro_marcaciones_tipo.ma_descripcion
 FROM            dbo.ro_marcaciones_x_empleado INNER JOIN
                          dbo.ro_empleado ON dbo.ro_marcaciones_x_empleado.IdEmpresa = dbo.ro_empleado.IdEmpresa AND dbo.ro_marcaciones_x_empleado.IdEmpleado = dbo.ro_empleado.IdEmpleado INNER JOIN
                          dbo.tb_persona ON dbo.ro_empleado.IdPersona = dbo.tb_persona.IdPersona INNER JOIN
-                         dbo.ro_catalogo ON dbo.ro_marcaciones_x_empleado.IdTipoMarcaciones = dbo.ro_catalogo.CodCatalogo INNER JOIN
-                         dbo.ro_cargo ON dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo
+                         dbo.ro_cargo ON dbo.ro_empleado.IdEmpresa = dbo.ro_cargo.IdEmpresa AND dbo.ro_empleado.IdCargo = dbo.ro_cargo.IdCargo INNER JOIN
+                         dbo.ro_marcaciones_tipo ON dbo.ro_marcaciones_x_empleado.IdTipoMarcaciones = dbo.ro_marcaciones_tipo.IdTipoMarcaciones
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[48] 4[5] 2[17] 3) )"
+         Configuration = "(H (1[79] 4[5] 2[5] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -97,9 +97,9 @@ Begin DesignProperties =
          Begin Table = "ro_empleado"
             Begin Extent = 
                Top = 0
-               Left = 463
+               Left = 751
                Bottom = 308
-               Right = 752
+               Right = 1040
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -114,22 +114,22 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "ro_catalogo"
+         Begin Table = "ro_cargo"
             Begin Extent = 
-               Top = 80
-               Left = 601
-               Bottom = 317
-               Right = 787
+               Top = 302
+               Left = 684
+               Bottom = 432
+               Right = 901
             End
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "ro_cargo"
+         Begin Table = "ro_marcaciones_tipo"
             Begin Extent = 
-               Top = 222
-               Left = 194
-               Bottom = 352
-               Right = 411
+               Top = 154
+               Left = 400
+               Bottom = 317
+               Right = 590
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -154,12 +154,14 @@ Begin DesignProperties =
          Width = 1500
          Width = 1500
          Width = 1500
-         Width = 1500
-        ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_marcaciones_x_empleado';
+         Width = 1500', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_marcaciones_x_empleado';
+
+
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' Width = 1500
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N'
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -194,6 +196,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane2', @value = N' Width = 1
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'vwro_marcaciones_x_empleado';
+
+
 
 
 GO

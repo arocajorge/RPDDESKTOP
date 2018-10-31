@@ -1,4 +1,4 @@
-﻿CREATE VIEW dbo.vwfa_proforma_det_por_facturar
+﻿CREATE VIEW [dbo].[vwfa_proforma_det_por_facturar]
 AS
 SELECT dbo.fa_proforma_det.IdEmpresa, dbo.fa_proforma_det.IdSucursal, dbo.fa_proforma_det.IdProforma, dbo.fa_proforma_det.Secuencia, dbo.fa_proforma_det.IdProducto, dbo.fa_proforma_det.pd_cantidad, dbo.fa_proforma_det.pd_precio, 
                   dbo.fa_proforma_det.pd_por_descuento_uni, dbo.fa_proforma_det.pd_descuento_uni, dbo.fa_proforma_det.pd_precio_final, dbo.fa_proforma_det.pd_subtotal, dbo.fa_proforma_det.IdCod_Impuesto, dbo.fa_proforma_det.pd_por_iva, 
@@ -14,6 +14,7 @@ WHERE  (NOT EXISTS
                       (SELECT IdEmpresa
                        FROM      dbo.fa_factura_det AS f
                        WHERE   (dbo.fa_proforma_det.IdEmpresa = IdEmpresa_pf) AND (dbo.fa_proforma_det.IdSucursal = IdSucursal_pf) AND (dbo.fa_proforma_det.IdProforma = IdProforma) AND (dbo.fa_proforma_det.Secuencia = Secuencia_pf)))
+					   and fa_proforma.estado = 1
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

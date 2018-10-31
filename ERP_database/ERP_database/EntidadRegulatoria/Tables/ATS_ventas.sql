@@ -10,17 +10,19 @@
     [tipoComprobante]    VARCHAR (3)     NOT NULL,
     [tipoEm]             VARCHAR (1)     NOT NULL,
     [numeroComprobantes] INT             NOT NULL,
-    [baseNoGraIva]       NUMERIC (12, 2) NOT NULL,
-    [baseImponible]      NUMERIC (12, 2) NOT NULL,
-    [baseImpGrav]        NUMERIC (12, 2) NOT NULL,
-    [montoIva]           NUMERIC (12, 2) NOT NULL,
-    [montoIce]           NUMERIC (12, 2) NOT NULL,
-    [valorRetIva]        NUMERIC (12, 2) NOT NULL,
-    [valorRetRenta]      NUMERIC (12, 2) NOT NULL,
+    [baseNoGraIva]       NUMERIC (20, 2) NOT NULL,
+    [baseImponible]      NUMERIC (20, 2) NOT NULL,
+    [baseImpGrav]        NUMERIC (20, 2) NOT NULL,
+    [montoIva]           NUMERIC (20, 2) NOT NULL,
+    [montoIce]           NUMERIC (20, 2) NOT NULL,
+    [valorRetIva]        NUMERIC (20, 2) NOT NULL,
+    [valorRetRenta]      NUMERIC (20, 2) NOT NULL,
     [formaPago]          VARCHAR (2)     NULL,
     [codEstab]           VARCHAR (3)     NOT NULL,
-    [ventasEstab]        NUMERIC (12, 2) NOT NULL,
-    [ivaComp]            NUMERIC (12, 2) NOT NULL,
+    [ventasEstab]        NUMERIC (20, 2) NOT NULL,
+    [ivaComp]            NUMERIC (20, 2) NOT NULL,
     CONSTRAINT [PK_ventas] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdPeriodo] ASC, [Secuencia] ASC)
 );
+
+
 

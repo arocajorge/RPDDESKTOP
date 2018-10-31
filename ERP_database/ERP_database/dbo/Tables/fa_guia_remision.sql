@@ -29,8 +29,8 @@
     [Fecha_UltMod]             DATETIME       NULL,
     [IdUsuarioUltAnu]          VARCHAR (20)   NULL,
     [Fecha_UltAnu]             DATETIME       NULL,
-    [nom_pc]                   VARCHAR (50)   NOT NULL,
-    [ip]                       VARCHAR (25)   NOT NULL,
+    [nom_pc]                   VARCHAR (50)   NULL,
+    [ip]                       VARCHAR (25)   NULL,
     [Estado]                   CHAR (1)       NOT NULL,
     [MotiAnula]                VARCHAR (200)  NULL,
     [Direccion_Destino]        VARCHAR (300)  NULL,
@@ -45,6 +45,8 @@
     CONSTRAINT [FK_fa_guia_remision_tb_sis_Documento_Tipo_Talonario] FOREIGN KEY ([IdEmpresa], [CodDocumentoTipo], [Serie2], [Serie1], [NumGuia_Preimpresa]) REFERENCES [dbo].[tb_sis_Documento_Tipo_Talonario] ([IdEmpresa], [CodDocumentoTipo], [PuntoEmision], [Establecimiento], [NumDocumento]),
     CONSTRAINT [FK_fa_guia_remision_tb_transportista] FOREIGN KEY ([IdEmpresa], [IdTransportista]) REFERENCES [dbo].[tb_transportista] ([IdEmpresa], [IdTransportista])
 );
+
+
 
 
 

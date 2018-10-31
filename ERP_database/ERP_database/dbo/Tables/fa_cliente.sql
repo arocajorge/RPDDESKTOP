@@ -20,6 +20,7 @@
     [es_empresa_relacionada] BIT          NULL,
     [NivelPrecio]            INT          NULL,
     [FormaPago]              VARCHAR (2)  NULL,
+    [EsClienteExportador]    BIT          NOT NULL,
     CONSTRAINT [PK_fa_cliente] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdCliente] ASC),
     CONSTRAINT [FK_fa_cliente_ct_plancta] FOREIGN KEY ([IdEmpresa], [IdCtaCble_cxc]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble]),
     CONSTRAINT [FK_fa_cliente_ct_plancta1] FOREIGN KEY ([IdEmpresa], [IdCtaCble_Anti]) REFERENCES [dbo].[ct_plancta] ([IdEmpresa], [IdCtaCble]),
@@ -30,4 +31,6 @@
     CONSTRAINT [FK_fa_cliente_tb_empresa] FOREIGN KEY ([IdEmpresa]) REFERENCES [dbo].[tb_empresa] ([IdEmpresa]),
     CONSTRAINT [FK_fa_cliente_tb_persona] FOREIGN KEY ([IdPersona]) REFERENCES [dbo].[tb_persona] ([IdPersona])
 );
+
+
 
