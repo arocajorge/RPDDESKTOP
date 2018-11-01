@@ -20,8 +20,6 @@ FROM            dbo.ro_rubro_tipo INNER JOIN
                          dbo.ro_Nomina_Tipoliqui.IdNomina_Tipo = rol.IdNominaTipo AND dbo.ro_Nomina_Tipoliqui.IdNomina_TipoLiqui = rol.IdNominaTipoLiqui INNER JOIN
                          dbo.ro_Nomina_Tipo ON dbo.ro_Nomina_Tipoliqui.IdEmpresa = dbo.ro_Nomina_Tipo.IdEmpresa AND dbo.ro_Nomina_Tipoliqui.IdNomina_Tipo = dbo.ro_Nomina_Tipo.IdNomina_Tipo ON rol_det.IdEmpresa = rol.IdEmpresa AND 
                          rol_det.IdNominaTipo = rol.IdNominaTipo AND rol_det.IdNominaTipoLiqui = rol.IdNominaTipoLiqui AND rol_det.IdPeriodo = rol.IdPeriodo
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 2, @level0type = N'SCHEMA', @level0name = N'web', @level1type = N'VIEW', @level1name = N'VWROL_019';
 
